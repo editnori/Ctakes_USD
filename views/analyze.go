@@ -84,14 +84,7 @@ func (a *AnalyzeView) analyzeText() {
 	}
 
 	a.results = "Analysis Results:\n\n" +
-		"• Detected Entities: [Placeholder - Mock Results]\n" +
-		"  → Medications: aspirin, lisinopril\n" +
-		"  → Conditions: hypertension, diabetes\n" +
-		"  → Procedures: blood test, x-ray\n\n" +
-		"• UMLS Concepts: [Placeholder - Mock Results]\n" +
-		"  → C0004057: Aspirin\n" +
-		"  → C0065374: Lisinopril\n\n" +
-		"[ℹ Note: Real cTAKES NLP integration pending]"
+		"Processing text...\n"
 
 	a.viewport.SetContent(a.results)
 }

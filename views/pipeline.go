@@ -122,8 +122,7 @@ func (p PipelineView) View() string {
 	footerStyle := lipgloss.NewStyle().
 		Foreground(lipgloss.Color("241"))
 
-	b.WriteString(footerStyle.Render("␣ Toggle • C Configure • S Save • ESC Back"))
-	b.WriteString("\n\n[Placeholder: Real cTAKES pipeline configuration pending]")
+	b.WriteString(footerStyle.Render("␣ Toggle • ESC Back"))
 
 	return b.String()
 }

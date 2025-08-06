@@ -50,7 +50,7 @@ func initialModel() model {
 			"✕ Exit",
 		},
 		selected:      make(map[int]struct{}),
-		ctakesStatus:  "⚠ Not Connected (Placeholder)",
+		ctakesStatus:  "⚠ Not Connected",
 		currentView:   Dashboard,
 		dashboardView: views.NewDashboardView(),
 		documentView:  views.NewDocumentView(),
@@ -90,18 +90,22 @@ func (m model) updateDashboard(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		switch msg.String() {
-		case "esc":
-			m.currentView = MainMenu
-			return m, nil
-		case "1":
-			m.currentView = DocumentView
-			return m, nil
-		case "2":
-			m.currentView = AnalyzeView
-			return m, m.analyzeView.Init()
-		case "3":
-			m.currentView = PipelineView
-			return m, nil
+		case "ctrl+c", "q":
+			return m, tea.Quit
+		case "enter", " ":
+			switch m.dashboardView.GetCursor() {
+			case 0:
+				m.currentView = DocumentView
+				return m, nil
+			case 1:
+				m.currentView = AnalyzeView
+				return m, m.analyzeView.Init()
+			case 2:
+				m.currentView = PipelineView
+				return m, nil
+			case 3:
+				return m, tea.Quit
+			}
 		}
 	}
 	
@@ -223,7 +227,7 @@ func (m model) renderWithHeader(content string) string {
 		Foreground(lipgloss.Color("241")).
 		Padding(0, 2)
 
-	header := headerStyle.Render("■ cTAKES Terminal Interface")
+	header := headerStyle.Render("■ cTAKES CLI")
 	status := statusStyle.Render(fmt.Sprintf("Status: %s", m.ctakesStatus))
 
 	return header + "\n" + status + "\n\n" + content
@@ -245,7 +249,7 @@ func (m model) viewMainMenu() string {
 	var menuStyle = lipgloss.NewStyle().
 		Padding(1, 2)
 
-	header := headerStyle.Render("■ cTAKES Terminal Interface")
+	header := headerStyle.Render("■ cTAKES CLI")
 	status := statusStyle.Render(fmt.Sprintf("Status: %s", m.ctakesStatus))
 
 	menu := "\n"

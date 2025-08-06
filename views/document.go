@@ -70,8 +70,7 @@ func (d DocumentView) View() string {
 	b.WriteString("\n\n")
 
 	if len(d.files) == 0 {
-		b.WriteString("No documents loaded. Press 'a' to add documents.\n")
-		b.WriteString("\n[Placeholder: cTAKES document processing integration pending]\n")
+		b.WriteString("No documents loaded.\n")
 	} else {
 		b.WriteString("Select documents to process:\n\n")
 		for i, file := range d.files {
