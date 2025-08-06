@@ -38,17 +38,17 @@ type model struct {
 func initialModel() model {
 	return model{
 		choices: []string{
-			"Process Documents",
-			"Analyze Text",
-			"Configure Pipeline",
-			"View Results",
-			"Manage Dictionaries",
-			"Settings",
-			"Help",
-			"Exit",
+			"▪ Process Documents",
+			"▪ Analyze Text",
+			"▪ Configure Pipeline",
+			"▪ View Results",
+			"▪ Manage Dictionaries",
+			"▪ Settings",
+			"▪ Help",
+			"✕ Exit",
 		},
 		selected:     make(map[int]struct{}),
-		ctakesStatus: "Not Connected (Placeholder)",
+		ctakesStatus: "⚠ Not Connected (Placeholder)",
 		currentView:  MainMenu,
 		documentView: views.NewDocumentView(),
 		analyzeView:  views.NewAnalyzeView(),
@@ -187,7 +187,7 @@ func (m model) renderWithHeader(content string) string {
 		Foreground(lipgloss.Color("241")).
 		Padding(0, 2)
 
-	header := headerStyle.Render("cTAKES Terminal Interface")
+	header := headerStyle.Render("■ cTAKES Terminal Interface")
 	status := statusStyle.Render(fmt.Sprintf("Status: %s", m.ctakesStatus))
 
 	return header + "\n" + status + "\n\n" + content
@@ -209,14 +209,14 @@ func (m model) viewMainMenu() string {
 	var menuStyle = lipgloss.NewStyle().
 		Padding(1, 2)
 
-	header := headerStyle.Render("cTAKES Terminal Interface")
+	header := headerStyle.Render("■ cTAKES Terminal Interface")
 	status := statusStyle.Render(fmt.Sprintf("Status: %s", m.ctakesStatus))
 
 	menu := "\n"
 	for i, choice := range m.choices {
-		cursor := " "
+		cursor := "  "
 		if m.cursor == i {
-			cursor = "▸"
+			cursor = "→"
 			choice = lipgloss.NewStyle().
 				Bold(true).
 				Foreground(lipgloss.Color("86")).
@@ -228,7 +228,7 @@ func (m model) viewMainMenu() string {
 
 	footer := lipgloss.NewStyle().
 		Foreground(lipgloss.Color("241")).
-		Render("\n↑/↓: Navigate • Enter: Select • q: Quit")
+		Render("\n↑↓ Navigate • ⏎ Select • Q Quit")
 
 	return header + "\n" + status + menuStyle.Render(menu) + footer
 }

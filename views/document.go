@@ -66,7 +66,7 @@ func (d DocumentView) View() string {
 		Foreground(lipgloss.Color("86")).
 		MarginBottom(1)
 
-	b.WriteString(titleStyle.Render("Document Processing"))
+	b.WriteString(titleStyle.Render("► Document Processing"))
 	b.WriteString("\n\n")
 
 	if len(d.files) == 0 {
@@ -77,12 +77,12 @@ func (d DocumentView) View() string {
 		for i, file := range d.files {
 			cursor := "  "
 			if d.cursor == i {
-				cursor = "▸ "
+				cursor = "▶ "
 			}
 
-			checked := "[ ]"
+			checked := "☐"
 			if _, ok := d.selected[i]; ok {
-				checked = "[x]"
+				checked = "☑"
 			}
 
 			line := fmt.Sprintf("%s%s %s", cursor, checked, file)
@@ -99,7 +99,7 @@ func (d DocumentView) View() string {
 	b.WriteString("\n")
 	b.WriteString(lipgloss.NewStyle().
 		Foreground(lipgloss.Color("241")).
-		Render("Space: Select • Enter: Process • Esc: Back"))
+		Render("␣ Select • ⏎ Process • ESC Back"))
 
 	return b.String()
 }

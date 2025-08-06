@@ -84,14 +84,14 @@ func (a *AnalyzeView) analyzeText() {
 	}
 
 	a.results = "Analysis Results:\n\n" +
-		"Detected Entities: [Placeholder - Mock Results]\n" +
-		"  - Medications: aspirin, lisinopril\n" +
-		"  - Conditions: hypertension, diabetes\n" +
-		"  - Procedures: blood test, x-ray\n\n" +
-		"UMLS Concepts: [Placeholder - Mock Results]\n" +
-		"  - C0004057: Aspirin\n" +
-		"  - C0065374: Lisinopril\n\n" +
-		"[Note: Real cTAKES NLP integration pending]"
+		"• Detected Entities: [Placeholder - Mock Results]\n" +
+		"  → Medications: aspirin, lisinopril\n" +
+		"  → Conditions: hypertension, diabetes\n" +
+		"  → Procedures: blood test, x-ray\n\n" +
+		"• UMLS Concepts: [Placeholder - Mock Results]\n" +
+		"  → C0004057: Aspirin\n" +
+		"  → C0065374: Lisinopril\n\n" +
+		"[ℹ Note: Real cTAKES NLP integration pending]"
 
 	a.viewport.SetContent(a.results)
 }
@@ -104,7 +104,7 @@ func (a AnalyzeView) View() string {
 		Foreground(lipgloss.Color("86")).
 		MarginBottom(1)
 
-	b.WriteString(titleStyle.Render("Text Analysis"))
+	b.WriteString(titleStyle.Render("► Text Analysis"))
 	b.WriteString("\n\n")
 
 	b.WriteString("Input Text:\n")
@@ -120,7 +120,7 @@ func (a AnalyzeView) View() string {
 	b.WriteString("\n\n")
 	b.WriteString(lipgloss.NewStyle().
 		Foreground(lipgloss.Color("241")).
-		Render("Ctrl+A: Analyze • Tab: Switch Focus • Esc: Back"))
+		Render("Ctrl+A Analyze • TAB Switch Focus • ESC Back"))
 
 	return b.String()
 }
