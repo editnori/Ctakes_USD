@@ -12,7 +12,8 @@ import (
 type ViewState int
 
 const (
-	MainMenu ViewState = iota
+	Dashboard ViewState = iota
+	MainMenu
 	DocumentView
 	AnalyzeView
 	PipelineView
@@ -23,16 +24,17 @@ const (
 )
 
 type model struct {
-	choices      []string
-	cursor       int
-	selected     map[int]struct{}
-	ctakesStatus string
-	currentView  ViewState
-	documentView views.DocumentView
-	analyzeView  views.AnalyzeView
-	pipelineView views.PipelineView
-	width        int
-	height       int
+	choices       []string
+	cursor        int
+	selected      map[int]struct{}
+	ctakesStatus  string
+	currentView   ViewState
+	dashboardView views.DashboardView
+	documentView  views.DocumentView
+	analyzeView   views.AnalyzeView
+	pipelineView  views.PipelineView
+	width         int
+	height        int
 }
 
 func initialModel() model {
@@ -47,17 +49,18 @@ func initialModel() model {
 			"▪ Help",
 			"✕ Exit",
 		},
-		selected:     make(map[int]struct{}),
-		ctakesStatus: "⚠ Not Connected (Placeholder)",
-		currentView:  MainMenu,
-		documentView: views.NewDocumentView(),
-		analyzeView:  views.NewAnalyzeView(),
-		pipelineView: views.NewPipelineView(),
+		selected:      make(map[int]struct{}),
+		ctakesStatus:  "⚠ Not Connected (Placeholder)",
+		currentView:   Dashboard,
+		dashboardView: views.NewDashboardView(),
+		documentView:  views.NewDocumentView(),
+		analyzeView:   views.NewAnalyzeView(),
+		pipelineView:  views.NewPipelineView(),
 	}
 }
 
 func (m model) Init() tea.Cmd {
-	return nil
+	return m.dashboardView.Init()
 }
 
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
@@ -68,6 +71,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	}
 
 	switch m.currentView {
+	case Dashboard:
+		return m.updateDashboard(msg)
 	case MainMenu:
 		return m.updateMainMenu(msg)
 	case DocumentView:
@@ -77,8 +82,32 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case PipelineView:
 		return m.updatePipelineView(msg)
 	default:
-		return m.updateMainMenu(msg)
+		return m.updateDashboard(msg)
 	}
+}
+
+func (m model) updateDashboard(msg tea.Msg) (tea.Model, tea.Cmd) {
+	switch msg := msg.(type) {
+	case tea.KeyMsg:
+		switch msg.String() {
+		case "esc":
+			m.currentView = MainMenu
+			return m, nil
+		case "1":
+			m.currentView = DocumentView
+			return m, nil
+		case "2":
+			m.currentView = AnalyzeView
+			return m, m.analyzeView.Init()
+		case "3":
+			m.currentView = PipelineView
+			return m, nil
+		}
+	}
+	
+	var cmd tea.Cmd
+	m.dashboardView, cmd = m.dashboardView.Update(msg)
+	return m, cmd
 }
 
 func (m model) updateMainMenu(msg tea.Msg) (tea.Model, tea.Cmd) {
@@ -91,6 +120,9 @@ func (m model) updateMainMenu(msg tea.Msg) (tea.Model, tea.Cmd) {
 			if m.currentView == MainMenu {
 				return m, tea.Quit
 			}
+		case "d":
+			m.currentView = Dashboard
+			return m, m.dashboardView.Init()
 
 		case "up", "k":
 			if m.cursor > 0 {
@@ -163,14 +195,18 @@ func (m model) updatePipelineView(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m model) View() string {
 	switch m.currentView {
+	case Dashboard:
+		return m.dashboardView.View()
 	case DocumentView:
 		return m.renderWithHeader(m.documentView.View())
 	case AnalyzeView:
 		return m.renderWithHeader(m.analyzeView.View())
 	case PipelineView:
 		return m.renderWithHeader(m.pipelineView.View())
-	default:
+	case MainMenu:
 		return m.viewMainMenu()
+	default:
+		return m.dashboardView.View()
 	}
 }
 
@@ -228,7 +264,7 @@ func (m model) viewMainMenu() string {
 
 	footer := lipgloss.NewStyle().
 		Foreground(lipgloss.Color("241")).
-		Render("\n↑↓ Navigate • ⏎ Select • Q Quit")
+		Render("\n↑↓ Navigate • ⏎ Select • D Dashboard • Q Quit")
 
 	return header + "\n" + status + menuStyle.Render(menu) + footer
 }
