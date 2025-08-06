@@ -38,17 +38,17 @@ type model struct {
 func initialModel() model {
 	return model{
 		choices: []string{
-			"📄 Process Documents",
-			"🔍 Analyze Text",
-			"⚙️  Configure Pipeline",
-			"📊 View Results",
-			"🗂️  Manage Dictionaries",
-			"🔧 Settings",
-			"❓ Help",
-			"🚪 Exit",
+			"Process Documents",
+			"Analyze Text",
+			"Configure Pipeline",
+			"View Results",
+			"Manage Dictionaries",
+			"Settings",
+			"Help",
+			"Exit",
 		},
 		selected:     make(map[int]struct{}),
-		ctakesStatus: "Not Connected",
+		ctakesStatus: "Not Connected (Placeholder)",
 		currentView:  MainMenu,
 		documentView: views.NewDocumentView(),
 		analyzeView:  views.NewAnalyzeView(),
@@ -187,7 +187,7 @@ func (m model) renderWithHeader(content string) string {
 		Foreground(lipgloss.Color("241")).
 		Padding(0, 2)
 
-	header := headerStyle.Render("🏥 cTAKES TUI")
+	header := headerStyle.Render("cTAKES Terminal Interface")
 	status := statusStyle.Render(fmt.Sprintf("Status: %s", m.ctakesStatus))
 
 	return header + "\n" + status + "\n\n" + content
@@ -209,7 +209,7 @@ func (m model) viewMainMenu() string {
 	var menuStyle = lipgloss.NewStyle().
 		Padding(1, 2)
 
-	header := headerStyle.Render("🏥 cTAKES TUI")
+	header := headerStyle.Render("cTAKES Terminal Interface")
 	status := statusStyle.Render(fmt.Sprintf("Status: %s", m.ctakesStatus))
 
 	menu := "\n"

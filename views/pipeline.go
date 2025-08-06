@@ -75,7 +75,7 @@ func (p PipelineView) View() string {
 		Foreground(lipgloss.Color("86")).
 		MarginBottom(1)
 
-	b.WriteString(titleStyle.Render("⚙️  Pipeline Configuration"))
+	b.WriteString(titleStyle.Render("Pipeline Configuration"))
 	b.WriteString("\n\n")
 
 	headerStyle := lipgloss.NewStyle().
@@ -94,14 +94,14 @@ func (p PipelineView) View() string {
 			cursor = "▸ "
 		}
 
-		status := "❌"
+		status := "OFF"
 		statusColor := "9"
 		if comp.Enabled {
-			status = "✅"
+			status = "ON "
 			statusColor = "10"
 		}
 
-		line := fmt.Sprintf("%s%-28s %s  %-8s %s",
+		line := fmt.Sprintf("%s%-28s %-3s  %-8s %s",
 			cursor,
 			comp.Name,
 			lipgloss.NewStyle().Foreground(lipgloss.Color(statusColor)).Render(status),
@@ -123,6 +123,7 @@ func (p PipelineView) View() string {
 		Foreground(lipgloss.Color("241"))
 
 	b.WriteString(footerStyle.Render("Space: Toggle • c: Configure • s: Save • Esc: Back"))
+	b.WriteString("\n\n[Placeholder: Real cTAKES pipeline configuration pending]")
 
 	return b.String()
 }

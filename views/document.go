@@ -66,11 +66,12 @@ func (d DocumentView) View() string {
 		Foreground(lipgloss.Color("86")).
 		MarginBottom(1)
 
-	b.WriteString(titleStyle.Render("📄 Document Processing"))
+	b.WriteString(titleStyle.Render("Document Processing"))
 	b.WriteString("\n\n")
 
 	if len(d.files) == 0 {
 		b.WriteString("No documents loaded. Press 'a' to add documents.\n")
+		b.WriteString("\n[Placeholder: cTAKES document processing integration pending]\n")
 	} else {
 		b.WriteString("Select documents to process:\n\n")
 		for i, file := range d.files {
@@ -79,9 +80,9 @@ func (d DocumentView) View() string {
 				cursor = "▸ "
 			}
 
-			checked := "☐"
+			checked := "[ ]"
 			if _, ok := d.selected[i]; ok {
-				checked = "☑"
+				checked = "[x]"
 			}
 
 			line := fmt.Sprintf("%s%s %s", cursor, checked, file)
