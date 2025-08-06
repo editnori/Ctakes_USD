@@ -17,8 +17,10 @@
 # Go workspace file
 go.work
 
-# Binary name
+# Binary names
 ctakes-tui
+ctakes-cli
+ctakes-*
 
 # IDE specific files
 .idea/

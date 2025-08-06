@@ -1,86 +1,85 @@
 # cTAKES TUI
 
-A Terminal User Interface for Apache cTAKES (clinical Text Analysis and Knowledge Extraction System), built with Go and Charm libraries.
+Terminal interface for Apache cTAKES clinical text analysis.
 
-## Features
-
-- 📄 **Document Processing** - Process clinical documents in batch
-- 🔍 **Text Analysis** - Analyze clinical text in real-time
-- ⚙️ **Pipeline Configuration** - Configure cTAKES processing pipeline components
-- 📊 **Results Viewer** - View and export analysis results
-- 🗂️ **Dictionary Management** - Manage medical dictionaries and vocabularies
-- 🎨 **Beautiful TUI** - Modern terminal interface powered by Charm's Bubble Tea
-
-## Prerequisites
-
-- Go 1.18 or higher
-- Apache cTAKES (to be integrated)
-
-## Installation
+## Quick Start
 
 ```bash
 git clone https://github.com/yourusername/ctakes-tui
 cd ctakes-tui
-go build
-```
-
-## Usage
-
-```bash
+make build
 ./ctakes-tui
 ```
 
-### Navigation
+## What It Does
 
-- `↑/↓` or `j/k` - Navigate menu items
-- `Enter` or `Space` - Select item
-- `Esc` - Go back to main menu
-- `q` or `Ctrl+C` - Quit application
+• Process clinical documents in batch
+• Analyze medical text in real-time
+• Configure cTAKES processing pipelines
+• Export analysis results in multiple formats
+• Manage medical dictionaries and vocabularies
 
-## Architecture
+## Requirements
 
-The application is built with:
-- **Bubble Tea** - Terminal UI framework
-- **Lipgloss** - Styling library
-- **Bubbles** - TUI components
+• Go 1.18+
+• Apache cTAKES (pending integration)
+• 256-color terminal
+
+## Navigation
+
+• `↑/↓` or `j/k` - Move through items
+• `Enter` or `Space` - Select
+• `Tab` - Switch panels
+• `Esc` - Back
+• `q` - Quit
 
 ## Project Structure
 
 ```
 ctakes-tui/
-├── main.go           # Main application entry point
-├── views/            # UI views
-│   ├── document.go   # Document processing view
-│   ├── analyze.go    # Text analysis view
-│   └── pipeline.go   # Pipeline configuration view
-├── go.mod            # Go module dependencies
-└── README.md         # This file
+├── main.go                 # Entry point
+├── internal/
+│   ├── config/            # Configuration management
+│   ├── ctakes/            # cTAKES integration
+│   ├── theme/             # UI theming
+│   └── utils/             # Shared utilities
+├── views/
+│   ├── dashboard/         # Main dashboard view
+│   ├── document.go        # Document processing
+│   ├── analyze.go         # Text analysis
+│   └── pipeline.go        # Pipeline configuration
+└── docs/                  # Documentation
 ```
 
-## cTAKES Integration (Planned)
+## Build Commands
 
-The integration with Apache cTAKES will include:
-- Java process management for cTAKES runtime
-- REST API client for cTAKES services
-- File-based processing pipeline
-- Real-time text analysis
-- Results caching and export
+```bash
+make build      # Build the binary
+make run        # Build and run
+make test       # Run tests
+make clean      # Clean build artifacts
+make release    # Build for all platforms
+```
 
-## Development
+## Current Status
 
-To contribute to this project:
+Working:
+• File browser with preview
+• System monitor
+• Document selection
+• Basic UI navigation
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+In Progress:
+• cTAKES integration
+• Actual text analysis
+• Pipeline configuration
+
+## Contributing
+
+Fork, branch, code, test, PR.
+
+Keep it simple. Follow existing patterns.
 
 ## License
 
-[To be determined]
-
-## Acknowledgments
-
-- [Apache cTAKES](https://ctakes.apache.org/) - Clinical NLP system
-- [Charm](https://charm.sh/) - Terminal UI libraries
-- [Bubble Tea](https://github.com/charmbracelet/bubbletea) - TUI framework
+Apache 2.0

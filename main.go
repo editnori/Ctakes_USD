@@ -5,275 +5,124 @@ import (
 	"os"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/lipgloss"
 	"github.com/ctakes-tui/ctakes-tui/views"
+	"github.com/ctakes-tui/ctakes-tui/views/dashboard"
 )
 
-type ViewState int
-
-const (
-	Dashboard ViewState = iota
-	MainMenu
-	DocumentView
-	AnalyzeView
-	PipelineView
-	ResultsView
-	DictionaryView
-	SettingsView
-	HelpView
-)
+const Version = "0.1.0"
 
 type model struct {
-	choices       []string
-	cursor        int
-	selected      map[int]struct{}
-	ctakesStatus  string
-	currentView   ViewState
-	dashboardView views.DashboardView
-	documentView  views.DocumentView
-	analyzeView   views.AnalyzeView
-	pipelineView  views.PipelineView
+	currentView   string
+	dashboardView dashboard.Model
+	documentView  *views.DocumentModel
+	analyzeView   *views.AnalyzeModel
+	pipelineView  *views.PipelineModel
 	width         int
 	height        int
+	initialized   map[string]bool
 }
 
 func initialModel() model {
 	return model{
-		choices: []string{
-			"▪ Process Documents",
-			"▪ Analyze Text",
-			"▪ Configure Pipeline",
-			"▪ View Results",
-			"▪ Manage Dictionaries",
-			"▪ Settings",
-			"▪ Help",
-			"✕ Exit",
-		},
-		selected:      make(map[int]struct{}),
-		ctakesStatus:  "⚠ Not Connected",
-		currentView:   Dashboard,
-		dashboardView: views.NewDashboardView(),
-		documentView:  views.NewDocumentView(),
-		analyzeView:   views.NewAnalyzeView(),
-		pipelineView:  views.NewPipelineView(),
+		currentView:   "dashboard",
+		dashboardView: dashboard.New(),
+		initialized:   make(map[string]bool),
 	}
 }
 
 func (m model) Init() tea.Cmd {
+	m.initialized["dashboard"] = true
 	return m.dashboardView.Init()
 }
 
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
-	switch msg := msg.(type) {
-	case tea.WindowSizeMsg:
-		m.width = msg.Width
-		m.height = msg.Height
+	if size, ok := msg.(tea.WindowSizeMsg); ok {
+		m.width = size.Width
+		m.height = size.Height
 	}
 
+	if strMsg, ok := msg.(string); ok {
+		switch strMsg {
+		case "main_menu", "dashboard_view":
+			m.currentView = "dashboard"
+			if !m.initialized["dashboard"] {
+				m.initialized["dashboard"] = true
+				return m, m.dashboardView.Init()
+			}
+		case "document_view":
+			m.currentView = "document"
+			if m.documentView == nil {
+				doc := views.NewDocumentModel()
+				m.documentView = &doc
+				m.initialized["document"] = true
+				return m, m.documentView.Init()
+			}
+		case "analyze_view":
+			m.currentView = "analyze"
+			if m.analyzeView == nil {
+				analyze := views.NewAnalyzeModel()
+				m.analyzeView = &analyze
+				m.initialized["analyze"] = true
+				return m, m.analyzeView.Init()
+			}
+		case "pipeline_view":
+			m.currentView = "pipeline"
+			if m.pipelineView == nil {
+				pipeline := views.NewPipelineModel()
+				m.pipelineView = &pipeline
+				m.initialized["pipeline"] = true
+				return m, m.pipelineView.Init()
+			}
+		}
+	}
+
+	var cmd tea.Cmd
 	switch m.currentView {
-	case Dashboard:
-		return m.updateDashboard(msg)
-	case MainMenu:
-		return m.updateMainMenu(msg)
-	case DocumentView:
-		return m.updateDocumentView(msg)
-	case AnalyzeView:
-		return m.updateAnalyzeView(msg)
-	case PipelineView:
-		return m.updatePipelineView(msg)
-	default:
-		return m.updateDashboard(msg)
-	}
-}
-
-func (m model) updateDashboard(msg tea.Msg) (tea.Model, tea.Cmd) {
-	switch msg := msg.(type) {
-	case tea.KeyMsg:
-		switch msg.String() {
-		case "ctrl+c", "q":
-			return m, tea.Quit
-		case "enter", " ":
-			switch m.dashboardView.GetCursor() {
-			case 0:
-				m.currentView = DocumentView
-				return m, nil
-			case 1:
-				m.currentView = AnalyzeView
-				return m, m.analyzeView.Init()
-			case 2:
-				m.currentView = PipelineView
-				return m, nil
-			case 3:
-				return m, tea.Quit
-			}
+	case "dashboard":
+		m.dashboardView, cmd = m.dashboardView.Update(msg)
+	case "document":
+		if m.documentView != nil {
+			*m.documentView, cmd = m.documentView.Update(msg)
+		}
+	case "analyze":
+		if m.analyzeView != nil {
+			*m.analyzeView, cmd = m.analyzeView.Update(msg)
+		}
+	case "pipeline":
+		if m.pipelineView != nil {
+			*m.pipelineView, cmd = m.pipelineView.Update(msg)
 		}
 	}
-	
-	var cmd tea.Cmd
-	m.dashboardView, cmd = m.dashboardView.Update(msg)
-	return m, cmd
-}
 
-func (m model) updateMainMenu(msg tea.Msg) (tea.Model, tea.Cmd) {
-	switch msg := msg.(type) {
-	case tea.KeyMsg:
-		switch msg.String() {
-		case "ctrl+c":
-			return m, tea.Quit
-		case "q":
-			if m.currentView == MainMenu {
-				return m, tea.Quit
-			}
-		case "d":
-			m.currentView = Dashboard
-			return m, m.dashboardView.Init()
-
-		case "up", "k":
-			if m.cursor > 0 {
-				m.cursor--
-			}
-
-		case "down", "j":
-			if m.cursor < len(m.choices)-1 {
-				m.cursor++
-			}
-
-		case "enter", " ":
-			switch m.cursor {
-			case 0:
-				m.currentView = DocumentView
-			case 1:
-				m.currentView = AnalyzeView
-				return m, m.analyzeView.Init()
-			case 2:
-				m.currentView = PipelineView
-			case 7:
-				return m, tea.Quit
-			}
-		}
-	}
-	return m, nil
-}
-
-func (m model) updateDocumentView(msg tea.Msg) (tea.Model, tea.Cmd) {
-	switch msg := msg.(type) {
-	case tea.KeyMsg:
-		if msg.String() == "esc" {
-			m.currentView = MainMenu
-			return m, nil
-		}
-	}
-	
-	var cmd tea.Cmd
-	m.documentView, cmd = m.documentView.Update(msg)
-	return m, cmd
-}
-
-func (m model) updateAnalyzeView(msg tea.Msg) (tea.Model, tea.Cmd) {
-	switch msg := msg.(type) {
-	case tea.KeyMsg:
-		if msg.String() == "esc" {
-			m.currentView = MainMenu
-			return m, nil
-		}
-	}
-	
-	var cmd tea.Cmd
-	m.analyzeView, cmd = m.analyzeView.Update(msg)
-	return m, cmd
-}
-
-func (m model) updatePipelineView(msg tea.Msg) (tea.Model, tea.Cmd) {
-	switch msg := msg.(type) {
-	case tea.KeyMsg:
-		if msg.String() == "esc" {
-			m.currentView = MainMenu
-			return m, nil
-		}
-	}
-	
-	var cmd tea.Cmd
-	m.pipelineView, cmd = m.pipelineView.Update(msg)
 	return m, cmd
 }
 
 func (m model) View() string {
 	switch m.currentView {
-	case Dashboard:
+	case "dashboard":
 		return m.dashboardView.View()
-	case DocumentView:
-		return m.renderWithHeader(m.documentView.View())
-	case AnalyzeView:
-		return m.renderWithHeader(m.analyzeView.View())
-	case PipelineView:
-		return m.renderWithHeader(m.pipelineView.View())
-	case MainMenu:
-		return m.viewMainMenu()
-	default:
-		return m.dashboardView.View()
-	}
-}
-
-func (m model) renderWithHeader(content string) string {
-	headerStyle := lipgloss.NewStyle().
-		Bold(true).
-		Foreground(lipgloss.Color("86")).
-		Background(lipgloss.Color("0")).
-		Padding(0, 2).
-		Width(m.width).
-		Align(lipgloss.Center)
-
-	statusStyle := lipgloss.NewStyle().
-		Foreground(lipgloss.Color("241")).
-		Padding(0, 2)
-
-	header := headerStyle.Render("■ cTAKES CLI")
-	status := statusStyle.Render(fmt.Sprintf("Status: %s", m.ctakesStatus))
-
-	return header + "\n" + status + "\n\n" + content
-}
-
-func (m model) viewMainMenu() string {
-	var headerStyle = lipgloss.NewStyle().
-		Bold(true).
-		Foreground(lipgloss.Color("86")).
-		Background(lipgloss.Color("0")).
-		Padding(1, 2).
-		Width(50).
-		Align(lipgloss.Center)
-
-	var statusStyle = lipgloss.NewStyle().
-		Foreground(lipgloss.Color("241")).
-		Padding(0, 2)
-
-	var menuStyle = lipgloss.NewStyle().
-		Padding(1, 2)
-
-	header := headerStyle.Render("■ cTAKES CLI")
-	status := statusStyle.Render(fmt.Sprintf("Status: %s", m.ctakesStatus))
-
-	menu := "\n"
-	for i, choice := range m.choices {
-		cursor := "  "
-		if m.cursor == i {
-			cursor = "→"
-			choice = lipgloss.NewStyle().
-				Bold(true).
-				Foreground(lipgloss.Color("86")).
-				Render(choice)
+	case "document":
+		if m.documentView != nil {
+			return m.documentView.View()
 		}
-
-		menu += fmt.Sprintf("%s %s\n", cursor, choice)
+	case "analyze":
+		if m.analyzeView != nil {
+			return m.analyzeView.View()
+		}
+	case "pipeline":
+		if m.pipelineView != nil {
+			return m.pipelineView.View()
+		}
 	}
-
-	footer := lipgloss.NewStyle().
-		Foreground(lipgloss.Color("241")).
-		Render("\n↑↓ Navigate • ⏎ Select • D Dashboard • Q Quit")
-
-	return header + "\n" + status + menuStyle.Render(menu) + footer
+	return m.dashboardView.View()
 }
 
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "--version" {
+		fmt.Printf("cTAKES TUI v%s\n", Version)
+		os.Exit(0)
+	}
+
 	p := tea.NewProgram(initialModel(), tea.WithAltScreen())
 	if _, err := p.Run(); err != nil {
 		fmt.Printf("Error: %v", err)
