@@ -37,15 +37,21 @@ func (m *Model) updateTablesCompact(availableWidth, tableHeight int) {
 
 	rows := []table.Row{}
 	for _, file := range m.files {
+		// Add selection indicator to the icon
+		icon := file.Icon
+		if file.Selected {
+			icon = "✓" // Checkmark for selected files
+		}
+
 		if availableWidth < 60 {
 			rows = append(rows, table.Row{
-				file.Icon,
+				icon,
 				file.Name,
 				file.Size,
 			})
 		} else {
 			rows = append(rows, table.Row{
-				file.Icon,
+				icon,
 				file.Name,
 				file.Size,
 				file.ModTime,

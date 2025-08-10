@@ -1,5 +1,9 @@
 package dashboard
 
+import (
+	tea "github.com/charmbracelet/bubbletea"
+)
+
 // New interactive configuration key handlers with enhanced controls
 
 // Interactive Memory Configuration Key Handler
@@ -248,4 +252,103 @@ func (m *Model) toggleRelationshipType(relType string) {
 	}
 	// Add it
 	m.dictConfig.RelationshipTypes = append(m.dictConfig.RelationshipTypes, relType)
+}
+
+// Handle directory loaded messages
+func (m *Model) HandleDirectoryLoaded(msg DirectoryLoadedMsg) tea.Cmd {
+	if msg.Error != nil {
+		m.err = msg.Error
+		return nil
+	}
+
+	m.files = msg.Files
+	m.currentPath = msg.Path
+	m.isLoadingDir = false
+	// Refresh tables so the UI updates immediately after async load
+	m.updateTables()
+	return nil
+}
+
+// Handle dictionary navigation
+func (m *Model) HandleDictNavigation(msg tea.KeyMsg) (Model, tea.Cmd) {
+	switch m.dictBuilderState {
+	case DictStateSelectUMLS:
+		// Delegate to UMLS selector handler (defined in dict_umls.go)
+		return m.handleUMLSKeys(msg)
+	case DictStateEditingName:
+		return m.handleDictNameInputKeys(msg)
+	case DictStateSelectingTUIs:
+		// Delegate to TUI selector handler (defined in dict_tui.go)
+		return m.handleTUIKeys(msg)
+	case DictStateSelectingVocabs:
+		return m.handleVocabSelectionKeys(msg)
+	case DictStateViewingDictionaries:
+		// Delegate to dictionary viewer handlers
+		return m.handleViewerKeys(msg)
+	case DictStateBuilding:
+		return m.handleBuildKeys(msg)
+	case DictStateBuildingFullLogs:
+		return m.handleFullLogKeys(msg)
+	case DictStateCasedConfig:
+		return m.handleCasedKeys(msg)
+	case DictStateMemoryConfig, DictStateProcessingConfig, DictStateFilterConfig,
+		DictStateOutputConfig, DictStateRelationshipConfig:
+		// These advanced screens are handled in update.go via direct key paths.
+		// Fall back to no-op here.
+		return *m, nil
+	default:
+		// Main menu
+		return m.handleMenuKeys(msg)
+	}
+}
+
+// Ensure table focus
+func (m *Model) EnsureTableFocus() {
+	switch m.dictBuilderState {
+	case DictStateSelectUMLS:
+		m.fileTable.Focus()
+	case DictStateSelectingTUIs:
+		m.tuiTable.Focus()
+	case DictStateSelectingVocabs:
+		m.vocabTable.Focus()
+	default:
+		m.dictTable.Focus()
+	}
+}
+
+// Placeholder methods for dictionary navigation handlers
+// Name input handler: allow editing and commit/cancel
+func (m *Model) handleDictNameInputKeys(msg tea.KeyMsg) (Model, tea.Cmd) {
+	switch msg.String() {
+	case "enter":
+		m.dictConfig.Name = m.dictNameInput.Value()
+		m.dictBuilderState = DictStateMainMenu
+		return *m, nil
+	case "esc":
+		m.dictBuilderState = DictStateMainMenu
+		return *m, nil
+	}
+	var cmd tea.Cmd
+	m.dictNameInput, cmd = m.dictNameInput.Update(msg)
+	return *m, cmd
+}
+
+// Vocabulary selection handler: toggle with space, navigate with arrows, confirm/cancel
+func (m *Model) handleVocabSelectionKeys(msg tea.KeyMsg) (Model, tea.Cmd) {
+	switch msg.String() {
+	case "up", "k", "down", "j":
+		var cmd tea.Cmd
+		m.vocabTable, cmd = m.vocabTable.Update(msg)
+		return *m, cmd
+	case " ", "space":
+		m.updateVocabTableSelection()
+		return *m, nil
+	case "enter":
+		m.dictBuilderState = DictStateMainMenu
+		return *m, nil
+	case "esc":
+		m.dictBuilderState = DictStateMainMenu
+		return *m, nil
+	}
+	return *m, nil
 }

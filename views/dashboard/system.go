@@ -61,7 +61,7 @@ func (m *Model) updateSystemInfo() {
 func (m *Model) renderSystemPanel(width, height int) string {
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary).
+		Foreground(theme.ColorAccent).
 		MarginBottom(1)
 
 	title := titleStyle.Render("System Monitor")
@@ -86,7 +86,7 @@ func (m *Model) renderSystemPanel(width, height int) string {
 
 	processTitle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary).
+		Foreground(theme.ColorAccent).
 		MarginTop(2).
 		MarginBottom(1).
 		Render("Top Processes")

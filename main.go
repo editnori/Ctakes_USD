@@ -10,7 +10,7 @@ import (
 
 func main() {
 	model := dashboard.New()
-	
+
 	p := tea.NewProgram(model, tea.WithAltScreen())
 	if _, err := p.Run(); err != nil {
 		fmt.Printf("Error: %v", err)

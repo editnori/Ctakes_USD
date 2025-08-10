@@ -12,14 +12,14 @@ import (
 )
 
 type PipelineModel struct {
-	width      int
-	height     int
-	cursor     int
-	components []PipelineComponent
-	spinner    spinner.Model
-	saving     bool
-	ready      bool
-	message    string
+	width       int
+	height      int
+	cursor      int
+	components  []PipelineComponent
+	spinner     spinner.Model
+	saving      bool
+	ready       bool
+	message     string
 	messageType string
 }
 
@@ -44,24 +44,24 @@ func NewPipelineModel() PipelineModel {
 			// Tokenization
 			{Name: "Sentence Detector", Description: "Splits text into sentences", Enabled: true, Required: true, Category: "Tokenization", Icon: "▫"},
 			{Name: "Tokenizer", Description: "Breaks sentences into tokens", Enabled: true, Required: true, Category: "Tokenization", Icon: "▦"},
-			
+
 			// Core NLP
 			{Name: "Part-of-Speech Tagger", Description: "Tags words with grammatical roles", Enabled: true, Required: false, Category: "Core NLP", Icon: "◈"},
 			{Name: "Constituency Parser", Description: "Analyzes sentence structure", Enabled: false, Required: false, Category: "Core NLP", Icon: "▥"},
 			{Name: "Dependency Parser", Description: "Identifies word relationships", Enabled: true, Required: false, Category: "Core NLP", Icon: "◆"},
-			
+
 			// Clinical NLP
 			{Name: "Named Entity Recognizer", Description: "Identifies medical entities", Enabled: true, Required: false, Category: "Clinical", Icon: theme.IconMedical},
 			{Name: "Assertion Analyzer", Description: "Determines negation and uncertainty", Enabled: true, Required: false, Category: "Clinical", Icon: "◔"},
 			{Name: "Context Annotator", Description: "Adds contextual information", Enabled: true, Required: false, Category: "Clinical", Icon: "◎"},
-			
+
 			// Ontology Mapping
-			{Name: "UMLS Lookup", Description: "Maps to UMLS concepts", Enabled: true, Required: false, Category: "Ontology", Icon: "◎", 
+			{Name: "UMLS Lookup", Description: "Maps to UMLS concepts", Enabled: true, Required: false, Category: "Ontology", Icon: "◎",
 				Config: map[string]interface{}{"dictionary": "SNOMEDCT_US"}},
 			{Name: "Drug NER", Description: "Identifies medications", Enabled: true, Required: false, Category: "Ontology", Icon: "◉",
 				Config: map[string]interface{}{"source": "RxNorm"}},
 			{Name: "Side Effect Extractor", Description: "Extracts adverse events", Enabled: false, Required: false, Category: "Ontology", Icon: "▲"},
-			
+
 			// Advanced
 			{Name: "Relation Extractor", Description: "Finds relationships between entities", Enabled: false, Required: false, Category: "Advanced", Icon: "↔"},
 			{Name: "Temporal Expression", Description: "Extracts time-related information", Enabled: true, Required: false, Category: "Advanced", Icon: "◐"},
@@ -88,17 +88,17 @@ func (m PipelineModel) Update(msg tea.Msg) (PipelineModel, tea.Cmd) {
 		switch {
 		case key.Matches(msg, pipelineKeys.Back):
 			return m, func() tea.Msg { return "main_menu" }
-			
+
 		case key.Matches(msg, pipelineKeys.Up):
 			if m.cursor > 0 {
 				m.cursor--
 			}
-			
+
 		case key.Matches(msg, pipelineKeys.Down):
 			if m.cursor < len(m.components)-1 {
 				m.cursor++
 			}
-			
+
 		case key.Matches(msg, pipelineKeys.Toggle):
 			if !m.components[m.cursor].Required {
 				m.components[m.cursor].Enabled = !m.components[m.cursor].Enabled
@@ -106,25 +106,25 @@ func (m PipelineModel) Update(msg tea.Msg) (PipelineModel, tea.Cmd) {
 					map[bool]string{true: "enabled", false: "disabled"}[m.components[m.cursor].Enabled])
 				m.messageType = "info"
 			}
-			
+
 		case key.Matches(msg, pipelineKeys.Save):
 			m.saving = true
 			m.message = "Saving configuration..."
 			m.messageType = "info"
 			cmds = append(cmds, m.saveConfiguration())
-			
+
 		case key.Matches(msg, pipelineKeys.Reset):
 			m.resetToDefaults()
 			m.message = "Reset to default configuration"
 			m.messageType = "success"
-			
+
 		case key.Matches(msg, pipelineKeys.EnableAll):
 			for i := range m.components {
 				m.components[i].Enabled = true
 			}
 			m.message = "All components enabled"
 			m.messageType = "success"
-			
+
 		case key.Matches(msg, pipelineKeys.DisableOptional):
 			for i := range m.components {
 				if !m.components[i].Required {
@@ -134,12 +134,12 @@ func (m PipelineModel) Update(msg tea.Msg) (PipelineModel, tea.Cmd) {
 			m.message = "Optional components disabled"
 			m.messageType = "info"
 		}
-		
+
 	case configSavedMsg:
 		m.saving = false
 		m.message = "Configuration saved successfully"
 		m.messageType = "success"
-		
+
 	case spinner.TickMsg:
 		if m.saving {
 			m.spinner, cmd = m.spinner.Update(msg)
@@ -171,17 +171,17 @@ func (m PipelineModel) View() string {
 
 func (m *PipelineModel) renderHeader() string {
 	title := theme.RenderTitle(theme.IconPipeline, "cTAKES Pipeline Configuration")
-	
+
 	enabledCount := 0
 	for _, c := range m.components {
 		if c.Enabled {
 			enabledCount++
 		}
 	}
-	
+
 	status := fmt.Sprintf("%d/%d components enabled", enabledCount, len(m.components))
 	statusStyle := theme.StatusStyle
-	
+
 	if m.saving {
 		status = m.spinner.View() + " Saving..."
 		statusStyle = theme.StatusInfoStyle
@@ -198,9 +198,9 @@ func (m *PipelineModel) renderHeader() string {
 			statusStyle = theme.StatusInfoStyle
 		}
 	}
-	
+
 	statusBar := statusStyle.Render(status)
-	
+
 	header := lipgloss.JoinVertical(
 		lipgloss.Left,
 		title,
@@ -212,20 +212,20 @@ func (m *PipelineModel) renderHeader() string {
 		),
 		strings.Repeat(theme.BorderDividerH, m.width-4),
 	)
-	
+
 	return header
 }
 
 func (m *PipelineModel) renderContent() string {
 	leftWidth := m.width * 2 / 3
 	rightWidth := m.width - leftWidth - 2
-	
+
 	// Component list
 	componentList := m.renderComponentList(leftWidth-2, m.height-10)
-	
+
 	// Details panel
 	detailsPanel := m.renderDetailsPanel(rightWidth-2, m.height-10)
-	
+
 	return lipgloss.JoinHorizontal(
 		lipgloss.Top,
 		componentList,
@@ -236,14 +236,14 @@ func (m *PipelineModel) renderContent() string {
 
 func (m *PipelineModel) renderComponentList(width, height int) string {
 	title := theme.RenderTitle("▥", "Pipeline Components")
-	
+
 	var content strings.Builder
 	content.WriteString(title + "\n")
 	content.WriteString(strings.Repeat(theme.BorderDividerH, width-4) + "\n\n")
-	
+
 	// Group components by category
 	categories := []string{"Tokenization", "Core NLP", "Clinical", "Ontology", "Advanced"}
-	
+
 	for _, cat := range categories {
 		// Category header
 		catHeader := lipgloss.NewStyle().
@@ -251,15 +251,15 @@ func (m *PipelineModel) renderComponentList(width, height int) string {
 			Bold(true).
 			Render(fmt.Sprintf("▼ %s", cat))
 		content.WriteString(catHeader + "\n")
-		
+
 		// Components in category
 		for i, comp := range m.components {
 			if comp.Category != cat {
 				continue
 			}
-			
+
 			selected := i == m.cursor
-			
+
 			// Status indicator
 			var status string
 			if comp.Required {
@@ -275,7 +275,7 @@ func (m *PipelineModel) renderComponentList(width, height int) string {
 					Foreground(theme.ColorForegroundDim).
 					Render("[OFF]")
 			}
-			
+
 			// Component name
 			nameStyle := lipgloss.NewStyle().Foreground(theme.ColorForeground)
 			if selected {
@@ -286,21 +286,21 @@ func (m *PipelineModel) renderComponentList(width, height int) string {
 			if !comp.Enabled && !comp.Required {
 				nameStyle = nameStyle.Foreground(theme.ColorForegroundDim)
 			}
-			
-			line := fmt.Sprintf("  %s %s %s", 
+
+			line := fmt.Sprintf("  %s %s %s",
 				status,
 				comp.Icon,
 				nameStyle.Width(width-16).Render(comp.Name))
-				
+
 			if selected {
 				line = lipgloss.NewStyle().Foreground(theme.ColorAccent).Render(">") + line[1:]
 			}
-			
+
 			content.WriteString(line + "\n")
 		}
 		content.WriteString("\n")
 	}
-	
+
 	return theme.PanelActiveStyle.
 		Width(width).
 		Height(height).
@@ -314,32 +314,32 @@ func (m *PipelineModel) renderDetailsPanel(width, height int) string {
 			Height(height).
 			Render("")
 	}
-	
+
 	comp := m.components[m.cursor]
-	
+
 	title := theme.RenderTitle(comp.Icon, "Component Details")
-	
+
 	var content strings.Builder
 	content.WriteString(title + "\n")
 	content.WriteString(strings.Repeat(theme.BorderDividerH, width-4) + "\n\n")
-	
+
 	// Component name
 	nameStyle := lipgloss.NewStyle().
 		Foreground(theme.ColorAccent).
 		Bold(true)
 	content.WriteString(nameStyle.Render(comp.Name) + "\n\n")
-	
+
 	// Description
 	descStyle := lipgloss.NewStyle().
 		Foreground(theme.ColorForeground).
 		Width(width - 8)
 	content.WriteString(descStyle.Render(comp.Description) + "\n\n")
-	
+
 	// Status
 	content.WriteString(lipgloss.NewStyle().
 		Foreground(theme.ColorForegroundDim).
 		Render("Status: "))
-		
+
 	if comp.Required {
 		content.WriteString(lipgloss.NewStyle().
 			Foreground(theme.ColorWarning).
@@ -356,7 +356,7 @@ func (m *PipelineModel) renderDetailsPanel(width, height int) string {
 			Render("Disabled"))
 	}
 	content.WriteString("\n\n")
-	
+
 	// Category
 	content.WriteString(lipgloss.NewStyle().
 		Foreground(theme.ColorForegroundDim).
@@ -365,20 +365,20 @@ func (m *PipelineModel) renderDetailsPanel(width, height int) string {
 		Foreground(theme.ColorInfo).
 		Render(comp.Category))
 	content.WriteString("\n\n")
-	
+
 	// Configuration
 	if len(comp.Config) > 0 {
 		content.WriteString(lipgloss.NewStyle().
 			Foreground(theme.ColorForegroundDim).
 			Render("Configuration:\n"))
-			
+
 		for k, v := range comp.Config {
-			content.WriteString(fmt.Sprintf("  • %s: %v\n", 
+			content.WriteString(fmt.Sprintf("  • %s: %v\n",
 				lipgloss.NewStyle().Foreground(theme.ColorSecondary).Render(k),
 				lipgloss.NewStyle().Foreground(theme.ColorForeground).Render(fmt.Sprintf("%v", v))))
 		}
 	}
-	
+
 	return theme.PanelStyle.
 		Width(width).
 		Height(height).
@@ -395,7 +395,7 @@ func (m *PipelineModel) renderFooter() string {
 		theme.RenderKeyHelp("d", "Disable Optional"),
 		theme.RenderKeyHelp("Esc", "Back"),
 	}
-	
+
 	return theme.FooterStyle.
 		Width(m.width).
 		Render(lipgloss.JoinHorizontal(lipgloss.Left, keys...))
@@ -411,18 +411,18 @@ func (m *PipelineModel) saveConfiguration() tea.Cmd {
 
 func (m *PipelineModel) resetToDefaults() {
 	defaults := map[string]bool{
-		"Sentence Detector":      true,
-		"Tokenizer":             true,
-		"Part-of-Speech Tagger": true,
-		"Dependency Parser":     true,
+		"Sentence Detector":       true,
+		"Tokenizer":               true,
+		"Part-of-Speech Tagger":   true,
+		"Dependency Parser":       true,
 		"Named Entity Recognizer": true,
-		"Assertion Analyzer":    true,
-		"Context Annotator":     true,
-		"UMLS Lookup":          true,
-		"Drug NER":             true,
-		"Temporal Expression":   true,
+		"Assertion Analyzer":      true,
+		"Context Annotator":       true,
+		"UMLS Lookup":             true,
+		"Drug NER":                true,
+		"Temporal Expression":     true,
 	}
-	
+
 	for i := range m.components {
 		if !m.components[i].Required {
 			m.components[i].Enabled = defaults[m.components[i].Name]

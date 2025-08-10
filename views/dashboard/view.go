@@ -73,6 +73,10 @@ func (m *Model) renderFullLayout() string {
 			mainContent = m.renderSystemPanel(mainWidth-2, contentHeight-2)
 		case "files":
 			mainContent = m.renderFileBrowserCompact(mainWidth-2, contentHeight-2)
+		case "dictionary_builder_view":
+			mainContent = m.renderDictionaryBuilderPanel(mainWidth-2, contentHeight-2)
+		case "pipeline":
+			mainContent = m.renderPipelineConfigPanel(mainWidth-2, contentHeight-2)
 		default:
 			mainContent = m.renderFileBrowserCompact(mainWidth-2, contentHeight-2)
 		}
@@ -134,7 +138,7 @@ func (m *Model) renderFullLayout() string {
 func (m *Model) renderCompactBanner(width int) string {
 	title := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary).
+		Foreground(theme.ColorAccent).
 		Render("cTAKES CLI")
 
 	author := lipgloss.NewStyle().
@@ -182,7 +186,7 @@ func (m *Model) renderFullBanner(width int) string {
 	// Render ASCII art centered with status on the right
 	if len(asciiArt) > 0 {
 		artStyle := lipgloss.NewStyle().
-			Foreground(theme.ColorPrimary).
+			Foreground(theme.ColorAccent).
 			Bold(true)
 
 		statusStyle := lipgloss.NewStyle().

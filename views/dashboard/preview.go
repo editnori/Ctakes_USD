@@ -2,8 +2,6 @@ package dashboard
 
 import (
 	"bytes"
-	"fmt"
-	"os"
 	"path/filepath"
 	"strings"
 
@@ -15,65 +13,6 @@ import (
 	"github.com/ctakes-tui/ctakes-tui/internal/utils"
 )
 
-func (m *Model) loadFilePreview(file FileInfo) {
-	if file.IsDir {
-		m.previewContent = "Directory selected"
-		m.previewReady = true
-		m.previewViewport.SetContent(m.previewContent)
-		return
-	}
-
-	if !m.isPreviewable(file.Name) {
-		m.previewContent = fmt.Sprintf("Preview not available for %s files", filepath.Ext(file.Name))
-		m.previewReady = true
-		m.previewViewport.SetContent(m.previewContent)
-		return
-	}
-
-	fullPath := filepath.Join(m.currentPath, file.Name)
-
-	info, err := os.Stat(fullPath)
-	if err != nil {
-		m.previewContent = fmt.Sprintf("Error: %v", err)
-		m.previewReady = true
-		m.previewViewport.SetContent(m.previewContent)
-		return
-	}
-
-	maxSize := int64(500 * 1024) // 500KB limit for preview
-	if info.Size() > maxSize {
-		m.previewContent = fmt.Sprintf("File too large to preview (%.1f KB > 500 KB)", float64(info.Size())/1024)
-		m.previewReady = true
-		m.previewViewport.SetContent(m.previewContent)
-		return
-	}
-
-	content, err := os.ReadFile(fullPath)
-	if err != nil {
-		m.previewContent = fmt.Sprintf("Error reading file: %v", err)
-		m.previewReady = true
-		m.previewViewport.SetContent(m.previewContent)
-		return
-	}
-
-	text := string(content)
-	lines := strings.Split(text, "\n")
-
-	maxLines := 50
-	if len(lines) > maxLines {
-		lines = lines[:maxLines]
-		lines = append(lines, fmt.Sprintf("\n... (%d more lines)", len(strings.Split(text, "\n"))-maxLines))
-	}
-
-	if m.shouldHighlight(file.Name) {
-		m.previewContent = m.applySyntaxHighlighting(lines, file.Name)
-	} else {
-		m.previewContent = strings.Join(lines, "\n")
-	}
-
-	m.previewReady = true
-	m.previewViewport.SetContent(m.previewContent)
-}
 func (m *Model) isPreviewable(filename string) bool {
 	ext := strings.ToLower(filepath.Ext(filename))
 	previewableExts := []string{
@@ -152,7 +91,7 @@ func (m *Model) applySyntaxHighlighting(lines []string, filename string) string 
 func (m *Model) renderPreviewPanel(width, height int) string {
 	// Always show header
 	headerStyle := lipgloss.NewStyle().
-		Foreground(theme.ColorPrimary).
+		Foreground(theme.ColorAccent).
 		Bold(true).
 		Width(width)
 

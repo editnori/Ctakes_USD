@@ -30,21 +30,7 @@ func (m *Model) renderDictionaryBuilderPanel(width, height int) string {
 	case DictStateSelectingVocabs:
 		// Show vocabulary selector
 		return m.renderVocabSelector(width, height)
-	case DictStateConfiguringMemory:
-		// Show memory configuration
-		return m.renderMemoryConfigSelector(width, height)
-	case DictStateConfiguringProcessing:
-		// Show processing configuration
-		return m.renderProcessingConfigSelector(width, height)
-	case DictStateConfiguringFilters:
-		// Show filter configuration
-		return m.renderFiltersConfigSelector(width, height)
-	case DictStateConfiguringOutputs:
-		// Show output formats configuration
-		return m.renderOutputsConfigSelector(width, height)
-	case DictStateConfiguringRelationships:
-		// Show relationship configuration
-		return m.renderRelationshipsConfigSelector(width, height)
+		// Legacy aliases handled via direct states below
 	// New sub-menu states with proper interactive controls
 	case DictStateMemoryConfig:
 		return m.renderMemoryConfig(width, height)
@@ -74,7 +60,7 @@ func (m *Model) renderDictionaryBuilderPanel(width, height int) string {
 func (m *Model) renderDictMainMenu(width, height int) string {
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary).
+		Foreground(theme.ColorAccent).
 		MarginBottom(1)
 
 	title := titleStyle.Render("Dictionary Builder")
@@ -114,7 +100,7 @@ func (m *Model) renderDictMainMenu(width, height int) string {
 func (m *Model) renderDictUMLSBrowser(width, height int) string {
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary).
+		Foreground(theme.ColorAccent).
 		MarginBottom(1)
 
 	instructionStyle := lipgloss.NewStyle().
@@ -222,36 +208,36 @@ func (m *Model) initDictOptions() {
 		{Name: "View Built Dictionaries", Value: "", Type: "action", Status: "ready"},
 		{Name: "Select UMLS Location", Value: "", Type: "action", Status: "pending"},
 		{Name: "Dictionary Name", Value: "MyDictionary", Type: "config", Status: "pending"},
-		
+
 		// Core Configuration
 		{Name: "Semantic Types (TUIs)", Value: "0 selected", Type: "config", Status: "pending"},
 		{Name: "Source Vocabularies", Value: "0 selected", Type: "config", Status: "pending"},
 		{Name: "Languages", Value: "ENG", Type: "config", Status: "configured"},
 		{Name: "Term Types", Value: "PT, SY", Type: "config", Status: "configured"},
-		
+
 		// Advanced Settings Header
 		{Name: "─── Advanced Settings ───", Value: "", Type: "header", Status: "info"},
-		
+
 		// Memory Configuration
 		{Name: "Memory Settings", Value: "", Type: "advanced", Status: "pending"},
-		
+
 		// Processing Configuration
 		{Name: "Processing Options", Value: "", Type: "advanced", Status: "pending"},
-		
+
 		// Filter Configuration
 		{Name: "Filter Options", Value: "", Type: "advanced", Status: "pending"},
-		
+
 		// Output Configuration
 		{Name: "Output Formats", Value: "", Type: "advanced", Status: "pending"},
-		
+
 		// Relationships Configuration
 		{Name: "Relationship Settings", Value: "", Type: "advanced", Status: "pending"},
-		
+
 		// Presets
 		{Name: "─── Quick Presets ───", Value: "", Type: "header", Status: "info"},
 		{Name: "Apply Clinical Preset", Value: "", Type: "preset", Status: "ready"},
 		{Name: "Apply Medications Preset", Value: "", Type: "preset", Status: "ready"},
-		
+
 		// Build Action
 		{Name: "─── Build ───", Value: "", Type: "header", Status: "info"},
 		{Name: "Build Dictionary", Value: "", Type: "action", Status: "pending"},
@@ -296,42 +282,70 @@ func (m *Model) initDictOptions() {
 	}
 
 	// Update Memory Settings status
-	m.dictOptions[8].Value = fmt.Sprintf("Heap: %d-%d MB, Stack: %d MB", 
+	m.dictOptions[8].Value = fmt.Sprintf("Heap: %d-%d MB, Stack: %d MB",
 		m.dictConfig.InitialHeapMB, m.dictConfig.MaxHeapMB, m.dictConfig.StackSizeMB)
 	m.dictOptions[8].Status = "configured"
 
 	// Update Processing Options status
-	m.dictOptions[9].Value = fmt.Sprintf("Threads: %d, Batch: %d, Cache: %d MB", 
+	m.dictOptions[9].Value = fmt.Sprintf("Threads: %d, Batch: %d, Cache: %d MB",
 		m.dictConfig.ThreadCount, m.dictConfig.BatchSize, m.dictConfig.CacheSize)
 	m.dictOptions[9].Status = "configured"
 
 	// Update Filter Options status
 	filterCount := 0
-	if m.dictConfig.ExcludeSuppressible { filterCount++ }
-	if m.dictConfig.ExcludeObsolete { filterCount++ }
-	if m.dictConfig.UseNormalization { filterCount++ }
-	if m.dictConfig.UseMRRANK { filterCount++ }
-	if m.dictConfig.Deduplicate { filterCount++ }
-	if m.dictConfig.PreferredOnly { filterCount++ }
+	if m.dictConfig.ExcludeSuppressible {
+		filterCount++
+	}
+	if m.dictConfig.ExcludeObsolete {
+		filterCount++
+	}
+	if m.dictConfig.UseNormalization {
+		filterCount++
+	}
+	if m.dictConfig.UseMRRANK {
+		filterCount++
+	}
+	if m.dictConfig.Deduplicate {
+		filterCount++
+	}
+	if m.dictConfig.PreferredOnly {
+		filterCount++
+	}
 	m.dictOptions[10].Value = fmt.Sprintf("%d filters enabled", filterCount)
 	m.dictOptions[10].Status = "configured"
 
 	// Update Output Formats status
 	outputCount := 0
-	if m.dictConfig.EmitBSV { outputCount++ }
-	if m.dictConfig.BuildHSQLDB { outputCount++ }
-	if m.dictConfig.BuildLucene { outputCount++ }
-	if m.dictConfig.EmitTSV { outputCount++ }
-	if m.dictConfig.EmitJSONL { outputCount++ }
-	if m.dictConfig.EmitDescriptor { outputCount++ }
-	if m.dictConfig.EmitPipeline { outputCount++ }
-	if m.dictConfig.EmitManifest { outputCount++ }
+	if m.dictConfig.EmitBSV {
+		outputCount++
+	}
+	if m.dictConfig.BuildHSQLDB {
+		outputCount++
+	}
+	if m.dictConfig.BuildLucene {
+		outputCount++
+	}
+	if m.dictConfig.EmitTSV {
+		outputCount++
+	}
+	if m.dictConfig.EmitJSONL {
+		outputCount++
+	}
+	if m.dictConfig.EmitDescriptor {
+		outputCount++
+	}
+	if m.dictConfig.EmitPipeline {
+		outputCount++
+	}
+	if m.dictConfig.EmitManifest {
+		outputCount++
+	}
 	m.dictOptions[11].Value = fmt.Sprintf("%d outputs enabled", outputCount)
 	m.dictOptions[11].Status = "configured"
 
 	// Update Relationships status
 	if m.dictConfig.EnableRelationships {
-		m.dictOptions[12].Value = fmt.Sprintf("Enabled, depth: %d, types: %d", 
+		m.dictOptions[12].Value = fmt.Sprintf("Enabled, depth: %d, types: %d",
 			m.dictConfig.RelationshipDepth, len(m.dictConfig.RelationshipTypes))
 	} else {
 		m.dictOptions[12].Value = "Disabled"
@@ -566,7 +580,7 @@ func (m *Model) renderUMLSPreview() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("UMLS Location Details"))
 	content = append(content, "")
@@ -594,7 +608,7 @@ func (m *Model) renderNameConfig() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("Dictionary Name"))
 	content = append(content, "")
@@ -616,7 +630,7 @@ func (m *Model) renderTUIConfig() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("Semantic Types (TUIs)"))
 	content = append(content, "")
@@ -683,7 +697,7 @@ func (m *Model) renderVocabularyConfig() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("Source Vocabularies"))
 	content = append(content, "")
@@ -745,7 +759,7 @@ func (m *Model) renderLanguageConfig() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("Languages"))
 	content = append(content, "")
@@ -774,7 +788,7 @@ func (m *Model) renderTermTypeConfig() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("Term Types"))
 	content = append(content, "")
@@ -799,37 +813,6 @@ func (m *Model) renderTermTypeConfig() []string {
 	content = append(content, "Press Enter to configure term types")
 
 	return content
-}
-
-func (m *Model) detectRRFFiles(path string) []string {
-	var rrfFiles []string
-
-	// Check META subdirectory first
-	metaPath := filepath.Join(path, "META")
-	if _, err := os.Stat(metaPath); err == nil {
-		files, err := os.ReadDir(metaPath)
-		if err == nil {
-			for _, file := range files {
-				if strings.HasSuffix(file.Name(), ".RRF") {
-					rrfFiles = append(rrfFiles, file.Name())
-				}
-			}
-		}
-	}
-
-	// If no META directory, check current directory
-	if len(rrfFiles) == 0 {
-		files, err := os.ReadDir(path)
-		if err == nil {
-			for _, file := range files {
-				if strings.HasSuffix(file.Name(), ".RRF") {
-					rrfFiles = append(rrfFiles, file.Name())
-				}
-			}
-		}
-	}
-
-	return rrfFiles
 }
 
 func (m *Model) handleDictTableAction(cursor int) tea.Cmd {
@@ -964,13 +947,13 @@ func (m *Model) applyClinicalPreset() {
 	m.dictConfig.Vocabularies = []string{"SNOMEDCT_US", "RXNORM", "ICD10CM"}
 	m.dictConfig.Languages = []string{"ENG"}
 	m.dictConfig.TermTypes = []string{"PT", "SY", "AB"}
-	
+
 	// Advanced configuration for clinical use
 	// Memory settings for clinical data processing
 	m.dictConfig.InitialHeapMB = 1024
 	m.dictConfig.MaxHeapMB = 2048
 	m.dictConfig.StackSizeMB = 8
-	
+
 	// Processing settings optimized for clinical text
 	m.dictConfig.ThreadCount = 4
 	m.dictConfig.BatchSize = 1000
@@ -979,7 +962,7 @@ func (m *Model) applyClinicalPreset() {
 	m.dictConfig.HandlePunctuation = true
 	m.dictConfig.MinWordLength = 2
 	m.dictConfig.MaxWordLength = 80
-	
+
 	// Filters for clean clinical data
 	m.dictConfig.MinTermLength = 3
 	m.dictConfig.MaxTermLength = 80
@@ -996,7 +979,7 @@ func (m *Model) applyClinicalPreset() {
 	m.dictConfig.ExcludePunctOnly = true
 	m.dictConfig.MinTokens = 1
 	m.dictConfig.MaxTokens = 5
-	
+
 	// Output formats for clinical use
 	m.dictConfig.EmitBSV = true
 	m.dictConfig.BuildHSQLDB = true
@@ -1007,7 +990,7 @@ func (m *Model) applyClinicalPreset() {
 	m.dictConfig.EmitDescriptor = true
 	m.dictConfig.EmitPipeline = true
 	m.dictConfig.EmitManifest = true
-	
+
 	// Relationship settings for clinical concepts
 	m.dictConfig.EnableRelationships = true
 	m.dictConfig.RelationshipDepth = 2
@@ -1020,13 +1003,13 @@ func (m *Model) applyMedicationsPreset() {
 	m.dictConfig.Vocabularies = []string{"RXNORM", "NDDF", "VANDF"}
 	m.dictConfig.Languages = []string{"ENG"}
 	m.dictConfig.TermTypes = []string{"PT", "SY", "BN", "GN"}
-	
+
 	// Advanced configuration for medications
 	// Memory settings for medication data
 	m.dictConfig.InitialHeapMB = 512
 	m.dictConfig.MaxHeapMB = 1024
 	m.dictConfig.StackSizeMB = 4
-	
+
 	// Processing settings optimized for medication names
 	m.dictConfig.ThreadCount = 2
 	m.dictConfig.BatchSize = 500
@@ -1035,7 +1018,7 @@ func (m *Model) applyMedicationsPreset() {
 	m.dictConfig.HandlePunctuation = true
 	m.dictConfig.MinWordLength = 2
 	m.dictConfig.MaxWordLength = 100
-	
+
 	// Filters for medication data
 	m.dictConfig.MinTermLength = 2
 	m.dictConfig.MaxTermLength = 100
@@ -1052,7 +1035,7 @@ func (m *Model) applyMedicationsPreset() {
 	m.dictConfig.ExcludePunctOnly = false
 	m.dictConfig.MinTokens = 1
 	m.dictConfig.MaxTokens = 3
-	
+
 	// Output formats for medications
 	m.dictConfig.EmitBSV = true
 	m.dictConfig.BuildHSQLDB = false
@@ -1063,7 +1046,7 @@ func (m *Model) applyMedicationsPreset() {
 	m.dictConfig.EmitDescriptor = true
 	m.dictConfig.EmitPipeline = true
 	m.dictConfig.EmitManifest = true
-	
+
 	// Relationship settings for medications
 	m.dictConfig.EnableRelationships = true
 	m.dictConfig.RelationshipDepth = 1
@@ -1073,7 +1056,7 @@ func (m *Model) applyMedicationsPreset() {
 func (m *Model) renderDictNameInput(width, height int) string {
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	var content []string
 	content = append(content, titleStyle.Render("◈ Dictionary Name"))
@@ -1086,47 +1069,6 @@ func (m *Model) renderDictNameInput(width, height int) string {
 	content = append(content, "Press Enter to confirm, ESC to cancel")
 
 	return strings.Join(content, "\n")
-}
-
-func (m *Model) renderTUISelector(width, height int) string {
-	// Match the file browser theming
-	headerStyle := lipgloss.NewStyle().
-		Background(theme.ColorAccent).
-		Foreground(theme.ColorBackground).
-		Bold(true).
-		Padding(0, 1)
-
-	// Create header
-	header := headerStyle.Render("◈ Select Semantic Types (TUIs)")
-
-	// Show the TUI table with proper bounds
-	tableContent := m.tuiTable.View()
-
-	// Create footer with instructions
-	footerStyle := lipgloss.NewStyle().
-		Foreground(theme.ColorSecondary).
-		Padding(0, 1)
-
-	footer := footerStyle.Render("SPACE: Toggle | Enter: Confirm | ESC: Cancel")
-
-	// Combine all parts
-	content := lipgloss.JoinVertical(
-		lipgloss.Left,
-		header,
-		"",
-		tableContent,
-		"",
-		footer,
-	)
-
-	// Apply border to match file browser
-	borderStyle := lipgloss.NewStyle().
-		Border(lipgloss.RoundedBorder()).
-		BorderForeground(theme.ColorBorder).
-		Width(width - 2).
-		Height(height - 2)
-
-	return borderStyle.Render(content)
 }
 
 func (m *Model) initTUITable(width, height int) {
@@ -1273,7 +1215,7 @@ func (m *Model) renderClinicalPresetPreview() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("Clinical Preset"))
 	content = append(content, "")
@@ -1306,7 +1248,7 @@ func (m *Model) renderMedicationsPresetPreview() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("Medications Preset"))
 	content = append(content, "")
@@ -1336,7 +1278,7 @@ func (m *Model) renderBuildPreview() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("Build Dictionary"))
 	content = append(content, "")
@@ -1381,7 +1323,7 @@ func (m *Model) renderBuildProgress() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("◈ Building Dictionary"))
 	content = append(content, "")
@@ -1497,7 +1439,7 @@ func (m *Model) renderBuildTerminalLogs(width, height int) string {
 		} else if strings.HasPrefix(log, "[SUCCESS]") {
 			logs = append(logs, lipgloss.NewStyle().Foreground(theme.ColorSuccess).Render(log))
 		} else if strings.HasPrefix(log, "[INFO]") {
-			logs = append(logs, lipgloss.NewStyle().Foreground(theme.ColorPrimary).Render(log))
+			logs = append(logs, lipgloss.NewStyle().Foreground(theme.ColorAccent).Render(log))
 		} else if strings.HasPrefix(log, "[DEBUG]") {
 			logs = append(logs, lipgloss.NewStyle().Foreground(theme.ColorSecondary).Render(log))
 		} else if strings.HasPrefix(log, "[TRACE]") {
@@ -1550,7 +1492,7 @@ func (m *Model) renderBuildProgressPopup(width, height int) string {
 
 	// Status section
 	statusStyle := lipgloss.NewStyle().
-		Foreground(theme.ColorPrimary).
+		Foreground(theme.ColorAccent).
 		Padding(0, 1)
 
 	statusContent := []string{}
@@ -1812,8 +1754,8 @@ func (m *Model) startDictionaryBuild() tea.Cmd {
 		m.buildViewport = viewport.New(80, 15)
 	}
 
-    // Always use headless Go builder path now; remove simulation
-    m.buildLogs = append(m.buildLogs, "[INFO] Using headless Go builder (BSV)")
+	// Always use headless Go builder path now; remove simulation
+	m.buildLogs = append(m.buildLogs, "[INFO] Using headless Go builder (BSV)")
 	return m.startGoHeadlessBuild()
 }
 
@@ -1870,12 +1812,12 @@ func (m *Model) startGoHeadlessBuild() tea.Cmd {
 		cfg.Vocabularies = m.dictConfig.Vocabularies
 		cfg.Languages = m.dictConfig.Languages
 		cfg.TermTypes = m.dictConfig.TermTypes
-		
+
 		// Map memory settings
 		cfg.Memory.InitialHeapMB = m.dictConfig.InitialHeapMB
 		cfg.Memory.MaxHeapMB = m.dictConfig.MaxHeapMB
 		cfg.Memory.StackSizeMB = m.dictConfig.StackSizeMB
-		
+
 		// Map processing settings
 		cfg.Processing.ThreadCount = m.dictConfig.ThreadCount
 		cfg.Processing.BatchSize = m.dictConfig.BatchSize
@@ -1885,7 +1827,7 @@ func (m *Model) startGoHeadlessBuild() tea.Cmd {
 		cfg.Processing.HandlePunctuation = m.dictConfig.HandlePunctuation
 		cfg.Processing.MinWordLength = m.dictConfig.MinWordLength
 		cfg.Processing.MaxWordLength = m.dictConfig.MaxWordLength
-		
+
 		// Map filter settings
 		cfg.Filters.MinTermLength = m.dictConfig.MinTermLength
 		cfg.Filters.MaxTermLength = m.dictConfig.MaxTermLength
@@ -1902,7 +1844,7 @@ func (m *Model) startGoHeadlessBuild() tea.Cmd {
 		cfg.Filters.ExcludePunctOnly = m.dictConfig.ExcludePunctOnly
 		cfg.Filters.MinTokens = m.dictConfig.MinTokens
 		cfg.Filters.MaxTokens = m.dictConfig.MaxTokens
-		
+
 		// Map output settings
 		cfg.Outputs.EmitTSV = m.dictConfig.EmitTSV
 		cfg.Outputs.EmitJSONL = m.dictConfig.EmitJSONL
@@ -1912,7 +1854,7 @@ func (m *Model) startGoHeadlessBuild() tea.Cmd {
 		cfg.Outputs.EmitDescriptor = m.dictConfig.EmitDescriptor
 		cfg.Outputs.EmitPipeline = m.dictConfig.EmitPipeline
 		cfg.Outputs.EmitManifest = m.dictConfig.EmitManifest
-		
+
 		// Map relationship settings
 		cfg.Relationships.Enabled = m.dictConfig.EnableRelationships
 		cfg.Relationships.Depth = m.dictConfig.RelationshipDepth
@@ -1964,68 +1906,6 @@ func (m *Model) countBuiltDictionaries() int {
 }
 
 // loadBuiltDictionaries loads the list of built dictionaries
-func (m *Model) loadBuiltDictionaries() {
-	dicts, err := dictionary.ListDictionaries()
-	if err != nil {
-		m.builtDictionaries = []DictionaryInfo{}
-		return
-	}
-
-	// Convert from internal dictionary type to dashboard type
-	m.builtDictionaries = make([]DictionaryInfo, len(dicts))
-	for i, dict := range dicts {
-		// Load config to get semantic types and vocabularies count
-		configPath := filepath.Join(dict.Path, "config.json")
-		var tuiCount, vocabCount int
-		var languages string
-
-		if cfg, err := dictionary.LoadConfig(configPath); err == nil {
-			tuiCount = len(cfg.SemanticTypes)
-			vocabCount = len(cfg.Vocabularies)
-			languages = strings.Join(cfg.Languages, ", ")
-		}
-
-		if languages == "" {
-			languages = "ENG"
-		}
-
-		m.builtDictionaries[i] = DictionaryInfo{
-			Name:       dict.Name,
-			Path:       dict.Path,
-			Size:       m.getDictionarySize(dict.Path),
-			TUICount:   tuiCount,
-			VocabCount: vocabCount,
-			Languages:  languages,
-			Created:    dict.CreatedAt,
-		}
-	}
-
-	// Initialize dictionary viewer table
-	m.initDictViewerTable(m.width/2, m.height-10)
-}
-
-// getDictionarySize calculates the total size of a dictionary
-func (m *Model) getDictionarySize(path string) string {
-	var totalSize int64
-
-	filepath.Walk(path, func(_ string, info os.FileInfo, err error) error {
-		if err == nil && !info.IsDir() {
-			totalSize += info.Size()
-		}
-		return nil
-	})
-
-	// Format size
-	if totalSize < 1024 {
-		return fmt.Sprintf("%d B", totalSize)
-	} else if totalSize < 1024*1024 {
-		return fmt.Sprintf("%.1f KB", float64(totalSize)/1024)
-	} else if totalSize < 1024*1024*1024 {
-		return fmt.Sprintf("%.1f MB", float64(totalSize)/(1024*1024))
-	} else {
-		return fmt.Sprintf("%.1f GB", float64(totalSize)/(1024*1024*1024))
-	}
-}
 
 // renderDictionaryViewer renders the dictionary viewer panel
 func (m *Model) renderDictionaryViewer(width, height int) string {
@@ -2152,7 +2032,7 @@ func (m *Model) renderDictionariesPreview() []string {
 
 	titleStyle := lipgloss.NewStyle().
 		Bold(true).
-		Foreground(theme.ColorPrimary)
+		Foreground(theme.ColorAccent)
 
 	content = append(content, titleStyle.Render("Built Dictionaries"))
 	content = append(content, "")
@@ -2505,394 +2385,3 @@ func ifEmpty(s, defaultValue string) string {
 // New interactive render functions for advanced configuration
 
 // renderMemoryConfig - Interactive memory configuration with sliders/inputs
-func (m *Model) renderMemoryConfig(width, height int) string {
-	headerStyle := lipgloss.NewStyle().
-		Background(theme.ColorAccent).
-		Foreground(theme.ColorBackground).
-		Bold(true).
-		Padding(0, 1)
-
-	header := headerStyle.Render("◈ Memory Settings - Interactive Configuration")
-
-	var content []string
-	content = append(content, "JVM Memory Allocation Settings")
-	content = append(content, "")
-	
-	// Interactive sliders for memory settings
-	content = append(content, fmt.Sprintf("Initial Heap Size: %d MB", m.dictConfig.InitialHeapMB))
-	content = append(content, m.renderSlider("initial", m.dictConfig.InitialHeapMB, 512, 3072, 256))
-	content = append(content, "")
-	
-	content = append(content, fmt.Sprintf("Maximum Heap Size: %d MB", m.dictConfig.MaxHeapMB))
-	content = append(content, m.renderSlider("max", m.dictConfig.MaxHeapMB, 512, 3072, 256))
-	content = append(content, "")
-	
-	content = append(content, fmt.Sprintf("Stack Size: %d MB", m.dictConfig.StackSizeMB))
-	content = append(content, m.renderSlider("stack", m.dictConfig.StackSizeMB, 1, 64, 4))
-	content = append(content, "")
-	
-	content = append(content, "Memory Recommendations:")
-	content = append(content, "  • Large UMLS: Initial 2048MB, Max 3072MB")
-	content = append(content, "  • Medium Build: Initial 1024MB, Max 2048MB")
-	content = append(content, "  • Small Build: Initial 512MB, Max 1024MB")
-
-	footerStyle := lipgloss.NewStyle().
-		Foreground(theme.ColorSecondary).
-		Padding(0, 1)
-
-	footer := footerStyle.Render("▲▼: Adjust Values | Tab: Next Setting | Enter: Save | ESC: Cancel")
-
-	combinedContent := lipgloss.JoinVertical(
-		lipgloss.Left,
-		header,
-		"",
-		strings.Join(content, "\n"),
-		"",
-		footer,
-	)
-
-	return m.renderConfigPanel(combinedContent, width, height)
-}
-
-// renderProcessingConfig - Interactive processing options configuration
-func (m *Model) renderProcessingConfig(width, height int) string {
-	headerStyle := lipgloss.NewStyle().
-		Background(theme.ColorAccent).
-		Foreground(theme.ColorBackground).
-		Bold(true).
-		Padding(0, 1)
-
-	header := headerStyle.Render("◈ Processing Options - Interactive Configuration")
-
-	var content []string
-	content = append(content, "Text Processing Parameters")
-	content = append(content, "")
-	
-	// Performance settings
-	content = append(content, fmt.Sprintf("Thread Count: %d", m.dictConfig.ThreadCount))
-	content = append(content, m.renderSlider("threads", m.dictConfig.ThreadCount, 1, 16, 1))
-	content = append(content, "")
-	
-	content = append(content, fmt.Sprintf("Batch Size: %d", m.dictConfig.BatchSize))
-	content = append(content, m.renderSlider("batch", m.dictConfig.BatchSize, 100, 10000, 500))
-	content = append(content, "")
-	
-	content = append(content, fmt.Sprintf("Cache Size: %d MB", m.dictConfig.CacheSize))
-	content = append(content, m.renderSlider("cache", m.dictConfig.CacheSize, 64, 512, 32))
-	content = append(content, "")
-	
-	// Text processing options
-	content = append(content, "Text Processing:")
-	content = append(content, m.renderToggle("Preserve Case", m.dictConfig.PreserveCase, "P"))
-	content = append(content, m.renderToggle("Handle Punctuation", m.dictConfig.HandlePunctuation, "H"))
-	content = append(content, "")
-	
-	content = append(content, fmt.Sprintf("Word Length Range: %d - %d chars", m.dictConfig.MinWordLength, m.dictConfig.MaxWordLength))
-	content = append(content, "")
-	
-	if m.dictConfig.TempDirectory != "" {
-		content = append(content, fmt.Sprintf("Temp Directory: %s", m.dictConfig.TempDirectory))
-	} else {
-		content = append(content, "Temp Directory: System Default")
-	}
-
-	footerStyle := lipgloss.NewStyle().
-		Foreground(theme.ColorSecondary).
-		Padding(0, 1)
-
-	footer := footerStyle.Render("▲▼: Adjust | P/H: Toggle | Tab: Navigate | Enter: Save | ESC: Cancel")
-
-	combinedContent := lipgloss.JoinVertical(
-		lipgloss.Left,
-		header,
-		"",
-		strings.Join(content, "\n"),
-		"",
-		footer,
-	)
-
-	return m.renderConfigPanel(combinedContent, width, height)
-}
-
-// renderFilterConfig - Interactive filter configuration with toggles
-func (m *Model) renderFilterConfig(width, height int) string {
-	headerStyle := lipgloss.NewStyle().
-		Background(theme.ColorAccent).
-		Foreground(theme.ColorBackground).
-		Bold(true).
-		Padding(0, 1)
-
-	header := headerStyle.Render("◈ Filter Options - Interactive Configuration")
-
-	var content []string
-	content = append(content, "Term Filtering and Normalization")
-	content = append(content, "")
-	
-	// Length controls
-	content = append(content, "Term Length Limits:")
-	content = append(content, fmt.Sprintf("  Min Term Length: %d chars", m.dictConfig.MinTermLength))
-	content = append(content, fmt.Sprintf("  Max Term Length: %d chars", m.dictConfig.MaxTermLength))
-	content = append(content, fmt.Sprintf("  Token Range: %d - %d tokens", m.dictConfig.MinTokens, m.dictConfig.MaxTokens))
-	content = append(content, "")
-	
-	// Quality filters
-	content = append(content, "Quality Filters:")
-	content = append(content, m.renderToggle("Exclude Suppressible", m.dictConfig.ExcludeSuppressible, "S"))
-	content = append(content, m.renderToggle("Exclude Obsolete", m.dictConfig.ExcludeObsolete, "O"))
-	content = append(content, m.renderToggle("Preferred Only", m.dictConfig.PreferredOnly, "R"))
-	content = append(content, m.renderToggle("Use MRRANK", m.dictConfig.UseMRRANK, "M"))
-	content = append(content, "")
-	
-	// Processing filters  
-	content = append(content, "Processing Filters:")
-	content = append(content, m.renderToggle("Case Sensitive", m.dictConfig.CaseSensitive, "C"))
-	content = append(content, m.renderToggle("Use Normalization", m.dictConfig.UseNormalization, "N"))
-	content = append(content, m.renderToggle("Deduplicate Terms", m.dictConfig.Deduplicate, "D"))
-	content = append(content, "")
-	
-	// Text cleanup
-	content = append(content, "Text Cleanup:")
-	content = append(content, m.renderToggle("Strip Punctuation", m.dictConfig.StripPunctuation, "T"))
-	content = append(content, m.renderToggle("Collapse Whitespace", m.dictConfig.CollapseWhitespace, "W"))
-	content = append(content, m.renderToggle("Exclude Numeric Only", m.dictConfig.ExcludeNumericOnly, "1"))
-	content = append(content, m.renderToggle("Exclude Punct Only", m.dictConfig.ExcludePunctOnly, "2"))
-
-	footerStyle := lipgloss.NewStyle().
-		Foreground(theme.ColorSecondary).
-		Padding(0, 1)
-
-	footer := footerStyle.Render("Letters: Toggle Filters | Numbers: Adjust Limits | Enter: Save | ESC: Cancel")
-
-	combinedContent := lipgloss.JoinVertical(
-		lipgloss.Left,
-		header,
-		"",
-		strings.Join(content, "\n"),
-		"",
-		footer,
-	)
-
-	return m.renderConfigPanel(combinedContent, width, height)
-}
-
-// renderOutputConfig - Interactive output format configuration with checkboxes
-func (m *Model) renderOutputConfig(width, height int) string {
-	headerStyle := lipgloss.NewStyle().
-		Background(theme.ColorAccent).
-		Foreground(theme.ColorBackground).
-		Bold(true).
-		Padding(0, 1)
-
-	header := headerStyle.Render("◈ Output Formats - Interactive Configuration")
-
-	var content []string
-	content = append(content, "Dictionary Output Format Selection")
-	content = append(content, "")
-	
-	// Primary formats
-	content = append(content, "Primary Formats (Required):")
-	content = append(content, m.renderCheckbox("BSV (Bar-Separated Values)", m.dictConfig.EmitBSV, "B", true))
-	content = append(content, "")
-	
-	// Database formats
-	content = append(content, "Database Formats:")
-	content = append(content, m.renderCheckbox("HSQLDB Database", m.dictConfig.BuildHSQLDB, "H", false))
-	content = append(content, m.renderCheckbox("Lucene Index", m.dictConfig.BuildLucene, "L", false))
-	content = append(content, m.renderCheckbox("Rare Words Index", m.dictConfig.UseRareWords, "R", false))
-	content = append(content, "")
-	
-	// Alternative text formats
-	content = append(content, "Alternative Text Formats:")
-	content = append(content, m.renderCheckbox("TSV (Tab-Separated Values)", m.dictConfig.EmitTSV, "T", false))
-	content = append(content, m.renderCheckbox("JSONL (JSON Lines)", m.dictConfig.EmitJSONL, "J", false))
-	content = append(content, "")
-	
-	// Pipeline support files
-	content = append(content, "Pipeline Support Files:")
-	content = append(content, m.renderCheckbox("Descriptor XML", m.dictConfig.EmitDescriptor, "D", false))
-	content = append(content, m.renderCheckbox("Pipeline Configuration", m.dictConfig.EmitPipeline, "P", false))
-	content = append(content, m.renderCheckbox("Build Manifest", m.dictConfig.EmitManifest, "M", false))
-	content = append(content, "")
-	
-	content = append(content, "Note: BSV format is required for cTAKES compatibility")
-
-	footerStyle := lipgloss.NewStyle().
-		Foreground(theme.ColorSecondary).
-		Padding(0, 1)
-
-	footer := footerStyle.Render("Letters: Toggle Formats | Enter: Save | ESC: Cancel")
-
-	combinedContent := lipgloss.JoinVertical(
-		lipgloss.Left,
-		header,
-		"",
-		strings.Join(content, "\n"),
-		"",
-		footer,
-	)
-
-	return m.renderConfigPanel(combinedContent, width, height)
-}
-
-// renderRelationshipConfig - Interactive relationship configuration
-func (m *Model) renderRelationshipConfig(width, height int) string {
-	headerStyle := lipgloss.NewStyle().
-		Background(theme.ColorAccent).
-		Foreground(theme.ColorBackground).
-		Bold(true).
-		Padding(0, 1)
-
-	header := headerStyle.Render("◈ Relationship Settings - Interactive Configuration")
-
-	var content []string
-	content = append(content, "UMLS Relationship Processing Configuration")
-	content = append(content, "")
-	
-	// Main toggle
-	content = append(content, m.renderToggle("Enable Relationships", m.dictConfig.EnableRelationships, "E"))
-	content = append(content, "")
-	
-	if m.dictConfig.EnableRelationships {
-		// Relationship depth
-		content = append(content, fmt.Sprintf("Relationship Depth: %d levels", m.dictConfig.RelationshipDepth))
-		content = append(content, m.renderSlider("depth", m.dictConfig.RelationshipDepth, 0, 5, 1))
-		content = append(content, "")
-		
-		// Relationship types
-		content = append(content, fmt.Sprintf("Selected Relationship Types: %d", len(m.dictConfig.RelationshipTypes)))
-		content = append(content, "")
-		
-		// Common relationship types
-		content = append(content, "Common Relationship Types:")
-		relationshipTypes := dictionary.GetCommonRelationships()
-		for i, relType := range relationshipTypes {
-			if i < 6 { // Show first 6
-				isSelected := m.isRelationshipTypeSelected(relType)
-				content = append(content, m.renderRelationshipType(relType, isSelected, fmt.Sprintf("%d", i+1)))
-			}
-		}
-		content = append(content, "")
-		content = append(content, "Press [A] to select all common types")
-		content = append(content, "Press [C] to clear all selections")
-	} else {
-		content = append(content, "Relationships are disabled.")
-		content = append(content, "")
-		content = append(content, "When enabled, relationships add semantic connections")
-		content = append(content, "between medical concepts, improving context and")
-		content = append(content, "enabling more sophisticated text analysis.")
-		content = append(content, "")
-		content = append(content, "Note: Enabling relationships increases build time")
-		content = append(content, "and dictionary size significantly.")
-	}
-
-	footerStyle := lipgloss.NewStyle().
-		Foreground(theme.ColorSecondary).
-		Padding(0, 1)
-
-	footer := footerStyle.Render("E: Toggle | 1-6: Select Types | A: All | C: Clear | Enter: Save | ESC: Cancel")
-
-	combinedContent := lipgloss.JoinVertical(
-		lipgloss.Left,
-		header,
-		"",
-		strings.Join(content, "\n"),
-		"",
-		footer,
-	)
-
-	return m.renderConfigPanel(combinedContent, width, height)
-}
-
-// Helper functions for rendering UI elements
-
-func (m *Model) renderConfigPanel(content string, width, height int) string {
-	borderStyle := lipgloss.NewStyle().
-		Border(lipgloss.RoundedBorder()).
-		BorderForeground(theme.ColorBorder).
-		Width(width - 2).
-		Height(height - 2)
-
-	return borderStyle.Render(content)
-}
-
-func (m *Model) renderSlider(name string, value, min, max, step int) string {
-	// Calculate slider position (0-20 characters wide)
-	sliderWidth := 20
-	progress := float64(value-min) / float64(max-min)
-	position := int(progress * float64(sliderWidth))
-	
-	slider := "["
-	for i := 0; i < sliderWidth; i++ {
-		if i == position {
-			slider += "●"
-		} else if i < position {
-			slider += "─"
-		} else {
-			slider += " "
-		}
-	}
-	slider += "]"
-	
-	return fmt.Sprintf("  %s %d-%d", slider, min, max)
-}
-
-func (m *Model) renderToggle(label string, enabled bool, key string) string {
-	var status string
-	var color lipgloss.Color
-	if enabled {
-		status = "ON "
-		color = theme.ColorSuccess
-	} else {
-		status = "OFF"
-		color = theme.ColorError
-	}
-	
-	toggleStyle := lipgloss.NewStyle().Foreground(color).Bold(true)
-	return fmt.Sprintf("  [%s] %s: %s", key, label, toggleStyle.Render(status))
-}
-
-func (m *Model) renderCheckbox(label string, checked bool, key string, required bool) string {
-	var checkbox string
-	var color lipgloss.Color
-	if checked {
-		checkbox = "☑"
-		color = theme.ColorSuccess
-	} else {
-		checkbox = "☐"
-		color = theme.ColorSecondary
-	}
-	
-	checkStyle := lipgloss.NewStyle().Foreground(color)
-	requiredText := ""
-	if required {
-		requiredText = " (Required)"
-		requiredStyle := lipgloss.NewStyle().Foreground(theme.ColorWarning)
-		requiredText = requiredStyle.Render(requiredText)
-	}
-	
-	return fmt.Sprintf("  [%s] %s %s%s", key, checkStyle.Render(checkbox), label, requiredText)
-}
-
-func (m *Model) renderRelationshipType(relType string, selected bool, key string) string {
-	var status string
-	var color lipgloss.Color
-	if selected {
-		status = "☑"
-		color = theme.ColorSuccess
-	} else {
-		status = "☐"
-		color = theme.ColorSecondary
-	}
-	
-	statusStyle := lipgloss.NewStyle().Foreground(color)
-	return fmt.Sprintf("  [%s] %s %s", key, statusStyle.Render(status), relType)
-}
-
-func (m *Model) isRelationshipTypeSelected(relType string) bool {
-	for _, selectedType := range m.dictConfig.RelationshipTypes {
-		if selectedType == relType {
-			return true
-		}
-	}
-	return false
-}

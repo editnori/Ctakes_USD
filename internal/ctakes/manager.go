@@ -15,7 +15,7 @@ import (
 var (
 	ErrProcessNotRunning = errors.New("ctakes process not running")
 	ErrInvalidResponse   = errors.New("invalid response from ctakes")
-	ErrTimeout          = errors.New("ctakes request timeout")
+	ErrTimeout           = errors.New("ctakes request timeout")
 )
 
 type Manager struct {

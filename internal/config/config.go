@@ -7,7 +7,7 @@ import (
 )
 
 type Config struct {
-	CTakes    CTakesConfig    `json:"ctakes"`
+	CTakes    CTakesConfig     `json:"ctakes"`
 	Pipelines []PipelineConfig `json:"pipelines"`
 }
 
