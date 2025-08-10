@@ -314,7 +314,7 @@ func (m *DocumentModel) renderFooter() string {
 func (m *DocumentModel) loadFiles() {
 	m.files = []DocumentFile{}
 
-	// Add parent directory
+	// Add parent dir
 	if m.currentPath != "/" && m.currentPath != "." {
 		m.files = append(m.files, DocumentFile{
 			Path:  filepath.Dir(m.currentPath),
@@ -359,7 +359,7 @@ func (m *DocumentModel) loadFiles() {
 		}
 	}
 
-	// Sort
+	// Sort entries
 	sort.Slice(dirs, func(i, j int) bool {
 		return strings.ToLower(dirs[i].Name) < strings.ToLower(dirs[j].Name)
 	})
@@ -414,11 +414,9 @@ func (m *DocumentModel) updateTable() {
 		BorderForeground(theme.ColorBorderInactive).
 		BorderBottom(true).
 		Bold(true).
-		Foreground(theme.ColorAccent)
-	s.Selected = s.Selected.
-		Foreground(theme.ColorBackground).
-		Background(theme.ColorAccent).
-		Bold(true)
+		Foreground(theme.ColorForegroundDim)
+	// Use centralized theme selection styles for consistency
+	s.Selected = theme.RowFocusedStyle
 	s.Cell = s.Cell.
 		Foreground(theme.ColorForeground)
 
@@ -434,7 +432,7 @@ func (m *DocumentModel) loadPreview(path string) {
 			return
 		}
 
-		// Limit preview to first 1000 characters
+		// Limit to 1000 chars
 		preview := string(content)
 		if len(preview) > 1000 {
 			preview = preview[:1000] + "\n\n... (truncated)"
@@ -446,12 +444,12 @@ func (m *DocumentModel) loadPreview(path string) {
 
 func (m *DocumentModel) processDocuments() tea.Cmd {
 	return func() tea.Msg {
-		// This would trigger cTAKES processing
+		// Trigger cTAKES
 		var files []string
 		for path := range m.selected {
 			files = append(files, path)
 		}
-		// Process files with cTAKES
+		// Process with cTAKES
 		return "results_view"
 	}
 }

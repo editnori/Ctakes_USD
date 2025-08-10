@@ -44,7 +44,7 @@ func NewAnalyzeModel() AnalyzeModel {
 	ta.Focus()
 	ta.CharLimit = 10000
 
-	// Style the textarea
+	// Style textarea
 	ta.FocusedStyle.CursorLine = lipgloss.NewStyle().Background(theme.ColorBackgroundLighter)
 	ta.FocusedStyle.Base = lipgloss.NewStyle().
 		BorderForeground(theme.ColorBorderActive).
@@ -86,9 +86,9 @@ func (m AnalyzeModel) Update(msg tea.Msg) (AnalyzeModel, tea.Cmd) {
 		m.height = msg.Height
 		m.ready = true
 
-		// Update component sizes
+		// Update sizes
 		textWidth := m.width/2 - 4
-		textHeight := m.height - 14 // Adjusted for top padding
+		textHeight := m.height - 14 // Top padding
 
 		m.textarea.SetWidth(textWidth)
 		m.textarea.SetHeight(textHeight)
@@ -101,7 +101,7 @@ func (m AnalyzeModel) Update(msg tea.Msg) (AnalyzeModel, tea.Cmd) {
 			return m, func() tea.Msg { return "main_menu" }
 
 		case key.Matches(msg, analyzeKeys.Tab):
-			// Toggle focus between input and results
+			// Toggle focus
 			m.focusInput = !m.focusInput
 			if m.focusInput {
 				cmd = m.textarea.Focus()
@@ -134,7 +134,7 @@ func (m AnalyzeModel) Update(msg tea.Msg) (AnalyzeModel, tea.Cmd) {
 		}
 	}
 
-	// Update textarea or viewport based on focus
+	// Update based on focus
 	if m.focusInput {
 		m.textarea, cmd = m.textarea.Update(msg)
 		cmds = append(cmds, cmd)
@@ -204,12 +204,12 @@ func (m *AnalyzeModel) renderContent() string {
 	inputTitle := theme.RenderTitle(theme.IconDocument, "Input Text")
 	inputStyle := theme.PanelStyle.
 		Width(leftWidth).
-		Height(m.height - 10) // Adjusted for top padding
+		Height(m.height - 10) // Top padding
 
 	if m.focusInput {
 		inputStyle = theme.PanelFocusedStyle.
 			Width(leftWidth).
-			Height(m.height - 10) // Adjusted for top padding
+			Height(m.height - 10) // Top padding
 	}
 
 	inputContent := lipgloss.JoinVertical(
@@ -225,12 +225,12 @@ func (m *AnalyzeModel) renderContent() string {
 	resultsTitle := theme.RenderTitle(theme.IconResults, "Analysis Results")
 	resultsStyle := theme.PanelStyle.
 		Width(rightWidth).
-		Height(m.height - 10) // Adjusted for top padding
+		Height(m.height - 10) // Top padding
 
 	if !m.focusInput {
 		resultsStyle = theme.PanelFocusedStyle.
 			Width(rightWidth).
-			Height(m.height - 10) // Adjusted for top padding
+			Height(m.height - 10) // Top padding
 	}
 
 	resultsContent := lipgloss.JoinVertical(
@@ -284,13 +284,13 @@ func (m *AnalyzeModel) updateResultsView() {
 
 	var content strings.Builder
 
-	// Group results by type
+	// Group by type
 	byType := make(map[string][]AnalysisResult)
 	for _, r := range m.results {
 		byType[r.Type] = append(byType[r.Type], r)
 	}
 
-	// Render each type
+	// Render types
 	types := []string{"Disease/Disorder", "Medication", "Sign/Symptom", "Procedure", "Anatomy"}
 	for _, t := range types {
 		if results, ok := byType[t]; ok && len(results) > 0 {
@@ -340,14 +340,14 @@ func (m *AnalyzeModel) performAnalysis() tea.Cmd {
 			return analysisCompleteMsg{results: []AnalysisResult{}}
 		}
 
-		// TODO: Connect to actual cTAKES manager
+		// cTAKES via pipeline
 		// manager := ctakes.GetManager()
 		// results, err := manager.AnalyzeText(text)
 		// if err != nil {
 		//     return analysisErrorMsg{err: err}
 		// }
 
-		// Placeholder until cTAKES integration is complete
+		// Placeholder for cTAKES
 		results := []AnalysisResult{
 			{
 				Type:     "Info",
