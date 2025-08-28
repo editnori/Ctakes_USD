@@ -158,7 +158,14 @@ else
   sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${tmp_db};ifexists=true;readonly=true\"#" "$san"
 fi
 
-if rg -n "org.hsqldb.jdbc.JDBCDriver" -S "$san" >/dev/null && \
+if command -v rg >/dev/null 2>&1; then
+  has_driver=$(rg -n "org.hsqldb.jdbc.JDBCDriver" -S "$san" >/dev/null && echo 1 || echo 0)
+  has_url=$(rg -n "jdbc:hsqldb:file:.*ifexists=true;readonly=true" -S "$san" >/dev/null && echo 1 || echo 0)
+else
+  has_driver=$(grep -qE 'org\.hsqldb\.jdbc\.JDBCDriver' "$san" && echo 1 || echo 0)
+  has_url=$(grep -qE 'jdbc:hsqldb:file:.*ifexists=true;readonly=true' "$san" && echo 1 || echo 0)
+fi
+if [[ "$has_driver" -eq 1 && "$has_url" -eq 1 ]]; then
    rg -n "jdbc:hsqldb:file:.*ifexists=true;readonly=true" -S "$san" >/dev/null; then
   pass "Sanitized XML uses JDBCDriver + jdbcUrl with flags (dry-run)"
 else
