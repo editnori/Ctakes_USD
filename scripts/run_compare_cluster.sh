@@ -281,7 +281,7 @@ run_pipeline_sharded() {
       cd "$CTAKES_HOME" >/dev/null
       attempt=1
       last_ec=0
-      while (( attempt <= 3 )); do
+  while (( attempt <= 3 )); do
         stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m ${UMLS_KEY:+-Dctakes.umls_apikey=$UMLS_KEY} \
           -Dorg.slf4j.simpleLogger.defaultLogLevel=info \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary=warn \
@@ -289,7 +289,7 @@ run_pipeline_sharded() {
           -Dorg.slf4j.simpleLogger.log.org.cleartk=warn \
           -Dorg.slf4j.simpleLogger.log.opennlp=warn \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.core.ae.RegexSpanFinder=warn \
-          -Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=warn \
+          -Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=${XMI_LOG_LEVEL:-warn} \
           -cp "$JAVA_CP" \
           org.apache.ctakes.core.pipeline.PiperFileRunner \
           -p "$tuned_piper" -i "$in_dir" -o "$outdir" -l "$xml" ${UMLS_KEY:+--key $UMLS_KEY} \

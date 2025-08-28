@@ -113,6 +113,66 @@ samples/mimic/     # place ~100 de‑identified MIMIC notes (.txt) for validatio
 
 I ignore the cTAKES distro and runtime outputs in git. Keep those local.
 
+## MIMIC Validation (cluster, lock-safe)
+
+HSQL file DBs (the fast dictionary) cannot be opened concurrently at the same on‑disk path. To avoid `.lck` errors in parallel runs, enable dictionary relocation via `CTAKES_SANITIZE_DICT=1` (this copies the DB and rewrites the JDBC URL for each runner or a shared copy). This does not change dictionary content.
+
+- `CTAKES_SANITIZE_DICT=1`: required to avoid HSQL `.lck` under parallelism (copies DB, rewrites URL).
+- `DICT_SHARED=0`: per‑shard copies (each runner gets its own copy; more disk, less contention).
+- `DICT_SHARED=1`: one shared read‑only copy for all runners (saves space; fastest startup). Set `DICT_SHARED_PATH` (e.g., `/dev/shm`).
+
+Recommended per‑shard MIMIC validation run:
+
+```bash
+cd /workspace/CtakesBun
+
+# 1. Set CTAKES_HOME
+export CTAKES_HOME="$(pwd)/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0"
+
+# 2. Clean any existing locks
+find "$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast" -name '*.lck' -delete
+
+# 3. Env for per-shard copies + concurrency
+export CTAKES_SANITIZE_DICT=1
+export DICT_SHARED=0
+# UMLS key is auto-injected by runners; override explicitly if needed
+export UMLS_KEY="6370dcdd-d438-47ab-8749-5a8fb9d013f2"
+ulimit -n 65535 || true
+
+# 4. Run validation (reuse when you already have .txt files present)
+scripts/validate_mimic.sh \
+  -i "/workspace/CtakesBun/samples/mimic" \
+  -o "/workspace/CtakesBun/outputs/mimic_validation" \
+  --runners 32 \
+  --threads 8 \
+  --xmx 8192 \
+  --seed 42 \
+  --subset-mode reuse \
+  --consolidate-async
+```
+
+Tip: Prefer a single shared copy to save space:
+
+```bash
+export CTAKES_SANITIZE_DICT=1
+export DICT_SHARED=1
+export DICT_SHARED_PATH=/dev/shm
+bash scripts/flight_check.sh --mode cluster --require-shared
+scripts/validate_mimic.sh -i "/workspace/CtakesBun/samples/mimic" -o "/workspace/CtakesBun/outputs/mimic_validation" --subset-mode reuse --consolidate-async
+```
+
+Reduce XMI warning verbosity (optional):
+
+```bash
+# Prior to run_compare_cluster.sh invocations (propagates from validate_mimic)
+export XMI_LOG_LEVEL=error
+```
+
+About the XMI “multipleReferencesAllowed” warnings:
+- These are benign serializer warnings when a feature is referenced multiple times but the TypeSystem marks it as not allowing multiple references (e.g., `Predicate:relations`).
+- Suppress by setting `XMI_LOG_LEVEL=error`.
+- Advanced fix (optional) is to override the TypeSystem feature to set `<multipleReferencesAllowed>true</multipleReferencesAllowed>`, which requires a runtime TypeSystem override.
+
 All commands (reference)
 - `scripts/run_compare_cluster.sh`
   - `-i|--in <dir>` input root (supports note‑type subfolders like the example above).
