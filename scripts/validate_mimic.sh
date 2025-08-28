@@ -114,11 +114,12 @@ BASELINE_MAN="$BASELINE_DIR/manifest.txt"
 mkdir -p "$BASELINE_DIR"
 if [[ -f "$BASELINE_MAN" ]]; then
   echo "Comparing against baseline: $BASELINE_MAN"
-  if diff -u "$BASELINE_MAN" "$CUR_MAN" >/dev/null; then
-    echo "VALIDATION OK: current outputs match baseline manifest."
+  # Ignore volatile header fields (e.g., Date) when comparing manifests
+  if diff -u <(sed '/^# Date:/d' "$BASELINE_MAN") <(sed '/^# Date:/d' "$CUR_MAN") >/dev/null; then
+    echo "VALIDATION OK: current outputs match baseline manifest (ignoring Date)."
   else
-    echo "VALIDATION MISMATCH: differences found vs baseline manifest:" >&2
-    diff -u "$BASELINE_MAN" "$CUR_MAN" || true
+    echo "VALIDATION MISMATCH: differences found vs baseline manifest (ignoring Date):" >&2
+    diff -u <(sed '/^# Date:/d' "$BASELINE_MAN") <(sed '/^# Date:/d' "$CUR_MAN") || true
     exit 1
   fi
 else
