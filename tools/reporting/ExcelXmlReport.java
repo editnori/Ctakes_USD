@@ -82,11 +82,10 @@ public class ExcelXmlReport {
             List<List<String>> clinician = buildClinicianSummaryIfAny(outDir);
             if (clinician != null && clinician.size() > 1) sheets.put("Clinician Summary", clinician);
             Files.createDirectories(workbook.getParent());
-            if (workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
-                writeWorkbookXlsx(sheets, workbook);
-            } else {
-                writeWorkbookXml(sheets, workbook);
+            if (!workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
+                workbook = java.nio.file.Paths.get(workbook.toString() + ".xlsx");
             }
+            writeWorkbookXlsx(sheets, workbook);
             System.out.println("Wrote workbook: " + workbook);
             return;
         }
@@ -153,11 +152,10 @@ public class ExcelXmlReport {
         }
 
         Files.createDirectories(workbook.getParent());
-        if (workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
-            writeWorkbookXlsx(sheets, workbook);
-        } else {
-            writeWorkbookXml(sheets, workbook);
+        if (!workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
+            workbook = java.nio.file.Paths.get(workbook.toString() + ".xlsx");
         }
+        writeWorkbookXlsx(sheets, workbook);
         System.out.println("[report] Wrote workbook: " + workbook);
     }
 

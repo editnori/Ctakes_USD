@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Build an Excel-compatible XML workbook (multi-sheet) consolidating outputs for a run.
-# Usage: scripts/build_xlsx_report.sh -o <run_output_dir> [-p <pipeline.piper>] [-l <run.log>] [-d <dict.xml>] [-w <workbook.xml>] [-M <mode>]
+# Build an XLSX workbook (multi-sheet) consolidating outputs for a run.
+# Usage: scripts/build_xlsx_report.sh -o <run_output_dir> [-p <pipeline.piper>] [-l <run.log>] [-d <dict.xml>] [-w <workbook.xlsx>] [-M <mode>]
 #
 # Notes:
 # - mode: "summary" (fast, default for in-run reports), "full" (heavier, parses XMI), or "csv" (use per-doc CSVs, no XMI parse)
