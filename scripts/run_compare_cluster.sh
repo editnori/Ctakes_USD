@@ -323,7 +323,8 @@ run_pipeline_sharded() {
   } || true
 
   # Post-processing: consolidate shards, optionally async; then optionally build per-pipeline report
-  local rpt="$parent/ctakes-${name}-${gshort}.xlsx"
+  local REPORT_EXT="${REPORT_EXT:-xlsx}"
+  local rpt="$parent/ctakes-${name}-${gshort}.${REPORT_EXT}"
   if [[ "$CONSOLIDATE" -eq 1 ]]; then
     if [[ "$any_fail" -eq 0 ]]; then
       if [[ "$CONSOLIDATE_ASYNC" -eq 1 ]]; then
@@ -384,7 +385,7 @@ done
 
 if [[ "$SKIP_PARENT" -eq 0 ]]; then
   STAMP="$(date +%Y%m%d-%H%M%S)"
-  PARENT_REPORT="$OUT/ctakes-report-compare-${STAMP}.xlsx"
+  PARENT_REPORT="$OUT/ctakes-report-compare-${STAMP}.${REPORT_EXT}"
   bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$OUT" -w "$PARENT_REPORT" -M csv || true
   echo "- Summary: $PARENT_REPORT"
 else
