@@ -158,23 +158,24 @@ if [[ "$MODE" == "cluster" ]]; then
   else
     workdb="/dev/shm/${DICT_NAME}_S_core_000"
   fi
-  sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb};ifexists=true;readonly=true\"#" "$san"
+  # Do NOT append flags; cTAKES 6.0.0 pre-validates <path>.script and flags break it
+  sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb}\"#" "$san"
 else
   tmp_db="/tmp/ctakes_full/$DICT_NAME"
-  sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${tmp_db};ifexists=true;readonly=true\"#" "$san"
+  sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${tmp_db}\"#" "$san"
 fi
 
 if command -v rg >/dev/null 2>&1; then
   has_driver=$(rg -n "org.hsqldb.jdbc.JDBCDriver" -S "$san" >/dev/null && echo 1 || echo 0)
-  has_url=$(rg -n "jdbc:hsqldb:file:.*ifexists=true;readonly=true" -S "$san" >/dev/null && echo 1 || echo 0)
+  has_url=$(rg -n "jdbc:hsqldb:file:" -S "$san" >/dev/null && echo 1 || echo 0)
 else
   has_driver=$(grep -qE 'org\.hsqldb\.jdbc\.JDBCDriver' "$san" && echo 1 || echo 0)
-  has_url=$(grep -qE 'jdbc:hsqldb:file:.*ifexists=true;readonly=true' "$san" && echo 1 || echo 0)
+  has_url=$(grep -q 'jdbc:hsqldb:file:' "$san" >/dev/null && echo 1 || echo 0)
 fi
 if [[ "$has_driver" -eq 1 && "$has_url" -eq 1 ]]; then
-  pass "Sanitized XML uses JDBCDriver + jdbcUrl with flags (dry-run)"
+  pass "Sanitized XML uses JDBCDriver + jdbcUrl (dry-run)"
 else
-  fail "Sanitized XML missing expected driver or jdbcUrl flags (dry-run)"
+  fail "Sanitized XML missing expected driver or jdbcUrl (dry-run)"
 fi
 
 echo "== Flight checks complete."

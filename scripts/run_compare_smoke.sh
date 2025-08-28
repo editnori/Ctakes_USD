@@ -104,7 +104,8 @@ prep_xml() {
     mkdir -p "$(dirname "$tmp_db")"
     cp -f "$src_db.properties" "$tmp_db.properties"
     cp -f "$src_db.script" "$tmp_db.script"
-    sed -i -E "s#(key=\"jdbcUrl\" value=)\"[^\"]+\"#\1\"jdbc:hsqldb:file:${tmp_db};ifexists=true;readonly=true\"#" "$san"
+    # Do NOT append flags; cTAKES validates by probing <path>.script and will fail if flags present
+    sed -i -E "s#(key=\"jdbcUrl\" value=)\"[^\"]+\"#\1\"jdbc:hsqldb:file:${tmp_db}\"#" "$san"
   fi
   echo "$san"
 }
