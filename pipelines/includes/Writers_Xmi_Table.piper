@@ -1,0 +1,21 @@
+// Shared writer block: consistent outputs across pipelines
+
+// XMI first: full CAS snapshot
+add FileTreeXmiWriter SubDirectory=xmi
+
+// Tabular semantic mention summaries
+add SemanticTableFileWriter SubDirectory=bsv_table
+add SemanticTableFileWriter SubDirectory=csv_table TableType=CSV
+add SemanticTableFileWriter SubDirectory=html_table TableType=HTML
+// Enhanced per-document Clinical Concepts CSV (fast for consolidation)
+add tools.reporting.uima.ClinicalConceptCsvWriter SubDirectory=csv_table_concepts
+
+// Concept lists and counts
+add CuiListFileWriter SubDirectory=cui_list
+add CuiCountFileWriter SubDirectory=cui_count
+
+// Tokens for quick span verification
+add TokenTableFileWriter SubDirectory=bsv_tokens
+
+// Finished log
+addLast util.log.FinishedLogger

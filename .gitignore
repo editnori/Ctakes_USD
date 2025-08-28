@@ -32,3 +32,17 @@ ctakes-*
 # OS specific files
 .DS_Store
 Thumbs.db
+
+# cTAKES distribution and large outputs
+apache-ctakes-*/
+/.build_tools/
+/outputs/
+/logs/
+/*.tgz
+/*.zip
+*.xmi
+/cTAKES.error.log
+/SD*/
+/org/
+/build/
+/umls_loader/
