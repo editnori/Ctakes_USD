@@ -17,7 +17,8 @@ set -euo pipefail
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0}"
-JAVA_CP="$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$BASE_DIR/.build_tools"
+# Prepend repo overrides/resources before cTAKES resources so we can override default configs (e.g., DefaultListRegex.bsv)
+JAVA_CP="$BASE_DIR/resources_override:$BASE_DIR/resources:$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$BASE_DIR/.build_tools"
 
 IN=""; OUT=""; RUNNERS="${RUNNERS:-16}"; XMX_MB="${XMX_MB:-6144}"; THREADS="${THREADS:-6}"; MAKE_REPORTS=0
 # Use a single shared read-only HSQLDB dictionary for all shards (reduces duplicate init)
@@ -323,7 +324,7 @@ run_pipeline_sharded() {
   } || true
 
   # Post-processing: consolidate shards, optionally async; then optionally build per-pipeline report
-  local REPORT_EXT="${REPORT_EXT:-xlsx}"
+  local REPORT_EXT="${REPORT_EXT:-xml}"
   local rpt="$parent/ctakes-${name}-${gshort}.${REPORT_EXT}"
   if [[ "$CONSOLIDATE" -eq 1 ]]; then
     if [[ "$any_fail" -eq 0 ]]; then

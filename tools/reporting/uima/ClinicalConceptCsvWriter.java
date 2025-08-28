@@ -16,6 +16,7 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
+import org.apache.ctakes.smokingstatus.type.SmokingDocumentClassification;
 import org.apache.uima.jcas.cas.FSArray;
 
 import java.io.BufferedWriter;
@@ -83,6 +84,7 @@ public class ClinicalConceptCsvWriter extends JCasAnnotator_ImplBase {
             )));
             bw.write("\n");
 
+            final String smoking = detectSmoking(jCas);
             for (IdentifiedAnnotation ia : JCasUtil.select(jCas, IdentifiedAnnotation.class)) {
                 // Only output concept-bearing clinical concepts
                 FSArray arr = ia.getOntologyConceptArr();
@@ -121,7 +123,7 @@ public class ClinicalConceptCsvWriter extends JCasAnnotator_ImplBase {
                 List<String> row = Arrays.asList(
                         docId,
                         String.valueOf(ia.getBegin()), String.valueOf(ia.getEnd()), csvEsc(safeText(text, ia.getBegin(), ia.getEnd())),
-                        csvEsc(normalizeSection(section)), "",
+                        csvEsc(normalizeSection(section)), csvEsc(smoking),
                         csvEsc(sg), csvEsc(st), semFallback?"true":"", nvl(bestCui), nvl(bestTui), csvEsc(prefOut), prefFallback?"true":"", csvEsc(nvl(bestScheme)),
                         String.valueOf(candCount), csvEsc(String.join("; ", candStrs)), String.valueOf(ia.getConfidence()), String.valueOf(bestScore), String.valueOf(disamb),
                         csvEsc(dtr), String.valueOf(deg), csvEsc(locTxt), String.valueOf(isCoref), csvEsc(chainId), csvEsc(chainRep),
@@ -163,6 +165,15 @@ public class ClinicalConceptCsvWriter extends JCasAnnotator_ImplBase {
         if (s == null) return "";
         if ("SIMPLE_SEGMENT".equalsIgnoreCase(s)) return "S";
         return s;
+    }
+
+    private static String detectSmoking(JCas jCas) {
+        // Prefer document-level classification if present
+        for (SmokingDocumentClassification sdc : JCasUtil.select(jCas, SmokingDocumentClassification.class)) {
+            String c = sdc.getClassification();
+            if (c != null && !c.trim().isEmpty()) return c.trim();
+        }
+        return "";
     }
 
     private static String findSection(List<Segment> segs, IdentifiedAnnotation ia) {

@@ -44,6 +44,13 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+## Auto-switch dictionary sharing based on runners unless user explicitly set DICT_SHARED
+if [[ -z "${DICT_SHARED+x}" ]]; then
+  if (( RUNNERS > 1 )); then
+    export DICT_SHARED=0
+  fi
+fi
+
 [[ -d "$IN_DIR" ]] || mkdir -p "$IN_DIR"
 if ! find "$IN_DIR" -type f -name '*.txt' | head -n1 | grep -q .; then
   cat >&2 <<EOF
