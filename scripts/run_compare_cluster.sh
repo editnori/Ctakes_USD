@@ -256,6 +256,13 @@ run_pipeline_sharded() {
       fi
       # Point JDBC to the shared/per-shard DB with HSQLDB 2.x flags: fail if DB missing and use read-only for concurrent readers
       sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb};ifexists=true;readonly=true\"#" "$xml"
+      # Debug: record resolved DB path and JDBC URL for this shard
+      echo "[${name}_$i][dict] workdb=${workdb}" | tee -a "$outdir/run.log" >&2
+      if command -v rg >/dev/null 2>&1; then
+        rg -n "jdbcUrl" -S "$xml" | sed -u "s/^/[${name}_$i][dict] /" | tee -a "$outdir/run.log" >&2 || true
+      else
+        grep -n "jdbcUrl" "$xml" | sed -u "s/^/[${name}_$i][dict] /" | tee -a "$outdir/run.log" >&2 || true
+      fi
     fi
     (
       set +e
