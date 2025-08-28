@@ -12,6 +12,16 @@ Prerequisites
 - cTAKES 6.0.0. Set `CTAKES_HOME` to `apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0` (or your install).
 - Input notes under one directory (`.txt` files).
 
+If you want a one‑shot install with your exact cTAKES build and dictionary, use the bundle workflow in `docs/BUNDLE.md`:
+
+```
+# Local file present:
+scripts/install_bundle.sh
+
+# Or download from your release URL:
+scripts/install_bundle.sh -u https://…/CtakesBun-bundle.tgz -s <sha256>
+```
+
 Quick start
 1) Start the run (detached optional):
    - `scripts/run_detached.sh scripts/run_compare_cluster.sh -i <input_dir> -o <output_base> --reports`
