@@ -21,6 +21,8 @@ CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.
 JAVA_CP="$BASE_DIR/resources_override:$BASE_DIR/resources:$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$BASE_DIR/.build_tools"
 
 IN=""; OUT=""; RUNNERS="${RUNNERS:-16}"; XMX_MB="${XMX_MB:-6144}"; THREADS="${THREADS:-6}"; MAKE_REPORTS=0
+# Global report extension default (used outside functions as well)
+REPORT_EXT="${REPORT_EXT:-xlsx}"
 # Control dictionary handling (default: no sanitization, use provided XML as-is)
 CTAKES_SANITIZE_DICT="${CTAKES_SANITIZE_DICT:-0}"
 DICT_XML_ARG="${DICT_XML:-}"  # allow DICT_XML env or --dict-xml flag
@@ -334,7 +336,7 @@ run_pipeline_sharded() {
   } || true
 
   # Post-processing: consolidate shards, optionally async; then optionally build per-pipeline report
-  local REPORT_EXT="${REPORT_EXT:-xlsx}"
+  # use global REPORT_EXT
   local rpt="$parent/ctakes-${name}-${gshort}.${REPORT_EXT}"
   if [[ "$CONSOLIDATE" -eq 1 ]]; then
     if [[ "$any_fail" -eq 0 ]]; then

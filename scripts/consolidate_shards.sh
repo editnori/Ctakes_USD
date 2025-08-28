@@ -81,7 +81,14 @@ if [[ ! -s "$PARENT/run.log" ]]; then
     if [[ -f "$sh/run.log" ]]; then cat "$sh/run.log" >> "$combined"; fi
   done
   if [[ -s "$combined" ]]; then
-    echo "[consolidate] Wrote combined run.log"
+    # Deduplicate repeated Build Version/Date lines (keep the first occurrence)
+    tmp_combined="$(mktemp)"
+    awk '{
+      if ($0 ~ /\] Build (Version|Date):/){
+        if (!seen[$0]++) print;
+      } else { print }
+    }' "$combined" > "$tmp_combined" && mv "$tmp_combined" "$combined"
+    echo "[consolidate] Wrote combined run.log (dedup Build Version/Date lines)"
   else
     rm -f "$combined" 2>/dev/null || true
   fi
@@ -122,6 +129,19 @@ fi
 # Build aggregated CUI counts workbook/CSVs (best-effort)
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 if command -v python3 >/dev/null 2>&1; then
+  # Ensure openpyxl is available for XLSX (best-effort install if missing)
+  if ! python3 - <<'PY' 2>/dev/null; then
+import sys
+try:
+  import openpyxl  # noqa
+  sys.exit(0)
+except Exception:
+  sys.exit(1)
+PY
+  then
+    echo "[consolidate] Installing Python dependency: openpyxl (user scope)" >&2
+    python3 -m pip install --user --no-warn-script-location openpyxl >/dev/null 2>&1 || true
+  fi
   COLORS="S_core=#00A3E0;S_core_rel=#4F81BD;S_core_temp=#9BBB59;S_core_temp_coref=#2C3E50;D_core_rel=#C0504D;D_core_temp=#8064A2;D_core_temp_coref=#4BACC6;WSD_Compare=#8E44AD;TsSectionedTemporalCoref=#E07A00"
   OUT_BASE="$PARENT/cui_count/cui_counts"
   python3 "$BASE_DIR/scripts/consolidate_cuicount.py" \
