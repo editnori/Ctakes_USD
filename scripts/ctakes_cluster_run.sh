@@ -70,6 +70,8 @@ for i in $(seq -f "%03g" 0 $((RUNNERS-1))); do
   (
     stdbuf -oL -eL java ${APIKEY:+-Dctakes.umls_apikey=$APIKEY} \
       -Dorg.slf4j.simpleLogger.defaultLogLevel=info \
+      -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.core.ae.RegexSpanFinder=warn \
+      -Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=warn \
       -Xms${XMX_MB}m -Xmx${XMX_MB}m -XX:+UseG1GC -XX:ParallelGCThreads=2 -XX:ConcGCThreads=1 \
       -cp "$CP" \
       org.apache.ctakes.core.pipeline.PiperFileRunner \
