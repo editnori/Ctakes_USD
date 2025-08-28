@@ -1,0 +1,2183 @@
+ Semantic Group | Semantic Type | Section | Span | Negated | Uncertain | Generic | CUI | Preferred Text | Document Text 
+Event|Event|SIMPLE_SEGMENT|2,6|false|false|false|||Name
+Finding|Intellectual Product|SIMPLE_SEGMENT|2,6|false|false|false|C0027365;C1547383;C1554107|MDF Attribute Type - Name;Name;Person Name|Name
+Event|Event|SIMPLE_SEGMENT|46,55|false|false|false|||Admission
+Procedure|Health Care Activity|SIMPLE_SEGMENT|46,55|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|Admission
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|46,60|false|false|false|C2598112||Admission Date
+Event|Event|SIMPLE_SEGMENT|80,89|false|false|false|||Discharge
+Finding|Body Substance|SIMPLE_SEGMENT|80,89|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|SIMPLE_SEGMENT|80,89|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|SIMPLE_SEGMENT|80,89|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|SIMPLE_SEGMENT|80,89|false|false|false|C0030685|Patient Discharge|Discharge
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|80,94|false|false|false|C2361122||Discharge Date
+Finding|Finding|SIMPLE_SEGMENT|112,117|false|false|false|C0005615;C1148523;C1550722;C3245487;C4551887|Birth;Childbirth;Entity Name Part Qualifier - birth;Name Given at Birth;birth (history)|Birth
+Finding|Intellectual Product|SIMPLE_SEGMENT|112,117|false|false|false|C0005615;C1148523;C1550722;C3245487;C4551887|Birth;Childbirth;Entity Name Part Qualifier - birth;Name Given at Birth;birth (history)|Birth
+Finding|Organism Function|SIMPLE_SEGMENT|112,117|false|false|false|C0005615;C1148523;C1550722;C3245487;C4551887|Birth;Childbirth;Entity Name Part Qualifier - birth;Name Given at Birth;birth (history)|Birth
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|136,139|false|false|false|C0804628||Sex
+Finding|Behavior|SIMPLE_SEGMENT|136,139|false|false|false|C0009253;C0036864;C1314687;C1418662|Coitus;PLXNA3 gene;Sex Behavior|Sex
+Finding|Finding|SIMPLE_SEGMENT|136,139|false|false|false|C0009253;C0036864;C1314687;C1418662|Coitus;PLXNA3 gene;Sex Behavior|Sex
+Finding|Gene or Genome|SIMPLE_SEGMENT|136,139|false|false|false|C0009253;C0036864;C1314687;C1418662|Coitus;PLXNA3 gene;Sex Behavior|Sex
+Finding|Organism Function|SIMPLE_SEGMENT|136,139|false|false|false|C0009253;C0036864;C1314687;C1418662|Coitus;PLXNA3 gene;Sex Behavior|Sex
+Event|Occupational Activity|SIMPLE_SEGMENT|147,154|false|false|false|C0557854|Services|Service
+Finding|Idea or Concept|SIMPLE_SEGMENT|147,154|false|false|false|C3245478|ActInformationPrivacyReason - service|Service
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|156,164|false|false|false|C0013227|Pharmaceutical Preparations|MEDICINE
+Drug|Amino Acid, Peptide, or Protein|Allergies|179,189|false|false|false|C0065374|lisinopril|lisinopril
+Drug|Pharmacologic Substance|Allergies|179,189|false|false|false|C0065374|lisinopril|lisinopril
+Event|Event|Allergies|179,189|false|false|false|||lisinopril
+Event|Event|Allergies|192,201|false|false|false|||Attending
+Finding|Functional Concept|Allergies|192,201|false|false|false|C1999232|Attending (action)|Attending
+Finding|Sign or Symptom|Chief Complaint|227,236|false|true|false|C0004604|Back Pain|Back Pain
+Attribute|Clinical Attribute|Chief Complaint|232,236|false|false|false|C2598155||Pain
+Event|Event|Chief Complaint|232,236|false|false|false|||Pain
+Finding|Functional Concept|Chief Complaint|232,236|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Finding|Sign or Symptom|Chief Complaint|232,236|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Finding|Classification|Chief Complaint|239,244|false|false|false|C4521762|United States Military Commissioned Officer O4 (qualifier value)|Major
+Procedure|Health Care Activity|Chief Complaint|245,253|false|false|false|C0543467;C0587668|Operative Surgical Procedures;Surgical service|Surgical
+Procedure|Therapeutic or Preventive Procedure|Chief Complaint|245,253|false|false|false|C0543467;C0587668|Operative Surgical Procedures;Surgical service|Surgical
+Procedure|Therapeutic or Preventive Procedure|Chief Complaint|257,275|false|false|false|C4048276|Invasive procedure|Invasive Procedure
+Attribute|Clinical Attribute|Chief Complaint|266,275|false|false|false|C0945766||Procedure
+Event|Event|Chief Complaint|266,275|false|false|false|||Procedure
+Event|Occupational Activity|Chief Complaint|266,275|false|false|false|C1546467|Act Class - procedure|Procedure
+Finding|Functional Concept|Chief Complaint|266,275|false|false|false|C2700391|Procedure (set of actions)|Procedure
+Procedure|Therapeutic or Preventive Procedure|Chief Complaint|266,275|false|false|false|C0184661|Interventional procedure|Procedure
+Finding|Body Substance|History of Present Illness|317,324|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|patient
+Finding|Idea or Concept|History of Present Illness|317,324|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|patient
+Finding|Intellectual Product|History of Present Illness|317,324|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|patient
+Event|Event|History of Present Illness|350,361|false|false|false|||significant
+Finding|Idea or Concept|History of Present Illness|350,361|false|false|false|C0750502|Significant|significant
+Disorder|Disease or Syndrome|History of Present Illness|366,369|false|false|false|C0020538|Hypertensive disease|HTN
+Event|Event|History of Present Illness|366,369|false|false|false|||HTN
+Disorder|Disease or Syndrome|History of Present Illness|371,375|false|false|false|C0017168|Gastroesophageal reflux disease|GERD
+Event|Event|History of Present Illness|371,375|false|false|false|||GERD
+Disorder|Disease or Syndrome|History of Present Illness|378,381|false|false|false|C0010068;C0175816;C1956346|Cold Hemagglutinin Disease;Coronary Artery Disease;Coronary heart disease|CAD
+Drug|Amino Acid, Peptide, or Protein|History of Present Illness|378,381|false|false|false|C1504769|DFFB protein, human|CAD
+Drug|Enzyme|History of Present Illness|378,381|false|false|false|C1504769|DFFB protein, human|CAD
+Event|Event|History of Present Illness|378,381|false|false|false|||CAD
+Finding|Gene or Genome|History of Present Illness|378,381|false|false|false|C1413078;C1413983;C1428349;C2239547;C3813548;C4284121|ACOD1 gene;B4GALNT2 gene;CAD gene;CALD1 wt Allele;DFFB gene;DFFB wt Allele|CAD
+Procedure|Diagnostic Procedure|History of Present Illness|378,381|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Research Activity|History of Present Illness|378,381|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Therapeutic or Preventive Procedure|History of Present Illness|378,381|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Event|Event|History of Present Illness|386,390|false|false|false|||CABG
+Procedure|Therapeutic or Preventive Procedure|History of Present Illness|386,390|false|false|false|C0010055|Coronary Artery Bypass Surgery|CABG
+Event|Event|History of Present Illness|395,403|false|false|false|||stenting
+Procedure|Therapeutic or Preventive Procedure|History of Present Illness|395,403|false|false|false|C2348535|Stenting|stenting
+Disorder|Disease or Syndrome|History of Present Illness|405,409|false|false|false|C0011854|Diabetes Mellitus, Insulin-Dependent|IDDM
+Event|Event|History of Present Illness|405,409|false|false|false|||IDDM
+Disorder|Disease or Syndrome|History of Present Illness|425,435|false|false|false|C0442874|Neuropathy|neuropathy
+Event|Event|History of Present Illness|425,435|false|false|false|||neuropathy
+Event|Event|History of Present Illness|441,449|false|false|false|||presents
+Anatomy|Body Location or Region|History of Present Illness|457,462|false|false|false|C0230171|Flank (surface region)|flank
+Finding|Sign or Symptom|History of Present Illness|457,467|false|false|false|C0016199|Flank Pain|flank pain
+Attribute|Clinical Attribute|History of Present Illness|463,467|false|false|false|C2598155||pain
+Event|Event|History of Present Illness|463,467|false|false|false|||pain
+Finding|Functional Concept|History of Present Illness|463,467|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|History of Present Illness|463,467|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Body Substance|History of Present Illness|475,482|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|patient
+Finding|Idea or Concept|History of Present Illness|475,482|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|patient
+Finding|Intellectual Product|History of Present Illness|475,482|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|patient
+Attribute|Clinical Attribute|History of Present Illness|489,493|false|false|false|C2598155||pain
+Event|Event|History of Present Illness|489,493|false|false|false|||pain
+Finding|Functional Concept|History of Present Illness|489,493|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|History of Present Illness|489,493|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Event|Event|History of Present Illness|542,550|false|false|false|||worsened
+Event|Event|History of Present Illness|579,587|false|false|false|||worsened
+Event|Event|History of Present Illness|594,602|false|false|false|||coughing
+Finding|Sign or Symptom|History of Present Illness|594,602|false|false|false|C0010200|Coughing|coughing
+Event|Event|History of Present Illness|607,613|false|false|false|||moving
+Finding|Organism Function|History of Present Illness|607,613|false|false|false|C0560560|Moving|moving
+Event|Event|History of Present Illness|629,635|false|false|false|||denies
+Event|Event|History of Present Illness|640,647|false|false|false|||dysuria
+Finding|Sign or Symptom|History of Present Illness|640,647|true|false|false|C0013428|Dysuria|dysuria
+Anatomy|Body Part, Organ, or Organ Component|History of Present Illness|649,656|false|false|false|C0042027|Urinary tract|urinary
+Event|Event|History of Present Illness|658,667|false|false|false|||frequency
+Finding|Intellectual Product|History of Present Illness|658,667|false|false|false|C3898838;C4321352|Frequency;How Often|frequency
+Anatomy|Body Location or Region|History of Present Illness|669,678|false|false|false|C0000726|Abdomen|abdominal
+Finding|Sign or Symptom|History of Present Illness|669,683|false|false|false|C0000737|Abdominal Pain|abdominal pain
+Attribute|Clinical Attribute|History of Present Illness|679,683|false|false|false|C2598155||pain
+Event|Event|History of Present Illness|679,683|false|false|false|||pain
+Finding|Functional Concept|History of Present Illness|679,683|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|History of Present Illness|679,683|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Anatomy|Body Location or Region|History of Present Illness|690,695|false|false|false|C0817096;C1527391|Anterior thoracic region;Chest|chest
+Finding|Finding|History of Present Illness|690,695|false|false|false|C0741025|Chest problem|chest
+Attribute|Clinical Attribute|History of Present Illness|690,700|false|false|false|C2926613||chest pain
+Finding|Sign or Symptom|History of Present Illness|690,700|false|false|false|C0008031|Chest Pain|chest pain
+Attribute|Clinical Attribute|History of Present Illness|696,700|false|true|false|C2598155||pain
+Event|Event|History of Present Illness|696,700|false|false|false|||pain
+Finding|Functional Concept|History of Present Illness|696,700|false|true|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|History of Present Illness|696,700|false|true|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Event|Event|History of Present Illness|702,711|false|false|false|||shortness
+Attribute|Clinical Attribute|History of Present Illness|702,721|false|false|false|C2707305||shortness of breath
+Finding|Sign or Symptom|History of Present Illness|702,721|false|false|false|C0013404|Dyspnea|shortness of breath
+Finding|Body Substance|History of Present Illness|715,721|false|false|false|C0225386|Breath|breath
+Event|Event|History of Present Illness|726,735|false|false|false|||dizziness
+Finding|Sign or Symptom|History of Present Illness|726,735|false|false|false|C0012833;C0042571|Dizziness;Vertigo|dizziness
+Event|Event|History of Present Illness|741,749|false|false|false|||endorses
+Event|Event|History of Present Illness|752,760|false|false|false|||episodes
+Event|Event|History of Present Illness|764,772|false|false|false|||diarrhea
+Finding|Finding|History of Present Illness|764,772|false|false|false|C0011991;C2169706|Diarrhea;rectal discharge diarrhea (physical finding)|diarrhea
+Finding|Sign or Symptom|History of Present Illness|764,772|false|false|false|C0011991;C2169706|Diarrhea;rectal discharge diarrhea (physical finding)|diarrhea
+Finding|Idea or Concept|History of Present Illness|792,799|false|false|false|C1555582|Initial (abbreviation)|initial
+Event|Event|History of Present Illness|800,806|false|false|false|||vitals
+Event|Event|History of Present Illness|853,860|false|false|false|||trended
+Event|Event|History of Present Illness|886,890|false|false|false|||Labs
+Lab|Laboratory or Test Result|History of Present Illness|886,890|false|false|false|C0587081|Laboratory test finding|Labs
+Finding|Idea or Concept|History of Present Illness|896,907|false|false|false|C0750502|Significant|significant
+Event|Event|History of Present Illness|908,911|false|false|false|||for
+Disorder|Cell or Molecular Dysfunction|History of Present Illness|913,921|false|false|false|C4727483|BRAF Gene Rearrangement|positive
+Event|Event|History of Present Illness|913,921|false|false|false|||positive
+Finding|Classification|History of Present Illness|913,921|false|false|false|C1446409;C1514241;C2699078|Positive;Positive Finding;Rh Positive Blood Group|positive
+Finding|Finding|History of Present Illness|913,921|false|false|false|C1446409;C1514241;C2699078|Positive;Positive Finding;Rh Positive Blood Group|positive
+Anatomy|Cell|History of Present Illness|926,929|false|false|false|C0023516|Leukocytes|WBC
+Drug|Organic Chemical|History of Present Illness|935,942|false|false|false|C0022924;C0376261|Lactates;lactate|lactate
+Drug|Pharmacologic Substance|History of Present Illness|935,942|false|false|false|C0022924;C0376261|Lactates;lactate|lactate
+Event|Event|History of Present Illness|935,942|false|false|false|||lactate
+Procedure|Laboratory Procedure|History of Present Illness|935,942|false|false|false|C0202115|Lactic acid measurement|lactate
+Anatomy|Cell|History of Present Illness|948,951|false|false|false|C0023516|Leukocytes|WBC
+Event|Event|History of Present Illness|962,965|false|false|false|||PMN
+Finding|Cell Function|History of Present Illness|962,965|false|false|false|C2612881;C2825189|Premarket Device Notification;piecemeal microautophagy of the nucleus|PMN
+Finding|Intellectual Product|History of Present Illness|962,965|false|false|false|C2612881;C2825189|Premarket Device Notification;piecemeal microautophagy of the nucleus|PMN
+Anatomy|Body Space or Junction|History of Present Illness|968,971|false|false|false|C1185650|Asterion|AST
+Disorder|Neoplastic Process|History of Present Illness|968,971|false|false|false|C4522245|Atypical Spitz Nevus|AST
+Drug|Amino Acid, Peptide, or Protein|History of Present Illness|968,971|false|false|false|C0004002;C0242192;C1121182|Aspartate Transaminase;SGOT - Glutamate oxaloacetate transaminase;SLC17A5 protein, human|AST
+Drug|Biologically Active Substance|History of Present Illness|968,971|false|false|false|C0004002;C0242192;C1121182|Aspartate Transaminase;SGOT - Glutamate oxaloacetate transaminase;SLC17A5 protein, human|AST
+Drug|Enzyme|History of Present Illness|968,971|false|false|false|C0004002;C0242192;C1121182|Aspartate Transaminase;SGOT - Glutamate oxaloacetate transaminase;SLC17A5 protein, human|AST
+Event|Event|History of Present Illness|968,971|false|false|false|||AST
+Finding|Gene or Genome|History of Present Illness|968,971|false|false|false|C1415181;C1420113;C5960784|GOT1 gene;SLC17A5 gene;SLC17A5 wt Allele|AST
+Disorder|Neoplastic Process|History of Present Illness|977,980|false|false|false|C1266129;C1370889|Atypical Lipoma;Liposarcoma, well differentiated|ALT
+Drug|Amino Acid, Peptide, or Protein|History of Present Illness|977,980|false|false|false|C0001899|Alanine Transaminase|ALT
+Drug|Enzyme|History of Present Illness|977,980|false|false|false|C0001899|Alanine Transaminase|ALT
+Event|Event|History of Present Illness|977,980|false|false|false|||ALT
+Finding|Gene or Genome|History of Present Illness|977,980|false|false|false|C1140170;C1415274;C2257651|Alternative Billing Concepts;GPT gene|ALT
+Finding|Intellectual Product|History of Present Illness|977,980|false|false|false|C1140170;C1415274;C2257651|Alternative Billing Concepts;GPT gene|ALT
+Finding|Molecular Function|History of Present Illness|977,980|false|false|false|C1140170;C1415274;C2257651|Alternative Billing Concepts;GPT gene|ALT
+Procedure|Therapeutic or Preventive Procedure|History of Present Illness|977,980|false|false|false|C4553172|Antibiotic Lock Therapy|ALT
+Anatomy|Body Part, Organ, or Organ Component|History of Present Illness|985,988|false|false|false|C0023759|Lip structure|Lip
+Disorder|Disease or Syndrome|History of Present Illness|985,988|false|false|false|C0153932;C0264511|Benign neoplasm of the lip;Lymphoid interstitial pneumonia|Lip
+Disorder|Neoplastic Process|History of Present Illness|985,988|false|false|false|C0153932;C0264511|Benign neoplasm of the lip;Lymphoid interstitial pneumonia|Lip
+Finding|Gene or Genome|History of Present Illness|985,988|false|false|false|C1846919;C3889123|SMG1 gene;SMG1 wt Allele|Lip
+Event|Event|History of Present Illness|1008,1012|false|false|false|||Chem
+Finding|Functional Concept|History of Present Illness|1008,1012|false|false|false|C0079107|chemical aspects|Chem
+Procedure|Laboratory Procedure|History of Present Illness|1008,1012|false|false|false|C0201682|Chemical procedure|Chem
+Event|Event|History of Present Illness|1013,1022|false|false|false|||hemolyzed
+Drug|Biomedical or Dental Material|History of Present Illness|1036,1044|false|false|false|C0168634|BaseLine dental cement|baseline
+Event|Event|History of Present Illness|1036,1044|false|false|false|||baseline
+Finding|Idea or Concept|History of Present Illness|1036,1044|false|false|false|C1552824|baseline - TableCellVerticalAlign|baseline
+Finding|Functional Concept|History of Present Illness|1057,1063|false|false|false|C0205341;C1705914|Repeat;Repeat Object|repeat
+Event|Event|History of Present Illness|1071,1084|false|false|false|||Hyperglycemic
+Event|Event|History of Present Illness|1101,1107|false|false|false|||repeat
+Finding|Functional Concept|History of Present Illness|1101,1107|false|false|false|C0205341;C1705914|Repeat;Repeat Object|repeat
+Event|Event|History of Present Illness|1109,1112|false|false|false|||CXR
+Procedure|Diagnostic Procedure|History of Present Illness|1109,1112|false|false|false|C0039985|Plain chest X-ray|CXR
+Event|Event|History of Present Illness|1113,1119|false|false|false|||showed
+Finding|Intellectual Product|History of Present Illness|1123,1128|false|false|false|C1547229;C1547295|Acute - Triage Code;Admission Level of Care Code - Acute|acute
+Anatomy|Body Part, Organ, or Organ Component|History of Present Illness|1129,1136|false|false|false|C1184743|bony process|process
+Drug|Pharmacologic Substance|History of Present Illness|1129,1136|false|false|false|C1951340|Process Pharmacologic Substance|process
+Event|Event|History of Present Illness|1129,1136|false|false|false|||process
+Finding|Functional Concept|History of Present Illness|1129,1136|false|false|false|C4521054|Process (qualifier value)|process
+Phenomenon|Phenomenon or Process|History of Present Illness|1129,1136|false|false|false|C1522240|Process|process
+Finding|Body Substance|History of Present Illness|1138,1145|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|History of Present Illness|1138,1145|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|History of Present Illness|1138,1145|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Disorder|Disease or Syndrome|History of Present Illness|1167,1170|false|false|false|C0238052|Xanthomatosis, Cerebrotendinous|CTX
+Drug|Amino Acid, Peptide, or Protein|History of Present Illness|1167,1170|false|false|false|C0010377;C0010583;C5574748|C-Terminal Telopeptide Type 1 Collagen, human;Crotoxin;cyclophosphamide|CTX
+Drug|Biologically Active Substance|History of Present Illness|1167,1170|false|false|false|C0010377;C0010583;C5574748|C-Terminal Telopeptide Type 1 Collagen, human;Crotoxin;cyclophosphamide|CTX
+Drug|Enzyme|History of Present Illness|1167,1170|false|false|false|C0010377;C0010583;C5574748|C-Terminal Telopeptide Type 1 Collagen, human;Crotoxin;cyclophosphamide|CTX
+Drug|Hazardous or Poisonous Substance|History of Present Illness|1167,1170|false|false|false|C0010377;C0010583;C5574748|C-Terminal Telopeptide Type 1 Collagen, human;Crotoxin;cyclophosphamide|CTX
+Drug|Organic Chemical|History of Present Illness|1167,1170|false|false|false|C0010377;C0010583;C5574748|C-Terminal Telopeptide Type 1 Collagen, human;Crotoxin;cyclophosphamide|CTX
+Drug|Pharmacologic Substance|History of Present Illness|1167,1170|false|false|false|C0010377;C0010583;C5574748|C-Terminal Telopeptide Type 1 Collagen, human;Crotoxin;cyclophosphamide|CTX
+Event|Event|History of Present Illness|1167,1170|false|false|false|||CTX
+Finding|Gene or Genome|History of Present Illness|1167,1170|false|false|false|C1413864;C3539598|CYP27A1 gene;CYP27A1 wt Allele|CTX
+Drug|Amino Acid, Peptide, or Protein|History of Present Illness|1181,1188|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Hormone|History of Present Illness|1181,1188|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Pharmacologic Substance|History of Present Illness|1181,1188|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Event|Event|History of Present Illness|1181,1188|false|false|false|||insulin
+Finding|Gene or Genome|History of Present Illness|1181,1188|false|false|false|C1337112|INS gene|insulin
+Procedure|Laboratory Procedure|History of Present Illness|1181,1188|false|false|false|C0202098|Insulin measurement|insulin
+Event|Event|History of Present Illness|1205,1213|false|false|false|||received
+Event|Event|History of Present Illness|1218,1222|false|false|false|||home
+Finding|Idea or Concept|History of Present Illness|1218,1222|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|History of Present Illness|1218,1222|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|History of Present Illness|1218,1222|false|false|false|C1553498|home health encounter|home
+Drug|Amino Acid, Peptide, or Protein|History of Present Illness|1236,1243|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Hormone|History of Present Illness|1236,1243|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Pharmacologic Substance|History of Present Illness|1236,1243|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Event|Event|History of Present Illness|1236,1243|false|false|false|||insulin
+Finding|Gene or Genome|History of Present Illness|1236,1243|false|false|false|C1337112|INS gene|insulin
+Procedure|Laboratory Procedure|History of Present Illness|1236,1243|false|false|false|C0202098|Insulin measurement|insulin
+Event|Event|History of Present Illness|1245,1248|false|false|false|||UCx
+Event|Event|History of Present Illness|1264,1268|false|false|false|||sent
+Drug|Antibiotic|History of Present Illness|1275,1286|false|false|false|C0003232;C0003237;C3540704;C3540705;C3540706;C3540707;C3540708;C3540709;C3540710|Antibiotic throat preparations;Antibiotics;Antibiotics FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE;Antibiotics for systemic use;Antibiotics, Antitubercular;Antibiotics, Gynecological;Antibiotics, ophthalmologic;Antifungal Antibiotics, Topical;antibiotics, intestinal|antibiotics
+Event|Event|History of Present Illness|1275,1286|false|false|false|||antibiotics
+Event|Event|History of Present Illness|1315,1323|false|false|false|||transfer
+Finding|Functional Concept|History of Present Illness|1315,1323|false|false|false|C0348011;C1555583;C1705822;C3244299|ActClass - transfer;Transfer - product ownership;Transfer Technique|transfer
+Finding|Idea or Concept|History of Present Illness|1315,1323|false|false|false|C0348011;C1555583;C1705822;C3244299|ActClass - transfer;Transfer - product ownership;Transfer Technique|transfer
+Procedure|Health Care Activity|History of Present Illness|1315,1323|false|false|false|C4706767|Transfer (immobility management)|transfer
+Disorder|Disease or Syndrome|Past Medical History|1387,1391|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|Past Medical History|1387,1391|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|Past Medical History|1387,1391|false|false|false|||COPD
+Finding|Gene or Genome|Past Medical History|1387,1391|false|false|false|C1412502|ARCN1 gene|COPD
+Disorder|Disease or Syndrome|Past Medical History|1394,1397|false|false|false|C0010068;C0175816;C1956346|Cold Hemagglutinin Disease;Coronary Artery Disease;Coronary heart disease|CAD
+Drug|Amino Acid, Peptide, or Protein|Past Medical History|1394,1397|false|false|false|C1504769|DFFB protein, human|CAD
+Drug|Enzyme|Past Medical History|1394,1397|false|false|false|C1504769|DFFB protein, human|CAD
+Event|Event|Past Medical History|1394,1397|false|false|false|||CAD
+Finding|Gene or Genome|Past Medical History|1394,1397|false|false|false|C1413078;C1413983;C1428349;C2239547;C3813548;C4284121|ACOD1 gene;B4GALNT2 gene;CAD gene;CALD1 wt Allele;DFFB gene;DFFB wt Allele|CAD
+Procedure|Diagnostic Procedure|Past Medical History|1394,1397|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Research Activity|Past Medical History|1394,1397|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Therapeutic or Preventive Procedure|Past Medical History|1394,1397|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Event|Event|Past Medical History|1402,1406|false|false|false|||CABG
+Procedure|Therapeutic or Preventive Procedure|Past Medical History|1402,1406|false|false|false|C0010055|Coronary Artery Bypass Surgery|CABG
+Event|Event|Past Medical History|1411,1419|false|false|false|||stenting
+Procedure|Therapeutic or Preventive Procedure|Past Medical History|1411,1419|false|false|false|C2348535|Stenting|stenting
+Disorder|Mental or Behavioral Dysfunction|Past Medical History|1422,1432|false|false|false|C0011570;C0011581;C0344315;C0812393|Cancer patients and suicide and depression;Depressed mood;Depressive disorder;Mental Depression|Depression
+Event|Event|Past Medical History|1422,1432|false|false|false|||Depression
+Finding|Functional Concept|Past Medical History|1422,1432|false|false|false|C0460137;C1579931|Depression - motion|Depression
+Finding|Sign or Symptom|Past Medical History|1422,1432|false|false|false|C0460137;C1579931|Depression - motion|Depression
+Disorder|Disease or Syndrome|Past Medical History|1440,1444|false|false|false|C0017168|Gastroesophageal reflux disease|GERD
+Event|Event|Past Medical History|1440,1444|false|false|false|||GERD
+Disorder|Disease or Syndrome|Past Medical History|1447,1450|false|false|false|C0020538|Hypertensive disease|HTN
+Event|Event|Past Medical History|1447,1450|false|false|false|||HTN
+Disorder|Disease or Syndrome|Past Medical History|1453,1462|false|false|false|C0149931|Migraine Disorders|Migraines
+Event|Event|Past Medical History|1453,1462|false|false|false|||Migraines
+Finding|Intellectual Product|Past Medical History|1465,1472|false|false|false|C1547296|Chronic - Admission Level of Care Code|Chronic
+Procedure|Health Care Activity|Past Medical History|1465,1472|false|false|false|C1555457|Provision of recurring care for chronic illness|Chronic
+Disorder|Disease or Syndrome|Past Medical History|1465,1486|false|false|false|C0748678|shoulder pain chronic|Chronic shoulder pain
+Anatomy|Body Location or Region|Past Medical History|1473,1481|false|false|false|C0037004;C4299050|Shoulder;Upper extremity>Shoulder|shoulder
+Procedure|Diagnostic Procedure|Past Medical History|1473,1481|false|false|false|C0221590;C0869975|Examination of shoulder(s);Procedures on Shoulder|shoulder
+Procedure|Therapeutic or Preventive Procedure|Past Medical History|1473,1481|false|false|false|C0221590;C0869975|Examination of shoulder(s);Procedures on Shoulder|shoulder
+Finding|Sign or Symptom|Past Medical History|1473,1486|false|false|false|C0037011|Shoulder Pain|shoulder pain
+Attribute|Clinical Attribute|Past Medical History|1482,1486|false|false|false|C2598155||pain
+Event|Event|Past Medical History|1482,1486|false|false|false|||pain
+Finding|Functional Concept|Past Medical History|1482,1486|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Past Medical History|1482,1486|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Drug|Hazardous or Poisonous Substance|Past Medical History|1490,1499|false|false|false|C0027415|Narcotics|narcotics
+Drug|Pharmacologic Substance|Past Medical History|1490,1499|false|false|false|C0027415|Narcotics|narcotics
+Event|Event|Past Medical History|1490,1499|false|false|false|||narcotics
+Disorder|Disease or Syndrome|Past Medical History|1502,1505|false|false|false|C0520679|Sleep Apnea, Obstructive|OSA
+Drug|Amino Acid, Peptide, or Protein|Past Medical History|1502,1505|false|false|false|C0764906|OSA protein, Drosophila|OSA
+Drug|Biologically Active Substance|Past Medical History|1502,1505|false|false|false|C0764906|OSA protein, Drosophila|OSA
+Event|Event|Past Medical History|1502,1505|false|false|false|||OSA
+Disorder|Disease or Syndrome|Past Medical History|1508,1529|false|false|false|C0031117;C4721453|Peripheral Nervous System Diseases;Peripheral Neuropathy|Peripheral neuropathy
+Disorder|Disease or Syndrome|Past Medical History|1519,1529|false|false|false|C0442874|Neuropathy|neuropathy
+Event|Event|Past Medical History|1519,1529|false|false|false|||neuropathy
+Finding|Sign or Symptom|Past Medical History|1532,1540|false|false|false|C0085631;C3887611|Agitation;Restlessness|Restless
+Disorder|Disease or Syndrome|Past Medical History|1532,1544|false|false|false|C0035258|Restless Legs Syndrome|Restless leg
+Anatomy|Body Part, Organ, or Organ Component|Past Medical History|1541,1544|false|false|false|C0023216;C1140621|Leg;Lower Extremity|leg
+Event|Event|Family Medical History|1586,1592|false|false|false|||Mother
+Finding|Idea or Concept|Family Medical History|1586,1592|false|false|false|C1546508|Relationship - Mother|Mother
+Drug|Amino Acid, Peptide, or Protein|Family Medical History|1593,1600|false|false|false|C1548502;C3541433|Unknown - Vaccines administered;unknown vaccine or immune globulin|Unknown
+Drug|Immunologic Factor|Family Medical History|1593,1600|false|false|false|C1548502;C3541433|Unknown - Vaccines administered;unknown vaccine or immune globulin|Unknown
+Drug|Pharmacologic Substance|Family Medical History|1593,1600|false|false|false|C1548502;C3541433|Unknown - Vaccines administered;unknown vaccine or immune globulin|Unknown
+Finding|Finding|Family Medical History|1593,1600|false|false|false|C1546837;C1546841;C1547283;C1547294;C1547306;C1547312;C1548543;C1548550;C1549064;C1549105;C1549115;C1556120;C1556121;C1556122;C1556123;C1556124;C1556125;C1556126;C1556127;C1556128;C1556129;C1556130;C1556131;C1556132;C1556133;C1556134;C1556135;C1556136;C1556137;C1561529;C1609613;C3244284|Marital Status - Unknown;Unknown - Administrative Gender;Unknown - CWE statuses;Unknown - Contact Role;Unknown - Container status;Unknown - Employment Status;Unknown - Escort Required;Unknown - Event Expected;Unknown - Event reason;Unknown - Expanded yes/no indicator;Unknown - Immunization Registry Status;Unknown - Job Status;Unknown - Living Arrangement;Unknown - Living Dependency;Unknown - Living Will Code;Unknown - Notify Clergy Code;Unknown - Organ Donor Code;Unknown - Patient Class;Unknown - Patient Condition Code;Unknown - Patient Outcome;Unknown - Patient_s Relationship to Insured;Unknown - Precaution Code;Unknown - Production Class Code;Unknown - Recreational Drug Use Code;Unknown - Relationship;Unknown - Religion;Unknown - Special Program Code;Unknown - Transport Arranged;Unknown - mode of arrival code;Unknown - publishing section;Unknown Publicity Code;unknown - NullFlavor|Unknown
+Finding|Functional Concept|Family Medical History|1593,1600|false|false|false|C1546837;C1546841;C1547283;C1547294;C1547306;C1547312;C1548543;C1548550;C1549064;C1549105;C1549115;C1556120;C1556121;C1556122;C1556123;C1556124;C1556125;C1556126;C1556127;C1556128;C1556129;C1556130;C1556131;C1556132;C1556133;C1556134;C1556135;C1556136;C1556137;C1561529;C1609613;C3244284|Marital Status - Unknown;Unknown - Administrative Gender;Unknown - CWE statuses;Unknown - Contact Role;Unknown - Container status;Unknown - Employment Status;Unknown - Escort Required;Unknown - Event Expected;Unknown - Event reason;Unknown - Expanded yes/no indicator;Unknown - Immunization Registry Status;Unknown - Job Status;Unknown - Living Arrangement;Unknown - Living Dependency;Unknown - Living Will Code;Unknown - Notify Clergy Code;Unknown - Organ Donor Code;Unknown - Patient Class;Unknown - Patient Condition Code;Unknown - Patient Outcome;Unknown - Patient_s Relationship to Insured;Unknown - Precaution Code;Unknown - Production Class Code;Unknown - Recreational Drug Use Code;Unknown - Relationship;Unknown - Religion;Unknown - Special Program Code;Unknown - Transport Arranged;Unknown - mode of arrival code;Unknown - publishing section;Unknown Publicity Code;unknown - NullFlavor|Unknown
+Finding|Idea or Concept|Family Medical History|1593,1600|false|false|false|C1546837;C1546841;C1547283;C1547294;C1547306;C1547312;C1548543;C1548550;C1549064;C1549105;C1549115;C1556120;C1556121;C1556122;C1556123;C1556124;C1556125;C1556126;C1556127;C1556128;C1556129;C1556130;C1556131;C1556132;C1556133;C1556134;C1556135;C1556136;C1556137;C1561529;C1609613;C3244284|Marital Status - Unknown;Unknown - Administrative Gender;Unknown - CWE statuses;Unknown - Contact Role;Unknown - Container status;Unknown - Employment Status;Unknown - Escort Required;Unknown - Event Expected;Unknown - Event reason;Unknown - Expanded yes/no indicator;Unknown - Immunization Registry Status;Unknown - Job Status;Unknown - Living Arrangement;Unknown - Living Dependency;Unknown - Living Will Code;Unknown - Notify Clergy Code;Unknown - Organ Donor Code;Unknown - Patient Class;Unknown - Patient Condition Code;Unknown - Patient Outcome;Unknown - Patient_s Relationship to Insured;Unknown - Precaution Code;Unknown - Production Class Code;Unknown - Recreational Drug Use Code;Unknown - Relationship;Unknown - Religion;Unknown - Special Program Code;Unknown - Transport Arranged;Unknown - mode of arrival code;Unknown - publishing section;Unknown Publicity Code;unknown - NullFlavor|Unknown
+Finding|Intellectual Product|Family Medical History|1593,1600|false|false|false|C1546837;C1546841;C1547283;C1547294;C1547306;C1547312;C1548543;C1548550;C1549064;C1549105;C1549115;C1556120;C1556121;C1556122;C1556123;C1556124;C1556125;C1556126;C1556127;C1556128;C1556129;C1556130;C1556131;C1556132;C1556133;C1556134;C1556135;C1556136;C1556137;C1561529;C1609613;C3244284|Marital Status - Unknown;Unknown - Administrative Gender;Unknown - CWE statuses;Unknown - Contact Role;Unknown - Container status;Unknown - Employment Status;Unknown - Escort Required;Unknown - Event Expected;Unknown - Event reason;Unknown - Expanded yes/no indicator;Unknown - Immunization Registry Status;Unknown - Job Status;Unknown - Living Arrangement;Unknown - Living Dependency;Unknown - Living Will Code;Unknown - Notify Clergy Code;Unknown - Organ Donor Code;Unknown - Patient Class;Unknown - Patient Condition Code;Unknown - Patient Outcome;Unknown - Patient_s Relationship to Insured;Unknown - Precaution Code;Unknown - Production Class Code;Unknown - Recreational Drug Use Code;Unknown - Relationship;Unknown - Religion;Unknown - Special Program Code;Unknown - Transport Arranged;Unknown - mode of arrival code;Unknown - publishing section;Unknown Publicity Code;unknown - NullFlavor|Unknown
+Drug|Organic Chemical|Family Medical History|1601,1608|false|false|false|C0001962;C0001975|Alcohols;ethanol|ALCOHOL
+Drug|Pharmacologic Substance|Family Medical History|1601,1608|false|false|false|C0001962;C0001975|Alcohols;ethanol|ALCOHOL
+Event|Event|Family Medical History|1601,1608|false|false|false|||ALCOHOL
+Finding|Intellectual Product|Family Medical History|1601,1608|false|false|false|C1547288|Alcohol - Recreational Drug Use Code|ALCOHOL
+Disorder|Mental or Behavioral Dysfunction|Family Medical History|1601,1614|false|false|false|C0085762|Alcohol abuse|ALCOHOL ABUSE
+Disorder|Mental or Behavioral Dysfunction|Family Medical History|1609,1614|false|false|false|C0013146|Drug abuse|ABUSE
+Event|Event|Family Medical History|1609,1614|false|false|false|||ABUSE
+Event|Event|Family Medical History|1609,1614|false|false|false|C1546935|Abuse|ABUSE
+Finding|Finding|Family Medical History|1609,1614|false|false|false|C0562381|Victim of abuse (finding)|ABUSE
+Event|Event|Family Medical History|1622,1626|false|false|false|||ward
+Event|Event|Family Medical History|1630,1635|false|false|false|||state
+Finding|Functional Concept|Family Medical History|1630,1635|false|false|false|C1442792|State|state
+Event|Event|Family Medical History|1645,1649|false|false|false|||know
+Event|Event|Family Medical History|1656,1663|false|false|false|||details
+Finding|Finding|Family Medical History|1656,1673|false|false|false|C0557092|Details of family|details of family
+Finding|Classification|Family Medical History|1667,1673|false|false|false|C1301584;C1546847;C1563343;C1704727;C2700055|Entity Name Part Type - family;Family (taxonomic);Family Collection;Last Name;Living Arrangement - Family|family
+Finding|Conceptual Entity|Family Medical History|1667,1673|false|false|false|C1301584;C1546847;C1563343;C1704727;C2700055|Entity Name Part Type - family;Family (taxonomic);Family Collection;Last Name;Living Arrangement - Family|family
+Finding|Idea or Concept|Family Medical History|1667,1673|false|false|false|C1301584;C1546847;C1563343;C1704727;C2700055|Entity Name Part Type - family;Family (taxonomic);Family Collection;Last Name;Living Arrangement - Family|family
+Finding|Intellectual Product|Family Medical History|1667,1673|false|false|false|C1301584;C1546847;C1563343;C1704727;C2700055|Entity Name Part Type - family;Family (taxonomic);Family Collection;Last Name;Living Arrangement - Family|family
+Finding|Conceptual Entity|Family Medical History|1679,1685|false|false|false|C1546503;C1547005;C2348513|Father - courtesy title;Indirect exposure mechanism - Father;Relationship - Father|Father
+Finding|Idea or Concept|Family Medical History|1679,1685|false|false|false|C1546503;C1547005;C2348513|Father - courtesy title;Indirect exposure mechanism - Father;Relationship - Father|Father
+Disorder|Neoplastic Process|Family Medical History|1694,1701|false|false|false|C0019829|Hodgkin Disease|HODGKIN
+Event|Event|Family Medical History|1694,1701|false|false|false|||HODGKIN
+Disorder|Neoplastic Process|Family Medical History|1694,1711|false|false|false|C0019829|Hodgkin Disease|HODGKIN'S DISEASE
+Disorder|Disease or Syndrome|Family Medical History|1704,1711|false|false|false|C0012634|Disease|DISEASE
+Event|Event|Family Medical History|1704,1711|false|false|false|||DISEASE
+Event|Event|Family Medical History|1720,1727|false|false|false|||records
+Finding|Idea or Concept|Family Medical History|1720,1727|false|false|false|C0034869;C1548330|Quantity limited request - Records;Records|records
+Finding|Intellectual Product|Family Medical History|1720,1727|false|false|false|C0034869;C1548330|Quantity limited request - Records;Records|records
+Event|Event|General Exam|1748,1757|false|false|false|||Admission
+Procedure|Health Care Activity|General Exam|1748,1757|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|Admission
+Finding|Finding|General Exam|1758,1766|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|Physical
+Finding|Functional Concept|General Exam|1758,1766|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|Physical
+Procedure|Health Care Activity|General Exam|1758,1766|false|false|false|C0031809|Physical Examination|Physical
+Finding|Finding|General Exam|1758,1771|false|false|false|C1509143|physical examination (physical finding)|Physical Exam
+Procedure|Health Care Activity|General Exam|1758,1771|false|false|false|C0031809|Physical Examination|Physical Exam
+Event|Event|General Exam|1767,1771|false|false|false|||Exam
+Finding|Functional Concept|General Exam|1767,1771|false|false|false|C4284036|Exam|Exam
+Procedure|Health Care Activity|General Exam|1767,1771|false|false|false|C0582103|Medical Examination|Exam
+Event|Event|General Exam|1812,1819|false|false|false|||GENERAL
+Finding|Classification|General Exam|1812,1819|false|false|false|C4521767|United States Military Commissioned Officer O10 (qualifier value)|GENERAL
+Procedure|Health Care Activity|General Exam|1812,1819|false|false|false|C3812897|General medical service|GENERAL
+Disorder|Disease or Syndrome|General Exam|1821,1824|false|false|false|C0205748;C0338473;C1850380|Dysplastic Nevus;NEUTROPHIL ACTIN DYSFUNCTION;Neuroaxonal Dystrophies|NAD
+Disorder|Neoplastic Process|General Exam|1821,1824|false|false|false|C0205748;C0338473;C1850380|Dysplastic Nevus;NEUTROPHIL ACTIN DYSFUNCTION;Neuroaxonal Dystrophies|NAD
+Drug|Biologically Active Substance|General Exam|1821,1824|false|false|false|C0027270;C0621630|adenosine 5'-(alpha-thio)diphospho-5'-ribofuranosylnicotinamide;nicotinamide adenine dinucleotide (NAD)|NAD
+Drug|Nucleic Acid, Nucleoside, or Nucleotide|General Exam|1821,1824|false|false|false|C0027270;C0621630|adenosine 5'-(alpha-thio)diphospho-5'-ribofuranosylnicotinamide;nicotinamide adenine dinucleotide (NAD)|NAD
+Drug|Pharmacologic Substance|General Exam|1821,1824|false|false|false|C0027270;C0621630|adenosine 5'-(alpha-thio)diphospho-5'-ribofuranosylnicotinamide;nicotinamide adenine dinucleotide (NAD)|NAD
+Event|Event|General Exam|1821,1824|false|false|false|||NAD
+Finding|Finding|General Exam|1821,1824|false|false|false|C2051415|patient appears in no acute distress (physical finding)|NAD
+Anatomy|Body Location or Region|General Exam|1827,1832|false|false|false|C1512338|HEENT|HEENT
+Anatomy|Body Part, Organ, or Organ Component|General Exam|1841,1848|false|false|false|C0018787|Heart|CARDIAC
+Finding|Intellectual Product|General Exam|1841,1848|false|false|false|C1314974|Cardiac attachment|CARDIAC
+Event|Event|General Exam|1850,1853|false|false|false|||RRR
+Event|Event|General Exam|1865,1872|false|false|false|||murmurs
+Finding|Finding|General Exam|1865,1872|true|false|false|C0018808|Heart murmur|murmurs
+Event|Event|General Exam|1874,1881|false|false|false|||gallops
+Event|Event|General Exam|1886,1890|false|false|false|||rubs
+Finding|Finding|General Exam|1886,1890|true|false|false|C0232267|Pericardial friction rub|rubs
+Anatomy|Body Location or Region|General Exam|1893,1897|false|false|false|C0024109;C4037972|Chest>Lung;Lung|LUNG
+Anatomy|Body Part, Organ, or Organ Component|General Exam|1893,1897|false|false|false|C0024109;C4037972|Chest>Lung;Lung|LUNG
+Disorder|Disease or Syndrome|General Exam|1893,1897|false|false|false|C0024115|Lung diseases|LUNG
+Event|Event|General Exam|1893,1897|false|false|false|||LUNG
+Finding|Finding|General Exam|1893,1897|false|false|false|C0740941|Lung Problem|LUNG
+Drug|Organic Chemical|General Exam|1899,1903|false|false|false|C0951233|cetrimonium bromide|CTAB
+Event|Event|General Exam|1899,1903|false|false|false|||CTAB
+Event|Event|General Exam|1908,1915|false|false|false|||wheezes
+Finding|Sign or Symptom|General Exam|1908,1915|true|false|false|C0043144|Wheezing|wheezes
+Event|Event|General Exam|1917,1922|false|false|false|||rales
+Finding|Finding|General Exam|1917,1922|true|false|false|C0034642;C0240859|Basilar Rales;Rales|rales
+Event|Event|General Exam|1924,1931|false|false|false|||rhonchi
+Finding|Finding|General Exam|1924,1931|true|false|false|C0035508|Rhonchi|rhonchi
+Event|Event|General Exam|1933,1942|false|false|false|||breathing
+Event|Event|General Exam|1964,1967|false|false|false|||use
+Finding|Functional Concept|General Exam|1964,1967|true|false|false|C0042153;C0457083;C1947944|Usage;Use - dosing instruction imperative;utilization qualifier|use
+Finding|Intellectual Product|General Exam|1964,1967|true|false|false|C0042153;C0457083;C1947944|Usage;Use - dosing instruction imperative;utilization qualifier|use
+Finding|Functional Concept|General Exam|1964,1970|true|false|false|C1524063|Use of|use of
+Finding|Finding|General Exam|1964,1988|true|false|false|C1821466|Use of accessory muscles|use of accessory muscles
+Disorder|Congenital Abnormality|General Exam|1971,1988|false|false|false|C0158784|Accessory skeletal muscle|accessory muscles
+Anatomy|Body Part, Organ, or Organ Component|General Exam|1981,1988|false|false|false|C0026845;C1995013;C4083049|Muscle (organ);Muscle Tissue;Set of muscles|muscles
+Anatomy|Tissue|General Exam|1981,1988|false|false|false|C0026845;C1995013;C4083049|Muscle (organ);Muscle Tissue;Set of muscles|muscles
+Anatomy|Body Location or Region|General Exam|1991,1998|false|false|false|C0000726;C0230168|Abdomen;Abdominal Cavity|ABDOMEN
+Disorder|Neoplastic Process|General Exam|1991,1998|false|false|false|C0153662|Malignant neoplasm of abdomen|ABDOMEN
+Event|Event|General Exam|1991,1998|false|false|false|||ABDOMEN
+Finding|Finding|General Exam|1991,1998|false|false|false|C0941288|Abdomen problem|ABDOMEN
+Event|Event|General Exam|2015,2017|false|false|false|||BS
+Event|Event|General Exam|2019,2028|false|false|false|||nontender
+Event|Event|General Exam|2051,2058|false|false|false|||rebound
+Event|Event|General Exam|2059,2067|false|false|false|||guarding
+Finding|Finding|General Exam|2059,2067|false|false|false|C0427198|Protective muscle spasm|guarding
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2070,2081|false|false|false|C0015385;C0278454|All extremities;Limb structure|EXTREMITIES
+Event|Event|General Exam|2086,2094|false|false|false|||cyanosis
+Finding|Sign or Symptom|General Exam|2086,2094|true|false|false|C0010520|Cyanosis|cyanosis
+Disorder|Anatomical Abnormality|General Exam|2096,2104|true|false|false|C0149651|Clubbing|clubbing
+Event|Event|General Exam|2096,2104|false|false|false|||clubbing
+Attribute|Clinical Attribute|General Exam|2108,2113|true|false|false|C1717255||edema
+Event|Event|General Exam|2108,2113|false|false|false|||edema
+Finding|Pathologic Function|General Exam|2108,2113|true|false|false|C0013604|Edema|edema
+Event|Event|General Exam|2115,2121|false|false|false|||moving
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2129,2140|false|false|false|C0015385;C0278454|All extremities;Limb structure|extremities
+Event|Event|General Exam|2129,2140|false|false|false|||extremities
+Drug|Organic Chemical|General Exam|2146,2153|false|false|false|C1995603|PURPOSE (pharmacologic preparation)|purpose
+Drug|Pharmacologic Substance|General Exam|2146,2153|false|false|false|C1995603|PURPOSE (pharmacologic preparation)|purpose
+Event|Event|General Exam|2146,2153|false|false|false|||purpose
+Finding|Functional Concept|General Exam|2146,2153|false|false|false|C1285529|Purpose|purpose
+Event|Event|General Exam|2156,2160|false|false|false|||BACK
+Event|Event|General Exam|2165,2175|false|false|false|||tenderness
+Finding|Mental Process|General Exam|2165,2175|true|false|false|C0234233;C0684239|Emotional tenderness;Sore to touch|tenderness
+Finding|Sign or Symptom|General Exam|2165,2175|true|false|false|C0234233;C0684239|Emotional tenderness;Sore to touch|tenderness
+Event|Event|General Exam|2186,2195|false|false|false|||processes
+Attribute|Clinical Attribute|General Exam|2200,2204|true|false|false|C2598155||pain
+Event|Event|General Exam|2200,2204|false|false|false|||pain
+Finding|Functional Concept|General Exam|2200,2204|true|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|General Exam|2200,2204|true|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Functional Concept|General Exam|2209,2213|false|false|false|C1552822|Table Cell Horizontal Align - left|left
+Disorder|Disease or Syndrome|General Exam|2222,2225|false|false|false|C0001365;C0038454|Acute ill-defined cerebrovascular disease;Cerebrovascular accident|CVA
+Drug|Pharmacologic Substance|General Exam|2222,2225|false|false|false|C5779650|Cyclophosphamide/Doxorubicin/Vincristine|CVA
+Event|Event|General Exam|2222,2225|false|false|false|||CVA
+Finding|Sign or Symptom|General Exam|2222,2236|false|false|false|C0235634|Renal angle tenderness|CVA tenderness
+Event|Event|General Exam|2226,2236|false|false|false|||tenderness
+Finding|Mental Process|General Exam|2226,2236|false|false|false|C0234233;C0684239|Emotional tenderness;Sore to touch|tenderness
+Finding|Sign or Symptom|General Exam|2226,2236|false|false|false|C0234233;C0684239|Emotional tenderness;Sore to touch|tenderness
+Event|Event|General Exam|2238,2248|false|false|false|||tenderness
+Finding|Mental Process|General Exam|2238,2248|false|false|false|C0234233;C0684239|Emotional tenderness;Sore to touch|tenderness
+Finding|Sign or Symptom|General Exam|2238,2248|false|false|false|C0234233;C0684239|Emotional tenderness;Sore to touch|tenderness
+Event|Event|General Exam|2252,2261|false|false|false|||palpation
+Procedure|Diagnostic Procedure|General Exam|2252,2261|false|false|false|C0030247|Palpation|palpation
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2278,2296|false|false|false|C0448353|Paraspinal Muscles|paraspinal muscles
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2289,2296|false|false|false|C0026845;C1995013;C4083049|Muscle (organ);Muscle Tissue;Set of muscles|muscles
+Anatomy|Tissue|General Exam|2289,2296|false|false|false|C0026845;C1995013;C4083049|Muscle (organ);Muscle Tissue;Set of muscles|muscles
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2320,2331|false|false|false|C0037925|Spinal Cord|spinal cord
+Disorder|Disease or Syndrome|General Exam|2320,2331|false|false|false|C0037928;C0153646;C0154034;C0496938|Benign neoplasm of spinal cord;Malignant neoplasm of spinal cord;Neoplasm of uncertain or unknown behavior of spinal cord;Spinal Cord Diseases|spinal cord
+Disorder|Neoplastic Process|General Exam|2320,2331|false|false|false|C0037928;C0153646;C0154034;C0496938|Benign neoplasm of spinal cord;Malignant neoplasm of spinal cord;Neoplasm of uncertain or unknown behavior of spinal cord;Spinal Cord Diseases|spinal cord
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2327,2331|false|false|false|C1550235|Cord - Body Parts|cord
+Disorder|Disease or Syndrome|General Exam|2327,2331|false|false|false|C3489532|Cone-Rod Dystrophy 2|cord
+Event|Event|General Exam|2335,2344|false|false|false|||Discharge
+Finding|Body Substance|General Exam|2335,2344|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|General Exam|2335,2344|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|General Exam|2335,2344|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|General Exam|2335,2344|false|false|false|C0030685|Patient Discharge|Discharge
+Finding|Finding|General Exam|2345,2353|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|Physical
+Finding|Functional Concept|General Exam|2345,2353|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|Physical
+Procedure|Health Care Activity|General Exam|2345,2353|false|false|false|C0031809|Physical Examination|Physical
+Finding|Finding|General Exam|2345,2358|false|false|false|C1509143|physical examination (physical finding)|Physical Exam
+Procedure|Health Care Activity|General Exam|2345,2358|false|false|false|C0031809|Physical Examination|Physical Exam
+Event|Event|General Exam|2354,2358|false|false|false|||Exam
+Finding|Functional Concept|General Exam|2354,2358|false|false|false|C4284036|Exam|Exam
+Procedure|Health Care Activity|General Exam|2354,2358|false|false|false|C0582103|Medical Examination|Exam
+Event|Event|General Exam|2392,2399|false|false|false|||General
+Finding|Classification|General Exam|2392,2399|false|false|false|C4521767|United States Military Commissioned Officer O10 (qualifier value)|General
+Procedure|Health Care Activity|General Exam|2392,2399|false|false|false|C3812897|General medical service|General
+Event|Event|General Exam|2401,2406|false|false|false|||awake
+Finding|Finding|General Exam|2401,2406|false|false|false|C0234422|Awake (finding)|awake
+Attribute|Clinical Attribute|General Exam|2408,2413|false|false|false|C5890168||alert
+Drug|Organic Chemical|General Exam|2408,2413|false|false|false|C0718338|Alert brand of caffeine|alert
+Drug|Pharmacologic Substance|General Exam|2408,2413|false|false|false|C0718338|Alert brand of caffeine|alert
+Event|Event|General Exam|2408,2413|false|false|false|||alert
+Finding|Finding|General Exam|2408,2413|false|false|false|C0239110;C0424536;C2004580;C3665546|Alert;Alert note;Consciousness clear;Mentally alert|alert
+Finding|Functional Concept|General Exam|2408,2413|false|false|false|C0239110;C0424536;C2004580;C3665546|Alert;Alert note;Consciousness clear;Mentally alert|alert
+Finding|Intellectual Product|General Exam|2408,2413|false|false|false|C0239110;C0424536;C2004580;C3665546|Alert;Alert note;Consciousness clear;Mentally alert|alert
+Disorder|Disease or Syndrome|General Exam|2415,2418|false|false|false|C0205748;C0338473;C1850380|Dysplastic Nevus;NEUTROPHIL ACTIN DYSFUNCTION;Neuroaxonal Dystrophies|NAD
+Disorder|Neoplastic Process|General Exam|2415,2418|false|false|false|C0205748;C0338473;C1850380|Dysplastic Nevus;NEUTROPHIL ACTIN DYSFUNCTION;Neuroaxonal Dystrophies|NAD
+Drug|Biologically Active Substance|General Exam|2415,2418|false|false|false|C0027270;C0621630|adenosine 5'-(alpha-thio)diphospho-5'-ribofuranosylnicotinamide;nicotinamide adenine dinucleotide (NAD)|NAD
+Drug|Nucleic Acid, Nucleoside, or Nucleotide|General Exam|2415,2418|false|false|false|C0027270;C0621630|adenosine 5'-(alpha-thio)diphospho-5'-ribofuranosylnicotinamide;nicotinamide adenine dinucleotide (NAD)|NAD
+Drug|Pharmacologic Substance|General Exam|2415,2418|false|false|false|C0027270;C0621630|adenosine 5'-(alpha-thio)diphospho-5'-ribofuranosylnicotinamide;nicotinamide adenine dinucleotide (NAD)|NAD
+Event|Event|General Exam|2415,2418|false|false|false|||NAD
+Finding|Finding|General Exam|2415,2418|false|false|false|C2051415|patient appears in no acute distress (physical finding)|NAD
+Anatomy|Body Location or Region|General Exam|2419,2424|false|false|false|C1512338|HEENT|HEENT
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2436,2439|false|false|false|C0694605|Medial part of medial mammillary nucleus|MMM
+Disorder|Neoplastic Process|General Exam|2436,2439|false|false|false|C0026987|Myelofibrosis|MMM
+Event|Event|General Exam|2436,2439|false|false|false|||MMM
+Anatomy|Body Location or Region|General Exam|2455,2465|false|false|false|C0521367|Oropharyngeal|oropharynx
+Event|Event|General Exam|2470,2473|false|false|false|||RRR
+Event|Event|General Exam|2495,2498|false|false|false|||JVD
+Finding|Finding|General Exam|2495,2498|true|false|false|C0425687|Jugular venous engorgement|JVD
+Event|Event|General Exam|2499,2502|false|false|false|||HJR
+Finding|Finding|General Exam|2499,2502|true|false|false|C0239949|Hepatojugular reflux|HJR
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2505,2510|false|false|false|C0024109|Lung|Lungs
+Drug|Organic Chemical|General Exam|2512,2516|false|false|false|C0951233|cetrimonium bromide|CTAB
+Event|Event|General Exam|2512,2516|false|false|false|||CTAB
+Event|Event|General Exam|2524,2525|false|false|false|||r
+Event|Event|General Exam|2527,2531|false|false|false|||good
+Finding|Idea or Concept|General Exam|2527,2531|false|false|false|C1551023;C1610541|Language Ability Proficiency - Good;Language Proficiency - Good|good
+Event|Event|General Exam|2532,2540|false|false|false|||movement
+Finding|Organism Function|General Exam|2532,2540|false|false|false|C0026649|Movement|movement
+Anatomy|Body Location or Region|General Exam|2555,2562|false|false|false|C0000726;C0230168|Abdomen;Abdominal Cavity|Abdomen
+Disorder|Neoplastic Process|General Exam|2555,2562|false|false|false|C0153662|Malignant neoplasm of abdomen|Abdomen
+Event|Event|General Exam|2555,2562|false|false|false|||Abdomen
+Finding|Finding|General Exam|2555,2562|false|false|false|C0941288|Abdomen problem|Abdomen
+Disorder|Disease or Syndrome|General Exam|2564,2569|false|false|false|C0028754|Obesity|obese
+Event|Event|General Exam|2564,2569|false|false|false|||obese
+Disorder|Disease or Syndrome|General Exam|2571,2575|false|false|false|C3542022|Short stature, onychodysplasia, facial dysmorphism, hypotrichosis syndrome|soft
+Event|Event|General Exam|2594,2596|false|false|false|||BS
+Disorder|Disease or Syndrome|General Exam|2603,2606|false|false|false|C0034155;C1268935|Congenital Thrombotic Thrombocytopenic Purpura;Purpura, Thrombotic Thrombocytopenic|ttp
+Drug|Amino Acid, Peptide, or Protein|General Exam|2603,2606|false|false|false|C1506603;C4723973|ZFP36 protein, human;thiamine triphosphorate|ttp
+Drug|Biologically Active Substance|General Exam|2603,2606|false|false|false|C1506603;C4723973|ZFP36 protein, human;thiamine triphosphorate|ttp
+Drug|Organic Chemical|General Exam|2603,2606|false|false|false|C1506603;C4723973|ZFP36 protein, human;thiamine triphosphorate|ttp
+Drug|Vitamin|General Exam|2603,2606|false|false|false|C1506603;C4723973|ZFP36 protein, human;thiamine triphosphorate|ttp
+Event|Event|General Exam|2603,2606|false|false|false|||ttp
+Finding|Gene or Genome|General Exam|2603,2606|false|false|false|C1413036;C1421571;C3539814|ADAMTS13 gene;ZFP36 gene;ZFP36 wt Allele|ttp
+Finding|Functional Concept|General Exam|2613,2618|false|false|false|C1552823|Table Cell Horizontal Align - right|right
+Anatomy|Body Location or Region|General Exam|2619,2636|false|false|false|C5239513|Paraspinal Region|paraspinal region
+Drug|Amino Acid Sequence|General Exam|2630,2636|false|false|false|C1514562|Protein Domain|region
+Anatomy|Body Location or Region|General Exam|2642,2648|false|false|false|C0036033;C0036037;C3669209;C4299073|Bone structure of sacrum;Pelvis>Sacrum;Sacral Region;Structure of sacrum|sacrum
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2642,2648|false|false|false|C0036033;C0036037;C3669209;C4299073|Bone structure of sacrum;Pelvis>Sacrum;Sacral Region;Structure of sacrum|sacrum
+Anatomy|Body Location or Region|General Exam|2652,2660|false|false|false|C0037004;C4299050|Shoulder;Upper extremity>Shoulder|shoulder
+Procedure|Diagnostic Procedure|General Exam|2652,2660|false|false|false|C0221590;C0869975|Examination of shoulder(s);Procedures on Shoulder|shoulder
+Procedure|Therapeutic or Preventive Procedure|General Exam|2652,2660|false|false|false|C0221590;C0869975|Examination of shoulder(s);Procedures on Shoulder|shoulder
+Disorder|Disease or Syndrome|General Exam|2665,2668|false|false|false|C0001365;C0038454|Acute ill-defined cerebrovascular disease;Cerebrovascular accident|CVA
+Drug|Pharmacologic Substance|General Exam|2665,2668|false|false|false|C5779650|Cyclophosphamide/Doxorubicin/Vincristine|CVA
+Event|Event|General Exam|2665,2668|false|false|false|||CVA
+Finding|Sign or Symptom|General Exam|2665,2679|false|false|false|C0235634|Renal angle tenderness|CVA tenderness
+Event|Event|General Exam|2669,2679|false|false|false|||tenderness
+Finding|Mental Process|General Exam|2669,2679|false|false|false|C0234233;C0684239|Emotional tenderness;Sore to touch|tenderness
+Finding|Sign or Symptom|General Exam|2669,2679|false|false|false|C0234233;C0684239|Emotional tenderness;Sore to touch|tenderness
+Disorder|Congenital Abnormality|General Exam|2681,2684|false|false|false|C0015306|Hereditary Multiple Exostoses|Ext
+Event|Event|General Exam|2681,2684|false|false|false|||Ext
+Finding|Gene or Genome|General Exam|2681,2684|false|false|false|C0694878;C1707871|EXT1 gene;EXT1 wt Allele|Ext
+Event|Event|General Exam|2694,2697|false|false|false|||WWP
+Event|Event|General Exam|2722,2728|false|false|false|||moving
+Event|Event|General Exam|2733,2739|false|false|false|||extrem
+Drug|Organic Chemical|General Exam|2745,2752|false|false|false|C1995603|PURPOSE (pharmacologic preparation)|purpose
+Drug|Pharmacologic Substance|General Exam|2745,2752|false|false|false|C1995603|PURPOSE (pharmacologic preparation)|purpose
+Event|Event|General Exam|2745,2752|false|false|false|||purpose
+Finding|Functional Concept|General Exam|2745,2752|false|false|false|C1285529|Purpose|purpose
+Anatomy|Body Location or Region|General Exam|2754,2760|false|false|false|C0015450|Face|facial
+Event|Event|General Exam|2761,2770|false|false|false|||movements
+Finding|Organism Function|General Exam|2761,2770|false|false|false|C0026649|Movement|movements
+Event|Event|General Exam|2772,2781|false|false|false|||symmetric
+Finding|Conceptual Entity|General Exam|2772,2781|false|false|false|C0332516;C2699744|Symmetric Relationship;Symmetrical|symmetric
+Finding|Finding|General Exam|2772,2781|false|false|false|C0332516;C2699744|Symmetric Relationship;Symmetrical|symmetric
+Event|Event|General Exam|2792,2800|false|false|false|||deficits
+Anatomy|Body System|General Exam|2802,2806|false|false|false|C1123023;C4520765|Skin;Skin, Human|Skin
+Disorder|Disease or Syndrome|General Exam|2802,2806|false|false|false|C0178298;C0496955|Neoplasm of uncertain or unknown behavior of skin;Skin and subcutaneous tissue disorders|Skin
+Disorder|Neoplastic Process|General Exam|2802,2806|false|false|false|C0178298;C0496955|Neoplasm of uncertain or unknown behavior of skin;Skin and subcutaneous tissue disorders|Skin
+Finding|Body Substance|General Exam|2802,2806|false|false|false|C0444099;C1546781|Skin Specimen;Skin Specimen Source Code|Skin
+Finding|Intellectual Product|General Exam|2802,2806|false|false|false|C0444099;C1546781|Skin Specimen;Skin Specimen Source Code|Skin
+Event|Event|General Exam|2811,2817|false|false|false|||rashes
+Finding|Sign or Symptom|General Exam|2811,2817|true|false|false|C0015230;C5779628|Exanthema;Skin rash|rashes
+Event|Event|General Exam|2819,2826|false|false|false|||lesions
+Finding|Finding|General Exam|2819,2826|true|false|false|C0221198|Lesion|lesions
+Disorder|Injury or Poisoning|General Exam|2828,2840|true|false|false|C0015256|Excoriation|excoriations
+Event|Event|General Exam|2828,2840|false|false|false|||excoriations
+Attribute|Clinical Attribute|General Exam|2863,2869|false|false|false|C1644645||CT ABD
+Anatomy|Body Location or Region|General Exam|2866,2869|false|false|false|C0000726;C0449202|ABD (body structure);Abdomen|ABD
+Disorder|Cell or Molecular Dysfunction|General Exam|2866,2869|false|false|false|C3811055|Absence of Biallelic TCRgamma Deletion|ABD
+Event|Event|General Exam|2866,2869|false|false|false|||ABD
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2870,2876|false|false|false|C0030797;C0559769;C4266535|Pelvic cavity structure;Pelvis;Pelvis+|PELVIS
+Anatomy|Body Space or Junction|General Exam|2870,2876|false|false|false|C0030797;C0559769;C4266535|Pelvic cavity structure;Pelvis;Pelvis+|PELVIS
+Disorder|Neoplastic Process|General Exam|2870,2876|false|false|false|C0153663|Malignant neoplasm of pelvis|PELVIS
+Finding|Finding|General Exam|2870,2876|false|false|false|C0812455|Pelvis problem|PELVIS
+Event|Event|General Exam|2894,2901|false|false|false|||imaging
+Finding|Finding|General Exam|2894,2901|false|false|false|C0740845|Imaging problem|imaging
+Procedure|Diagnostic Procedure|General Exam|2894,2901|false|false|false|C0011923;C0079595|Diagnostic Imaging;Imaging Techniques|imaging
+Anatomy|Body Location or Region|General Exam|2909,2916|false|false|false|C0000726;C0230168|Abdomen;Abdominal Cavity|abdomen
+Disorder|Neoplastic Process|General Exam|2909,2916|false|false|false|C0153662|Malignant neoplasm of abdomen|abdomen
+Finding|Finding|General Exam|2909,2916|false|false|false|C0941288|Abdomen problem|abdomen
+Anatomy|Body Location or Region|General Exam|2909,2920|false|false|false|C0000726|Abdomen|abdomen and
+Anatomy|Body Location or Region|General Exam|2909,2927|false|false|false|C1508499|Abdominopelvic structure|abdomen and pelvis
+Anatomy|Body Part, Organ, or Organ Component|General Exam|2921,2927|false|false|false|C0030797;C0559769;C4266535|Pelvic cavity structure;Pelvis;Pelvis+|pelvis
+Anatomy|Body Space or Junction|General Exam|2921,2927|false|false|false|C0030797;C0559769;C4266535|Pelvic cavity structure;Pelvis;Pelvis+|pelvis
+Disorder|Neoplastic Process|General Exam|2921,2927|false|false|false|C0153663|Malignant neoplasm of pelvis|pelvis
+Finding|Finding|General Exam|2921,2927|false|false|false|C0812455|Pelvis problem|pelvis
+Event|Event|General Exam|2928,2940|false|false|false|||demonstrates
+Event|Event|General Exam|2969,2977|false|false|false|||calculus
+Finding|Body Substance|General Exam|2969,2977|false|false|false|C0006736|Calculi|calculus
+Procedure|Laboratory Procedure|General Exam|2969,2977|false|false|false|C3668917|Calculus (lab procedure)|calculus
+Finding|Functional Concept|General Exam|2985,2990|false|false|false|C1552823|Table Cell Horizontal Align - right|right
+Disorder|Mental or Behavioral Dysfunction|General Exam|2991,3001|false|false|false|C0424290|Compulsive hoarding|collecting
+Event|Event|General Exam|2991,3001|false|false|false|||collecting
+Finding|Functional Concept|General Exam|2991,3001|false|false|false|C1516698|Collection (action)|collecting
+Drug|Biomedical or Dental Material|General Exam|3002,3008|false|false|false|C5671121|System (basic dose form)|system
+Event|Event|General Exam|3002,3008|false|false|false|||system
+Finding|Functional Concept|General Exam|3002,3008|false|false|false|C0449913;C5441654|System;System, LOINC Axis 4|system
+Finding|Functional Concept|General Exam|3031,3035|true|false|false|C1552822|Table Cell Horizontal Align - left|left
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3036,3041|false|false|false|C0022646|Kidney|renal
+Disorder|Disease or Syndrome|General Exam|3036,3041|false|false|false|C0042075|Urologic Diseases|renal
+Disorder|Disease or Syndrome|General Exam|3036,3050|true|false|false|C0392525|Nephrolithiasis|renal calculus
+Finding|Body Substance|General Exam|3036,3050|true|false|false|C0022650|Kidney Calculi|renal calculus
+Event|Event|General Exam|3042,3050|false|false|false|||calculus
+Finding|Body Substance|General Exam|3042,3050|true|false|false|C0006736|Calculi|calculus
+Procedure|Laboratory Procedure|General Exam|3042,3050|true|false|false|C3668917|Calculus (lab procedure)|calculus
+Event|Event|General Exam|3064,3072|false|false|false|||evidence
+Finding|Idea or Concept|General Exam|3064,3072|true|false|false|C3887511|Evidence|evidence
+Finding|Functional Concept|General Exam|3064,3075|true|false|false|C0332120|Evidence of (contextual qualifier)|evidence of
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3077,3085|false|false|false|C0041951|Ureter|ureteral
+Finding|Functional Concept|General Exam|3077,3085|false|false|false|C1522613|Ureteral Route of Administration|ureteral
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3089,3096|false|false|false|C0042027|Urinary tract|urinary
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3089,3104|false|false|false|C0005682;C4037992|Abdomen+Pelvis>Urinary bladder;Urinary Bladder|urinary bladder
+Disorder|Disease or Syndrome|General Exam|3089,3113|false|false|false|C0005683|Urinary bladder stone (disorder)|urinary bladder calculus
+Finding|Body Substance|General Exam|3089,3113|false|false|false|C2712342|Bladder stone (substance)|urinary bladder calculus
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3097,3104|false|false|false|C0005682|Urinary Bladder|bladder
+Disorder|Neoplastic Process|General Exam|3097,3104|false|false|false|C0154017;C0154091;C0496930|Benign neoplasm of bladder;Carcinoma in situ of bladder;Neoplasm of uncertain or unknown behavior of bladder|bladder
+Procedure|Therapeutic or Preventive Procedure|General Exam|3097,3104|false|false|false|C0872388|Procedures on bladder|bladder
+Disorder|Disease or Syndrome|General Exam|3097,3113|false|false|false|C0005683|Urinary bladder stone (disorder)|bladder calculus
+Finding|Body Substance|General Exam|3097,3113|false|false|false|C2712342|Bladder stone (substance)|bladder calculus
+Event|Event|General Exam|3105,3113|false|false|false|||calculus
+Finding|Body Substance|General Exam|3105,3113|false|false|false|C0006736|Calculi|calculus
+Procedure|Laboratory Procedure|General Exam|3105,3113|false|false|false|C3668917|Calculus (lab procedure)|calculus
+Finding|Conceptual Entity|General Exam|3124,3133|false|false|false|C0332516;C2699744|Symmetric Relationship;Symmetrical|symmetric
+Finding|Finding|General Exam|3124,3133|false|false|false|C0332516;C2699744|Symmetric Relationship;Symmetrical|symmetric
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3134,3139|false|false|false|C0022646|Kidney|renal
+Disorder|Disease or Syndrome|General Exam|3134,3139|false|false|false|C0042075|Urologic Diseases|renal
+Event|Activity|General Exam|3141,3152|false|false|false|C2349975|Enhance (action)|enhancement
+Event|Event|General Exam|3141,3152|false|false|false|||enhancement
+Procedure|Therapeutic or Preventive Procedure|General Exam|3141,3152|false|false|false|C1627358|Refractive surgery enhancement|enhancement
+Event|Event|General Exam|3157,3166|false|false|false|||excretion
+Finding|Body Substance|General Exam|3157,3166|false|false|false|C0221102;C0504085|Body Excretions;Excretory function|excretion
+Finding|Physiologic Function|General Exam|3157,3166|false|false|false|C0221102;C0504085|Body Excretions;Excretory function|excretion
+Finding|Functional Concept|General Exam|3170,3181|false|false|false|C1522726|Intravenous Route of Administration|intravenous
+Drug|Indicator, Reagent, or Diagnostic Aid|General Exam|3170,3190|false|false|false|C4072741|IV contrast|intravenous contrast
+Drug|Indicator, Reagent, or Diagnostic Aid|General Exam|3182,3190|false|false|false|C0009924|Contrast Media|contrast
+Event|Event|General Exam|3182,3190|false|false|false|||contrast
+Event|Event|General Exam|3224,3235|false|false|false|||hypodensity
+Finding|Functional Concept|General Exam|3243,3247|false|false|false|C1552822|Table Cell Horizontal Align - left|left
+Drug|Amino Acid Sequence|General Exam|3259,3265|false|false|false|C1514562|Protein Domain|region
+Event|Event|General Exam|3282,3287|false|false|false|||small
+Event|Event|General Exam|3302,3314|false|false|false|||characterize
+Finding|Finding|General Exam|3319,3325|false|false|false|C0332148;C0750492|Probable diagnosis;Probably|likely
+Finding|Idea or Concept|General Exam|3319,3325|false|false|false|C0332148;C0750492|Probable diagnosis;Probably|likely
+Event|Event|General Exam|3327,3337|false|false|false|||represents
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3338,3343|false|false|false|C0022646|Kidney|renal
+Disorder|Disease or Syndrome|General Exam|3338,3343|false|false|false|C0042075|Urologic Diseases|renal
+Disorder|Disease or Syndrome|General Exam|3338,3348|false|false|false|C0268800;C3887499|Renal cyst;Simple renal cyst|renal cyst
+Finding|Finding|General Exam|3338,3348|false|false|false|C2173677||renal cyst
+Disorder|Anatomical Abnormality|General Exam|3344,3348|false|false|false|C0010709|Cyst|cyst
+Event|Event|General Exam|3344,3348|false|false|false|||cyst
+Finding|Body Substance|General Exam|3344,3348|false|false|false|C1546594;C1550626|SpecimenType - Cyst|cyst
+Finding|Intellectual Product|General Exam|3344,3348|false|false|false|C1546594;C1550626|SpecimenType - Cyst|cyst
+Event|Event|General Exam|3362,3370|false|false|false|||evidence
+Finding|Idea or Concept|General Exam|3362,3370|true|false|false|C3887511|Evidence|evidence
+Finding|Functional Concept|General Exam|3362,3373|true|false|false|C0332120|Evidence of (contextual qualifier)|evidence of
+Disorder|Mental or Behavioral Dysfunction|General Exam|3374,3384|true|false|false|C0424290|Compulsive hoarding|collecting
+Event|Event|General Exam|3374,3384|false|false|false|||collecting
+Finding|Functional Concept|General Exam|3374,3384|true|false|false|C1516698|Collection (action)|collecting
+Drug|Biomedical or Dental Material|General Exam|3385,3391|true|false|false|C5671121|System (basic dose form)|system
+Event|Event|General Exam|3385,3391|false|false|false|||system
+Finding|Functional Concept|General Exam|3385,3391|true|false|false|C0449913;C5441654|System;System, LOINC Axis 4|system
+Finding|Functional Concept|General Exam|3393,3407|false|false|false|C0332555|Filling defect|filling defect
+Disorder|Disease or Syndrome|General Exam|3401,3407|false|false|false|C1861101|THYROID HORMONE PLASMA MEMBRANE TRANSPORT DEFECT|defect
+Event|Event|General Exam|3401,3407|false|false|false|||defect
+Finding|Functional Concept|General Exam|3401,3407|false|false|false|C1457869|Defect|defect
+Event|Event|General Exam|3419,3427|false|false|false|||segments
+Attribute|Clinical Attribute|General Exam|3442,3448|false|false|false|C4522154|Distal Resection Margin|distal
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3449,3456|false|false|false|C0041951|Ureter|ureters
+Finding|Finding|General Exam|3466,3470|false|false|false|C5575035|Well (answer to question)|well
+Event|Event|General Exam|3471,3480|false|false|false|||opacified
+Finding|Finding|General Exam|3482,3490|false|false|false|C0332149|Possible|possibly
+Disorder|Neoplastic Process|General Exam|3491,3500|false|true|false|C0027627|Neoplasm Metastasis|secondary
+Event|Event|General Exam|3491,3500|false|false|false|||secondary
+Finding|Functional Concept|General Exam|3491,3500|false|true|false|C1522484|metastatic qualifier|secondary
+Event|Event|General Exam|3504,3515|false|false|false|||peristalsis
+Finding|Organ or Tissue Function|General Exam|3504,3515|false|false|false|C0031133|Peristalsis|peristalsis
+Event|Event|General Exam|3538,3546|false|false|false|||evidence
+Finding|Idea or Concept|General Exam|3538,3546|true|false|false|C3887511|Evidence|evidence
+Finding|Functional Concept|General Exam|3538,3549|true|false|false|C0332120|Evidence of (contextual qualifier)|evidence of
+Finding|Functional Concept|General Exam|3550,3562|true|false|false|C0333348|Inflammatory|inflammatory
+Event|Event|General Exam|3563,3569|false|false|false|||change
+Finding|Functional Concept|General Exam|3563,3569|true|false|false|C0392747|Changing|change
+Procedure|Therapeutic or Preventive Procedure|General Exam|3563,3569|true|false|false|C4319952|Change - procedure|change
+Event|Event|General Exam|3573,3577|false|false|false|||mass
+Finding|Finding|General Exam|3573,3577|true|false|false|C0577559;C0577573;C1414542;C1546709;C2700045;C4283905|FBN1 gene;FBN1 wt Allele;Mass of body region;Mass of body structure;Morphology, Attenuation, Size, and Structure Criteria|mass
+Finding|Gene or Genome|General Exam|3573,3577|true|false|false|C0577559;C0577573;C1414542;C1546709;C2700045;C4283905|FBN1 gene;FBN1 wt Allele;Mass of body region;Mass of body structure;Morphology, Attenuation, Size, and Structure Criteria|mass
+Finding|Intellectual Product|General Exam|3573,3577|true|false|false|C0577559;C0577573;C1414542;C1546709;C2700045;C4283905|FBN1 gene;FBN1 wt Allele;Mass of body region;Mass of body structure;Morphology, Attenuation, Size, and Structure Criteria|mass
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3589,3596|false|false|false|C0041951|Ureter|ureters
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3602,3609|false|false|false|C0001625|Adrenal Glands|adrenal
+Finding|Finding|General Exam|3602,3609|false|false|false|C0521428|Adrenal|adrenal
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3602,3616|false|false|false|C0001625|Adrenal Glands|adrenal glands
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3610,3616|false|false|false|C1285092|Gland|glands
+Event|Event|General Exam|3621,3633|false|false|false|||unremarkable
+Finding|Finding|General Exam|3639,3642|false|false|false|C1550472;C4522223;C5203106|IPSS Risk Category Low;IPSS-R Risk Category Low;low confidentiality|Low
+Finding|Intellectual Product|General Exam|3639,3642|false|false|false|C1550472;C4522223;C5203106|IPSS Risk Category Low;IPSS-R Risk Category Low;low confidentiality|Low
+Anatomy|Body Location or Region|General Exam|3643,3650|false|false|false|C0205054|Hepatic|hepatic
+Event|Activity|General Exam|3651,3662|false|false|false|C0599946|Attenuation|attenuation
+Event|Event|General Exam|3651,3662|false|false|false|||attenuation
+Event|Event|General Exam|3678,3685|false|false|false|||imaging
+Finding|Finding|General Exam|3678,3685|false|false|false|C0740845|Imaging problem|imaging
+Procedure|Diagnostic Procedure|General Exam|3678,3685|false|false|false|C0011923;C0079595|Diagnostic Imaging;Imaging Techniques|imaging
+Event|Event|General Exam|3689,3699|false|false|false|||consistent
+Finding|Idea or Concept|General Exam|3689,3699|false|false|false|C0332290|Consistent with|consistent
+Anatomy|Body Location or Region|General Exam|3706,3713|false|false|false|C0205054|Hepatic|hepatic
+Disorder|Disease or Syndrome|General Exam|3715,3724|false|false|false|C2711227|Steatohepatitis|steatosis
+Event|Event|General Exam|3715,3724|false|false|false|||steatosis
+Finding|Pathologic Function|General Exam|3715,3724|false|false|false|C0152254|Fatty degeneration|steatosis
+Event|Event|General Exam|3738,3746|false|false|false|||evidence
+Finding|Idea or Concept|General Exam|3738,3746|true|false|false|C3887511|Evidence|evidence
+Finding|Functional Concept|General Exam|3738,3749|true|false|false|C0332120|Evidence of (contextual qualifier)|evidence of
+Anatomy|Body Location or Region|General Exam|3756,3763|false|false|false|C0205054|Hepatic|hepatic
+Finding|Finding|General Exam|3756,3768|true|false|false|C0240225|Liver mass|hepatic mass
+Event|Event|General Exam|3764,3768|false|false|false|||mass
+Finding|Finding|General Exam|3764,3768|true|false|false|C0577559;C0577573;C1414542;C1546709;C2700045;C4283905|FBN1 gene;FBN1 wt Allele;Mass of body region;Mass of body structure;Morphology, Attenuation, Size, and Structure Criteria|mass
+Finding|Gene or Genome|General Exam|3764,3768|true|false|false|C0577559;C0577573;C1414542;C1546709;C2700045;C4283905|FBN1 gene;FBN1 wt Allele;Mass of body region;Mass of body structure;Morphology, Attenuation, Size, and Structure Criteria|mass
+Finding|Intellectual Product|General Exam|3764,3768|true|false|false|C0577559;C0577573;C1414542;C1546709;C2700045;C4283905|FBN1 gene;FBN1 wt Allele;Mass of body region;Mass of body structure;Morphology, Attenuation, Size, and Structure Criteria|mass
+Event|Event|General Exam|3784,3796|false|false|false|||intrahepatic
+Finding|Functional Concept|General Exam|3784,3796|false|false|false|C1512952|Intrahepatic Route of Administration|intrahepatic
+Finding|Functional Concept|General Exam|3813,3820|false|false|false|C0521378|Biliary|biliary
+Event|Event|General Exam|3828,3838|false|false|false|||dilatation
+Finding|Finding|General Exam|3828,3838|false|false|false|C0012359;C0700124|Dilated;Pathological Dilatation|dilatation
+Finding|Pathologic Function|General Exam|3828,3838|false|false|false|C0012359;C0700124|Dilated;Pathological Dilatation|dilatation
+Procedure|Therapeutic or Preventive Procedure|General Exam|3828,3838|false|false|false|C1322279|Dilate procedure|dilatation
+Disorder|Disease or Syndrome|General Exam|3860,3870|false|false|false|C0008350;C0947622|Cholecystolithiasis;Cholelithiasis|gallstones
+Event|Event|General Exam|3860,3870|false|false|false|||gallstones
+Finding|Body Substance|General Exam|3860,3870|false|false|false|C0242216|Biliary calculi|gallstones
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3882,3893|false|false|false|C0016976;C1524055;C4071903|Abdomen>Gallbladder;Gallbladder;Gallbladder (MMHCC)|gallbladder
+Anatomy|Tissue|General Exam|3882,3893|false|false|false|C0016976;C1524055;C4071903|Abdomen>Gallbladder;Gallbladder;Gallbladder (MMHCC)|gallbladder
+Procedure|Health Care Activity|General Exam|3882,3893|false|false|false|C2032932|examination of gallbladder|gallbladder
+Event|Event|General Exam|3902,3910|false|false|false|||evidence
+Finding|Idea or Concept|General Exam|3902,3910|true|false|false|C3887511|Evidence|evidence
+Finding|Intellectual Product|General Exam|3915,3920|false|false|false|C1547229;C1547295|Acute - Triage Code;Admission Level of Care Code - Acute|acute
+Disorder|Disease or Syndrome|General Exam|3915,3934|false|false|false|C0149520|Acute Cholecystitis|acute cholecystitis
+Disorder|Disease or Syndrome|General Exam|3921,3934|false|false|false|C0008325|Cholecystitis|cholecystitis
+Event|Event|General Exam|3921,3934|false|false|false|||cholecystitis
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3944,3950|false|false|false|C0037993;C4037984|Abdomen>Spleen;Spleen|spleen
+Disorder|Neoplastic Process|General Exam|3944,3950|false|false|false|C0153470|Malignant neoplasm of spleen|spleen
+Event|Event|General Exam|3944,3950|false|false|false|||spleen
+Finding|Finding|General Exam|3944,3950|false|false|false|C0812414|Spleen problem|spleen
+Procedure|Therapeutic or Preventive Procedure|General Exam|3944,3950|false|false|false|C0869677|Procedures on Spleen|spleen
+Event|Event|General Exam|3958,3966|false|false|false|||enlarged
+Anatomy|Body Part, Organ, or Organ Component|General Exam|3980,3990|false|false|false|C0030274|Pancreas|pancreatic
+Drug|Amino Acid, Peptide, or Protein|General Exam|3980,3990|true|false|false|C0030292|Pancreatic Hormones|pancreatic
+Drug|Hormone|General Exam|3980,3990|true|false|false|C0030292|Pancreatic Hormones|pancreatic
+Drug|Pharmacologic Substance|General Exam|3980,3990|true|false|false|C0030292|Pancreatic Hormones|pancreatic
+Event|Event|General Exam|3991,3997|false|false|false|||ductal
+Event|Event|General Exam|3999,4009|false|false|false|||dilatation
+Finding|Finding|General Exam|3999,4009|false|false|false|C0012359;C0700124|Dilated;Pathological Dilatation|dilatation
+Finding|Pathologic Function|General Exam|3999,4009|false|false|false|C0012359;C0700124|Dilated;Pathological Dilatation|dilatation
+Procedure|Therapeutic or Preventive Procedure|General Exam|3999,4009|false|false|false|C1322279|Dilate procedure|dilatation
+Event|Event|General Exam|4014,4022|false|false|false|||evidence
+Finding|Idea or Concept|General Exam|4014,4022|false|false|false|C3887511|Evidence|evidence
+Finding|Functional Concept|General Exam|4014,4025|false|false|false|C0332120|Evidence of (contextual qualifier)|evidence of
+Anatomy|Body Part, Organ, or Organ Component|General Exam|4026,4036|false|false|false|C0030274|Pancreas|pancreatic
+Drug|Amino Acid, Peptide, or Protein|General Exam|4026,4036|false|false|false|C0030292|Pancreatic Hormones|pancreatic
+Drug|Hormone|General Exam|4026,4036|false|false|false|C0030292|Pancreatic Hormones|pancreatic
+Drug|Pharmacologic Substance|General Exam|4026,4036|false|false|false|C0030292|Pancreatic Hormones|pancreatic
+Finding|Finding|General Exam|4026,4041|false|false|false|C0877425|Mass of pancreas|pancreatic mass
+Event|Event|General Exam|4037,4041|false|false|false|||mass
+Finding|Finding|General Exam|4037,4041|false|false|false|C0577559;C0577573;C1414542;C1546709;C2700045;C4283905|FBN1 gene;FBN1 wt Allele;Mass of body region;Mass of body structure;Morphology, Attenuation, Size, and Structure Criteria|mass
+Finding|Gene or Genome|General Exam|4037,4041|false|false|false|C0577559;C0577573;C1414542;C1546709;C2700045;C4283905|FBN1 gene;FBN1 wt Allele;Mass of body region;Mass of body structure;Morphology, Attenuation, Size, and Structure Criteria|mass
+Finding|Intellectual Product|General Exam|4037,4041|false|false|false|C0577559;C0577573;C1414542;C1546709;C2700045;C4283905|FBN1 gene;FBN1 wt Allele;Mass of body region;Mass of body structure;Morphology, Attenuation, Size, and Structure Criteria|mass
+Finding|Finding|General Exam|4060,4067|true|false|false|C0700124|Dilated|dilated
+Finding|Finding|General Exam|4060,4073|false|false|false|C4697734|Dilated loops|dilated loops
+Event|Event|General Exam|4068,4073|false|false|false|||loops
+Anatomy|Body Part, Organ, or Organ Component|General Exam|4077,4082|false|false|false|C0021853|Intestines|bowel
+Event|Event|General Exam|4096,4104|false|false|false|||evidence
+Finding|Idea or Concept|General Exam|4096,4104|true|false|false|C3887511|Evidence|evidence
+Finding|Functional Concept|General Exam|4096,4107|true|false|false|C0332120|Evidence of (contextual qualifier)|evidence of
+Anatomy|Body Part, Organ, or Organ Component|General Exam|4109,4114|false|false|false|C0021853|Intestines|bowel
+Event|Event|General Exam|4121,4131|false|false|false|||thickening
+Finding|Finding|General Exam|4121,4131|false|false|false|C0205400|Thickened|thickening
+Finding|Finding|General Exam|4145,4160|true|false|false|C1522583;C4760449|Intraperitoneal (intended site);Intraperitoneal Route of Administration|intraperitoneal
+Finding|Functional Concept|General Exam|4145,4160|true|false|false|C1522583;C4760449|Intraperitoneal (intended site);Intraperitoneal Route of Administration|intraperitoneal
+Disorder|Disease or Syndrome|General Exam|4145,4169|true|false|false|C0032320|Pneumoperitoneum|intraperitoneal free air
+Finding|Functional Concept|General Exam|4161,4165|false|false|false|C0332296|Free of (attribute)|free
+Drug|Inorganic Chemical|General Exam|4166,4169|true|false|false|C0001861;C3536832|Air (substance);air|air
+Drug|Pharmacologic Substance|General Exam|4166,4169|true|false|false|C0001861;C3536832|Air (substance);air|air
+Drug|Substance|General Exam|4166,4169|true|false|false|C0001861;C3536832|Air (substance);air|air
+Event|Event|General Exam|4166,4169|false|false|false|||air
+Finding|Finding|General Exam|4166,4169|true|false|false|C1140091;C1866503;C2681903|ACUTE INSULIN RESPONSE;AI/RHEUM;AIRN gene|air
+Finding|Gene or Genome|General Exam|4166,4169|true|false|false|C1140091;C1866503;C2681903|ACUTE INSULIN RESPONSE;AI/RHEUM;AIRN gene|air
+Finding|Intellectual Product|General Exam|4166,4169|true|false|false|C1140091;C1866503;C2681903|ACUTE INSULIN RESPONSE;AI/RHEUM;AIRN gene|air
+Event|Event|General Exam|4173,4177|false|false|false|||free
+Finding|Functional Concept|General Exam|4173,4177|false|false|false|C0332296|Free of (attribute)|free
+Finding|Pathologic Function|General Exam|4173,4183|true|false|false|C0013687|effusion|free fluid
+Drug|Substance|General Exam|4178,4183|false|false|false|C0302908;C1704353|Liquid substance;fluid - substance|fluid
+Event|Event|General Exam|4178,4183|false|false|false|||fluid
+Finding|Intellectual Product|General Exam|4178,4183|false|false|false|C1546638|Fluid Specimen Code|fluid
+Procedure|Therapeutic or Preventive Procedure|General Exam|4202,4210|false|false|false|C1293134|Enlargement procedure|enlarged
+Anatomy|Body Location or Region|General Exam|4211,4219|false|false|false|C0018246|Inguinal region|inguinal
+Anatomy|Body Part, Organ, or Organ Component|General Exam|4221,4226|false|false|false|C0020889|Bone structure of ilium|iliac
+Finding|Idea or Concept|General Exam|4227,4232|false|false|false|C1524075|chain of objects|chain
+Anatomy|Body Space or Junction|General Exam|4251,4266|false|false|false|C0035359|Retroperitoneal Space|retroperitoneal
+Finding|Body Substance|General Exam|4267,4272|false|false|false|C0024202|Lymph|lymph
+Anatomy|Body Part, Organ, or Organ Component|General Exam|4267,4278|false|false|false|C0024204|lymph nodes|lymph nodes
+Disorder|Neoplastic Process|General Exam|4267,4278|false|false|false|C0154054|benign neoplasm of lymph nodes|lymph nodes
+Anatomy|Body Location or Region|General Exam|4280,4289|false|false|false|C0000726|Abdomen|Abdominal
+Anatomy|Body Part, Organ, or Organ Component|General Exam|4280,4295|false|false|false|C0003484;C4037989|Abdomen>Aorta.abdominal;Abdominal aorta structure|Abdominal aorta
+Procedure|Health Care Activity|General Exam|4280,4295|false|false|false|C2228415|examination of abdominal aorta|Abdominal aorta
+Anatomy|Body Part, Organ, or Organ Component|General Exam|4290,4295|false|false|false|C0003483;C4037978|Aorta;Chest+Abdomen>Aorta|aorta
+Procedure|Health Care Activity|General Exam|4290,4295|false|false|false|C0869784|Procedure on aorta|aorta
+Event|Event|General Exam|4309,4315|false|false|false|||course
+Event|Event|General Exam|4321,4328|false|false|false|||caliber
+Finding|Finding|General Exam|4334,4342|false|false|false|C1547226;C5201148|Moderate;Moderate - Severity of Illness Code|moderate
+Finding|Intellectual Product|General Exam|4334,4342|false|false|false|C1547226;C5201148|Moderate;Moderate - Severity of Illness Code|moderate
+Event|Event|General Exam|4343,4358|false|false|false|||atherosclerotic
+Finding|Functional Concept|General Exam|4343,4358|false|false|false|C0333482|atherosclerotic|atherosclerotic
+Event|Event|General Exam|4359,4372|false|false|false|||calcification
+Finding|Organ or Tissue Function|General Exam|4359,4372|false|false|false|C0006660;C0006663;C1533591|Calcification;Calcinosis;Physiologic calcification|calcification
+Finding|Pathologic Function|General Exam|4359,4372|false|false|false|C0006660;C0006663;C1533591|Calcification;Calcinosis;Physiologic calcification|calcification
+Finding|Functional Concept|General Exam|4384,4399|false|false|false|C0333482|atherosclerotic|atherosclerotic
+Event|Event|General Exam|4400,4413|false|false|false|||calcification
+Finding|Organ or Tissue Function|General Exam|4400,4413|false|false|false|C0006660;C0006663;C1533591|Calcification;Calcinosis;Physiologic calcification|calcification
+Finding|Pathologic Function|General Exam|4400,4413|false|false|false|C0006660;C0006663;C1533591|Calcification;Calcinosis;Physiologic calcification|calcification
+Anatomy|Body Location or Region|General Exam|4430,4440|false|false|false|C0025474|Mesentery|mesenteric
+Anatomy|Body Part, Organ, or Organ Component|General Exam|4442,4448|false|false|false|C0003842;C0226004|Arterial system;Arteries|artery
+Anatomy|Body System|General Exam|4442,4448|false|false|false|C0003842;C0226004|Arterial system;Arteries|artery
+Event|Event|General Exam|4449,4455|false|false|false|||origin
+Finding|Classification|General Exam|4449,4455|false|false|false|C0079946;C1550512|National origin;Participation Type - origin|origin
+Finding|Intellectual Product|General Exam|4449,4455|false|false|false|C0079946;C1550512|National origin;Participation Type - origin|origin
+Anatomy|Body Part, Organ, or Organ Component|General Exam|4480,4487|false|false|false|C0262950;C4520924|Bone Tissue, Human;Skeletal bone|osseous
+Anatomy|Tissue|General Exam|4480,4487|false|false|false|C0262950;C4520924|Bone Tissue, Human;Skeletal bone|osseous
+Event|Event|General Exam|4488,4494|false|false|false|||lesion
+Finding|Finding|General Exam|4488,4494|true|true|false|C0221198;C1546698|Lesion|lesion
+Finding|Intellectual Product|General Exam|4488,4494|true|true|false|C0221198;C1546698|Lesion|lesion
+Finding|Functional Concept|Impression|4536,4541|false|false|false|C1552823|Table Cell Horizontal Align - right|right
+Disorder|Mental or Behavioral Dysfunction|Impression|4542,4552|false|false|false|C0424290|Compulsive hoarding|collecting
+Event|Event|Impression|4542,4552|false|false|false|||collecting
+Finding|Functional Concept|Impression|4542,4552|false|false|false|C1516698|Collection (action)|collecting
+Drug|Biomedical or Dental Material|Impression|4553,4559|false|false|false|C5671121|System (basic dose form)|system
+Finding|Functional Concept|Impression|4553,4559|false|false|false|C0449913;C5441654|System;System, LOINC Axis 4|system
+Event|Event|Impression|4560,4568|false|false|false|||calculus
+Finding|Body Substance|Impression|4560,4568|false|false|false|C0006736|Calculi|calculus
+Procedure|Laboratory Procedure|Impression|4560,4568|false|false|false|C3668917|Calculus (lab procedure)|calculus
+Anatomy|Body Location or Region|Impression|4574,4581|false|false|false|C0205054|Hepatic|Hepatic
+Disorder|Disease or Syndrome|Impression|4574,4591|false|false|false|C0015695;C2711227|Fatty Liver;Steatohepatitis|Hepatic steatosis
+Disorder|Disease or Syndrome|Impression|4582,4591|false|false|false|C2711227|Steatohepatitis|steatosis
+Event|Event|Impression|4582,4591|false|false|false|||steatosis
+Finding|Pathologic Function|Impression|4582,4591|false|false|false|C0152254|Fatty degeneration|steatosis
+Anatomy|Body Part, Organ, or Organ Component|Impression|4607,4616|false|false|false|C0024109|Lung|pulmonary
+Attribute|Clinical Attribute|Impression|4607,4616|false|false|false|C2707265||pulmonary
+Finding|Finding|Impression|4607,4616|false|false|false|C4522268|Pulmonary (intended site)|pulmonary
+Event|Event|Impression|4617,4626|false|false|false|||densities
+Finding|Functional Concept|Impression|4634,4638|false|false|false|C1552822|Table Cell Horizontal Align - left|left
+Drug|Amino Acid Sequence|Impression|4647,4653|false|false|false|C1514562|Protein Domain|region
+Event|Event|Impression|4655,4664|false|false|false|||measuring
+Attribute|Clinical Attribute|Impression|4687,4695|false|false|false|C2926606||findings
+Event|Event|Impression|4687,4695|false|false|false|||findings
+Finding|Functional Concept|Impression|4687,4695|false|false|false|C2607943|findings aspects|findings
+Event|Event|Impression|4704,4713|false|false|false|||represent
+Event|Event|Impression|4714,4719|false|false|false|||areas
+Disorder|Disease or Syndrome|Impression|4724,4743|false|false|false|C2062952|Round atelectasis|rounded atelectasis
+Event|Event|Impression|4732,4743|false|false|false|||atelectasis
+Finding|Pathologic Function|Impression|4732,4743|false|false|false|C0004144|Atelectasis|atelectasis
+Finding|Idea or Concept|Impression|4759,4763|false|false|false|C0233324;C1705313|Term (lexical);Term Birth|term
+Finding|Organism Function|Impression|4759,4763|false|false|false|C0233324;C1705313|Term (lexical);Term Birth|term
+Event|Event|Impression|4764,4772|false|false|false|||followup
+Procedure|Health Care Activity|Impression|4764,4772|false|false|false|C1522577|follow-up|followup
+Attribute|Clinical Attribute|Impression|4791,4799|false|false|true|C0881858||CT chest
+Procedure|Diagnostic Procedure|Impression|4791,4799|false|false|true|C0202823|Chest CT|CT chest
+Anatomy|Body Location or Region|Impression|4794,4799|false|false|false|C0817096;C1527391|Anterior thoracic region;Chest|chest
+Event|Event|Impression|4794,4799|false|false|false|||chest
+Finding|Finding|Impression|4794,4799|false|false|false|C0741025|Chest problem|chest
+Event|Event|Impression|4803,4814|false|false|false|||recommended
+Procedure|Health Care Activity|Impression|4818,4827|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|ADMISSION
+Event|Event|Impression|4828,4832|false|false|false|||LABS
+Lab|Laboratory or Test Result|Impression|4828,4832|false|false|false|C0587081|Laboratory test finding|LABS
+Disorder|Disease or Syndrome|Impression|4846,4851|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|4846,4851|false|false|false|||BLOOD
+Finding|Body Substance|Impression|4846,4851|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Anatomy|Cell|Impression|4852,4855|false|false|false|C0023516|Leukocytes|WBC
+Anatomy|Cell|Impression|4860,4863|false|false|false|C0014792|Erythrocytes|RBC
+Attribute|Clinical Attribute|Impression|4860,4863|false|false|false|C1114281||RBC
+Drug|Pharmacologic Substance|Impression|4860,4863|false|false|false|C0014792|Erythrocytes|RBC
+Drug|Amino Acid, Peptide, or Protein|Impression|4870,4873|false|false|false|C0019046|Hemoglobin|Hgb
+Drug|Biologically Active Substance|Impression|4870,4873|false|false|false|C0019046|Hemoglobin|Hgb
+Finding|Gene or Genome|Impression|4870,4873|false|false|false|C1424337|CYGB gene|Hgb
+Lab|Laboratory or Test Result|Impression|4870,4873|false|false|false|C0019029|Hemoglobin concentration|Hgb
+Event|Event|Impression|4879,4882|false|false|false|||Hct
+Procedure|Laboratory Procedure|Impression|4879,4882|false|false|false|C0018935;C0472699|Hematocrit Measurement;Hemopoietic stem cell transplant|Hct
+Procedure|Therapeutic or Preventive Procedure|Impression|4879,4882|false|false|false|C0018935;C0472699|Hematocrit Measurement;Hemopoietic stem cell transplant|Hct
+Disorder|Virus|Impression|4889,4892|false|false|false|C2304881|Merkel cell polyomavirus|MCV
+Event|Event|Impression|4889,4892|false|false|false|||MCV
+Lab|Laboratory or Test Result|Impression|4889,4892|false|false|false|C0524587|Mean Corpuscular Volume|MCV
+Procedure|Laboratory Procedure|Impression|4889,4892|false|false|false|C0285131;C1948043|Cisplatin-Methotrexate-Vinblastine Regimen;Erythrocyte Mean Corpuscular Volume Measurement|MCV
+Procedure|Therapeutic or Preventive Procedure|Impression|4889,4892|false|false|false|C0285131;C1948043|Cisplatin-Methotrexate-Vinblastine Regimen;Erythrocyte Mean Corpuscular Volume Measurement|MCV
+Drug|Organic Chemical|Impression|4896,4899|false|false|false|C0600370|methacholine|MCH
+Drug|Pharmacologic Substance|Impression|4896,4899|false|false|false|C0600370|methacholine|MCH
+Event|Event|Impression|4896,4899|false|false|false|||MCH
+Finding|Gene or Genome|Impression|4896,4899|false|false|false|C1418669;C2248810|PMCH gene;mesaconyl-CoA hydratase activity|MCH
+Finding|Molecular Function|Impression|4896,4899|false|false|false|C1418669;C2248810|PMCH gene;mesaconyl-CoA hydratase activity|MCH
+Procedure|Laboratory Procedure|Impression|4896,4899|false|false|false|C0369183|Mean corpuscular hemoglobin determination|MCH
+Procedure|Laboratory Procedure|Impression|4906,4910|false|false|false|C0474535|Mean corpuscular hemoglobin concentration determination|MCHC
+Procedure|Laboratory Procedure|Impression|4926,4929|false|false|false|C0201617|Primed lymphocyte test|Plt
+Disorder|Disease or Syndrome|Impression|4946,4951|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|4946,4951|false|false|false|||BLOOD
+Finding|Body Substance|Impression|4946,4951|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Drug|Antibiotic|Impression|4968,4973|false|false|false|C0540173;C3275179|Mono-S;Monos|Monos
+Drug|Biomedical or Dental Material|Impression|4968,4973|false|false|false|C0540173;C3275179|Mono-S;Monos|Monos
+Drug|Organic Chemical|Impression|4968,4973|false|false|false|C0540173;C3275179|Mono-S;Monos|Monos
+Disorder|Disease or Syndrome|Impression|4978,4981|false|false|false|C0272192;C1836122|Familial eosinophilia;SARCOIDOSIS, EARLY-ONSET|Eos
+Event|Event|Impression|4978,4981|false|false|false|||Eos
+Finding|Gene or Genome|Impression|4978,4981|false|false|false|C1421861;C1538729|IKZF4 gene;PRSS33 gene|Eos
+Disorder|Disease or Syndrome|Impression|5008,5013|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5008,5013|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5008,5013|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Drug|Organic Chemical|Impression|5008,5021|false|false|false|C0005802|Blood Glucose|BLOOD Glucose
+Lab|Laboratory or Test Result|Impression|5008,5021|false|false|false|C0428554|Finding of blood glucose level|BLOOD Glucose
+Procedure|Laboratory Procedure|Impression|5008,5021|false|false|false|C0392201|Blood glucose measurement|BLOOD Glucose
+Drug|Biologically Active Substance|Impression|5014,5021|false|false|false|C0017725|glucose|Glucose
+Drug|Organic Chemical|Impression|5014,5021|false|false|false|C0017725|glucose|Glucose
+Drug|Pharmacologic Substance|Impression|5014,5021|false|false|false|C0017725|glucose|Glucose
+Event|Event|Impression|5014,5021|false|false|false|||Glucose
+Lab|Laboratory or Test Result|Impression|5014,5021|false|false|false|C5781949|Glucose^1.5H post dose glucagon|Glucose
+Procedure|Laboratory Procedure|Impression|5014,5021|false|false|false|C0337438|Glucose measurement|Glucose
+Event|Event|Impression|5057,5058|false|false|false|||5
+Drug|Inorganic Chemical|Impression|5068,5072|false|false|false|C0005367|Bicarbonates|HCO3
+Drug|Pharmacologic Substance|Impression|5068,5072|false|false|false|C0005367|Bicarbonates|HCO3
+Procedure|Laboratory Procedure|Impression|5068,5072|false|false|false|C0202059|Bicarbonate measurement|HCO3
+Disorder|Disease or Syndrome|Impression|5099,5104|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5099,5104|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5099,5104|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Disorder|Neoplastic Process|Impression|5105,5108|false|false|false|C1266129;C1370889|Atypical Lipoma;Liposarcoma, well differentiated|ALT
+Drug|Amino Acid, Peptide, or Protein|Impression|5105,5108|false|false|false|C0001899|Alanine Transaminase|ALT
+Drug|Enzyme|Impression|5105,5108|false|false|false|C0001899|Alanine Transaminase|ALT
+Event|Event|Impression|5105,5108|false|false|false|||ALT
+Finding|Gene or Genome|Impression|5105,5108|false|false|false|C1140170;C1415274;C2257651|Alternative Billing Concepts;GPT gene|ALT
+Finding|Intellectual Product|Impression|5105,5108|false|false|false|C1140170;C1415274;C2257651|Alternative Billing Concepts;GPT gene|ALT
+Finding|Molecular Function|Impression|5105,5108|false|false|false|C1140170;C1415274;C2257651|Alternative Billing Concepts;GPT gene|ALT
+Procedure|Therapeutic or Preventive Procedure|Impression|5105,5108|false|false|false|C4553172|Antibiotic Lock Therapy|ALT
+Anatomy|Body Space or Junction|Impression|5112,5115|false|false|false|C1185650|Asterion|AST
+Disorder|Neoplastic Process|Impression|5112,5115|false|false|false|C4522245|Atypical Spitz Nevus|AST
+Drug|Amino Acid, Peptide, or Protein|Impression|5112,5115|false|false|false|C0004002;C0242192;C1121182|Aspartate Transaminase;SGOT - Glutamate oxaloacetate transaminase;SLC17A5 protein, human|AST
+Drug|Biologically Active Substance|Impression|5112,5115|false|false|false|C0004002;C0242192;C1121182|Aspartate Transaminase;SGOT - Glutamate oxaloacetate transaminase;SLC17A5 protein, human|AST
+Drug|Enzyme|Impression|5112,5115|false|false|false|C0004002;C0242192;C1121182|Aspartate Transaminase;SGOT - Glutamate oxaloacetate transaminase;SLC17A5 protein, human|AST
+Event|Event|Impression|5112,5115|false|false|false|||AST
+Finding|Gene or Genome|Impression|5112,5115|false|false|false|C1415181;C1420113;C5960784|GOT1 gene;SLC17A5 gene;SLC17A5 wt Allele|AST
+Drug|Amino Acid, Peptide, or Protein|Impression|5120,5127|false|false|false|C0002059|Alkaline Phosphatase|AlkPhos
+Drug|Enzyme|Impression|5120,5127|false|false|false|C0002059|Alkaline Phosphatase|AlkPhos
+Disorder|Disease or Syndrome|Impression|5155,5160|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5155,5160|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5155,5160|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Procedure|Laboratory Procedure|Impression|5155,5168|false|false|false|C0853248|Blood albumin|BLOOD Albumin
+Drug|Amino Acid, Peptide, or Protein|Impression|5161,5168|false|false|false|C0001924;C5966160|Albumin;Albumins|Albumin
+Drug|Biologically Active Substance|Impression|5161,5168|false|false|false|C0001924;C5966160|Albumin;Albumins|Albumin
+Drug|Pharmacologic Substance|Impression|5161,5168|false|false|false|C0001924;C5966160|Albumin;Albumins|Albumin
+Event|Event|Impression|5161,5168|false|false|false|||Albumin
+Finding|Gene or Genome|Impression|5161,5168|false|false|false|C1412332;C4553023|ALB gene;Albumin metabolic function|Albumin
+Finding|Physiologic Function|Impression|5161,5168|false|false|false|C1412332;C4553023|ALB gene;Albumin metabolic function|Albumin
+Procedure|Laboratory Procedure|Impression|5161,5168|false|false|false|C0201838|Albumin measurement|Albumin
+Drug|Biologically Active Substance|Impression|5173,5180|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Element, Ion, or Isotope|Impression|5173,5180|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Inorganic Chemical|Impression|5173,5180|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Pharmacologic Substance|Impression|5173,5180|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Vitamin|Impression|5173,5180|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Event|Event|Impression|5173,5180|false|false|false|||Calcium
+Finding|Physiologic Function|Impression|5173,5180|false|false|false|C4553026|Calcium metabolic function|Calcium
+Procedure|Laboratory Procedure|Impression|5173,5180|false|false|false|C0201925|Calcium measurement|Calcium
+Disorder|Disease or Syndrome|Impression|5213,5218|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5213,5218|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5213,5218|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Disorder|Disease or Syndrome|Impression|5245,5250|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5245,5250|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5245,5250|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Drug|Amino Acid, Peptide, or Protein|Impression|5251,5257|false|false|false|C0023764|lipase|Lipase
+Drug|Enzyme|Impression|5251,5257|false|false|false|C0023764|lipase|Lipase
+Drug|Pharmacologic Substance|Impression|5251,5257|false|false|false|C0023764|lipase|Lipase
+Event|Event|Impression|5251,5257|false|false|false|||Lipase
+Procedure|Laboratory Procedure|Impression|5251,5257|false|false|false|C0373670|Lipase measurement|Lipase
+Disorder|Disease or Syndrome|Impression|5274,5279|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5274,5279|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5274,5279|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Event|Event|Impression|5284,5287|false|false|false|||pO2
+Finding|Classification|Impression|5284,5287|false|false|false|C0391840;C4521535|Partial pressure of Oxygen;US Military enlisted E5|pO2
+Finding|Molecular Function|Impression|5284,5287|false|false|false|C0391840;C4521535|Partial pressure of Oxygen;US Military enlisted E5|pO2
+Procedure|Laboratory Procedure|Impression|5284,5287|false|false|false|C1283004|PO2 measurement|pO2
+Lab|Laboratory or Test Result|Impression|5292,5296|false|false|false|C0391839|Carbon dioxide, partial pressure|pCO2
+Procedure|Laboratory Procedure|Impression|5292,5296|false|false|false|C0201931|Carbon dioxide measurement, partial pressure|pCO2
+Anatomy|Body Location or Region|Impression|5320,5324|false|false|false|C2987514|Anatomical base|Base
+Drug|Biomedical or Dental Material|Impression|5320,5324|false|false|false|C0178499;C1550601;C1704464;C1880279|Base;Dental Base;base - RoleClass;nitrogenous base|Base
+Drug|Chemical Viewed Functionally|Impression|5320,5324|false|false|false|C0178499;C1550601;C1704464;C1880279|Base;Dental Base;base - RoleClass;nitrogenous base|Base
+Drug|Nucleic Acid, Nucleoside, or Nucleotide|Impression|5320,5324|false|false|false|C0178499;C1550601;C1704464;C1880279|Base;Dental Base;base - RoleClass;nitrogenous base|Base
+Finding|Gene or Genome|Impression|5320,5324|false|false|false|C1549548;C1705938;C1843354|BPIFA4P gene;Base - General Qualifier;Base - RX Component Type|Base
+Finding|Idea or Concept|Impression|5320,5324|false|false|false|C1549548;C1705938;C1843354|BPIFA4P gene;Base - General Qualifier;Base - RX Component Type|Base
+Disorder|Disease or Syndrome|Impression|5342,5347|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Finding|Body Substance|Impression|5342,5347|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Procedure|Laboratory Procedure|Impression|5342,5355|false|false|false|C3824990|lactate in blood (lab test)|BLOOD Lactate
+Drug|Organic Chemical|Impression|5348,5355|false|false|false|C0022924;C0376261|Lactates;lactate|Lactate
+Drug|Pharmacologic Substance|Impression|5348,5355|false|false|false|C0022924;C0376261|Lactates;lactate|Lactate
+Event|Event|Impression|5348,5355|false|false|false|||Lactate
+Procedure|Laboratory Procedure|Impression|5348,5355|false|false|false|C0202115|Lactic acid measurement|Lactate
+Disorder|Disease or Syndrome|Impression|5379,5384|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5379,5384|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5379,5384|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Drug|Amino Acid, Peptide, or Protein|Impression|5388,5391|false|false|false|C2744672|SAT1 protein, human|Sat
+Drug|Enzyme|Impression|5388,5391|false|false|false|C2744672|SAT1 protein, human|Sat
+Finding|Gene or Genome|Impression|5388,5391|false|false|false|C0871290;C1705827;C1822614|College Entrance Examination Board Scholastic Aptitude Test;SAT1 gene;SAT1 wt Allele|Sat
+Finding|Intellectual Product|Impression|5388,5391|false|false|false|C0871290;C1705827;C1822614|College Entrance Examination Board Scholastic Aptitude Test;SAT1 gene;SAT1 wt Allele|Sat
+Finding|Body Substance|Impression|5407,5412|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|URINE
+Finding|Functional Concept|Impression|5407,5412|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|URINE
+Finding|Intellectual Product|Impression|5407,5412|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|URINE
+Disorder|Disease or Syndrome|Impression|5407,5418|false|false|false|C0018965|Hematuria|URINE Blood
+Disorder|Disease or Syndrome|Impression|5413,5418|false|false|false|C0851353|Blood and lymphatic system disorders|Blood
+Finding|Body Substance|Impression|5413,5418|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|Blood
+Event|Event|Impression|5419,5422|false|false|false|||NEG
+Finding|Finding|Impression|5419,5422|false|false|false|C5848551|Neg - answer|NEG
+Drug|Biologically Active Substance|Impression|5423,5430|false|false|false|C0028137;C3848529|Nitrites;nitrite ion|Nitrite
+Drug|Inorganic Chemical|Impression|5423,5430|false|false|false|C0028137;C3848529|Nitrites;nitrite ion|Nitrite
+Drug|Pharmacologic Substance|Impression|5423,5430|false|false|false|C0028137;C3848529|Nitrites;nitrite ion|Nitrite
+Anatomy|Body Space or Junction|Impression|5431,5434|false|false|false|C1744592|Structure of parieto-occipital fissure|POS
+Finding|Intellectual Product|Impression|5431,5434|false|false|false|C5891108|Health Maintenance Organization Point of Service Plan|POS
+Drug|Amino Acid, Peptide, or Protein|Impression|5435,5442|false|false|false|C0033684|Proteins|Protein
+Drug|Biologically Active Substance|Impression|5435,5442|false|false|false|C0033684|Proteins|Protein
+Event|Event|Impression|5435,5442|false|false|false|||Protein
+Finding|Conceptual Entity|Impression|5435,5442|false|false|false|C1521746|Protein Info|Protein
+Procedure|Laboratory Procedure|Impression|5435,5442|false|false|false|C0202202|Protein measurement|Protein
+Event|Event|Impression|5443,5446|false|false|false|||NEG
+Finding|Finding|Impression|5443,5446|false|false|false|C5848551|Neg - answer|NEG
+Drug|Biologically Active Substance|Impression|5448,5455|false|false|false|C0017725|glucose|Glucose
+Drug|Organic Chemical|Impression|5448,5455|false|false|false|C0017725|glucose|Glucose
+Drug|Pharmacologic Substance|Impression|5448,5455|false|false|false|C0017725|glucose|Glucose
+Event|Event|Impression|5448,5455|false|false|false|||Glucose
+Lab|Laboratory or Test Result|Impression|5448,5455|false|false|false|C5781949|Glucose^1.5H post dose glucagon|Glucose
+Procedure|Laboratory Procedure|Impression|5448,5455|false|false|false|C0337438|Glucose measurement|Glucose
+Drug|Organic Chemical|Impression|5461,5467|false|false|false|C0022634|Ketones|Ketone
+Finding|Finding|Impression|5479,5482|false|false|false|C5848551|Neg - answer|NEG
+Finding|Finding|Impression|5491,5494|false|false|false|C5848551|Neg - answer|NEG
+Disorder|Disease or Syndrome|Impression|5508,5511|false|false|false|C0011860|Diabetes Mellitus, Non-Insulin-Dependent|MOD
+Event|Event|Impression|5508,5511|false|false|false|||MOD
+Finding|Body Substance|Impression|5524,5529|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|URINE
+Finding|Functional Concept|Impression|5524,5529|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|URINE
+Finding|Intellectual Product|Impression|5524,5529|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|URINE
+Lab|Laboratory or Test Result|Impression|5524,5533|false|false|false|C0221752;C2188659|Red blood cells urine positive|URINE RBC
+Anatomy|Cell|Impression|5530,5533|false|false|false|C0014792|Erythrocytes|RBC
+Attribute|Clinical Attribute|Impression|5530,5533|false|false|false|C1114281||RBC
+Drug|Pharmacologic Substance|Impression|5530,5533|false|false|false|C0014792|Erythrocytes|RBC
+Anatomy|Cell|Impression|5537,5540|false|false|false|C0023516|Leukocytes|WBC
+Drug|Food|Impression|5557,5562|false|false|false|C0043392;C0717551|Candida albicans allergenic extract;Yeast, Dried|Yeast
+Drug|Immunologic Factor|Impression|5557,5562|false|false|false|C0043392;C0717551|Candida albicans allergenic extract;Yeast, Dried|Yeast
+Drug|Indicator, Reagent, or Diagnostic Aid|Impression|5557,5562|false|false|false|C0043392;C0717551|Candida albicans allergenic extract;Yeast, Dried|Yeast
+Drug|Pharmacologic Substance|Impression|5557,5562|false|false|false|C0043392;C0717551|Candida albicans allergenic extract;Yeast, Dried|Yeast
+Event|Event|Impression|5563,5567|false|false|false|||NONE
+Disorder|Disease or Syndrome|Impression|5569,5572|false|false|false|C0267963|Exocrine pancreatic insufficiency|Epi
+Drug|Amino Acid, Peptide, or Protein|Impression|5569,5572|false|false|false|C0014563;C4281721|Tissue Factor Pathway Inhibitor, human;epinephrine|Epi
+Drug|Biologically Active Substance|Impression|5569,5572|false|false|false|C0014563;C4281721|Tissue Factor Pathway Inhibitor, human;epinephrine|Epi
+Drug|Hormone|Impression|5569,5572|false|false|false|C0014563;C4281721|Tissue Factor Pathway Inhibitor, human;epinephrine|Epi
+Drug|Organic Chemical|Impression|5569,5572|false|false|false|C0014563;C4281721|Tissue Factor Pathway Inhibitor, human;epinephrine|Epi
+Drug|Pharmacologic Substance|Impression|5569,5572|false|false|false|C0014563;C4281721|Tissue Factor Pathway Inhibitor, human;epinephrine|Epi
+Event|Event|Impression|5569,5572|false|false|false|||Epi
+Finding|Gene or Genome|Impression|5569,5572|false|false|false|C0451152;C1420705;C3273314|Eysenck personality inventory;TFPI gene;TFPI wt Allele|Epi
+Finding|Intellectual Product|Impression|5569,5572|false|false|false|C0451152;C1420705;C3273314|Eysenck personality inventory;TFPI gene;TFPI wt Allele|Epi
+Procedure|Diagnostic Procedure|Impression|5569,5572|false|false|false|C0162734;C3641909|Echo-Planar Imaging;Electronic Portal Imaging|Epi
+Finding|Body Substance|Impression|5597,5602|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|URINE
+Finding|Functional Concept|Impression|5597,5602|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|URINE
+Finding|Intellectual Product|Impression|5597,5602|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|URINE
+Finding|Finding|Impression|5597,5608|false|false|false|C0278030|Color of urine|URINE Color
+Drug|Biomedical or Dental Material|Impression|5603,5608|false|false|false|C1550604;C1705245|Coloring Excipient;color additive|Color
+Drug|Indicator, Reagent, or Diagnostic Aid|Impression|5603,5608|false|false|false|C1550604;C1705245|Coloring Excipient;color additive|Color
+Drug|Organic Chemical|Impression|5609,5614|false|false|false|C4047917|Cereal plant straw|Straw
+Finding|Idea or Concept|Impression|5622,5627|false|false|false|C1550016|Remote control command - Clear|Clear
+Event|Event|Impression|5646,5650|false|false|false|||LABS
+Lab|Laboratory or Test Result|Impression|5646,5650|false|false|false|C0587081|Laboratory test finding|LABS
+Disorder|Disease or Syndrome|Impression|5664,5669|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5664,5669|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5664,5669|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Anatomy|Cell|Impression|5670,5673|false|false|false|C0023516|Leukocytes|WBC
+Anatomy|Cell|Impression|5678,5681|false|false|false|C0014792|Erythrocytes|RBC
+Attribute|Clinical Attribute|Impression|5678,5681|false|false|false|C1114281||RBC
+Drug|Pharmacologic Substance|Impression|5678,5681|false|false|false|C0014792|Erythrocytes|RBC
+Drug|Amino Acid, Peptide, or Protein|Impression|5688,5691|false|false|false|C0019046|Hemoglobin|Hgb
+Drug|Biologically Active Substance|Impression|5688,5691|false|false|false|C0019046|Hemoglobin|Hgb
+Finding|Gene or Genome|Impression|5688,5691|false|false|false|C1424337|CYGB gene|Hgb
+Lab|Laboratory or Test Result|Impression|5688,5691|false|false|false|C0019029|Hemoglobin concentration|Hgb
+Procedure|Laboratory Procedure|Impression|5698,5701|false|false|false|C0018935;C0472699|Hematocrit Measurement;Hemopoietic stem cell transplant|Hct
+Procedure|Therapeutic or Preventive Procedure|Impression|5698,5701|false|false|false|C0018935;C0472699|Hematocrit Measurement;Hemopoietic stem cell transplant|Hct
+Disorder|Virus|Impression|5709,5712|false|false|false|C2304881|Merkel cell polyomavirus|MCV
+Event|Event|Impression|5709,5712|false|false|false|||MCV
+Lab|Laboratory or Test Result|Impression|5709,5712|false|false|false|C0524587|Mean Corpuscular Volume|MCV
+Procedure|Laboratory Procedure|Impression|5709,5712|false|false|false|C0285131;C1948043|Cisplatin-Methotrexate-Vinblastine Regimen;Erythrocyte Mean Corpuscular Volume Measurement|MCV
+Procedure|Therapeutic or Preventive Procedure|Impression|5709,5712|false|false|false|C0285131;C1948043|Cisplatin-Methotrexate-Vinblastine Regimen;Erythrocyte Mean Corpuscular Volume Measurement|MCV
+Drug|Organic Chemical|Impression|5716,5719|false|false|false|C0600370|methacholine|MCH
+Drug|Pharmacologic Substance|Impression|5716,5719|false|false|false|C0600370|methacholine|MCH
+Event|Event|Impression|5716,5719|false|false|false|||MCH
+Finding|Gene or Genome|Impression|5716,5719|false|false|false|C1418669;C2248810|PMCH gene;mesaconyl-CoA hydratase activity|MCH
+Finding|Molecular Function|Impression|5716,5719|false|false|false|C1418669;C2248810|PMCH gene;mesaconyl-CoA hydratase activity|MCH
+Procedure|Laboratory Procedure|Impression|5716,5719|false|false|false|C0369183|Mean corpuscular hemoglobin determination|MCH
+Procedure|Laboratory Procedure|Impression|5726,5730|false|false|false|C0474535|Mean corpuscular hemoglobin concentration determination|MCHC
+Procedure|Laboratory Procedure|Impression|5746,5749|false|false|false|C0201617|Primed lymphocyte test|Plt
+Disorder|Disease or Syndrome|Impression|5766,5771|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5766,5771|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5766,5771|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Drug|Antibiotic|Impression|5787,5792|false|false|false|C0540173;C3275179|Mono-S;Monos|Monos
+Drug|Biomedical or Dental Material|Impression|5787,5792|false|false|false|C0540173;C3275179|Mono-S;Monos|Monos
+Drug|Organic Chemical|Impression|5787,5792|false|false|false|C0540173;C3275179|Mono-S;Monos|Monos
+Disorder|Disease or Syndrome|Impression|5797,5800|false|false|false|C0272192;C1836122|Familial eosinophilia;SARCOIDOSIS, EARLY-ONSET|Eos
+Event|Event|Impression|5797,5800|false|false|false|||Eos
+Finding|Gene or Genome|Impression|5797,5800|false|false|false|C1421861;C1538729|IKZF4 gene;PRSS33 gene|Eos
+Disorder|Disease or Syndrome|Impression|5827,5832|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5827,5832|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5827,5832|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Drug|Organic Chemical|Impression|5827,5840|false|false|false|C0005802|Blood Glucose|BLOOD Glucose
+Lab|Laboratory or Test Result|Impression|5827,5840|false|false|false|C0428554|Finding of blood glucose level|BLOOD Glucose
+Procedure|Laboratory Procedure|Impression|5827,5840|false|false|false|C0392201|Blood glucose measurement|BLOOD Glucose
+Drug|Biologically Active Substance|Impression|5833,5840|false|false|false|C0017725|glucose|Glucose
+Drug|Organic Chemical|Impression|5833,5840|false|false|false|C0017725|glucose|Glucose
+Drug|Pharmacologic Substance|Impression|5833,5840|false|false|false|C0017725|glucose|Glucose
+Event|Event|Impression|5833,5840|false|false|false|||Glucose
+Lab|Laboratory or Test Result|Impression|5833,5840|false|false|false|C5781949|Glucose^1.5H post dose glucagon|Glucose
+Procedure|Laboratory Procedure|Impression|5833,5840|false|false|false|C0337438|Glucose measurement|Glucose
+Drug|Inorganic Chemical|Impression|5886,5890|false|false|false|C0005367|Bicarbonates|HCO3
+Drug|Pharmacologic Substance|Impression|5886,5890|false|false|false|C0005367|Bicarbonates|HCO3
+Procedure|Laboratory Procedure|Impression|5886,5890|false|false|false|C0202059|Bicarbonate measurement|HCO3
+Disorder|Disease or Syndrome|Impression|5915,5920|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5915,5920|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5915,5920|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Disorder|Neoplastic Process|Impression|5921,5924|false|false|false|C1266129;C1370889|Atypical Lipoma;Liposarcoma, well differentiated|ALT
+Drug|Amino Acid, Peptide, or Protein|Impression|5921,5924|false|false|false|C0001899|Alanine Transaminase|ALT
+Drug|Enzyme|Impression|5921,5924|false|false|false|C0001899|Alanine Transaminase|ALT
+Event|Event|Impression|5921,5924|false|false|false|||ALT
+Finding|Gene or Genome|Impression|5921,5924|false|false|false|C1140170;C1415274;C2257651|Alternative Billing Concepts;GPT gene|ALT
+Finding|Intellectual Product|Impression|5921,5924|false|false|false|C1140170;C1415274;C2257651|Alternative Billing Concepts;GPT gene|ALT
+Finding|Molecular Function|Impression|5921,5924|false|false|false|C1140170;C1415274;C2257651|Alternative Billing Concepts;GPT gene|ALT
+Procedure|Therapeutic or Preventive Procedure|Impression|5921,5924|false|false|false|C4553172|Antibiotic Lock Therapy|ALT
+Anatomy|Body Space or Junction|Impression|5928,5931|false|false|false|C1185650|Asterion|AST
+Disorder|Neoplastic Process|Impression|5928,5931|false|false|false|C4522245|Atypical Spitz Nevus|AST
+Drug|Amino Acid, Peptide, or Protein|Impression|5928,5931|false|false|false|C0004002;C0242192;C1121182|Aspartate Transaminase;SGOT - Glutamate oxaloacetate transaminase;SLC17A5 protein, human|AST
+Drug|Biologically Active Substance|Impression|5928,5931|false|false|false|C0004002;C0242192;C1121182|Aspartate Transaminase;SGOT - Glutamate oxaloacetate transaminase;SLC17A5 protein, human|AST
+Drug|Enzyme|Impression|5928,5931|false|false|false|C0004002;C0242192;C1121182|Aspartate Transaminase;SGOT - Glutamate oxaloacetate transaminase;SLC17A5 protein, human|AST
+Event|Event|Impression|5928,5931|false|false|false|||AST
+Finding|Gene or Genome|Impression|5928,5931|false|false|false|C1415181;C1420113;C5960784|GOT1 gene;SLC17A5 gene;SLC17A5 wt Allele|AST
+Drug|Amino Acid, Peptide, or Protein|Impression|5935,5942|false|false|false|C0002059|Alkaline Phosphatase|AlkPhos
+Drug|Enzyme|Impression|5935,5942|false|false|false|C0002059|Alkaline Phosphatase|AlkPhos
+Disorder|Disease or Syndrome|Impression|5958,5963|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|Impression|5958,5963|false|false|false|||BLOOD
+Finding|Body Substance|Impression|5958,5963|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Procedure|Laboratory Procedure|Impression|5958,5971|false|false|false|C0729820|Blood calcium measurement|BLOOD Calcium
+Drug|Biologically Active Substance|Impression|5964,5971|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Element, Ion, or Isotope|Impression|5964,5971|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Inorganic Chemical|Impression|5964,5971|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Pharmacologic Substance|Impression|5964,5971|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Vitamin|Impression|5964,5971|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Event|Event|Impression|5964,5971|false|false|false|||Calcium
+Finding|Physiologic Function|Impression|5964,5971|false|false|false|C4553026|Calcium metabolic function|Calcium
+Procedure|Laboratory Procedure|Impression|5964,5971|false|false|false|C0201925|Calcium measurement|Calcium
+Event|Event|Hospital Course|6023,6026|false|false|false|||PMH
+Finding|Finding|Hospital Course|6023,6026|false|false|false|C0262926;C0455458|Medical History;PMH - past medical history|PMH
+Disorder|Disease or Syndrome|Hospital Course|6032,6035|false|false|false|C0020538|Hypertensive disease|HTN
+Event|Event|Hospital Course|6032,6035|false|false|false|||HTN
+Disorder|Disease or Syndrome|Hospital Course|6037,6041|false|false|false|C0017168|Gastroesophageal reflux disease|GERD
+Event|Event|Hospital Course|6037,6041|false|false|false|||GERD
+Disorder|Disease or Syndrome|Hospital Course|6043,6046|false|false|false|C0010068;C0175816;C1956346|Cold Hemagglutinin Disease;Coronary Artery Disease;Coronary heart disease|CAD
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|6043,6046|false|false|false|C1504769|DFFB protein, human|CAD
+Drug|Enzyme|Hospital Course|6043,6046|false|false|false|C1504769|DFFB protein, human|CAD
+Event|Event|Hospital Course|6043,6046|false|false|false|||CAD
+Finding|Gene or Genome|Hospital Course|6043,6046|false|false|false|C1413078;C1413983;C1428349;C2239547;C3813548;C4284121|ACOD1 gene;B4GALNT2 gene;CAD gene;CALD1 wt Allele;DFFB gene;DFFB wt Allele|CAD
+Procedure|Diagnostic Procedure|Hospital Course|6043,6046|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Research Activity|Hospital Course|6043,6046|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|6043,6046|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Event|Event|Hospital Course|6051,6055|false|false|false|||CABG
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|6051,6055|false|false|false|C0010055|Coronary Artery Bypass Surgery|CABG
+Event|Event|Hospital Course|6060,6068|false|false|false|||stenting
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|6060,6068|false|false|false|C2348535|Stenting|stenting
+Disorder|Disease or Syndrome|Hospital Course|6070,6074|false|false|false|C0011854|Diabetes Mellitus, Insulin-Dependent|IDDM
+Event|Event|Hospital Course|6070,6074|false|false|false|||IDDM
+Anatomy|Body Location or Region|Hospital Course|6083,6088|false|false|false|C0230171|Flank (surface region)|flank
+Finding|Sign or Symptom|Hospital Course|6083,6093|false|false|false|C0016199|Flank Pain|flank pain
+Attribute|Clinical Attribute|Hospital Course|6089,6093|false|false|false|C2598155||pain
+Event|Event|Hospital Course|6089,6093|false|false|false|||pain
+Finding|Functional Concept|Hospital Course|6089,6093|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|6089,6093|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Event|Event|Hospital Course|6094,6102|false|false|false|||presumed
+Attribute|Clinical Attribute|Hospital Course|6106,6121|false|false|false|C2707260||musculoskeletal
+Event|Event|Hospital Course|6106,6121|false|false|false|||musculoskeletal
+Finding|Functional Concept|Hospital Course|6106,6121|false|false|false|C0497254|Musculoskeletal|musculoskeletal
+Event|Event|Hospital Course|6125,6131|false|false|false|||nature
+Finding|Functional Concept|Hospital Course|6125,6131|false|false|false|C0349590;C1262865|Nature;Natures|nature
+Finding|Idea or Concept|Hospital Course|6125,6131|false|false|false|C0349590;C1262865|Nature;Natures|nature
+Event|Event|Hospital Course|6139,6147|false|false|false|||negative
+Finding|Classification|Hospital Course|6139,6147|false|false|false|C0205160;C1513916;C2699077|Negative;Negative Finding;Rh Negative Blood Group|negative
+Finding|Finding|Hospital Course|6139,6147|false|false|false|C0205160;C1513916;C2699077|Negative;Negative Finding;Rh Negative Blood Group|negative
+Lab|Laboratory or Test Result|Hospital Course|6139,6147|false|false|false|C5237010|Expression Negative|negative
+Event|Event|Hospital Course|6149,6155|false|false|false|||workup
+Finding|Functional Concept|Hospital Course|6157,6167|false|false|false|C0444507|Incidental|Incidental
+Disorder|Disease or Syndrome|Hospital Course|6168,6171|false|false|false|C0042029|Urinary tract infection|UTI
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|6168,6171|false|false|false|C0077906|urinastatin|UTI
+Drug|Pharmacologic Substance|Hospital Course|6168,6171|false|false|false|C0077906|urinastatin|UTI
+Event|Event|Hospital Course|6168,6171|false|false|false|||UTI
+Finding|Gene or Genome|Hospital Course|6168,6171|false|false|false|C1412376;C5780748|AMBP gene;AMBP wt Allele|UTI
+Finding|Finding|Hospital Course|6174,6186|false|false|false|C0231221;C0332151|Asymptomatic (finding);Asymptomatic diagnosis of|asymptomatic
+Event|Event|Hospital Course|6187,6195|false|false|false|||bacturia
+Finding|Intellectual Product|Hospital Course|6198,6203|false|false|false|C1547229;C1547295|Acute - Triage Code;Admission Level of Care Code - Acute|ACUTE
+Event|Event|Hospital Course|6204,6210|false|false|false|||ISSUES
+Disorder|Disease or Syndrome|Hospital Course|6215,6218|false|false|false|C0042029|Urinary tract infection|UTI
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|6215,6218|false|false|false|C0077906|urinastatin|UTI
+Drug|Pharmacologic Substance|Hospital Course|6215,6218|false|false|false|C0077906|urinastatin|UTI
+Event|Event|Hospital Course|6215,6218|false|false|false|||UTI
+Finding|Gene or Genome|Hospital Course|6215,6218|false|false|false|C1412376;C5780748|AMBP gene;AMBP wt Allele|UTI
+Finding|Body Substance|Hospital Course|6231,6238|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|Hospital Course|6231,6238|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|Hospital Course|6231,6238|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Event|Event|Hospital Course|6239,6248|false|false|false|||presented
+Event|Event|Hospital Course|6261,6268|false|false|false|||history
+Finding|Conceptual Entity|Hospital Course|6261,6268|true|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|history
+Finding|Finding|Hospital Course|6261,6268|true|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|history
+Finding|Functional Concept|Hospital Course|6261,6268|true|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|history
+Finding|Finding|Hospital Course|6261,6271|true|false|false|C0262926|Medical History|history of
+Anatomy|Body Part, Organ, or Organ Component|Hospital Course|6273,6280|false|false|false|C0042027|Urinary tract|urinary
+Finding|Functional Concept|Hospital Course|6284,6292|false|false|false|C0205373;C5849094|Systemic;Systemic Route of Administration|systemic
+Finding|Sign or Symptom|Hospital Course|6284,6301|false|false|false|C2039684|systemic symptoms|systemic symptoms
+Event|Event|Hospital Course|6293,6301|false|false|false|||symptoms
+Finding|Functional Concept|Hospital Course|6293,6301|false|false|false|C0683368;C1457887|Symptoms;Symptoms aspect|symptoms
+Finding|Sign or Symptom|Hospital Course|6293,6301|false|false|false|C0683368;C1457887|Symptoms;Symptoms aspect|symptoms
+Event|Event|Hospital Course|6311,6318|false|false|false|||started
+Drug|Antibiotic|Hospital Course|6322,6333|false|false|false|C0007561|ceftriaxone|ceftriaxone
+Drug|Organic Chemical|Hospital Course|6322,6333|false|false|false|C0007561|ceftriaxone|ceftriaxone
+Event|Event|Hospital Course|6334,6336|false|false|false|||in
+Event|Event|Hospital Course|6342,6344|false|false|false|||ED
+Disorder|Cell or Molecular Dysfunction|Hospital Course|6364,6372|false|false|false|C4727483|BRAF Gene Rearrangement|positive
+Event|Event|Hospital Course|6364,6372|false|false|false|||positive
+Finding|Classification|Hospital Course|6364,6372|false|false|false|C1446409;C1514241;C2699078|Positive;Positive Finding;Rh Positive Blood Group|positive
+Finding|Finding|Hospital Course|6364,6372|false|false|false|C1446409;C1514241;C2699078|Positive;Positive Finding;Rh Positive Blood Group|positive
+Anatomy|Cell|Hospital Course|6380,6384|false|false|false|C0023516|Leukocytes|WBCs
+Drug|Antibiotic|Hospital Course|6387,6398|false|false|false|C0003232;C0003237;C3540704;C3540705;C3540706;C3540707;C3540708;C3540709;C3540710|Antibiotic throat preparations;Antibiotics;Antibiotics FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE;Antibiotics for systemic use;Antibiotics, Antitubercular;Antibiotics, Gynecological;Antibiotics, ophthalmologic;Antifungal Antibiotics, Topical;antibiotics, intestinal|Antibiotics
+Event|Event|Hospital Course|6387,6398|false|false|false|||Antibiotics
+Event|Event|Hospital Course|6404,6409|false|false|false|||taken
+Event|Event|Hospital Course|6419,6426|false|false|false|||drawing
+Anatomy|Body Part, Organ, or Organ Component|Hospital Course|6427,6434|false|false|false|C0042027|Urinary tract|urinary
+Disorder|Disease or Syndrome|Hospital Course|6438,6443|false|false|false|C0851353|Blood and lymphatic system disorders|blood
+Event|Event|Hospital Course|6438,6443|false|false|false|||blood
+Finding|Body Substance|Hospital Course|6438,6443|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|blood
+Event|Event|Hospital Course|6445,6453|false|false|false|||cultures
+Finding|Idea or Concept|Hospital Course|6445,6453|false|false|false|C0010453|Culture (Anthropological)|cultures
+Event|Event|Hospital Course|6472,6477|false|false|false|||yield
+Finding|Body Substance|Hospital Course|6479,6486|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|Hospital Course|6479,6486|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|Hospital Course|6479,6486|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Event|Event|Hospital Course|6487,6495|false|false|false|||switched
+Drug|Organic Chemical|Hospital Course|6500,6513|false|false|false|C0008809|ciprofloxacin|ciprofloxacin
+Drug|Pharmacologic Substance|Hospital Course|6500,6513|false|false|false|C0008809|ciprofloxacin|ciprofloxacin
+Event|Event|Hospital Course|6500,6513|false|false|false|||ciprofloxacin
+Event|Event|Hospital Course|6518,6526|false|false|false|||received
+Finding|Idea or Concept|Hospital Course|6535,6538|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Intellectual Product|Hospital Course|6535,6538|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Drug|Antibiotic|Hospital Course|6545,6555|false|false|false|C0003232|Antibiotics|antibiotic
+Event|Event|Hospital Course|6556,6562|false|false|false|||course
+Procedure|Diagnostic Procedure|Hospital Course|6565,6572|false|false|false|C0040405|X-Ray Computed Tomography|CT scan
+Event|Event|Hospital Course|6568,6572|false|false|false|||scan
+Procedure|Diagnostic Procedure|Hospital Course|6568,6572|false|false|false|C0034606;C0441633|Radionuclide Imaging;Scanning|scan
+Event|Event|Hospital Course|6600,6608|false|false|false|||evidence
+Finding|Idea or Concept|Hospital Course|6600,6608|true|false|false|C3887511|Evidence|evidence
+Finding|Functional Concept|Hospital Course|6600,6611|true|false|false|C0332120|Evidence of (contextual qualifier)|evidence of
+Disorder|Disease or Syndrome|Hospital Course|6612,6626|true|false|false|C0034186|Pyelonephritis|pyelonephritis
+Event|Event|Hospital Course|6612,6626|false|false|false|||pyelonephritis
+Drug|Antibiotic|Hospital Course|6629,6640|false|false|false|C0003232;C0003237;C3540704;C3540705;C3540706;C3540707;C3540708;C3540709;C3540710|Antibiotic throat preparations;Antibiotics;Antibiotics FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE;Antibiotics for systemic use;Antibiotics, Antitubercular;Antibiotics, Gynecological;Antibiotics, ophthalmologic;Antifungal Antibiotics, Topical;antibiotics, intestinal|Antibiotics
+Event|Event|Hospital Course|6629,6640|false|false|false|||Antibiotics
+Event|Event|Hospital Course|6646,6658|false|false|false|||discontinued
+Finding|Finding|Hospital Course|6662,6666|false|false|false|C1547403;C1548318;C2024467;C3541383;C5400024;C5575590|Data types - Time;Instructions for Use of the CPT Codebook - Time;Time (foundation metadata concept);Time - Instructions for Selecting a Level of Pathology Clinical Consultation Services;Value type - Time|time
+Finding|Idea or Concept|Hospital Course|6662,6666|false|false|false|C1547403;C1548318;C2024467;C3541383;C5400024;C5575590|Data types - Time;Instructions for Use of the CPT Codebook - Time;Time (foundation metadata concept);Time - Instructions for Selecting a Level of Pathology Clinical Consultation Services;Value type - Time|time
+Finding|Intellectual Product|Hospital Course|6662,6666|false|false|false|C1547403;C1548318;C2024467;C3541383;C5400024;C5575590|Data types - Time;Instructions for Use of the CPT Codebook - Time;Time (foundation metadata concept);Time - Instructions for Selecting a Level of Pathology Clinical Consultation Services;Value type - Time|time
+Event|Event|Hospital Course|6670,6679|false|false|false|||discharge
+Finding|Body Substance|Hospital Course|6670,6679|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|discharge
+Finding|Intellectual Product|Hospital Course|6670,6679|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|discharge
+Finding|Sign or Symptom|Hospital Course|6670,6679|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|discharge
+Procedure|Health Care Activity|Hospital Course|6670,6679|false|false|false|C0030685|Patient Discharge|discharge
+Anatomy|Body Location or Region|Hospital Course|6684,6689|false|false|false|C0230171|Flank (surface region)|Flank
+Finding|Sign or Symptom|Hospital Course|6684,6694|false|false|false|C0016199|Flank Pain|Flank Pain
+Attribute|Clinical Attribute|Hospital Course|6690,6694|false|false|false|C2598155||Pain
+Event|Event|Hospital Course|6690,6694|false|false|false|||Pain
+Finding|Functional Concept|Hospital Course|6690,6694|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Finding|Sign or Symptom|Hospital Course|6690,6694|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Finding|Body Substance|Hospital Course|6697,6704|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|Hospital Course|6697,6704|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|Hospital Course|6697,6704|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Event|Event|Hospital Course|6705,6713|false|false|false|||reported
+Event|Event|Hospital Course|6716,6721|false|false|false|||weeks
+Anatomy|Body Location or Region|Hospital Course|6730,6735|false|false|false|C0230171|Flank (surface region)|flank
+Finding|Sign or Symptom|Hospital Course|6730,6740|false|false|false|C0016199|Flank Pain|flank pain
+Attribute|Clinical Attribute|Hospital Course|6736,6740|false|false|false|C2598155||pain
+Event|Event|Hospital Course|6736,6740|false|false|false|||pain
+Finding|Functional Concept|Hospital Course|6736,6740|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|6736,6740|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Event|Event|Hospital Course|6742,6750|false|false|false|||constant
+Finding|Intellectual Product|Hospital Course|6742,6750|false|false|false|C1720529|Constant - dosing instruction fragment|constant
+Finding|Functional Concept|Hospital Course|6764,6770|false|false|false|C0349590;C1262865|Nature;Natures|nature
+Finding|Idea or Concept|Hospital Course|6764,6770|false|false|false|C0349590;C1262865|Nature;Natures|nature
+Event|Event|Hospital Course|6775,6783|false|false|false|||worsened
+Event|Event|Hospital Course|6787,6795|false|false|false|||movement
+Finding|Organism Function|Hospital Course|6787,6795|false|false|false|C0026649|Movement|movement
+Event|Event|Hospital Course|6797,6804|false|false|false|||Treated
+Drug|Pharmacologic Substance|Hospital Course|6811,6830|false|false|false|C0003209|Anti-Inflammatory Agents|anti-inflammatories
+Event|Event|Hospital Course|6811,6830|false|false|false|||anti-inflammatories
+Event|Event|Hospital Course|6844,6850|false|false|false|||effect
+Procedure|Diagnostic Procedure|Hospital Course|6852,6859|false|false|false|C0040405|X-Ray Computed Tomography|CT scan
+Event|Event|Hospital Course|6855,6859|false|false|false|||scan
+Procedure|Diagnostic Procedure|Hospital Course|6855,6859|false|false|false|C0034606;C0441633|Radionuclide Imaging;Scanning|scan
+Event|Event|Hospital Course|6860,6872|false|false|false|||demonstrated
+Disorder|Disease or Syndrome|Hospital Course|6877,6892|false|false|false|C0392525|Nephrolithiasis|nephrolithiasis
+Event|Event|Hospital Course|6877,6892|false|false|false|||nephrolithiasis
+Event|Event|Hospital Course|6894,6897|false|false|false|||CXR
+Procedure|Diagnostic Procedure|Hospital Course|6894,6897|false|false|false|C0039985|Plain chest X-ray|CXR
+Event|Event|Hospital Course|6898,6904|false|false|false|||showed
+Finding|Functional Concept|Hospital Course|6908,6912|false|false|false|C0443157|Bony|bony
+Disorder|Congenital Abnormality|Hospital Course|6913,6924|true|false|false|C0000768|Congenital Abnormality|abnormality
+Event|Event|Hospital Course|6913,6924|false|false|false|||abnormality
+Finding|Finding|Hospital Course|6913,6924|true|false|false|C1704258|Abnormality|abnormality
+Finding|Finding|Hospital Course|6941,6948|false|false|false|C4699603|Totally|totally
+Event|Event|Hospital Course|6949,6956|false|false|false|||exclude
+Disorder|Injury or Poisoning|Hospital Course|6957,6979|false|false|false|C0272567|Fracture of multiple ribs|multiple rib fractures
+Anatomy|Body Part, Organ, or Organ Component|Hospital Course|6966,6969|false|false|false|C0035561|Bone structure of rib|rib
+Disorder|Injury or Poisoning|Hospital Course|6966,6979|false|false|false|C0035522|Rib Fractures|rib fractures
+Disorder|Injury or Poisoning|Hospital Course|6970,6979|false|false|false|C0016658|Fracture|fractures
+Event|Event|Hospital Course|6970,6979|false|false|false|||fractures
+Finding|Finding|Hospital Course|6970,6979|false|false|false|C4554413|Fractured|fractures
+Finding|Body Substance|Hospital Course|6981,6988|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|Hospital Course|6981,6988|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|Hospital Course|6981,6988|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Attribute|Clinical Attribute|Hospital Course|6991,6995|false|false|false|C2598155||pain
+Event|Event|Hospital Course|6991,6995|false|false|false|||pain
+Finding|Functional Concept|Hospital Course|6991,6995|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|6991,6995|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Event|Event|Hospital Course|7000,7004|false|false|false|||well
+Finding|Finding|Hospital Course|7000,7004|false|false|false|C5575035|Well (answer to question)|well
+Event|Event|Hospital Course|7006,7016|false|false|false|||controlled
+Event|Event|Hospital Course|7021,7031|false|false|false|||tolerating
+Attribute|Clinical Attribute|Hospital Course|7035,7046|false|false|false|C0802604;C2598133||medications
+Drug|Pharmacologic Substance|Hospital Course|7035,7046|false|false|false|C0013227|Pharmaceutical Preparations|medications
+Event|Event|Hospital Course|7035,7046|false|false|false|||medications
+Finding|Intellectual Product|Hospital Course|7035,7046|false|false|false|C4284232|Medications|medications
+Event|Event|Hospital Course|7059,7069|false|false|false|||discharged
+Disorder|Disease or Syndrome|Hospital Course|7076,7079|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Disorder|Mental or Behavioral Dysfunction|Hospital Course|7076,7079|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Disorder|Neoplastic Process|Hospital Course|7076,7079|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|7076,7079|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Enzyme|Hospital Course|7076,7079|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Hazardous or Poisonous Substance|Hospital Course|7076,7079|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Organic Chemical|Hospital Course|7076,7079|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Pharmacologic Substance|Hospital Course|7076,7079|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Event|Event|Hospital Course|7076,7079|false|false|false|||PCP
+Finding|Gene or Genome|Hospital Course|7076,7079|false|false|false|C1418873;C1422070;C1744653;C3896095;C5551061|BMP1 wt Allele;PGPEP1 gene;PRCP gene;obsolete serine-type Pro-X carboxypeptidase activity;peptidyl carrier protein activity|PCP
+Finding|Molecular Function|Hospital Course|7076,7079|false|false|false|C1418873;C1422070;C1744653;C3896095;C5551061|BMP1 wt Allele;PGPEP1 gene;PRCP gene;obsolete serine-type Pro-X carboxypeptidase activity;peptidyl carrier protein activity|PCP
+Event|Event|Hospital Course|7080,7089|false|false|false|||following
+Event|Event|Hospital Course|7102,7108|false|false|false|||workup
+Disorder|Disease or Syndrome|Hospital Course|7113,7121|false|false|false|C0011847;C0011849;C0011860|Diabetes;Diabetes Mellitus;Diabetes Mellitus, Non-Insulin-Dependent|Diabetes
+Event|Event|Hospital Course|7113,7121|false|false|false|||Diabetes
+Disorder|Disease or Syndrome|Hospital Course|7124,7137|false|false|false|C0020456|Hyperglycemia|Hyperglycemia
+Event|Event|Hospital Course|7124,7137|false|false|false|||Hyperglycemia
+Finding|Finding|Hospital Course|7124,7137|false|false|false|C2919432|Glucose in blood specimen above reference range|Hyperglycemia
+Finding|Body Substance|Hospital Course|7139,7146|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|Hospital Course|7139,7146|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|Hospital Course|7139,7146|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Event|Event|Hospital Course|7151,7163|false|false|false|||persistently
+Finding|Idea or Concept|Hospital Course|7151,7163|false|false|false|C0750508|persistently|persistently
+Disorder|Disease or Syndrome|Hospital Course|7168,7172|false|false|false|C0011854|Diabetes Mellitus, Insulin-Dependent|IDDM
+Event|Event|Hospital Course|7168,7172|false|false|false|||IDDM
+Event|Event|Hospital Course|7179,7182|false|false|false|||A1C
+Finding|Classification|Hospital Course|7179,7182|false|false|false|C4521595|United States Military enlisted E3 (qualifier value)|A1C
+Procedure|Laboratory Procedure|Hospital Course|7179,7182|false|false|false|C0474680|Hemoglobin A1c measurement|A1C
+Drug|Indicator, Reagent, or Diagnostic Aid|Hospital Course|7194,7199|false|false|false|C5575602|Cell Culture Serum|Serum
+Finding|Body Substance|Hospital Course|7194,7199|false|false|false|C0229671;C1546774;C1550100|Serum;Serum specimen|Serum
+Finding|Intellectual Product|Hospital Course|7194,7199|false|false|false|C0229671;C1546774;C1550100|Serum;Serum specimen|Serum
+Finding|Finding|Hospital Course|7194,7207|false|false|false|C3534430|Serum glucose|Serum glucose
+Procedure|Laboratory Procedure|Hospital Course|7194,7207|false|false|false|C0202041|Glucose measurement, serum|Serum glucose
+Drug|Biologically Active Substance|Hospital Course|7200,7207|false|false|false|C0017725|glucose|glucose
+Drug|Organic Chemical|Hospital Course|7200,7207|false|false|false|C0017725|glucose|glucose
+Drug|Pharmacologic Substance|Hospital Course|7200,7207|false|false|false|C0017725|glucose|glucose
+Event|Event|Hospital Course|7200,7207|false|false|false|||glucose
+Lab|Laboratory or Test Result|Hospital Course|7200,7207|false|false|false|C5781949|Glucose^1.5H post dose glucagon|glucose
+Procedure|Laboratory Procedure|Hospital Course|7200,7207|false|false|false|C0337438|Glucose measurement|glucose
+Event|Event|Hospital Course|7235,7239|false|false|false|||Chem
+Finding|Functional Concept|Hospital Course|7235,7239|false|false|false|C0079107|chemical aspects|Chem
+Procedure|Laboratory Procedure|Hospital Course|7235,7239|false|false|false|C0201682|Chemical procedure|Chem
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|7247,7250|false|false|false|C0061928;C2984553|GTPase-Activating Proteins;Ras GTPase-Activating Protein 1, Human|gap
+Drug|Biologically Active Substance|Hospital Course|7247,7250|false|false|false|C0061928;C2984553|GTPase-Activating Proteins;Ras GTPase-Activating Protein 1, Human|gap
+Finding|Gene or Genome|Hospital Course|7247,7250|false|false|false|C1419277;C2984552|RASA1 gene;RASA1 wt Allele|gap
+Finding|Finding|Hospital Course|7270,7276|false|false|false|C0332148;C0750492|Probable diagnosis;Probably|likely
+Finding|Idea or Concept|Hospital Course|7270,7276|false|false|false|C0332148;C0750492|Probable diagnosis;Probably|likely
+Drug|Organic Chemical|Hospital Course|7281,7288|false|false|false|C0022924;C0376261|Lactates;lactate|lactate
+Drug|Pharmacologic Substance|Hospital Course|7281,7288|false|false|false|C0022924;C0376261|Lactates;lactate|lactate
+Event|Event|Hospital Course|7281,7288|false|false|false|||lactate
+Procedure|Laboratory Procedure|Hospital Course|7281,7288|false|false|false|C0202115|Lactic acid measurement|lactate
+Event|Event|Hospital Course|7294,7302|false|false|false|||unlikely
+Finding|Finding|Hospital Course|7294,7302|false|false|false|C0750558|Unlikely|unlikely
+Disorder|Disease or Syndrome|Hospital Course|7309,7312|false|false|false|C0011880|Diabetic Ketoacidosis|DKA
+Event|Event|Hospital Course|7309,7312|false|false|false|||DKA
+Event|Event|Hospital Course|7332,7335|false|false|false|||ABG
+Finding|Gene or Genome|Hospital Course|7332,7335|false|false|false|C1412045|A1BG gene|ABG
+Procedure|Laboratory Procedure|Hospital Course|7332,7335|false|false|false|C0150411|Analysis of arterial blood gases and pH|ABG
+Drug|Biologically Active Substance|Hospital Course|7340,7347|false|false|false|C0017725|glucose|glucose
+Drug|Organic Chemical|Hospital Course|7340,7347|false|false|false|C0017725|glucose|glucose
+Drug|Pharmacologic Substance|Hospital Course|7340,7347|false|false|false|C0017725|glucose|glucose
+Event|Event|Hospital Course|7340,7347|false|false|false|||glucose
+Lab|Laboratory or Test Result|Hospital Course|7340,7347|false|false|false|C5781949|Glucose^1.5H post dose glucagon|glucose
+Procedure|Laboratory Procedure|Hospital Course|7340,7347|false|false|false|C0337438|Glucose measurement|glucose
+Finding|Idea or Concept|Hospital Course|7355,7363|false|false|false|C0549178|Continuous|continue
+Event|Event|Hospital Course|7364,7368|false|false|false|||home
+Finding|Idea or Concept|Hospital Course|7364,7368|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|Hospital Course|7364,7368|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|Hospital Course|7364,7368|false|false|false|C1553498|home health encounter|home
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|7374,7380|false|false|false|C0876064|Lantus|lantus
+Drug|Pharmacologic Substance|Hospital Course|7374,7380|false|false|false|C0876064|Lantus|lantus
+Event|Event|Hospital Course|7374,7380|false|false|false|||lantus
+Event|Event|Hospital Course|7406,7413|false|false|false|||records
+Finding|Idea or Concept|Hospital Course|7406,7413|false|false|false|C0034869;C1548330|Quantity limited request - Records;Records|records
+Finding|Intellectual Product|Hospital Course|7406,7413|false|false|false|C0034869;C1548330|Quantity limited request - Records;Records|records
+Finding|Individual Behavior|Hospital Course|7428,7438|false|false|false|C0001807;C1547300;C1548760|Aggressive behavior;Precaution Code - Aggressive;Risk Codes - Aggressive|aggressive
+Finding|Intellectual Product|Hospital Course|7428,7438|false|false|false|C0001807;C1547300;C1548760|Aggressive behavior;Precaution Code - Aggressive;Risk Codes - Aggressive|aggressive
+Disorder|Congenital Abnormality|Hospital Course|7439,7442|false|false|false|C1845118|SHORT STATURE, IDIOPATHIC, X-LINKED|ISS
+Event|Event|Hospital Course|7439,7442|false|false|false|||ISS
+Event|Event|Hospital Course|7449,7457|false|false|false|||decrease
+Disorder|Disease or Syndrome|Hospital Course|7523,7526|false|false|false|C1561643|Chronic Kidney Diseases|CKD
+Event|Event|Hospital Course|7523,7526|false|false|false|||CKD
+Drug|Biomedical or Dental Material|Hospital Course|7552,7560|false|false|false|C0168634|BaseLine dental cement|baseline
+Event|Event|Hospital Course|7552,7560|false|false|false|||baseline
+Finding|Idea or Concept|Hospital Course|7552,7560|false|false|false|C1552824|baseline - TableCellVerticalAlign|baseline
+Finding|Idea or Concept|Hospital Course|7566,7577|false|false|false|C0750501|most likely|Most likely
+Finding|Finding|Hospital Course|7571,7577|false|false|false|C0332148;C0750492|Probable diagnosis;Probably|likely
+Finding|Idea or Concept|Hospital Course|7571,7577|false|false|false|C0332148;C0750492|Probable diagnosis;Probably|likely
+Event|Event|Hospital Course|7579,7588|false|false|false|||pre-renal
+Finding|Mental Process|Hospital Course|7596,7603|false|false|false|C0542559|contextual factors|setting
+Disorder|Disease or Syndrome|Hospital Course|7607,7616|false|false|false|C0009450|Communicable Diseases|infection
+Event|Event|Hospital Course|7607,7616|false|false|false|||infection
+Finding|Pathologic Function|Hospital Course|7607,7616|false|false|false|C3714514|Infection|infection
+Anatomy|Body Space or Junction|Hospital Course|7629,7632|false|false|false|C0016520|Structure of interventricular foramen|IVF
+Disorder|Disease or Syndrome|Hospital Course|7629,7632|false|false|false|C2751898|Ventricular Fibrillation, Paroxysmal Familial, 1|IVF
+Event|Event|Hospital Course|7629,7632|false|false|false|||IVF
+Finding|Gene or Genome|Hospital Course|7629,7632|false|false|false|C1419864;C4321334|SCN5A gene;SCN5A wt Allele|IVF
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|7629,7632|false|false|false|C0015915;C0872104|Assisted Reproductive Technologies;Fertilization in Vitro|IVF
+Drug|Biologically Active Substance|Hospital Course|7648,7658|false|false|false|C0010294|creatinine|creatinine
+Drug|Organic Chemical|Hospital Course|7648,7658|false|false|false|C0010294|creatinine|creatinine
+Event|Event|Hospital Course|7648,7658|false|false|false|||creatinine
+Finding|Physiologic Function|Hospital Course|7648,7658|false|false|false|C4551889|Creatinine metabolic function|creatinine
+Procedure|Laboratory Procedure|Hospital Course|7648,7658|false|false|false|C0201975|Creatinine measurement|creatinine
+Event|Event|Hospital Course|7663,7672|false|false|false|||corrected
+Event|Event|Hospital Course|7689,7698|false|false|false|||euvolemic
+Finding|Finding|Hospital Course|7700,7705|false|false|false|C3844350|Maybe|maybe
+Event|Event|Hospital Course|7716,7718|false|false|false|||up
+Finding|Idea or Concept|Hospital Course|7723,7731|false|false|false|C0750591|consider|consider
+Event|Event|Hospital Course|7740,7746|false|false|false|||workup
+Event|Event|Hospital Course|7753,7764|false|false|false|||improvement
+Finding|Conceptual Entity|Hospital Course|7753,7764|true|false|false|C2986411|Improvement|improvement
+Finding|Body Substance|Hospital Course|7766,7771|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|urine
+Finding|Functional Concept|Hospital Course|7766,7771|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|urine
+Finding|Intellectual Product|Hospital Course|7766,7771|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|urine
+Disorder|Mental or Behavioral Dysfunction|Hospital Course|7780,7788|false|false|false|C0233591|Twirling|spinning
+Event|Event|Hospital Course|7780,7788|false|false|false|||spinning
+Event|Event|Hospital Course|7789,7794|false|false|false|||urine
+Finding|Body Substance|Hospital Course|7789,7794|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|urine
+Finding|Functional Concept|Hospital Course|7789,7794|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|urine
+Finding|Intellectual Product|Hospital Course|7789,7794|false|false|false|C0042036;C0042037;C1547942;C1610733;C2963137|In Urine;Portion of urine;Urine;Urine specimen|urine
+Anatomy|Body Part, Organ, or Organ Component|Hospital Course|7796,7801|false|false|false|C0022646|Kidney|renal
+Disorder|Disease or Syndrome|Hospital Course|7796,7801|false|false|false|C0042075|Urologic Diseases|renal
+Attribute|Clinical Attribute|Hospital Course|7824,7835|false|false|false|C0802604;C2598133||medications
+Drug|Pharmacologic Substance|Hospital Course|7824,7835|false|false|false|C0013227|Pharmaceutical Preparations|medications
+Event|Event|Hospital Course|7824,7835|false|false|false|||medications
+Finding|Intellectual Product|Hospital Course|7824,7835|false|false|false|C4284232|Medications|medications
+Event|Event|Hospital Course|7847,7854|false|false|false|||CHRONIC
+Finding|Intellectual Product|Hospital Course|7847,7854|false|false|false|C1547296|Chronic - Admission Level of Care Code|CHRONIC
+Procedure|Health Care Activity|Hospital Course|7847,7854|false|false|false|C1555457|Provision of recurring care for chronic illness|CHRONIC
+Event|Event|Hospital Course|7865,7867|false|false|false|||HF
+Drug|Antibiotic|Hospital Course|7873,7876|false|false|false|C0030771|pefloxacin|pEF
+Drug|Organic Chemical|Hospital Course|7873,7876|false|false|false|C0030771|pefloxacin|pEF
+Event|Event|Hospital Course|7873,7876|false|false|false|||pEF
+Finding|Finding|Hospital Course|7873,7876|false|false|false|C1542834|Peak expiratory flow rate|pEF
+Disorder|Disease or Syndrome|Hospital Course|7877,7880|false|false|false|C0010068;C0175816;C1956346|Cold Hemagglutinin Disease;Coronary Artery Disease;Coronary heart disease|CAD
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|7877,7880|false|false|false|C1504769|DFFB protein, human|CAD
+Drug|Enzyme|Hospital Course|7877,7880|false|false|false|C1504769|DFFB protein, human|CAD
+Event|Event|Hospital Course|7877,7880|false|false|false|||CAD
+Finding|Gene or Genome|Hospital Course|7877,7880|false|false|false|C1413078;C1413983;C1428349;C2239547;C3813548;C4284121|ACOD1 gene;B4GALNT2 gene;CAD gene;CALD1 wt Allele;DFFB gene;DFFB wt Allele|CAD
+Procedure|Diagnostic Procedure|Hospital Course|7877,7880|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Research Activity|Hospital Course|7877,7880|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|7877,7880|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Event|Event|Hospital Course|7885,7889|false|false|false|||CABG
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|7885,7889|false|false|false|C0010055|Coronary Artery Bypass Surgery|CABG
+Event|Event|Hospital Course|7894,7900|false|false|false|||stents
+Event|Activity|Hospital Course|7920,7925|true|false|false|C5966184|Issue (action)|issue
+Event|Event|Hospital Course|7920,7925|false|false|false|||issue
+Finding|Finding|Hospital Course|7920,7925|true|false|false|C0033213;C1706387|Issue (document);Problem|issue
+Finding|Intellectual Product|Hospital Course|7920,7925|true|false|false|C0033213;C1706387|Issue (document);Problem|issue
+Event|Event|Hospital Course|7932,7941|false|false|false|||inpatient
+Finding|Idea or Concept|Hospital Course|7932,7941|false|false|false|C1548438;C1549404|Patient Class - Inpatient;Referral category - Inpatient|inpatient
+Procedure|Health Care Activity|Hospital Course|7932,7941|false|false|false|C1555324|inpatient encounter|inpatient
+Drug|Substance|Hospital Course|7943,7948|false|false|false|C0302908;C1704353|Liquid substance;fluid - substance|Fluid
+Finding|Intellectual Product|Hospital Course|7943,7948|false|false|false|C1546638|Fluid Specimen Code|Fluid
+Event|Event|Hospital Course|7949,7952|false|false|false|||use
+Finding|Functional Concept|Hospital Course|7949,7952|false|false|false|C0042153;C0457083;C1947944|Usage;Use - dosing instruction imperative;utilization qualifier|use
+Finding|Intellectual Product|Hospital Course|7949,7952|false|false|false|C0042153;C0457083;C1947944|Usage;Use - dosing instruction imperative;utilization qualifier|use
+Event|Event|Hospital Course|7957,7966|false|false|false|||judicious
+Event|Event|Hospital Course|7978,7987|false|false|false|||converted
+Event|Event|Hospital Course|7998,8004|false|false|false|||acting
+Drug|Organic Chemical|Hospital Course|8021,8031|false|false|false|C0022251|isosorbide|isosorbide
+Drug|Pharmacologic Substance|Hospital Course|8021,8031|false|false|false|C0022251|isosorbide|isosorbide
+Event|Event|Hospital Course|8021,8031|false|false|false|||isosorbide
+Drug|Organic Chemical|Hospital Course|8033,8040|false|false|false|C0004057|aspirin|aspirin
+Drug|Pharmacologic Substance|Hospital Course|8033,8040|false|false|false|C0004057|aspirin|aspirin
+Event|Event|Hospital Course|8033,8040|false|false|false|||aspirin
+Drug|Organic Chemical|Hospital Course|8046,8058|false|false|false|C0286651|atorvastatin|atorvastatin
+Drug|Pharmacologic Substance|Hospital Course|8046,8058|false|false|false|C0286651|atorvastatin|atorvastatin
+Event|Event|Hospital Course|8046,8058|false|false|false|||atorvastatin
+Event|Event|Hospital Course|8064,8073|false|false|false|||continued
+Drug|Organic Chemical|Hospital Course|8075,8083|false|false|false|C0126174|losartan|Losartan
+Drug|Pharmacologic Substance|Hospital Course|8075,8083|false|false|false|C0126174|losartan|Losartan
+Event|Event|Hospital Course|8084,8088|false|false|false|||held
+Disorder|Disease or Syndrome|Hospital Course|8103,8106|false|false|false|C0020538|Hypertensive disease|HTN
+Event|Event|Hospital Course|8103,8106|false|false|false|||HTN
+Finding|Idea or Concept|Hospital Course|8108,8112|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|Hospital Course|8108,8112|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|Hospital Course|8108,8112|false|false|false|C1553498|home health encounter|home
+Drug|Organic Chemical|Hospital Course|8113,8123|false|false|false|C0025859|metoprolol|metoprolol
+Drug|Pharmacologic Substance|Hospital Course|8113,8123|false|false|false|C0025859|metoprolol|metoprolol
+Event|Event|Hospital Course|8113,8123|false|false|false|||metoprolol
+Drug|Organic Chemical|Hospital Course|8128,8138|false|false|false|C0022251|isosorbide|isosorbide
+Drug|Pharmacologic Substance|Hospital Course|8128,8138|false|false|false|C0022251|isosorbide|isosorbide
+Event|Event|Hospital Course|8128,8138|false|false|false|||isosorbide
+Event|Event|Hospital Course|8139,8148|false|false|false|||continued
+Drug|Organic Chemical|Hospital Course|8150,8158|false|false|false|C0126174|losartan|losartan
+Drug|Pharmacologic Substance|Hospital Course|8150,8158|false|false|false|C0126174|losartan|losartan
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|8159,8163|false|false|false|C0675390|ARID1A protein, human|held
+Drug|Biologically Active Substance|Hospital Course|8159,8163|false|false|false|C0675390|ARID1A protein, human|held
+Event|Event|Hospital Course|8159,8163|false|false|false|||held
+Finding|Gene or Genome|Hospital Course|8159,8163|false|false|false|C1948036;C2985160|ARID1A wt Allele;Held - activity status|held
+Finding|Idea or Concept|Hospital Course|8159,8163|false|false|false|C1948036;C2985160|ARID1A wt Allele;Held - activity status|held
+Event|Event|Hospital Course|8179,8188|false|false|false|||pressures
+Finding|Finding|Hospital Course|8179,8188|false|false|false|C0460139|Pressure (finding)|pressures
+Phenomenon|Phenomenon or Process|Hospital Course|8179,8188|false|false|false|C0033095||pressures
+Disorder|Disease or Syndrome|Hospital Course|8194,8198|false|false|false|C3542022|Short stature, onychodysplasia, facial dysmorphism, hypotrichosis syndrome|soft
+Event|Event|Hospital Course|8194,8198|false|false|false|||soft
+Event|Event|Hospital Course|8217,8222|false|false|false|||range
+Finding|Intellectual Product|Hospital Course|8217,8222|false|false|false|C3542016|Concept model range (foundation metadata concept)|range
+Event|Event|Hospital Course|8236,8240|false|false|false|||home
+Finding|Idea or Concept|Hospital Course|8236,8240|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|Hospital Course|8236,8240|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|Hospital Course|8236,8240|false|false|false|C1553498|home health encounter|home
+Drug|Organic Chemical|Hospital Course|8245,8253|false|false|false|C0126174|losartan|losartan
+Drug|Pharmacologic Substance|Hospital Course|8245,8253|false|false|false|C0126174|losartan|losartan
+Event|Event|Hospital Course|8245,8253|false|false|false|||losartan
+Finding|Sign or Symptom|Hospital Course|8257,8265|false|false|false|C0085631;C3887611|Agitation;Restlessness|Restless
+Disorder|Disease or Syndrome|Hospital Course|8257,8269|false|false|false|C0035258|Restless Legs Syndrome|Restless leg
+Disorder|Disease or Syndrome|Hospital Course|8257,8278|false|false|false|C0035258|Restless Legs Syndrome|Restless leg syndrome
+Anatomy|Body Part, Organ, or Organ Component|Hospital Course|8266,8269|false|false|false|C0023216;C1140621|Leg;Lower Extremity|leg
+Disorder|Disease or Syndrome|Hospital Course|8270,8278|false|false|false|C0039082|Syndrome|syndrome
+Event|Event|Hospital Course|8270,8278|false|false|false|||syndrome
+Finding|Idea or Concept|Hospital Course|8280,8284|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|Hospital Course|8280,8284|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|Hospital Course|8280,8284|false|false|false|C1553498|home health encounter|home
+Event|Event|Hospital Course|8285,8295|false|false|false|||ropinarole
+Event|Event|Hospital Course|8296,8305|false|false|false|||continued
+Anatomy|Body Location or Region|Hospital Course|8308,8316|false|false|false|C0037004;C4299050|Shoulder;Upper extremity>Shoulder|Shoulder
+Procedure|Diagnostic Procedure|Hospital Course|8308,8316|false|false|false|C0221590;C0869975|Examination of shoulder(s);Procedures on Shoulder|Shoulder
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|8308,8316|false|false|false|C0221590;C0869975|Examination of shoulder(s);Procedures on Shoulder|Shoulder
+Finding|Sign or Symptom|Hospital Course|8308,8321|false|false|false|C0037011|Shoulder Pain|Shoulder pain
+Attribute|Clinical Attribute|Hospital Course|8317,8321|false|false|false|C2598155||pain
+Event|Event|Hospital Course|8317,8321|false|false|false|||pain
+Finding|Functional Concept|Hospital Course|8317,8321|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|8317,8321|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Drug|Organic Chemical|Hospital Course|8323,8332|false|false|false|C0030049|oxycodone|oxycodone
+Drug|Pharmacologic Substance|Hospital Course|8323,8332|false|false|false|C0030049|oxycodone|oxycodone
+Event|Event|Hospital Course|8323,8332|false|false|false|||oxycodone
+Procedure|Laboratory Procedure|Hospital Course|8323,8332|false|false|false|C0524222|Oxycodone measurement|oxycodone
+Drug|Organic Chemical|Hospital Course|8337,8344|false|false|false|C0699142|Tylenol|tylenol
+Drug|Pharmacologic Substance|Hospital Course|8337,8344|false|false|false|C0699142|Tylenol|tylenol
+Event|Event|Hospital Course|8337,8344|false|false|false|||tylenol
+Event|Event|Hospital Course|8356,8360|false|false|false|||dose
+Event|Event|Hospital Course|8368,8377|false|false|false|||inpatient
+Finding|Idea or Concept|Hospital Course|8368,8377|false|false|false|C1548438;C1549404|Patient Class - Inpatient;Referral category - Inpatient|inpatient
+Procedure|Health Care Activity|Hospital Course|8368,8377|false|false|false|C1555324|inpatient encounter|inpatient
+Disorder|Disease or Syndrome|Hospital Course|8382,8386|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|Hospital Course|8382,8386|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|Hospital Course|8382,8386|false|false|false|||COPD
+Finding|Gene or Genome|Hospital Course|8382,8386|false|false|false|C1412502|ARCN1 gene|COPD
+Event|Event|Hospital Course|8388,8392|false|false|false|||home
+Finding|Idea or Concept|Hospital Course|8388,8392|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|Hospital Course|8388,8392|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|Hospital Course|8388,8392|false|false|false|C1553498|home health encounter|home
+Drug|Organic Chemical|Hospital Course|8393,8399|false|false|false|C0965130|Advair|advair
+Drug|Pharmacologic Substance|Hospital Course|8393,8399|false|false|false|C0965130|Advair|advair
+Event|Event|Hospital Course|8393,8399|false|false|false|||advair
+Finding|Gene or Genome|Hospital Course|8404,8407|false|false|false|C1422467|CIAO3 gene|PRN
+Drug|Organic Chemical|Hospital Course|8408,8417|false|false|false|C0001927|albuterol|albuterol
+Drug|Pharmacologic Substance|Hospital Course|8408,8417|false|false|false|C0001927|albuterol|albuterol
+Drug|Biomedical or Dental Material|Hospital Course|8418,8422|false|false|false|C1300458|Nebulizer solution|nebs
+Event|Event|Hospital Course|8418,8422|false|false|false|||nebs
+Event|Event|Hospital Course|8428,8437|false|false|false|||continued
+Disorder|Disease or Syndrome|Hospital Course|8442,8446|false|false|false|C0017168|Gastroesophageal reflux disease|GERD
+Event|Event|Hospital Course|8442,8446|false|false|false|||GERD
+Finding|Idea or Concept|Hospital Course|8448,8452|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|Hospital Course|8448,8452|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|Hospital Course|8448,8452|false|false|false|C1553498|home health encounter|home
+Drug|Organic Chemical|Hospital Course|8453,8465|false|false|false|C0081876|pantoprazole|pantoprazole
+Drug|Pharmacologic Substance|Hospital Course|8453,8465|false|false|false|C0081876|pantoprazole|pantoprazole
+Event|Event|Hospital Course|8453,8465|false|false|false|||pantoprazole
+Event|Event|Hospital Course|8466,8475|false|false|false|||continued
+Drug|Pharmacologic Substance|Hospital Course|8479,8487|false|false|false|C1950154|Insomnia homeopathic medication|Insomnia
+Event|Event|Hospital Course|8479,8487|false|false|false|||Insomnia
+Finding|Sign or Symptom|Hospital Course|8479,8487|false|false|false|C0917801|Sleeplessness|Insomnia
+Event|Event|Hospital Course|8489,8493|false|false|false|||home
+Finding|Idea or Concept|Hospital Course|8489,8493|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|Hospital Course|8489,8493|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|Hospital Course|8489,8493|false|false|false|C1553498|home health encounter|home
+Drug|Organic Chemical|Hospital Course|8494,8503|false|false|false|C0040805|trazodone|trazodone
+Drug|Pharmacologic Substance|Hospital Course|8494,8503|false|false|false|C0040805|trazodone|trazodone
+Event|Event|Hospital Course|8494,8503|false|false|false|||trazodone
+Event|Event|Hospital Course|8504,8513|false|false|false|||continued
+Finding|Idea or Concept|Hospital Course|8517,8529|false|false|false|C1548597|Marketing basis - Transitional|TRANSITIONAL
+Event|Event|Hospital Course|8530,8536|false|false|false|||ISSUES
+Drug|Organic Chemical|Hospital Course|8540,8548|false|false|false|C0126174|losartan|Losartan
+Drug|Pharmacologic Substance|Hospital Course|8540,8548|false|false|false|C0126174|losartan|Losartan
+Event|Event|Hospital Course|8554,8563|false|false|false|||inpatient
+Finding|Idea or Concept|Hospital Course|8554,8563|false|false|false|C1548438;C1549404|Patient Class - Inpatient;Referral category - Inpatient|inpatient
+Procedure|Health Care Activity|Hospital Course|8554,8563|false|false|false|C1555324|inpatient encounter|inpatient
+Finding|Body Substance|Hospital Course|8571,8580|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|discharge
+Finding|Intellectual Product|Hospital Course|8571,8580|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|discharge
+Finding|Sign or Symptom|Hospital Course|8571,8580|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|discharge
+Procedure|Health Care Activity|Hospital Course|8571,8580|false|false|false|C0030685|Patient Discharge|discharge
+Disorder|Disease or Syndrome|Hospital Course|8592,8597|false|false|false|C0851353|Blood and lymphatic system disorders|blood
+Event|Event|Hospital Course|8592,8597|false|false|false|||blood
+Finding|Body Substance|Hospital Course|8592,8597|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|blood
+Event|Event|Hospital Course|8599,8608|false|false|false|||pressures
+Finding|Finding|Hospital Course|8599,8608|false|false|false|C0460139|Pressure (finding)|pressures
+Phenomenon|Phenomenon or Process|Hospital Course|8599,8608|false|false|false|C0033095||pressures
+Event|Event|Hospital Course|8614,8617|false|false|false|||low
+Finding|Finding|Hospital Course|8614,8617|false|false|false|C1550472;C4522223;C5203106|IPSS Risk Category Low;IPSS-R Risk Category Low;low confidentiality|low
+Finding|Intellectual Product|Hospital Course|8614,8617|false|false|false|C1550472;C4522223;C5203106|IPSS Risk Category Low;IPSS-R Risk Category Low;low confidentiality|low
+Event|Event|Hospital Course|8618,8624|false|false|false|||normal
+Disorder|Disease or Syndrome|Hospital Course|8626,8629|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Disorder|Mental or Behavioral Dysfunction|Hospital Course|8626,8629|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Disorder|Neoplastic Process|Hospital Course|8626,8629|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|8626,8629|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Enzyme|Hospital Course|8626,8629|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Hazardous or Poisonous Substance|Hospital Course|8626,8629|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Organic Chemical|Hospital Course|8626,8629|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Pharmacologic Substance|Hospital Course|8626,8629|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Event|Event|Hospital Course|8626,8629|false|false|false|||PCP
+Finding|Gene or Genome|Hospital Course|8626,8629|false|false|false|C1418873;C1422070;C1744653;C3896095;C5551061|BMP1 wt Allele;PGPEP1 gene;PRCP gene;obsolete serine-type Pro-X carboxypeptidase activity;peptidyl carrier protein activity|PCP
+Finding|Molecular Function|Hospital Course|8626,8629|false|false|false|C1418873;C1422070;C1744653;C3896095;C5551061|BMP1 wt Allele;PGPEP1 gene;PRCP gene;obsolete serine-type Pro-X carboxypeptidase activity;peptidyl carrier protein activity|PCP
+Event|Event|Hospital Course|8643,8650|false|false|false|||restart
+Finding|Body Substance|Hospital Course|8654,8661|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|Hospital Course|8654,8661|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|Hospital Course|8654,8661|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Event|Event|Hospital Course|8665,8671|false|false|false|||follow
+Disorder|Disease or Syndrome|Hospital Course|8680,8683|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Disorder|Mental or Behavioral Dysfunction|Hospital Course|8680,8683|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Disorder|Neoplastic Process|Hospital Course|8680,8683|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|8680,8683|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Enzyme|Hospital Course|8680,8683|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Hazardous or Poisonous Substance|Hospital Course|8680,8683|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Organic Chemical|Hospital Course|8680,8683|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Pharmacologic Substance|Hospital Course|8680,8683|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Event|Event|Hospital Course|8680,8683|false|false|false|||PCP
+Finding|Gene or Genome|Hospital Course|8680,8683|false|false|false|C1418873;C1422070;C1744653;C3896095;C5551061|BMP1 wt Allele;PGPEP1 gene;PRCP gene;obsolete serine-type Pro-X carboxypeptidase activity;peptidyl carrier protein activity|PCP
+Finding|Molecular Function|Hospital Course|8680,8683|false|false|false|C1418873;C1422070;C1744653;C3896095;C5551061|BMP1 wt Allele;PGPEP1 gene;PRCP gene;obsolete serine-type Pro-X carboxypeptidase activity;peptidyl carrier protein activity|PCP
+Event|Event|Hospital Course|8688,8698|false|false|false|||resolution
+Finding|Conceptual Entity|Hospital Course|8688,8698|false|false|false|C1514893;C2699488|Resolution;physiologic resolution|resolution
+Finding|Pathologic Function|Hospital Course|8688,8698|false|false|false|C1514893;C2699488|Resolution;physiologic resolution|resolution
+Disorder|Disease or Syndrome|Hospital Course|8702,8705|false|false|false|C0042029|Urinary tract infection|UTI
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|8702,8705|false|false|false|C0077906|urinastatin|UTI
+Drug|Pharmacologic Substance|Hospital Course|8702,8705|false|false|false|C0077906|urinastatin|UTI
+Event|Event|Hospital Course|8702,8705|false|false|false|||UTI
+Finding|Gene or Genome|Hospital Course|8702,8705|false|false|false|C1412376;C5780748|AMBP gene;AMBP wt Allele|UTI
+Event|Event|Hospital Course|8710,8714|false|false|false|||back
+Attribute|Clinical Attribute|Hospital Course|8716,8720|false|false|false|C2598155||pain
+Finding|Functional Concept|Hospital Course|8716,8720|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|8716,8720|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|8716,8729|false|false|false|C0030193|Pain|pain symptoms
+Event|Event|Hospital Course|8721,8729|false|false|false|||symptoms
+Finding|Functional Concept|Hospital Course|8721,8729|false|false|false|C0683368;C1457887|Symptoms;Symptoms aspect|symptoms
+Finding|Sign or Symptom|Hospital Course|8721,8729|false|false|false|C0683368;C1457887|Symptoms;Symptoms aspect|symptoms
+Finding|Body Substance|Hospital Course|8732,8739|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|Hospital Course|8732,8739|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|Hospital Course|8732,8739|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|8752,8759|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Hormone|Hospital Course|8752,8759|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Pharmacologic Substance|Hospital Course|8752,8759|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Event|Event|Hospital Course|8752,8759|false|false|false|||insulin
+Finding|Gene or Genome|Hospital Course|8752,8759|false|false|false|C1337112|INS gene|insulin
+Procedure|Laboratory Procedure|Hospital Course|8752,8759|false|false|false|C0202098|Insulin measurement|insulin
+Event|Event|Hospital Course|8769,8780|false|false|false|||adjustments
+Finding|Functional Concept|Hospital Course|8769,8780|false|false|false|C0456081||adjustments
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|8769,8780|false|false|false|C2945673|Clinical adjustment|adjustments
+Event|Event|Hospital Course|8785,8792|false|false|false|||optimal
+Finding|Intellectual Product|Hospital Course|8785,8792|false|false|false|C3260738|Outpatient Physical Therapy Improvement in Movement and Assessment Log (OPTIMAL) Survey|optimal
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|8794,8810|false|false|false|C5392125|Glycemic Control|glycemic control
+Drug|Organic Chemical|Hospital Course|8803,8810|false|false|false|C0308718;C0728976;C1550141|CONTROL veterinary product;Control brand of phenylpropanolamine;control substance|control
+Drug|Pharmacologic Substance|Hospital Course|8803,8810|false|false|false|C0308718;C0728976;C1550141|CONTROL veterinary product;Control brand of phenylpropanolamine;control substance|control
+Drug|Substance|Hospital Course|8803,8810|false|false|false|C0308718;C0728976;C1550141|CONTROL veterinary product;Control brand of phenylpropanolamine;control substance|control
+Event|Event|Hospital Course|8803,8810|false|false|false|||control
+Finding|Conceptual Entity|Hospital Course|8803,8810|false|false|false|C1547100;C1882979;C2587213|Control - Relationship modifier;Control function;Scientific Control|control
+Finding|Functional Concept|Hospital Course|8803,8810|false|false|false|C1547100;C1882979;C2587213|Control - Relationship modifier;Control function;Scientific Control|control
+Finding|Idea or Concept|Hospital Course|8803,8810|false|false|false|C1547100;C1882979;C2587213|Control - Relationship modifier;Control function;Scientific Control|control
+Event|Event|Hospital Course|8816,8823|false|false|false|||changes
+Finding|Functional Concept|Hospital Course|8816,8823|false|false|false|C0392747|Changing|changes
+Event|Event|Hospital Course|8827,8834|false|false|false|||regimen
+Finding|Intellectual Product|Hospital Course|8827,8834|false|false|false|C5237222|GDC Regimen Terminology|regimen
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|8827,8834|false|false|false|C0040808|Treatment Protocols|regimen
+Event|Event|Hospital Course|8840,8844|false|false|false|||made
+Event|Event|Hospital Course|8848,8857|false|false|false|||discharge
+Finding|Body Substance|Hospital Course|8848,8857|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|discharge
+Finding|Intellectual Product|Hospital Course|8848,8857|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|discharge
+Finding|Sign or Symptom|Hospital Course|8848,8857|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|discharge
+Procedure|Health Care Activity|Hospital Course|8848,8857|false|false|false|C0030685|Patient Discharge|discharge
+Attribute|Clinical Attribute|Hospital Course|8861,8872|false|false|false|C0802604;C2598133||Medications
+Drug|Pharmacologic Substance|Hospital Course|8861,8872|false|false|false|C0013227|Pharmaceutical Preparations|Medications
+Event|Event|Hospital Course|8861,8872|false|false|false|||Medications
+Finding|Intellectual Product|Hospital Course|8861,8872|false|false|false|C4284232|Medications|Medications
+Finding|Finding|Hospital Course|8861,8885|false|false|false|C1627937|Medications on admission|Medications on Admission
+Event|Event|Hospital Course|8876,8885|false|false|false|||Admission
+Procedure|Health Care Activity|Hospital Course|8876,8885|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|Admission
+Drug|Pharmacologic Substance|Hospital Course|8904,8914|false|false|false|C0013227|Pharmaceutical Preparations|Medication
+Finding|Intellectual Product|Hospital Course|8904,8914|false|false|false|C3244316;C4284232|Medications;medication - HL7 publishing domain|Medication
+Finding|Intellectual Product|Hospital Course|8904,8919|false|false|false|C0746470|MEDICATION LIST|Medication list
+Event|Event|Hospital Course|8915,8919|false|false|false|||list
+Finding|Intellectual Product|Hospital Course|8915,8919|false|false|false|C0745732;C3272378|List;Sequence Data Type|list
+Event|Event|Hospital Course|8927,8937|false|false|false|||inaccurate
+Event|Event|Hospital Course|8942,8950|false|false|false|||requires
+Event|Event|Hospital Course|8959,8972|false|false|false|||investigation
+Finding|Intellectual Product|Hospital Course|8959,8972|false|false|false|C1552578|Act Class - investigation|investigation
+Procedure|Health Care Activity|Hospital Course|8959,8972|false|false|false|C0220825;C1261322|Evaluation;Evaluation procedure|investigation
+Drug|Organic Chemical|Hospital Course|8977,8985|false|false|false|C0126174|losartan|Losartan
+Drug|Pharmacologic Substance|Hospital Course|8977,8985|false|false|false|C0126174|losartan|Losartan
+Event|Event|Hospital Course|8977,8985|false|false|false|||Losartan
+Drug|Organic Chemical|Hospital Course|8977,8995|false|false|false|C0700492|losartan potassium|Losartan Potassium
+Drug|Pharmacologic Substance|Hospital Course|8977,8995|false|false|false|C0700492|losartan potassium|Losartan Potassium
+Drug|Biologically Active Substance|Hospital Course|8986,8995|false|false|false|C0032821;C0162800;C0304475;C3714637|Dietary Potassium;Potassium Drug Class;Potassium supplement;potassium|Potassium
+Drug|Element, Ion, or Isotope|Hospital Course|8986,8995|false|false|false|C0032821;C0162800;C0304475;C3714637|Dietary Potassium;Potassium Drug Class;Potassium supplement;potassium|Potassium
+Drug|Food|Hospital Course|8986,8995|false|false|false|C0032821;C0162800;C0304475;C3714637|Dietary Potassium;Potassium Drug Class;Potassium supplement;potassium|Potassium
+Drug|Inorganic Chemical|Hospital Course|8986,8995|false|false|false|C0032821;C0162800;C0304475;C3714637|Dietary Potassium;Potassium Drug Class;Potassium supplement;potassium|Potassium
+Drug|Pharmacologic Substance|Hospital Course|8986,8995|false|false|false|C0032821;C0162800;C0304475;C3714637|Dietary Potassium;Potassium Drug Class;Potassium supplement;potassium|Potassium
+Event|Event|Hospital Course|8986,8995|false|false|false|||Potassium
+Finding|Physiologic Function|Hospital Course|8986,8995|false|false|false|C4553027|Potassium metabolic function|Potassium
+Procedure|Laboratory Procedure|Hospital Course|8986,8995|false|false|false|C0202194|Potassium measurement|Potassium
+Drug|Organic Chemical|Hospital Course|9015,9025|false|false|false|C0025859|metoprolol|Metoprolol
+Drug|Pharmacologic Substance|Hospital Course|9015,9025|false|false|false|C0025859|metoprolol|Metoprolol
+Drug|Organic Chemical|Hospital Course|9015,9035|false|false|false|C0724633|metoprolol succinate|Metoprolol Succinate
+Drug|Pharmacologic Substance|Hospital Course|9015,9035|false|false|false|C0724633|metoprolol succinate|Metoprolol Succinate
+Drug|Organic Chemical|Hospital Course|9026,9035|false|false|false|C0038617;C0220918|Succinates;succinate|Succinate
+Event|Event|Hospital Course|9026,9035|false|false|false|||Succinate
+Drug|Organic Chemical|Hospital Course|9059,9071|false|false|false|C0286651|atorvastatin|Atorvastatin
+Drug|Pharmacologic Substance|Hospital Course|9059,9071|false|false|false|C0286651|atorvastatin|Atorvastatin
+Drug|Organic Chemical|Hospital Course|9088,9098|false|false|false|C0022251|isosorbide|Isosorbide
+Drug|Pharmacologic Substance|Hospital Course|9088,9098|false|false|false|C0022251|isosorbide|Isosorbide
+Drug|Organic Chemical|Hospital Course|9088,9110|false|false|false|C0064079|isosorbide mononitrate|Isosorbide Mononitrate
+Drug|Pharmacologic Substance|Hospital Course|9088,9110|false|false|false|C0064079|isosorbide mononitrate|Isosorbide Mononitrate
+Event|Event|Hospital Course|9099,9110|false|false|false|||Mononitrate
+Finding|Finding|Hospital Course|9112,9120|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Finding|Functional Concept|Hospital Course|9112,9120|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Event|Event|Hospital Course|9121,9128|false|false|false|||Release
+Finding|Functional Concept|Hospital Course|9121,9128|false|false|false|C0391871;C1283071|Release - action (qualifier value);Released (action)|Release
+Procedure|Health Care Activity|Hospital Course|9121,9128|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|9121,9128|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Drug|Organic Chemical|Hospital Course|9150,9163|false|false|false|C0017887|nitroglycerin|Nitroglycerin
+Drug|Pharmacologic Substance|Hospital Course|9150,9163|false|false|false|C0017887|nitroglycerin|Nitroglycerin
+Event|Event|Hospital Course|9150,9163|false|false|false|||Nitroglycerin
+Finding|Gene or Genome|Hospital Course|9183,9186|false|false|false|C1422467|CIAO3 gene|PRN
+Attribute|Clinical Attribute|Hospital Course|9187,9191|false|false|false|C2598155||pain
+Event|Event|Hospital Course|9187,9191|false|false|false|||pain
+Finding|Functional Concept|Hospital Course|9187,9191|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|9187,9191|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Drug|Organic Chemical|Hospital Course|9196,9206|false|false|false|C0244821|ropinirole|Ropinirole
+Drug|Pharmacologic Substance|Hospital Course|9196,9206|false|false|false|C0244821|ropinirole|Ropinirole
+Event|Event|Hospital Course|9217,9220|false|false|false|||QPM
+Drug|Organic Chemical|Hospital Course|9225,9234|false|false|false|C0030049|oxycodone|Oxycodone
+Drug|Pharmacologic Substance|Hospital Course|9225,9234|false|false|false|C0030049|oxycodone|Oxycodone
+Event|Event|Hospital Course|9225,9234|false|false|false|||Oxycodone
+Procedure|Laboratory Procedure|Hospital Course|9225,9234|false|false|false|C0524222|Oxycodone measurement|Oxycodone
+Drug|Pharmacologic Substance|Hospital Course|9225,9248|false|false|false|C0717368|acetaminophen / oxycodone|Oxycodone-Acetaminophen
+Drug|Organic Chemical|Hospital Course|9235,9248|false|false|false|C0000970;C2917659|Acetaminophen [EPC];acetaminophen|Acetaminophen
+Drug|Pharmacologic Substance|Hospital Course|9235,9248|false|false|false|C0000970;C2917659|Acetaminophen [EPC];acetaminophen|Acetaminophen
+Event|Event|Hospital Course|9235,9248|false|false|false|||Acetaminophen
+Procedure|Laboratory Procedure|Hospital Course|9235,9248|false|false|false|C0373527|Acetaminophen measurement|Acetaminophen
+Drug|Biomedical or Dental Material|Hospital Course|9263,9266|false|false|false|C0039225|Tablet Dosage Form|TAB
+Event|Event|Hospital Course|9263,9266|false|false|false|||TAB
+Event|Event|Hospital Course|9270,9273|false|false|false|||Q8H
+Finding|Gene or Genome|Hospital Course|9274,9277|false|false|false|C1422467|CIAO3 gene|PRN
+Attribute|Clinical Attribute|Hospital Course|9278,9282|false|false|false|C2598155||pain
+Event|Event|Hospital Course|9278,9282|false|false|false|||pain
+Finding|Functional Concept|Hospital Course|9278,9282|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|9278,9282|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Drug|Organic Chemical|Hospital Course|9287,9298|false|false|false|C0082607|fluticasone|Fluticasone
+Drug|Pharmacologic Substance|Hospital Course|9287,9298|false|false|false|C0082607|fluticasone|Fluticasone
+Event|Event|Hospital Course|9287,9298|false|false|false|||Fluticasone
+Drug|Organic Chemical|Hospital Course|9287,9309|false|false|false|C0117996|fluticasone propionate|Fluticasone Propionate
+Drug|Pharmacologic Substance|Hospital Course|9287,9309|false|false|false|C0117996|fluticasone propionate|Fluticasone Propionate
+Drug|Organic Chemical|Hospital Course|9299,9309|false|false|false|C0033474;C0392214|Propionates;propionate|Propionate
+Event|Event|Hospital Course|9319,9323|false|false|false|||PUFF
+Disorder|Mental or Behavioral Dysfunction|Hospital Course|9327,9330|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9327,9330|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|Hospital Course|9327,9330|false|false|false|C1530795|BID protein, human|BID
+Event|Event|Hospital Course|9327,9330|false|false|false|||BID
+Finding|Gene or Genome|Hospital Course|9327,9330|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|Hospital Course|9335,9347|false|false|false|C0081876|pantoprazole|Pantoprazole
+Drug|Pharmacologic Substance|Hospital Course|9335,9347|false|false|false|C0081876|pantoprazole|Pantoprazole
+Drug|Organic Chemical|Hospital Course|9367,9374|false|false|false|C0004057|aspirin|Aspirin
+Drug|Pharmacologic Substance|Hospital Course|9367,9374|false|false|false|C0004057|aspirin|Aspirin
+Drug|Organic Chemical|Hospital Course|9396,9405|false|false|false|C0001927|albuterol|albuterol
+Drug|Pharmacologic Substance|Hospital Course|9396,9405|false|false|false|C0001927|albuterol|albuterol
+Event|Event|Hospital Course|9396,9405|false|false|false|||albuterol
+Drug|Organic Chemical|Hospital Course|9396,9413|false|false|false|C0543495|albuterol sulfate|albuterol sulfate
+Drug|Pharmacologic Substance|Hospital Course|9396,9413|false|false|false|C0543495|albuterol sulfate|albuterol sulfate
+Drug|Element, Ion, or Isotope|Hospital Course|9406,9413|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Drug|Inorganic Chemical|Hospital Course|9406,9413|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Drug|Pharmacologic Substance|Hospital Course|9406,9413|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Event|Event|Hospital Course|9406,9413|false|false|false|||sulfate
+Finding|Functional Concept|Hospital Course|9431,9441|false|false|false|C0004048;C0205535|Inhalation Route of Administration;Inspiration (function)|inhalation
+Finding|Organism Function|Hospital Course|9431,9441|false|false|false|C0004048;C0205535|Inhalation Route of Administration;Inspiration (function)|inhalation
+Event|Event|Hospital Course|9442,9447|false|false|false|||q4hrs
+Event|Event|Hospital Course|9448,9456|false|false|false|||wheezing
+Finding|Sign or Symptom|Hospital Course|9448,9456|false|false|false|C0043144|Wheezing|wheezing
+Drug|Organic Chemical|Hospital Course|9463,9472|false|false|false|C0040805|trazodone|TraZODone
+Drug|Pharmacologic Substance|Hospital Course|9463,9472|false|false|false|C0040805|trazodone|TraZODone
+Drug|Organic Chemical|Hospital Course|9491,9498|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Pharmacologic Substance|Hospital Course|9491,9498|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Vitamin|Hospital Course|9491,9498|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Hormone|Hospital Course|9491,9500|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Organic Chemical|Hospital Course|9491,9500|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Pharmacologic Substance|Hospital Course|9491,9500|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Vitamin|Hospital Course|9491,9500|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Procedure|Laboratory Procedure|Hospital Course|9491,9500|false|false|false|C0919758|Vitamin D measurement|Vitamin D
+Event|Event|Hospital Course|9506,9510|false|false|false|||UNIT
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9525,9532|false|false|false|C1314782|Levemir|Levemir
+Drug|Hormone|Hospital Course|9525,9532|false|false|false|C1314782|Levemir|Levemir
+Drug|Pharmacologic Substance|Hospital Course|9525,9532|false|false|false|C1314782|Levemir|Levemir
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9542,9549|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Hormone|Hospital Course|9542,9549|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Pharmacologic Substance|Hospital Course|9542,9549|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Event|Event|Hospital Course|9542,9549|false|false|false|||insulin
+Finding|Gene or Genome|Hospital Course|9542,9549|false|false|false|C1337112|INS gene|insulin
+Procedure|Laboratory Procedure|Hospital Course|9542,9549|false|false|false|C0202098|Insulin measurement|insulin
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9542,9557|false|false|false|C0537270|insulin detemir|insulin detemir
+Drug|Hormone|Hospital Course|9542,9557|false|false|false|C0537270|insulin detemir|insulin detemir
+Drug|Pharmacologic Substance|Hospital Course|9542,9557|false|false|false|C0537270|insulin detemir|insulin detemir
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9550,9557|false|false|false|C0537270|insulin detemir|detemir
+Drug|Hormone|Hospital Course|9550,9557|false|false|false|C0537270|insulin detemir|detemir
+Drug|Pharmacologic Substance|Hospital Course|9550,9557|false|false|false|C0537270|insulin detemir|detemir
+Event|Event|Hospital Course|9550,9557|false|false|false|||detemir
+Finding|Functional Concept|Hospital Course|9568,9580|false|false|false|C1522438|Subcutaneous Route of Administration|subcutaneous
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9602,9609|false|false|false|C0528249|Humalog|HumaLOG
+Drug|Pharmacologic Substance|Hospital Course|9602,9609|false|false|false|C0528249|Humalog|HumaLOG
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9619,9626|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Hormone|Hospital Course|9619,9626|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Pharmacologic Substance|Hospital Course|9619,9626|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Event|Event|Hospital Course|9619,9626|false|false|false|||insulin
+Finding|Gene or Genome|Hospital Course|9619,9626|false|false|false|C1337112|INS gene|insulin
+Procedure|Laboratory Procedure|Hospital Course|9619,9626|false|false|false|C0202098|Insulin measurement|insulin
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9619,9633|false|false|false|C0293359|insulin lispro|insulin lispro
+Drug|Hormone|Hospital Course|9619,9633|false|false|false|C0293359|insulin lispro|insulin lispro
+Drug|Pharmacologic Substance|Hospital Course|9619,9633|false|false|false|C0293359|insulin lispro|insulin lispro
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9627,9633|false|false|false|C0293359|insulin lispro|lispro
+Drug|Hormone|Hospital Course|9627,9633|false|false|false|C0293359|insulin lispro|lispro
+Drug|Pharmacologic Substance|Hospital Course|9627,9633|false|false|false|C0293359|insulin lispro|lispro
+Event|Event|Hospital Course|9627,9633|false|false|false|||lispro
+Anatomy|Body Part, Organ, or Organ Component|Hospital Course|9647,9652|false|false|false|C0222045|Integumentary scale|scale
+Event|Activity|Hospital Course|9647,9652|false|false|false|C1947916|Scaling|scale
+Finding|Conceptual Entity|Hospital Course|9647,9652|false|false|false|C0349674;C1522412;C2981742|Base Number;Scale - rank;Scale, LOINC Axis 5|scale
+Finding|Intellectual Product|Hospital Course|9647,9652|false|false|false|C0349674;C1522412;C2981742|Base Number;Scale - rank;Scale, LOINC Axis 5|scale
+Event|Event|Hospital Course|9655,9667|false|false|false|||subcutaneous
+Finding|Functional Concept|Hospital Course|9655,9667|false|false|false|C1522438|Subcutaneous Route of Administration|subcutaneous
+Event|Event|Hospital Course|9671,9679|false|false|false|||directed
+Event|Event|Hospital Course|9684,9693|false|false|false|||Discharge
+Finding|Body Substance|Hospital Course|9684,9693|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|Hospital Course|9684,9693|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|Hospital Course|9684,9693|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|Hospital Course|9684,9693|false|false|false|C0030685|Patient Discharge|Discharge
+Finding|Finding|Hospital Course|9684,9705|false|false|false|C0806915|Medication.discharge|Discharge Medications
+Attribute|Clinical Attribute|Hospital Course|9694,9705|false|false|false|C0802604;C2598133||Medications
+Drug|Pharmacologic Substance|Hospital Course|9694,9705|false|false|false|C0013227|Pharmaceutical Preparations|Medications
+Event|Event|Hospital Course|9694,9705|false|false|false|||Medications
+Finding|Intellectual Product|Hospital Course|9694,9705|false|false|false|C4284232|Medications|Medications
+Drug|Organic Chemical|Hospital Course|9710,9719|false|false|false|C0030049|oxycodone|Oxycodone
+Drug|Pharmacologic Substance|Hospital Course|9710,9719|false|false|false|C0030049|oxycodone|Oxycodone
+Event|Event|Hospital Course|9710,9719|false|false|false|||Oxycodone
+Procedure|Laboratory Procedure|Hospital Course|9710,9719|false|false|false|C0524222|Oxycodone measurement|Oxycodone
+Drug|Pharmacologic Substance|Hospital Course|9710,9733|false|false|false|C0717368|acetaminophen / oxycodone|Oxycodone-Acetaminophen
+Drug|Organic Chemical|Hospital Course|9720,9733|false|false|false|C0000970;C2917659|Acetaminophen [EPC];acetaminophen|Acetaminophen
+Drug|Pharmacologic Substance|Hospital Course|9720,9733|false|false|false|C0000970;C2917659|Acetaminophen [EPC];acetaminophen|Acetaminophen
+Event|Event|Hospital Course|9720,9733|false|false|false|||Acetaminophen
+Procedure|Laboratory Procedure|Hospital Course|9720,9733|false|false|false|C0373527|Acetaminophen measurement|Acetaminophen
+Drug|Biomedical or Dental Material|Hospital Course|9748,9751|false|false|false|C0039225|Tablet Dosage Form|TAB
+Event|Event|Hospital Course|9748,9751|false|false|false|||TAB
+Event|Event|Hospital Course|9755,9758|false|false|false|||Q8H
+Finding|Gene or Genome|Hospital Course|9759,9762|false|false|false|C1422467|CIAO3 gene|PRN
+Attribute|Clinical Attribute|Hospital Course|9763,9767|false|false|false|C2598155||pain
+Event|Event|Hospital Course|9763,9767|false|false|false|||pain
+Finding|Functional Concept|Hospital Course|9763,9767|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|9763,9767|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Drug|Organic Chemical|Hospital Course|9772,9785|false|false|false|C0017887|nitroglycerin|Nitroglycerin
+Drug|Pharmacologic Substance|Hospital Course|9772,9785|false|false|false|C0017887|nitroglycerin|Nitroglycerin
+Event|Event|Hospital Course|9772,9785|false|false|false|||Nitroglycerin
+Finding|Gene or Genome|Hospital Course|9805,9808|false|false|false|C1422467|CIAO3 gene|PRN
+Attribute|Clinical Attribute|Hospital Course|9809,9813|false|false|false|C2598155||pain
+Event|Event|Hospital Course|9809,9813|false|false|false|||pain
+Finding|Functional Concept|Hospital Course|9809,9813|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Hospital Course|9809,9813|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Drug|Organic Chemical|Hospital Course|9818,9828|false|false|false|C0025859|metoprolol|Metoprolol
+Drug|Pharmacologic Substance|Hospital Course|9818,9828|false|false|false|C0025859|metoprolol|Metoprolol
+Drug|Organic Chemical|Hospital Course|9818,9838|false|false|false|C0724633|metoprolol succinate|Metoprolol Succinate
+Drug|Pharmacologic Substance|Hospital Course|9818,9838|false|false|false|C0724633|metoprolol succinate|Metoprolol Succinate
+Drug|Organic Chemical|Hospital Course|9829,9838|false|false|false|C0038617;C0220918|Succinates;succinate|Succinate
+Event|Event|Hospital Course|9829,9838|false|false|false|||Succinate
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9862,9869|false|false|false|C1314782|Levemir|Levemir
+Drug|Hormone|Hospital Course|9862,9869|false|false|false|C1314782|Levemir|Levemir
+Drug|Pharmacologic Substance|Hospital Course|9862,9869|false|false|false|C1314782|Levemir|Levemir
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9879,9886|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Hormone|Hospital Course|9879,9886|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Pharmacologic Substance|Hospital Course|9879,9886|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Event|Event|Hospital Course|9879,9886|false|false|false|||insulin
+Finding|Gene or Genome|Hospital Course|9879,9886|false|false|false|C1337112|INS gene|insulin
+Procedure|Laboratory Procedure|Hospital Course|9879,9886|false|false|false|C0202098|Insulin measurement|insulin
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9879,9894|false|false|false|C0537270|insulin detemir|insulin detemir
+Drug|Hormone|Hospital Course|9879,9894|false|false|false|C0537270|insulin detemir|insulin detemir
+Drug|Pharmacologic Substance|Hospital Course|9879,9894|false|false|false|C0537270|insulin detemir|insulin detemir
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9887,9894|false|false|false|C0537270|insulin detemir|detemir
+Drug|Hormone|Hospital Course|9887,9894|false|false|false|C0537270|insulin detemir|detemir
+Drug|Pharmacologic Substance|Hospital Course|9887,9894|false|false|false|C0537270|insulin detemir|detemir
+Event|Event|Hospital Course|9887,9894|false|false|false|||detemir
+Finding|Functional Concept|Hospital Course|9905,9917|false|false|false|C1522438|Subcutaneous Route of Administration|subcutaneous
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9938,9945|false|false|false|C0528249|Humalog|HumaLOG
+Drug|Pharmacologic Substance|Hospital Course|9938,9945|false|false|false|C0528249|Humalog|HumaLOG
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9955,9962|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Hormone|Hospital Course|9955,9962|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Pharmacologic Substance|Hospital Course|9955,9962|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Event|Event|Hospital Course|9955,9962|false|false|false|||insulin
+Finding|Gene or Genome|Hospital Course|9955,9962|false|false|false|C1337112|INS gene|insulin
+Procedure|Laboratory Procedure|Hospital Course|9955,9962|false|false|false|C0202098|Insulin measurement|insulin
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9955,9969|false|false|false|C0293359|insulin lispro|insulin lispro
+Drug|Hormone|Hospital Course|9955,9969|false|false|false|C0293359|insulin lispro|insulin lispro
+Drug|Pharmacologic Substance|Hospital Course|9955,9969|false|false|false|C0293359|insulin lispro|insulin lispro
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|9963,9969|false|false|false|C0293359|insulin lispro|lispro
+Drug|Hormone|Hospital Course|9963,9969|false|false|false|C0293359|insulin lispro|lispro
+Drug|Pharmacologic Substance|Hospital Course|9963,9969|false|false|false|C0293359|insulin lispro|lispro
+Event|Event|Hospital Course|9963,9969|false|false|false|||lispro
+Event|Event|Hospital Course|9975,9987|false|false|false|||SUBCUTANEOUS
+Finding|Functional Concept|Hospital Course|9975,9987|false|false|false|C1522438|Subcutaneous Route of Administration|SUBCUTANEOUS
+Event|Event|Hospital Course|9991,9999|false|false|false|||DIRECTED
+Drug|Organic Chemical|Hospital Course|10005,10014|false|false|false|C0001927|albuterol|albuterol
+Drug|Pharmacologic Substance|Hospital Course|10005,10014|false|false|false|C0001927|albuterol|albuterol
+Event|Event|Hospital Course|10005,10014|false|false|false|||albuterol
+Drug|Organic Chemical|Hospital Course|10005,10022|false|false|false|C0543495|albuterol sulfate|albuterol sulfate
+Drug|Pharmacologic Substance|Hospital Course|10005,10022|false|false|false|C0543495|albuterol sulfate|albuterol sulfate
+Drug|Element, Ion, or Isotope|Hospital Course|10015,10022|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Drug|Inorganic Chemical|Hospital Course|10015,10022|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Drug|Pharmacologic Substance|Hospital Course|10015,10022|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Event|Event|Hospital Course|10015,10022|false|false|false|||sulfate
+Finding|Functional Concept|Hospital Course|10040,10050|false|false|false|C0004048;C0205535|Inhalation Route of Administration;Inspiration (function)|inhalation
+Finding|Organism Function|Hospital Course|10040,10050|false|false|false|C0004048;C0205535|Inhalation Route of Administration;Inspiration (function)|inhalation
+Event|Event|Hospital Course|10051,10056|false|false|false|||q4hrs
+Event|Event|Hospital Course|10057,10065|false|false|false|||wheezing
+Finding|Sign or Symptom|Hospital Course|10057,10065|false|false|false|C0043144|Wheezing|wheezing
+Drug|Organic Chemical|Hospital Course|10070,10083|false|false|false|C0008809|ciprofloxacin|Ciprofloxacin
+Drug|Pharmacologic Substance|Hospital Course|10070,10083|false|false|false|C0008809|ciprofloxacin|Ciprofloxacin
+Drug|Antibiotic|Hospital Course|10070,10087|false|false|false|C0282104|ciprofloxacin hydrochloride|Ciprofloxacin HCl
+Drug|Organic Chemical|Hospital Course|10070,10087|false|false|false|C0282104|ciprofloxacin hydrochloride|Ciprofloxacin HCl
+Disorder|Neoplastic Process|Hospital Course|10084,10087|false|false|false|C0023443|Hairy Cell Leukemia|HCl
+Drug|Immunologic Factor|Hospital Course|10084,10087|false|false|false|C0443985;C1512523|Flinders medical centre-7 marker;hydrochloride|HCl
+Drug|Inorganic Chemical|Hospital Course|10084,10087|false|false|false|C0443985;C1512523|Flinders medical centre-7 marker;hydrochloride|HCl
+Drug|Pharmacologic Substance|Hospital Course|10084,10087|false|false|false|C0443985;C1512523|Flinders medical centre-7 marker;hydrochloride|HCl
+Event|Event|Hospital Course|10084,10087|false|false|false|||HCl
+Drug|Pharmacologic Substance|Hospital Course|10103,10111|false|false|false|C0720099|Duration brand of oxymetazoline|Duration
+Event|Event|Hospital Course|10103,10111|false|false|false|||Duration
+Event|Event|Hospital Course|10121,10123|false|false|false|||RX
+Drug|Organic Chemical|Hospital Course|10125,10138|false|false|false|C0008809|ciprofloxacin|ciprofloxacin
+Drug|Pharmacologic Substance|Hospital Course|10125,10138|false|false|false|C0008809|ciprofloxacin|ciprofloxacin
+Drug|Organic Chemical|Hospital Course|10140,10145|false|false|false|C0701042|Cipro|Cipro
+Drug|Pharmacologic Substance|Hospital Course|10140,10145|false|false|false|C0701042|Cipro|Cipro
+Drug|Biomedical or Dental Material|Hospital Course|10156,10162|false|false|false|C0039225|Tablet Dosage Form|tablet
+Finding|Functional Concept|Hospital Course|10166,10174|false|false|false|C1527415|Oral Route of Administration|by mouth
+Anatomy|Body Location or Region|Hospital Course|10169,10174|false|false|false|C0226896;C0230028|Oral cavity;Oral region|mouth
+Anatomy|Body Space or Junction|Hospital Course|10169,10174|false|false|false|C0226896;C0230028|Oral cavity;Oral region|mouth
+Finding|Idea or Concept|Hospital Course|10184,10187|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Intellectual Product|Hospital Course|10184,10187|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Drug|Biomedical or Dental Material|Hospital Course|10198,10204|false|false|false|C0039225|Tablet Dosage Form|Tablet
+Event|Event|Hospital Course|10205,10212|false|false|false|||Refills
+Finding|Idea or Concept|Hospital Course|10205,10212|false|false|false|C0807726|refill|Refills
+Drug|Organic Chemical|Hospital Course|10219,10226|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Pharmacologic Substance|Hospital Course|10219,10226|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Vitamin|Hospital Course|10219,10226|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Hormone|Hospital Course|10219,10228|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Organic Chemical|Hospital Course|10219,10228|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Pharmacologic Substance|Hospital Course|10219,10228|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Vitamin|Hospital Course|10219,10228|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Procedure|Laboratory Procedure|Hospital Course|10219,10228|false|false|false|C0919758|Vitamin D measurement|Vitamin D
+Event|Event|Hospital Course|10227,10228|false|false|false|||D
+Event|Event|Hospital Course|10234,10238|false|false|false|||UNIT
+Drug|Organic Chemical|Hospital Course|10252,10261|false|false|false|C0040805|trazodone|TraZODone
+Drug|Pharmacologic Substance|Hospital Course|10252,10261|false|false|false|C0040805|trazodone|TraZODone
+Drug|Organic Chemical|Hospital Course|10280,10290|false|false|false|C0022251|isosorbide|Isosorbide
+Drug|Pharmacologic Substance|Hospital Course|10280,10290|false|false|false|C0022251|isosorbide|Isosorbide
+Drug|Organic Chemical|Hospital Course|10280,10302|false|false|false|C0064079|isosorbide mononitrate|Isosorbide Mononitrate
+Drug|Pharmacologic Substance|Hospital Course|10280,10302|false|false|false|C0064079|isosorbide mononitrate|Isosorbide Mononitrate
+Event|Event|Hospital Course|10291,10302|false|false|false|||Mononitrate
+Finding|Finding|Hospital Course|10304,10312|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Finding|Functional Concept|Hospital Course|10304,10312|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Event|Event|Hospital Course|10313,10320|false|false|false|||Release
+Finding|Functional Concept|Hospital Course|10313,10320|false|false|false|C0391871;C1283071|Release - action (qualifier value);Released (action)|Release
+Procedure|Health Care Activity|Hospital Course|10313,10320|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Procedure|Therapeutic or Preventive Procedure|Hospital Course|10313,10320|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Drug|Organic Chemical|Hospital Course|10343,10350|false|false|false|C0004057|aspirin|Aspirin
+Drug|Pharmacologic Substance|Hospital Course|10343,10350|false|false|false|C0004057|aspirin|Aspirin
+Drug|Organic Chemical|Hospital Course|10372,10384|false|false|false|C0286651|atorvastatin|Atorvastatin
+Drug|Pharmacologic Substance|Hospital Course|10372,10384|false|false|false|C0286651|atorvastatin|Atorvastatin
+Drug|Organic Chemical|Hospital Course|10402,10413|false|false|false|C0082607|fluticasone|Fluticasone
+Drug|Pharmacologic Substance|Hospital Course|10402,10413|false|false|false|C0082607|fluticasone|Fluticasone
+Event|Event|Hospital Course|10402,10413|false|false|false|||Fluticasone
+Drug|Organic Chemical|Hospital Course|10402,10424|false|false|false|C0117996|fluticasone propionate|Fluticasone Propionate
+Drug|Pharmacologic Substance|Hospital Course|10402,10424|false|false|false|C0117996|fluticasone propionate|Fluticasone Propionate
+Drug|Organic Chemical|Hospital Course|10414,10424|false|false|false|C0033474;C0392214|Propionates;propionate|Propionate
+Event|Event|Hospital Course|10434,10438|false|false|false|||PUFF
+Disorder|Mental or Behavioral Dysfunction|Hospital Course|10442,10445|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|Hospital Course|10442,10445|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|Hospital Course|10442,10445|false|false|false|C1530795|BID protein, human|BID
+Event|Event|Hospital Course|10442,10445|false|false|false|||BID
+Finding|Gene or Genome|Hospital Course|10442,10445|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|Hospital Course|10451,10463|false|false|false|C0081876|pantoprazole|Pantoprazole
+Drug|Pharmacologic Substance|Hospital Course|10451,10463|false|false|false|C0081876|pantoprazole|Pantoprazole
+Drug|Organic Chemical|Hospital Course|10483,10493|false|false|false|C0244821|ropinirole|Ropinirole
+Drug|Pharmacologic Substance|Hospital Course|10483,10493|false|false|false|C0244821|ropinirole|Ropinirole
+Event|Event|Hospital Course|10504,10507|false|false|false|||QPM
+Event|Event|Hospital Course|10512,10521|false|false|false|||Discharge
+Finding|Body Substance|Hospital Course|10512,10521|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|Hospital Course|10512,10521|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|Hospital Course|10512,10521|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|Hospital Course|10512,10521|false|false|false|C0030685|Patient Discharge|Discharge
+Attribute|Clinical Attribute|Hospital Course|10512,10533|false|false|false|C4019243||Discharge Disposition
+Finding|Finding|Hospital Course|10512,10533|false|false|false|C4759848|Discharge disposition|Discharge Disposition
+Attribute|Clinical Attribute|Hospital Course|10522,10533|false|false|false|C2926604||Disposition
+Event|Event|Hospital Course|10522,10533|false|false|false|||Disposition
+Procedure|Health Care Activity|Hospital Course|10522,10533|false|false|false|C0184758|Patient disposition|Disposition
+Event|Event|Hospital Course|10535,10539|false|false|false|||Home
+Finding|Idea or Concept|Hospital Course|10535,10539|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|Home
+Finding|Intellectual Product|Hospital Course|10535,10539|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|Home
+Procedure|Health Care Activity|Hospital Course|10535,10539|false|false|false|C1553498|home health encounter|Home
+Event|Event|Hospital Course|10542,10551|false|false|false|||Discharge
+Finding|Body Substance|Hospital Course|10542,10551|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|Hospital Course|10542,10551|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|Hospital Course|10542,10551|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|Hospital Course|10542,10551|false|false|false|C0030685|Patient Discharge|Discharge
+Finding|Finding|Hospital Course|10542,10561|false|false|false|C1555319|discharge diagnosis|Discharge Diagnosis
+Attribute|Clinical Attribute|Hospital Course|10552,10561|false|false|false|C0945731||Diagnosis
+Event|Event|Hospital Course|10552,10561|false|false|false|||Diagnosis
+Finding|Classification|Hospital Course|10552,10561|false|false|false|C1546899;C1704338|Diagnosis Classification - Diagnosis;diagnosis aspects|Diagnosis
+Finding|Functional Concept|Hospital Course|10552,10561|false|false|false|C1546899;C1704338|Diagnosis Classification - Diagnosis;diagnosis aspects|Diagnosis
+Procedure|Diagnostic Procedure|Hospital Course|10552,10561|false|false|false|C0011900|Diagnosis|Diagnosis
+Disorder|Disease or Syndrome|Principle Diagnosis|10582,10585|false|false|false|C0042029|Urinary tract infection|UTI
+Drug|Amino Acid, Peptide, or Protein|Principle Diagnosis|10582,10585|false|false|false|C0077906|urinastatin|UTI
+Drug|Pharmacologic Substance|Principle Diagnosis|10582,10585|false|false|false|C0077906|urinastatin|UTI
+Event|Event|Principle Diagnosis|10582,10585|false|false|false|||UTI
+Finding|Gene or Genome|Principle Diagnosis|10582,10585|false|false|false|C1412376;C5780748|AMBP gene;AMBP wt Allele|UTI
+Disorder|Neoplastic Process|Principle Diagnosis|10587,10596|false|false|false|C0027627|Neoplasm Metastasis|Secondary
+Event|Event|Principle Diagnosis|10587,10596|false|false|false|||Secondary
+Finding|Functional Concept|Principle Diagnosis|10587,10596|false|false|false|C1522484|metastatic qualifier|Secondary
+Attribute|Clinical Attribute|Principle Diagnosis|10587,10606|false|false|false|C4255018||Secondary Diagnosis
+Finding|Finding|Principle Diagnosis|10587,10606|false|false|false|C0332138|Secondary diagnosis|Secondary Diagnosis
+Attribute|Clinical Attribute|Principle Diagnosis|10597,10606|false|false|false|C0945731||Diagnosis
+Event|Event|Principle Diagnosis|10597,10606|false|false|false|||Diagnosis
+Finding|Classification|Principle Diagnosis|10597,10606|false|false|false|C1546899;C1704338|Diagnosis Classification - Diagnosis;diagnosis aspects|Diagnosis
+Finding|Functional Concept|Principle Diagnosis|10597,10606|false|false|false|C1546899;C1704338|Diagnosis Classification - Diagnosis;diagnosis aspects|Diagnosis
+Procedure|Diagnostic Procedure|Principle Diagnosis|10597,10606|false|false|false|C0011900|Diagnosis|Diagnosis
+Finding|Sign or Symptom|Principle Diagnosis|10608,10617|false|true|false|C0004604|Back Pain|Back Pain
+Attribute|Clinical Attribute|Principle Diagnosis|10613,10617|false|false|false|C2598155||Pain
+Event|Event|Principle Diagnosis|10613,10617|false|false|false|||Pain
+Finding|Functional Concept|Principle Diagnosis|10613,10617|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Finding|Sign or Symptom|Principle Diagnosis|10613,10617|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Disorder|Disease or Syndrome|Principle Diagnosis|10618,10626|false|false|false|C0011847;C0011849;C0011860|Diabetes;Diabetes Mellitus;Diabetes Mellitus, Non-Insulin-Dependent|Diabetes
+Event|Event|Principle Diagnosis|10618,10626|false|false|false|||Diabetes
+Finding|Mental Process|Discharge Condition|10651,10657|false|false|false|C0229992|Psyche structure|Mental
+Attribute|Clinical Attribute|Discharge Condition|10651,10664|false|false|false|C0488568;C0488569||Mental Status
+Finding|Finding|Discharge Condition|10651,10664|false|false|false|C0278060|Mental state|Mental Status
+Attribute|Clinical Attribute|Discharge Condition|10658,10664|false|false|false|C5889824||Status
+Finding|Idea or Concept|Discharge Condition|10658,10664|false|false|false|C1546481|What subject filter - Status|Status
+Event|Event|Discharge Condition|10666,10671|false|false|false|||Clear
+Finding|Idea or Concept|Discharge Condition|10666,10671|false|false|false|C1550016|Remote control command - Clear|Clear
+Event|Event|Discharge Condition|10676,10684|false|false|false|||coherent
+Finding|Finding|Discharge Condition|10676,10684|false|false|false|C4068804|Coherent|coherent
+Event|Event|Discharge Condition|10686,10691|false|false|false|||Level
+Attribute|Clinical Attribute|Discharge Condition|10686,10708|false|false|false|C4050479||Level of Consciousness
+Finding|Finding|Discharge Condition|10686,10708|false|false|false|C0234425|Level of consciousness|Level of Consciousness
+Event|Event|Discharge Condition|10695,10708|false|false|false|||Consciousness
+Finding|Finding|Discharge Condition|10695,10708|false|false|false|C0009791;C0234421;C0517960|Conscious;Consciousness related finding|Consciousness
+Finding|Mental Process|Discharge Condition|10695,10708|false|false|false|C0009791;C0234421;C0517960|Conscious;Consciousness related finding|Consciousness
+Attribute|Clinical Attribute|Discharge Condition|10710,10715|false|false|false|C5890168||Alert
+Drug|Organic Chemical|Discharge Condition|10710,10715|false|false|false|C0718338|Alert brand of caffeine|Alert
+Drug|Pharmacologic Substance|Discharge Condition|10710,10715|false|false|false|C0718338|Alert brand of caffeine|Alert
+Event|Event|Discharge Condition|10710,10715|false|false|false|||Alert
+Finding|Finding|Discharge Condition|10710,10715|false|false|false|C0239110;C0424536;C2004580;C3665546|Alert;Alert note;Consciousness clear;Mentally alert|Alert
+Finding|Functional Concept|Discharge Condition|10710,10715|false|false|false|C0239110;C0424536;C2004580;C3665546|Alert;Alert note;Consciousness clear;Mentally alert|Alert
+Finding|Intellectual Product|Discharge Condition|10710,10715|false|false|false|C0239110;C0424536;C2004580;C3665546|Alert;Alert note;Consciousness clear;Mentally alert|Alert
+Event|Event|Discharge Condition|10720,10731|false|false|false|||interactive
+Finding|Functional Concept|Discharge Condition|10720,10731|false|false|false|C1704675|Interaction|interactive
+Event|Activity|Discharge Condition|10733,10741|false|false|false|C0441655|Activities|Activity
+Finding|Daily or Recreational Activity|Discharge Condition|10733,10741|false|false|false|C0026606;C3668946|Activity (animal life circumstance);Physical activity|Activity
+Finding|Finding|Discharge Condition|10733,10741|false|false|false|C0026606;C3668946|Activity (animal life circumstance);Physical activity|Activity
+Attribute|Clinical Attribute|Discharge Condition|10742,10748|false|false|false|C5889824||Status
+Event|Event|Discharge Condition|10742,10748|false|false|false|||Status
+Finding|Idea or Concept|Discharge Condition|10742,10748|false|false|false|C1546481|What subject filter - Status|Status
+Event|Event|Discharge Condition|10750,10760|false|false|false|||Ambulatory
+Finding|Functional Concept|Discharge Condition|10750,10760|false|false|false|C0439841;C1547135;C1561561;C5401192|Ambulatory;Ambulatory (qualifier value);Level of Care - Ambulatory;Referral category - Ambulatory|Ambulatory
+Finding|Idea or Concept|Discharge Condition|10750,10760|false|false|false|C0439841;C1547135;C1561561;C5401192|Ambulatory;Ambulatory (qualifier value);Level of Care - Ambulatory;Referral category - Ambulatory|Ambulatory
+Finding|Intellectual Product|Discharge Condition|10750,10760|false|false|false|C0439841;C1547135;C1561561;C5401192|Ambulatory;Ambulatory (qualifier value);Level of Care - Ambulatory;Referral category - Ambulatory|Ambulatory
+Procedure|Health Care Activity|Discharge Condition|10750,10760|false|false|false|C1561560|ambulatory encounter|Ambulatory
+Event|Event|Discharge Condition|10763,10774|false|false|false|||Independent
+Finding|Finding|Discharge Condition|10763,10774|false|false|false|C0085862;C1299583;C1549571;C1608386|Coordination of Benefits - Independent;Independence;Independently able;Religious Affiliation - Independent|Independent
+Finding|Idea or Concept|Discharge Condition|10763,10774|false|false|false|C0085862;C1299583;C1549571;C1608386|Coordination of Benefits - Independent;Independence;Independently able;Religious Affiliation - Independent|Independent
+Finding|Gene or Genome|Discharge Instructions|10803,10807|false|false|false|C4320303|FBXW7-AS1 gene|Dear
+Event|Event|Discharge Instructions|10823,10827|false|false|false|||seen
+Finding|Finding|Discharge Instructions|10835,10844|false|false|false|C1546399;C1546844;C1561583;C1561584;C1561585;C1561586;C1561587;C1561588;C1561589;C2745965|Admission Type - Emergency;Certification patient type - Emergency;Consent Bypass Reason - Emergency;Consent Non-Disclosure Reason - Emergency;Emergencies [Disease/Finding];Encounter Admission Source - emergency;Level of Care - Emergency;Patient Class - Emergency;Referral category - Emergency;Visit Priority Code - Emergency|emergency
+Finding|Idea or Concept|Discharge Instructions|10835,10844|false|false|false|C1546399;C1546844;C1561583;C1561584;C1561585;C1561586;C1561587;C1561588;C1561589;C2745965|Admission Type - Emergency;Certification patient type - Emergency;Consent Bypass Reason - Emergency;Consent Non-Disclosure Reason - Emergency;Emergencies [Disease/Finding];Encounter Admission Source - emergency;Level of Care - Emergency;Patient Class - Emergency;Referral category - Emergency;Visit Priority Code - Emergency|emergency
+Finding|Intellectual Product|Discharge Instructions|10835,10844|false|false|false|C1546399;C1546844;C1561583;C1561584;C1561585;C1561586;C1561587;C1561588;C1561589;C2745965|Admission Type - Emergency;Certification patient type - Emergency;Consent Bypass Reason - Emergency;Consent Non-Disclosure Reason - Emergency;Emergencies [Disease/Finding];Encounter Admission Source - emergency;Level of Care - Emergency;Patient Class - Emergency;Referral category - Emergency;Visit Priority Code - Emergency|emergency
+Finding|Pathologic Function|Discharge Instructions|10835,10844|false|false|false|C1546399;C1546844;C1561583;C1561584;C1561585;C1561586;C1561587;C1561588;C1561589;C2745965|Admission Type - Emergency;Certification patient type - Emergency;Consent Bypass Reason - Emergency;Consent Non-Disclosure Reason - Emergency;Emergencies [Disease/Finding];Encounter Admission Source - emergency;Level of Care - Emergency;Patient Class - Emergency;Referral category - Emergency;Visit Priority Code - Emergency|emergency
+Phenomenon|Phenomenon or Process|Discharge Instructions|10835,10844|false|false|false|C0013956|Emergency Situation|emergency
+Procedure|Health Care Activity|Discharge Instructions|10835,10844|false|false|false|C1553500|emergency encounter|emergency
+Event|Event|Discharge Instructions|10845,10855|false|false|false|||department
+Finding|Idea or Concept|Discharge Instructions|10845,10855|false|false|false|C1547537;C1548283;C1549615|Department - Charge type;Department - No suggested values defined;Organization Unit Type - Department|department
+Finding|Sign or Symptom|Discharge Instructions|10860,10869|false|true|false|C0004604|Back Pain|back pain
+Attribute|Clinical Attribute|Discharge Instructions|10865,10869|false|false|false|C2598155||pain
+Event|Event|Discharge Instructions|10865,10869|false|false|false|||pain
+Finding|Functional Concept|Discharge Instructions|10865,10869|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Discharge Instructions|10865,10869|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Event|Event|Discharge Instructions|10881,10889|false|false|false|||admitted
+Finding|Idea or Concept|Discharge Instructions|10897,10905|false|false|false|C1547192|Organization unit type - Hospital|hospital
+Event|Event|Discharge Instructions|10926,10935|false|false|false|||diagnosed
+Anatomy|Body Part, Organ, or Organ Component|Discharge Instructions|10944,10951|false|false|false|C0042027|Urinary tract|urinary
+Anatomy|Body Part, Organ, or Organ Component|Discharge Instructions|10944,10957|false|false|false|C0042027;C1508753|Urinary system;Urinary tract|urinary tract
+Anatomy|Body System|Discharge Instructions|10944,10957|false|false|false|C0042027;C1508753|Urinary system;Urinary tract|urinary tract
+Disorder|Disease or Syndrome|Discharge Instructions|10944,10967|false|false|false|C0042029|Urinary tract infection|urinary tract infection
+Anatomy|Body Part, Organ, or Organ Component|Discharge Instructions|10952,10957|false|false|false|C1185740|Tract|tract
+Disorder|Disease or Syndrome|Discharge Instructions|10958,10967|false|false|false|C0009450|Communicable Diseases|infection
+Event|Event|Discharge Instructions|10958,10967|false|false|false|||infection
+Finding|Pathologic Function|Discharge Instructions|10958,10967|false|false|false|C3714514|Infection|infection
+Event|Event|Discharge Instructions|10978,10985|false|false|false|||treated
+Drug|Antibiotic|Discharge Instructions|10991,11002|false|false|false|C0003232;C0003237;C3540704;C3540705;C3540706;C3540707;C3540708;C3540709;C3540710|Antibiotic throat preparations;Antibiotics;Antibiotics FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE;Antibiotics for systemic use;Antibiotics, Antitubercular;Antibiotics, Gynecological;Antibiotics, ophthalmologic;Antifungal Antibiotics, Topical;antibiotics, intestinal|antibiotics
+Event|Event|Discharge Instructions|10991,11002|false|false|false|||antibiotics
+Drug|Substance|Discharge Instructions|11008,11014|false|false|false|C0302908|Liquid substance|fluids
+Event|Event|Discharge Instructions|11008,11014|false|false|false|||fluids
+Finding|Body Substance|Discharge Instructions|11008,11014|false|false|false|C1521806|Mouse Body Fluid or Substance|fluids
+Procedure|Therapeutic or Preventive Procedure|Discharge Instructions|11008,11014|false|false|false|C0016286|Fluid Therapy|fluids
+Attribute|Clinical Attribute|Discharge Instructions|11019,11023|false|false|false|C2598155||pain
+Event|Event|Discharge Instructions|11019,11023|false|false|false|||pain
+Finding|Functional Concept|Discharge Instructions|11019,11023|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Discharge Instructions|11019,11023|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Drug|Pharmacologic Substance|Discharge Instructions|11024,11034|false|false|false|C0013227|Pharmaceutical Preparations|medication
+Event|Event|Discharge Instructions|11024,11034|false|false|false|||medication
+Finding|Intellectual Product|Discharge Instructions|11024,11034|false|false|false|C3244316;C4284232|Medications;medication - HL7 publishing domain|medication
+Event|Event|Discharge Instructions|11047,11054|false|false|false|||concern
+Finding|Idea or Concept|Discharge Instructions|11047,11054|false|false|false|C2699424|Concern|concern
+Attribute|Clinical Attribute|Discharge Instructions|11069,11073|false|false|false|C2598155||pain
+Event|Event|Discharge Instructions|11069,11073|false|false|false|||pain
+Finding|Functional Concept|Discharge Instructions|11069,11073|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|Discharge Instructions|11069,11073|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Procedure|Diagnostic Procedure|Discharge Instructions|11077,11084|false|false|false|C0040405|X-Ray Computed Tomography|CT scan
+Event|Event|Discharge Instructions|11080,11084|false|false|false|||scan
+Procedure|Diagnostic Procedure|Discharge Instructions|11080,11084|false|false|false|C0034606;C0441633|Radionuclide Imaging;Scanning|scan
+Event|Event|Discharge Instructions|11113,11123|false|false|false|||determined
+Anatomy|Body Part, Organ, or Organ Component|Discharge Instructions|11149,11155|false|false|false|C0022646;C0227665|Both kidneys;Kidney|kidney
+Disorder|Neoplastic Process|Discharge Instructions|11149,11155|false|false|false|C0496892;C0496927|Benign neoplasm of kidney;Neoplasm of uncertain or unknown behavior of kidney|kidney
+Finding|Sign or Symptom|Discharge Instructions|11149,11155|false|false|false|C0812426|Kidney problem|kidney
+Procedure|Diagnostic Procedure|Discharge Instructions|11149,11155|false|false|false|C0869841;C4554465|Procedures on Kidney;examination of kidney|kidney
+Procedure|Therapeutic or Preventive Procedure|Discharge Instructions|11149,11155|false|false|false|C0869841;C4554465|Procedures on Kidney;examination of kidney|kidney
+Disorder|Disease or Syndrome|Discharge Instructions|11149,11161|true|false|false|C0392525|Nephrolithiasis|kidney stone
+Finding|Body Substance|Discharge Instructions|11149,11161|true|false|false|C0022650|Kidney Calculi|kidney stone
+Event|Event|Discharge Instructions|11156,11161|false|false|false|||stone
+Finding|Body Substance|Discharge Instructions|11156,11161|false|false|false|C0006736|Calculi|stone
+Disorder|Disease or Syndrome|Discharge Instructions|11168,11177|false|false|false|C0009450|Communicable Diseases|infection
+Event|Event|Discharge Instructions|11168,11177|false|false|false|||infection
+Finding|Pathologic Function|Discharge Instructions|11168,11177|false|false|false|C3714514|Infection|infection
+Disorder|Disease or Syndrome|Discharge Instructions|11184,11192|false|false|false|C0011847;C0011849;C0011860|Diabetes;Diabetes Mellitus;Diabetes Mellitus, Non-Insulin-Dependent|diabetes
+Event|Event|Discharge Instructions|11184,11192|false|false|false|||diabetes
+Event|Event|Discharge Instructions|11198,11208|false|false|false|||controlled
+Drug|Amino Acid, Peptide, or Protein|Discharge Instructions|11217,11224|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Hormone|Discharge Instructions|11217,11224|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Drug|Pharmacologic Substance|Discharge Instructions|11217,11224|false|false|false|C0021641;C0795635;C1533581;C1579433;C3714501;C4721402|INS protein, human;Insulin;Insulin Drug Class;Insulin [EPC];Therapeutic Insulin;insulin, regular, human|insulin
+Event|Event|Discharge Instructions|11217,11224|false|false|false|||insulin
+Finding|Gene or Genome|Discharge Instructions|11217,11224|false|false|false|C1337112|INS gene|insulin
+Procedure|Laboratory Procedure|Discharge Instructions|11217,11224|false|false|false|C0202098|Insulin measurement|insulin
+Anatomy|Body Part, Organ, or Organ Component|Discharge Instructions|11225,11230|false|false|false|C0222045|Integumentary scale|scale
+Event|Activity|Discharge Instructions|11225,11230|false|false|false|C1947916|Scaling|scale
+Finding|Conceptual Entity|Discharge Instructions|11225,11230|false|false|false|C0349674;C1522412;C2981742|Base Number;Scale - rank;Scale, LOINC Axis 5|scale
+Finding|Intellectual Product|Discharge Instructions|11225,11230|false|false|false|C0349674;C1522412;C2981742|Base Number;Scale - rank;Scale, LOINC Axis 5|scale
+Event|Event|Discharge Instructions|11249,11258|false|false|false|||inpatient
+Finding|Idea or Concept|Discharge Instructions|11249,11258|false|false|false|C1548438;C1549404|Patient Class - Inpatient;Referral category - Inpatient|inpatient
+Procedure|Health Care Activity|Discharge Instructions|11249,11258|false|false|false|C1555324|inpatient encounter|inpatient
+Event|Event|Discharge Instructions|11273,11283|false|false|false|||discharged
+Event|Event|Discharge Instructions|11284,11288|false|false|false|||home
+Finding|Idea or Concept|Discharge Instructions|11284,11288|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|Discharge Instructions|11284,11288|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|Discharge Instructions|11284,11288|false|false|false|C1553498|home health encounter|home
+Drug|Antibiotic|Discharge Instructions|11292,11303|false|false|false|C0003232;C0003237;C3540704;C3540705;C3540706;C3540707;C3540708;C3540709;C3540710|Antibiotic throat preparations;Antibiotics;Antibiotics FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE;Antibiotics for systemic use;Antibiotics, Antitubercular;Antibiotics, Gynecological;Antibiotics, ophthalmologic;Antifungal Antibiotics, Topical;antibiotics, intestinal|antibiotics
+Event|Event|Discharge Instructions|11292,11303|false|false|false|||antibiotics
+Event|Event|Discharge Instructions|11308,11314|false|false|false|||intent
+Finding|Idea or Concept|Discharge Instructions|11308,11314|false|false|false|C0162425;C1550453|Act Mood - intent|intent
+Finding|Mental Process|Discharge Instructions|11308,11314|false|false|false|C0162425;C1550453|Act Mood - intent|intent
+Event|Event|Discharge Instructions|11318,11324|false|false|false|||follow
+Finding|Functional Concept|Discharge Instructions|11318,11324|false|false|false|C1719822;C4281991|Follow;Follow - dosing instruction imperative|follow
+Finding|Intellectual Product|Discharge Instructions|11318,11324|false|false|false|C1719822;C4281991|Follow;Follow - dosing instruction imperative|follow
+Finding|Intellectual Product|Discharge Instructions|11339,11351|false|false|false|C1547426|Location Service Code - Primary Care|primary care
+Procedure|Health Care Activity|Discharge Instructions|11339,11351|false|false|false|C0033137|Primary Health Care|primary care
+Attribute|Clinical Attribute|Discharge Instructions|11339,11360|false|false|false|C2735025||primary care provider
+Finding|Idea or Concept|Discharge Instructions|11339,11360|false|false|false|C1547431|Primary Care Provider - Provider role|primary care provider
+Event|Activity|Discharge Instructions|11347,11351|false|false|false|C1947933|care activity|care
+Finding|Finding|Discharge Instructions|11347,11351|false|false|false|C0580931;C2362566|Continuity Assessment Record and Evaluation;In care (finding)|care
+Finding|Intellectual Product|Discharge Instructions|11347,11351|false|false|false|C0580931;C2362566|Continuity Assessment Record and Evaluation;In care (finding)|care
+Finding|Functional Concept|Discharge Instructions|11352,11360|false|false|false|C1138603;C1555587|Provider;Transaction counts and value totals - provider|provider
+Finding|Intellectual Product|Discharge Instructions|11352,11360|false|false|false|C1138603;C1555587|Provider;Transaction counts and value totals - provider|provider
+Attribute|Clinical Attribute|Discharge Instructions|11388,11399|false|false|false|C0802604;C2598133||medications
+Drug|Pharmacologic Substance|Discharge Instructions|11388,11399|false|false|false|C0013227|Pharmaceutical Preparations|medications
+Event|Event|Discharge Instructions|11388,11399|false|false|false|||medications
+Finding|Intellectual Product|Discharge Instructions|11388,11399|false|false|false|C4284232|Medications|medications
+Event|Event|Discharge Instructions|11403,11413|false|false|false|||prescribed
+Event|Activity|Discharge Instructions|11437,11449|false|false|false|C0003629|Appointments|appointments
+Event|Event|Discharge Instructions|11437,11449|false|false|false|||appointments
+Event|Event|Discharge Instructions|11482,11486|false|false|false|||call
+Attribute|Clinical Attribute|Discharge Instructions|11493,11499|false|false|false|C0944911||weight
+Event|Event|Discharge Instructions|11493,11499|false|false|false|||weight
+Finding|Finding|Discharge Instructions|11493,11499|false|false|false|C0424653;C2053618|Weight symptom (finding);infant weight for previous delivery (history)|weight
+Finding|Sign or Symptom|Discharge Instructions|11493,11499|false|false|false|C0424653;C2053618|Weight symptom (finding);infant weight for previous delivery (history)|weight
+Procedure|Health Care Activity|Discharge Instructions|11493,11499|false|false|false|C1305866|Weighing patient|weight
+Event|Event|Discharge Instructions|11500,11504|false|false|false|||goes
+Procedure|Laboratory Procedure|Discharge Instructions|11521,11524|false|false|false|C3161851|liquid-based cytology (procedure)|lbs
+Event|Event|Discharge Instructions|11536,11544|false|false|false|||pleasure
+Finding|Intellectual Product|Discharge Instructions|11536,11544|false|false|false|C0679105;C1610547|Production Class Code - Pleasure;pleasurable emotion|pleasure
+Finding|Mental Process|Discharge Instructions|11536,11544|false|false|false|C0679105;C1610547|Production Class Code - Pleasure;pleasurable emotion|pleasure
+Event|Activity|Discharge Instructions|11552,11556|false|false|false|C1947933|care activity|care
+Event|Event|Discharge Instructions|11552,11556|false|false|false|||care
+Finding|Finding|Discharge Instructions|11552,11556|false|false|false|C0580931;C2362566|Continuity Assessment Record and Evaluation;In care (finding)|care
+Finding|Intellectual Product|Discharge Instructions|11552,11556|false|false|false|C0580931;C2362566|Continuity Assessment Record and Evaluation;In care (finding)|care
+Finding|Intellectual Product|Discharge Instructions|11552,11559|false|false|false|C1555558|care of - AddressPartType|care of
+Event|Activity|Discharge Instructions|11574,11578|false|false|false|C1947933|care activity|Care
+Finding|Finding|Discharge Instructions|11574,11578|false|false|false|C0580931;C2362566|Continuity Assessment Record and Evaluation;In care (finding)|Care
+Finding|Intellectual Product|Discharge Instructions|11574,11578|false|false|false|C0580931;C2362566|Continuity Assessment Record and Evaluation;In care (finding)|Care
+Attribute|Clinical Attribute|Discharge Instructions|11574,11583|false|false|false|C4321316||Care Team
+Finding|Finding|Discharge Instructions|11574,11583|false|false|false|C4321315|Care team|Care Team
+Procedure|Health Care Activity|Discharge Instructions|11586,11594|false|false|false|C1522577|follow-up|Followup
+Attribute|Clinical Attribute|Discharge Instructions|11595,11607|false|false|false|C3263700||Instructions
+Event|Event|Discharge Instructions|11595,11607|false|false|false|||Instructions
+Finding|Intellectual Product|Discharge Instructions|11595,11607|false|false|false|C0302828;C1442085|Instruction [Publication Type];Instructions|Instructions
+

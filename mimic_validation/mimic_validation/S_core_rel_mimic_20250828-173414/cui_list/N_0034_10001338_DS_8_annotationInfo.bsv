@@ -1,0 +1,938 @@
+CUI | Concept | Semantic Group | Negated | Family History | Location | Document Text
+null|MDF Attribute Type - Name|Finding|false|false||Name
+null|Person Name|Finding|false|false||Name
+null|Name|Finding|false|false||Namenull|Name (property) (qualifier value)|Modifier|false|false||Namenull|Storage Unit|Device|false|false||Unit
+null|Unit device|Device|false|false||Unitnull|Unit - NCI Thesaurus Property|LabModifier|false|false||Unit
+null|Unit of Measure|LabModifier|false|false||Unit
+null|Unit|LabModifier|false|false||Unit
+null|Enzyme Unit|LabModifier|false|false||Unitnull|null|Attribute|false|false||Admission Datenull|Date of admission|Time|false|false||Admission Datenull|Admission activity|Procedure|false|false||Admission
+null|Hospital admission|Procedure|false|false||Admissionnull|null|Attribute|false|false||Discharge Datenull|Discharge date|Time|false|false||Discharge Datenull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Patient date of birth|Time|false|false||Date of Birthnull|Entity Name Part Qualifier - birth|Finding|false|false||Birth
+null|Childbirth|Finding|false|false||Birth
+null|birth (history)|Finding|false|false||Birth
+null|Name Given at Birth|Finding|false|false||Birth
+null|Birth|Finding|false|false||Birthnull|Sex Behavior|Finding|false|false||Sex
+null|PLXNA3 gene|Finding|false|false||Sex
+null|Coitus|Finding|false|false||Sex
+null|null|Finding|false|false||Sexnull|null|Attribute|false|false||Sexnull|sex|Subject|false|false||Sex
+null|Gender|Subject|false|false||Sexnull|ActInformationPrivacyReason - service|Finding|false|false||Servicenull|Software Service|Device|false|false||Servicenull|Services|Event|false|false||Servicenull|Pharmaceutical Preparations|Drug|false|false||MEDICINEnull|Medicine|Title|false|false||MEDICINEnull|Attending (action)|Finding|false|false||Attendingnull|Attending (provider role)|Subject|false|false||Attendingnull|Abdominal Pain|Finding|false|false|C0000726|Abdominal painnull|Abdomen|Anatomy|false|false|C1549543;C0030193;C0000737|Abdominalnull|Abdominal (qualifier value)|Modifier|false|false||Abdominalnull|Administration Method - Pain|Finding|false|false|C0000726|pain
+null|Pain|Finding|false|false|C0000726|painnull|null|Attribute|false|false||painnull|United States Military Commissioned Officer O4 (qualifier value)|Finding|false|false||Majornull|Major <Sympycninae>|Entity|false|false||Majornull|Major|Modifier|false|false||Majornull|Operative Surgical Procedures|Procedure|false|false||Surgical
+null|Surgical service|Procedure|false|false||Surgicalnull|Invasive procedure|Procedure|false|false||Invasive Procedurenull|Open approach|Modifier|false|false||Invasive Procedurenull|Invasive|Modifier|false|false||Invasivenull|Procedure (set of actions)|Finding|false|false||Procedurenull|Interventional procedure|Procedure|false|false||Procedurenull|null|Attribute|false|false||Procedurenull|Act Class - procedure|Event|false|false||Procedurenull|Colonoscopy through stoma; with biopsy, single or multiple|Procedure|false|false||Colonoscopy with biopsy
+null|Colonoscopy and Biopsy|Procedure|false|false||Colonoscopy with biopsynull|Consent Type - Colonoscopy|Procedure|false|false||Colonoscopy
+null|colonoscopy|Procedure|false|false||Colonoscopynull|biopsy characteristics|Finding|false|false||biopsy
+null|null|Finding|false|false||biopsynull|Biopsy Procedures on the Pharynx, Adenoids, and Tonsils|Procedure|false|false||biopsy
+null|Biopsy|Procedure|false|false||biopsy
+null|Consent Type - biopsy|Procedure|false|false||biopsynull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Transaction counts and value totals - year|Finding|false|false||year
+null|Precision - year|Finding|false|false||yearnull|year|Time|false|false||yearnull|Old|Time|false|false||oldnull|Females|Subject|false|false||female
+null|Woman|Subject|false|false||femalenull|Female, Self-Report|Modifier|false|false||female
+null|Female Phenotype|Modifier|false|false||femalenull|Sigmoid colon|Anatomy|false|false||sigmoidnull|Diverticulitis|Disorder|false|false||diverticulitisnull|removal technique|Procedure|false|false||resection
+null|Excision|Procedure|false|false||resectionnull|Structure of right lower quadrant of abdomen|Anatomy|false|false||RLQnull|Right lower quadrant|Modifier|false|false||RLQnull|Abdominal Pain|Finding|false|false|C0000726|abdominal painnull|Abdomen|Anatomy|false|false|C2598155;C1549543;C0030193;C0000737|abdominalnull|Abdominal (qualifier value)|Modifier|false|false||abdominalnull|Administration Method - Pain|Finding|false|false|C0000726|pain
+null|Pain|Finding|false|false|C0000726|painnull|null|Attribute|false|false|C0000726|painnull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Afternoon (qualifier value)|Time|false|false||afternoonnull|Overnight|Time|false|false||overnightnull|Present|Finding|false|false||present
+null|Presentation|Finding|false|false||presentnull|Gnawing sensation quality|Finding|false|false||gnawingnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Constant - dosing instruction fragment|Finding|false|false||constantnull|Constant (qualifier)|Modifier|false|false||constantnull|With intensity|Modifier|false|false||intensitynull|Similarity|Modifier|false|false||similarnull|Episode of|Time|false|false||episode ofnull|Episode of|Time|false|false||episodenull|Diverticulitis|Disorder|false|false||diverticulitisnull|Several|LabModifier|false|false||severalnull|year|Time|false|false||yearsnull|FBXW7 wt Allele|Finding|false|false||ago
+null|FBXW7 gene|Finding|false|false||agonull|Present|Finding|false|false||present
+null|Presentation|Finding|false|false||presentnull|Side|Modifier|false|false||sidenull|Malignant neoplasm of abdomen|Disorder|false|false|C0230168;C0000726|abdomennull|Abdomen problem|Finding|false|false|C0230168;C0000726|abdomennull|Abdomen|Anatomy|false|false|C0153662;C0941288|abdomen
+null|Abdominal Cavity|Anatomy|false|false|C0153662;C0941288|abdomennull|Fever symptoms (finding)|Finding|true|false||fever
+null|Fever|Finding|true|false||fevernull|Nausea|Finding|true|false||nauseanull|null|Attribute|true|false||nauseanull|Vomiting|Finding|true|false||vomitingnull|Dyspnea|Finding|false|false||SOBnull|Chest Pain|Finding|true|false|C1527391;C0817096|Chest painnull|null|Attribute|true|false|C1527391;C0817096|Chest painnull|Chest problem|Finding|false|false|C1527391;C0817096|Chestnull|Chest|Anatomy|false|false|C2926613;C0018932;C0741025;C0008031;C1549543;C0030193|Chest
+null|Anterior thoracic region|Anatomy|false|false|C2926613;C0018932;C0741025;C0008031;C1549543;C0030193|Chestnull|Administration Method - Pain|Finding|true|false|C1527391;C0817096|pain
+null|Pain|Finding|true|false|C1527391;C0817096|painnull|null|Attribute|true|false||painnull|Hematochezia|Disorder|true|false|C1527391;C0817096|BRBPRnull|subjective (symptom)|Finding|false|false||subjectivenull|null|Attribute|false|false||subjectivenull|Subjective observation (qualifier value)|Modifier|false|false||subjectivenull|Feelings|Finding|false|false||feelingnull|Chills|Finding|false|false||chillsnull|null|Time|false|false||Prior tonull|null|Time|false|false||Priornull|Electrical Current|Phenomenon|false|false||currentnull|Current (present time)|Time|false|false||currentnull|Episode of|Time|false|false||episodenull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Sinusitis|Disorder|false|false|C1305231;C0030471|sinus infectionnull|Sinus brand of acetaminophen-pseudoephedrine|Drug|false|false|C1305231;C0030471|sinus
+null|Sinus brand of acetaminophen-pseudoephedrine|Drug|false|false|C1305231;C0030471|sinusnull|pathologic fistula|Disorder|false|false|C1305231;C0030471|sinusnull|Sinus - general anatomical term|Anatomy|false|false|C0009450;C0016169;C3714514;C0037199;C0723346|sinus
+null|Nasal sinus|Anatomy|false|false|C0009450;C0016169;C3714514;C0037199;C0723346|sinusnull|Communicable Diseases|Disorder|false|false|C1305231;C0030471|infectionnull|Infection|Finding|false|false|C1305231;C0030471|infectionnull|3 Weeks|Time|false|false||3 weeksnull|week|Time|false|false||weeksnull|FBXW7 wt Allele|Finding|false|false||ago
+null|FBXW7 gene|Finding|false|false||agonull|1 Week|Time|false|false||one weeknull|Transaction counts and value totals - week|Finding|false|false||weeknull|week|Time|false|false||weeknull|FBXW7 wt Allele|Finding|false|false||ago
+null|FBXW7 gene|Finding|false|false||agonull|2 Weeks|Time|false|false||2 weeksnull|week|Time|false|false||weeksnull|FBXW7 wt Allele|Finding|false|false||ago
+null|FBXW7 gene|Finding|false|false||agonull|Low dose|LabModifier|false|false||low dosenull|IPSS-R Risk Category Low|Finding|false|false|C0228217|low
+null|IPSS Risk Category Low|Finding|false|false|C0228217|low
+null|low confidentiality|Finding|false|false|C0228217|lownull|Low - MessageWaitingPriority|Modifier|false|false||low
+null|low|Modifier|false|false||low
+null|low exposure|Modifier|false|false||lownull|null|LabModifier|false|false||lownull|Unit dose|LabModifier|false|false||dose
+null|Dosage|LabModifier|false|false||dosenull|Ocular Cicatricial Pemphigoid|Disorder|false|false|C0228217|OCPnull|Structure of occipital pole|Anatomy|false|false|C1282359;C5203106;C4522223;C1550472|OCPnull|What subject filter - Order|Finding|false|false||order
+null|Medical Order|Finding|false|false||order
+null|Order (taxonomic)|Finding|false|false||order
+null|Order (record artifact)|Finding|false|false||order
+null|Order (document)|Finding|false|false||ordernull|Order [PK]|Phenomenon|false|false||ordernull|Order (action)|Event|false|false||ordernull|Order (arrangement)|Modifier|false|false||order
+null|Permutation|Modifier|false|false||ordernull|Perimenopausal state|Finding|false|false||perimenopausalnull|Muscle Cramp|Finding|false|false||crampingnull|Cramping sensation quality|Modifier|false|false||crampingnull|Precision - second|Finding|false|false||second
+null|metastatic qualifier|Finding|false|false||second
+null|Second Suffix|Finding|false|false||secondnull|seconds|Time|false|false||secondnull|Second Unit of Plane Angle|LabModifier|false|false||second
+null|second (number)|LabModifier|false|false||secondnull|Transaction counts and value totals - week|Finding|false|false||weeknull|week|Time|false|false||weeknull|Menstrual spotting|Finding|false|false||spotting
+null|Metrorrhagia|Finding|false|false||spotting
+null|Spotting|Finding|false|false||spottingnull|Intermittent|Time|false|false||intermittentnull|Hemorrhage|Finding|false|false||bleedingnull|Past Week|Time|false|false||past weeknull|Transaction counts and value totals - week|Finding|false|false||weeknull|week|Time|false|false||weeknull|Episode of|Time|false|false||episode ofnull|Episode of|Time|false|false||episodenull|rectal discharge diarrhea (physical finding)|Finding|false|false||diarrhea
+null|Diarrhea|Finding|false|false||diarrheanull|1 Week|Time|false|false||one weeknull|Transaction counts and value totals - week|Finding|false|false||weeknull|week|Time|false|false||weeknull|FBXW7 wt Allele|Finding|false|false||ago
+null|FBXW7 gene|Finding|false|false||agonull|Morning|Time|false|false||morningnull|Own|Finding|false|false||ownnull|Feelings|Finding|false|false||feelingnull|Lightheadedness|Finding|false|false||lightheadednessnull|Associated with|Modifier|false|false||associated withnull|Associated with|Modifier|false|false||associatednull|Increased sweating|Finding|false|false||diaphoresisnull|Nausea|Finding|false|false||nauseanull|null|Attribute|false|false||nauseanull|Initial (abbreviation)|Finding|false|false||initialnull|Initially|Time|false|false||initialnull|Firstly|Modifier|false|false||initialnull|Relationship modifier - Patient|Finding|false|false||Patient
+null|Specimen Type - Patient|Finding|false|false||Patient
+null|Mail Claim Party - Patient|Finding|false|false||Patient
+null|Report source - Patient|Finding|false|false||Patient
+null|null|Finding|false|false||Patient
+null|Disabled Person Code - Patient|Finding|false|false||Patientnull|Patients|Subject|false|false||Patientnull|Veterinary Patient|Entity|false|false||Patientnull|morphine|Drug|false|false||morphine
+null|morphine|Drug|false|false||morphinenull|Dilaudid|Drug|false|false||dilaudid
+null|Dilaudid|Drug|false|false||dilaudidnull|Zofran|Drug|false|false||zofran
+null|Zofran|Drug|false|false||zofrannull|Bimanual|Finding|false|false||bimanualnull|Exam|Finding|false|false||examnull|Medical Examination|Procedure|false|false||examnull|Aspects of signs|Finding|false|false||signs
+null|Physical findings|Finding|false|false||signsnull|Manufactured sign|Device|false|false||signsnull|Mass of body structure|Finding|false|false||mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false||mass
+null|null|Finding|false|false||mass
+null|FBN1 wt Allele|Finding|false|false||mass
+null|FBN1 gene|Finding|false|false||mass
+null|Mass of body region|Finding|false|false||massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|CMT brand of Choline Magnesium Trisalicylate|Drug|false|false||CMT
+null|CMT brand of Choline Magnesium Trisalicylate|Drug|false|false||CMTnull|CERVICAL MOTION TENDERNESS|Finding|false|false||CMTnull|Adnexal tenderness|Finding|false|false||adnexal tendernessnull|Emotional tenderness|Finding|false|false||tenderness
+null|Sore to touch|Finding|false|false||tendernessnull|Laboratory test finding|Lab|false|false||Labsnull|Leukocytosis|Disorder|false|false||leukocytosisnull|Blood leukocyte number above reference range|Finding|false|false||leukocytosisnull|null|Modifier|false|false||unremarkablenull|CT of abdomen|Procedure|false|false|C0230168;C0000726|CT abdomennull|null|Attribute|false|false|C0230168;C0000726|CT abdomennull|Malignant neoplasm of abdomen|Disorder|false|false|C0230168;C0000726|abdomennull|Abdomen problem|Finding|false|false|C0230168;C0000726|abdomennull|Abdomen|Anatomy|false|false|C0941288;C0412620;C0153662;C1644645|abdomen
+null|Abdominal Cavity|Anatomy|false|false|C0941288;C0412620;C0153662;C1644645|abdomennull|Neoplasm of uncertain or unknown behavior of appendix|Disorder|false|false|C4037994;C0003617|appendix
+null|Benign neoplasm of appendix|Disorder|false|false|C4037994;C0003617|appendix
+null|Malignant neoplasm of appendix|Disorder|false|false|C4037994;C0003617|appendixnull|appendix - HTML link|Finding|false|false|C4037994;C0003617|appendixnull|Procedure on appendix|Procedure|false|false|C4037994;C0003617|appendixnull|Abdomen+Pelvis>Appendix|Anatomy|false|false|C0348899;C0496779;C0496860;C1552860;C0869813|appendix
+null|Appendix|Anatomy|false|false|C0348899;C0496779;C0496860;C1552860;C0869813|appendixnull|Thick-walled|Finding|false|false||thick-wallednull|Thick|Modifier|false|false||thicknull|Walled|Modifier|false|false||wallednull|Malignant neoplasm of cecum|Disorder|false|false|C0007531|cecum
+null|Benign neoplasm of cecum|Disorder|false|false|C0007531|cecumnull|Cecum|Anatomy|false|false|C0332149;C0496859;C0153437;C4283905;C1546709;C2700045;C0577573;C0577559;C1414542;C2051406|cecumnull|patient appearance regarding mental status exam|Procedure|false|false|C0007531|appearancenull|null|Attribute|false|false||appearancenull|Personal appearance|Subject|false|false||appearancenull|Appearance|Modifier|false|false||appearancenull|Kind of quantity - Appearance|LabModifier|false|false||appearancenull|Possible|Finding|false|false|C0007531|possiblenull|Possible diagnosis|Modifier|false|false||possible
+null|Possibly Related to Intervention|Modifier|false|false||possiblenull|Mass of body structure|Finding|false|false|C0007531|mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|mass
+null|null|Finding|false|false|C0007531|mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|mass
+null|FBN1 gene|Finding|false|false|C0007531|mass
+null|Mass of body region|Finding|false|false|C0007531|massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Ultrasound pelvis|Procedure|false|false|C0030797|Pelvic ultrasoundnull|Pelvis|Anatomy|false|false|C0220934;C1315081;C0041618;C0948766|Pelvicnull|Ultrasonic|Finding|false|false|C0030797|ultrasoundnull|Urological ultrasound|Procedure|false|false|C0030797|ultrasound
+null|Ultrasonography|Procedure|false|false|C0030797|ultrasoundnull|ultrasound device|Device|false|false||ultrasoundnull|Ultrasonic Shockwave|Phenomenon|false|false||ultrasound
+null|Ultrasonics (sound)|Phenomenon|false|false||ultrasoundnull|Source (property) (qualifier value)|Finding|true|false||source
+null|Term Source|Finding|true|false||source
+null|Source|Finding|true|false||sourcenull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Adequate|Modifier|false|false||adequate
+null|Sufficient|Modifier|false|false||adequatenull|Relief brand of phenylephrine|Drug|false|false||relief
+null|Relief brand of phenylephrine|Drug|false|false||reliefnull|Feeling relief|Finding|false|false||reliefnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Pharmaceutical Preparations|Drug|false|false||medicationsnull|Medications|Finding|false|false||medicationsnull|null|Attribute|false|false||medications
+null|null|Attribute|false|false||medicationsnull|Medical referral type|Finding|false|false||medical
+null|Medical|Finding|false|false||medical
+null|Medical school type|Finding|false|false||medicalnull|Medical service|Procedure|false|false||medicalnull|ActInformationPrivacyReason - service|Finding|false|false||servicenull|Software Service|Device|false|false||servicenull|Services|Event|false|false||servicenull|Demonstrates adequate pain control|Finding|false|false||pain controlnull|Pain control|Procedure|false|false||pain control
+null|Pain management (procedure)|Procedure|false|false||pain controlnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Control brand of phenylpropanolamine|Drug|false|false||control
+null|CONTROL veterinary product|Drug|false|false||control
+null|control substance|Drug|false|false||control
+null|Control brand of phenylpropanolamine|Drug|false|false||controlnull|Control - Relationship modifier|Finding|false|false||control
+null|Control function|Finding|false|false||control
+null|Scientific Control|Finding|false|false||controlnull|Control Groups|Subject|false|false||controlnull|True Control Status|Modifier|false|false||control
+null|control aspects|Modifier|false|false||controlnull|Transfer - product ownership|Finding|false|false||transfer
+null|Transfer Technique|Finding|false|false||transfer
+null|ActClass - transfer|Finding|false|false||transfer
+null|null|Finding|false|false||transfernull|Transfer (immobility management)|Procedure|false|false||transfernull|Floor (anatomic)|Anatomy|false|false|C1578483;C1550655;C1578481;C1578486;C1578484;C1578485|floornull|floor (object)|Device|false|false||floornull|Floor - story of building|Entity|false|false||floornull|Relationship modifier - Patient|Finding|false|false|C3714591;C0230178|patient
+null|Specimen Type - Patient|Finding|false|false|C3714591;C0230178|patient
+null|Mail Claim Party - Patient|Finding|false|false|C3714591;C0230178|patient
+null|Report source - Patient|Finding|false|false|C3714591;C0230178|patient
+null|null|Finding|false|false|C3714591;C0230178|patient
+null|Disabled Person Code - Patient|Finding|false|false|C3714591;C0230178|patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Administration Method - Pain|Finding|false|false|C0230178|pain
+null|Pain|Finding|false|false|C0230178|painnull|null|Attribute|false|false||painnull|Structure of right lower quadrant of abdomen|Anatomy|false|false|C1578483;C1550655;C1578481;C1578486;C1578484;C1578485;C1549543;C0030193|RLQnull|Right lower quadrant|Modifier|false|false||RLQnull|Mild Severity of Illness Code|Finding|false|false||mildnull|Mild (qualifier value)|Modifier|false|false||mild
+null|Mild Allergy Severity|Modifier|false|false||mildnull|Nausea|Finding|false|false||nauseanull|null|Attribute|false|false||nauseanull|Review of systems (procedure)|Procedure|false|false||Review of systemsnull|null|Attribute|false|false||Review of systems
+null|null|Attribute|false|false||Review of systemsnull|Review of|Finding|false|false||Review ofnull|Review (Publication Type)|Finding|false|false||Review
+null|Act Class - review|Finding|false|false||Reviewnull|System|Finding|false|false||systemsnull|Proline dehydrogenase deficiency|Disorder|false|false||HPInull|History of present illness (finding)|Finding|false|false||HPI
+null|allene oxide synthase activity|Finding|false|false||HPInull|Fever symptoms (finding)|Finding|true|false||fever
+null|Fever|Finding|true|false||fevernull|Chills|Finding|true|false||chillsnull|Night sweats|Finding|true|false||night sweatsnull|Night time|Time|false|false||nightnull|Sweating|Finding|true|false||sweats
+null|Sweat|Finding|true|false||sweatsnull|Recent|Time|false|false||recentnull|Weight Loss|Finding|true|false||weight loss
+null|Losing Weight (question)|Finding|true|false||weight lossnull|Measured weight loss (observable entity)|LabModifier|false|false||weight lossnull|infant weight for previous delivery (history)|Finding|false|false||weight
+null|Weight symptom (finding)|Finding|false|false||weightnull|Weighing patient|Procedure|false|false||weightnull|null|Attribute|false|false||weightnull|Body Weight|Subject|false|false||weightnull|Importance Weight|Modifier|false|false||weightnull|Weight|LabModifier|false|false||weightnull|Loss (adaptation)|Finding|true|false||lossnull|Loss (quantitative)|LabModifier|false|false||lossnull|Gain|LabModifier|false|false||gainnull|Headache|Finding|true|false||headachenull|Sinus brand of acetaminophen-pseudoephedrine|Drug|false|false|C1305231;C0030471|sinus
+null|Sinus brand of acetaminophen-pseudoephedrine|Drug|false|false|C1305231;C0030471|sinusnull|pathologic fistula|Disorder|false|false|C1305231;C0030471|sinusnull|Sinus - general anatomical term|Anatomy|false|false|C0723346;C0016169;C0684239;C0234233|sinus
+null|Nasal sinus|Anatomy|false|false|C0723346;C0016169;C0684239;C0234233|sinusnull|Emotional tenderness|Finding|true|false|C1305231;C0030471|tenderness
+null|Sore to touch|Finding|true|false|C1305231;C0030471|tendernessnull|Rhinorrhea|Finding|true|false||rhinorrheanull|Congestion|Finding|false|false||congestionnull|Cough (guaifenesin)|Drug|false|false||cough
+null|Cough (guaifenesin)|Drug|false|false||coughnull|Coughing|Finding|false|false||coughnull|Dyspnea|Finding|true|false||shortness of breathnull|null|Attribute|true|false||shortness of breathnull|Breath|Finding|false|false||breathnull|Chest Pain|Finding|false|false|C1527391;C0817096|chest painnull|null|Attribute|false|false|C1527391;C0817096|chest painnull|Chest problem|Finding|false|false|C1527391;C0817096|chestnull|Chest|Anatomy|false|false|C0741025;C1549543;C0030193;C2926613;C0008031|chest
+null|Anterior thoracic region|Anatomy|false|false|C0741025;C1549543;C0030193;C2926613;C0008031|chestnull|Administration Method - Pain|Finding|false|false|C1527391;C0817096|pain
+null|Pain|Finding|false|false|C1527391;C0817096|painnull|null|Attribute|false|false||painnull|Tightness sensation quality|Modifier|false|false||tightnessnull|Palpitations|Finding|false|false||palpitationsnull|Vomiting|Finding|false|false||vomitingnull|rectal discharge diarrhea (physical finding)|Finding|false|false||diarrhea
+null|Diarrhea|Finding|false|false||diarrheanull|Constipation|Finding|false|false||constipationnull|Hematochezia|Disorder|false|false||BRBPRnull|Dysuria|Finding|true|false||dysurianull|Arthralgia|Finding|true|false||arthralgiasnull|Myalgia|Finding|false|false||myalgiasnull|Diverticulitis|Disorder|false|false||diverticulitisnull|Sigmoid colon|Anatomy|false|false|C0015252;C0728940|sigmoidnull|removal technique|Procedure|false|false|C0227391|resection
+null|Excision|Procedure|false|false|C0227391|resectionnull|Anxiety Disorders|Disorder|false|false||Anxiety
+null|Anxiety|Disorder|false|false||Anxietynull|Anxiety symptoms|Finding|false|false||Anxietynull|Allergic rhinitis (disorder)|Disorder|false|false||Allergic rhinitisnull|IL13 gene|Finding|false|false||Allergic rhinitisnull|Allergic|Finding|false|false||Allergicnull|Rhinitis|Disorder|false|false||rhinitisnull|Gastroesophageal reflux disease|Disorder|false|false||GERDnull|Eczema|Disorder|false|false||Eczemanull|Migraine Disorders|Disorder|false|false||Migraine headachesnull|Migraine Disorders|Disorder|false|false||Migrainenull|Headache|Finding|false|false||headachesnull|Unspecified tube|Finding|false|false||tube
+null|TUBE1 gene|Finding|false|false||tubenull|biomedical tube device|Device|false|false||tube
+null|Packaging Tube|Device|false|false||tubenull|tube|Modifier|false|false||tubenull|Tube (unit of presentation)|LabModifier|false|false||tube
+null|Tube Dosing Unit|LabModifier|false|false||tubenull|DYSFUNCTION - SKIN DISORDERS|Disorder|false|false||dysfunctionnull|Dysfunction|Finding|false|false||dysfunction
+null|physiopathological|Finding|false|false||dysfunction
+null|Functional disorder|Finding|false|false||dysfunctionnull|Indirect exposure mechanism - Father|Finding|false|false||Father
+null|Relationship - Father|Finding|false|false||Father
+null|Father - courtesy title|Finding|false|false||Fathernull|Father (person)|Subject|false|false||Fathernull|Colitis|Disorder|false|false||colitisnull|Lung diseases|Disorder|false|false|C4037972;C0024109|lungnull|Lung Problem|Finding|false|false|C4037972;C0024109|lungnull|Chest>Lung|Anatomy|false|false|C0024115;C0740941|lung
+null|Lung|Anatomy|false|false|C0024115;C0740941|lungnull|Aunt|Subject|false|false||Auntnull|Neoplasm of uncertain or unknown behavior of breast|Disorder|false|false|C0006141|breastnull|Breast problem|Finding|false|false|C0006141|breastnull|Procedures on breast|Procedure|false|false|C0006141|breastnull|Breast|Anatomy|false|false|C0191838;C0567499;C0496956|breastnull|Paternal Relative|Subject|false|false||Paternalnull|Paternal (qualifier value)|Modifier|false|false||Paternalnull|Malignant neoplasm of stomach|Disorder|false|true|C3714551;C0038351;C4266636|stomach Canull|Neoplasm of uncertain or unknown behavior of stomach|Disorder|false|false|C3714551;C0038351;C4266636|stomach
+null|Stomach Diseases|Disorder|false|false|C3714551;C0038351;C4266636|stomach
+null|Benign neoplasm of stomach|Disorder|false|false|C3714551;C0038351;C4266636|stomach
+null|Carcinoma in situ of stomach|Disorder|false|false|C3714551;C0038351;C4266636|stomachnull|Stomach problem|Finding|false|false|C3714551;C0038351;C4266636|stomachnull|Procedure on stomach|Procedure|false|false|C3714551;C0038351;C4266636|stomachnull|Stomach structure|Anatomy|false|false|C0872393;C0577027;C0024623;C0038354;C0496905;C0153943;C0154060|stomach
+null|Abdomen>Stomach|Anatomy|false|false|C0872393;C0577027;C0024623;C0038354;C0496905;C0153943;C0154060|stomach
+null|Stomach|Anatomy|false|false|C0872393;C0577027;C0024623;C0038354;C0496905;C0153943;C0154060|stomachnull|Relationship - Mother|Finding|false|false||Mothernull|Mother (person)|Subject|false|false||Mothernull|Congestive heart failure|Disorder|false|false|C0262212|CHFnull|Choroidal fissure|Anatomy|false|false|C0018802|CHFnull|Dystrophia myotonica 2|Disorder|false|false||DM2null|CNBP wt Allele|Finding|false|false||DM2
+null|CNBP gene|Finding|false|false||DM2
+null|IGHD1-14 gene|Finding|false|false||DM2null|square decimeter|LabModifier|false|false||DM2null|United States Military Commissioned Officer O10 (qualifier value)|Finding|false|false||Generalnull|General medical service|Procedure|false|false||Generalnull|Generalized|Modifier|false|false||Generalnull|Alert brand of caffeine|Drug|false|false||Alert
+null|Alert brand of caffeine|Drug|false|false||Alertnull|Mentally alert|Finding|false|false||Alert
+null|Consciousness clear|Finding|false|false||Alert
+null|Alert note|Finding|false|false||Alert
+null|Alert|Finding|false|false||Alertnull|null|Attribute|false|false||Alertnull|Admission Level of Care Code - Acute|Finding|true|false||acute
+null|Acute - Triage Code|Finding|true|false||acutenull|acute|Time|false|false||acutenull|Emotional distress|Finding|true|false||distress
+null|Distress|Finding|true|false||distressnull|HEENT|Anatomy|false|false||HEENTnull|Scleral Diseases|Disorder|false|false|C0521367;C0036410|Scleranull|examination of sclera|Procedure|false|false|C0521367;C0036410|Scleranull|Sclera|Anatomy|false|false|C0036412;C0026987;C0205180;C2228481|Scleranull|Anicteric|Finding|false|false|C0036410|anictericnull|Myelofibrosis|Disorder|false|false|C0036410;C0694605|MMMnull|Medial part of medial mammillary nucleus|Anatomy|false|false|C0026987|MMMnull|Oropharyngeal|Anatomy|false|false|C0036412;C2228481;C1550016|oropharynxnull|Remote control command - Clear|Finding|false|false|C0521367|clearnull|Clear|Modifier|false|false||clear
+null|Transparent (qualitative concept)|Modifier|false|false||clearnull|Passive joint movement of neck (finding)|Finding|false|false|C0027530;C3159206|Neck
+null|Neck problem|Finding|false|false|C0027530;C3159206|Necknull|dendritic spine neck|Anatomy|false|false|C0812434;C0684335;C0428897;C0332254|Neck
+null|Neck|Anatomy|false|false|C0812434;C0684335;C0428897;C0332254|Necknull|Supple|Finding|false|false|C0027530;C3159206|supplenull|Jugular venous pressure|Finding|false|false|C0027530;C3159206|JVPnull|Elevated|Modifier|false|false||elevated
+null|High|Modifier|false|false||elevatednull|Leukocyte adhesion deficiency type 1|Disorder|true|false|C0226032|LAD
+null|Leukocyte adhesion deficiency|Disorder|true|false|C0226032|LADnull|ITGB2 wt Allele|Finding|true|false|C0226032|LAD
+null|DLD gene|Finding|true|false|C0226032|LADnull|Anterior descending branch of left coronary artery|Anatomy|true|false|C1414063;C1706333;C5550999;C0398738|LADnull|Ladino Language|Entity|true|false||LADnull|Lung|Anatomy|false|false||Lungsnull|Remote control command - Clear|Finding|false|false||Clearnull|Clear|Modifier|false|false||Clear
+null|Transparent (qualitative concept)|Modifier|false|false||Clearnull|Auscultation|Procedure|false|false||auscultationnull|Wheezing|Finding|true|false||wheezesnull|Basilar Rales|Finding|false|false||rales
+null|Rales|Finding|false|false||ralesnull|Rhonchi|Finding|false|false||rhonchinull|Regular|Modifier|false|false||Regularnull|Amount type - Rate|Finding|false|false||ratenull|Rating (action)|Event|false|false||ratenull|Rate|LabModifier|false|false||ratenull|Rhythm|Finding|false|false||rhythm
+null|rhythmic process (biological)|Finding|false|false||rhythmnull|Heart murmur|Finding|true|false||murmursnull|Pericardial friction rub|Finding|true|false||rubsnull|Malignant neoplasm of abdomen|Disorder|false|false|C0230168;C0000726|Abdomennull|Abdomen problem|Finding|false|false|C0230168;C0000726|Abdomennull|Abdomen|Anatomy|false|false|C0153662;C0941288|Abdomen
+null|Abdominal Cavity|Anatomy|false|false|C0153662;C0941288|Abdomennull|Short stature, onychodysplasia, facial dysmorphism, hypotrichosis syndrome|Disorder|false|false||softnull|Soft|Modifier|false|false||softnull|Bowel sounds|Finding|false|false|C0021853|bowel soundsnull|Intestines|Anatomy|false|false|C0232693|bowelnull|null|Device|false|false||soundsnull|null|Phenomenon|false|false||soundsnull|Present|Finding|false|false||present
+null|Presentation|Finding|false|false||presentnull|thiamine triphosphorate|Drug|false|false||TTP
+null|ZFP36 protein, human|Drug|false|false||TTP
+null|ZFP36 protein, human|Drug|false|false||TTP
+null|thiamine triphosphorate|Drug|false|false||TTPnull|Congenital Thrombotic Thrombocytopenic Purpura|Disorder|false|false|C0230178|TTP
+null|Purpura, Thrombotic Thrombocytopenic|Disorder|false|false|C0230178|TTPnull|ZFP36 wt Allele|Finding|false|false|C0230178|TTP
+null|ZFP36 gene|Finding|false|false|C0230178|TTP
+null|ADAMTS13 gene|Finding|false|false|C0230178|TTPnull|Time to Progression|Time|false|false||TTPnull|Structure of right lower quadrant of abdomen|Anatomy|false|false|C3539814;C1421571;C1413036;C1268935;C0034155|RLQnull|Right lower quadrant|Modifier|false|false||RLQnull|Deep palpation|Procedure|false|false||deep palpationnull|Deep Resection Margin|Attribute|false|false||deepnull|Deep (qualifier value)|Modifier|false|false||deepnull|Palpation|Procedure|false|false||palpationnull|Rebound tenderness|Finding|true|false||rebound tendernessnull|Emotional tenderness|Finding|true|false||tenderness
+null|Sore to touch|Finding|true|false||tendernessnull|Protective muscle spasm|Finding|true|false||guardingnull|Organomegaly|Finding|false|false||organomegalynull|Hereditary Multiple Exostoses|Disorder|false|false||Extnull|EXT1 wt Allele|Finding|false|false||Ext
+null|EXT1 gene|Finding|false|false||Extnull|Feels warm|Finding|false|false||Warmnull|warming process|Phenomenon|false|false||Warmnull|Well (answer to question)|Finding|false|false||wellnull|Well (container)|Device|false|false||wellnull|Microplate Well|Modifier|false|false||well
+null|Good|Modifier|false|false||well
+null|Healthy|Modifier|false|false||wellnull|null|Drug|false|false||pulsesnull|Physiologic pulse|Finding|false|false||pulsesnull|Pulse taking|Procedure|false|false||pulsesnull|Clubbing|Disorder|true|false||clubbingnull|Cyanosis|Finding|true|false||cyanosisnull|Edema|Finding|false|false||edemanull|null|Attribute|false|false||edemanull|Laboratory test finding|Lab|false|false||Laboratory Findingsnull|Diagnostic Service Section ID - Laboratory|Finding|false|false||Laboratory
+null|Laboratory domain|Finding|false|false||Laboratory
+null|Referral type - Laboratory|Finding|false|false||Laboratorynull|null|Attribute|false|false||Laboratorynull|Laboratory|Device|false|false||Laboratorynull|Laboratory observation|Lab|false|false||Laboratorynull|Laboratory|Entity|false|false||Laboratorynull|findings aspects|Finding|false|false||Findingsnull|null|Attribute|false|false||Findingsnull|Mandibular right first molar abutment mesial hemisection|Device|false|false||30AMnull|Blood and lymphatic system disorders|Disorder|false|false|C0023516|BLOODnull|peripheral blood|Finding|false|false|C0023516|BLOOD
+null|Blood|Finding|false|false|C0023516|BLOOD
+null|In Blood|Finding|false|false|C0023516|BLOODnull|Leukocytes|Anatomy|false|false|C0005768;C0229664;C0005767;C0851353|WBCnull|Erythrocytes|Drug|false|false|C0014792|RBCnull|Erythrocytes|Anatomy|false|false|C0014792;C1114281|RBCnull|null|Attribute|false|false|C0014792|RBCnull|Hemoglobin|Drug|false|false||Hgb
+null|Hemoglobin|Drug|false|false||Hgbnull|CYGB gene|Finding|false|false||Hgbnull|Hemoglobin concentration|Lab|false|false||Hgbnull|Hemopoietic stem cell transplant|Procedure|false|false||Hct
+null|Hematocrit Measurement|Procedure|false|false||Hctnull|Merkel cell polyomavirus|Disorder|false|false||MCVnull|Erythrocyte Mean Corpuscular Volume Measurement|Procedure|false|false||MCV
+null|Cisplatin-Methotrexate-Vinblastine Regimen|Procedure|false|false||MCVnull|Mean Corpuscular Volume|Lab|false|false||MCVnull|Microvolt|LabModifier|false|false||MCVnull|methacholine|Drug|false|false||MCH
+null|methacholine|Drug|false|false||MCHnull|mesaconyl-CoA hydratase activity|Finding|false|false||MCH
+null|PMCH gene|Finding|false|false||MCHnull|Mean corpuscular hemoglobin determination|Procedure|false|false||MCHnull|Mean corpuscular hemoglobin concentration determination|Procedure|false|false||MCHCnull|Primed lymphocyte test|Procedure|false|false||Pltnull|Mandibular right first molar abutment mesial hemisection|Device|false|false||30AMnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Monos|Drug|false|false||Monos
+null|Mono-S|Drug|false|false||Monos
+null|Monos|Drug|false|false||Monosnull|SARCOIDOSIS, EARLY-ONSET|Disorder|false|false||Eos
+null|Familial eosinophilia|Disorder|false|false||Eosnull|PRSS33 gene|Finding|false|false||Eos
+null|IKZF4 gene|Finding|false|false||Eosnull|Eos <Loriini>|Entity|false|false||Eosnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Mandibular right first molar abutment mesial hemisection|Device|false|false||30AMnull|Blood Glucose|Drug|false|false||BLOOD Glucosenull|Blood glucose measurement|Procedure|false|false||BLOOD Glucosenull|Finding of blood glucose level|Lab|false|false||BLOOD Glucosenull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucosenull|Glucose measurement|Procedure|false|false||Glucosenull|Glucose^1.5H post dose glucagon|Lab|false|false||Glucosenull|Bicarbonates|Drug|false|false||HCO3
+null|Bicarbonates|Drug|false|false||HCO3null|Bicarbonate measurement|Procedure|false|false||HCO3null|Mandibular right first molar abutment mesial hemisection|Device|false|false||30AMnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Alanine Transaminase|Drug|false|false||ALT
+null|Alanine Transaminase|Drug|false|false||ALTnull|Liposarcoma, well differentiated|Disorder|false|false|C1185650|ALT
+null|Atypical Lipoma|Disorder|false|false|C1185650|ALTnull|null|Finding|false|false|C1185650|ALT
+null|Alternative Billing Concepts|Finding|false|false|C1185650|ALT
+null|GPT gene|Finding|false|false|C1185650|ALTnull|Antibiotic Lock Therapy|Procedure|false|false|C1185650|ALTnull|Southern Altai Language|Entity|false|false||ALTnull|SGOT - Glutamate oxaloacetate transaminase|Drug|false|false|C1185650|AST
+null|Aspartate Transaminase|Drug|false|false|C1185650|AST
+null|Aspartate Transaminase|Drug|false|false|C1185650|AST
+null|SGOT - Glutamate oxaloacetate transaminase|Drug|false|false|C1185650|AST
+null|SLC17A5 protein, human|Drug|false|false|C1185650|AST
+null|SLC17A5 protein, human|Drug|false|false|C1185650|ASTnull|Atypical Spitz Nevus|Disorder|false|false|C1185650|ASTnull|SLC17A5 wt Allele|Finding|false|false|C1185650|AST
+null|SLC17A5 gene|Finding|false|false|C1185650|AST
+null|GOT1 gene|Finding|false|false|C1185650|ASTnull|Asterion|Anatomy|false|false|C4553172;C1266129;C1370889;C1415181;C1420113;C5960784;C2257651;C1415274;C1140170;C4522245;C0004002;C0242192;C1121182|ASTnull|Asturian Language|Entity|false|false||ASTnull|Atlantic Standard Time|Time|false|false||ASTnull|Alkaline Phosphatase|Drug|false|false||AlkPhos
+null|Alkaline Phosphatase|Drug|false|false||AlkPhosnull|Mandibular right first molar abutment mesial hemisection|Device|false|false||30AMnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|lipase|Drug|false|false||Lipase
+null|lipase|Drug|false|false||Lipase
+null|lipase|Drug|false|false||Lipasenull|Lipase measurement|Procedure|false|false||Lipasenull|Blood calcium measurement|Procedure|false|false||BLOOD Calciumnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|CALCIUM SUPPLEMENTS|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|CALCIUM SUPPLEMENTS|Drug|false|false||Calcium
+null|Calcium, Dietary|Drug|false|false||Calcium
+null|Calcium [EPC]|Drug|false|false||Calcium
+null|Calcium Drug Class|Drug|false|false||Calciumnull|Calcium metabolic function|Finding|false|false||Calciumnull|Calcium measurement|Procedure|false|false||Calciumnull|Phos <Photinae>|Entity|false|false||Phosnull|lactate in blood (lab test)|Procedure|false|false||BLOOD Lactatenull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|lactate|Drug|false|false||Lactate
+null|lactate|Drug|false|false||Lactate
+null|Lactates|Drug|false|false||Lactatenull|Lactic acid measurement|Procedure|false|false||Lactatenull|Blood and lymphatic system disorders|Disorder|false|false|C0023516|BLOODnull|peripheral blood|Finding|false|false|C0023516|BLOOD
+null|Blood|Finding|false|false|C0023516|BLOOD
+null|In Blood|Finding|false|false|C0023516|BLOODnull|Leukocytes|Anatomy|false|false|C0851353;C0005768;C0229664;C0005767|WBCnull|Erythrocytes|Drug|false|false|C0014792|RBCnull|Erythrocytes|Anatomy|false|false|C1114281;C0014792|RBCnull|null|Attribute|false|false|C0014792|RBCnull|Hemoglobin|Drug|false|false||Hgb
+null|Hemoglobin|Drug|false|false||Hgbnull|CYGB gene|Finding|false|false||Hgbnull|Hemoglobin concentration|Lab|false|false||Hgbnull|Hemopoietic stem cell transplant|Procedure|false|false||Hct
+null|Hematocrit Measurement|Procedure|false|false||Hctnull|Merkel cell polyomavirus|Disorder|false|false||MCVnull|Erythrocyte Mean Corpuscular Volume Measurement|Procedure|false|false||MCV
+null|Cisplatin-Methotrexate-Vinblastine Regimen|Procedure|false|false||MCVnull|Mean Corpuscular Volume|Lab|false|false||MCVnull|Microvolt|LabModifier|false|false||MCVnull|methacholine|Drug|false|false||MCH
+null|methacholine|Drug|false|false||MCHnull|mesaconyl-CoA hydratase activity|Finding|false|false||MCH
+null|PMCH gene|Finding|false|false||MCHnull|Mean corpuscular hemoglobin determination|Procedure|false|false||MCHnull|Mean corpuscular hemoglobin concentration determination|Procedure|false|false||MCHCnull|Primed lymphocyte test|Procedure|false|false||Pltnull|Blood Glucose|Drug|false|false||BLOOD Glucosenull|Blood glucose measurement|Procedure|false|false||BLOOD Glucosenull|Finding of blood glucose level|Lab|false|false||BLOOD Glucosenull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucosenull|Glucose measurement|Procedure|false|false||Glucosenull|Glucose^1.5H post dose glucagon|Lab|false|false||Glucosenull|Bicarbonates|Drug|false|false||HCO3
+null|Bicarbonates|Drug|false|false||HCO3null|Bicarbonate measurement|Procedure|false|false||HCO3null|Mandibular right first molar abutment mesial hemisection|Device|false|false||30AMnull|Color of urine|Finding|false|false||URINE Colornull|Portion of urine|Finding|false|false||URINE
+null|null|Finding|false|false||URINE
+null|Urine|Finding|false|false||URINE
+null|In Urine|Finding|false|false||URINE
+null|Urine specimen|Finding|false|false||URINEnull|color additive|Drug|false|false||Color
+null|Coloring Excipient|Drug|false|false||Colornull|color - solid dosage form|Modifier|false|false||Color
+null|Color|Modifier|false|false||Colornull|Color quantity|LabModifier|false|false||Colornull|Cereal plant straw|Drug|false|false||Strawnull|Straw package type|Device|false|false||Strawnull|Straw Color|Modifier|false|false||Strawnull|Straw (unit of presentation)|LabModifier|false|false||Strawnull|Remote control command - Clear|Finding|false|false||Clearnull|Clear|Modifier|false|false||Clear
+null|Transparent (qualitative concept)|Modifier|false|false||Clearnull|Mandibular right first molar abutment mesial hemisection|Device|false|false||30AMnull|Hematuria|Disorder|false|false||URINE Bloodnull|Portion of urine|Finding|false|false||URINE
+null|null|Finding|false|false||URINE
+null|Urine|Finding|false|false||URINE
+null|In Urine|Finding|false|false||URINE
+null|Urine specimen|Finding|false|false||URINEnull|Blood and lymphatic system disorders|Disorder|false|false||Bloodnull|peripheral blood|Finding|false|false||Blood
+null|Blood|Finding|false|false||Blood
+null|In Blood|Finding|false|false||Bloodnull|nitrite ion|Drug|false|false||Nitrite
+null|Nitrites|Drug|false|false||Nitrite
+null|Nitrites|Drug|false|false||Nitrite
+null|Nitrites|Drug|false|false||Nitrite
+null|nitrite ion|Drug|false|false||Nitrite
+null|nitrite ion|Drug|false|false||Nitritenull|Neg - answer|Finding|false|false||NEGnull|Negative - qualifier|Modifier|false|false||NEGnull|Proteins|Drug|false|false||Protein
+null|Proteins|Drug|false|false||Proteinnull|Protein Info|Finding|false|false||Proteinnull|Protein measurement|Procedure|false|false||Proteinnull|Neg - answer|Finding|false|false||NEGnull|Negative - qualifier|Modifier|false|false||NEGnull|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucosenull|Glucose measurement|Procedure|false|false||Glucosenull|Glucose^1.5H post dose glucagon|Lab|false|false||Glucosenull|Neg - answer|Finding|false|false||NEGnull|Negative - qualifier|Modifier|false|false||NEGnull|Ketones|Drug|false|false||Ketonenull|Neg - answer|Finding|false|false||NEGnull|Negative - qualifier|Modifier|false|false||NEGnull|Neg - answer|Finding|false|false||NEGnull|Negative - qualifier|Modifier|false|false||NEGnull|Neg - answer|Finding|false|false||NEGnull|Negative - qualifier|Modifier|false|false||NEGnull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||MODnull|Mandibular right first molar abutment mesial hemisection|Device|false|false||30AMnull|null|Lab|false|false|C0014792|URINE RBC
+null|Red blood cells urine positive|Lab|false|false|C0014792|URINE RBCnull|Portion of urine|Finding|false|false||URINE
+null|null|Finding|false|false||URINE
+null|Urine|Finding|false|false||URINE
+null|In Urine|Finding|false|false||URINE
+null|Urine specimen|Finding|false|false||URINEnull|Erythrocytes|Drug|false|false|C0014792|RBCnull|Erythrocytes|Anatomy|false|false|C0221752;C2188659;C1114281;C0014792|RBCnull|null|Attribute|false|false|C0014792|RBCnull|Leukocytes|Anatomy|false|false||WBCnull|Yeast, Dried|Drug|false|false||Yeast
+null|Candida albicans allergenic extract|Drug|false|false||Yeast
+null|Candida albicans allergenic extract|Drug|false|false||Yeast
+null|Candida albicans allergenic extract|Drug|false|false||Yeastnull|Saccharomyces cerevisiae|Entity|false|false||Yeast
+null|Yeasts|Entity|false|false||Yeastnull|Tissue Factor Pathway Inhibitor, human|Drug|false|false||Epi
+null|epinephrine|Drug|false|false||Epi
+null|epinephrine|Drug|false|false||Epi
+null|epinephrine|Drug|false|false||Epi
+null|Tissue Factor Pathway Inhibitor, human|Drug|false|false||Epinull|Exocrine pancreatic insufficiency|Disorder|false|false||Epinull|Eysenck personality inventory|Finding|false|false||Epi
+null|TFPI wt Allele|Finding|false|false||Epi
+null|TFPI gene|Finding|false|false||Epinull|Electronic Portal Imaging|Procedure|false|false||Epi
+null|Echo-Planar Imaging|Procedure|false|false||Epinull|Microbiology Diagnostic Service Section ID|Finding|false|false||Microbiology
+null|Microbiological|Finding|false|false||Microbiology
+null|Microbiology - Laboratory Class|Finding|false|false||Microbiologynull|Microbiology procedure|Procedure|false|false||Microbiologynull|Science of Microbiology|Title|false|false||Microbiologynull|Urine culture|Procedure|false|false||URINE CULTUREnull|Portion of urine|Finding|false|false||URINE
+null|null|Finding|false|false||URINE
+null|Urine|Finding|false|false||URINE
+null|In Urine|Finding|false|false||URINE
+null|Urine specimen|Finding|false|false||URINEnull|Culture Dose Form|Drug|false|false||CULTUREnull|Culture (Anthropological)|Finding|false|false||CULTURE
+null|Cultural aspects|Finding|false|false||CULTUREnull|Microbial culture (procedure)|Procedure|false|false||CULTURE
+null|Laboratory culture|Procedure|false|false||CULTUREnull|Diagnosis Type - Final|Finding|false|false||Finalnull|Final|Time|false|false||Finalnull|End-stage|Modifier|false|false||Finalnull|organisms/mL|LabModifier|false|false||organisms/mlnull|Organism|Entity|false|false||organismsnull|per milliliter|LabModifier|false|false||/mlnull|Blood culture|Procedure|false|false||Blood Culturenull|Blood and lymphatic system disorders|Disorder|false|false||Bloodnull|peripheral blood|Finding|false|false||Blood
+null|Blood|Finding|false|false||Blood
+null|In Blood|Finding|false|false||Bloodnull|Culture Dose Form|Drug|false|false||Culturenull|Culture (Anthropological)|Finding|false|false||Culture
+null|Cultural aspects|Finding|false|false||Culturenull|Microbial culture (procedure)|Procedure|false|false||Culture
+null|Laboratory culture|Procedure|false|false||Culturenull|Growth & development aspects|Finding|true|false||growth
+null|Tissue Growth|Finding|true|false||growth
+null|Growth|Finding|true|false||growth
+null|growth aspects|Finding|true|false||growthnull|Growth action|Phenomenon|true|false||growthnull|Diagnosis Type - Final|Finding|true|false||finalnull|Final|Time|false|false||finalnull|End-stage|Modifier|false|false||finalnull|Time - Instructions for Selecting a Level of Pathology Clinical Consultation Services|Finding|true|false||time
+null|Time (foundation metadata concept)|Finding|true|false||time
+null|Value type - Time|Finding|true|false||time
+null|Instructions for Use of the CPT Codebook - Time|Finding|true|false||time
+null|Data types - Time|Finding|true|false||time
+null|null|Finding|true|false||timenull|Time|Time|false|false||timenull|Body Substance Discharge|Finding|false|false||discharge
+null|Discharge Body Fluid|Finding|false|false||discharge
+null|Body Fluid Discharge|Finding|false|false||discharge
+null|null|Finding|false|false||dischargenull|Patient Discharge|Procedure|false|false||dischargenull|Imaging problem|Finding|false|false||Imagingnull|Diagnostic Imaging|Procedure|false|false||Imaging
+null|Imaging Techniques|Procedure|false|false||Imagingnull|Imaging Technology|Title|false|false||Imagingnull|Pelvis|Anatomy|false|false||Pelvicnull|findings aspects|Finding|false|false||FINDINGSnull|null|Attribute|false|false||FINDINGSnull|Neoplasm of uncertain or unknown behavior of uterus|Disorder|false|false|C4266525;C0042149;C1519876|uterus
+null|Uterine Diseases|Disorder|false|false|C4266525;C0042149;C1519876|uterusnull|examination of uterus|Procedure|false|false|C4266525;C0042149;C1519876|uterusnull|Pelvis>Uterus|Anatomy|false|false|C0042131;C0496919;C0869889|uterus
+null|Mouse Uterus|Anatomy|false|false|C0042131;C0496919;C0869889|uterus
+null|Uterus|Anatomy|false|false|C0042131;C0496919;C0869889|uterusnull|Measures (attribute)|Finding|false|false||measuresnull|Measures|LabModifier|false|false||measuresnull|Slightly (qualifier value)|Modifier|false|false||slightly
+null|Slight (qualifier value)|Modifier|false|false||slightlynull|Heterogeneity|Modifier|false|false||heterogeneousnull|patient appearance regarding mental status exam|Procedure|false|false||appearancenull|null|Attribute|false|false||appearancenull|Personal appearance|Subject|false|false||appearancenull|Appearance|Modifier|false|false||appearancenull|Kind of quantity - Appearance|LabModifier|false|false||appearancenull|Uterine Fibroids|Disorder|true|false||fibroids
+null|Fibroid Tumor|Disorder|true|false||fibroidsnull|Transvaginal approach|Modifier|false|false||Transvaginalnull|Exam|Finding|false|false||examnull|Medical Examination|Procedure|false|false||examnull|Observation Interpretation - better|Finding|false|false|C0229243;C4522151;C0001575;C4266525;C0042149;C1519876|betternull|Better|Modifier|false|false||betternull|Processing type - Evaluation|Finding|false|false|C4266525;C0042149;C1519876;C0229243;C4522151;C0001575|evaluationnull|Evaluation procedure|Procedure|false|false|C4266525;C0042149;C1519876;C0229243;C4522151;C0001575|evaluation
+null|Evaluation|Procedure|false|false|C4266525;C0042149;C1519876;C0229243;C4522151;C0001575|evaluationnull|Neoplasm of uncertain or unknown behavior of uterus|Disorder|false|false|C0229243;C4522151;C0001575;C4266525;C0042149;C1519876|uterus
+null|Uterine Diseases|Disorder|false|false|C0229243;C4522151;C0001575;C4266525;C0042149;C1519876|uterusnull|examination of uterus|Procedure|false|false|C4266525;C0042149;C1519876|uterusnull|Pelvis>Uterus|Anatomy|false|false|C1261322;C0220825;C1550157;C1550462;C0869889;C0042131;C0496919|uterus
+null|Mouse Uterus|Anatomy|false|false|C1261322;C0220825;C1550157;C1550462;C0869889;C0042131;C0496919|uterus
+null|Uterus|Anatomy|false|false|C1261322;C0220825;C1550157;C1550462;C0869889;C0042131;C0496919|uterusnull|Ocular adnexa structure|Anatomy|false|false|C1550462;C0042131;C0496919;C1550157;C1261322;C0220825|adnexa
+null|Adnexa|Anatomy|false|false|C1550462;C0042131;C0496919;C1550157;C1261322;C0220825|adnexa
+null|Uterine adnexae structure|Anatomy|false|false|C1550462;C0042131;C0496919;C1550157;C1261322;C0220825|adnexanull|Endometrial|Modifier|false|false||endometrialnull|Structure of left ovary|Anatomy|false|false|C0496920;C0029928;C1552822|left ovarynull|Table Cell Horizontal Align - left|Finding|false|false|C0227874;C4266530;C0029939;C0227898|leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Neoplasm of uncertain or unknown behavior of ovary|Disorder|false|false|C0227874;C4266530;C0029939;C0227898|ovary
+null|Ovarian Diseases|Disorder|false|false|C0227874;C4266530;C0029939;C0227898|ovarynull|Pelvis>Ovary|Anatomy|false|false|C0496920;C0029928;C1552822|ovary
+null|Ovary|Anatomy|false|false|C0496920;C0029928;C1552822|ovary
+null|Both ovaries|Anatomy|false|false|C0496920;C0029928;C1552822|ovarynull|Structure of right ovary|Anatomy|false|false|C1552823;C0496920;C0029928|right ovarynull|Table Cell Horizontal Align - right|Finding|false|false|C0227873;C4266530;C0029939;C0227898|rightnull|Right sided|Modifier|false|false||right
+null|Right|Modifier|false|false||rightnull|Neoplasm of uncertain or unknown behavior of ovary|Disorder|false|false|C4266530;C0029939;C0227898;C0227873|ovary
+null|Ovarian Diseases|Disorder|false|false|C4266530;C0029939;C0227898;C0227873|ovarynull|Pelvis>Ovary|Anatomy|false|false|C0496920;C0029928;C1552823|ovary
+null|Ovary|Anatomy|false|false|C0496920;C0029928;C1552823|ovary
+null|Both ovaries|Anatomy|false|false|C0496920;C0029928;C1552823|ovarynull|Small|LabModifier|false|false||smallnull|Echogenic|Finding|false|false|C0227873;C4266530;C0029939;C0227898|echogenicnull|Has focus|Finding|false|false|C0227873;C4266530;C0029939;C0227898|focusnull|Focal|Modifier|false|false||focusnull|Structure of right ovary|Anatomy|false|false|C1285542;C4697723;C1552823;C0496920;C0029928|right ovarynull|Table Cell Horizontal Align - right|Finding|false|false|C0227873;C4266530;C0029939;C0227898|rightnull|Right sided|Modifier|false|false||right
+null|Right|Modifier|false|false||rightnull|Neoplasm of uncertain or unknown behavior of ovary|Disorder|false|false|C0227873;C4266530;C0029939;C0227898|ovary
+null|Ovarian Diseases|Disorder|false|false|C0227873;C4266530;C0029939;C0227898|ovarynull|Pelvis>Ovary|Anatomy|false|false|C1285542;C1552823;C4697723;C0496920;C0029928|ovary
+null|Ovary|Anatomy|false|false|C1285542;C1552823;C4697723;C0496920;C0029928|ovary
+null|Both ovaries|Anatomy|false|false|C1285542;C1552823;C4697723;C0496920;C0029928|ovarynull|Probable diagnosis|Finding|false|false||likely
+null|Probably|Finding|false|false||likelynull|Small|LabModifier|false|false||smallnull|Hemorrhagic cyst|Disorder|false|false||hemorrhagic cystnull|Hemorrhagic|Modifier|false|false||hemorrhagicnull|Cyst|Disorder|false|false||cystnull|SpecimenType - Cyst|Finding|false|false||cyst
+null|null|Finding|false|false||cystnull|Cyst form of protozoa|Entity|false|false||cystnull|Both ovaries|Anatomy|false|false||Both ovariesnull|Both ovaries|Anatomy|false|false||ovaries
+null|Ovary|Anatomy|false|false||ovariesnull|Arteries|Anatomy|false|false|C0450448|arterialnull|Arterial|Modifier|false|false||arterialnull|Veins|Anatomy|false|false||venousnull|Venous|Modifier|false|false||venousnull|Waveforms|Phenomenon|false|false|C0003842|waveformsnull|Evidence of (contextual qualifier)|Finding|true|false||evidence ofnull|Evidence|Finding|true|false||evidencenull|Ovarian Torsion|Disorder|true|false|C0205065|ovarian torsionnull|Ovarian|Anatomy|false|false|C0149952|ovariannull|Musculoskeletal torsion (function)|Finding|true|false||torsion
+null|Torsion (malposition)|Finding|true|false||torsionnull|Small|LabModifier|false|false||Smallnull|Table Cell Horizontal Align - right|Finding|false|false||rightnull|Right sided|Modifier|false|false||right
+null|Right|Modifier|false|false||rightnull|Ovarian|Anatomy|false|false|C0010709;C0333145;C1546594;C1550626|ovariannull|Hemorrhagic cyst|Disorder|false|false|C0205065|hemorrhagic cystnull|Hemorrhagic|Modifier|false|false||hemorrhagicnull|Cyst|Disorder|false|false|C0205065|cystnull|SpecimenType - Cyst|Finding|false|false|C0205065|cyst
+null|null|Finding|false|false|C0205065|cystnull|Cyst form of protozoa|Entity|false|false||cystnull|null|Attribute|false|false|C0449202;C0000726|CT abdnull|Absence of Biallelic TCRgamma Deletion|Disorder|false|false|C0449202;C0000726;C4266535;C0030797;C0559769|abdnull|ABD (body structure)|Anatomy|false|false|C3811055;C0812455;C1644645;C0153663|abd
+null|Abdomen|Anatomy|false|false|C3811055;C0812455;C1644645;C0153663|abdnull|Malignant neoplasm of pelvis|Disorder|false|false|C4266535;C0030797;C0559769;C0449202;C0000726|pelvisnull|Pelvis problem|Finding|false|false|C4266535;C0030797;C0559769;C0449202;C0000726|pelvisnull|Pelvis+|Anatomy|false|false|C0153663;C0812455;C3811055|pelvis
+null|Pelvic cavity structure|Anatomy|false|false|C0153663;C0812455;C3811055|pelvis
+null|Pelvis|Anatomy|false|false|C0153663;C0812455;C3811055|pelvisnull|Contrast Media|Drug|false|false||contrastnull|Contrast|Modifier|false|false||contrastnull|Scattered|Modifier|false|false||Scatterednull|Calcified (qualifier value)|Modifier|false|false||calcifiednull|Granuloma|Finding|false|false||granulomasnull|Lung diseases|Disorder|false|false|C4037972;C0024109|lungnull|Lung Problem|Finding|false|false|C4037972;C0024109|lungnull|Chest>Lung|Anatomy|false|false|C0740941;C0024115;C1547311|lung
+null|Lung|Anatomy|false|false|C0740941;C0024115;C1547311|lungnull|Base|Drug|false|false||basesnull|Base - unit of product usage|LabModifier|false|false||basesnull|Patient Condition Code - Stable|Finding|false|false|C4037972;C0024109|stablenull|Stable status|Modifier|false|false||stablenull|Query Status Code - new|Finding|true|false||new
+null|Act Status - new|Finding|true|false||newnull|Newar Language|Entity|true|false||newnull|New|Modifier|false|false||newnull|Focal|Modifier|false|false||focalnull|Pulmonary (intended site)|Finding|true|false|C0024109|pulmonarynull|Lung|Anatomy|false|false|C2707265;C4522268|pulmonarynull|null|Attribute|true|false|C0024109|pulmonarynull|Pulmonary (qualifier value)|Modifier|false|false||pulmonarynull|Lung consolidation|Disorder|false|false||consolidationnull|Consolidation|Modifier|false|false||consolidationnull|Effusion (substance)|Finding|false|false||effusion
+null|null|Finding|false|false||effusion
+null|effusion|Finding|false|false||effusionnull|Structure of apex of heart|Anatomy|false|false|C1314974;C0140145;C1332102|cardiac apexnull|Cardiac attachment|Finding|false|false|C0225811;C0018787;C3890171|cardiacnull|Heart|Anatomy|false|false|C1332102;C1314974;C0140145|cardiacnull|Cardiac - anatomy qualifier|Modifier|false|false||cardiacnull|APEX1 protein, human|Drug|false|false|C0225811;C0018787;C3890171|apex
+null|APEX1 protein, human|Drug|false|false|C0225811;C0018787;C3890171|apexnull|APEX1 gene|Finding|false|false|C3890171;C0018787;C0225811|apexnull|dinoflagellate apex|Anatomy|false|false|C1332102;C1314974;C0140145|apexnull|Highest|Modifier|false|false||apexnull|Limited (extensiveness)|Finding|false|false||limitsnull|Complete, Multiple Vitamins with Iron|Drug|false|false|C1285145;C0042779|Complete
+null|Complete, Multiple Vitamins with Iron|Drug|false|false|C1285145;C0042779|Complete
+null|Complete, Multiple Vitamins with Iron|Drug|false|false|C1285145;C0042779|Completenull|Completion Status for valid values - Complete|Finding|false|false|C1285145;C0042779|Complete
+null|Data operation - complete|Finding|false|false|C1285145;C0042779|Complete
+null|Finish - dosing instruction imperative|Finding|false|false|C1285145;C0042779|Completenull|Complete|Modifier|false|false||Completenull|Processing type - Evaluation|Finding|false|false|C1285145;C0042779|evaluationnull|Evaluation procedure|Procedure|false|false|C1285145;C0042779|evaluation
+null|Evaluation|Procedure|false|false|C1285145;C0042779|evaluationnull|Intraabdominal Route of Administration|Finding|false|false|C1285145;C0042779|intra-abdominalnull|Intra-abdominal|Modifier|false|false||intra-abdominalnull|Structure of viscus|Anatomy|false|false|C1815293;C1512911;C1261322;C0220825;C1550157;C1548561;C3853530;C1706059|viscera
+null|Viscera|Anatomy|false|false|C1815293;C1512911;C1261322;C0220825;C1550157;C1548561;C3853530;C1706059|visceranull|Techniques|Finding|false|false||techniquenull|Liver brand of Vitamin B 12|Drug|false|false|C4037986;C1278929;C0023884|liver
+null|liver extract|Drug|false|false|C4037986;C1278929;C0023884|liver
+null|liver extract|Drug|false|false|C4037986;C1278929;C0023884|liver
+null|Liver brand of Vitamin B 12|Drug|false|false|C4037986;C1278929;C0023884|liver
+null|Liver brand of Vitamin B 12|Drug|false|false|C4037986;C1278929;C0023884|livernull|Benign neoplasm of liver|Disorder|false|false|C4037986;C1278929;C0023884|liver
+null|Liver diseases|Disorder|false|false|C4037986;C1278929;C0023884|livernull|Liver problem|Finding|false|false|C4037986;C1278929;C0023884|livernull|Procedures on liver|Procedure|false|false|C4037986;C1278929;C0023884|livernull|Abdomen>Liver|Anatomy|false|false|C0023895;C0496870;C0577060;C0721399;C0023899;C0872387|liver
+null|null|Anatomy|false|false|C0023895;C0496870;C0577060;C0721399;C0023899;C0872387|liver
+null|Liver|Anatomy|false|false|C0023895;C0496870;C0577060;C0721399;C0023899;C0872387|livernull|Homogeneity|Modifier|false|false||homogeneousnull|Focal|Modifier|false|false||focalnull|Lesion|Finding|true|false||lesion
+null|null|Finding|true|false||lesionnull|During values|Time|false|false||intranull|Biliary|Finding|false|false||biliarynull|Ductal|Modifier|false|false||ductalnull|Pathological Dilatation|Finding|false|false||dilatation
+null|Dilated|Finding|false|false||dilatationnull|Dilate procedure|Procedure|false|false||dilatationnull|examination of gallbladder|Procedure|false|false|C4071903;C1524055;C0016976|gallbladdernull|Gallbladder (MMHCC)|Anatomy|false|false|C0347284;C0030286;C0869677;C0869826;C2032932;C0812414;C0813176;C0153470|gallbladder
+null|Gallbladder|Anatomy|false|false|C0347284;C0030286;C0869677;C0869826;C2032932;C0812414;C0813176;C0153470|gallbladder
+null|Abdomen>Gallbladder|Anatomy|false|false|C0347284;C0030286;C0869677;C0869826;C2032932;C0812414;C0813176;C0153470|gallbladdernull|Malignant neoplasm of spleen|Disorder|false|false|C4037984;C0037993;C4071903;C1524055;C0016976|spleennull|Spleen problem|Finding|false|false|C4071903;C1524055;C0016976;C4037984;C0037993|spleennull|Procedures on Spleen|Procedure|false|false|C4071903;C1524055;C0016976;C4037984;C0037993|spleennull|Abdomen>Spleen|Anatomy|false|false|C0153470;C0812414;C0869677|spleen
+null|Spleen|Anatomy|false|false|C0153470;C0812414;C0869677|spleennull|pancreas extract|Drug|false|false|C4037927;C0030274|pancreas
+null|pancreas extract|Drug|false|false|C4037927;C0030274|pancreasnull|Benign tumor of pancreas|Disorder|false|false|C4071903;C1524055;C0016976;C4037927;C0030274|pancreas
+null|Pancreatic Diseases|Disorder|false|false|C4071903;C1524055;C0016976;C4037927;C0030274|pancreasnull|Pancreas problem|Finding|false|false|C4037927;C0030274;C4071903;C1524055;C0016976|pancreasnull|Procedures on Pancreas|Procedure|false|false|C4071903;C1524055;C0016976;C4037927;C0030274|pancreasnull|Abdomen>Pancreas|Anatomy|false|false|C0813176;C0771711;C0347284;C0030286;C0869826|pancreas
+null|Pancreas|Anatomy|false|false|C0813176;C0771711;C0347284;C0030286;C0869826|pancreasnull|null|Finding|false|false||within normal limitsnull|Limited (extensiveness)|Finding|false|false||limitsnull|Adrenal Glands|Anatomy|false|false|C0332516;C2699744;C0521428|adrenal glandsnull|Adrenal|Finding|false|false|C0001625;C1285092;C0001625|adrenalnull|Adrenal Glands|Anatomy|false|false|C0521428;C0332516;C2699744|adrenalnull|Gland|Anatomy|false|false|C0332516;C2699744;C0521428|glandsnull|Symmetric Relationship|Finding|false|false|C1285092;C0001625;C0001625|symmetric
+null|Symmetrical|Finding|false|false|C1285092;C0001625;C0001625|symmetricnull|Focal|Modifier|false|false||focalnull|Both kidneys|Anatomy|false|false||kidneys
+null|Kidney|Anatomy|false|false||kidneysnull|Homogeneity|Modifier|false|false||homogeneousnull|Focal|Modifier|false|false||focalnull|Lesion|Finding|false|false||lesion
+null|null|Finding|false|false||lesionnull|Hydronephrosis|Disorder|false|false||hydronephrosisnull|examination of abdominal aorta|Procedure|false|false|C4037978;C0003483;C0000726;C0003484;C4037989|abdominal aortanull|Abdominal aorta structure|Anatomy|false|false|C2228415;C0869784|abdominal aorta
+null|Abdomen>Aorta.abdominal|Anatomy|false|false|C2228415;C0869784|abdominal aortanull|Abdomen|Anatomy|false|false|C2228415;C0869784|abdominalnull|Abdominal (qualifier value)|Modifier|false|false||abdominalnull|Procedure on aorta|Procedure|false|false|C4037978;C0003483;C0003484;C4037989;C0000726|aortanull|Chest+Abdomen>Aorta|Anatomy|false|false|C0869784;C2228415|aorta
+null|Aorta|Anatomy|false|false|C0869784;C2228415|aortanull|Course|Time|false|false||coursenull|Precision - second|Finding|false|false||second
+null|metastatic qualifier|Finding|false|false||second
+null|Second Suffix|Finding|false|false||secondnull|seconds|Time|false|false||secondnull|Second Unit of Plane Angle|LabModifier|false|false||second
+null|second (number)|LabModifier|false|false||secondnull|III (suffix)|Modifier|false|false||thirdnull|Third|LabModifier|false|false||thirdnull|Malignant neoplasm of duodenum|Disorder|false|false|C0013303|duodenum
+null|Benign neoplasm of duodenum|Disorder|false|false|C0013303|duodenumnull|Duodenum|Anatomy|false|false|C0496869;C0153426|duodenumnull|Small bowel obstruction|Disorder|true|false|C0021853;C4319010;C0021852|small bowel obstructionnull|Abdomen>Small bowel|Anatomy|false|false|C0235329|small bowel
+null|Intestines, Small|Anatomy|false|false|C0235329|small bowelnull|Small|LabModifier|false|false||smallnull|Intestinal Obstruction|Disorder|true|false|C0021853|bowel obstructionnull|Intestines|Anatomy|false|false|C0021843;C0235329|bowelnull|Obstruction|Finding|true|false||obstructionnull|Neoplasm of uncertain or unknown behavior of appendix|Disorder|false|false|C4037994;C0003617|appendix
+null|Benign neoplasm of appendix|Disorder|false|false|C4037994;C0003617|appendix
+null|Malignant neoplasm of appendix|Disorder|false|false|C4037994;C0003617|appendixnull|appendix - HTML link|Finding|false|false|C4037994;C0003617|appendixnull|Procedure on appendix|Procedure|false|false|C4037994;C0003617|appendixnull|Abdomen+Pelvis>Appendix|Anatomy|false|false|C0869813;C5575035;C1552860;C0348899;C0496779;C0496860|appendix
+null|Appendix|Anatomy|false|false|C0869813;C5575035;C1552860;C0348899;C0496779;C0496860|appendixnull|Well (answer to question)|Finding|false|false|C4037994;C0003617|wellnull|Well (container)|Device|false|false||wellnull|Microplate Well|Modifier|false|false||well
+null|Good|Modifier|false|false||well
+null|Healthy|Modifier|false|false||wellnull|patient appearance regarding mental status exam|Procedure|false|false||appearancenull|null|Attribute|false|false||appearancenull|Personal appearance|Subject|false|false||appearancenull|Appearance|Modifier|false|false||appearancenull|Kind of quantity - Appearance|LabModifier|false|false||appearancenull|effusion|Finding|true|false||free fluidnull|Free of (attribute)|Finding|true|false||freenull|Empty (qualifier)|Modifier|false|false||freenull|fluid - substance|Drug|true|false||fluid
+null|Liquid substance|Drug|true|false||fluidnull|Fluid Specimen Code|Finding|true|false||fluidnull|Fluid behavior|Modifier|false|false||fluidnull|Free of (attribute)|Finding|true|false||freenull|Empty (qualifier)|Modifier|false|false||freenull|Air (substance)|Drug|true|false||air
+null|air|Drug|true|false||air
+null|air|Drug|true|false||airnull|ACUTE INSULIN RESPONSE|Finding|true|false||air
+null|AIRN gene|Finding|true|false||air
+null|AI/RHEUM|Finding|true|false||airnull|Computed tomography of pelvis|Procedure|false|false|C4266535;C0030797;C0559769|CT PELVISnull|null|Attribute|false|false|C4266535;C0030797;C0559769|CT PELVISnull|Malignant neoplasm of pelvis|Disorder|false|false|C4266535;C0030797;C0559769|PELVISnull|Pelvis problem|Finding|false|false|C4266535;C0030797;C0559769|PELVISnull|Pelvis+|Anatomy|false|false|C0153663;C0882057;C0412628;C0812455|PELVIS
+null|Pelvic cavity structure|Anatomy|false|false|C0153663;C0882057;C0412628;C0812455|PELVIS
+null|Pelvis|Anatomy|false|false|C0153663;C0882057;C0412628;C0812455|PELVISnull|IV contrast|Drug|true|false||INTRAVENOUS CONTRASTnull|Intravenous Route of Administration|Finding|true|false||INTRAVENOUSnull|Intravenous|Modifier|false|false||INTRAVENOUSnull|Contrast Media|Drug|true|false||CONTRASTnull|Contrast|Modifier|false|false||CONTRASTnull|Initial (abbreviation)|Finding|false|false||Initialnull|Initially|Time|false|false||Initialnull|Firstly|Modifier|false|false||Initialnull|Solid Dose Form|Drug|false|false||solid
+null|solid substance|Drug|false|false||solidnull|Solid|Modifier|false|false||solidnull|Mass of body structure|Finding|false|false|C0007531|mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|mass
+null|null|Finding|false|false|C0007531|mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|mass
+null|FBN1 gene|Finding|false|false|C0007531|mass
+null|Mass of body region|Finding|false|false|C0007531|massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Congenital Abnormality|Disorder|false|false|C0007531|abnormalitynull|Abnormality|Finding|false|false|C0007531|abnormalitynull|Cecum|Anatomy|false|false|C0673828;C4283905;C1546709;C2700045;C0577573;C0577559;C1414542;C0000768;C1825978;C1825626;C1823282;C1705504;C1704258|cecalnull|KAT5 wt Allele|Finding|false|false|C0007531|tip
+null|ITFG1 gene|Finding|false|false|C0007531|tip
+null|METTL8 gene|Finding|false|false|C0007531|tip
+null|TIPRL gene|Finding|false|false|C0007531|tipnull|TIP regimen|Procedure|false|false|C0007531|tipnull|Device tip (physical object)|Device|false|false||tipnull|Tip|Modifier|false|false||tipnull|Approximate|Modifier|false|false||approximatelynull|Cecal mass|Finding|false|false|C0007531|cecal massnull|Cecum|Anatomy|false|false|C4283905;C1546709;C2700045;C0577573;C0577559;C1414542;C3670817|cecalnull|Mass of body structure|Finding|false|false|C0007531|mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|mass
+null|null|Finding|false|false|C0007531|mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|mass
+null|FBN1 gene|Finding|false|false|C0007531|mass
+null|Mass of body region|Finding|false|false|C0007531|massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Limited component (foundation metadata concept)|Finding|false|false||limited
+null|Limited (extensiveness)|Finding|false|false||limitednull|Part|Modifier|false|false||portionnull|Malignant neoplasm of pelvis|Disorder|false|false|C4266535;C0030797;C0559769;C0226896|pelvisnull|Pelvis problem|Finding|false|false|C0226896;C4266535;C0030797;C0559769|pelvisnull|Pelvis+|Anatomy|false|false|C0153663;C1527415;C4521986;C0812455|pelvis
+null|Pelvic cavity structure|Anatomy|false|false|C0153663;C1527415;C4521986;C0812455|pelvis
+null|Pelvis|Anatomy|false|false|C0153663;C1527415;C4521986;C0812455|pelvisnull|Passage tissue culture technique|Procedure|false|false||passagenull|Channel|Modifier|false|false||passagenull|Oral Dosage Form|Drug|false|false|C0226896|oralnull|Oral Route of Administration|Finding|false|false|C0226896;C4266535;C0030797;C0559769|oral
+null|Oral (intended site)|Finding|false|false|C0226896;C4266535;C0030797;C0559769|oralnull|Oral cavity|Anatomy|false|false|C0812455;C1527415;C4521986;C0153663;C1272919|oralnull|Oral|Modifier|false|false||oralnull|Contrast Media|Drug|false|false||contrastnull|Contrast|Modifier|false|false||contrastnull|Confirmation|Finding|false|false||confirmingnull|Confirmed by|Modifier|false|false||confirmingnull|Experimental Finding|Finding|false|false||finding
+null|Signs and Symptoms|Finding|false|false||finding
+null|Finding|Finding|false|false||findingnull|Mass of body structure|Finding|false|false||mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false||mass
+null|null|Finding|false|false||mass
+null|FBN1 wt Allele|Finding|false|false||mass
+null|FBN1 gene|Finding|false|false||mass
+null|Mass of body region|Finding|false|false||massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Thickened|Finding|false|false||thickeningnull|Adjacent|Modifier|false|false||adjacentnull|Wall of cecum|Anatomy|false|false||cecal wallnull|Cecum|Anatomy|false|false||cecalnull|Walls of a building|Device|false|false||wallnull|Adjacent|Modifier|false|false||adjacentnull|Neoplasm of uncertain or unknown behavior of appendix|Disorder|false|false|C4037994;C0003617|appendix
+null|Benign neoplasm of appendix|Disorder|false|false|C4037994;C0003617|appendix
+null|Malignant neoplasm of appendix|Disorder|false|false|C4037994;C0003617|appendixnull|appendix - HTML link|Finding|false|false|C4037994;C0003617|appendixnull|Procedure on appendix|Procedure|false|false|C4037994;C0003617|appendixnull|Abdomen+Pelvis>Appendix|Anatomy|false|false|C0348899;C0496779;C0496860;C0869813;C1552860|appendix
+null|Appendix|Anatomy|false|false|C0348899;C0496779;C0496860;C0869813;C1552860|appendixnull|Inflammatory|Finding|false|false||inflammatorynull|Changing|Finding|true|false||changenull|Change - procedure|Procedure|true|false||changenull|Delta (difference)|LabModifier|false|false||change
+null|Changed status|LabModifier|false|false||changenull|Neoplasm of uncertain or unknown behavior of colon|Disorder|false|false|C0009368;C4071907|colon
+null|Colonic Diseases|Disorder|false|false|C0009368;C4071907|colon
+null|Carcinoma in situ of colon|Disorder|false|false|C0009368;C4071907|colonnull|COLON PROBLEM|Finding|false|false|C0009368;C4071907|colonnull|Colon structure (body structure)|Anatomy|false|false|C0750873;C0009373;C0154061;C0496907|colon
+null|Abdomen+Pelvis>Colon|Anatomy|false|false|C0750873;C0009373;C0154061;C0496907|colonnull|TUBE,COLON,22FR,RADIOPAQUE RUBBER B#7370|Device|false|false||colonnull|Colon <Coloninae>|Entity|false|false||colonnull|Evidence of (contextual qualifier)|Finding|true|false||evidence ofnull|Evidence|Finding|true|false||evidencenull|Obstruction|Finding|false|false||obstructionnull|Inflammation|Finding|false|false||inflammationnull|null|Procedure|false|false|C0500470;C1660780;C1548802|surgical anastomosisnull|Operative Surgical Procedures|Procedure|false|false|C1660780;C0500470|surgical
+null|Surgical service|Procedure|false|false|C1660780;C0500470|surgicalnull|Anastomosis|Disorder|false|false|C1548802;C0500470;C1660780|anastomosisnull|null|Procedure|false|false|C1548802;C1660780;C0500470|anastomosisnull|Anatomical anastomosis|Anatomy|false|false|C0677554;C0543467;C0587668;C0332853;C0677554|anastomosisnull|Body Site Modifier - Lower|Anatomy|false|false|C0677554;C0332853;C2003888;C0677554|lowernull|Lower (action)|Event|false|false|C1548802;C1660780|lowernull|Lower - spatial qualifier|Modifier|false|false||lowernull|midline cell component|Anatomy|false|false|C0677554;C0543467;C0587668;C2003888;C0332853;C0677554|midlinenull|Midline (qualifier value)|Modifier|false|false||midlinenull|Malignant neoplasm of pelvis|Disorder|false|false|C4266535;C0030797;C0559769|pelvisnull|Pelvis problem|Finding|false|false|C4266535;C0030797;C0559769|pelvisnull|Pelvis+|Anatomy|false|false|C0153663;C0812455|pelvis
+null|Pelvic cavity structure|Anatomy|false|false|C0153663;C0812455|pelvis
+null|Pelvis|Anatomy|false|false|C0153663;C0812455|pelvisnull|null|Modifier|false|false||unremarkablenull|pelvic free fluid|Finding|true|false|C0030797|pelvic free fluidnull|Pelvis|Anatomy|false|false|C0013687;C0237041;C0332296;C1546638;C1704353;C0302908|pelvicnull|effusion|Finding|true|false|C0030797|free fluidnull|Free of (attribute)|Finding|false|false|C0030797|freenull|Empty (qualifier)|Modifier|false|false||freenull|fluid - substance|Drug|true|false|C0030797|fluid
+null|Liquid substance|Drug|true|false|C0030797|fluidnull|Fluid Specimen Code|Finding|true|false|C0030797|fluidnull|Fluid behavior|Modifier|false|false||fluidnull|Neoplasm of uncertain or unknown behavior of uterus|Disorder|false|false|C4266525;C0042149;C1519876|uterus
+null|Uterine Diseases|Disorder|false|false|C4266525;C0042149;C1519876|uterusnull|examination of uterus|Procedure|false|false|C4266525;C0042149;C1519876|uterusnull|Pelvis>Uterus|Anatomy|false|false|C0869889;C0042131;C0496919|uterus
+null|Mouse Uterus|Anatomy|false|false|C0869889;C0042131;C0496919|uterus
+null|Uterus|Anatomy|false|false|C0869889;C0042131;C0496919|uterusnull|Ocular adnexa structure|Anatomy|false|false||adnexa
+null|Adnexa|Anatomy|false|false||adnexa
+null|Uterine adnexae structure|Anatomy|false|false||adnexanull|null|Finding|false|false||within normal limitsnull|Limited (extensiveness)|Finding|false|false||limitsnull|Neoplasm of uncertain or unknown behavior of bladder|Disorder|false|false|C0005682|bladder
+null|Benign neoplasm of bladder|Disorder|false|false|C0005682|bladder
+null|Carcinoma in situ of bladder|Disorder|false|false|C0005682|bladdernull|Procedures on bladder|Procedure|false|false|C0005682|bladdernull|Urinary Bladder|Anatomy|false|false|C0700124;C0872388;C0496930;C0154017;C0154091|bladdernull|Massive|Modifier|false|false||markedlynull|Dilated|Finding|false|false|C0005682|distendednull|Distended|Modifier|false|false||distendednull|null|Modifier|false|false||unremarkablenull|Enlargement procedure|Procedure|false|false|C0030797|enlargednull|Enlarged|Modifier|false|false||enlargednull|Pelvis|Anatomy|false|false|C1293134|pelvicnull|Inguinal lymph node group|Anatomy|false|false|C0154054;C0024202|inguinal lymph nodesnull|Inguinal region|Anatomy|false|false|C0024202;C0154054|inguinalnull|benign neoplasm of lymph nodes|Disorder|false|false|C0018246;C0024204;C0729596|lymph nodesnull|lymph nodes|Anatomy|false|false|C0024202;C0154054|lymph nodesnull|Lymph|Finding|false|false|C0024204;C0018246;C0729596|lymphnull|Bone Tissue, Human|Anatomy|false|false||OSSEOUS
+null|Skeletal bone|Anatomy|false|false||OSSEOUSnull|Structure|Modifier|false|false||STRUCTURESnull|Specimen Type - Bone|Finding|false|false|C1442209;C0262950|bone
+null|null|Finding|false|false|C1442209;C0262950|bonenull|Skeletal bone|Anatomy|false|false|C1546560;C1550616|bone
+null|XXX bone|Anatomy|false|false|C1546560;C1550616|bonenull|Destructive behavior|Finding|false|false||destructivenull|Lesion|Finding|true|false||lesion
+null|null|Finding|true|false||lesionnull|Admission Level of Care Code - Acute|Finding|true|false||acute
+null|Acute - Triage Code|Finding|true|false||acutenull|acute|Time|false|false||acutenull|Fracture|Disorder|false|false||fracturenull|findings aspects|Finding|false|false||Findingsnull|null|Attribute|false|false||Findingsnull|Consistent with|Finding|false|false||consistent withnull|Compatible|Modifier|false|false||consistent withnull|Consistent with|Finding|false|false||consistentnull|Cecal mass|Finding|false|false|C0007531|cecal massnull|Cecum|Anatomy|false|false|C4283905;C1546709;C2700045;C0577573;C0577559;C1414542;C3670817|cecalnull|Mass of body structure|Finding|false|false|C0007531|mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|mass
+null|null|Finding|false|false|C0007531|mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|mass
+null|FBN1 gene|Finding|false|false|C0007531|mass
+null|Mass of body region|Finding|false|false|C0007531|massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Thickened|Finding|false|false||thickeningnull|Cecum|Anatomy|false|false|C1825978;C1825626;C1823282;C1705504;C0673828;C1882062;C0027651|cecalnull|KAT5 wt Allele|Finding|false|false|C0007531|tip
+null|ITFG1 gene|Finding|false|false|C0007531|tip
+null|METTL8 gene|Finding|false|false|C0007531|tip
+null|TIPRL gene|Finding|false|false|C0007531|tipnull|TIP regimen|Procedure|false|false|C0007531|tipnull|Device tip (physical object)|Device|false|false||tipnull|Tip|Modifier|false|false||tipnull|Neoplastic disease|Disorder|false|false|C0007531|neoplasm
+null|Neoplasms|Disorder|false|false|C0007531|neoplasmnull|atypia morphology|Finding|false|false||Atypicalnull|Atypical|Modifier|false|false||Atypicalnull|Communicable Diseases|Disorder|false|false||infectiousnull|infectious - Entity Risk|Modifier|false|false||infectiousnull|Process Pharmacologic Substance|Drug|false|false|C1184743|processnull|Process (qualifier value)|Finding|false|false|C1184743|processnull|bony process|Anatomy|false|false|C0332148;C0750492;C1951340;C4521054;C1522240;C2051406|processnull|Process|Phenomenon|false|false|C1184743|processnull|patient appearance regarding mental status exam|Procedure|false|false|C1184743|appearancenull|null|Attribute|false|false||appearancenull|Personal appearance|Subject|false|false||appearancenull|Appearance|Modifier|false|false||appearancenull|Kind of quantity - Appearance|LabModifier|false|false||appearancenull|Smaller|Modifier|false|false||lessnull|Less Than|LabModifier|false|false||lessnull|Probable diagnosis|Finding|false|false|C1184743|likely
+null|Probably|Finding|false|false|C1184743|likelynull|Lacking|Modifier|false|false||lacknull|Inflammatory|Finding|false|false||inflammatorynull|Consent Type - Colonoscopy|Procedure|false|false||colonoscopy
+null|colonoscopy|Procedure|false|false||colonoscopynull|Further|Modifier|false|false||furthernull|Processing type - Evaluation|Finding|false|false||evaluationnull|Evaluation procedure|Procedure|false|false||evaluation
+null|Evaluation|Procedure|false|false||evaluationnull|Neoplasm of uncertain or unknown behavior of appendix|Disorder|false|false|C4037994;C0003617|appendix
+null|Benign neoplasm of appendix|Disorder|false|false|C4037994;C0003617|appendix
+null|Malignant neoplasm of appendix|Disorder|false|false|C4037994;C0003617|appendixnull|appendix - HTML link|Finding|false|false|C4037994;C0003617|appendixnull|Procedure on appendix|Procedure|false|false|C4037994;C0003617|appendixnull|Abdomen+Pelvis>Appendix|Anatomy|false|false|C1552860;C0348899;C0496779;C0496860;C0869813;C0021368|appendix
+null|Appendix|Anatomy|false|false|C1552860;C0348899;C0496779;C0496860;C0869813;C0021368|appendixnull|Aspects of signs|Finding|true|false||signs
+null|Physical findings|Finding|true|false||signsnull|Manufactured sign|Device|true|false||signsnull|Inflammation|Finding|true|false|C4037994;C0003617|inflammationnull|Small|LabModifier|false|false||smallnull|Large bowel obstruction|Finding|true|false|C0021853;C0021851|large bowel obstructionnull|Large Intestine|Anatomy|false|false|C0021843;C0028778;C5890938;C1416798;C0460048|large bowelnull|LARGE1 wt Allele|Finding|false|false|C0021851|large
+null|LARGE1 gene|Finding|false|false|C0021851|largenull|Large|LabModifier|false|false||largenull|Intestinal Obstruction|Disorder|false|false|C0021853;C0021851|bowel obstructionnull|Intestines|Anatomy|false|false|C0021843;C0460048|bowelnull|Obstruction|Finding|true|false|C0021851|obstructionnull|Equivocal|Modifier|false|false||Equivocalnull|Thickened|Finding|false|false|C0013303|thickeningnull|Malignant neoplasm of duodenum|Disorder|false|false|C0013303|duodenum
+null|Benign neoplasm of duodenum|Disorder|false|false|C0013303|duodenumnull|Duodenum|Anatomy|false|false|C0496869;C0153426;C0205400;C0332148;C0750492|duodenumnull|Adverse Event Probably Related to Intervention|Modifier|false|false||likely relatednull|Probable diagnosis|Finding|false|false|C0013303|likely
+null|Probably|Finding|false|false|C0013303|likelynull|Relate - vinyl resin|Drug|false|false||relatednull|Role Link Type - related|Finding|false|false||related
+null|Related (finding)|Finding|false|false||relatednull|Definitely Related to Intervention|Modifier|false|false||related
+null|Relationships|Modifier|false|false||relatednull|Consent Type - Colonoscopy|Procedure|false|false||Colonoscopy
+null|colonoscopy|Procedure|false|false||Colonoscopynull|Structure of lumen of body system|Anatomy|false|false||Lumennull|Lumen|Modifier|false|false||Lumennull|Units Of Measure - lumen|LabModifier|false|false||Lumennull|Evidence of (contextual qualifier)|Finding|false|false||Evidence ofnull|Evidence|Finding|false|false||Evidencenull|Act Relationship Subset - previous|Time|false|false||previous
+null|Previous|Time|false|false||previousnull|End to End|Time|false|false||end to endnull|Endoglin, human|Drug|false|false||end
+null|Endoglin, human|Drug|false|false||endnull|end - ActRelationshipCheckpoint|Finding|false|false||end
+null|ENG gene|Finding|false|false||end
+null|ENG wt Allele|Finding|false|false||endnull|Stop (qualifier value)|Time|false|false||endnull|End|Modifier|false|false||endnull|Endoglin, human|Drug|false|false||end
+null|Endoglin, human|Drug|false|false||endnull|end - ActRelationshipCheckpoint|Finding|false|false||end
+null|ENG gene|Finding|false|false||end
+null|ENG wt Allele|Finding|false|false||endnull|Stop (qualifier value)|Time|false|false||endnull|End|Modifier|false|false||endnull|Anastomosis|Disorder|false|false|C0227391;C0500470;C0009368;C4071907;C0227391|anastomosisnull|null|Procedure|false|false|C0227391;C0500470;C0227391;C0009368;C4071907|anastomosisnull|Anatomical anastomosis|Anatomy|false|false|C0332853;C0677554;C0750873;C0496864;C0153436;C0009373;C0154061;C0496907|anastomosisnull|Malignant neoplasm of sigmoid colon|Disorder|false|false|C0227391;C0009368;C4071907;C0227391;C0500470|sigmoid colon
+null|Benign neoplasm of sigmoid colon|Disorder|false|false|C0227391;C0009368;C4071907;C0227391;C0500470|sigmoid colonnull|Sigmoid colon|Anatomy|false|false|C0677554;C0332853;C0009373;C0154061;C0496907;C0496864;C0153436;C0750873|sigmoid colonnull|Sigmoid colon|Anatomy|false|false|C0496864;C0153436;C0750873;C0009373;C0154061;C0496907;C0677554;C0332853|sigmoidnull|Neoplasm of uncertain or unknown behavior of colon|Disorder|false|false|C0227391;C0227391;C0500470;C0009368;C4071907|colon
+null|Colonic Diseases|Disorder|false|false|C0227391;C0227391;C0500470;C0009368;C4071907|colon
+null|Carcinoma in situ of colon|Disorder|false|false|C0227391;C0227391;C0500470;C0009368;C4071907|colonnull|COLON PROBLEM|Finding|false|false|C0227391;C0009368;C4071907;C0500470;C0227391|colonnull|Colon structure (body structure)|Anatomy|false|false|C0332853;C0496864;C0153436;C0750873;C0677554;C0009373;C0154061;C0496907|colon
+null|Abdomen+Pelvis>Colon|Anatomy|false|false|C0332853;C0496864;C0153436;C0750873;C0677554;C0009373;C0154061;C0496907|colonnull|TUBE,COLON,22FR,RADIOPAQUE RUBBER B#7370|Device|false|false||colonnull|Colon <Coloninae>|Entity|false|false||colonnull|protrusion|Disorder|false|false||Protrudingnull|Protruding|Modifier|false|false||Protrudingnull|Lesion|Finding|false|false||Lesionsnull|Ulceration|Finding|false|false||ulcerated
+null|Ulcer|Finding|false|false||ulceratednull|Mass of body structure|Finding|false|false||mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false||mass
+null|null|Finding|false|false||mass
+null|FBN1 wt Allele|Finding|false|false||mass
+null|FBN1 gene|Finding|false|false||mass
+null|Mass of body region|Finding|false|false||massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Malignant (qualifier value)|Modifier|false|false||malignantnull|patient appearance regarding mental status exam|Procedure|false|false|C0007531|appearancenull|null|Attribute|false|false|C0007531|appearancenull|Personal appearance|Subject|false|false||appearancenull|Appearance|Modifier|false|false||appearancenull|Kind of quantity - Appearance|LabModifier|false|false||appearancenull|Malignant neoplasm of cecum|Disorder|false|false|C0007531|cecum
+null|Benign neoplasm of cecum|Disorder|false|false|C0007531|cecumnull|Cecum|Anatomy|false|false|C0496859;C0153437;C0550215;C2051406|cecumnull|Scope|Finding|false|false||scopenull|Lesion|Finding|false|false||lesion
+null|null|Finding|false|false||lesionnull|Cold brand of chlorpheniramine-phenylpropanolamine|Drug|false|false||Cold
+null|Cold brand of chlorpheniramine-phenylpropanolamine|Drug|false|false||Coldnull|Common Cold|Disorder|false|false||Cold
+null|Chronic Obstructive Airway Disease|Disorder|false|false||Coldnull|Cold Sensation|Finding|false|false||Coldnull|Cold Therapy|Procedure|false|false||Coldnull|Cold Temperature|Phenomenon|false|false||Coldnull|Forceps|Device|false|false||forcepsnull|Biopsy|Procedure|false|false||biopsiesnull|Histology aspects|Finding|false|false||histology
+null|PATH.HISTO|Finding|false|false||histologynull|Histologic test|Procedure|false|false||histologynull|Histology|Title|false|false||histologynull|Malignant neoplasm of cecum|Disorder|false|false|C0007531|cecum
+null|Benign neoplasm of cecum|Disorder|false|false|C0007531|cecumnull|Cecum|Anatomy|false|false|C0496859;C0153437|cecumnull|Lesion|Finding|false|false||Lesionsnull|Multiple diverticula|Disorder|false|false||Multiple diverticulanull|null|Finding|false|false||Multiple diverticulanull|Numerous|LabModifier|false|false||Multiplenull|Diverticulum|Disorder|false|false||diverticulanull|Small|LabModifier|false|false||smallnull|Open|Modifier|false|false||openingsnull|Malignant neoplasm of descending colon|Disorder|false|false|C0227389;C0009368;C4071907|descending colon
+null|Benign neoplasm of descending colon|Disorder|false|false|C0227389;C0009368;C4071907|descending colonnull|Descending colon|Anatomy|false|false|C1547177;C0154061;C0009373;C0496907;C0496863;C0153435;C0750873|descending colonnull|Sequencing - Descending|Finding|false|false|C0227389;C0009368;C4071907|descendingnull|Descending|Modifier|false|false||descendingnull|Carcinoma in situ of colon|Disorder|false|false|C0227389;C0009368;C4071907|colon
+null|Neoplasm of uncertain or unknown behavior of colon|Disorder|false|false|C0227389;C0009368;C4071907|colon
+null|Colonic Diseases|Disorder|false|false|C0227389;C0009368;C4071907|colonnull|COLON PROBLEM|Finding|false|false|C0227389;C0009368;C4071907|colonnull|Colon structure (body structure)|Anatomy|false|false|C1547177;C0496863;C0153435;C0154061;C0009373;C0496907;C0750873|colon
+null|Abdomen+Pelvis>Colon|Anatomy|false|false|C1547177;C0496863;C0153435;C0154061;C0009373;C0496907;C0750873|colonnull|TUBE,COLON,22FR,RADIOPAQUE RUBBER B#7370|Device|false|false||colonnull|Colon <Coloninae>|Entity|false|false||colonnull|impression (attitude)|Finding|false|false||Impression
+null|EKG impression|Finding|false|false||Impressionnull|Mass of body structure|Finding|false|false|C0007531|Mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|Mass
+null|null|Finding|false|false|C0007531|Mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|Mass
+null|FBN1 gene|Finding|false|false|C0007531|Mass
+null|Mass of body region|Finding|false|false|C0007531|Massnull|Mass, a measure of quantity of matter|LabModifier|false|false||Mass
+null|Molecular Mass|LabModifier|false|false||Massnull|Malignant neoplasm of cecum|Disorder|false|false|C0007531|cecum
+null|Benign neoplasm of cecum|Disorder|false|false|C0007531|cecumnull|Cecum|Anatomy|false|false|C4283905;C1546709;C2700045;C0577573;C0577559;C1414542;C3668914;C1548825;C0005558;C0496859;C0153437|cecumnull|biopsy characteristics|Finding|false|false||biopsy
+null|null|Finding|false|false||biopsynull|Biopsy Procedures on the Pharynx, Adenoids, and Tonsils|Procedure|false|false|C0007531|biopsy
+null|Biopsy|Procedure|false|false|C0007531|biopsy
+null|Consent Type - biopsy|Procedure|false|false|C0007531|biopsynull|Diverticulosis|Disorder|false|false|C0009368;C4071907;C0227389|Diverticulosisnull|Malignant neoplasm of descending colon|Disorder|false|false|C0227389;C0009368;C4071907|descending colon
+null|Benign neoplasm of descending colon|Disorder|false|false|C0227389;C0009368;C4071907|descending colonnull|Descending colon|Anatomy|false|false|C1547177;C1510475;C0496863;C0153435;C0750873;C0009373;C0154061;C0496907|descending colonnull|Sequencing - Descending|Finding|false|false|C0227389;C0009368;C4071907|descendingnull|Descending|Modifier|false|false||descendingnull|Neoplasm of uncertain or unknown behavior of colon|Disorder|false|false|C0009368;C4071907;C0227389|colon
+null|Colonic Diseases|Disorder|false|false|C0009368;C4071907;C0227389|colon
+null|Carcinoma in situ of colon|Disorder|false|false|C0009368;C4071907;C0227389|colonnull|COLON PROBLEM|Finding|false|false|C0009368;C4071907;C0227389|colonnull|Colon structure (body structure)|Anatomy|false|false|C0009373;C0154061;C0496907;C1547177;C1510475;C0750873;C0496863;C0153435|colon
+null|Abdomen+Pelvis>Colon|Anatomy|false|false|C0009373;C0154061;C0496907;C1547177;C1510475;C0750873;C0496863;C0153435|colonnull|TUBE,COLON,22FR,RADIOPAQUE RUBBER B#7370|Device|false|false||colonnull|Colon <Coloninae>|Entity|false|false||colonnull|Act Relationship Subset - previous|Time|false|false||Previous
+null|Previous|Time|false|false||Previousnull|End to End|Time|false|false||end to endnull|Endoglin, human|Drug|false|false||end
+null|Endoglin, human|Drug|false|false||endnull|end - ActRelationshipCheckpoint|Finding|false|false|C0500470|end
+null|ENG gene|Finding|false|false|C0500470|end
+null|ENG wt Allele|Finding|false|false|C0500470|endnull|Stop (qualifier value)|Time|false|false||endnull|End|Modifier|false|false||endnull|Endoglin, human|Drug|false|false||end
+null|Endoglin, human|Drug|false|false||endnull|end - ActRelationshipCheckpoint|Finding|false|false|C0500470|end
+null|ENG gene|Finding|false|false|C0500470|end
+null|ENG wt Allele|Finding|false|false|C0500470|endnull|Stop (qualifier value)|Time|false|false||endnull|End|Modifier|false|false||endnull|Anastomosis|Disorder|false|false|C0500470;C0227391|anastomosisnull|null|Procedure|false|false|C0500470;C0227391|anastomosisnull|Anatomical anastomosis|Anatomy|false|false|C1366583;C1704837;C1561490;C0332853;C0677554;C1366583;C1704837;C1561490|anastomosisnull|Sigmoid colon|Anatomy|false|false|C0332853;C0677554|sigmoidnull|Neoplasm of uncertain or unknown behavior of colon|Disorder|false|false|C0009368;C4071907|colon
+null|Colonic Diseases|Disorder|false|false|C0009368;C4071907|colon
+null|Carcinoma in situ of colon|Disorder|false|false|C0009368;C4071907|colonnull|COLON PROBLEM|Finding|false|false|C0009368;C4071907|colonnull|Colon structure (body structure)|Anatomy|false|false|C0009373;C0154061;C0496907;C0750873|colon
+null|Abdomen+Pelvis>Colon|Anatomy|false|false|C0009373;C0154061;C0496907;C0750873|colonnull|TUBE,COLON,22FR,RADIOPAQUE RUBBER B#7370|Device|false|false||colonnull|Colon <Coloninae>|Entity|false|false||colonnull|Consent Type - Colonoscopy|Procedure|false|false|C0007531;C0227327|colonoscopy
+null|colonoscopy|Procedure|false|false|C0007531;C0227327|colonoscopynull|Malignant neoplasm of cecum|Disorder|false|false|C0227327;C0007531|cecum
+null|Benign neoplasm of cecum|Disorder|false|false|C0227327;C0007531|cecumnull|Cecum|Anatomy|false|false|C1548837;C0009378;C0496859;C0153437|cecumnull|Distal part of ileum|Anatomy|false|false|C0153428;C0496859;C0153437;C1548837;C0009378|terminal ileumnull|Terminal Device|Device|false|false||terminalnull|Terminal (end postition)|Modifier|false|false||terminal
+null|End-stage|Modifier|false|false||terminalnull|Malignant neoplasm of ileum|Disorder|false|false|C0020885;C0227327|ileumnull|ileum|Anatomy|false|false|C0153428|ileumnull|Pathology processes|Finding|false|false||PATHOLOGY
+null|Pathological aspects|Finding|false|false||PATHOLOGYnull|Pathology procedure|Procedure|false|false||PATHOLOGYnull|Pathology|Title|false|false||PATHOLOGYnull|Cecal mass|Finding|false|false|C0007531|Cecal massnull|Cecum|Anatomy|false|false|C3670817;C4283905;C1546709;C2700045;C0577573;C0577559;C1414542|Cecalnull|Mass of body structure|Finding|false|false|C0007531|mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|mass
+null|null|Finding|false|false|C0007531|mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|mass
+null|FBN1 gene|Finding|false|false|C0007531|mass
+null|Mass of body region|Finding|false|false|C0007531|massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Mucous Membrane|Anatomy|false|false||mucosalnull|Biopsy|Procedure|false|false||biopsiesnull|Colonic mucous membrane|Anatomy|false|false|C0475224;C1561514;C2826576;C0392747;C4319952|Colonic mucosanull|Colon structure (body structure)|Anatomy|false|false|C1561514|Colonicnull|null|Finding|false|false|C0227349;C0009368;C0026724|mucosanull|Mucous Membrane|Anatomy|false|false|C0392747;C4319952;C0475224;C2826576;C1561514|mucosanull|Focal|Modifier|false|false||focalnull|Ischemic Change|Finding|false|false|C0227349;C0026724|ischemic changenull|Ischemic|Finding|false|false|C0227349;C0026724|ischemicnull|Changing|Finding|false|false|C0026724;C0227349|changenull|Change - procedure|Procedure|false|false|C0026724;C0227349|changenull|Delta (difference)|LabModifier|false|false||change
+null|Changed status|LabModifier|false|false||changenull|Abundance|Modifier|false|false||abundantnull|Associated with|Modifier|false|false||associatednull|Ulceration|Finding|false|false||ulceration
+null|Ulcer|Finding|false|false||ulcerationnull|null|Finding|false|false||exudate
+null|Exudate|Finding|false|false||exudatenull|Granulation of tissue|Finding|false|false|C0040300;C0018180|granulation tissuenull|Granulation Tissue|Anatomy|false|false|C3806379;C4281706;C0518864|granulation tissuenull|Granulation finding|Finding|false|false|C0040300;C0018180|granulationnull|Granulation procedure|Procedure|false|false|C0040300;C0018180|granulationnull|Tissue Specimen Code|Finding|false|false|C0040300|tissuenull|Body tissue|Anatomy|false|false|C3806379;C0518864;C4281706;C1547928|tissuenull|Formation|Finding|false|false||formationnull|Anabolism|Phenomenon|false|false||formationnull|Formations|Modifier|false|false||formationnull|Carcinoma|Disorder|true|false||carcinomanull|Dysplasia|Disorder|true|false||dysplasianull|Levels (qualifier value)|Modifier|false|false||levelsnull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Transaction counts and value totals - year|Finding|false|false||year
+null|Precision - year|Finding|false|false||yearnull|year|Time|false|false||yearnull|Old|Time|false|false||oldnull|Females|Subject|false|false||female
+null|Woman|Subject|false|false||femalenull|Female, Self-Report|Modifier|false|false||female
+null|Female Phenotype|Modifier|false|false||femalenull|History of present illness (finding)|Finding|false|false||history
+null|History of previous events|Finding|false|false||history
+null|Historical aspects qualifier|Finding|false|false||history
+null|Medical History|Finding|false|false||history
+null|Concept History|Finding|false|false||historynull|History|Subject|false|false||historynull|Significant|Finding|false|false||significantnull|Event Seriousness - Significant|Modifier|false|false||significantnull|Diverticulitis|Disorder|false|false|C0227391|diverticulitisnull|Sigmoid colon|Anatomy|false|false|C0012813;C0015252;C0728940|sigmoidnull|removal technique|Procedure|false|false|C0227391|resection
+null|Excision|Procedure|false|false|C0227391|resectionnull|Abdominal Pain|Finding|false|false|C0000726|abdominal painnull|Abdomen|Anatomy|false|false|C0000737;C1549543;C0030193|abdominalnull|Abdominal (qualifier value)|Modifier|false|false||abdominalnull|Administration Method - Pain|Finding|false|false|C0000726|pain
+null|Pain|Finding|false|false|C0000726|painnull|null|Attribute|false|false||painnull|Cecal mass|Finding|false|false|C0007531|cecal massnull|Cecum|Anatomy|false|false|C4283905;C1546709;C2700045;C0577573;C0577559;C1414542;C3670817|cecalnull|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|mass
+null|null|Finding|false|false|C0007531|mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|mass
+null|FBN1 gene|Finding|false|false|C0007531|mass
+null|Mass of body region|Finding|false|false|C0007531|mass
+null|Mass of body structure|Finding|false|false|C0007531|massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Abdominal Pain|Finding|false|false|C0000726|Abdominal painnull|Abdomen|Anatomy|false|false|C0000737;C1549543;C0030193|Abdominalnull|Abdominal (qualifier value)|Modifier|false|false||Abdominalnull|Administration Method - Pain|Finding|false|false|C0000726|pain
+null|Pain|Finding|false|false|C0000726|painnull|null|Attribute|false|false||painnull|most likely|Finding|false|false||most likelynull|Adverse Event Probably Related to Intervention|Modifier|false|false||likely relatednull|Probable diagnosis|Finding|false|false||likely
+null|Probably|Finding|false|false||likelynull|Relate - vinyl resin|Drug|false|false||relatednull|Role Link Type - related|Finding|false|false||related
+null|Related (finding)|Finding|false|false||relatednull|Definitely Related to Intervention|Modifier|false|false||related
+null|Relationships|Modifier|false|false||relatednull|Hemorrhagic|Modifier|false|false||hemorrhagicnull|Ovarian|Anatomy|false|false||ovariannull|Cyst|Disorder|false|false||cystnull|SpecimenType - Cyst|Finding|false|false||cyst
+null|null|Finding|false|false||cystnull|Cyst form of protozoa|Entity|false|false||cystnull|Initially|Time|false|false||Initiallynull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Significant|Finding|false|false||significantnull|Event Seriousness - Significant|Modifier|false|false||significantnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Dilaudid|Drug|false|false||dilaudid
+null|Dilaudid|Drug|false|false||dilaudidnull|Course|Time|false|false||coursenull|Several|LabModifier|false|false||severalnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Own|Finding|false|false||ownnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Pharmaceutical Preparations|Drug|false|false||medicationsnull|Medications|Finding|false|false||medicationsnull|null|Attribute|false|false||medications
+null|null|Attribute|false|false||medicationsnull|Imaging problem|Finding|false|false||imagingnull|Diagnostic Imaging|Procedure|false|false||imaging
+null|Imaging Techniques|Procedure|false|false||imagingnull|Imaging Technology|Title|false|false||imagingnull|Suggestive of|Finding|true|false||suggestive ofnull|Suggestive of|Finding|false|false||suggestivenull|Abdominal Infection|Disorder|false|false||intra-abdominal infectionnull|Intraabdominal Route of Administration|Finding|false|false||intra-abdominalnull|Intra-abdominal|Modifier|false|false||intra-abdominalnull|Communicable Diseases|Disorder|false|false||infectionnull|Infection|Finding|false|false||infectionnull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Gynecologist|Subject|false|false||gynecologistnull|Ovarian Cysts|Disorder|false|false|C0205065|ovarian cystnull|Ovarian|Anatomy|false|false|C0029927|ovariannull|Cyst|Disorder|false|false||cystnull|SpecimenType - Cyst|Finding|false|false||cyst
+null|null|Finding|false|false||cystnull|Cyst form of protozoa|Entity|false|false||cystnull|Patient need for (contextual qualifier)|Finding|false|false||need fornull|Patient need for (contextual qualifier)|Finding|false|false||neednull|Needs|Modifier|false|false||neednull|Continuous|Finding|false|false||continuednull|Therapy Object (animal model)|Finding|false|false||therapy
+null|therapeutic aspects|Finding|false|false||therapynull|Therapeutic procedure|Procedure|false|false||therapynull|Oral Contraceptives, Low-Dose|Drug|false|false|C0226896|low dose oral contraceptivenull|Low dose|LabModifier|false|false||low dosenull|IPSS-R Risk Category Low|Finding|false|false||low
+null|IPSS Risk Category Low|Finding|false|false||low
+null|low confidentiality|Finding|false|false||lownull|Low - MessageWaitingPriority|Modifier|false|false||low
+null|low|Modifier|false|false||low
+null|low exposure|Modifier|false|false||lownull|null|LabModifier|false|false||lownull|Unit dose|LabModifier|false|false||dose
+null|Dosage|LabModifier|false|false||dosenull|Contraceptives, Oral|Drug|false|false|C0226896|oral contraceptivenull|Uses oral contraception (finding)|Finding|false|false|C0226896|oral contraceptivenull|Oral Dosage Form|Drug|false|false|C0226896|oralnull|Oral Route of Administration|Finding|false|false|C0226896|oral
+null|Oral (intended site)|Finding|false|false|C0226896|oralnull|Oral cavity|Anatomy|false|false|C0086736;C0029151;C0009905;C1272919;C1527415;C4521986|oralnull|Oral|Modifier|false|false||oralnull|Contraceptive Agents|Drug|false|false||contraceptivenull|Encounter due to presence of intrauterine contraceptive device|Finding|false|false||contraceptivenull|Contraceptive Devices|Device|false|false||contraceptivenull|Cecal mass|Finding|false|false|C0007531|Cecal Massnull|Cecum|Anatomy|false|false|C3670817;C4283905;C1546709;C2700045;C0577573;C0577559;C1414542|Cecalnull|Mass of body structure|Finding|false|false|C0007531|Mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|Mass
+null|null|Finding|false|false|C0007531|Mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|Mass
+null|FBN1 gene|Finding|false|false|C0007531|Mass
+null|Mass of body region|Finding|false|false|C0007531|Massnull|Mass, a measure of quantity of matter|LabModifier|false|false||Mass
+null|Molecular Mass|LabModifier|false|false||Massnull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Abdomen|Anatomy|false|false||abdominalnull|Abdominal (qualifier value)|Modifier|false|false||abdominalnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Abdominopelvic structure|Anatomy|false|false|C0153662;C0812455;C0153663;C0941288|abdomen and pelvisnull|Abdomen|Anatomy|false|false|C0941288;C0153663;C0812455;C0153662|abdomen andnull|Malignant neoplasm of abdomen|Disorder|false|false|C4266535;C0030797;C0559769;C1508499;C0230168;C0000726;C0000726|abdomennull|Abdomen problem|Finding|false|false|C0000726;C0230168;C0000726;C1508499;C4266535;C0030797;C0559769|abdomennull|Abdomen|Anatomy|false|false|C0941288;C0812455;C0153663;C0153662|abdomen
+null|Abdominal Cavity|Anatomy|false|false|C0941288;C0812455;C0153663;C0153662|abdomennull|Malignant neoplasm of pelvis|Disorder|false|false|C4266535;C0030797;C0559769;C0000726;C0230168;C0000726;C1508499|pelvisnull|Pelvis problem|Finding|false|false|C4266535;C0030797;C0559769;C0000726;C0230168;C0000726;C1508499|pelvisnull|Pelvis+|Anatomy|false|false|C0153663;C0812455;C0153662;C0941288|pelvis
+null|Pelvic cavity structure|Anatomy|false|false|C0153663;C0812455;C0153662;C0941288|pelvis
+null|Pelvis|Anatomy|false|false|C0153663;C0812455;C0153662;C0941288|pelvisnull|Cecal mass|Finding|false|false|C0007531|cecal massnull|Cecum|Anatomy|false|false|C4283905;C1546709;C2700045;C0577573;C0577559;C1414542;C3670817|cecalnull|Mass of body structure|Finding|false|false|C0007531|mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|mass
+null|null|Finding|false|false|C0007531|mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|mass
+null|FBN1 gene|Finding|false|false|C0007531|mass
+null|Mass of body region|Finding|false|false|C0007531|massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Primary malignant neoplasm|Disorder|false|false||malignancy
+null|Malignant Neoplasms|Disorder|false|false||malignancynull|Hospitalization|Procedure|false|false||hospitalizationnull|Colonoscopy through stoma; with biopsy, single or multiple|Procedure|false|false||colonoscopy with biopsy
+null|Colonoscopy and Biopsy|Procedure|false|false||colonoscopy with biopsynull|Consent Type - Colonoscopy|Procedure|false|false||colonoscopy
+null|colonoscopy|Procedure|false|false||colonoscopynull|biopsy characteristics|Finding|false|false||biopsy
+null|null|Finding|false|false||biopsynull|Biopsy Procedures on the Pharynx, Adenoids, and Tonsils|Procedure|false|false||biopsy
+null|Biopsy|Procedure|false|false||biopsy
+null|Consent Type - biopsy|Procedure|false|false||biopsynull|Mass of body structure|Finding|false|false||mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false||mass
+null|null|Finding|false|false||mass
+null|FBN1 wt Allele|Finding|false|false||mass
+null|FBN1 gene|Finding|false|false||mass
+null|Mass of body region|Finding|false|false||massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Referral category - Outpatient|Finding|false|false||outpatient
+null|Patient Class - Outpatient|Finding|false|false||outpatientnull|Outpatients|Subject|false|false||outpatientnull|Gastroenterologist|Subject|false|false||gastroenterologistnull|biopsy characteristics|Finding|false|false||biopsy
+null|null|Finding|false|false||biopsynull|Biopsy Procedures on the Pharynx, Adenoids, and Tonsils|Procedure|false|false||biopsy
+null|Biopsy|Procedure|false|false||biopsy
+null|Consent Type - biopsy|Procedure|false|false||biopsynull|1 Week|Time|false|false||one weeknull|Transaction counts and value totals - week|Finding|false|false||weeknull|week|Time|false|false||weeknull|biopsy characteristics|Finding|false|false||biopsy
+null|null|Finding|false|false||biopsynull|Biopsy Procedures on the Pharynx, Adenoids, and Tonsils|Procedure|false|false||biopsy
+null|Biopsy|Procedure|false|false||biopsy
+null|Consent Type - biopsy|Procedure|false|false||biopsynull|Negative|Finding|false|false||negative fornull|Rh Negative Blood Group|Finding|false|false||negative
+null|Negative|Finding|false|false||negative
+null|Negative Finding|Finding|false|false||negativenull|Expression Negative|Lab|false|false||negativenull|Negative - qualifier|Modifier|false|false||negative
+null|Negative Charge|Modifier|false|false||negativenull|Negative Number|LabModifier|false|false||negativenull|Primary malignant neoplasm|Disorder|true|false||malignancy
+null|Malignant Neoplasms|Disorder|true|false||malignancynull|Anxiety Disorders|Disorder|false|false||Anxiety
+null|Anxiety|Disorder|false|false||Anxietynull|Anxiety symptoms|Finding|false|false||Anxietynull|Relationship modifier - Patient|Finding|false|false||Patient
+null|Specimen Type - Patient|Finding|false|false||Patient
+null|Mail Claim Party - Patient|Finding|false|false||Patient
+null|Report source - Patient|Finding|false|false||Patient
+null|null|Finding|false|false||Patient
+null|Disabled Person Code - Patient|Finding|false|false||Patientnull|Patients|Subject|false|false||Patientnull|Veterinary Patient|Entity|false|false||Patientnull|Visit User Code - Home|Finding|false|false||home
+null|Address type - Home|Finding|false|false||homenull|home health encounter|Procedure|false|false||homenull|Organization unit type - Home|Entity|false|false||homenull|Person location type - Home|Modifier|false|false||home
+null|Home environment|Modifier|false|false||homenull|GDC Regimen Terminology|Finding|false|false||regimennull|Treatment Protocols|Procedure|false|false||regimennull|Zoloft|Drug|false|false||zoloft
+null|Zoloft|Drug|false|false||zoloftnull|Ativan|Drug|false|false||ativan
+null|Ativan|Drug|false|false||ativannull|Gastroesophageal reflux disease|Disorder|false|false||Gerdnull|Relationship modifier - Patient|Finding|false|false||Patient
+null|Specimen Type - Patient|Finding|false|false||Patient
+null|Mail Claim Party - Patient|Finding|false|false||Patient
+null|Report source - Patient|Finding|false|false||Patient
+null|null|Finding|false|false||Patient
+null|Disabled Person Code - Patient|Finding|false|false||Patientnull|Patients|Subject|false|false||Patientnull|Veterinary Patient|Entity|false|false||Patientnull|omeprazole|Drug|false|false||omeprazole
+null|omeprazole|Drug|false|false||omeprazolenull|Zantac|Drug|false|false||zantac
+null|Zantac|Drug|false|false||zantacnull|BID protein, human|Drug|false|false||BID
+null|BID protein, human|Drug|false|false||BIDnull|Body integrity dysphoria|Disorder|false|false||BIDnull|BID gene|Finding|false|false||BIDnull|Twice a day|Time|false|false||BIDnull|Referral category - Outpatient|Finding|false|false||outpatient
+null|Patient Class - Outpatient|Finding|false|false||outpatientnull|Outpatients|Subject|false|false||outpatientnull|GDC Regimen Terminology|Finding|false|false||regimennull|Treatment Protocols|Procedure|false|false||regimennull|Medications on admission|Finding|false|false||Medications on Admissionnull|Pharmaceutical Preparations|Drug|false|false||Medicationsnull|Medications|Finding|false|false||Medicationsnull|null|Attribute|false|false||Medications
+null|null|Attribute|false|false||Medicationsnull|On admission|Time|false|false||on Admissionnull|Admission activity|Procedure|false|false||Admission
+null|Hospital admission|Procedure|false|false||Admissionnull|fish oils|Drug|false|false||Fish Oil
+null|fish oils|Drug|false|false||Fish Oilnull|Fish (substance)|Drug|false|false||Fish
+null|Fish extract|Drug|false|false||Fishnull|SH3PXD2A wt Allele|Finding|false|false||Fish
+null|SH3PXD2A gene|Finding|false|false||Fishnull|Fluorescent in Situ Hybridization|Procedure|false|false||Fishnull|fishes <vertebrates,Coelacanthimorpha>|Entity|false|false||Fish
+null|Class Chondrichthyes|Entity|false|false||Fish
+null|Fishes|Entity|false|false||Fish
+null|Dipnomorpha|Entity|false|false||Fish
+null|Actinopterygii|Entity|false|false||Fish
+null|Myxini|Entity|false|false||Fish
+null|fishes <vertebrates,Hyperoartia>|Entity|false|false||Fishnull|oil ingredients|Drug|false|false||Oil
+null|oil ingredients|Drug|false|false||Oil
+null|Oil Dosage Form|Drug|false|false||Oil
+null|Oils|Drug|false|false||Oil
+null|Food Oil|Drug|false|false||Oilnull|capsule (pharmacologic)|Drug|false|false||Capnull|CATARACT, ANTERIOR POLAR|Disorder|false|false||Capnull|BRD4 wt Allele|Finding|false|false||Cap
+null|HACD1 gene|Finding|false|false||Cap
+null|SERPINB6 gene|Finding|false|false||Cap
+null|BRD4 gene|Finding|false|false||Cap
+null|CAP1 gene|Finding|false|false||Cap
+null|SORBS1 gene|Finding|false|false||Cap
+null|LNPEP gene|Finding|false|false||Capnull|CAP Regimen|Procedure|false|false||Cap
+null|cisplatin/cyclophosphamide/doxorubicin protocol|Procedure|false|false||Cap
+null|cyclophosphamide/doxorubicin/prednisone protocol|Procedure|false|false||Capnull|Cap (physical object)|Device|false|false||Cap
+null|Syringe Caps|Device|false|false||Cap
+null|Cap device|Device|false|false||Capnull|College of American Pathologists|Subject|false|false||Capnull|Controlled Attenuation Parameter|Modifier|false|false||Capnull|Capsule Dosing Unit|LabModifier|false|false||Capnull|Axert|Drug|false|false||Axert
+null|Axert|Drug|false|false||Axertnull|Tablet Dosage Form|Drug|false|false||Tabnull|Tablet Dosing Unit|LabModifier|false|false||Tabnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Oral Route of Administration|Finding|false|false|C0230028;C0226896|by mouthnull|Oral cavity|Anatomy|false|false|C1527415|mouth
+null|Oral region|Anatomy|false|false|C1527415|mouthnull|Onset of (contextual qualifier)|Modifier|false|false||onset ofnull|Onset of (contextual qualifier)|Modifier|false|false||onsetnull|Age of Onset|LabModifier|false|false||onsetnull|2 Hours|Time|false|false||2 hournull|Hour|Time|false|false||hournull|Transaction counts and value totals - day|Finding|false|false||day
+null|Precision - day|Finding|false|false||daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|Lexapro|Drug|false|false||Lexapro
+null|Lexapro|Drug|false|false||Lexapronull|Tablet Dosage Form|Drug|false|false||Tabnull|Tablet Dosing Unit|LabModifier|false|false||Tabnull|Daily|Time|false|false||dailynull|cholecalciferol|Drug|false|false||Cholecalciferol (Vitamin D3)
+null|cholecalciferol|Drug|false|false||Cholecalciferol (Vitamin D3)
+null|cholecalciferol|Drug|false|false||Cholecalciferol (Vitamin D3)null|cholecalciferol|Drug|false|false||Cholecalciferol
+null|cholecalciferol|Drug|false|false||Cholecalciferol
+null|cholecalciferol|Drug|false|false||Cholecalciferolnull|vitamin D3|Drug|false|false||Vitamin D3
+null|vitamin D3|Drug|false|false||Vitamin D3
+null|cholecalciferol|Drug|false|false||Vitamin D3
+null|cholecalciferol|Drug|false|false||Vitamin D3
+null|cholecalciferol|Drug|false|false||Vitamin D3null|Vitamins|Drug|false|false||Vitamin
+null|Vitamins|Drug|false|false||Vitamin
+null|Vitamins|Drug|false|false||Vitaminnull|Storage Unit|Device|false|false||unit
+null|Unit device|Device|false|false||unitnull|Unit - NCI Thesaurus Property|LabModifier|false|false||unit
+null|Unit of Measure|LabModifier|false|false||unit
+null|Unit|LabModifier|false|false||unit
+null|Enzyme Unit|LabModifier|false|false||unitnull|Tablet Dosage Form|Drug|false|false||Tabnull|Tablet Dosing Unit|LabModifier|false|false||Tabnull|lorazepam|Drug|false|false||lorazepam
+null|lorazepam|Drug|false|false||lorazepamnull|Tablet Dosage Form|Drug|false|false||Tabnull|Tablet Dosing Unit|LabModifier|false|false||Tabnull|CIAO3 gene|Finding|false|false||prnnull|As required|Time|false|false||prn
+null|Pro Re Nata|Time|false|false||prnnull|omeprazole|Drug|false|false||Omeprazole
+null|omeprazole|Drug|false|false||Omeprazolenull|capsule (pharmacologic)|Drug|false|false||Capnull|CATARACT, ANTERIOR POLAR|Disorder|false|false||Capnull|BRD4 wt Allele|Finding|false|false||Cap
+null|HACD1 gene|Finding|false|false||Cap
+null|SERPINB6 gene|Finding|false|false||Cap
+null|BRD4 gene|Finding|false|false||Cap
+null|CAP1 gene|Finding|false|false||Cap
+null|SORBS1 gene|Finding|false|false||Cap
+null|LNPEP gene|Finding|false|false||Capnull|CAP Regimen|Procedure|false|false||Cap
+null|cisplatin/cyclophosphamide/doxorubicin protocol|Procedure|false|false||Cap
+null|cyclophosphamide/doxorubicin/prednisone protocol|Procedure|false|false||Capnull|Cap (physical object)|Device|false|false||Cap
+null|Syringe Caps|Device|false|false||Cap
+null|Cap device|Device|false|false||Capnull|College of American Pathologists|Subject|false|false||Capnull|Controlled Attenuation Parameter|Modifier|false|false||Capnull|Capsule Dosing Unit|LabModifier|false|false||Capnull|Release - action (qualifier value)|Finding|false|false||Release
+null|Released (action)|Finding|false|false||Releasenull|Discharge (release)|Procedure|false|false||Release
+null|Release (procedure)|Procedure|false|false||Release
+null|Patient Discharge|Procedure|false|false||Releasenull|BID protein, human|Drug|false|false||BID
+null|BID protein, human|Drug|false|false||BIDnull|Body integrity dysphoria|Disorder|false|false||BIDnull|BID gene|Finding|false|false||BIDnull|Twice a day|Time|false|false||BIDnull|tramadol|Drug|false|false||tramadol
+null|tramadol|Drug|false|false||tramadolnull|Tramadol measurement (procedure)|Procedure|false|false||tramadolnull|Tablet Dosage Form|Drug|false|false||Tabnull|Tablet Dosing Unit|LabModifier|false|false||Tabnull|Hour|Time|false|false||hoursnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|oxycodone|Drug|false|false||oxycodone
+null|oxycodone|Drug|false|false||oxycodonenull|Oxycodone measurement|Procedure|false|false||oxycodonenull|Tablet Dosage Form|Drug|false|false||Tabnull|Tablet Dosing Unit|LabModifier|false|false||Tabnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Oral Route of Administration|Finding|false|false|C0230028;C0226896|by mouthnull|Oral cavity|Anatomy|false|false|C1527415;C1422467|mouth
+null|Oral region|Anatomy|false|false|C1527415;C1422467|mouthnull|Once a day, at bedtime|Time|false|false||qhsnull|CIAO3 gene|Finding|false|false|C0230028;C0226896|prnnull|As required|Time|false|false||prn
+null|Pro Re Nata|Time|false|false||prnnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Multivitamin preparation|Drug|false|false||Multivitamin
+null|Multivitamin preparation|Drug|false|false||Multivitamin
+null|Multivitamin preparation|Drug|false|false||Multivitaminnull|capsule (pharmacologic)|Drug|false|false||Capnull|CATARACT, ANTERIOR POLAR|Disorder|false|false||Capnull|BRD4 wt Allele|Finding|false|false||Cap
+null|HACD1 gene|Finding|false|false||Cap
+null|SERPINB6 gene|Finding|false|false||Cap
+null|BRD4 gene|Finding|false|false||Cap
+null|CAP1 gene|Finding|false|false||Cap
+null|SORBS1 gene|Finding|false|false||Cap
+null|LNPEP gene|Finding|false|false||Capnull|CAP Regimen|Procedure|false|false||Cap
+null|cisplatin/cyclophosphamide/doxorubicin protocol|Procedure|false|false||Cap
+null|cyclophosphamide/doxorubicin/prednisone protocol|Procedure|false|false||Capnull|Cap (physical object)|Device|false|false||Cap
+null|Syringe Caps|Device|false|false||Cap
+null|Cap device|Device|false|false||Capnull|College of American Pathologists|Subject|false|false||Capnull|Controlled Attenuation Parameter|Modifier|false|false||Capnull|Capsule Dosing Unit|LabModifier|false|false||Capnull|Zantac 150|Drug|false|false||Zantac 150
+null|Zantac 150|Drug|false|false||Zantac 150null|Zantac|Drug|false|false||Zantac
+null|Zantac|Drug|false|false||Zantacnull|capsule (pharmacologic)|Drug|false|false||Capnull|CATARACT, ANTERIOR POLAR|Disorder|false|false||Capnull|BRD4 wt Allele|Finding|false|false||Cap
+null|HACD1 gene|Finding|false|false||Cap
+null|SERPINB6 gene|Finding|false|false||Cap
+null|BRD4 gene|Finding|false|false||Cap
+null|CAP1 gene|Finding|false|false||Cap
+null|SORBS1 gene|Finding|false|false||Cap
+null|LNPEP gene|Finding|false|false||Capnull|CAP Regimen|Procedure|false|false||Cap
+null|cisplatin/cyclophosphamide/doxorubicin protocol|Procedure|false|false||Cap
+null|cyclophosphamide/doxorubicin/prednisone protocol|Procedure|false|false||Capnull|Cap (physical object)|Device|false|false||Cap
+null|Syringe Caps|Device|false|false||Cap
+null|Cap device|Device|false|false||Capnull|College of American Pathologists|Subject|false|false||Capnull|Controlled Attenuation Parameter|Modifier|false|false||Capnull|Capsule Dosing Unit|LabModifier|false|false||Capnull|capsule (pharmacologic)|Drug|false|false|C0524463;C1325531|Capsulenull|Microbial anatomical capsule structure|Anatomy|false|false|C0006935|Capsule
+null|Structure of organ capsule|Anatomy|false|false|C0006935|Capsulenull|Capsule Shape|Modifier|false|false||Capsulenull|Capsule (unit of presentation)|LabModifier|false|false||Capsule
+null|Capsule Dosing Unit|LabModifier|false|false||Capsulenull|Oral Route of Administration|Finding|false|false|C0230028;C0226896|by mouthnull|Oral cavity|Anatomy|false|false|C1527415|mouth
+null|Oral region|Anatomy|false|false|C1527415|mouthnull|Twice a day|Time|false|false||twice a daynull|Transaction counts and value totals - day|Finding|false|false||day
+null|Precision - day|Finding|false|false||daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|fluticasone|Drug|false|false||Fluticasone
+null|fluticasone|Drug|false|false||Fluticasonenull|mcg/actuation|LabModifier|false|false||mcg/Actuationnull|microgram|LabModifier|false|false||mcgnull|Actuation (unit of presentation)|LabModifier|false|false||Actuationnull|Nasal Spray brand of phenylephrine|Drug|false|false|C0028429|Nasal Spraynull|Nasal spray (device)|Device|false|false||Nasal Spray
+null|Nasal Sprays|Device|false|false||Nasal Spray
+null|Nasal Spray|Device|false|false||Nasal Spraynull|Nasal brand of oxymetazoline|Drug|false|false|C0028429|Nasal
+null|Nasal brand of oxymetazoline|Drug|false|false|C0028429|Nasal
+null|Nasal dosage form|Drug|false|false|C0028429|Nasalnull|Nasal Route of Administration|Finding|false|false|C0028429|Nasal
+null|Nasal (intended site)|Finding|false|false|C0028429|Nasalnull|null|Anatomy|false|false|C4520890;C1522019;C4521772;C2608294;C1272939;C0721966|Nasalnull|Spray Dosage Form|Drug|false|false||Spraynull|Spray (administration method)|Finding|false|false|C0028429|Spraynull|Spray (action)|Event|false|false||Spraynull|Spray Dosing Unit|LabModifier|false|false||Spraynull|Suspensions|Drug|false|false||Suspnull|SUMO-specific protease activity|Finding|false|false||Suspnull|Spray Dosage Form|Drug|false|false||spraysnull|Spraying behavior|Disorder|false|false||spraysnull|Spray Dosing Unit|LabModifier|false|false||spraysnull|Then - dosing instruction fragment|Finding|false|false||thennull|Then|Time|false|false||thennull|Spray Dosage Form|Drug|false|false||spraynull|Spray (administration method)|Finding|false|false||spraynull|Spray (action)|Event|false|false||spraynull|Spray Dosing Unit|LabModifier|false|false||spraynull|calcium citrate|Drug|false|false||Calcium Citrate
+null|calcium citrate|Drug|false|false||Calcium Citratenull|CALCIUM SUPPLEMENTS|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|CALCIUM SUPPLEMENTS|Drug|false|false||Calcium
+null|Calcium, Dietary|Drug|false|false||Calcium
+null|Calcium [EPC]|Drug|false|false||Calcium
+null|Calcium Drug Class|Drug|false|false||Calciumnull|Calcium metabolic function|Finding|false|false||Calciumnull|Calcium measurement|Procedure|false|false||Calciumnull|citrate|Drug|false|false||Citrate
+null|citrate|Drug|false|false||Citrate
+null|Citrates|Drug|false|false||Citratenull|Citrate measurement|Procedure|false|false||Citratenull|Tablet Dosage Form|Drug|false|false||Tabnull|Tablet Dosing Unit|LabModifier|false|false||Tabnull|2 Weeks|Time|false|false||2 weeksnull|week|Time|false|false||weeksnull|FBXW7 wt Allele|Finding|false|false||ago
+null|FBXW7 gene|Finding|false|false||agonull|Medication.discharge|Finding|false|false||Discharge Medicationsnull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Pharmaceutical Preparations|Drug|false|false||Medicationsnull|Medications|Finding|false|false||Medicationsnull|null|Attribute|false|false||Medications
+null|null|Attribute|false|false||Medicationsnull|omega-3 fatty acids|Drug|false|false||omega-3 fatty acids
+null|omega-3 fatty acids|Drug|false|false||omega-3 fatty acids
+null|omega-3 fatty acids|Drug|false|false||omega-3 fatty acidsnull|omega-3 fatty acids|Drug|false|false||omega-3
+null|omega-3 fatty acids|Drug|false|false||omega-3
+null|omega-3 fatty acids|Drug|false|false||omega-3null|Omega|Finding|false|false||omeganull|Fatty Acids|Drug|false|false||fatty acidsnull|Acids|Drug|false|false||acidsnull|capsule (pharmacologic)|Drug|false|false|C0524463;C1325531|Capsulenull|Microbial anatomical capsule structure|Anatomy|false|false|C0006935|Capsule
+null|Structure of organ capsule|Anatomy|false|false|C0006935|Capsulenull|Capsule Shape|Modifier|false|false||Capsulenull|Capsule (unit of presentation)|LabModifier|false|false||Capsule
+null|Capsule Dosing Unit|LabModifier|false|false||Capsulenull|capsule (pharmacologic)|Drug|false|false|C0524463;C1325531|Capsulenull|Microbial anatomical capsule structure|Anatomy|false|false|C0006935|Capsule
+null|Structure of organ capsule|Anatomy|false|false|C0006935|Capsulenull|Capsule Shape|Modifier|false|false||Capsulenull|Capsule (unit of presentation)|LabModifier|false|false||Capsule
+null|Capsule Dosing Unit|LabModifier|false|false||Capsulenull|Daily|Time|false|false||DAILYnull|Daily|Time|false|false||Dailynull|Axert|Drug|false|false||Axert
+null|Axert|Drug|false|false||Axertnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Once A Day|Drug|false|false||once a daynull|Once daily|Time|false|false||once a daynull|Once - dosing instruction fragment|Finding|false|false||oncenull|Once (schedule frequency)|Time|false|false||oncenull|Transaction counts and value totals - day|Finding|false|false||day
+null|Precision - day|Finding|false|false||daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|Migraine Disorders|Disorder|false|false||migrainenull|escitalopram|Drug|false|false||escitalopram
+null|escitalopram|Drug|false|false||escitalopramnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Daily|Time|false|false||DAILYnull|Daily|Time|false|false||Dailynull|cholecalciferol|Drug|false|false||cholecalciferol (vitamin D3)
+null|cholecalciferol|Drug|false|false||cholecalciferol (vitamin D3)
+null|cholecalciferol|Drug|false|false||cholecalciferol (vitamin D3)null|cholecalciferol|Drug|false|false||cholecalciferol
+null|cholecalciferol|Drug|false|false||cholecalciferol
+null|cholecalciferol|Drug|false|false||cholecalciferolnull|vitamin D3|Drug|false|false||vitamin D3
+null|vitamin D3|Drug|false|false||vitamin D3
+null|cholecalciferol|Drug|false|false||vitamin D3
+null|cholecalciferol|Drug|false|false||vitamin D3
+null|cholecalciferol|Drug|false|false||vitamin D3null|Vitamins|Drug|false|false||vitamin
+null|Vitamins|Drug|false|false||vitamin
+null|Vitamins|Drug|false|false||vitaminnull|Storage Unit|Device|false|false||unit
+null|Unit device|Device|false|false||unitnull|Unit - NCI Thesaurus Property|LabModifier|false|false||unit
+null|Unit of Measure|LabModifier|false|false||unit
+null|Unit|LabModifier|false|false||unit
+null|Enzyme Unit|LabModifier|false|false||unitnull|capsule (pharmacologic)|Drug|false|false|C0524463;C1325531|Capsulenull|Microbial anatomical capsule structure|Anatomy|false|false|C0006935|Capsule
+null|Structure of organ capsule|Anatomy|false|false|C0006935|Capsulenull|Capsule Shape|Modifier|false|false||Capsulenull|Capsule (unit of presentation)|LabModifier|false|false||Capsule
+null|Capsule Dosing Unit|LabModifier|false|false||Capsulenull|capsule (pharmacologic)|Drug|false|false|C0524463;C1325531|Capsulenull|Microbial anatomical capsule structure|Anatomy|false|false|C0006935;C1561538;C1561539;C1720092|Capsule
+null|Structure of organ capsule|Anatomy|false|false|C0006935;C1561538;C1561539;C1720092|Capsulenull|Capsule Shape|Modifier|false|false||Capsulenull|Capsule (unit of presentation)|LabModifier|false|false||Capsule
+null|Capsule Dosing Unit|LabModifier|false|false||Capsulenull|Once A Day|Drug|false|false||once a daynull|Once daily|Time|false|false||once a daynull|Once - dosing instruction fragment|Finding|false|false|C0524463;C1325531|oncenull|Once (schedule frequency)|Time|false|false||oncenull|Transaction counts and value totals - day|Finding|false|false|C0524463;C1325531|day
+null|Precision - day|Finding|false|false|C0524463;C1325531|daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|lorazepam|Drug|false|false||lorazepam
+null|lorazepam|Drug|false|false||lorazepamnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Bedtime (qualifier value)|Time|false|false||bedtime
+null|Once a day, at bedtime|Time|false|false||bedtimenull|Anxiety Disorders|Disorder|false|false||anxiety
+null|Anxiety|Disorder|false|false||anxietynull|Anxiety symptoms|Finding|false|false||anxietynull|omeprazole|Drug|false|false||omeprazole
+null|omeprazole|Drug|false|false||omeprazolenull|capsule (pharmacologic)|Drug|false|false|C0524463;C1325531|Capsulenull|Microbial anatomical capsule structure|Anatomy|false|false|C1283071;C0391871;C0006935;C0030685;C0680255;C1963578|Capsule
+null|Structure of organ capsule|Anatomy|false|false|C1283071;C0391871;C0006935;C0030685;C0680255;C1963578|Capsulenull|Capsule Shape|Modifier|false|false||Capsulenull|Capsule (unit of presentation)|LabModifier|false|false||Capsule
+null|Capsule Dosing Unit|LabModifier|false|false||Capsulenull|Delayed Release Dosage Form|Drug|false|false||Delayed Releasenull|Views delayed|Attribute|false|false||Delayednull|Deferred|Time|false|false||Delayednull|Release - action (qualifier value)|Finding|false|false|C0524463;C1325531|Release
+null|Released (action)|Finding|false|false|C0524463;C1325531|Releasenull|Discharge (release)|Procedure|false|false|C0524463;C1325531|Release
+null|Release (procedure)|Procedure|false|false|C0524463;C1325531|Release
+null|Patient Discharge|Procedure|false|false|C0524463;C1325531|Releasenull|capsule (pharmacologic)|Drug|false|false|C0524463;C1325531|Capsulenull|Microbial anatomical capsule structure|Anatomy|false|false|C0030685;C0680255;C1963578;C0006935;C1283071;C0391871|Capsule
+null|Structure of organ capsule|Anatomy|false|false|C0030685;C0680255;C1963578;C0006935;C1283071;C0391871|Capsulenull|Capsule Shape|Modifier|false|false||Capsulenull|Capsule (unit of presentation)|LabModifier|false|false||Capsule
+null|Capsule Dosing Unit|LabModifier|false|false||Capsulenull|Delayed Release Dosage Form|Drug|false|false||Delayed Releasenull|Views delayed|Attribute|false|false||Delayednull|Deferred|Time|false|false||Delayednull|Release - action (qualifier value)|Finding|false|false|C0524463;C1325531|Release
+null|Released (action)|Finding|false|false|C0524463;C1325531|Releasenull|Discharge (release)|Procedure|false|false|C0524463;C1325531|Release
+null|Release (procedure)|Procedure|false|false|C0524463;C1325531|Release
+null|Patient Discharge|Procedure|false|false|C0524463;C1325531|Releasenull|BID protein, human|Drug|false|false||BID
+null|BID protein, human|Drug|false|false||BIDnull|Body integrity dysphoria|Disorder|false|false||BIDnull|BID gene|Finding|false|false||BIDnull|Twice a day|Time|false|false||BIDnull|2 times|Finding|false|false||2 timesnull|TELANGIECTASIA, IMPAIRED INTELLECTUAL DEVELOPMENT, MICROCEPHALY, METAPHYSEAL DYSPLASIA, EYE ABNORMALITIES, AND SHORT STATURE|Disorder|false|false||timesnull|Time|Time|false|false||timesnull|Times|LabModifier|false|false||timesnull|Transaction counts and value totals - day|Finding|false|false||day
+null|Precision - day|Finding|false|false||daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|Multivitamin tablet|Drug|false|false||multivitamin     Tabletnull|Multivitamin preparation|Drug|false|false||multivitamin
+null|Multivitamin preparation|Drug|false|false||multivitamin
+null|Multivitamin preparation|Drug|false|false||multivitaminnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Daily|Time|false|false||DAILYnull|Daily|Time|false|false||Dailynull|ranitidine hydrochloride|Drug|false|false||ranitidine HCl
+null|ranitidine hydrochloride|Drug|false|false||ranitidine HClnull|ranitidine|Drug|false|false||ranitidine
+null|ranitidine|Drug|false|false||ranitidinenull|Flinders medical centre-7 marker|Drug|false|false||HCl
+null|hydrochloride|Drug|false|false||HCl
+null|hydrochloride|Drug|false|false||HClnull|Hairy Cell Leukemia|Disorder|false|false||HClnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|BID protein, human|Drug|false|false||BID
+null|BID protein, human|Drug|false|false||BIDnull|Body integrity dysphoria|Disorder|false|false||BIDnull|BID gene|Finding|false|false||BIDnull|Twice a day|Time|false|false||BIDnull|TELANGIECTASIA, IMPAIRED INTELLECTUAL DEVELOPMENT, MICROCEPHALY, METAPHYSEAL DYSPLASIA, EYE ABNORMALITIES, AND SHORT STATURE|Disorder|false|false||timesnull|Time|Time|false|false||timesnull|Times|LabModifier|false|false||timesnull|Transaction counts and value totals - day|Finding|false|false||day
+null|Precision - day|Finding|false|false||daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|fluticasone|Drug|false|false||fluticasone
+null|fluticasone|Drug|false|false||fluticasonenull|mcg/actuation|LabModifier|false|false||mcg/Actuationnull|microgram|LabModifier|false|false||mcgnull|Actuation (unit of presentation)|LabModifier|false|false||Actuationnull|SPRAY, SUSPENSION|Drug|false|false||Spray, Suspensionnull|Spray Dosage Form|Drug|false|false||Spraynull|Spray (administration method)|Finding|false|false||Spraynull|Spray (action)|Event|false|false||Spraynull|Spray Dosing Unit|LabModifier|false|false||Spraynull|Suspension substance|Drug|false|false||Suspension
+null|Suspensions|Drug|false|false||Suspensionnull|Suspension (action)|Finding|false|false||Suspensionnull|Spray Dosage Form|Drug|false|false||Spraynull|Spray (administration method)|Finding|false|false|C0028429|Spraynull|Spray (action)|Event|false|false|C0028429|Spraynull|Spray Dosing Unit|LabModifier|false|false||Spraynull|Nasal brand of oxymetazoline|Drug|false|false|C0028429|Nasal
+null|Nasal brand of oxymetazoline|Drug|false|false|C0028429|Nasal
+null|Nasal dosage form|Drug|false|false|C0028429|Nasalnull|Nasal Route of Administration|Finding|false|false|C0028429|Nasal
+null|Nasal (intended site)|Finding|false|false|C0028429|Nasalnull|null|Anatomy|false|false|C4521772;C1272939;C0721966;C4520890;C1522019;C2003858|Nasalnull|Daily|Time|false|false||DAILYnull|Daily|Time|false|false||Dailynull|calcium carbonate|Drug|false|false||calcium carbonate
+null|calcium carbonate|Drug|false|false||calcium carbonatenull|CALCIUM SUPPLEMENTS|Drug|false|false||calcium
+null|calcium|Drug|false|false||calcium
+null|calcium|Drug|false|false||calcium
+null|calcium|Drug|false|false||calcium
+null|CALCIUM SUPPLEMENTS|Drug|false|false||calcium
+null|Calcium, Dietary|Drug|false|false||calcium
+null|Calcium [EPC]|Drug|false|false||calcium
+null|Calcium Drug Class|Drug|false|false||calciumnull|Calcium metabolic function|Finding|false|false||calciumnull|Calcium measurement|Procedure|false|false||calciumnull|carbonate ion|Drug|false|false||carbonate
+null|Carbonates|Drug|false|false||carbonate
+null|Carbonates|Drug|false|false||carbonatenull|CALCIUM SUPPLEMENTS|Drug|false|false||calcium
+null|calcium|Drug|false|false||calcium
+null|calcium|Drug|false|false||calcium
+null|calcium|Drug|false|false||calcium
+null|CALCIUM SUPPLEMENTS|Drug|false|false||calcium
+null|Calcium, Dietary|Drug|false|false||calcium
+null|Calcium [EPC]|Drug|false|false||calcium
+null|Calcium Drug Class|Drug|false|false||calciumnull|Calcium metabolic function|Finding|false|false||calciumnull|Calcium measurement|Procedure|false|false||calciumnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|Once A Day|Drug|false|false||once a daynull|Once daily|Time|false|false||once a daynull|Once - dosing instruction fragment|Finding|false|false||oncenull|Once (schedule frequency)|Time|false|false||oncenull|Transaction counts and value totals - day|Finding|false|false||day
+null|Precision - day|Finding|false|false||daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|Discharge disposition|Finding|false|false||Discharge Dispositionnull|null|Attribute|false|false||Discharge Dispositionnull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Patient disposition|Procedure|false|false||Dispositionnull|null|Attribute|false|false||Dispositionnull|Disposition|Modifier|false|false||Dispositionnull|Visit User Code - Home|Finding|false|false||Home
+null|Address type - Home|Finding|false|false||Homenull|home health encounter|Procedure|false|false||Homenull|Organization unit type - Home|Entity|false|false||Homenull|Person location type - Home|Modifier|false|false||Home
+null|Home environment|Modifier|false|false||Homenull|discharge diagnosis|Finding|false|false||Discharge Diagnosisnull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Diagnosis Classification - Diagnosis|Finding|false|false||Diagnosis
+null|diagnosis aspects|Finding|false|false||Diagnosisnull|Diagnosis|Procedure|false|false||Diagnosisnull|null|Attribute|false|false||Diagnosisnull|Cecal mass|Finding|false|false|C0007531|Cecal Massnull|Cecum|Anatomy|false|false|C3670817;C4283905;C1546709;C2700045;C0577573;C0577559;C1414542|Cecalnull|Mass of body structure|Finding|false|false|C0007531|Mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|Mass
+null|null|Finding|false|false|C0007531|Mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|Mass
+null|FBN1 gene|Finding|false|false|C0007531|Mass
+null|Mass of body region|Finding|false|false|C0007531|Massnull|Mass, a measure of quantity of matter|LabModifier|false|false||Mass
+null|Molecular Mass|LabModifier|false|false||Massnull|Hemorrhagic cyst of ovary|Disorder|false|false|C0205065|Hemorrhagic ovarian cystnull|Hemorrhagic|Modifier|false|false||Hemorrhagicnull|Ovarian Cysts|Disorder|false|false|C0205065|ovarian cystnull|Ovarian|Anatomy|false|false|C0029927;C0010709;C0473311|ovariannull|Cyst|Disorder|false|false|C0205065|cystnull|SpecimenType - Cyst|Finding|false|false||cyst
+null|null|Finding|false|false||cystnull|Cyst form of protozoa|Entity|false|false||cystnull|Mental state|Finding|false|false||Mental Statusnull|null|Attribute|false|false||Mental Status
+null|null|Attribute|false|false||Mental Statusnull|Psyche structure|Finding|false|false||Mentalnull|What subject filter - Status|Finding|false|false||Statusnull|null|Attribute|false|false||Statusnull|Social status|Modifier|false|false||Status
+null|Status|Modifier|false|false||Statusnull|Remote control command - Clear|Finding|false|false||Clearnull|Clear|Modifier|false|false||Clear
+null|Transparent (qualitative concept)|Modifier|false|false||Clearnull|Coherent|Finding|false|false||coherentnull|Level of consciousness|Finding|false|false||Level of Consciousnessnull|null|Attribute|false|false||Level of Consciousnessnull|Consciousness related finding|Finding|false|false||Consciousness
+null|Conscious|Finding|false|false||Consciousness
+null|null|Finding|false|false||Consciousnessnull|Alert brand of caffeine|Drug|false|false||Alert
+null|Alert brand of caffeine|Drug|false|false||Alertnull|Mentally alert|Finding|false|false||Alert
+null|Consciousness clear|Finding|false|false||Alert
+null|Alert note|Finding|false|false||Alert
+null|Alert|Finding|false|false||Alertnull|null|Attribute|false|false||Alertnull|Interaction|Finding|false|false||interactivenull|Activity Status|Modifier|false|false||Activity Statusnull|Activity (animal life circumstance)|Finding|false|false||Activity
+null|Physical activity|Finding|false|false||Activitynull|Activities|Event|false|false||Activitynull|null|Modifier|false|false||Activitynull|What subject filter - Status|Finding|false|false||Statusnull|null|Attribute|false|false||Statusnull|Social status|Modifier|false|false||Status
+null|Status|Modifier|false|false||Statusnull|Referral category - Ambulatory|Finding|false|false||Ambulatory
+null|Ambulatory (qualifier value)|Finding|false|false||Ambulatory
+null|Ambulatory|Finding|false|false||Ambulatory
+null|Level of Care - Ambulatory|Finding|false|false||Ambulatorynull|ambulatory encounter|Procedure|false|false||Ambulatorynull|Specialty Type - Ambulatory|Title|false|false||Ambulatorynull|Coordination of Benefits - Independent|Finding|false|false||Independent
+null|Religious Affiliation - Independent|Finding|false|false||Independent
+null|Independence|Finding|false|false||Independent
+null|Independently able|Finding|false|false||Independentnull|FBXW7-AS1 gene|Finding|false|false||Dearnull|Organization unit type - Hospital|Finding|false|false||hospitalnull|Hospitals|Device|false|false||hospitalnull|Hospitals|Entity|false|false||hospitalnull|Hospital environment|Modifier|false|false||hospitalnull|Abdominal Pain|Finding|false|false|C0000726|abdominal painnull|Abdomen|Anatomy|false|false|C0000737|abdominalnull|Abdominal (qualifier value)|Modifier|false|false||abdominalnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|null|Finding|false|false||thinknull|Hemorrhagic cyst of ovary|Disorder|false|false|C0205065|hemorrhagic ovarian cystnull|Hemorrhagic|Modifier|false|false||hemorrhagicnull|Ovarian Cysts|Disorder|false|false|C0205065|ovarian cystnull|Ovarian|Anatomy|false|false|C0029927;C0473311;C0010709|ovariannull|Cyst|Disorder|false|false|C0205065|cystnull|SpecimenType - Cyst|Finding|false|false||cyst
+null|null|Finding|false|false||cystnull|Cyst form of protozoa|Entity|false|false||cystnull|Analgesics [TC]|Drug|false|false||analgesics
+null|Analgesics|Drug|false|false||analgesics
+null|Analgesics|Drug|false|false||analgesics
+null|Analgesics|Drug|false|false||analgesicsnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|CAT Scan Section ID|Finding|false|false|C0007531|CAT scannull|X-Ray Computed Tomography|Procedure|false|false|C0007531|CAT scannull|CAT protein, human|Drug|false|false||CAT
+null|CAT protein, human|Drug|false|false||CAT
+null|Cat hair antigen|Drug|false|false||CAT
+null|Cat hair antigen|Drug|false|false||CAT
+null|Chloramphenicol O-Acetyltransferase|Drug|false|false||CAT
+null|Chloramphenicol O-Acetyltransferase|Drug|false|false||CATnull|Truncus Arteriosus, Persistent|Disorder|false|false|C0007531|CATnull|CAT gene|Finding|false|false|C0007531|CAT
+null|Cutaneous Assessment Tool|Finding|false|false|C0007531|CAT
+null|Chloramphenicol Acetyl Transferase Gene|Finding|false|false|C0007531|CAT
+null|catalase activity|Finding|false|false|C0007531|CAT
+null|Chronic Obstructive Pulmonary Disease Assessment Test scale|Finding|false|false|C0007531|CATnull|allergy testing cat|Procedure|false|false|C0007531|CAT
+null|X-Ray Computed Tomography|Procedure|false|false|C0007531|CAT
+null|cytarabine/thioguanine protocol|Procedure|false|false|C0007531|CATnull|Cat (organism)|Entity|false|false||CAT
+null|Family Felidae|Entity|false|false||CAT
+null|Catalan language|Entity|false|false||CAT
+null|Felis catus|Entity|false|false||CATnull|Radionuclide Imaging|Procedure|false|false|C0007531|scan
+null|Scanning|Procedure|false|false|C0007531|scannull|Mass of body structure|Finding|false|false|C0007531|a massnull|Mass of body structure|Finding|false|false|C0007531|mass
+null|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false|C0007531|mass
+null|null|Finding|false|false|C0007531|mass
+null|FBN1 wt Allele|Finding|false|false|C0007531|mass
+null|FBN1 gene|Finding|false|false|C0007531|mass
+null|Mass of body region|Finding|false|false|C0007531|massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Malignant neoplasm of cecum|Disorder|false|false|C0007531|cecum
+null|Benign neoplasm of cecum|Disorder|false|false|C0007531|cecumnull|Cecum|Anatomy|false|false|C2097305;C0280589;C0040405;C0496859;C0153437;C0577559;C4283905;C1546709;C2700045;C0577573;C0577559;C1414542;C0040405;C0041207;C1151515;C1366498;C1413138;C4050461;C4758039;C0034606;C0441633;C1547980|cecumnull|Consent Type - Colonoscopy|Procedure|false|false||colonoscopy
+null|colonoscopy|Procedure|false|false||colonoscopynull|Morphology, Attenuation, Size, and Structure Criteria|Finding|false|false||mass
+null|null|Finding|false|false||mass
+null|FBN1 wt Allele|Finding|false|false||mass
+null|FBN1 gene|Finding|false|false||mass
+null|Mass of body region|Finding|false|false||mass
+null|Mass of body structure|Finding|false|false||massnull|Mass, a measure of quantity of matter|LabModifier|false|false||mass
+null|Molecular Mass|LabModifier|false|false||massnull|Gastroenterologist|Subject|false|false||gastroenterologistnull|Gynecologist|Subject|false|false||gynecologistnull|Patient need for (contextual qualifier)|Finding|false|false||neednull|Needs|Modifier|false|false||neednull|Contraceptives, Oral|Drug|false|false|C0226896|oral contraceptivenull|Uses oral contraception (finding)|Finding|false|false|C0226896|oral contraceptivenull|Oral Dosage Form|Drug|false|false|C0226896|oralnull|Oral Route of Administration|Finding|false|false|C0226896|oral
+null|Oral (intended site)|Finding|false|false|C0226896|oralnull|Oral cavity|Anatomy|false|false|C0009905;C0029151;C1527415;C4521986;C1272919|oralnull|Oral|Modifier|false|false||oralnull|Contraceptive Agents|Drug|false|false||contraceptivenull|Encounter due to presence of intrauterine contraceptive device|Finding|false|false||contraceptivenull|Contraceptive Devices|Device|false|false||contraceptivenull|Changing|Finding|true|false||changesnull|Changed status|LabModifier|false|false||changesnull|Visit User Code - Home|Finding|false|false||home
+null|Address type - Home|Finding|false|false||homenull|home health encounter|Procedure|false|false||homenull|Organization unit type - Home|Entity|false|false||homenull|Person location type - Home|Modifier|false|false||home
+null|Home environment|Modifier|false|false||homenull|Pharmaceutical Preparations|Drug|false|false||medicationsnull|Medications|Finding|false|false||medicationsnull|null|Attribute|false|false||medications
+null|null|Attribute|false|false||medicationsnull|follow-up|Procedure|false|false||Followupnull|Instructions|Finding|false|false||Instructions
+null|Instruction [Publication Type]|Finding|false|false||Instructionsnull|null|Attribute|false|false||Instructions

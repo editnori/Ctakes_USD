@@ -1375,7 +1375,7 @@ public class ExcelXmlReport {
         return rows;
     }
 
-    // =============== Minimal XLSX writer (no styles, inline strings) ===============
+    // =============== Minimal XLSX writer (with styled header + freeze top row) ===============
     private static void writeWorkbookXlsx(LinkedHashMap<String, List<List<String>>> sheets, Path out) throws IOException {
         Files.createDirectories(out.getParent());
         try (java.util.zip.ZipOutputStream zos = new java.util.zip.ZipOutputStream(Files.newOutputStream(out))) {
@@ -1388,6 +1388,8 @@ public class ExcelXmlReport {
             putEntry(zos, "xl/workbook.xml", workbookXml(names));
             // xl/_rels/workbook.xml.rels
             putEntry(zos, "xl/_rels/workbook.xml.rels", workbookRelsXml(sheets.size()));
+            // xl/styles.xml (basic style: normal + header bold w/ light gray fill)
+            putEntry(zos, "xl/styles.xml", stylesXml());
             // xl/worksheets/sheetN.xml
             int idx = 1;
             for (List<List<String>> data : sheets.values()) {
@@ -1410,6 +1412,7 @@ public class ExcelXmlReport {
         sb.append("<Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/>");
         sb.append("<Default Extension=\"xml\" ContentType=\"application/xml\"/>");
         sb.append("<Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/>");
+        sb.append("<Override PartName=\"/xl/styles.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml\"/>");
         for (int i=1;i<=sheetCount;i++) {
             sb.append("<Override PartName=\"/xl/worksheets/sheet"+i+".xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/>");
         }
@@ -1438,30 +1441,68 @@ public class ExcelXmlReport {
         for (int i=1;i<=sheetCount;i++) {
             sb.append("<Relationship Id=\"rId"+i+"\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet"+i+".xml\"/>");
         }
+        // styles relationship as the last one
+        sb.append("<Relationship Id=\"rId"+(sheetCount+1)+"\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles\" Target=\"styles.xml\"/>");
         sb.append("</Relationships>");
         return sb.toString();
     }
     private static String sheetXml(List<List<String>> data) {
         StringBuilder sb = new StringBuilder();
         sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-        sb.append("<worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData>");
+        sb.append("<worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\">");
+        // Freeze top row
+        sb.append("<sheetViews><sheetView workbookViewId=\"0\"><pane ySplit=\"1\" topLeftCell=\"A2\" activePane=\"bottomLeft\" state=\"frozen\"/></sheetView></sheetViews>");
+        sb.append("<sheetData>");
+        int headerCols = 0;
         if (data != null) {
             for (int r=0;r<data.size();r++) {
                 List<String> row = data.get(r);
+                if (r == 0) headerCols = row.size();
                 sb.append("<row r=\""+(r+1)+"\">");
                 for (int c=0;c<row.size();c++) {
                     String v = row.get(c);
                     String cellRef = colRef(c+1) + (r+1);
+                    boolean isHeader = (r == 0);
+                    String styleAttr = isHeader ? " s=\"1\"" : ""; // 0=normal, 1=header
                     if (isNumeric(v)) {
-                        sb.append("<c r=\""+cellRef+"\" t=\"n\"><v>"+xmlEscape(v)+"</v></c>");
+                        sb.append("<c r=\""+cellRef+"\" t=\"n\""+styleAttr+"><v>"+xmlEscape(v)+"</v></c>");
                     } else {
-                        sb.append("<c r=\""+cellRef+"\" t=\"inlineStr\"><is><t>"+xmlEscape(v)+"</t></is></c>");
+                        sb.append("<c r=\""+cellRef+"\" t=\"inlineStr\""+styleAttr+"><is><t>"+xmlEscape(v)+"</t></is></c>");
                     }
                 }
                 sb.append("</row>");
             }
         }
-        sb.append("</sheetData></worksheet>");
+        sb.append("</sheetData>");
+        // AutoFilter on header row if present
+        if (headerCols > 0) {
+            String lastCol = colRef(headerCols);
+            sb.append("<autoFilter ref=\"A1:"+lastCol+"1\"/>");
+        }
+        sb.append("</worksheet>");
+        return sb.toString();
+    }
+    private static String stylesXml() {
+        // Minimal styles: 2 fonts (normal, bold), 2 fills (none, light gray), 2 cellXfs (normal idx0, header idx1)
+        StringBuilder sb = new StringBuilder();
+        sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+        sb.append("<styleSheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\">");
+        sb.append("<fonts count=\"2\">");
+        sb.append("<font><sz val=\"11\"/><name val=\"Calibri\"/></font>");
+        sb.append("<font><b/><sz val=\"11\"/><name val=\"Calibri\"/></font>");
+        sb.append("</fonts>");
+        sb.append("<fills count=\"2\">");
+        sb.append("<fill><patternFill patternType=\"none\"/></fill>");
+        // Light gray header fill (ARGB): FFEFEFEF
+        sb.append("<fill><patternFill patternType=\"solid\"><fgColor rgb=\"FFEFEFEF\"/><bgColor indexed=\"64\"/></patternFill></fill>");
+        sb.append("</fills>");
+        sb.append("<borders count=\"1\"><border/></borders>");
+        sb.append("<cellStyleXfs count=\"1\"><xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\"/></cellStyleXfs>");
+        sb.append("<cellXfs count=\"2\">");
+        sb.append("<xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\" xfId=\"0\"/>");
+        sb.append("<xf numFmtId=\"0\" fontId=\"1\" fillId=\"1\" borderId=\"0\" xfId=\"0\" applyFont=\"1\" applyFill=\"1\"/>");
+        sb.append("</cellXfs>");
+        sb.append("</styleSheet>");
         return sb.toString();
     }
     private static String colRef(int idx) {

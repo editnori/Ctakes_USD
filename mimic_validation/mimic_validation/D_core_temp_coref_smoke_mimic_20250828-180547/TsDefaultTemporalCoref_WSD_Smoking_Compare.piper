@@ -1,0 +1,34 @@
+// Core + Temporal + Coref + Smoking with WSD and unified writers
+
+threads 8
+
+// Core tokenizer, POS, chunking
+load TsDefaultTokenizerPipeline
+add ContextDependentTokenizerAnnotator
+addDescription POSTagger
+load TsChunkerSubPipe
+
+// Dictionary + WSD + Assertion
+load TsDictionarySubPipe
+add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
+load TsAttributeCleartkSubPipe
+add tools.fixes.DefaultSubjectAnnotator
+
+// Temporal events and relations (fixed classifier paths)
+load ../../pipelines/includes/TsTemporalSubPipe_Fixed.piper
+
+// Coreference resolution
+load TsCorefSubPipe
+
+// Smoking Status (patient-level classification; add delegates explicitly)
+// Step1: Ku rule-based classifier (tokenizer/sentence already run above)
+addDescription tools.smoking.KuRuleBasedClassifierAE
+// Step2: PCS classifier + sentence adjust + dict lookup + negation
+addDescription tools.smoking.PcsClassifierLibsvmAE
+addDescription tools.smoking.ArtificialSentenceAE
+addDescription tools.smoking.SentenceAdjusterAE
+addDescription tools.smoking.SmokingStatusDictLookupAE
+addDescription tools.smoking.NegationAnnotatorAE
+
+// Writers
+load ../../pipelines/includes/Writers_Xmi_Table.piper

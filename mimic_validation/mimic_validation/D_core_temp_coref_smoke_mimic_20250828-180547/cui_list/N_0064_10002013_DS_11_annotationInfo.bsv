@@ -1,0 +1,977 @@
+CUI | Concept | Semantic Group | Negated | Family History | Location | Document Text
+null|MDF Attribute Type - Name|Finding|false|false||Name
+null|Person Name|Finding|false|false||Name
+null|Name|Finding|false|false||Namenull|Name (property) (qualifier value)|Modifier|false|false||Namenull|Storage Unit|Device|true|false||Unit
+null|Unit device|Device|true|false||Unitnull|Unit - NCI Thesaurus Property|LabModifier|true|false||Unit
+null|Unit of Measure|LabModifier|true|false||Unit
+null|Unit|LabModifier|true|false||Unit
+null|Enzyme Unit|LabModifier|true|false||Unitnull|null|Attribute|false|false||Admission Datenull|Date of admission|Time|false|false||Admission Datenull|Admission activity|Procedure|false|false||Admission
+null|Hospital admission|Procedure|false|false||Admissionnull|null|Attribute|false|false||Discharge Datenull|Discharge date|Time|false|false||Discharge Datenull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Patient date of birth|Time|false|false||Date of Birthnull|Entity Name Part Qualifier - birth|Finding|false|false||Birth
+null|Childbirth|Finding|false|false||Birth
+null|birth (history)|Finding|false|false||Birth
+null|Name Given at Birth|Finding|false|false||Birth
+null|Birth|Finding|false|false||Birthnull|Sex Behavior|Finding|false|false||Sex
+null|PLXNA3 gene|Finding|false|false||Sex
+null|Coitus|Finding|false|false||Sex
+null|null|Finding|false|false||Sexnull|null|Attribute|false|false||Sexnull|sex|Subject|false|false||Sex
+null|Gender|Subject|false|false||Sexnull|ActInformationPrivacyReason - service|Finding|false|false||Servicenull|Software Service|Device|false|false||Servicenull|Services|Event|false|false||Servicenull|Pharmaceutical Preparations|Drug|false|false||MEDICINEnull|Medicine|Title|false|false||MEDICINEnull|Hypersensitivity|Finding|false|false||Allergiesnull|null|Attribute|false|false||Allergiesnull|lisinopril|Drug|false|false||lisinopril
+null|lisinopril|Drug|false|false||lisinoprilnull|Attending (action)|Finding|false|false||Attendingnull|Attending (provider role)|Subject|false|false||Attendingnull|Chief complaint (finding)|Finding|false|false||Chief Complaintnull|Complaint (finding)|Finding|false|false||Complaintnull|null|Attribute|false|false||Complaintnull|Chest Pain|Finding|false|false||Chest painnull|null|Attribute|false|false||Chest painnull|Chest problem|Finding|false|false||Chestnull|Chest|Anatomy|false|false||Chest
+null|Anterior thoracic region|Anatomy|false|false||Chestnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|United States Military Commissioned Officer O4 (qualifier value)|Finding|false|false||Majornull|Major <Sympycninae>|Entity|false|false||Majornull|Major|Modifier|false|false||Majornull|Operative Surgical Procedures|Procedure|false|false||Surgical
+null|Surgical service|Procedure|false|false||Surgicalnull|Invasive procedure|Procedure|false|false||Invasive Procedurenull|Open approach|Modifier|false|false||Invasive Procedurenull|Invasive|Modifier|false|false||Invasivenull|Procedure (set of actions)|Finding|false|false||Procedurenull|Interventional procedure|Procedure|false|false||Procedurenull|null|Attribute|false|false||Procedurenull|Act Class - procedure|Event|false|false||Procedurenull|History of present illness (finding)|Finding|true|false||History of Present Illnessnull|null|Attribute|true|false||History of Present Illnessnull|Medical History|Finding|true|false||History ofnull|History of present illness (finding)|Finding|true|false||History
+null|History of previous events|Finding|true|false||History
+null|Historical aspects qualifier|Finding|true|false||History
+null|Medical History|Finding|true|false||History
+null|Concept History|Finding|true|false||Historynull|History|Subject|true|false||Historynull|Present illness|Finding|true|false||Present Illnessnull|Present|Finding|true|false||Present
+null|Presentation|Finding|true|false||Presentnull|Illness (finding)|Finding|true|false||Illnessnull|Transaction counts and value totals - year|Finding|false|false||year
+null|Precision - year|Finding|false|false||yearnull|year|Time|false|false||yearnull|Old|Time|false|false||oldnull|Woman|Subject|false|false||woman
+null|Human, Female adult|Subject|false|false||womannull|Extensive|Modifier|false|false||extensivenull|Cardiac attachment|Finding|false|false||cardiacnull|Heart|Anatomy|false|false||cardiacnull|Cardiac - anatomy qualifier|Modifier|false|false||cardiacnull|History of present illness (finding)|Finding|false|false||history
+null|History of previous events|Finding|false|false||history
+null|Historical aspects qualifier|Finding|false|false||history
+null|Medical History|Finding|false|false||history
+null|Concept History|Finding|false|false||historynull|History|Subject|false|false||historynull|Vessel Positions|Anatomy|false|false||vessel
+null|Blood Vessel|Anatomy|false|false||vesselnull|Vessel (unit of presentation)|LabModifier|false|false||vesselnull|DFFB protein, human|Drug|false|false||CAD
+null|DFFB protein, human|Drug|false|false||CADnull|Cold Hemagglutinin Disease|Disorder|false|false||CAD
+null|Coronary heart disease|Disorder|false|false||CAD
+null|Coronary Artery Disease|Disorder|false|false||CADnull|CAD gene|Finding|false|false||CAD
+null|CALD1 wt Allele|Finding|false|false||CAD
+null|B4GALNT2 gene|Finding|false|false||CAD
+null|DFFB wt Allele|Finding|false|false||CAD
+null|ACOD1 gene|Finding|false|false||CAD
+null|DFFB gene|Finding|false|false||CADnull|cytarabine/daunorubicin protocol|Procedure|false|false||CAD
+null|Computer Assisted Diagnosis|Procedure|false|false||CAD
+null|Collision-Induced Dissociation|Procedure|false|false||CAD
+null|CyADIC regimen|Procedure|false|false||CADnull|Caddo language|Entity|false|false||CADnull|Stenting|Procedure|false|false||stentingnull|null|Device|false|false||stentingnull|Leukocyte adhesion deficiency type 1|Disorder|false|false||LAD
+null|Leukocyte adhesion deficiency|Disorder|false|false||LADnull|ITGB2 wt Allele|Finding|false|false||LAD
+null|DLD gene|Finding|false|false||LADnull|Anterior descending branch of left coronary artery|Anatomy|false|false||LADnull|Ladino Language|Entity|false|false||LADnull|Stent restenosis|Finding|false|false||stent restenosisnull|null|Device|false|false||stentnull|Restenosis|Finding|false|false||restenosisnull|Stenting|Procedure|false|false||stentingnull|null|Device|false|false||stentingnull|Coronary Artery Bypass Surgery|Procedure|false|false||CABGnull|Occluded|Finding|false|false||occluded
+null|Obstruction|Finding|false|false||occludednull|Scalable Vector Graphics|Entity|false|false||SVGnull|Legal patent|Finding|false|false||patentnull|Open|Modifier|false|false||patentnull|Lima|Entity|false|false||LIMAnull|Leukocyte adhesion deficiency type 1|Disorder|false|false||LAD
+null|Leukocyte adhesion deficiency|Disorder|false|false||LADnull|ITGB2 wt Allele|Finding|false|false||LAD
+null|DLD gene|Finding|false|false||LADnull|Anterior descending branch of left coronary artery|Anatomy|false|false||LADnull|Ladino Language|Entity|false|false||LADnull|Scalable Vector Graphics|Entity|false|false||SVGnull|Poorly controlled|Finding|false|false||poorly controllednull|Bad|Modifier|false|false||poorlynull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||type 2 diabetes mellitusnull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||type 2 diabetesnull|Type 2|Finding|false|false||type 2null|Type - ParameterizedDataType|Finding|false|false||type
+null|SGCG gene|Finding|false|false||typenull|null|Modifier|false|false||typenull|Diabetes Mellitus|Disorder|false|false||diabetes mellitusnull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||diabetes
+null|Diabetes|Disorder|false|false||diabetes
+null|Diabetes Mellitus|Disorder|false|false||diabetesnull|Hypertensive disease|Disorder|false|false||hypertensionnull|COPD pharmacologic substance|Drug|false|false||COPDnull|Chronic obstructive pulmonary disease of horses|Disorder|false|false||COPD
+null|Chronic Obstructive Airway Disease|Disorder|false|false||COPDnull|ARCN1 gene|Finding|false|false||COPDnull|Gastroesophageal reflux disease|Disorder|false|false||GERDnull|Query Status Code - new|Finding|false|false||new
+null|Act Status - new|Finding|false|false||newnull|Newar Language|Entity|false|false||newnull|New|Modifier|false|false||newnull|Chest Pain|Finding|false|false||chest painnull|null|Attribute|false|false||chest painnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Transaction counts and value totals - day|Finding|false|false||day
+null|Precision - day|Finding|false|false||daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|Presentation|Finding|false|false||presentationnull|At home|Finding|false|false||at homenull|Visit User Code - Home|Finding|false|false||home
+null|Address type - Home|Finding|false|false||homenull|home health encounter|Procedure|false|false||homenull|Organization unit type - Home|Entity|false|false||homenull|Person location type - Home|Modifier|false|false||home
+null|Home environment|Modifier|false|false||homenull|Onset of (contextual qualifier)|Modifier|false|false||onset ofnull|Onset of (contextual qualifier)|Modifier|false|false||onsetnull|Age of Onset|LabModifier|false|false||onsetnull|Severe - Severity of Illness Code|Finding|false|false||severe
+null|Intensity and Distress 5|Finding|false|false||severe
+null|Severe - Triage Code|Finding|false|false||severe
+null|Severe (severity modifier)|Finding|false|false||severe
+null|Allergy Severity - Severe|Finding|false|false||severenull|Stabbing pain|Finding|false|false||stabbing pain
+null|Sharp sensation quality|Finding|false|false||stabbing painnull|Stabbing sensation quality|Modifier|false|false||stabbingnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Sternum|Anatomy|false|false||sternumnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Anorectal Malformations|Disorder|true|false||armnull|AKR1A1 wt Allele|Finding|true|false||arm
+null|ARMC9 gene|Finding|true|false||armnull|Protocol Treatment Arm|Procedure|true|false||arm
+null|Axillary Reverse Mapping|Procedure|true|false||arm
+null|Study Arm|Procedure|true|false||armnull|Upper arm|Anatomy|true|false||arm
+null|null|Anatomy|true|false||arm
+null|Upper Extremity|Anatomy|true|false||armnull|Jaw|Anatomy|true|false||jawnull|Jaw Device|Device|true|false||jawnull|nitroglycerin|Drug|false|false||nitroglycerin
+null|nitroglycerin|Drug|false|false||nitroglycerinnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Slightly (qualifier value)|Modifier|false|false||slightly
+null|Slight (qualifier value)|Modifier|false|false||slightlynull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|null|Phenomenon|false|false||wavesnull|5 minutes Office visit|Procedure|false|false||5 minutesnull|5 minutes|Time|false|false||5 minutesnull|Minute of time|Time|false|false||minutesnull|Minute Unit of Plane Angle|LabModifier|false|false||minutes
+null|Minute (diminutive)|LabModifier|false|false||minutes
+null|Small|LabModifier|false|false||minutesnull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Chest wall tenderness|Finding|false|false||chest wall tendernessnull|Chest wall structure|Anatomy|false|false||chest wall
+null|Chest>Chest wall|Anatomy|false|false||chest wallnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Walls of a building|Device|false|false||wallnull|Emotional tenderness|Finding|false|false||tenderness
+null|Sore to touch|Finding|false|false||tendernessnull|Last|Modifier|false|false||lastnull|Chest Pain|Finding|false|false||chest painnull|null|Attribute|false|false||chest painnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|null|Time|false|false||prior tonull|null|Time|false|false||priornull|Administration Method - Pain|Finding|true|false||pain
+null|Pain|Finding|true|false||painnull|null|Attribute|true|false||painnull|exercise induced|Finding|true|false||exertionalnull|Sharp sensation quality|Finding|false|false||sharp
+null|SPEN wt Allele|Finding|false|false||sharp
+null|SPEN gene|Finding|false|false||sharpnull|Pain|Finding|false|false||painsnull|Academic Research Enhancement Awards|Event|false|false||areanull|Geographic Locations|Entity|false|false||areanull|Area|Modifier|false|false||areanull|Very|Modifier|false|false||verynull|Tender|Modifier|false|false||tendernull|Telling untruths|Finding|false|false||Lyingnull|Supine Position|Modifier|false|false||Lyingnull|LEFT SIDE (USED TO IDENTIFY PROCEDURES PERFORMED ON THE LEFT SIDE OF THE BODY)|Modifier|false|false||left side
+null|Left|Modifier|false|false||left sidenull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Side|Modifier|false|false||sidenull|Etiology aspects|Finding|false|false||causes
+null|Etiology|Finding|false|false||causesnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Have Nausea|Finding|false|false||have nauseanull|Nausea|Finding|false|false||nauseanull|null|Attribute|false|false||nauseanull|Vomiting|Finding|true|false||vomitingnull|Increased sweating|Finding|true|false||diaphoresisnull|Fever|Finding|true|false||feversnull|Chills|Finding|true|false||chillsnull|Episode of|Time|false|false||episode ofnull|Episode of|Time|false|false||episodenull|rectal discharge diarrhea (physical finding)|Finding|false|false||diarrhea
+null|Diarrhea|Finding|false|false||diarrheanull|Abdominal Pain|Finding|true|false||abdominal painnull|Abdomen|Anatomy|true|false||abdominalnull|Abdominal (qualifier value)|Modifier|true|false||abdominalnull|Administration Method - Pain|Finding|true|false||pain
+null|Pain|Finding|true|false||painnull|null|Attribute|true|false||painnull|Full|Modifier|false|false||fullnull|Unit dose|LabModifier|false|false||dose
+null|Dosage|LabModifier|false|false||dosenull|aspirin|Drug|false|false||aspirin
+null|aspirin|Drug|false|false||aspirinnull|Transaction counts and value totals - day|Finding|false|false||day
+null|Precision - day|Finding|false|false||daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|Presentation|Finding|false|false||presentationnull|Initial (abbreviation)|Finding|false|false||initialnull|Initially|Time|false|false||initialnull|Firstly|Modifier|false|false||initialnull|Laboratory test finding|Lab|false|false||Labsnull|Troponin T|Drug|false|false||Troponin-T
+null|Troponin T|Drug|false|false||Troponin-Tnull|Troponin|Drug|false|false||Troponin
+null|Troponin|Drug|false|false||Troponinnull|Troponin measurement|Procedure|false|false||Troponinnull|Creatine Kinase MB Isoenzyme|Drug|false|false||CK-MB
+null|Creatine Kinase MB Isoenzyme|Drug|false|false||CK-MBnull|creatine kinase activity|Finding|false|false||CK-MBnull|Serum creatine phosphokinase MB isoenzyme measurement|Procedure|false|false||CK-MB
+null|Creatine kinase MB measurement|Procedure|false|false||CK-MBnull|Fibrin fragment D|Drug|false|false||D-Dimer
+null|Fibrin fragment D|Drug|false|false||D-Dimernull|dimer|Drug|false|false||Dimernull|Complete Blood Count|Procedure|false|false||CBCnull|Nuclear cap binding complex location|Anatomy|false|false||CBCnull|Basic metabolic panel|Procedure|false|false||Chem 7null|chemical aspects|Finding|false|false||Chemnull|Chemical procedure|Procedure|false|false||Chemnull|Science of Chemistry|Subject|false|false||Chemnull|Plain chest X-ray|Procedure|true|false||CXRnull|Admission Level of Care Code - Acute|Finding|true|false||acute
+null|Acute - Triage Code|Finding|true|false||acutenull|acute|Time|true|false||acutenull|Cardiovascular disease+Pulmonary disease|Disorder|true|false||cardiopulmonarynull|Cardiopulmonary|Anatomy|true|false||cardiopulmonarynull|Congenital Abnormality|Disorder|true|false||abnormalitynull|Abnormality|Finding|true|false||abnormalitynull|Echocardiography|Procedure|true|false||echocardiogramnull|Pericardial effusion|Disorder|true|false||pericardial effusionnull|Pericardial effusion body substance|Finding|true|false||pericardial effusionnull|Pericardial (qualifier value)|Anatomy|true|false||pericardial
+null|Pericardial sac structure|Anatomy|true|false||pericardialnull|Effusion (substance)|Finding|true|false||effusion
+null|null|Finding|true|false||effusion
+null|effusion|Finding|true|false||effusionnull|Compressed structure|Finding|true|false||tamponadenull|null|Procedure|true|false||tamponadenull|Relationship modifier - Patient|Finding|false|false||Patient
+null|Specimen Type - Patient|Finding|false|false||Patient
+null|Mail Claim Party - Patient|Finding|false|false||Patient
+null|Report source - Patient|Finding|false|false||Patient
+null|null|Finding|false|false||Patient
+null|Disabled Person Code - Patient|Finding|false|false||Patientnull|Patients|Subject|false|false||Patientnull|Veterinary Patient|Entity|false|false||Patientnull|fluticasone|Drug|false|false||fluticasone
+null|fluticasone|Drug|false|false||fluticasonenull|propionate|Drug|false|false||propionate
+null|Propionates|Drug|false|false||propionatenull|oxycodone|Drug|false|false||OxyCODONE
+null|oxycodone|Drug|false|false||OxyCODONEnull|Oxycodone measurement|Procedure|false|false||OxyCODONEnull|Acetaminophen [EPC]|Drug|false|false||Acetaminophen
+null|acetaminophen|Drug|false|false||Acetaminophen
+null|acetaminophen|Drug|false|false||Acetaminophennull|Acetaminophen measurement|Procedure|false|false||Acetaminophennull|magnesium sulfate|Drug|false|false||Magnesium Sulfate
+null|magnesium sulfate|Drug|false|false||Magnesium Sulfatenull|Magnesium supplements, alimentary tract and metabolism|Drug|false|false||Magnesium
+null|magnesium|Drug|false|false||Magnesium
+null|magnesium|Drug|false|false||Magnesium
+null|Magnesium Drug Class|Drug|false|false||Magnesium
+null|Magnesium supplements, alimentary tract and metabolism|Drug|false|false||Magnesiumnull|Magnesium measurement|Procedure|false|false||Magnesiumnull|Sulfates, Unspecified or Sulfate Ion|Drug|false|false||Sulfate
+null|Sulfates, Inorganic|Drug|false|false||Sulfate
+null|sulfate ion|Drug|false|false||Sulfate
+null|sulfate ion|Drug|false|false||Sulfate
+null|Sulfates, Unspecified or Sulfate Ion|Drug|false|false||Sulfatenull|arrival - ActRelationshipType|Finding|false|false||arrivalnull|null|Event|false|false||arrivalnull|Cardiovascular system|Anatomy|false|false||cardiologynull|cardiology (field)|Title|false|false||cardiologynull|Cardiology service|Entity|false|false||cardiologynull|Ward (environment)|Device|false|false||wardnull|Ward (person)|Subject|false|false||wardnull|Ward (environment)|Entity|false|false||wardnull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Still|Disorder|false|false||stillnull|Slow|Modifier|false|false||slownull|Observation Interpretation - worse|Finding|false|false||worse
+null|Worse|Finding|false|false||worsenull|Worsening (qualifier value)|Modifier|false|false||worsenull|Academic Research Enhancement Awards|Event|false|false||areanull|Geographic Locations|Entity|false|false||areanull|Area|Modifier|false|false||areanull|Tender|Modifier|false|false||tendernull|outcomes otolaryngology breathing|Finding|true|false||breathing
+null|Inspiration (function)|Finding|true|false||breathing
+null|Respiration|Finding|true|false||breathingnull|null|Attribute|true|false||breathingnull|respiratory system process|Phenomenon|true|false||breathingnull|Complaint (finding)|Finding|true|false||complaintsnull|Only a Little|Finding|false|false||a little
+null|A little bit|Finding|false|false||a littlenull|Little's Disease|Disorder|false|false||littlenull|Only a Little|Finding|false|false||littlenull|Smallest|LabModifier|false|false||little
+null|Small|LabModifier|false|false||littlenull|Congested|Finding|false|false||congestednull|Evening|Time|false|false||eveningnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|PMH - past medical history|Finding|false|false||Past Medical History
+null|Medical History|Finding|false|false||Past Medical Historynull|Medical History|Finding|false|false||Medical Historynull|Medical referral type|Finding|false|false||Medical
+null|Medical|Finding|false|false||Medical
+null|Medical school type|Finding|false|false||Medicalnull|Medical service|Procedure|false|false||Medicalnull|Medical History|Finding|false|false||History
+null|History of previous events|Finding|false|false||History
+null|Historical aspects qualifier|Finding|false|false||History
+null|History of present illness (finding)|Finding|false|false||History
+null|Concept History|Finding|false|false||Historynull|History|Subject|false|false||Historynull|COPD pharmacologic substance|Drug|false|false||COPDnull|Chronic obstructive pulmonary disease of horses|Disorder|false|false||COPD
+null|Chronic Obstructive Airway Disease|Disorder|false|false||COPDnull|ARCN1 gene|Finding|false|false||COPDnull|DFFB protein, human|Drug|false|false||CAD
+null|DFFB protein, human|Drug|false|false||CADnull|Cold Hemagglutinin Disease|Disorder|false|false||CAD
+null|Coronary heart disease|Disorder|false|false||CAD
+null|Coronary Artery Disease|Disorder|false|false||CADnull|CAD gene|Finding|false|false||CAD
+null|CALD1 wt Allele|Finding|false|false||CAD
+null|B4GALNT2 gene|Finding|false|false||CAD
+null|DFFB wt Allele|Finding|false|false||CAD
+null|ACOD1 gene|Finding|false|false||CAD
+null|DFFB gene|Finding|false|false||CADnull|cytarabine/daunorubicin protocol|Procedure|false|false||CAD
+null|Computer Assisted Diagnosis|Procedure|false|false||CAD
+null|Collision-Induced Dissociation|Procedure|false|false||CAD
+null|CyADIC regimen|Procedure|false|false||CADnull|Caddo language|Entity|false|false||CADnull|Coronary Artery Bypass Surgery|Procedure|false|false||CABGnull|Stenting|Procedure|false|false||stentingnull|null|Device|false|false||stentingnull|Table Frame - above|Finding|false|false||abovenull|Upper|Modifier|false|false||abovenull|Cancer patients and suicide and depression|Disorder|false|false||Depression
+null|Mental Depression|Disorder|false|false||Depression
+null|Depressive disorder|Disorder|false|false||Depression
+null|Depressed mood|Disorder|false|false||Depressionnull|Depression - motion|Finding|false|false||Depression
+null|null|Finding|false|false||Depressionnull|Depression - recess|Modifier|false|false||Depressionnull|Gastroesophageal reflux disease|Disorder|false|false||GERDnull|Hypertensive disease|Disorder|false|false||Hypertensionnull|Migraine Disorders|Disorder|false|false||Migrainesnull|shoulder pain chronic|Disorder|false|false||Chronic shoulder painnull|Chronic - Admission Level of Care Code|Finding|false|false||Chronicnull|Provision of recurring care for chronic illness|Procedure|false|false||Chronicnull|chronic|Time|false|false||Chronicnull|Shoulder Pain|Finding|false|false||shoulder painnull|Procedures on Shoulder|Procedure|false|false||shoulder
+null|Examination of shoulder(s)|Procedure|false|false||shouldernull|Upper extremity>Shoulder|Anatomy|false|false||shoulder
+null|Shoulder|Anatomy|false|false||shouldernull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Narcotics|Drug|false|false||narcotics
+null|Narcotics|Drug|false|false||narcoticsnull|OSA protein, Drosophila|Drug|false|false||OSA
+null|OSA protein, Drosophila|Drug|false|false||OSAnull|Sleep Apnea, Obstructive|Disorder|false|false||OSAnull|Osa <eudicots>|Entity|false|false||OSA
+null|Osage language|Entity|false|false||OSA
+null|Osa|Entity|false|false||OSAnull|Peripheral Neuropathy|Disorder|false|false||Peripheral neuropathy
+null|Peripheral Nervous System Diseases|Disorder|false|false||Peripheral neuropathynull|Peripheral|Modifier|false|false||Peripheralnull|Neuropathy|Disorder|false|false||neuropathynull|Restless Legs Syndrome|Disorder|false|false||Restless legnull|Restlessness|Finding|false|false||Restless
+null|Agitation|Finding|false|false||Restlessnull|Leg|Anatomy|false|false||leg
+null|Lower Extremity|Anatomy|false|false||legnull|Social and personal history|Finding|false|false||Social History
+null|Social History|Finding|false|false||Social Historynull|Social|Finding|false|false||Socialnull|History of present illness (finding)|Finding|false|false||History
+null|History of previous events|Finding|false|false||History
+null|Historical aspects qualifier|Finding|false|false||History
+null|Medical History|Finding|false|false||History
+null|Concept History|Finding|false|false||Historynull|History|Subject|false|false||Historynull|Family Medical History|Finding|false|false||Family Historynull|Entity Name Part Type - family|Finding|false|false||Family
+null|Last Name|Finding|false|false||Family
+null|Living Arrangement - Family|Finding|false|false||Family
+null|Family (taxonomic)|Finding|false|false||Family
+null|Family Collection|Finding|false|false||Familynull|Family|Subject|false|false||Familynull|History of present illness (finding)|Finding|false|true||History
+null|History of previous events|Finding|false|true||History
+null|Historical aspects qualifier|Finding|false|true||History
+null|Medical History|Finding|false|true||History
+null|Concept History|Finding|false|true||Historynull|History|Subject|false|false||Historynull|Relationship modifier - Patient|Finding|false|false||Patient
+null|Specimen Type - Patient|Finding|false|false||Patient
+null|Mail Claim Party - Patient|Finding|false|false||Patient
+null|Report source - Patient|Finding|false|false||Patient
+null|null|Finding|false|false||Patient
+null|Disabled Person Code - Patient|Finding|false|false||Patientnull|Patients|Subject|false|false||Patientnull|Veterinary Patient|Entity|false|false||Patientnull|Ward (environment)|Device|false|false||wardnull|Ward (person)|Subject|false|false||wardnull|Ward (environment)|Entity|false|false||wardnull|Full|Modifier|true|false||fullnull|Details|Modifier|true|false||detailsnull|Family Medical History|Finding|true|false||family historynull|Entity Name Part Type - family|Finding|true|false||family
+null|Last Name|Finding|true|false||family
+null|Living Arrangement - Family|Finding|true|false||family
+null|Family (taxonomic)|Finding|true|false||family
+null|Family Collection|Finding|true|false||familynull|Family|Subject|true|false||familynull|History of present illness (finding)|Finding|true|false||history
+null|History of previous events|Finding|true|false||history
+null|Historical aspects qualifier|Finding|true|false||history
+null|Medical History|Finding|true|false||history
+null|Concept History|Finding|true|false||historynull|History|Subject|true|false||historynull|Relationship - Mother|Finding|false|false||Mothernull|Mother (person)|Subject|false|false||Mothernull|Possible|Finding|false|false||possiblenull|Possible diagnosis|Modifier|false|false||possible
+null|Possibly Related to Intervention|Modifier|false|false||possiblenull|Alcohol abuse|Disorder|false|false||alcohol abusenull|Alcohols|Drug|false|false||alcohol
+null|Alcohols|Drug|false|false||alcohol
+null|ethanol|Drug|false|false||alcohol
+null|ethanol|Drug|false|false||alcoholnull|Alcohol - Recreational Drug Use Code|Finding|false|false||alcoholnull|Drug abuse|Disorder|false|false||abusenull|Victim of abuse (finding)|Finding|false|false||abusenull|Abuse|Event|false|false||abusenull|Indirect exposure mechanism - Father|Finding|false|false||Father
+null|Relationship - Father|Finding|false|false||Father
+null|Father - courtesy title|Finding|false|false||Fathernull|Father (person)|Subject|false|false||Fathernull|Deceased - ActIneligibilityReason|Finding|false|false||deceased
+null|Deceased - Military Status|Finding|false|false||deceased
+null|Cessation of life|Finding|false|false||deceasednull|Hodgkin Disease|Disorder|false|false||Hodgkin's Diseasenull|Hodgkin Disease|Disorder|false|false||Hodgkinnull|Disease|Disorder|false|false||Diseasenull|Old|Time|false|false||oldnull|Quantity limited request - Records|Finding|false|false||records
+null|Records|Finding|false|false||recordsnull|Query Quantity Unit - Records|Modifier|false|false||recordsnull|physical examination (physical finding)|Finding|false|false||Physical Examnull|Physical Examination|Procedure|false|false||Physical Examnull|physical examination (physical finding)|Finding|false|false||Physical
+null|Physical|Finding|false|false||Physicalnull|Physical Examination|Procedure|false|false||Physicalnull|Exam|Finding|false|false||Examnull|Medical Examination|Procedure|false|false||Examnull|On admission|Time|false|false||On admissionnull|Admission activity|Procedure|false|false||admission
+null|Hospital admission|Procedure|false|false||admissionnull|United States Military Commissioned Officer O10 (qualifier value)|Finding|false|false||Generalnull|General medical service|Procedure|false|false||Generalnull|Generalized|Modifier|false|false||Generalnull|Obesity|Disorder|false|false||Obesenull|Table Cell Vertical Align - middle|Finding|false|false||middlenull|Middle|Modifier|false|false||middle
+null|Midline (qualifier value)|Modifier|false|false||middlenull|Woman|Subject|true|false||woman
+null|Human, Female adult|Subject|true|false||womannull|Alert brand of caffeine|Drug|true|false||alert
+null|Alert brand of caffeine|Drug|true|false||alertnull|Mentally alert|Finding|true|false||alert
+null|Consciousness clear|Finding|true|false||alert
+null|Alert note|Finding|true|false||alert
+null|Alert|Finding|true|false||alertnull|null|Attribute|true|false||alertnull|Oriented to place|Finding|true|false||orientednull|Orientation, Spatial|Modifier|true|false||orientednull|Admission Level of Care Code - Acute|Finding|true|false||acute
+null|Acute - Triage Code|Finding|true|false||acutenull|acute|Time|true|false||acutenull|Emotional distress|Finding|true|false||distress
+null|Distress|Finding|true|false||distressnull|Taking vital signs|Procedure|true|false||Vital Signsnull|null|Attribute|true|false||Vital Signs
+null|Vital signs|Attribute|true|false||Vital Signsnull|Vital High Nitrogen Enteral Nutrition|Drug|true|false||Vitalnull|Vital (qualifier value)|Modifier|true|false||Vitalnull|Aspects of signs|Finding|true|false||Signs
+null|Physical findings|Finding|true|false||Signsnull|Manufactured sign|Device|true|false||Signsnull|infant weight for previous delivery (history)|Finding|false|false||Weight
+null|Weight symptom (finding)|Finding|false|false||Weightnull|Weighing patient|Procedure|false|false||Weightnull|null|Attribute|false|false||Weightnull|Body Weight|Subject|false|false||Weightnull|Importance Weight|Modifier|false|false||Weightnull|Weight|LabModifier|false|false||Weightnull|HEENT|Anatomy|false|false||HEENTnull|Scleral Diseases|Disorder|false|false||Scleranull|examination of sclera|Procedure|false|false||Scleranull|Sclera|Anatomy|false|false||Scleranull|Anicteric|Finding|false|false||anictericnull|moisture of mucous membranes (physical finding)|Finding|false|false||mucous membranesnull|Mucous Membrane|Anatomy|false|false||mucous membranesnull|Mucus (substance)|Finding|false|false||mucous
+null|mucus layer|Finding|false|false||mucousnull|Mucous appearance|Modifier|false|false||mucousnull|Membrane Tissue|Anatomy|false|false||membranesnull|Moist|Modifier|false|false||moistnull|Oropharyngeal|Anatomy|false|false||oropharynxnull|Remote control command - Clear|Finding|false|false||clearnull|Clear|Modifier|false|false||clear
+null|Transparent (qualitative concept)|Modifier|false|false||clearnull|Passive joint movement of neck (finding)|Finding|false|false||NECK
+null|Neck problem|Finding|false|false||NECKnull|dendritic spine neck|Anatomy|false|false||NECK
+null|Neck|Anatomy|false|false||NECKnull|Difficult (qualifier value)|Finding|false|false||difficultnull|Jugular venous pressure|Finding|false|false||JVPnull|Regular|Modifier|false|false||Regularnull|Amount type - Rate|Finding|false|false||ratenull|Rating (action)|Event|false|false||ratenull|Rate|LabModifier|false|false||ratenull|Rhythm|Finding|false|false||rhythm
+null|rhythmic process (biological)|Finding|false|false||rhythmnull|Heart murmur|Finding|true|false||murmursnull|Pericardial friction rub|Finding|true|false||rubsnull|Chest problem|Finding|false|false||Chestnull|Chest|Anatomy|false|false||Chest
+null|Anterior thoracic region|Anatomy|false|false||Chestnull|Emotional tenderness|Finding|false|false||Tenderness
+null|Sore to touch|Finding|false|false||Tendernessnull|Palpation|Procedure|false|false||palpationnull|left anterior chest|Anatomy|false|false||left anterior chestnull|Left anterior|Modifier|false|false||left anteriornull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Anterior chest wall structure|Anatomy|false|false||anterior chest wall
+null|null|Anatomy|false|false||anterior chest wallnull|Anterior chest wall structure|Anatomy|false|false||anterior chestnull|Adenohypophyseal Diseases|Disorder|false|false||anteriornull|Anterior|Modifier|false|false||anteriornull|Chest wall structure|Anatomy|false|false||chest wall
+null|Chest>Chest wall|Anatomy|false|false||chest wallnull|Chest problem|Finding|false|false||chestnull|Anterior thoracic region|Anatomy|false|false||chest
+null|Chest|Anatomy|false|false||chestnull|Walls of a building|Device|false|false||wallnull|Lung|Anatomy|false|false||Lungsnull|Remote control command - Clear|Finding|true|false||Clearnull|Clear|Modifier|true|false||Clear
+null|Transparent (qualitative concept)|Modifier|true|false||Clearnull|Auscultation|Procedure|true|false||auscultationnull|Wheezing|Finding|true|false||wheezesnull|Basilar Rales|Finding|true|false||rales
+null|Rales|Finding|true|false||ralesnull|Rhonchi|Finding|true|false||rhonchinull|Malignant neoplasm of abdomen|Disorder|false|false||Abdomennull|Abdomen problem|Finding|false|false||Abdomennull|Abdomen|Anatomy|false|false||Abdomen
+null|Abdominal Cavity|Anatomy|false|false||Abdomennull|Short stature, onychodysplasia, facial dysmorphism, hypotrichosis syndrome|Disorder|false|false||Softnull|Soft|Modifier|false|false||Softnull|Obesity|Disorder|false|false||obesenull|Hereditary Multiple Exostoses|Disorder|true|false||Extnull|EXT1 wt Allele|Finding|true|false||Ext
+null|EXT1 gene|Finding|true|false||Extnull|Feels warm|Finding|false|false||Warmnull|warming process|Phenomenon|false|false||Warmnull|Well (answer to question)|Finding|false|false||wellnull|Well (container)|Device|false|false||wellnull|Microplate Well|Modifier|false|false||well
+null|Good|Modifier|false|false||well
+null|Healthy|Modifier|false|false||wellnull|Clubbing|Disorder|true|false||clubbingnull|Cyanosis|Finding|true|false||cyanosisnull|Edema|Finding|true|false||edemanull|null|Attribute|true|false||edemanull|Exam|Finding|false|false||Examnull|Medical Examination|Procedure|false|false||Examnull|null|Finding|false|false||unchangednull|About The Same|Modifier|false|false||unchangednull|At discharge|Time|false|false||at dischargenull|Body Substance Discharge|Finding|false|false||discharge
+null|Discharge Body Fluid|Finding|false|false||discharge
+null|Body Fluid Discharge|Finding|false|false||discharge
+null|null|Finding|false|false||dischargenull|Patient Discharge|Procedure|false|false||dischargenull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Chest wall structure|Anatomy|false|false||chest wall
+null|Chest>Chest wall|Anatomy|false|false||chest wallnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Walls of a building|Device|false|false||wallnull|Tender|Modifier|false|false||tendernull|Palpation|Procedure|false|false||palpationnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Changing|Finding|false|false||change innull|Changed status|LabModifier|false|false||change innull|Changing|Finding|false|false||changenull|Change - procedure|Procedure|false|false||changenull|Delta (difference)|LabModifier|false|false||change
+null|Changed status|LabModifier|false|false||changenull|In Position|Modifier|false|false||in positionnull|Position of phenotypic abnormality|Modifier|false|false||position
+null|Positioning (attribute)|Modifier|false|false||positionnull|Mandibular right second molar mesial prosthesis|Device|false|false||31PMnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Leukocytes|Anatomy|false|false||WBCnull|Erythrocytes|Drug|false|false||RBCnull|Erythrocytes|Anatomy|false|false||RBCnull|null|Attribute|false|false||RBCnull|Hemoglobin|Drug|false|false||Hgb
+null|Hemoglobin|Drug|false|false||Hgbnull|CYGB gene|Finding|false|false||Hgbnull|Hemoglobin concentration|Lab|false|false||Hgbnull|Hemopoietic stem cell transplant|Procedure|false|false||Hct
+null|Hematocrit Measurement|Procedure|false|false||Hctnull|Merkel cell polyomavirus|Disorder|false|false||MCVnull|Erythrocyte Mean Corpuscular Volume Measurement|Procedure|false|false||MCV
+null|Cisplatin-Methotrexate-Vinblastine Regimen|Procedure|false|false||MCVnull|Mean Corpuscular Volume|Lab|false|false||MCVnull|Microvolt|LabModifier|false|false||MCVnull|methacholine|Drug|false|false||MCH
+null|methacholine|Drug|false|false||MCHnull|mesaconyl-CoA hydratase activity|Finding|false|false||MCH
+null|PMCH gene|Finding|false|false||MCHnull|Mean corpuscular hemoglobin determination|Procedure|false|false||MCHnull|Mean corpuscular hemoglobin concentration determination|Procedure|false|false||MCHCnull|Primed lymphocyte test|Procedure|false|false||Pltnull|Mandibular right second molar mesial prosthesis|Device|false|false||31PMnull|Blood Glucose|Drug|false|false||BLOOD Glucosenull|Blood glucose measurement|Procedure|false|false||BLOOD Glucosenull|Finding of blood glucose level|Lab|false|false||BLOOD Glucosenull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucosenull|Glucose measurement|Procedure|false|false||Glucosenull|Glucose^1.5H post dose glucagon|Lab|false|false||Glucosenull|Bicarbonates|Drug|false|false||HCO3
+null|Bicarbonates|Drug|false|false||HCO3null|Bicarbonate measurement|Procedure|false|false||HCO3null|Mandibular right second molar mesial prosthesis|Device|false|false||31PMnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Alanine Transaminase|Drug|false|false||ALT
+null|Alanine Transaminase|Drug|false|false||ALTnull|Liposarcoma, well differentiated|Disorder|false|false||ALT
+null|Atypical Lipoma|Disorder|false|false||ALTnull|null|Finding|false|false||ALT
+null|Alternative Billing Concepts|Finding|false|false||ALT
+null|GPT gene|Finding|false|false||ALTnull|Antibiotic Lock Therapy|Procedure|false|false||ALTnull|Southern Altai Language|Entity|false|false||ALTnull|SGOT - Glutamate oxaloacetate transaminase|Drug|false|false||AST
+null|Aspartate Transaminase|Drug|false|false||AST
+null|Aspartate Transaminase|Drug|false|false||AST
+null|SGOT - Glutamate oxaloacetate transaminase|Drug|false|false||AST
+null|SLC17A5 protein, human|Drug|false|false||AST
+null|SLC17A5 protein, human|Drug|false|false||ASTnull|Atypical Spitz Nevus|Disorder|false|false||ASTnull|SLC17A5 wt Allele|Finding|false|false||AST
+null|SLC17A5 gene|Finding|false|false||AST
+null|GOT1 gene|Finding|false|false||ASTnull|Asterion|Anatomy|false|false||ASTnull|Asturian Language|Entity|false|false||ASTnull|Atlantic Standard Time|Time|false|false||ASTnull|Creatine Kinase|Drug|false|false||CPK
+null|Creatine Kinase|Drug|false|false||CPKnull|PIK3C2A gene|Finding|false|false||CPKnull|Creatine kinase measurement|Procedure|false|false||CPKnull|Alkaline Phosphatase|Drug|false|false||AlkPhos
+null|Alkaline Phosphatase|Drug|false|false||AlkPhosnull|Mandibular right second molar mesial prosthesis|Device|false|false||31PMnull|Blood albumin|Procedure|false|false||BLOOD Albuminnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Albumin|Drug|false|false||Albumin
+null|Albumins|Drug|false|false||Albumin
+null|Albumins|Drug|false|false||Albumin
+null|Albumin|Drug|false|false||Albuminnull|Albumin metabolic function|Finding|false|false||Albumin
+null|ALB gene|Finding|false|false||Albuminnull|Albumin measurement|Procedure|false|false||Albuminnull|CALCIUM SUPPLEMENTS|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|CALCIUM SUPPLEMENTS|Drug|false|false||Calcium
+null|Calcium, Dietary|Drug|false|false||Calcium
+null|Calcium [EPC]|Drug|false|false||Calcium
+null|Calcium Drug Class|Drug|false|false||Calciumnull|Calcium metabolic function|Finding|false|false||Calciumnull|Calcium measurement|Procedure|false|false||Calciumnull|Phos <Photinae>|Entity|false|false||Phosnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Fibrin fragment D|Drug|false|false||D-Dimer
+null|Fibrin fragment D|Drug|false|false||D-Dimernull|dimer|Drug|false|false||Dimernull|Mandibular right second molar mesial prosthesis|Device|false|false||31PMnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Creatine Kinase MB Isoenzyme|Drug|false|false||CK-MB
+null|Creatine Kinase MB Isoenzyme|Drug|false|false||CK-MBnull|creatine kinase activity|Finding|false|false||CK-MBnull|Serum creatine phosphokinase MB isoenzyme measurement|Procedure|false|false||CK-MB
+null|Creatine kinase MB measurement|Procedure|false|false||CK-MBnull|CD79A wt Allele|Finding|false|false||MB-1
+null|CD79A gene|Finding|false|false||MB-1null|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Creatine Kinase MB Isoenzyme|Drug|false|false||CK-MB
+null|Creatine Kinase MB Isoenzyme|Drug|false|false||CK-MBnull|creatine kinase activity|Finding|false|false||CK-MBnull|Serum creatine phosphokinase MB isoenzyme measurement|Procedure|false|false||CK-MB
+null|Creatine kinase MB measurement|Procedure|false|false||CK-MBnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|Leukocytes|Anatomy|false|false||WBCnull|Erythrocytes|Drug|false|false||RBCnull|Erythrocytes|Anatomy|false|false||RBCnull|null|Attribute|false|false||RBCnull|Hemoglobin|Drug|false|false||Hgb
+null|Hemoglobin|Drug|false|false||Hgbnull|CYGB gene|Finding|false|false||Hgbnull|Hemoglobin concentration|Lab|false|false||Hgbnull|Hemopoietic stem cell transplant|Procedure|false|false||Hct
+null|Hematocrit Measurement|Procedure|false|false||Hctnull|Merkel cell polyomavirus|Disorder|false|false||MCVnull|Erythrocyte Mean Corpuscular Volume Measurement|Procedure|false|false||MCV
+null|Cisplatin-Methotrexate-Vinblastine Regimen|Procedure|false|false||MCVnull|Mean Corpuscular Volume|Lab|false|false||MCVnull|Microvolt|LabModifier|false|false||MCVnull|methacholine|Drug|false|false||MCH
+null|methacholine|Drug|false|false||MCHnull|mesaconyl-CoA hydratase activity|Finding|false|false||MCH
+null|PMCH gene|Finding|false|false||MCHnull|Mean corpuscular hemoglobin determination|Procedure|false|false||MCHnull|Mean corpuscular hemoglobin concentration determination|Procedure|false|false||MCHCnull|Primed lymphocyte test|Procedure|false|false||Pltnull|Blood Glucose|Drug|false|false||BLOOD Glucosenull|Blood glucose measurement|Procedure|false|false||BLOOD Glucosenull|Finding of blood glucose level|Lab|false|false||BLOOD Glucosenull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucose
+null|glucose|Drug|false|false||Glucosenull|Glucose measurement|Procedure|false|false||Glucosenull|Glucose^1.5H post dose glucagon|Lab|false|false||Glucosenull|Bicarbonates|Drug|false|false||HCO3
+null|Bicarbonates|Drug|false|false||HCO3null|Bicarbonate measurement|Procedure|false|false||HCO3null|Blood calcium measurement|Procedure|false|false||BLOOD Calciumnull|Blood and lymphatic system disorders|Disorder|false|false||BLOODnull|peripheral blood|Finding|false|false||BLOOD
+null|Blood|Finding|false|false||BLOOD
+null|In Blood|Finding|false|false||BLOODnull|CALCIUM SUPPLEMENTS|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|calcium|Drug|false|false||Calcium
+null|CALCIUM SUPPLEMENTS|Drug|false|false||Calcium
+null|Calcium, Dietary|Drug|false|false||Calcium
+null|Calcium [EPC]|Drug|false|false||Calcium
+null|Calcium Drug Class|Drug|false|false||Calciumnull|Calcium metabolic function|Finding|false|false||Calciumnull|Calcium measurement|Procedure|false|false||Calciumnull|Phos <Photinae>|Entity|false|false||Phosnull|Equine Gonadotropins|Drug|false|false||ECG
+null|Equine Gonadotropins|Drug|false|false||ECG
+null|Equine Gonadotropins|Drug|false|false||ECGnull|Electrocardiogram image|Finding|false|false||ECG
+null|Electrocardiogram|Finding|false|false||ECGnull|Electrocardiography|Procedure|false|false||ECGnull|BaseLine dental cement|Drug|false|false||Baselinenull|baseline - TableCellVerticalAlign|Finding|false|false||Baselinenull|Baseline|LabModifier|false|false||Baselinenull|Morphologic artifact|Phenomenon|false|false||artifactnull|Physical object|Entity|false|false||artifactnull|Sinus rhythm|Finding|false|false||Sinus rhythm
+null|null|Finding|false|false||Sinus rhythmnull|Sinus brand of acetaminophen-pseudoephedrine|Drug|false|false||Sinus
+null|Sinus brand of acetaminophen-pseudoephedrine|Drug|false|false||Sinusnull|pathologic fistula|Disorder|false|false||Sinusnull|Sinus - general anatomical term|Anatomy|false|false||Sinus
+null|Nasal sinus|Anatomy|false|false||Sinusnull|Rhythm|Finding|false|false||rhythm
+null|rhythmic process (biological)|Finding|false|false||rhythmnull|Borderline|Modifier|false|false||Borderlinenull|null|Attribute|false|false||P-R interval
+null|PR interval feature|Attribute|false|false||P-R intervalnull|Parameterized Data Type - Interval|Finding|false|false||intervalnull|Interval|Time|false|false||intervalnull|Prominent|Modifier|false|false||Prominentnull|Voltage|LabModifier|false|false||voltagenull|Lead Device|Device|false|false||leadsnull|Atypical Vascular Proliferation|Finding|false|false||aVLnull|Augmented Vector Left|Modifier|false|false||aVLnull|criteria|Finding|true|false||criterianull|Left Ventricular Hypertrophy|Disorder|true|false||left ventricular hypertrophynull|null|Attribute|true|false||left ventricular hypertrophynull|Table Cell Horizontal Align - left|Finding|true|false||leftnull|Left sided|Modifier|true|false||left
+null|Left|Modifier|true|false||leftnull|Ventricular hypertrophy|Disorder|true|false||ventricular hypertrophynull|Heart Ventricle|Anatomy|true|false||ventricularnull|Ventricular|Modifier|true|false||ventricularnull|Hypertrophy|Finding|true|false||hypertrophynull|Marked|Modifier|false|false||marked
+null|Massive|Modifier|false|false||markednull|ST segment|Finding|false|false||ST segmentnull|Anatomical segmentation|Modifier|false|false||segmentnull|Mental Depression|Disorder|false|false||depressionsnull|T wave feature|Finding|false|false||T wavenull|WASF1 gene|Finding|false|false||wavenull|null|Phenomenon|false|false||wavenull|Inversions|Finding|false|false||inversionsnull|Lead Device|Device|false|false||leadsnull|Atypical Vascular Proliferation|Finding|false|false||aVLnull|Augmented Vector Left|Modifier|false|false||aVLnull|Apical|Modifier|false|false||apicalnull|Lateral|Modifier|false|false||lateralnull|Lead Device|Device|false|false||leadsnull|Act Relationship Subset - previous|Time|false|false||previous
+null|Previous|Time|false|false||previousnull|Amount type - Rate|Finding|false|false||ratenull|Rating (action)|Event|false|false||ratenull|Rate|LabModifier|false|false||ratenull|Then - dosing instruction fragment|Finding|false|false||thennull|Then|Time|false|false||thennull|T wave feature|Finding|false|false||T wavenull|WASF1 gene|Finding|false|false||wavenull|null|Phenomenon|false|false||wavenull|Congenital Abnormality|Disorder|false|false||abnormalitiesnull|teratologic|Finding|false|false||abnormalitiesnull|Similarity|Modifier|false|false||similarnull|Left Ventricular Hypertrophy|Disorder|false|false||left ventricular hypertrophynull|null|Attribute|false|false||left ventricular hypertrophynull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Ventricular hypertrophy|Disorder|false|false||ventricular hypertrophynull|Heart Ventricle|Anatomy|false|false||ventricularnull|Ventricular|Modifier|false|false||ventricularnull|Hypertrophy|Finding|false|false||hypertrophynull|Clinical NEC (not elsewhere classified in LNC)|Finding|false|false||Clinicalnull|Clinical|Modifier|false|false||Clinicalnull|Correlation|Modifier|false|false||correlationnull|Plain chest X-ray|Procedure|false|false||CXRnull|Relationship modifier - Patient|Finding|false|false||Patient
+null|Specimen Type - Patient|Finding|false|false||Patient
+null|Mail Claim Party - Patient|Finding|false|false||Patient
+null|Report source - Patient|Finding|false|false||Patient
+null|null|Finding|false|false||Patient
+null|Disabled Person Code - Patient|Finding|false|false||Patientnull|Patients|Subject|false|false||Patientnull|Veterinary Patient|Entity|false|false||Patientnull|Status post|Time|false|false||status post
+null|Post|Time|false|false||status postnull|What subject filter - Status|Finding|false|false||statusnull|null|Attribute|false|false||statusnull|Social status|Modifier|false|false||status
+null|Status|Modifier|false|false||statusnull|Median Sternotomy|Procedure|false|false||median sternotomynull|Median (qualifier value)|Modifier|false|false||median
+null|Midline (qualifier value)|Modifier|false|false||mediannull|Statistical Median|LabModifier|false|false||median
+null|Population Median|LabModifier|false|false||median
+null|Sample Median|LabModifier|false|false||mediannull|Sternotomy (procedure)|Procedure|false|false||sternotomynull|Coronary Artery Bypass Surgery|Procedure|false|false||CABGnull|heart size|Finding|false|false||Heart sizenull|Malignant neoplasm of heart|Disorder|false|false||Heart
+null|benign neoplasm of heart|Disorder|false|false||Heartnull|HEART PROBLEM|Finding|false|false||Heartnull|Chest>Heart|Anatomy|false|false||Heart
+null|Heart|Anatomy|false|false||Heartnull|size|Modifier|false|false||sizenull|size - solid dosage form|LabModifier|false|false||sizenull|Mediastinum|Anatomy|false|false||Mediastinalnull|Mediastinal|Modifier|false|false||Mediastinalnull|Hilar|Modifier|false|false||hilarnull|Contour form|Modifier|false|false||contoursnull|null|Finding|false|false||unchangednull|About The Same|Modifier|false|false||unchangednull|Pulmonary (intended site)|Finding|false|false||Pulmonarynull|Lung|Anatomy|false|false||Pulmonarynull|null|Attribute|false|false||Pulmonarynull|Pulmonary (qualifier value)|Modifier|false|false||Pulmonarynull|Vasculature|Anatomy|false|false||vasculaturenull|Blood supply aspects|Modifier|false|false||vasculaturenull|Focal|Modifier|true|false||focalnull|Lung consolidation|Disorder|true|false||consolidationnull|Consolidation|Modifier|true|false||consolidationnull|Pleural effusion (disorder)|Finding|true|false||pleural effusion
+null|Pleural effusion fluid|Finding|true|false||pleural effusion
+null|null|Finding|true|false||pleural effusionnull|Pleural Diseases|Disorder|true|false||pleuralnull|Pleura|Anatomy|true|false||pleuralnull|Pleural|Modifier|true|false||pleuralnull|Effusion (substance)|Finding|true|false||effusion
+null|null|Finding|true|false||effusion
+null|effusion|Finding|true|false||effusionnull|Pneumothorax|Disorder|false|false||pneumothoraxnull|Admission Level of Care Code - Acute|Finding|true|false||acute
+null|Acute - Triage Code|Finding|true|false||acutenull|acute|Time|true|false||acutenull|Bone Tissue, Human|Anatomy|true|false||osseous
+null|Skeletal bone|Anatomy|true|false||osseousnull|Congenital Abnormality|Disorder|true|false||abnormalitynull|Abnormality|Finding|true|false||abnormalitynull|impression (attitude)|Finding|false|false||IMPRESSION
+null|EKG impression|Finding|false|false||IMPRESSIONnull|Admission Level of Care Code - Acute|Finding|true|false||acute
+null|Acute - Triage Code|Finding|true|false||acutenull|acute|Time|true|false||acutenull|Cardiovascular disease+Pulmonary disease|Disorder|true|false||cardiopulmonarynull|Cardiopulmonary|Anatomy|true|false||cardiopulmonarynull|Congenital Abnormality|Disorder|true|false||abnormalitynull|Abnormality|Finding|true|false||abnormalitynull|dipyridamole|Drug|false|false||Dipyridamole
+null|dipyridamole|Drug|false|false||Dipyridamolenull|Multiplexed Ion Beam Imaging|Procedure|false|false||MIBInull|Exercise stress test|Procedure|false|false||Stress test
+null|Stress Test|Procedure|false|false||Stress testnull|Stress bismuth subsalicylate|Drug|false|false||Stress
+null|Stress bismuth subsalicylate|Drug|false|false||Stressnull|Stress|Finding|false|false||Stressnull|W stress|Attribute|false|false||Stressnull|Tests (qualifier value)|Finding|false|false||test
+null|Testing|Finding|false|false||testnull|Laboratory Procedures|Procedure|false|false||testnull|Test - temporal region|Anatomy|false|false||testnull|Test Result|Lab|false|false||testnull|Test Dosing Unit|LabModifier|false|false||testnull|Woman|Subject|false|false||woman
+null|Human, Female adult|Subject|false|false||womannull|Hypertensive disease|Disorder|false|false||HTNnull|Peripheral Vascular Diseases|Disorder|false|false||PVDnull|Pomalidomide/Bortezomib/Dexamethasone Regimen|Procedure|false|false||PVDnull|diastolic congestive heart failure|Disorder|false|false||diastolic CHFnull|Diastole|Attribute|false|false||diastolicnull|Congestive heart failure|Disorder|false|false||CHFnull|Choroidal fissure|Anatomy|false|false||CHFnull|Numerous|LabModifier|false|false||multiplenull|Structure of cisterna pontis|Anatomy|false|false||PCIsnull|Coronary Artery Bypass Surgery|Procedure|false|false||CABGnull|Known|Modifier|false|false||knownnull|Scalable Vector Graphics|Entity|false|false||SVGnull|Complete obstruction|Disorder|false|false||occlusionnull|Cardiovascular occlusion|Finding|false|false||occlusion
+null|Occluded|Finding|false|false||occlusion
+null|Dental Occlusion|Finding|false|false||occlusion
+null|Obstruction|Finding|false|false||occlusion
+null|null|Finding|false|false||occlusionnull|atypia morphology|Finding|false|false||atypicalnull|Atypical|Modifier|false|false||atypicalnull|Chest discomfort|Finding|false|false||chest discomfortnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Discomfort|Finding|false|false||discomfortnull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|mg/kg/min|LabModifier|false|false||mg/kg/minnull|ug/g|LabModifier|false|false||mg/kgnull|kg/min|Finding|false|false||kg/minnull|Per Minute|Time|false|false||/minnull|Minangkabau Language|Entity|false|false||minnull|Minute of time|Time|false|false||minnull|Minimum|Modifier|false|false||minnull|Minute Unit of Plane Angle|LabModifier|false|false||min
+null|minim|LabModifier|false|false||minnull|Persantine|Drug|false|false||Persantine
+null|Persantine|Drug|false|false||Persantinenull|Minute of time|Time|false|false||minutesnull|Minute Unit of Plane Angle|LabModifier|false|false||minutes
+null|Minute (diminutive)|LabModifier|false|false||minutes
+null|Small|LabModifier|false|false||minutesnull|null|Time|false|false||Prior tonull|null|Time|false|false||Priornull|Procedure (set of actions)|Finding|false|false||procedurenull|Interventional procedure|Procedure|false|false||procedurenull|null|Attribute|false|false||procedurenull|Act Class - procedure|Event|false|false||procedurenull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|Bed Status - Isolated|Finding|false|false||isolated
+null|Isolated|Finding|false|false||isolatednull|Left sided|Modifier|false|false||left-sidednull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Chest discomfort|Finding|false|false||chest discomfortnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Discomfort|Finding|false|false||discomfortnull|Present|Finding|false|false||present
+null|Presentation|Finding|false|false||presentnull|Admission activity|Procedure|false|false||admission
+null|Hospital admission|Procedure|false|false||admissionnull|Tender|Modifier|false|false||tendernull|Mild Severity of Illness Code|Finding|false|false||mildnull|Mild (qualifier value)|Modifier|false|false||mild
+null|Mild Allergy Severity|Modifier|false|false||mildnull|Palpation|Procedure|false|false||palpationnull|Discomfort|Finding|true|false||discomfortnull|With intensity|Modifier|true|false||intensitynull|Procedure (set of actions)|Finding|true|false||procedurenull|Interventional procedure|Procedure|true|false||procedurenull|null|Attribute|true|false||procedurenull|Act Class - procedure|Event|true|false||procedurenull|Present|Finding|false|false||presence ofnull|Providing presence (regime/therapy)|Procedure|false|false||presencenull|Presence (property)|Modifier|false|false||presencenull|Diffuse|Modifier|true|false||diffusenull|T wave changes|Finding|true|false||T wave changesnull|T wave feature|Finding|true|false||T wavenull|WASF1 gene|Finding|true|false||wavenull|null|Phenomenon|true|false||wavenull|Changing|Finding|true|false||changesnull|Changed status|LabModifier|true|false||changesnull|Additional|Finding|true|false||additionalnull|Equine Gonadotropins|Drug|true|false||ECG
+null|Equine Gonadotropins|Drug|true|false||ECG
+null|Equine Gonadotropins|Drug|true|false||ECGnull|Electrocardiogram image|Finding|true|false||ECG
+null|Electrocardiogram|Finding|true|false||ECGnull|Electrocardiography|Procedure|true|false||ECGnull|Changing|Finding|true|false||changesnull|Changed status|LabModifier|true|false||changesnull|Procedure (set of actions)|Finding|false|false||procedurenull|Interventional procedure|Procedure|false|false||procedurenull|null|Attribute|false|false||procedurenull|Act Class - procedure|Event|false|false||procedurenull|Hemodynamics|Finding|false|false||hemodynamicnull|hemodynamics (procedure)|Procedure|false|false||hemodynamicnull|Communication Response|Finding|false|false||response
+null|Disease Response|Finding|false|false||response
+null|Answer (statement)|Finding|false|false||responsenull|Response process|Subject|false|false||responsenull|Persantine|Drug|false|false||Persantine
+null|Persantine|Drug|false|false||Persantinenull|Infusion route|Finding|false|false||infusionnull|Infusion procedures|Procedure|false|false||infusionnull|Appropriate|Modifier|false|false||appropriatenull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|aminophylline|Drug|false|false||Aminophylline
+null|aminophylline|Drug|false|false||Aminophyllinenull|impression (attitude)|Finding|false|false||IMPRESSION
+null|EKG impression|Finding|false|false||IMPRESSIONnull|Type - ParameterizedDataType|Finding|true|false||type
+null|SGCG gene|Finding|true|false||typenull|null|Modifier|true|false||typenull|Symptoms aspect|Finding|true|false||symptoms
+null|Symptoms|Finding|true|false||symptomsnull|Additional|Finding|true|false||additionalnull|Anatomical segmentation|Modifier|true|false||segmentnull|Changing|Finding|true|false||changesnull|Changed status|LabModifier|true|false||changesnull|BaseLine dental cement|Drug|true|false||baselinenull|baseline - TableCellVerticalAlign|Finding|true|false||baselinenull|Baseline|LabModifier|true|false||baselinenull|Imaging problem|Finding|false|false||Imagingnull|Diagnostic Imaging|Procedure|false|false||Imaging
+null|Imaging Techniques|Procedure|false|false||Imagingnull|Imaging Technology|Title|false|false||Imagingnull|Left ventricular cavity size|Attribute|false|false||Left ventricular cavity sizenull|Cavity of left ventricle|Anatomy|false|false||Left ventricular cavitynull|Table Cell Horizontal Align - left|Finding|false|false||Leftnull|Left sided|Modifier|false|false||Left
+null|Left|Modifier|false|false||Leftnull|Cavity of ventricle|Anatomy|false|false||ventricular cavitynull|Heart Ventricle|Anatomy|false|false||ventricularnull|Ventricular|Modifier|false|false||ventricularnull|Dental caries|Disorder|false|false||cavity
+null|Cavitation|Disorder|false|false||cavitynull|Body cavities|Anatomy|false|false||cavitynull|size|Modifier|false|false||sizenull|size - solid dosage form|LabModifier|false|false||sizenull|REST protein, human|Drug|false|false||Rest
+null|REST protein, human|Drug|false|false||Restnull|REST gene|Finding|false|false||Rest
+null|site-specific telomere resolvase activity|Finding|false|false||Rest
+null|Rest|Finding|false|false||Restnull|Stress bismuth subsalicylate|Drug|false|false||stress
+null|Stress bismuth subsalicylate|Drug|false|false||stressnull|Stress|Finding|false|false||stressnull|W stress|Attribute|false|false||stressnull|Perfusion (biological)|Finding|false|false||perfusion
+null|Perfusion route|Finding|false|false||perfusionnull|Chemotherapeutic Perfusion|Procedure|false|false||perfusion
+null|Perfusion (procedure)|Procedure|false|false||perfusionnull|Uniforms|Device|false|false||uniformnull|Uniform (qualifier value)|Modifier|false|false||uniformnull|Uniform - ProbabilityDistributionType|LabModifier|false|false||uniformnull|Tracer|Drug|false|false||tracernull|Uptake|Finding|false|false||uptake
+null|Import into cell|Finding|false|false||uptake
+null|import across plasma membrane|Finding|false|false||uptakenull|Myocardium of left ventricle|Anatomy|false|false||left ventricular myocardiumnull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Structure of myocardium of ventricle|Anatomy|false|false||ventricular myocardiumnull|Heart Ventricle|Anatomy|false|false||ventricularnull|Ventricular|Modifier|false|false||ventricularnull|Myocardium|Anatomy|false|false||myocardiumnull|Perfusion (biological)|Finding|false|false||perfusion
+null|Perfusion route|Finding|false|false||perfusionnull|Chemotherapeutic Perfusion|Procedure|false|false||perfusion
+null|Perfusion (procedure)|Procedure|false|false||perfusionnull|THYROID HORMONE PLASMA MEMBRANE TRANSPORT DEFECT|Disorder|false|false||defectnull|Defect|Finding|false|false||defectnull|Inferolateral|Modifier|false|false||inferolateralnull|Walls of a building|Device|false|false||wallnull|Gated|Finding|false|false||Gatednull|Wall motion|Attribute|false|false||wall motionnull|Walls of a building|Device|false|false||wallnull|Motion|Phenomenon|false|false||motionnull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Ventricular Ejection Fraction|Lab|false|false||ventricular ejection fractionnull|Ventricular ejection|Finding|false|false||ventricular ejectionnull|Heart Ventricle|Anatomy|false|false||ventricularnull|Ventricular|Modifier|false|false||ventricularnull|stress echo measurements ejection fraction|Finding|false|false||ejection fraction
+null|Ejection fraction|Finding|false|false||ejection fractionnull|Ejection fraction (procedure)|Procedure|false|false||ejection fractionnull|Ejection as a Sports activity|Finding|false|false||ejectionnull|Ejection time|Attribute|false|false||ejectionnull|Ejection as a Circumstance of Injury|Phenomenon|false|false||ejectionnull|MDFAttributeType - Fraction|Finding|false|false||fractionnull|Fraction of|LabModifier|false|false||fractionnull|impression (attitude)|Finding|false|false||IMPRESSION
+null|EKG impression|Finding|false|false||IMPRESSIONnull|myocardial perfusion study|Procedure|false|false||myocardial perfusion studynull|Myocardial perfusion|Subject|false|false||myocardial perfusionnull|Myocardium|Anatomy|false|false||myocardialnull|Myocardial|Modifier|false|false||myocardialnull|Perfusion (biological)|Finding|false|false||perfusion
+null|Perfusion route|Finding|false|false||perfusionnull|Chemotherapeutic Perfusion|Procedure|false|false||perfusion
+null|Perfusion (procedure)|Procedure|false|false||perfusionnull|Study Object|Finding|false|false||studynull|Scientific Study|Procedure|false|false||study
+null|Study|Procedure|false|false||study
+null|Clinical Research|Procedure|false|false||studynull|Room of building - Study|Device|false|false||studynull|Parameterized Data Type - Interval|Finding|false|false||Intervalnull|Interval|Time|false|false||Intervalnull|null|Time|false|false||priornull|Methylcytosine Dioxygenase TET1|Drug|false|false||LCx
+null|Methylcytosine Dioxygenase TET1|Drug|false|false||LCxnull|TET1 wt Allele|Finding|false|false||LCx
+null|TET1 gene|Finding|false|false||LCxnull|Territory|Entity|false|false||territory
+null|Geographic state|Entity|false|false||territorynull|Perfusion (biological)|Finding|false|false||perfusion
+null|Perfusion route|Finding|false|false||perfusionnull|Chemotherapeutic Perfusion|Procedure|false|false||perfusion
+null|Perfusion (procedure)|Procedure|false|false||perfusionnull|THYROID HORMONE PLASMA MEMBRANE TRANSPORT DEFECT|Disorder|false|false||defectnull|Defect|Finding|false|false||defectnull|BRIEF Health Literacy Screening Tool|Finding|false|false||Brief
+null|Behavior Rating Inventory of Executive Function|Finding|false|false||Briefnull|Brief|Time|false|false||Briefnull|Shortened|Modifier|false|false||Briefnull|Hospital course|Finding|false|false||Hospital Coursenull|null|Attribute|false|false||Hospital Coursenull|Organization unit type - Hospital|Finding|false|false||Hospitalnull|Hospitals|Device|false|false||Hospitalnull|Hospitals|Entity|false|false||Hospitalnull|Hospital environment|Modifier|false|false||Hospitalnull|Course|Time|false|false||Coursenull|null|Modifier|false|false||with typenull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||type 2 diabetes mellitusnull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||type 2 diabetesnull|Type 2|Finding|false|false||type 2null|Type - ParameterizedDataType|Finding|false|false||type
+null|SGCG gene|Finding|false|false||typenull|null|Modifier|false|false||typenull|Diabetes Mellitus|Disorder|false|false||diabetes mellitusnull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||diabetes
+null|Diabetes|Disorder|false|false||diabetes
+null|Diabetes Mellitus|Disorder|false|false||diabetesnull|insulin, regular, human|Drug|false|false||insulin
+null|Insulin [EPC]|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulinnull|INS gene|Finding|false|false||insulinnull|Insulin measurement|Procedure|false|false||insulinnull|DFFB protein, human|Drug|false|false||CAD
+null|DFFB protein, human|Drug|false|false||CADnull|Cold Hemagglutinin Disease|Disorder|false|false||CAD
+null|Coronary heart disease|Disorder|false|false||CAD
+null|Coronary Artery Disease|Disorder|false|false||CADnull|CAD gene|Finding|false|false||CAD
+null|CALD1 wt Allele|Finding|false|false||CAD
+null|B4GALNT2 gene|Finding|false|false||CAD
+null|DFFB wt Allele|Finding|false|false||CAD
+null|ACOD1 gene|Finding|false|false||CAD
+null|DFFB gene|Finding|false|false||CADnull|cytarabine/daunorubicin protocol|Procedure|false|false||CAD
+null|Computer Assisted Diagnosis|Procedure|false|false||CAD
+null|Collision-Induced Dissociation|Procedure|false|false||CAD
+null|CyADIC regimen|Procedure|false|false||CADnull|Caddo language|Entity|false|false||CADnull|Numerous|LabModifier|false|false||multiplenull|Structure of cisterna pontis|Anatomy|false|false||PCIsnull|Coronary Artery Bypass Surgery|Procedure|false|false||CABGnull|Lima|Entity|false|false||LIMAnull|Leukocyte adhesion deficiency type 1|Disorder|false|false||LAD
+null|Leukocyte adhesion deficiency|Disorder|false|false||LADnull|ITGB2 wt Allele|Finding|false|false||LAD
+null|DLD gene|Finding|false|false||LADnull|Anterior descending branch of left coronary artery|Anatomy|false|false||LADnull|Ladino Language|Entity|false|false||LADnull|Scalable Vector Graphics|Entity|false|false||SVGnull|Scalable Vector Graphics|Entity|false|false||SVGnull|Occluded|Finding|false|false||occluded
+null|Obstruction|Finding|false|false||occludednull|Stable angina|Disorder|false|false||chronic stable anginanull|Chronic - Admission Level of Care Code|Finding|false|false||chronicnull|Provision of recurring care for chronic illness|Procedure|false|false||chronicnull|chronic|Time|false|false||chronicnull|Stable angina|Disorder|false|false||stable anginanull|Patient Condition Code - Stable|Finding|false|false||stablenull|Stable status|Modifier|false|false||stablenull|Angina Pectoris|Finding|false|false||angina
+null|null|Finding|false|false||anginanull|null|Attribute|false|false||anginanull|atypia morphology|Finding|false|false||atypicalnull|Atypical|Modifier|false|false||atypicalnull|Stabbing sensation quality|Modifier|false|false||stabbingnull|Focal|Modifier|false|false||focalnull|Chest Pain|Finding|false|false||chest painnull|null|Attribute|false|false||chest painnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Chest Pain|Finding|false|false||Chest painnull|null|Attribute|false|false||Chest painnull|Chest problem|Finding|false|false||Chestnull|Chest|Anatomy|false|false||Chest
+null|Anterior thoracic region|Anatomy|false|false||Chestnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Initially|Time|false|false||Initiallynull|Relationship modifier - Patient|Finding|false|false||patient
+null|Specimen Type - Patient|Finding|false|false||patient
+null|Mail Claim Party - Patient|Finding|false|false||patient
+null|Report source - Patient|Finding|false|false||patient
+null|null|Finding|false|false||patient
+null|Disabled Person Code - Patient|Finding|false|false||patientnull|Patients|Subject|false|false||patientnull|Veterinary Patient|Entity|false|false||patientnull|heparin, porcine|Drug|false|false||heparin
+null|heparin, porcine|Drug|false|false||heparin
+null|heparin, porcine|Drug|false|false||heparin
+null|heparin|Drug|false|false||heparin
+null|heparin|Drug|false|false||heparin
+null|heparin|Drug|false|false||heparinnull|ACSS2 protein, human|Drug|false|false||ACS
+null|ACSS2 protein, human|Drug|false|false||ACSnull|Acrocallosal Syndrome|Disorder|false|false||ACS
+null|Acute Chest Syndrome|Disorder|false|false||ACSnull|ACS - Activity Card Sort|Finding|false|false||ACS
+null|American Community Survey|Finding|false|false||ACS
+null|ACCS gene|Finding|false|false||ACS
+null|CO-methylating acetyl-CoA synthase activity|Finding|false|false||ACS
+null|PLA2G15 gene|Finding|false|false||ACS
+null|ACSS2 wt Allele|Finding|false|false||ACS
+null|ACSS2 gene|Finding|false|false||ACS
+null|acetate-CoA ligase activity|Finding|false|false||ACSnull|anterior calcarine sulcus (human only)|Anatomy|false|false||ACSnull|Alternate Care Site|Device|false|false||ACSnull|American College of Surgeons|Entity|false|false||ACS
+null|American Cancer Society|Entity|false|false||ACS
+null|Alternate Care Site|Entity|false|false||ACSnull|Clinical trial protocol document|Finding|false|false||protocol
+null|Study Protocol|Finding|false|false||protocol
+null|Protocols documentation|Finding|false|false||protocol
+null|Protocol - answer to question|Finding|false|false||protocol
+null|Library Protocol|Finding|false|false||protocolnull|Pharmaceutical Preparations|Drug|false|false||medicationsnull|Medications|Finding|false|false||medicationsnull|null|Attribute|false|false||medications
+null|null|Attribute|false|false||medicationsnull|Visit User Code - Home|Finding|false|false||home
+null|Address type - Home|Finding|false|false||homenull|home health encounter|Procedure|false|false||homenull|Organization unit type - Home|Entity|false|false||homenull|Person location type - Home|Modifier|false|false||home
+null|Home environment|Modifier|false|false||homenull|losartan|Drug|false|false||losartan
+null|losartan|Drug|false|false||losartannull|furosemide|Drug|false|false||furosemide
+null|furosemide|Drug|false|false||furosemidenull|Hypotension|Finding|false|false||low blood pressuresnull|IPSS-R Risk Category Low|Finding|false|false||low
+null|IPSS Risk Category Low|Finding|false|false||low
+null|low confidentiality|Finding|false|false||lownull|Low - MessageWaitingPriority|Modifier|false|false||low
+null|low|Modifier|false|false||low
+null|low exposure|Modifier|false|false||lownull|null|LabModifier|false|false||lownull|Systemic arterial pressure|Finding|false|false||blood pressuresnull|Blood and lymphatic system disorders|Disorder|false|false||bloodnull|peripheral blood|Finding|false|false||blood
+null|Blood|Finding|false|false||blood
+null|In Blood|Finding|false|false||bloodnull|Pressure (finding)|Finding|false|false||pressuresnull|null|Phenomenon|false|false||pressuresnull|Suspicion|Finding|false|false||Suspicionnull|CARDIAC ETIOLOGY|Disorder|true|false||cardiac etiologynull|Cardiac attachment|Finding|true|false||cardiacnull|Heart|Anatomy|true|false||cardiacnull|Cardiac - anatomy qualifier|Modifier|true|false||cardiacnull|Science of Etiology|Finding|true|false||etiology
+null|Etiology aspects|Finding|true|false||etiology
+null|Etiology|Finding|true|false||etiologynull|Chest Pain|Finding|true|false||chest painnull|null|Attribute|true|false||chest painnull|Chest problem|Finding|true|false||chestnull|Chest|Anatomy|true|false||chest
+null|Anterior thoracic region|Anatomy|true|false||chestnull|Administration Method - Pain|Finding|true|false||pain
+null|Pain|Finding|true|false||painnull|null|Attribute|true|false||painnull|Message Waiting Priority - High|Finding|true|false||high
+null|high - ActExposureLevelCode|Finding|true|false||high
+null|IPSS Risk Category High|Finding|true|false||high
+null|IPSS-R Risk Category High|Finding|true|false||high
+null|High (finding)|Finding|true|false||highnull|Observation Value - High|Modifier|true|false||high
+null|High|Modifier|true|false||high
+null|Abnormally high|Modifier|true|false||highnull|Continuous|Finding|false|false||ongoingnull|Left sided|Modifier|false|false||left-sidednull|Table Cell Horizontal Align - left|Finding|false|false||leftnull|Left sided|Modifier|false|false||left
+null|Left|Modifier|false|false||leftnull|Chest discomfort|Finding|false|false||chest discomfortnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Discomfort|Finding|false|false||discomfortnull|Changing|Finding|false|false||changesnull|Changed status|LabModifier|false|false||changesnull|In Position|Modifier|false|false||in positionnull|Position of phenotypic abnormality|Modifier|false|false||position
+null|Positioning (attribute)|Modifier|false|false||positionnull|Chest wall tenderness|Finding|false|false||chest wall tendernessnull|Chest wall structure|Anatomy|false|false||chest wall
+null|Chest>Chest wall|Anatomy|false|false||chest wallnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Walls of a building|Device|false|false||wallnull|Emotional tenderness|Finding|false|false||tenderness
+null|Sore to touch|Finding|false|false||tendernessnull|TNFSF14 protein, human|Drug|false|false||light
+null|TNFSF14 protein, human|Drug|false|false||lightnull|Light - subjective measurement|Finding|false|false||light
+null|TNFSF14 wt Allele|Finding|false|false||light
+null|TNFSF14 gene|Finding|false|false||light
+null|Light color|Finding|false|false||lightnull|Phototherapy|Procedure|false|false||lightnull|Light|Phenomenon|false|false||lightnull|Light (qualifier)|Modifier|false|false||lightnull|Palpation|Procedure|false|false||palpationnull|Prolonged|Time|false|false||prolongednull|Chest Pain|Finding|false|false||chest painnull|null|Attribute|false|false||chest painnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Troponin T|Drug|false|false||troponin-T
+null|Troponin T|Drug|false|false||troponin-Tnull|Troponin|Drug|false|false||troponin
+null|Troponin|Drug|false|false||troponinnull|Troponin measurement|Procedure|false|false||troponinnull|Creatine Kinase MB Isoenzyme|Drug|false|false||CK-MB
+null|Creatine Kinase MB Isoenzyme|Drug|false|false||CK-MBnull|creatine kinase activity|Finding|false|false||CK-MBnull|Serum creatine phosphokinase MB isoenzyme measurement|Procedure|false|false||CK-MB
+null|Creatine kinase MB measurement|Procedure|false|false||CK-MBnull|Rh Negative Blood Group|Finding|false|false||negative
+null|Negative|Finding|false|false||negative
+null|Negative Finding|Finding|false|false||negativenull|Expression Negative|Lab|false|false||negativenull|Negative - qualifier|Modifier|false|false||negative
+null|Negative Charge|Modifier|false|false||negativenull|Negative Number|LabModifier|false|false||negativenull|Electrocardiogram|Finding|false|false||EKGsnull|MOSTLY|Finding|false|false||mostlynull|null|LabModifier|false|false||mostlynull|null|Finding|false|false||unchangednull|About The Same|Modifier|false|false||unchangednull|null|Time|false|false||priornull|Known|Modifier|false|false||knownnull|DFFB protein, human|Drug|false|false||CAD
+null|DFFB protein, human|Drug|false|false||CADnull|Cold Hemagglutinin Disease|Disorder|false|false||CAD
+null|Coronary heart disease|Disorder|false|false||CAD
+null|Coronary Artery Disease|Disorder|false|false||CADnull|CAD gene|Finding|false|false||CAD
+null|CALD1 wt Allele|Finding|false|false||CAD
+null|B4GALNT2 gene|Finding|false|false||CAD
+null|DFFB wt Allele|Finding|false|false||CAD
+null|ACOD1 gene|Finding|false|false||CAD
+null|DFFB gene|Finding|false|false||CADnull|cytarabine/daunorubicin protocol|Procedure|false|false||CAD
+null|Computer Assisted Diagnosis|Procedure|false|false||CAD
+null|Collision-Induced Dissociation|Procedure|false|false||CAD
+null|CyADIC regimen|Procedure|false|false||CADnull|Caddo language|Entity|false|false||CADnull|Vasodilator Agents|Drug|false|false||vasodilator
+null|Vasodilator [EPC]|Drug|false|false||vasodilatornull|Nuclear stress test|Procedure|false|false||nuclear stress testnull|Nuclear (incident type)|Modifier|false|false||nuclear
+null|Nuclear (nucleus)|Modifier|false|false||nuclearnull|Exercise stress test|Procedure|false|false||stress test
+null|Stress Test|Procedure|false|false||stress testnull|Stress bismuth subsalicylate|Drug|false|false||stress
+null|Stress bismuth subsalicylate|Drug|false|false||stressnull|Stress|Finding|false|false||stressnull|W stress|Attribute|false|false||stressnull|Tests (qualifier value)|Finding|false|false||test
+null|Testing|Finding|false|false||testnull|Laboratory Procedures|Procedure|false|false||testnull|Test - temporal region|Anatomy|false|false||testnull|Test Result|Lab|false|false||testnull|Test Dosing Unit|LabModifier|false|false||testnull|Reassuring (procedure)|Procedure|false|false||reassuringnull|Discomfort|Finding|true|false||discomfortnull|With intensity|Modifier|true|false||intensitynull|Exercise stress test|Procedure|true|false||stress test
+null|Stress Test|Procedure|true|false||stress testnull|Stress bismuth subsalicylate|Drug|true|false||stress
+null|Stress bismuth subsalicylate|Drug|true|false||stressnull|Stress|Finding|true|false||stressnull|W stress|Attribute|true|false||stressnull|Substance Abuse Detection|Procedure|false|false||test drugnull|Tests (qualifier value)|Finding|false|false||test
+null|Testing|Finding|false|false||testnull|Laboratory Procedures|Procedure|false|false||testnull|Test - temporal region|Anatomy|false|false||testnull|Test Result|Lab|false|false||testnull|Test Dosing Unit|LabModifier|false|false||testnull|infusion of drug|Procedure|false|false||drug infusionnull|Pharmaceutical Preparations|Drug|false|false||drug
+null|Pharmacologic Substance|Drug|false|false||drugnull|Drug problem|Finding|false|false||drugnull|Infusion route|Finding|false|false||infusionnull|Infusion procedures|Procedure|false|false||infusionnull|Present|Finding|false|false||presence ofnull|Providing presence (regime/therapy)|Procedure|false|false||presencenull|Presence (property)|Modifier|false|false||presencenull|Diffuse|Modifier|false|false||diffusenull|WASF1 gene|Finding|true|false||wavenull|null|Phenomenon|true|false||wavenull|Changing|Finding|true|false||changesnull|Changed status|LabModifier|true|false||changesnull|Additional|Finding|true|false||additionalnull|Equine Gonadotropins|Drug|true|false||ECG
+null|Equine Gonadotropins|Drug|true|false||ECG
+null|Equine Gonadotropins|Drug|true|false||ECGnull|Electrocardiogram image|Finding|true|false||ECG
+null|Electrocardiogram|Finding|true|false||ECGnull|Electrocardiography|Procedure|true|false||ECGnull|Changing|Finding|true|false||changesnull|Changed status|LabModifier|true|false||changesnull|Procedure (set of actions)|Finding|false|false||procedurenull|Interventional procedure|Procedure|false|false||procedurenull|null|Attribute|false|false||procedurenull|Act Class - procedure|Event|false|false||procedurenull|Hemodynamics|Finding|false|false||hemodynamicnull|hemodynamics (procedure)|Procedure|false|false||hemodynamicnull|Communication Response|Finding|false|false||response
+null|Disease Response|Finding|false|false||response
+null|Answer (statement)|Finding|false|false||responsenull|Response process|Subject|false|false||responsenull|Persantine|Drug|false|false||Persantine
+null|Persantine|Drug|false|false||Persantinenull|Infusion route|Finding|false|false||infusionnull|Infusion procedures|Procedure|false|false||infusionnull|Appropriate|Modifier|false|false||appropriatenull|Perfusion (biological)|Finding|false|false||perfusion
+null|Perfusion route|Finding|false|false||perfusionnull|Chemotherapeutic Perfusion|Procedure|false|false||perfusion
+null|Perfusion (procedure)|Procedure|false|false||perfusionnull|Study Object|Finding|false|false||studynull|Scientific Study|Procedure|false|false||study
+null|Study|Procedure|false|false||study
+null|Clinical Research|Procedure|false|false||studynull|Room of building - Study|Device|false|false||studynull|Parameterized Data Type - Interval|Finding|false|false||intervalnull|Interval|Time|false|false||intervalnull|null|Time|false|false||priornull|Methylcytosine Dioxygenase TET1|Drug|false|false||LCx
+null|Methylcytosine Dioxygenase TET1|Drug|false|false||LCxnull|TET1 wt Allele|Finding|false|false||LCx
+null|TET1 gene|Finding|false|false||LCxnull|Territory|Entity|false|false||territory
+null|Geographic state|Entity|false|false||territorynull|Perfusion (biological)|Finding|false|false||perfusion
+null|Perfusion route|Finding|false|false||perfusionnull|Chemotherapeutic Perfusion|Procedure|false|false||perfusion
+null|Perfusion (procedure)|Procedure|false|false||perfusionnull|THYROID HORMONE PLASMA MEMBRANE TRANSPORT DEFECT|Disorder|false|false||defectnull|Defect|Finding|false|false||defectnull|Quality|Modifier|false|false||qualitynull|Emotional tenderness|Finding|false|false||tenderness
+null|Sore to touch|Finding|false|false||tendernessnull|Palpation|Procedure|false|false||palpationnull|Academic Research Enhancement Awards|Event|false|false||areanull|Geographic Locations|Entity|false|false||areanull|Area|Modifier|false|false||areanull|Discomfort|Finding|false|false||discomfortnull|Symptoms aspect|Finding|false|false||symptoms
+null|Symptoms|Finding|false|false||symptomsnull|most likely|Finding|false|false||most likelynull|Adverse Event Probably Related to Intervention|Modifier|false|false||likely relatednull|Probable diagnosis|Finding|false|false||likely
+null|Probably|Finding|false|false||likelynull|Relate - vinyl resin|Drug|false|false||relatednull|Role Link Type - related|Finding|false|false||related
+null|Related (finding)|Finding|false|false||relatednull|Definitely Related to Intervention|Modifier|false|false||related
+null|Relationships|Modifier|false|false||relatednull|Tietze's Syndrome|Disorder|false|false||costochondritis
+null|Costal chondritis|Disorder|false|false||costochondritisnull|Musculoskeletal|Finding|false|false||musculoskeletalnull|null|Attribute|false|false||musculoskeletalnull|Etiology aspects|Finding|false|false||causes
+null|Etiology|Finding|false|false||causesnull|aspirin|Drug|false|false||aspirin
+null|aspirin|Drug|false|false||aspirinnull|Every six hours|Time|false|false||q6hnull|Clinical Trials|Procedure|false|false||trialnull|2 Days|Time|false|false||2 daysnull|day|Time|false|false||daysnull|Transaction counts and value totals - week|Finding|false|false||weeknull|week|Time|false|false||weeknull|Symptoms aspect|Finding|false|false||symptoms
+null|Symptoms|Finding|false|false||symptomsnull|Chronic - Admission Level of Care Code|Finding|false|false||Chronicnull|Provision of recurring care for chronic illness|Procedure|false|false||Chronicnull|chronic|Time|false|false||Chronicnull|Medical referral type|Finding|false|false||medical
+null|Medical|Finding|false|false||medical
+null|Medical school type|Finding|false|false||medicalnull|Medical service|Procedure|false|false||medicalnull|Problems - What subject filter|Finding|false|false||problemsnull|Diabetes Mellitus|Disorder|false|false||Diabetes mellitusnull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||Diabetes
+null|Diabetes|Disorder|false|false||Diabetes
+null|Diabetes Mellitus|Disorder|false|false||Diabetesnull|Levemir|Drug|false|false||levemir
+null|Levemir|Drug|false|false||levemir
+null|Levemir|Drug|false|false||levemirnull|Scale, LOINC Axis 5|Finding|false|false||scale
+null|Base Number|Finding|false|false||scale
+null|Scale - rank|Finding|false|false||scalenull|Integumentary scale|Anatomy|false|false||scalenull|Weight measurement scales|Device|false|false||scalenull|Scaling|Event|false|false||scalenull|Humalog|Drug|false|false||Humalog
+null|Humalog|Drug|false|false||Humalognull|Hypertensive disease|Disorder|false|false||Hypertensionnull|losartan|Drug|false|false||Losartan
+null|losartan|Drug|false|false||Losartannull|Table Frame - above|Finding|false|false||abovenull|Upper|Modifier|false|false||abovenull|Hypotension|Finding|false|false||hypotensionnull|Once daily|Time|false|false||once dailynull|Once - dosing instruction fragment|Finding|false|false||oncenull|Once (schedule frequency)|Time|false|false||oncenull|Daily|Time|false|false||dailynull|isosorbide mononitrate|Drug|false|false||isosorbide mononitrate
+null|isosorbide mononitrate|Drug|false|false||isosorbide mononitratenull|isosorbide|Drug|false|false||isosorbide
+null|isosorbide|Drug|false|false||isosorbidenull|isosorbide dinitrate|Drug|false|false||isosorbide dinitrate
+null|isosorbide dinitrate|Drug|false|false||isosorbide dinitratenull|isosorbide|Drug|false|false||isosorbide
+null|isosorbide|Drug|false|false||isosorbidenull|three times a day at institution-specified times|Time|false|false||TID
+null|Three times daily|Time|false|false||TIDnull|Hyperlipidemia|Disorder|false|false||hyperlipidemia
+null|Hyperlipoproteinemias|Disorder|false|false||hyperlipidemianull|Serum lipids high (finding)|Finding|false|false||hyperlipidemianull|COPD pharmacologic substance|Drug|false|false||COPDnull|Chronic obstructive pulmonary disease of horses|Disorder|false|false||COPD
+null|Chronic Obstructive Airway Disease|Disorder|false|false||COPDnull|ARCN1 gene|Finding|false|false||COPDnull|Gastroesophageal reflux disease|Disorder|false|false||GERDnull|Visit User Code - Home|Finding|false|false||home
+null|Address type - Home|Finding|false|false||homenull|home health encounter|Procedure|false|false||homenull|Organization unit type - Home|Entity|false|false||homenull|Person location type - Home|Modifier|false|false||home
+null|Home environment|Modifier|false|false||homenull|Treatment Protocols|Procedure|false|false||regimensnull|Marketing basis - Transitional|Finding|false|false||TRANSITIONALnull|Transitional cell morphology|Modifier|false|false||TRANSITIONALnull|Relationship modifier - Patient|Finding|false|false||Patient
+null|Specimen Type - Patient|Finding|false|false||Patient
+null|Mail Claim Party - Patient|Finding|false|false||Patient
+null|Report source - Patient|Finding|false|false||Patient
+null|null|Finding|false|false||Patient
+null|Disabled Person Code - Patient|Finding|false|false||Patientnull|Patients|Subject|false|false||Patientnull|Veterinary Patient|Entity|false|false||Patientnull|Hypotension|Finding|false|false||low blood pressuresnull|IPSS-R Risk Category Low|Finding|false|false||low
+null|IPSS Risk Category Low|Finding|false|false||low
+null|low confidentiality|Finding|false|false||lownull|Low - MessageWaitingPriority|Modifier|false|false||low
+null|low|Modifier|false|false||low
+null|low exposure|Modifier|false|false||lownull|null|LabModifier|false|false||lownull|Systemic arterial pressure|Finding|false|false||blood pressuresnull|Blood and lymphatic system disorders|Disorder|false|false||bloodnull|peripheral blood|Finding|false|false||blood
+null|Blood|Finding|false|false||blood
+null|In Blood|Finding|false|false||bloodnull|Pressure (finding)|Finding|false|false||pressuresnull|null|Phenomenon|false|false||pressuresnull|Initially|Time|false|false||initiallynull|Systole|Finding|false|false||systolicnull|Close|Finding|false|false||close
+null|Closed|Finding|false|false||closenull|Preventive monitoring|Procedure|false|false||monitoringnull|null|Event|false|false||monitoringnull|Titration Method|Procedure|false|false||titrationnull|Blood and lymphatic system disorders|Disorder|false|false||bloodnull|peripheral blood|Finding|false|false||blood
+null|Blood|Finding|false|false||blood
+null|In Blood|Finding|false|false||bloodnull|Pressure (finding)|Finding|false|false||pressure
+null|null|Finding|false|false||pressure
+null|Baresthesia|Finding|false|false||pressurenull|null|Phenomenon|false|false||pressurenull|Pressure (property)|LabModifier|false|false||pressurenull|Pharmaceutical Preparations|Drug|false|false||medicationsnull|Medications|Finding|false|false||medicationsnull|null|Attribute|false|false||medications
+null|null|Attribute|false|false||medicationsnull|Referral category - Outpatient|Finding|false|false||outpatient
+null|Patient Class - Outpatient|Finding|false|false||outpatientnull|Outpatients|Subject|false|false||outpatientnull|During admission|Time|false|false||during admissionnull|Admission activity|Procedure|false|false||admission
+null|Hospital admission|Procedure|false|false||admissionnull|furosemide|Drug|false|false||furosemide
+null|furosemide|Drug|false|false||furosemidenull|chemical aspects|Finding|false|false||CHEMnull|Chemical procedure|Procedure|false|false||CHEMnull|Science of Chemistry|Subject|false|false||CHEMnull|Visit|Finding|false|false||visitnull|Dietary Supplementation|Procedure|false|false||supplementationnull|On discharge|Time|false|false||on dischargenull|Body Substance Discharge|Finding|false|false||discharge
+null|Discharge Body Fluid|Finding|false|false||discharge
+null|Body Fluid Discharge|Finding|false|false||discharge
+null|null|Finding|false|false||dischargenull|Patient Discharge|Procedure|false|false||dischargenull|Most Recent|Time|false|false||most recentnull|Recent|Time|false|false||recentnull|Address type - Office|Finding|false|false||officenull|Office|Device|false|false||officenull|Organization unit type - Office|Entity|false|false||officenull|Full|Modifier|false|false||Fullnull|MDF Attribute Type - Code|Finding|false|false||code
+null|A Codes|Finding|false|false||code
+null|Code|Finding|false|false||codenull|Coding|Event|false|false||codenull|Medications on admission|Finding|false|false||Medications on Admissionnull|Pharmaceutical Preparations|Drug|false|false||Medicationsnull|Medications|Finding|false|false||Medicationsnull|null|Attribute|false|false||Medications
+null|null|Attribute|false|false||Medicationsnull|On admission|Time|false|false||on Admissionnull|Admission activity|Procedure|false|false||Admission
+null|Hospital admission|Procedure|false|false||Admissionnull|MEDICATION LIST|Finding|false|false||Medication listnull|Pharmaceutical Preparations|Drug|false|false||Medicationnull|medication - HL7 publishing domain|Finding|false|false||Medication
+null|Medications|Finding|false|false||Medicationnull|List|Finding|false|false||list
+null|Sequence Data Type|Finding|false|false||listnull|Accurate (qualifier value)|Modifier|false|false||accuratenull|Complete, Multiple Vitamins with Iron|Drug|false|false||complete
+null|Complete, Multiple Vitamins with Iron|Drug|false|false||complete
+null|Complete, Multiple Vitamins with Iron|Drug|false|false||completenull|Completion Status for valid values - Complete|Finding|false|false||complete
+null|Data operation - complete|Finding|false|false||complete
+null|Finish - dosing instruction imperative|Finding|false|false||completenull|Complete|Modifier|false|false||completenull|acetaminophen / oxycodone|Drug|false|false||Oxycodone-Acetaminophennull|oxycodone|Drug|false|false||Oxycodone
+null|oxycodone|Drug|false|false||Oxycodonenull|Oxycodone measurement|Procedure|false|false||Oxycodonenull|Acetaminophen [EPC]|Drug|false|false||Acetaminophen
+null|acetaminophen|Drug|false|false||Acetaminophen
+null|acetaminophen|Drug|false|false||Acetaminophennull|Acetaminophen measurement|Procedure|false|false||Acetaminophennull|Tablet Dosage Form|Drug|false|false||TABnull|Tablet Dosing Unit|LabModifier|false|false||TABnull|Every eight hours|Time|false|false||Q8Hnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|nitroglycerin|Drug|false|false||Nitroglycerin
+null|nitroglycerin|Drug|false|false||Nitroglycerinnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|metoprolol succinate|Drug|false|false||Metoprolol Succinate
+null|metoprolol succinate|Drug|false|false||Metoprolol Succinatenull|metoprolol|Drug|false|false||Metoprolol
+null|metoprolol|Drug|false|false||Metoprololnull|succinate|Drug|false|false||Succinate
+null|Succinates|Drug|false|false||Succinatenull|Daily|Time|false|false||DAILYnull|Levemir FlexPen|Device|false|false||Levemir Flexpennull|Levemir|Drug|false|false||Levemir
+null|Levemir|Drug|false|false||Levemir
+null|Levemir|Drug|false|false||Levemirnull|insulin detemir|Drug|false|false||insulin detemir
+null|insulin detemir|Drug|false|false||insulin detemir
+null|insulin detemir|Drug|false|false||insulin detemirnull|insulin, regular, human|Drug|false|false||insulin
+null|Insulin [EPC]|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulinnull|INS gene|Finding|false|false||insulinnull|Insulin measurement|Procedure|false|false||insulinnull|insulin detemir|Drug|false|false||detemir
+null|insulin detemir|Drug|false|false||detemir
+null|insulin detemir|Drug|false|false||detemirnull|Unit - NCI Thesaurus Property|LabModifier|false|false||units
+null|Unit of Measure|LabModifier|false|false||units
+null|Unit|LabModifier|false|false||unitsnull|Subcutaneous Route of Administration|Finding|false|false||subcutaneousnull|subcutaneous|Modifier|false|false||subcutaneousnull|Evening|Time|false|false||eveningnull|albuterol sulfate|Drug|false|false||albuterol sulfate
+null|albuterol sulfate|Drug|false|false||albuterol sulfatenull|albuterol|Drug|false|false||albuterol
+null|albuterol|Drug|false|false||albuterolnull|Sulfates, Unspecified or Sulfate Ion|Drug|false|false||sulfate
+null|Sulfates, Inorganic|Drug|false|false||sulfate
+null|sulfate ion|Drug|false|false||sulfate
+null|sulfate ion|Drug|false|false||sulfate
+null|Sulfates, Unspecified or Sulfate Ion|Drug|false|false||sulfatenull|mcg/actuation|LabModifier|false|false||mcg/actuationnull|microgram|LabModifier|false|false||mcgnull|Actuation (unit of presentation)|LabModifier|false|false||actuationnull|Inhalation Route of Administration|Finding|false|false||inhalation
+null|Inspiration (function)|Finding|false|false||inhalationnull|Inhalation Dosing Unit|LabModifier|false|false||inhalationnull|Wheezing|Finding|false|false||wheezingnull|Vitamin D Drug Class|Drug|false|false||Vitamin D
+null|vitamin D|Drug|false|false||Vitamin D
+null|vitamin D|Drug|false|false||Vitamin D
+null|vitamin D|Drug|false|false||Vitamin D
+null|D Vitamin|Drug|false|false||Vitamin D
+null|Vitamin D [EPC]|Drug|false|false||Vitamin D
+null|ergocalciferol|Drug|false|false||Vitamin D
+null|ergocalciferol|Drug|false|false||Vitamin D
+null|ergocalciferol|Drug|false|false||Vitamin D
+null|Vitamin D Drug Class|Drug|false|false||Vitamin Dnull|Vitamin D measurement|Procedure|false|false||Vitamin Dnull|Vitamins|Drug|false|false||Vitamin
+null|Vitamins|Drug|false|false||Vitamin
+null|Vitamins|Drug|false|false||Vitaminnull|Storage Unit|Device|false|false||UNIT
+null|Unit device|Device|false|false||UNITnull|Unit - NCI Thesaurus Property|LabModifier|false|false||UNIT
+null|Unit of Measure|LabModifier|false|false||UNIT
+null|Unit|LabModifier|false|false||UNIT
+null|Enzyme Unit|LabModifier|false|false||UNITnull|Daily|Time|false|false||DAILYnull|trazodone|Drug|false|false||TraZODone
+null|trazodone|Drug|false|false||TraZODonenull|isosorbide mononitrate|Drug|false|false||Isosorbide Mononitrate
+null|isosorbide mononitrate|Drug|false|false||Isosorbide Mononitratenull|isosorbide|Drug|false|false||Isosorbide
+null|isosorbide|Drug|false|false||Isosorbidenull|Extended (finding)|Finding|false|false||Extended
+null|Extension|Finding|false|false||Extendednull|Extended|Modifier|false|false||Extended
+null|Extent|Modifier|false|false||Extendednull|Release - action (qualifier value)|Finding|false|false||Release
+null|Released (action)|Finding|false|false||Releasenull|Discharge (release)|Procedure|false|false||Release
+null|Release (procedure)|Procedure|false|false||Release
+null|Patient Discharge|Procedure|false|false||Releasenull|Daily|Time|false|false||DAILYnull|aspirin|Drug|false|false||Aspirin
+null|aspirin|Drug|false|false||Aspirinnull|Daily|Time|false|false||DAILYnull|atorvastatin|Drug|false|false||Atorvastatin
+null|atorvastatin|Drug|false|false||Atorvastatinnull|fluticasone propionate|Drug|false|false||Fluticasone Propionate
+null|fluticasone propionate|Drug|false|false||Fluticasone Propionatenull|fluticasone|Drug|false|false||Fluticasone
+null|fluticasone|Drug|false|false||Fluticasonenull|propionate|Drug|false|false||Propionate
+null|Propionates|Drug|false|false||Propionatenull|Puff Dosing Unit|LabModifier|false|false||PUFF
+null|Picofarad|LabModifier|false|false||PUFFnull|BID protein, human|Drug|false|false||BID
+null|BID protein, human|Drug|false|false||BIDnull|Body integrity dysphoria|Disorder|false|false||BIDnull|BID gene|Finding|false|false||BIDnull|Twice a day|Time|false|false||BIDnull|pantoprazole|Drug|false|false||Pantoprazole
+null|pantoprazole|Drug|false|false||Pantoprazolenull|Every twelve hours|Time|false|false||Q12Hnull|ropinirole|Drug|false|false||Ropinirole
+null|ropinirole|Drug|false|false||Ropinirolenull|QPM|Time|false|false||QPM
+null|Once a day, in the evening|Time|false|false||QPMnull|Humalog Kwikpen|Device|false|false||HumaLOG KwikPennull|Humalog|Drug|false|false||HumaLOG
+null|Humalog|Drug|false|false||HumaLOGnull|insulin lispro|Drug|false|false||insulin lispro
+null|insulin lispro|Drug|false|false||insulin lispro
+null|insulin lispro|Drug|false|false||insulin lispronull|insulin, regular, human|Drug|false|false||insulin
+null|Insulin [EPC]|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulinnull|INS gene|Finding|false|false||insulinnull|Insulin measurement|Procedure|false|false||insulinnull|insulin lispro|Drug|false|false||lispro
+null|insulin lispro|Drug|false|false||lispro
+null|insulin lispro|Drug|false|false||lispronull|Subcutaneous Route of Administration|Finding|false|false||SUBCUTANEOUSnull|subcutaneous|Modifier|false|false||SUBCUTANEOUSnull|albuterol|Drug|false|false||Albuterol
+null|albuterol|Drug|false|false||Albuterolnull|NEB protein, human|Drug|false|false||Neb
+null|NEB protein, human|Drug|false|false||Neb
+null|Nebulizer solution|Drug|false|false||Nebnull|NEB gene|Finding|false|false||Neb
+null|mitotic nuclear membrane disassembly|Finding|false|false||Nebnull|NEB protein, human|Drug|false|false||NEB
+null|NEB protein, human|Drug|false|false||NEB
+null|Nebulizer solution|Drug|false|false||NEBnull|NEB gene|Finding|false|false||NEB
+null|mitotic nuclear membrane disassembly|Finding|false|false||NEBnull|Every six hours|Time|false|false||Q6Hnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Wheezing|Finding|false|false||wheezenull|methocarbamol|Drug|false|false||Methocarbamol
+null|methocarbamol|Drug|false|false||Methocarbamolnull|three times a day at institution-specified times|Time|false|false||TID
+null|Three times daily|Time|false|false||TIDnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Myalgia|Finding|false|false||muscle painnull|Muscle (organ)|Anatomy|false|false||muscle
+null|Muscle Tissue|Anatomy|false|false||musclenull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|losartan potassium|Drug|false|false||Losartan Potassium
+null|losartan potassium|Drug|false|false||Losartan Potassiumnull|losartan|Drug|false|false||Losartan
+null|losartan|Drug|false|false||Losartannull|Potassium Drug Class|Drug|false|false||Potassium
+null|Dietary Potassium|Drug|false|false||Potassium
+null|potassium|Drug|false|false||Potassium
+null|potassium|Drug|false|false||Potassium
+null|potassium|Drug|false|false||Potassium
+null|Potassium supplement|Drug|false|false||Potassium
+null|Potassium supplement|Drug|false|false||Potassiumnull|Potassium metabolic function|Finding|false|false||Potassiumnull|Potassium measurement|Procedure|false|false||Potassiumnull|Daily|Time|false|false||DAILYnull|furosemide|Drug|false|false||Furosemide
+null|furosemide|Drug|false|false||Furosemidenull|Daily|Time|false|false||DAILYnull|diclofenac sodium|Drug|false|false||diclofenac sodium
+null|diclofenac sodium|Drug|false|false||diclofenac sodiumnull|diclofenac|Drug|false|false||diclofenac
+null|diclofenac|Drug|false|false||diclofenacnull|Sodium supplements|Drug|false|false||sodium
+null|sodium|Drug|false|false||sodium
+null|sodium|Drug|false|false||sodium
+null|Sodium Drug Class|Drug|false|false||sodiumnull|Sodium metabolic function|Finding|false|false||sodiumnull|Sodium measurement|Procedure|false|false||sodiumnull|Topical Dosage Form|Drug|false|false||topicalnull|Topical Route of Administration|Finding|false|false||topicalnull|Topical surface|Modifier|false|false||topicalnull|three times a day at institution-specified times|Time|false|false||TID
+null|Three times daily|Time|false|false||TIDnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Medication.discharge|Finding|false|false||Discharge Medicationsnull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Pharmaceutical Preparations|Drug|false|false||Medicationsnull|Medications|Finding|false|false||Medicationsnull|null|Attribute|false|false||Medications
+null|null|Attribute|false|false||Medicationsnull|albuterol|Drug|false|false||Albuterol
+null|albuterol|Drug|false|false||Albuterolnull|NEB protein, human|Drug|false|false||Neb
+null|NEB protein, human|Drug|false|false||Neb
+null|Nebulizer solution|Drug|false|false||Nebnull|NEB gene|Finding|false|false||Neb
+null|mitotic nuclear membrane disassembly|Finding|false|false||Nebnull|NEB protein, human|Drug|false|false||NEB
+null|NEB protein, human|Drug|false|false||NEB
+null|Nebulizer solution|Drug|false|false||NEBnull|NEB gene|Finding|false|false||NEB
+null|mitotic nuclear membrane disassembly|Finding|false|false||NEBnull|Every six hours|Time|false|false||Q6Hnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Wheezing|Finding|false|false||wheezenull|atorvastatin|Drug|false|false||Atorvastatin
+null|atorvastatin|Drug|false|false||Atorvastatinnull|fluticasone propionate|Drug|false|false||Fluticasone Propionate
+null|fluticasone propionate|Drug|false|false||Fluticasone Propionatenull|fluticasone|Drug|false|false||Fluticasone
+null|fluticasone|Drug|false|false||Fluticasonenull|propionate|Drug|false|false||Propionate
+null|Propionates|Drug|false|false||Propionatenull|Puff Dosing Unit|LabModifier|false|false||PUFF
+null|Picofarad|LabModifier|false|false||PUFFnull|BID protein, human|Drug|false|false||BID
+null|BID protein, human|Drug|false|false||BIDnull|Body integrity dysphoria|Disorder|false|false||BIDnull|BID gene|Finding|false|false||BIDnull|Twice a day|Time|false|false||BIDnull|methocarbamol|Drug|false|false||Methocarbamol
+null|methocarbamol|Drug|false|false||Methocarbamolnull|three times a day at institution-specified times|Time|false|false||TID
+null|Three times daily|Time|false|false||TIDnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Myalgia|Finding|false|false||muscle painnull|Muscle (organ)|Anatomy|false|false||muscle
+null|Muscle Tissue|Anatomy|false|false||musclenull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|nitroglycerin|Drug|false|false||Nitroglycerin
+null|nitroglycerin|Drug|false|false||Nitroglycerinnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|pantoprazole|Drug|false|false||Pantoprazole
+null|pantoprazole|Drug|false|false||Pantoprazolenull|Every twelve hours|Time|false|false||Q12Hnull|ropinirole|Drug|false|false||Ropinirole
+null|ropinirole|Drug|false|false||Ropinirolenull|QPM|Time|false|false||QPM
+null|Once a day, in the evening|Time|false|false||QPMnull|trazodone|Drug|false|false||TraZODone
+null|trazodone|Drug|false|false||TraZODonenull|Vitamin D Drug Class|Drug|false|false||Vitamin D
+null|vitamin D|Drug|false|false||Vitamin D
+null|vitamin D|Drug|false|false||Vitamin D
+null|vitamin D|Drug|false|false||Vitamin D
+null|D Vitamin|Drug|false|false||Vitamin D
+null|Vitamin D [EPC]|Drug|false|false||Vitamin D
+null|ergocalciferol|Drug|false|false||Vitamin D
+null|ergocalciferol|Drug|false|false||Vitamin D
+null|ergocalciferol|Drug|false|false||Vitamin D
+null|Vitamin D Drug Class|Drug|false|false||Vitamin Dnull|Vitamin D measurement|Procedure|false|false||Vitamin Dnull|Vitamins|Drug|false|false||Vitamin
+null|Vitamins|Drug|false|false||Vitamin
+null|Vitamins|Drug|false|false||Vitaminnull|Storage Unit|Device|false|false||UNIT
+null|Unit device|Device|false|false||UNITnull|Unit - NCI Thesaurus Property|LabModifier|false|false||UNIT
+null|Unit of Measure|LabModifier|false|false||UNIT
+null|Unit|LabModifier|false|false||UNIT
+null|Enzyme Unit|LabModifier|false|false||UNITnull|Daily|Time|false|false||DAILYnull|albuterol sulfate|Drug|false|false||albuterol sulfate
+null|albuterol sulfate|Drug|false|false||albuterol sulfatenull|albuterol|Drug|false|false||albuterol
+null|albuterol|Drug|false|false||albuterolnull|Sulfates, Unspecified or Sulfate Ion|Drug|false|false||sulfate
+null|Sulfates, Inorganic|Drug|false|false||sulfate
+null|sulfate ion|Drug|false|false||sulfate
+null|sulfate ion|Drug|false|false||sulfate
+null|Sulfates, Unspecified or Sulfate Ion|Drug|false|false||sulfatenull|mcg/actuation|LabModifier|false|false||mcg/actuationnull|microgram|LabModifier|false|false||mcgnull|Actuation (unit of presentation)|LabModifier|false|false||actuationnull|Inhalation Route of Administration|Finding|false|false||INHALATION
+null|Inspiration (function)|Finding|false|false||INHALATIONnull|Inhalation Dosing Unit|LabModifier|false|false||INHALATIONnull|Wheezing|Finding|false|false||wheezingnull|diclofenac sodium|Drug|false|false||diclofenac sodium
+null|diclofenac sodium|Drug|false|false||diclofenac sodiumnull|diclofenac|Drug|false|false||diclofenac
+null|diclofenac|Drug|false|false||diclofenacnull|Sodium supplements|Drug|false|false||sodium
+null|sodium|Drug|false|false||sodium
+null|sodium|Drug|false|false||sodium
+null|Sodium Drug Class|Drug|false|false||sodiumnull|Sodium metabolic function|Finding|false|false||sodiumnull|Sodium measurement|Procedure|false|false||sodiumnull|Topical Dosage Form|Drug|false|false||topicalnull|Topical Route of Administration|Finding|false|false||topicalnull|Topical surface|Modifier|false|false||topicalnull|three times a day at institution-specified times|Time|false|false||TID
+null|Three times daily|Time|false|false||TIDnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|furosemide|Drug|false|false||Furosemide
+null|furosemide|Drug|false|false||Furosemidenull|Daily|Time|false|false||DAILYnull|isosorbide mononitrate|Drug|false|false||Isosorbide Mononitrate
+null|isosorbide mononitrate|Drug|false|false||Isosorbide Mononitratenull|isosorbide|Drug|false|false||Isosorbide
+null|isosorbide|Drug|false|false||Isosorbidenull|Extended (finding)|Finding|false|false||Extended
+null|Extension|Finding|false|false||Extendednull|Extended|Modifier|false|false||Extended
+null|Extent|Modifier|false|false||Extendednull|Release - action (qualifier value)|Finding|false|false||Release
+null|Released (action)|Finding|false|false||Releasenull|Discharge (release)|Procedure|false|false||Release
+null|Release (procedure)|Procedure|false|false||Release
+null|Patient Discharge|Procedure|false|false||Releasenull|Daily|Time|false|false||DAILYnull|metoprolol succinate|Drug|false|false||Metoprolol Succinate
+null|metoprolol succinate|Drug|false|false||Metoprolol Succinatenull|metoprolol|Drug|false|false||Metoprolol
+null|metoprolol|Drug|false|false||Metoprololnull|succinate|Drug|false|false||Succinate
+null|Succinates|Drug|false|false||Succinatenull|Daily|Time|false|false||DAILYnull|Humalog Kwikpen|Device|false|false||HumaLOG KwikPennull|Humalog|Drug|false|false||HumaLOG
+null|Humalog|Drug|false|false||HumaLOGnull|insulin lispro|Drug|false|false||insulin lispro
+null|insulin lispro|Drug|false|false||insulin lispro
+null|insulin lispro|Drug|false|false||insulin lispronull|insulin, regular, human|Drug|false|false||insulin
+null|Insulin [EPC]|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulinnull|INS gene|Finding|false|false||insulinnull|Insulin measurement|Procedure|false|false||insulinnull|insulin lispro|Drug|false|false||lispro
+null|insulin lispro|Drug|false|false||lispro
+null|insulin lispro|Drug|false|false||lispronull|Subcutaneous Route of Administration|Finding|false|false||SUBCUTANEOUSnull|subcutaneous|Modifier|false|false||SUBCUTANEOUSnull|Levemir FlexPen|Device|false|false||Levemir Flexpennull|Levemir|Drug|false|false||Levemir
+null|Levemir|Drug|false|false||Levemir
+null|Levemir|Drug|false|false||Levemirnull|insulin detemir|Drug|false|false||insulin detemir
+null|insulin detemir|Drug|false|false||insulin detemir
+null|insulin detemir|Drug|false|false||insulin detemirnull|insulin, regular, human|Drug|false|false||insulin
+null|Insulin [EPC]|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|INS protein, human|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Therapeutic Insulin|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|Insulin Drug Class|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulin
+null|insulin, regular, human|Drug|false|false||insulinnull|INS gene|Finding|false|false||insulinnull|Insulin measurement|Procedure|false|false||insulinnull|insulin detemir|Drug|false|false||detemir
+null|insulin detemir|Drug|false|false||detemir
+null|insulin detemir|Drug|false|false||detemirnull|Unit - NCI Thesaurus Property|LabModifier|false|false||units
+null|Unit of Measure|LabModifier|false|false||units
+null|Unit|LabModifier|false|false||unitsnull|Subcutaneous Route of Administration|Finding|false|false||subcutaneousnull|subcutaneous|Modifier|false|false||subcutaneousnull|Evening|Time|false|false||eveningnull|losartan potassium|Drug|false|false||Losartan Potassium
+null|losartan potassium|Drug|false|false||Losartan Potassiumnull|losartan|Drug|false|false||Losartan
+null|losartan|Drug|false|false||Losartannull|Potassium Drug Class|Drug|false|false||Potassium
+null|Dietary Potassium|Drug|false|false||Potassium
+null|potassium|Drug|false|false||Potassium
+null|potassium|Drug|false|false||Potassium
+null|potassium|Drug|false|false||Potassium
+null|Potassium supplement|Drug|false|false||Potassium
+null|Potassium supplement|Drug|false|false||Potassiumnull|Potassium metabolic function|Finding|false|false||Potassiumnull|Potassium measurement|Procedure|false|false||Potassiumnull|Daily|Time|false|false||DAILYnull|acetaminophen / oxycodone|Drug|false|false||Oxycodone-Acetaminophennull|oxycodone|Drug|false|false||Oxycodone
+null|oxycodone|Drug|false|false||Oxycodonenull|Oxycodone measurement|Procedure|false|false||Oxycodonenull|Acetaminophen [EPC]|Drug|false|false||Acetaminophen
+null|acetaminophen|Drug|false|false||Acetaminophen
+null|acetaminophen|Drug|false|false||Acetaminophennull|Acetaminophen measurement|Procedure|false|false||Acetaminophennull|Tablet Dosage Form|Drug|false|false||TABnull|Tablet Dosing Unit|LabModifier|false|false||TABnull|Every eight hours|Time|false|false||Q8Hnull|CIAO3 gene|Finding|false|false||PRNnull|As required|Time|false|false||PRN
+null|Pro Re Nata|Time|false|false||PRNnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|aspirin|Drug|false|false||Aspirin
+null|aspirin|Drug|false|false||Aspirinnull|Every six hours|Time|false|false||Q6Hnull|aspirin|Drug|false|false||aspirin
+null|aspirin|Drug|false|false||aspirinnull|Tablet Dosage Form|Drug|false|false||tabletnull|Tablet (unit of presentation)|LabModifier|false|false||tablet
+null|Tablet Dosing Unit|LabModifier|false|false||tabletnull|Oral Route of Administration|Finding|false|false||by mouthnull|Oral cavity|Anatomy|false|false||mouth
+null|Oral region|Anatomy|false|false||mouthnull|Hour|Time|false|false||hoursnull|Tablet Dosage Form|Drug|false|false||Tabletnull|Tablet (unit of presentation)|LabModifier|false|false||Tablet
+null|Tablet Dosing Unit|LabModifier|false|false||Tabletnull|refill|Finding|false|false||Refillsnull|Discharge disposition|Finding|false|false||Discharge Dispositionnull|null|Attribute|false|false||Discharge Dispositionnull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Patient disposition|Procedure|false|false||Dispositionnull|null|Attribute|false|false||Dispositionnull|Disposition|Modifier|false|false||Dispositionnull|Visit User Code - Home|Finding|false|false||Home
+null|Address type - Home|Finding|false|false||Homenull|home health encounter|Procedure|false|false||Homenull|Organization unit type - Home|Entity|false|false||Homenull|Person location type - Home|Modifier|false|false||Home
+null|Home environment|Modifier|false|false||Homenull|discharge diagnosis|Finding|false|false||Discharge Diagnosisnull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Diagnosis Classification - Diagnosis|Finding|false|false||Diagnosis
+null|diagnosis aspects|Finding|false|false||Diagnosisnull|Diagnosis|Procedure|false|false||Diagnosisnull|null|Attribute|false|false||Diagnosisnull|Chest wall pain|Finding|false|false||Chest wall pain
+null|Musculoskeletal chest pain|Finding|false|false||Chest wall painnull|Chest wall structure|Anatomy|false|false||Chest wall
+null|Chest>Chest wall|Anatomy|false|false||Chest wallnull|Chest problem|Finding|false|false||Chestnull|Chest|Anatomy|false|false||Chest
+null|Anterior thoracic region|Anatomy|false|false||Chestnull|Walls of a building|Device|false|false||wallnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|atypia morphology|Finding|false|false||atypicalnull|Atypical|Modifier|false|false||atypicalnull|Angina Pectoris|Finding|false|false||angina
+null|null|Finding|false|false||anginanull|null|Attribute|false|false||anginanull|Musculoskeletal Pain|Finding|false|false||Musculoskeletal painnull|Musculoskeletal|Finding|false|false||Musculoskeletalnull|null|Attribute|false|false||Musculoskeletalnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Known|Modifier|false|false||Knownnull|Native (qualifier value)|Finding|false|false||nativenull|Coronary artery|Anatomy|false|false||coronary arterynull|Heart|Anatomy|false|false||coronarynull|Coronary|Modifier|false|false||coronarynull|Arterial system|Anatomy|false|false||artery
+null|Arteries|Anatomy|false|false||arterynull|Bypass graft|Procedure|false|false||bypass graftnull|Creation of shunt|Procedure|false|false||bypassnull|Graft Dosage Form|Drug|false|false||graft
+null|Graft material|Drug|false|false||graftnull|Graft - Specimen Source Codes|Finding|false|false||graftnull|Graft Procedures on the Head|Procedure|false|false||graft
+null|Grafting procedure|Procedure|false|false||graftnull|Transplanted tissue|Anatomy|false|false||graftnull|Disease|Disorder|false|false||diseasenull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||Type 2 Diabetes mellitusnull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||Type 2 Diabetesnull|Type 2|Finding|false|false||Type 2null|Type - ParameterizedDataType|Finding|false|false||Type
+null|SGCG gene|Finding|false|false||Typenull|null|Modifier|false|false||Typenull|Diabetes Mellitus|Disorder|false|false||Diabetes mellitusnull|Diabetes Mellitus, Non-Insulin-Dependent|Disorder|false|false||Diabetes
+null|Diabetes|Disorder|false|false||Diabetes
+null|Diabetes Mellitus|Disorder|false|false||Diabetesnull|Chronic kidney disease stage 3|Disorder|false|false||Chronic kidney disease, stage 3null|chronic kidney disease stage|Finding|false|false||Chronic kidney disease, stagenull|Chronic Kidney Diseases|Disorder|false|false||Chronic kidney diseasenull|Chronic - Admission Level of Care Code|Finding|false|false||Chronicnull|Provision of recurring care for chronic illness|Procedure|false|false||Chronicnull|chronic|Time|false|false||Chronicnull|Kidney Diseases|Disorder|false|false||kidney diseasenull|Neoplasm of uncertain or unknown behavior of kidney|Disorder|false|false||kidney
+null|Benign neoplasm of kidney|Disorder|false|false||kidneynull|Kidney problem|Finding|false|false||kidneynull|examination of kidney|Procedure|false|false||kidney
+null|Procedures on Kidney|Procedure|false|false||kidneynull|Kidney|Anatomy|false|false||kidney
+null|Both kidneys|Anatomy|false|false||kidneynull|Disease|Disorder|false|false||diseasenull|Stage level 3|Finding|false|false||stage 3null|Tumor stage|Attribute|false|false||stagenull|Stage|Time|false|false||stage
+null|Phase|Time|false|false||stagenull|Acute kidney injury|Disorder|false|false||Acute kidney injury
+null|Kidney Failure, Acute|Disorder|false|false||Acute kidney injurynull|Admission Level of Care Code - Acute|Finding|false|false||Acute
+null|Acute - Triage Code|Finding|false|false||Acutenull|acute|Time|false|false||Acutenull|Injury of kidney|Disorder|false|false||kidney injurynull|Neoplasm of uncertain or unknown behavior of kidney|Disorder|false|false||kidney
+null|Benign neoplasm of kidney|Disorder|false|false||kidneynull|Kidney problem|Finding|false|false||kidneynull|examination of kidney|Procedure|false|false||kidney
+null|Procedures on Kidney|Procedure|false|false||kidneynull|Kidney|Anatomy|false|false||kidney
+null|Both kidneys|Anatomy|false|false||kidneynull|Traumatic AND/OR non-traumatic injury|Disorder|false|false||injury
+null|Traumatic injury|Disorder|false|false||injurynull|Chronic Obstructive Airway Disease|Disorder|false|false||Chronic obstructive pulmonary diseasenull|Chronic - Admission Level of Care Code|Finding|false|false||Chronicnull|Provision of recurring care for chronic illness|Procedure|false|false||Chronicnull|chronic|Time|false|false||Chronicnull|Lung Diseases, Obstructive|Disorder|false|false||obstructive pulmonary diseasenull|Obstructed|Finding|false|false||obstructivenull|Lung diseases|Disorder|false|false||pulmonary diseasenull|History of - respiratory disease|Finding|false|false||pulmonary diseasenull|Pulmonary (intended site)|Finding|false|false||pulmonarynull|Lung|Anatomy|false|false||pulmonarynull|null|Attribute|false|false||pulmonarynull|Pulmonary (qualifier value)|Modifier|false|false||pulmonarynull|Disease|Disorder|false|false||diseasenull|Hypertensive disease|Disorder|false|false||Hypertensionnull|Hypotension|Finding|false|false||Hypotensionnull|Hypokalemia|Finding|false|false||Hypokalemianull|shoulder pain chronic|Disorder|false|false||Chronic shoulder painnull|Chronic - Admission Level of Care Code|Finding|false|false||Chronicnull|Provision of recurring care for chronic illness|Procedure|false|false||Chronicnull|chronic|Time|false|false||Chronicnull|Shoulder Pain|Finding|false|false||shoulder painnull|Procedures on Shoulder|Procedure|false|false||shoulder
+null|Examination of shoulder(s)|Procedure|false|false||shouldernull|Upper extremity>Shoulder|Anatomy|false|false||shoulder
+null|Shoulder|Anatomy|false|false||shouldernull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Narcotics|Drug|false|false||narcotics
+null|Narcotics|Drug|false|false||narcoticsnull|Sleep Apnea, Obstructive|Disorder|false|false||Obstructive sleep apneanull|Obstructed|Finding|false|false||Obstructivenull|Sleep Apnea Syndromes|Disorder|false|false||sleep apneanull|SLEEP APNEA (device)|Device|false|false||sleep apneanull|Sleep brand of diphenhydramine hydrochloride|Drug|false|false||sleep
+null|Sleep brand of diphenhydramine hydrochloride|Drug|false|false||sleepnull|Sleep|Finding|false|false||sleepnull|Apnea|Finding|false|false||apneanull|Reflux|Finding|false|false||refluxnull|Disease|Disorder|false|false||diseasenull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Disease|Disorder|false|false||Conditionnull|Logical Condition|Finding|false|false||Conditionnull|null|Attribute|false|false||Conditionnull|Condition|Modifier|false|false||Conditionnull|Mental state|Finding|false|false||Mental Statusnull|null|Attribute|false|false||Mental Status
+null|null|Attribute|false|false||Mental Statusnull|Psyche structure|Finding|false|false||Mentalnull|What subject filter - Status|Finding|false|false||Statusnull|null|Attribute|false|false||Statusnull|Social status|Modifier|false|false||Status
+null|Status|Modifier|false|false||Statusnull|Remote control command - Clear|Finding|false|false||Clearnull|Clear|Modifier|false|false||Clear
+null|Transparent (qualitative concept)|Modifier|false|false||Clearnull|Coherent|Finding|false|false||coherentnull|Level of consciousness|Finding|false|false||Level of Consciousnessnull|null|Attribute|false|false||Level of Consciousnessnull|Consciousness related finding|Finding|false|false||Consciousness
+null|Conscious|Finding|false|false||Consciousness
+null|null|Finding|false|false||Consciousnessnull|Alert brand of caffeine|Drug|false|false||Alert
+null|Alert brand of caffeine|Drug|false|false||Alertnull|Mentally alert|Finding|false|false||Alert
+null|Consciousness clear|Finding|false|false||Alert
+null|Alert note|Finding|false|false||Alert
+null|Alert|Finding|false|false||Alertnull|null|Attribute|false|false||Alertnull|Interaction|Finding|false|false||interactivenull|Activity Status|Modifier|false|false||Activity Statusnull|Activity (animal life circumstance)|Finding|false|false||Activity
+null|Physical activity|Finding|false|false||Activitynull|Activities|Event|false|false||Activitynull|null|Modifier|false|false||Activitynull|What subject filter - Status|Finding|false|false||Statusnull|null|Attribute|false|false||Statusnull|Social status|Modifier|false|false||Status
+null|Status|Modifier|false|false||Statusnull|Referral category - Ambulatory|Finding|false|false||Ambulatory
+null|Ambulatory (qualifier value)|Finding|false|false||Ambulatory
+null|Ambulatory|Finding|false|false||Ambulatory
+null|Level of Care - Ambulatory|Finding|false|false||Ambulatorynull|ambulatory encounter|Procedure|false|false||Ambulatorynull|Specialty Type - Ambulatory|Title|false|false||Ambulatorynull|Coordination of Benefits - Independent|Finding|false|false||Independent
+null|Religious Affiliation - Independent|Finding|false|false||Independent
+null|Independence|Finding|false|false||Independent
+null|Independently able|Finding|false|false||Independentnull|Discharge instructions|Finding|false|false||Discharge Instructionsnull|hospital discharge instructions (treatment)|Procedure|false|false||Discharge Instructionsnull|null|Attribute|false|false||Discharge Instructionsnull|Body Substance Discharge|Finding|false|false||Discharge
+null|Discharge Body Fluid|Finding|false|false||Discharge
+null|Body Fluid Discharge|Finding|false|false||Discharge
+null|null|Finding|false|false||Dischargenull|Patient Discharge|Procedure|false|false||Dischargenull|Instructions|Finding|false|false||Instructions
+null|Instruction [Publication Type]|Finding|false|false||Instructionsnull|null|Attribute|false|false||Instructionsnull|FBXW7-AS1 gene|Finding|false|false||Dearnull|Production Class Code - Pleasure|Finding|false|false||pleasure
+null|pleasurable emotion|Finding|false|false||pleasurenull|Pleasure - Animals raised for recreation|Entity|false|false||pleasurenull|In care (finding)|Finding|false|false||care
+null|Continuity Assessment Record and Evaluation|Finding|false|false||carenull|care activity|Event|false|false||carenull|Severe - Severity of Illness Code|Finding|false|false||severe
+null|Intensity and Distress 5|Finding|false|false||severe
+null|Severe - Triage Code|Finding|false|false||severe
+null|Severe (severity modifier)|Finding|false|false||severe
+null|Allergy Severity - Severe|Finding|false|false||severenull|Chest Pain|Finding|false|false||chest painnull|null|Attribute|false|false||chest painnull|Chest problem|Finding|false|false||chestnull|Chest|Anatomy|false|false||chest
+null|Anterior thoracic region|Anatomy|false|false||chestnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Stress bismuth subsalicylate|Drug|false|false||stress
+null|Stress bismuth subsalicylate|Drug|false|false||stressnull|Stress|Finding|false|false||stressnull|W stress|Attribute|false|false||stressnull|Tests (qualifier value)|Finding|false|false||test
+null|Testing|Finding|false|false||testnull|Laboratory Procedures|Procedure|false|false||testnull|Test - temporal region|Anatomy|false|false||testnull|Test Result|Lab|false|false||testnull|Test Dosing Unit|LabModifier|false|false||testnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|Unlikely|Finding|false|false||unlikelynull|Unlikely Related to Intervention|Modifier|false|false||unlikelynull|Large|LabModifier|false|false||bignull|Partial Blockage within Medical Device|Finding|false|false||blockage
+null|Blockage (obstruction - finding)|Finding|false|false||blockage
+null|null|Finding|false|false||blockagenull|Procedure on artery|Procedure|false|false||arteriesnull|Arteries|Anatomy|false|false||arteries
+null|Arterial system|Anatomy|false|false||arteriesnull|Malignant neoplasm of heart|Disorder|false|false||heart
+null|benign neoplasm of heart|Disorder|false|false||heartnull|HEART PROBLEM|Finding|false|false||heartnull|Chest>Heart|Anatomy|false|false||heart
+null|Heart|Anatomy|false|false||heartnull|AML Lab Table|Finding|true|false||lab
+null|LAT2 gene|Finding|true|false||lab
+null|EWS Lab Table|Finding|true|false||labnull|Laboratory|Device|true|false||labnull|Labrador retriever|Entity|true|false||lab
+null|Laboratory|Entity|true|false||labnull|Work|Event|true|false||worknull|Traumatic AND/OR non-traumatic injury|Disorder|true|false||injury
+null|Traumatic injury|Disorder|true|false||injurynull|Malignant neoplasm of heart|Disorder|true|false||heart
+null|benign neoplasm of heart|Disorder|true|false||heartnull|HEART PROBLEM|Finding|true|false||heartnull|Chest>Heart|Anatomy|true|false||heart
+null|Heart|Anatomy|true|false||heartnull|Administration Method - Pain|Finding|false|false||pain
+null|Pain|Finding|false|false||painnull|null|Attribute|false|false||painnull|most likely|Finding|false|false||most likelynull|Probable diagnosis|Finding|false|false||likely
+null|Probably|Finding|false|false||likelynull|Musculoskeletal|Finding|false|false||musculoskeletalnull|null|Attribute|false|false||musculoskeletalnull|Supportive assistance|Finding|false|false||supportivenull|Measures (attribute)|Finding|false|false||measuresnull|Measures|LabModifier|false|false||measuresnull|Tylenol|Drug|false|false||Tylenol
+null|Tylenol|Drug|false|false||Tylenolnull|Act Relationship Subset - maximum|LabModifier|false|false||maximum
+null|Maximum|LabModifier|false|false||maximumnull|g/24h|LabModifier|false|false||grams per daynull|gram|LabModifier|false|false||gramsnull|per day|Time|false|false||per daynull|Transaction counts and value totals - day|Finding|false|false||day
+null|Precision - day|Finding|false|false||daynull|Land Dayak Languages|Entity|false|false||daynull|day|Time|false|false||day
+null|Daily|Time|false|false||daynull|Time - Instructions for Selecting a Level of Pathology Clinical Consultation Services|Finding|false|false||time
+null|Time (foundation metadata concept)|Finding|false|false||time
+null|Value type - Time|Finding|false|false||time
+null|Instructions for Use of the CPT Codebook - Time|Finding|false|false||time
+null|Data types - Time|Finding|false|false||time
+null|null|Finding|false|false||timenull|Time|Time|false|false||timenull|High dose|LabModifier|false|false||high dosenull|Message Waiting Priority - High|Finding|false|false||high
+null|high - ActExposureLevelCode|Finding|false|false||high
+null|IPSS Risk Category High|Finding|false|false||high
+null|IPSS-R Risk Category High|Finding|false|false||high
+null|High (finding)|Finding|false|false||highnull|Observation Value - High|Modifier|false|false||high
+null|High|Modifier|false|false||high
+null|Abnormally high|Modifier|false|false||highnull|Unit dose|LabModifier|false|false||dose
+null|Dosage|LabModifier|false|false||dosenull|aspirin|Drug|false|false||aspirin
+null|aspirin|Drug|false|false||aspirinnull|day|Time|false|false||daysnull|Improvement|Finding|false|false||improvementnull|Symptoms aspect|Finding|false|false||symptoms
+null|Symptoms|Finding|false|false||symptomsnull|Transaction counts and value totals - week|Finding|false|false||weeknull|week|Time|false|false||weeknull|Symptoms aspect|Finding|false|false||symptoms
+null|Symptoms|Finding|false|false||symptomsnull|Dyspnea|Finding|true|false||shortness of breathnull|null|Attribute|true|false||shortness of breathnull|Breath|Finding|true|false||breathnull|Symptoms|Finding|true|false||symptomnull|null|Attribute|true|false||symptomnull|Doctor - Title|Finding|false|false||doctornull|Physicians|Subject|false|false||doctornull|Table Cell Horizontal Align - right|Finding|false|false||rightnull|Right sided|Modifier|false|false||right
+null|Right|Modifier|false|false||rightnull|Production Class Code - Pleasure|Finding|false|false||pleasure
+null|pleasurable emotion|Finding|false|false||pleasurenull|Pleasure - Animals raised for recreation|Entity|false|false||pleasurenull|In care (finding)|Finding|false|false||care
+null|Continuity Assessment Record and Evaluation|Finding|false|false||carenull|care activity|Event|false|false||carenull|Very|Modifier|false|false||verynull|Cardiovascular system|Anatomy|false|false||Cardiologynull|cardiology (field)|Title|false|false||Cardiologynull|Cardiology service|Entity|false|false||Cardiologynull|Team|Subject|false|false||Teamnull|follow-up|Procedure|false|false||Followupnull|Instructions|Finding|false|false||Instructions
+null|Instruction [Publication Type]|Finding|false|false||Instructionsnull|null|Attribute|false|false||Instructions

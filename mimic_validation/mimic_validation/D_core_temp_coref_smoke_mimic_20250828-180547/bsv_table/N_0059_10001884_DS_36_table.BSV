@@ -1,0 +1,2400 @@
+ Semantic Group | Semantic Type | Section | Span | Negated | Uncertain | Generic | CUI | Preferred Text | Document Text 
+Event|Event|SIMPLE_SEGMENT|2,6|false|false|false|||Name
+Finding|Intellectual Product|SIMPLE_SEGMENT|2,6|false|false|false|C0027365;C1547383;C1554107|MDF Attribute Type - Name;Name;Person Name|Name
+Event|Event|SIMPLE_SEGMENT|42,51|false|false|false|||Admission
+Procedure|Health Care Activity|SIMPLE_SEGMENT|42,51|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|Admission
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|42,56|false|false|false|C2598112||Admission Date
+Event|Event|SIMPLE_SEGMENT|76,85|false|false|false|||Discharge
+Finding|Body Substance|SIMPLE_SEGMENT|76,85|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|SIMPLE_SEGMENT|76,85|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|SIMPLE_SEGMENT|76,85|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|SIMPLE_SEGMENT|76,85|false|false|false|C0030685|Patient Discharge|Discharge
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|76,90|false|false|false|C2361122||Discharge Date
+Finding|Finding|SIMPLE_SEGMENT|108,113|false|false|false|C0005615;C1148523;C1550722;C3245487;C4551887|Birth;Childbirth;Entity Name Part Qualifier - birth;Name Given at Birth;birth (history)|Birth
+Finding|Intellectual Product|SIMPLE_SEGMENT|108,113|false|false|false|C0005615;C1148523;C1550722;C3245487;C4551887|Birth;Childbirth;Entity Name Part Qualifier - birth;Name Given at Birth;birth (history)|Birth
+Finding|Organism Function|SIMPLE_SEGMENT|108,113|false|false|false|C0005615;C1148523;C1550722;C3245487;C4551887|Birth;Childbirth;Entity Name Part Qualifier - birth;Name Given at Birth;birth (history)|Birth
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|132,135|false|false|false|C0804628||Sex
+Finding|Behavior|SIMPLE_SEGMENT|132,135|false|false|false|C0009253;C0036864;C1314687;C1418662|Coitus;PLXNA3 gene;Sex Behavior|Sex
+Finding|Finding|SIMPLE_SEGMENT|132,135|false|false|false|C0009253;C0036864;C1314687;C1418662|Coitus;PLXNA3 gene;Sex Behavior|Sex
+Finding|Gene or Genome|SIMPLE_SEGMENT|132,135|false|false|false|C0009253;C0036864;C1314687;C1418662|Coitus;PLXNA3 gene;Sex Behavior|Sex
+Finding|Organism Function|SIMPLE_SEGMENT|132,135|false|false|false|C0009253;C0036864;C1314687;C1418662|Coitus;PLXNA3 gene;Sex Behavior|Sex
+Event|Occupational Activity|SIMPLE_SEGMENT|143,150|false|false|false|C0557854|Services|Service
+Finding|Idea or Concept|SIMPLE_SEGMENT|143,150|false|false|false|C3245478|ActInformationPrivacyReason - service|Service
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|152,160|false|false|false|C0013227|Pharmaceutical Preparations|MEDICINE
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|163,172|false|false|false|C1717415||Allergies
+Event|Event|SIMPLE_SEGMENT|163,172|false|false|false|||Allergies
+Finding|Pathologic Function|SIMPLE_SEGMENT|163,172|false|false|false|C0020517|Hypersensitivity|Allergies
+Drug|Indicator, Reagent, or Diagnostic Aid|SIMPLE_SEGMENT|178,181|false|false|false|C0013343|Dyes|Dye
+Event|Event|SIMPLE_SEGMENT|178,181|false|false|false|||Dye
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|183,189|false|false|false|C0021968;C0885449|Iodine, Homeopathic preparation;iodine|Iodine
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|183,189|false|false|false|C0021968;C0885449|Iodine, Homeopathic preparation;iodine|Iodine
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|183,189|false|false|false|C0021968;C0885449|Iodine, Homeopathic preparation;iodine|Iodine
+Event|Activity|SIMPLE_SEGMENT|190,200|false|false|false|C2700400|Contain (action)|Containing
+Finding|Functional Concept|SIMPLE_SEGMENT|190,200|false|false|false|C0332256|Containing (qualifier value)|Containing
+Drug|Indicator, Reagent, or Diagnostic Aid|SIMPLE_SEGMENT|201,209|false|false|false|C0009924|Contrast Media|Contrast
+Drug|Indicator, Reagent, or Diagnostic Aid|SIMPLE_SEGMENT|201,215|false|false|false|C0009924|Contrast Media|Contrast Media
+Anatomy|Tissue|SIMPLE_SEGMENT|210,215|false|false|false|C0162867;C1254021|Media layer;Tunica Media|Media
+Finding|Intellectual Product|SIMPLE_SEGMENT|210,215|false|false|false|C0009458;C0677540|Communications Media;PAMS Media|Media
+Drug|Organic Chemical|SIMPLE_SEGMENT|218,227|false|false|false|C0030049|oxycodone|Oxycodone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|218,227|false|false|false|C0030049|oxycodone|Oxycodone
+Event|Event|SIMPLE_SEGMENT|218,227|false|false|false|||Oxycodone
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|218,227|false|false|false|C0524222|Oxycodone measurement|Oxycodone
+Drug|Organic Chemical|SIMPLE_SEGMENT|231,241|false|false|false|C0055729|cilostazol|cilostazol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|231,241|false|false|false|C0055729|cilostazol|cilostazol
+Event|Event|SIMPLE_SEGMENT|231,241|false|false|false|||cilostazol
+Drug|Organic Chemical|SIMPLE_SEGMENT|244,255|false|false|false|C1569608|varenicline|Varenicline
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|244,255|false|false|false|C1569608|varenicline|Varenicline
+Event|Event|SIMPLE_SEGMENT|244,255|false|false|false|||Varenicline
+Event|Event|SIMPLE_SEGMENT|258,267|false|false|false|||Attending
+Finding|Functional Concept|SIMPLE_SEGMENT|258,267|false|false|false|C1999232|Attending (action)|Attending
+Finding|Finding|SIMPLE_SEGMENT|276,291|false|false|false|C0277786|Chief complaint (finding)|Chief Complaint
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|282,291|false|false|false|C3864418||Complaint
+Event|Event|SIMPLE_SEGMENT|282,291|false|false|false|||Complaint
+Finding|Finding|SIMPLE_SEGMENT|282,291|false|false|false|C5441521|Complaint (finding)|Complaint
+Event|Event|SIMPLE_SEGMENT|293,302|false|false|false|||Shortness
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|293,312|false|false|false|C2707305||Shortness of breath
+Finding|Sign or Symptom|SIMPLE_SEGMENT|293,312|false|false|false|C0013404|Dyspnea|Shortness of breath
+Finding|Body Substance|SIMPLE_SEGMENT|306,312|false|false|false|C0225386|Breath|breath
+Finding|Classification|SIMPLE_SEGMENT|315,320|false|false|false|C4521762|United States Military Commissioned Officer O4 (qualifier value)|Major
+Procedure|Health Care Activity|SIMPLE_SEGMENT|321,329|false|false|false|C0543467;C0587668|Operative Surgical Procedures;Surgical service|Surgical
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|321,329|false|false|false|C0543467;C0587668|Operative Surgical Procedures;Surgical service|Surgical
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|333,351|false|false|false|C4048276|Invasive procedure|Invasive Procedure
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|342,351|false|false|false|C0945766||Procedure
+Event|Event|SIMPLE_SEGMENT|342,351|false|false|false|||Procedure
+Event|Occupational Activity|SIMPLE_SEGMENT|342,351|false|false|false|C1546467|Act Class - procedure|Procedure
+Finding|Functional Concept|SIMPLE_SEGMENT|342,351|false|false|false|C2700391|Procedure (set of actions)|Procedure
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|342,351|false|false|false|C0184661|Interventional procedure|Procedure
+Event|Event|SIMPLE_SEGMENT|360,367|true|false|false|||History
+Finding|Conceptual Entity|SIMPLE_SEGMENT|360,367|true|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Finding|SIMPLE_SEGMENT|360,367|true|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Functional Concept|SIMPLE_SEGMENT|360,367|true|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Finding|SIMPLE_SEGMENT|360,370|true|false|false|C0262926|Medical History|History of
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|360,386|true|false|false|C0488508||History of Present Illness
+Finding|Finding|SIMPLE_SEGMENT|360,386|true|false|false|C0262512|History of present illness (finding)|History of Present Illness
+Finding|Finding|SIMPLE_SEGMENT|371,378|true|false|false|C0150312;C0449450|Present;Presentation|Present
+Finding|Idea or Concept|SIMPLE_SEGMENT|371,378|true|false|false|C0150312;C0449450|Present;Presentation|Present
+Finding|Finding|SIMPLE_SEGMENT|371,386|true|false|false|C4264312|Present illness|Present Illness
+Finding|Sign or Symptom|SIMPLE_SEGMENT|379,386|true|false|false|C0221423|Illness (finding)|Illness
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|413,417|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|413,417|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|413,417|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|413,417|false|false|false|C1412502|ARCN1 gene|COPD
+Event|Event|SIMPLE_SEGMENT|421,425|false|false|false|||home
+Finding|Idea or Concept|SIMPLE_SEGMENT|421,425|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|421,425|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|421,425|false|false|false|C1553498|home health encounter|home
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|430,436|false|false|false|C0018792|Heart Atrium|atrial
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|438,450|false|false|false|C0232197|Fibrillation|fibrillation
+Event|Event|SIMPLE_SEGMENT|438,450|false|false|false|||fibrillation
+Drug|Organic Chemical|SIMPLE_SEGMENT|454,462|false|false|false|C1831808|apixaban|apixaban
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|454,462|false|false|false|C1831808|apixaban|apixaban
+Event|Event|SIMPLE_SEGMENT|454,462|false|false|false|||apixaban
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|464,476|false|false|false|C0020538|Hypertensive disease|hypertension
+Event|Event|SIMPLE_SEGMENT|464,476|false|false|false|||hypertension
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|478,481|false|false|false|C0010068;C0175816;C1956346|Cold Hemagglutinin Disease;Coronary Artery Disease;Coronary heart disease|CAD
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|478,481|false|false|false|C1504769|DFFB protein, human|CAD
+Drug|Enzyme|SIMPLE_SEGMENT|478,481|false|false|false|C1504769|DFFB protein, human|CAD
+Event|Event|SIMPLE_SEGMENT|478,481|false|false|false|||CAD
+Finding|Gene or Genome|SIMPLE_SEGMENT|478,481|false|false|false|C1413078;C1413983;C1428349;C2239547;C3813548;C4284121|ACOD1 gene;B4GALNT2 gene;CAD gene;CALD1 wt Allele;DFFB gene;DFFB wt Allele|CAD
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|478,481|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Research Activity|SIMPLE_SEGMENT|478,481|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|478,481|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|487,501|false|false|false|C0020473;C0020476|Hyperlipidemia;Hyperlipoproteinemias|hyperlipidemia
+Event|Event|SIMPLE_SEGMENT|487,501|false|false|false|||hyperlipidemia
+Finding|Finding|SIMPLE_SEGMENT|487,501|false|false|false|C0428465|Serum lipids high (finding)|hyperlipidemia
+Event|Event|SIMPLE_SEGMENT|507,516|false|false|false|||presented
+Event|Event|SIMPLE_SEGMENT|522,529|false|false|false|||dyspnea
+Finding|Finding|SIMPLE_SEGMENT|522,529|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Finding|Sign or Symptom|SIMPLE_SEGMENT|522,529|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Event|Event|SIMPLE_SEGMENT|560,570|false|false|false|||admissions
+Procedure|Health Care Activity|SIMPLE_SEGMENT|560,570|false|false|false|C0184666|Hospital admission|admissions
+Event|Event|SIMPLE_SEGMENT|575,582|false|false|false|||dyspnea
+Finding|Finding|SIMPLE_SEGMENT|575,582|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Finding|Sign or Symptom|SIMPLE_SEGMENT|575,582|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Event|Event|SIMPLE_SEGMENT|602,612|false|false|false|||discharged
+Finding|Idea or Concept|SIMPLE_SEGMENT|628,631|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Intellectual Product|SIMPLE_SEGMENT|628,631|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Event|Event|SIMPLE_SEGMENT|632,641|false|false|false|||inpatient
+Finding|Idea or Concept|SIMPLE_SEGMENT|632,641|false|false|false|C1548438;C1549404|Patient Class - Inpatient;Referral category - Inpatient|inpatient
+Procedure|Health Care Activity|SIMPLE_SEGMENT|632,641|false|false|false|C1555324|inpatient encounter|inpatient
+Event|Event|SIMPLE_SEGMENT|642,651|false|false|false|||admission
+Procedure|Health Care Activity|SIMPLE_SEGMENT|642,651|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|admission
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|657,661|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|657,661|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|657,661|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|657,661|false|false|false|C1412502|ARCN1 gene|COPD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|657,674|false|false|false|C0740304|COPD exacerbation|COPD exacerbation
+Event|Event|SIMPLE_SEGMENT|662,674|false|false|false|||exacerbation
+Finding|Finding|SIMPLE_SEGMENT|662,674|false|false|false|C4086268|Exacerbation|exacerbation
+Event|Event|SIMPLE_SEGMENT|684,694|false|false|false|||discharged
+Finding|Finding|SIMPLE_SEGMENT|698,706|false|false|false|C0231448;C5781021|Extended (finding);Extension|extended
+Finding|Functional Concept|SIMPLE_SEGMENT|698,706|false|false|false|C0231448;C5781021|Extended (finding);Extension|extended
+Drug|Hormone|SIMPLE_SEGMENT|707,717|false|false|false|C0032952|prednisone|prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|707,717|false|false|false|C0032952|prednisone|prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|707,717|false|false|false|C0032952|prednisone|prednisone
+Event|Event|SIMPLE_SEGMENT|707,717|false|false|false|||prednisone
+Event|Event|SIMPLE_SEGMENT|719,724|false|false|false|||taper
+Procedure|Health Care Activity|SIMPLE_SEGMENT|719,724|false|false|false|C0441640||taper
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|730,734|false|false|false|C0270724|Infantile Neuroaxonal Dystrophy|plan
+Event|Event|SIMPLE_SEGMENT|730,734|false|false|false|||plan
+Finding|Functional Concept|SIMPLE_SEGMENT|730,734|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Intellectual Product|SIMPLE_SEGMENT|730,734|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Mental Process|SIMPLE_SEGMENT|730,734|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Drug|Hormone|SIMPLE_SEGMENT|747,757|false|false|false|C0032952|prednisone|Prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|747,757|false|false|false|C0032952|prednisone|Prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|747,757|false|false|false|C0032952|prednisone|Prednisone
+Finding|Functional Concept|SIMPLE_SEGMENT|762,768|false|false|false|C1706059|Finish - dosing instruction imperative|finish
+Event|Event|SIMPLE_SEGMENT|791,796|false|false|false|||taper
+Procedure|Health Care Activity|SIMPLE_SEGMENT|791,796|false|false|false|C0441640||taper
+Finding|Idea or Concept|SIMPLE_SEGMENT|837,840|false|false|false|C1548556|Etc.|etc
+Event|Event|SIMPLE_SEGMENT|860,864|false|false|false|||went
+Event|Event|SIMPLE_SEGMENT|868,873|false|false|false|||rehab
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|868,873|false|false|false|C0034991|Rehabilitation therapy|rehab
+Event|Event|SIMPLE_SEGMENT|896,900|false|false|false|||home
+Finding|Idea or Concept|SIMPLE_SEGMENT|896,900|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|896,900|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|896,900|false|false|false|C1553498|home health encounter|home
+Event|Event|SIMPLE_SEGMENT|918,927|false|false|false|||admission
+Procedure|Health Care Activity|SIMPLE_SEGMENT|918,927|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|admission
+Event|Activity|SIMPLE_SEGMENT|936,943|false|false|false|C1706079||arrival
+Event|Event|SIMPLE_SEGMENT|936,943|false|false|false|||arrival
+Finding|Functional Concept|SIMPLE_SEGMENT|936,943|false|false|false|C1555577|arrival - ActRelationshipType|arrival
+Finding|Finding|SIMPLE_SEGMENT|944,951|false|false|false|C4534363|At home|at home
+Finding|Idea or Concept|SIMPLE_SEGMENT|947,951|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|947,951|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|947,951|false|false|false|C1553498|home health encounter|home
+Event|Event|SIMPLE_SEGMENT|973,986|false|false|false|||recrudescence
+Phenomenon|Phenomenon or Process|SIMPLE_SEGMENT|973,986|false|false|false|C0086898|Recrudescence|recrudescence
+Event|Event|SIMPLE_SEGMENT|991,998|false|false|false|||fatigue
+Finding|Sign or Symptom|SIMPLE_SEGMENT|991,998|false|false|false|C0015672|Fatigue|fatigue
+Event|Event|SIMPLE_SEGMENT|1000,1008|false|false|false|||wheezing
+Finding|Sign or Symptom|SIMPLE_SEGMENT|1000,1008|false|false|false|C0043144|Wheezing|wheezing
+Event|Event|SIMPLE_SEGMENT|1010,1017|false|false|false|||dyspnea
+Finding|Finding|SIMPLE_SEGMENT|1010,1017|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Finding|Sign or Symptom|SIMPLE_SEGMENT|1010,1017|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Event|Event|SIMPLE_SEGMENT|1032,1041|false|false|false|||increased
+Event|Event|SIMPLE_SEGMENT|1046,1058|false|false|false|||requirements
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|1076,1082|false|false|false|C0030054|oxygen|oxygen
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|1076,1082|false|false|false|C0030054|oxygen|oxygen
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1076,1082|false|false|false|C0030054|oxygen|oxygen
+Event|Event|SIMPLE_SEGMENT|1076,1082|false|false|false|||oxygen
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|1076,1082|false|false|false|C0184633|Oxygen Therapy Care|oxygen
+Finding|Idea or Concept|SIMPLE_SEGMENT|1106,1109|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Intellectual Product|SIMPLE_SEGMENT|1106,1109|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Finding|SIMPLE_SEGMENT|1128,1131|false|false|false|C1553390;C1578513|Act Status - new;Query Status Code - new|new
+Finding|Idea or Concept|SIMPLE_SEGMENT|1128,1131|false|false|false|C1553390;C1578513|Act Status - new;Query Status Code - new|new
+Finding|Sign or Symptom|SIMPLE_SEGMENT|1128,1137|false|false|false|C2220033|new onset of cough|new cough
+Drug|Organic Chemical|SIMPLE_SEGMENT|1132,1137|false|false|false|C3815497|Cough (guaifenesin)|cough
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1132,1137|false|false|false|C3815497|Cough (guaifenesin)|cough
+Event|Event|SIMPLE_SEGMENT|1132,1137|false|false|false|||cough
+Finding|Sign or Symptom|SIMPLE_SEGMENT|1132,1137|false|false|false|C0010200|Coughing|cough
+Event|Event|SIMPLE_SEGMENT|1139,1153|false|false|false|||non-productive
+Event|Event|SIMPLE_SEGMENT|1155,1161|false|false|false|||Denies
+Event|Event|SIMPLE_SEGMENT|1162,1163|true|false|false|||f
+Event|Event|SIMPLE_SEGMENT|1183,1191|true|false|false|||myalgias
+Finding|Sign or Symptom|SIMPLE_SEGMENT|1183,1191|true|false|false|C0231528|Myalgia|myalgias
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|1193,1210|false|false|false|C1384666|hearing impairment|Decreased hearing
+Finding|Finding|SIMPLE_SEGMENT|1193,1210|false|false|false|C0018772|Partial Hearing Loss|Decreased hearing
+Event|Event|SIMPLE_SEGMENT|1203,1210|false|false|false|||hearing
+Finding|Finding|SIMPLE_SEGMENT|1203,1210|false|false|false|C0018767;C1455844;C2015933|Hearing;Hearing finding;outcomes otolaryngology hearing|hearing
+Finding|Physiologic Function|SIMPLE_SEGMENT|1203,1210|false|false|false|C0018767;C1455844;C2015933|Hearing;Hearing finding;outcomes otolaryngology hearing|hearing
+Finding|Functional Concept|SIMPLE_SEGMENT|1214,1219|false|false|false|C1552823|Table Cell Horizontal Align - right|right
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|1214,1223|false|false|false|C0229298|Right ear structure|right ear
+Finding|Sign or Symptom|SIMPLE_SEGMENT|1214,1223|false|false|false|C2127177|right ear symptoms (symptom)|right ear
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|1220,1223|false|false|false|C0013443;C0521421|Ear structure|ear
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|1220,1223|false|false|false|C0851354|Ear and labyrinth disorders|ear
+Finding|Body Substance|SIMPLE_SEGMENT|1220,1223|false|false|false|C1546608;C1550629|SpecimenType - Ear|ear
+Finding|Intellectual Product|SIMPLE_SEGMENT|1220,1223|false|false|false|C1546608;C1550629|SpecimenType - Ear|ear
+Event|Event|SIMPLE_SEGMENT|1229,1237|false|false|false|||fullness
+Event|Event|SIMPLE_SEGMENT|1264,1268|false|false|false|||seen
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|1272,1275|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|1272,1275|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|1272,1275|false|false|false|C0431128;C1535939;C2919094|PCP - Hallucinogen-Related Disorder;Papillary craniopharyngioma;Pneumocystis jiroveci pneumonia|PCP
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1272,1275|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Enzyme|SIMPLE_SEGMENT|1272,1275|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Hazardous or Poisonous Substance|SIMPLE_SEGMENT|1272,1275|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Organic Chemical|SIMPLE_SEGMENT|1272,1275|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1272,1275|false|false|false|C0030855;C0031381;C1700512|BMP1 protein, human;Pentachlorophenol;Phencyclidine|PCP
+Event|Event|SIMPLE_SEGMENT|1272,1275|false|false|false|||PCP
+Finding|Gene or Genome|SIMPLE_SEGMENT|1272,1275|false|false|false|C1418873;C1422070;C1744653;C3896095;C5551061|BMP1 wt Allele;PGPEP1 gene;PRCP gene;obsolete serine-type Pro-X carboxypeptidase activity;peptidyl carrier protein activity|PCP
+Finding|Molecular Function|SIMPLE_SEGMENT|1272,1275|false|false|false|C1418873;C1422070;C1744653;C3896095;C5551061|BMP1 wt Allele;PGPEP1 gene;PRCP gene;obsolete serine-type Pro-X carboxypeptidase activity;peptidyl carrier protein activity|PCP
+Event|Event|SIMPLE_SEGMENT|1280,1285|false|false|false|||noted
+Event|Event|SIMPLE_SEGMENT|1295,1306|false|false|false|||inspiratory
+Finding|Organism Function|SIMPLE_SEGMENT|1295,1306|false|false|false|C0004048|Inspiration (function)|inspiratory
+Finding|Organism Function|SIMPLE_SEGMENT|1307,1317|false|false|false|C0231800|Expiration, Respiratory|expiratory
+Finding|Sign or Symptom|SIMPLE_SEGMENT|1307,1325|false|false|false|C0231875|Expiratory wheezing|expiratory wheezes
+Event|Event|SIMPLE_SEGMENT|1318,1325|false|false|false|||wheezes
+Finding|Sign or Symptom|SIMPLE_SEGMENT|1318,1325|false|false|false|C0043144|Wheezing|wheezes
+Finding|Finding|SIMPLE_SEGMENT|1330,1334|false|false|false|C5575035|Well (answer to question)|well
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|1338,1355|false|false|false|C1384666|hearing impairment|decreased hearing
+Finding|Finding|SIMPLE_SEGMENT|1338,1355|false|false|false|C0018772|Partial Hearing Loss|decreased hearing
+Event|Event|SIMPLE_SEGMENT|1348,1355|false|false|false|||hearing
+Finding|Finding|SIMPLE_SEGMENT|1348,1355|false|false|false|C0018767;C1455844;C2015933|Hearing;Hearing finding;outcomes otolaryngology hearing|hearing
+Finding|Physiologic Function|SIMPLE_SEGMENT|1348,1355|false|false|false|C0018767;C1455844;C2015933|Hearing;Hearing finding;outcomes otolaryngology hearing|hearing
+Event|Event|SIMPLE_SEGMENT|1361,1368|false|false|false|||bulging
+Finding|Functional Concept|SIMPLE_SEGMENT|1372,1377|false|false|false|C1552823|Table Cell Horizontal Align - right|right
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|1372,1381|false|false|false|C0229298|Right ear structure|right ear
+Finding|Sign or Symptom|SIMPLE_SEGMENT|1372,1381|false|false|false|C2127177|right ear symptoms (symptom)|right ear
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|1378,1381|false|false|false|C0013443;C0521421|Ear structure|ear
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|1378,1381|false|false|false|C0851354|Ear and labyrinth disorders|ear
+Finding|Body Substance|SIMPLE_SEGMENT|1378,1381|false|false|false|C1546608;C1550629|SpecimenType - Ear|ear
+Finding|Intellectual Product|SIMPLE_SEGMENT|1378,1381|false|false|false|C1546608;C1550629|SpecimenType - Ear|ear
+Event|Event|SIMPLE_SEGMENT|1391,1399|false|false|false|||referred
+Event|Event|SIMPLE_SEGMENT|1427,1437|false|false|false|||management
+Event|Occupational Activity|SIMPLE_SEGMENT|1427,1437|false|false|false|C0001554;C1273870|Administration occupational activities;Management procedure|management
+Procedure|Health Care Activity|SIMPLE_SEGMENT|1427,1437|false|false|false|C0376636|Disease Management|management
+Finding|Idea or Concept|SIMPLE_SEGMENT|1452,1459|false|false|false|C1555582|Initial (abbreviation)|initial
+Drug|Food|SIMPLE_SEGMENT|1460,1465|false|false|false|C1875856|Vital High Nitrogen Enteral Nutrition|vital
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|1460,1471|false|false|false|C0488614;C0518766|Vital signs|vital signs
+Procedure|Health Care Activity|SIMPLE_SEGMENT|1460,1471|false|false|false|C0150404|Taking vital signs|vital signs
+Event|Event|SIMPLE_SEGMENT|1466,1471|false|false|false|||signs
+Finding|Finding|SIMPLE_SEGMENT|1466,1471|false|false|false|C0220912;C0311392|Aspects of signs;Physical findings|signs
+Finding|Functional Concept|SIMPLE_SEGMENT|1466,1471|false|false|false|C0220912;C0311392|Aspects of signs;Physical findings|signs
+Event|Event|SIMPLE_SEGMENT|1513,1517|false|false|false|||Labs
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|1513,1517|false|false|false|C0587081|Laboratory test finding|Labs
+Event|Event|SIMPLE_SEGMENT|1523,1530|false|false|false|||notable
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1570,1573|false|false|false|C0054015;C5442037|NPPB protein, human;nesiritide|BNP
+Drug|Hormone|SIMPLE_SEGMENT|1570,1573|false|false|false|C0054015;C5442037|NPPB protein, human;nesiritide|BNP
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1570,1573|false|false|false|C0054015;C5442037|NPPB protein, human;nesiritide|BNP
+Event|Event|SIMPLE_SEGMENT|1570,1573|false|false|false|||BNP
+Finding|Gene or Genome|SIMPLE_SEGMENT|1570,1573|false|false|false|C1417808;C2982014|NPPB gene;NPPB wt Allele|BNP
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|1570,1573|false|false|false|C1095989|Brain natriuretic peptide measurement|BNP
+Anatomy|Cell Component|SIMPLE_SEGMENT|1581,1584|false|false|false|C2263086|Nuclear cap binding complex location|CBC
+Event|Event|SIMPLE_SEGMENT|1581,1584|false|false|false|||CBC
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|1581,1584|false|false|false|C0009555|Complete Blood Count|CBC
+Finding|Finding|SIMPLE_SEGMENT|1585,1605|false|false|false|C0442816||within normal limits
+Event|Event|SIMPLE_SEGMENT|1599,1605|false|false|false|||limits
+Finding|Functional Concept|SIMPLE_SEGMENT|1599,1605|false|false|false|C0439801|Limited (extensiveness)|limits
+Anatomy|Cell|SIMPLE_SEGMENT|1616,1626|false|false|false|C0027950|neutrophil|neutrophil
+Event|Event|SIMPLE_SEGMENT|1627,1639|false|false|false|||predominance
+Event|Event|SIMPLE_SEGMENT|1643,1645|false|false|false|||UA
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1654,1661|false|false|false|C0033684|Proteins|protein
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|1654,1661|false|false|false|C0033684|Proteins|protein
+Event|Event|SIMPLE_SEGMENT|1654,1661|false|false|false|||protein
+Finding|Conceptual Entity|SIMPLE_SEGMENT|1654,1661|false|false|false|C1521746|Protein Info|protein
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|1654,1661|false|false|false|C0202202|Protein measurement|protein
+Event|Event|SIMPLE_SEGMENT|1665,1668|false|false|false|||VBG
+Event|Event|SIMPLE_SEGMENT|1679,1683|false|false|false|||pCO2
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|1679,1683|false|false|false|C0391839|Carbon dioxide, partial pressure|pCO2
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|1679,1683|false|false|false|C0201931|Carbon dioxide measurement, partial pressure|pCO2
+Event|Event|SIMPLE_SEGMENT|1688,1691|false|false|false|||pO2
+Finding|Classification|SIMPLE_SEGMENT|1688,1691|false|false|false|C0391840;C4521535|Partial pressure of Oxygen;US Military enlisted E5|pO2
+Finding|Molecular Function|SIMPLE_SEGMENT|1688,1691|false|false|false|C0391840;C4521535|Partial pressure of Oxygen;US Military enlisted E5|pO2
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|1688,1691|false|false|false|C1283004|PO2 measurement|pO2
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|1696,1700|false|false|false|C0005367|Bicarbonates|HCO3
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1696,1700|false|false|false|C0005367|Bicarbonates|HCO3
+Event|Event|SIMPLE_SEGMENT|1696,1700|false|false|false|||HCO3
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|1696,1700|false|false|false|C0202059|Bicarbonate measurement|HCO3
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|1707,1710|false|false|false|C0021400|Influenza|Flu
+Event|Event|SIMPLE_SEGMENT|1707,1710|false|false|false|||Flu
+Finding|Gene or Genome|SIMPLE_SEGMENT|1707,1710|false|false|false|C3811318|ZMYND10 wt Allele|Flu
+Event|Event|SIMPLE_SEGMENT|1711,1714|false|false|false|||PCR
+Finding|Finding|SIMPLE_SEGMENT|1711,1714|false|false|false|C4050242;C5202919|Pathologic Complete Response;Residual Cancer Burden Class 0|PCR
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|1711,1714|false|false|false|C0032520;C3853643|Polymerase Chain Reaction;Probe with target amplification technique|PCR
+Procedure|Molecular Biology Research Technique|SIMPLE_SEGMENT|1711,1714|false|false|false|C0032520;C3853643|Polymerase Chain Reaction;Probe with target amplification technique|PCR
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|1711,1723|false|false|false|C5577903|Polymerase chain reaction negative|PCR negative
+Event|Event|SIMPLE_SEGMENT|1715,1723|false|false|false|||negative
+Finding|Classification|SIMPLE_SEGMENT|1715,1723|false|false|false|C0205160;C1513916;C2699077|Negative;Negative Finding;Rh Negative Blood Group|negative
+Finding|Finding|SIMPLE_SEGMENT|1715,1723|false|false|false|C0205160;C1513916;C2699077|Negative;Negative Finding;Rh Negative Blood Group|negative
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|1715,1723|false|false|false|C5237010|Expression Negative|negative
+Event|Event|SIMPLE_SEGMENT|1728,1735|false|false|false|||Imaging
+Finding|Finding|SIMPLE_SEGMENT|1728,1735|false|false|false|C0740845|Imaging problem|Imaging
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|1728,1735|false|false|false|C0011923;C0079595|Diagnostic Imaging;Imaging Techniques|Imaging
+Event|Event|SIMPLE_SEGMENT|1740,1743|true|false|false|||CXR
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|1740,1743|true|false|false|C0039985|Plain chest X-ray|CXR
+Finding|Intellectual Product|SIMPLE_SEGMENT|1759,1764|true|false|false|C1547229;C1547295|Acute - Triage Code;Admission Level of Care Code - Acute|acute
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|1765,1780|true|false|false|C0553534|Cardiopulmonary|cardiopulmonary
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|1765,1780|true|false|false|C4072686|Cardiovascular disease+Pulmonary disease|cardiopulmonary
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|1781,1788|true|false|false|C1184743|bony process|process
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1781,1788|true|false|false|C1951340|Process Pharmacologic Substance|process
+Event|Event|SIMPLE_SEGMENT|1781,1788|true|false|false|||process
+Finding|Functional Concept|SIMPLE_SEGMENT|1781,1788|true|false|false|C4521054|Process (qualifier value)|process
+Phenomenon|Phenomenon or Process|SIMPLE_SEGMENT|1781,1788|true|false|false|C1522240|Process|process
+Finding|Body Substance|SIMPLE_SEGMENT|1798,1805|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|patient
+Finding|Idea or Concept|SIMPLE_SEGMENT|1798,1805|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|patient
+Finding|Intellectual Product|SIMPLE_SEGMENT|1798,1805|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|patient
+Drug|Organic Chemical|SIMPLE_SEGMENT|1833,1842|false|false|false|C0001927|albuterol|Albuterol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1833,1842|false|false|false|C0001927|albuterol|Albuterol
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1850,1853|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|1850,1853|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|1850,1853|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Finding|Cell Function|SIMPLE_SEGMENT|1850,1853|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|1850,1853|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1861,1864|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|1861,1864|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|1861,1864|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|1861,1864|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|1861,1864|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|1861,1864|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Drug|Organic Chemical|SIMPLE_SEGMENT|1881,1892|false|false|false|C0027235|ipratropium|Ipratropium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1881,1892|false|false|false|C0027235|ipratropium|Ipratropium
+Drug|Organic Chemical|SIMPLE_SEGMENT|1881,1900|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1881,1900|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|1893,1900|false|false|false|C0006222|Bromides|Bromide
+Event|Event|SIMPLE_SEGMENT|1893,1900|false|false|false|||Bromide
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|1893,1900|false|false|false|C0202341|Bromides measurement|Bromide
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1901,1904|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|1901,1904|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|1901,1904|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Event|Event|SIMPLE_SEGMENT|1901,1904|false|false|false|||Neb
+Finding|Cell Function|SIMPLE_SEGMENT|1901,1904|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|1901,1904|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1907,1910|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|1907,1910|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|1907,1910|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|1907,1910|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|1907,1910|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|1907,1910|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Drug|Organic Chemical|SIMPLE_SEGMENT|1927,1936|false|false|false|C0001927|albuterol|Albuterol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1927,1936|false|false|false|C0001927|albuterol|Albuterol
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1944,1947|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|1944,1947|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|1944,1947|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Finding|Cell Function|SIMPLE_SEGMENT|1944,1947|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|1944,1947|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1955,1958|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|1955,1958|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|1955,1958|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|1955,1958|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|1955,1958|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|1955,1958|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Drug|Organic Chemical|SIMPLE_SEGMENT|1975,1986|false|false|false|C0027235|ipratropium|Ipratropium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1975,1986|false|false|false|C0027235|ipratropium|Ipratropium
+Drug|Organic Chemical|SIMPLE_SEGMENT|1975,1994|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|1975,1994|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|1987,1994|false|false|false|C0006222|Bromides|Bromide
+Event|Event|SIMPLE_SEGMENT|1987,1994|false|false|false|||Bromide
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|1987,1994|false|false|false|C0202341|Bromides measurement|Bromide
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|1995,1998|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|1995,1998|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|1995,1998|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Event|Event|SIMPLE_SEGMENT|1995,1998|false|false|false|||Neb
+Finding|Cell Function|SIMPLE_SEGMENT|1995,1998|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|1995,1998|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|2001,2004|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2001,2004|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2001,2004|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|2001,2004|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|2001,2004|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|2001,2004|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Drug|Organic Chemical|SIMPLE_SEGMENT|2021,2030|false|false|false|C0001927|albuterol|Albuterol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2021,2030|false|false|false|C0001927|albuterol|Albuterol
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|2038,2041|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2038,2041|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2038,2041|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Finding|Cell Function|SIMPLE_SEGMENT|2038,2041|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|2038,2041|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|2049,2052|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2049,2052|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2049,2052|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|2049,2052|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|2049,2052|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|2049,2052|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Drug|Organic Chemical|SIMPLE_SEGMENT|2069,2080|false|false|false|C0027235|ipratropium|Ipratropium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2069,2080|false|false|false|C0027235|ipratropium|Ipratropium
+Drug|Organic Chemical|SIMPLE_SEGMENT|2069,2088|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2069,2088|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|2081,2088|false|false|false|C0006222|Bromides|Bromide
+Event|Event|SIMPLE_SEGMENT|2081,2088|false|false|false|||Bromide
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|2081,2088|false|false|false|C0202341|Bromides measurement|Bromide
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|2089,2092|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2089,2092|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2089,2092|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Event|Event|SIMPLE_SEGMENT|2089,2092|false|false|false|||Neb
+Finding|Cell Function|SIMPLE_SEGMENT|2089,2092|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|2089,2092|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|2095,2098|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2095,2098|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2095,2098|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|2095,2098|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|2095,2098|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|2095,2098|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Drug|Organic Chemical|SIMPLE_SEGMENT|2115,2124|false|false|false|C0001927|albuterol|Albuterol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2115,2124|false|false|false|C0001927|albuterol|Albuterol
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|2132,2135|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2132,2135|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2132,2135|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Finding|Cell Function|SIMPLE_SEGMENT|2132,2135|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|2132,2135|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|2143,2146|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2143,2146|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2143,2146|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|2143,2146|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|2143,2146|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|2143,2146|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Drug|Hormone|SIMPLE_SEGMENT|2163,2173|false|false|false|C0032952|prednisone|PredniSONE
+Drug|Organic Chemical|SIMPLE_SEGMENT|2163,2173|false|false|false|C0032952|prednisone|PredniSONE
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2163,2173|false|false|false|C0032952|prednisone|PredniSONE
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2196,2205|false|false|false|C0024467;C3540792;C3714621|Magnesium Drug Class;Magnesium supplements, alimentary tract and metabolism;magnesium|Magnesium
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|2196,2205|false|false|false|C0024467;C3540792;C3714621|Magnesium Drug Class;Magnesium supplements, alimentary tract and metabolism;magnesium|Magnesium
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|2196,2205|false|false|false|C0024467;C3540792;C3714621|Magnesium Drug Class;Magnesium supplements, alimentary tract and metabolism;magnesium|Magnesium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2196,2205|false|false|false|C0024467;C3540792;C3714621|Magnesium Drug Class;Magnesium supplements, alimentary tract and metabolism;magnesium|Magnesium
+Event|Event|SIMPLE_SEGMENT|2196,2205|false|false|false|||Magnesium
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|2196,2205|false|false|false|C0373675|Magnesium measurement|Magnesium
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|2196,2213|false|false|false|C0024480|magnesium sulfate|Magnesium Sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2196,2213|false|false|false|C0024480|magnesium sulfate|Magnesium Sulfate
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|2206,2213|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|Sulfate
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|2206,2213|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|Sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2206,2213|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|Sulfate
+Drug|Organic Chemical|SIMPLE_SEGMENT|2235,2244|false|false|false|C0001927|albuterol|Albuterol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2235,2244|false|false|false|C0001927|albuterol|Albuterol
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|2252,2255|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2252,2255|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2252,2255|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Finding|Cell Function|SIMPLE_SEGMENT|2252,2255|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|2252,2255|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|2263,2266|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|2263,2266|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2263,2266|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|2263,2266|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|2263,2266|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|2263,2266|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Event|Event|SIMPLE_SEGMENT|2270,2276|false|false|false|||Vitals
+Event|Event|SIMPLE_SEGMENT|2286,2294|false|false|false|||transfer
+Finding|Functional Concept|SIMPLE_SEGMENT|2286,2294|false|false|false|C0348011;C1555583;C1705822;C3244299|ActClass - transfer;Transfer - product ownership;Transfer Technique|transfer
+Finding|Idea or Concept|SIMPLE_SEGMENT|2286,2294|false|false|false|C0348011;C1555583;C1705822;C3244299|ActClass - transfer;Transfer - product ownership;Transfer Technique|transfer
+Procedure|Health Care Activity|SIMPLE_SEGMENT|2286,2294|false|false|false|C4706767|Transfer (immobility management)|transfer
+Event|Activity|SIMPLE_SEGMENT|2338,2345|false|false|false|C1706079||arrival
+Event|Event|SIMPLE_SEGMENT|2338,2345|false|false|false|||arrival
+Finding|Functional Concept|SIMPLE_SEGMENT|2338,2345|false|false|false|C1555577|arrival - ActRelationshipType|arrival
+Anatomy|Anatomical Structure|SIMPLE_SEGMENT|2353,2358|false|false|false|C3714591|Floor (anatomic)|floor
+Event|Event|SIMPLE_SEGMENT|2364,2374|false|false|false|||complained
+Event|Event|SIMPLE_SEGMENT|2378,2386|false|false|false|||wheezing
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2378,2386|false|false|false|C0043144|Wheezing|wheezing
+Event|Event|SIMPLE_SEGMENT|2391,2394|false|false|false|||SOB
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2391,2394|false|false|false|C0013404|Dyspnea|SOB
+Finding|Finding|SIMPLE_SEGMENT|2412,2421|false|false|false|C0392756;C0442797|Decreasing;Reduced|decreased
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2412,2429|false|false|false|C1384666|hearing impairment|decreased hearing
+Finding|Finding|SIMPLE_SEGMENT|2412,2429|false|false|false|C0018772|Partial Hearing Loss|decreased hearing
+Event|Event|SIMPLE_SEGMENT|2422,2429|false|false|false|||hearing
+Finding|Finding|SIMPLE_SEGMENT|2422,2429|false|false|false|C0018767;C1455844;C2015933|Hearing;Hearing finding;outcomes otolaryngology hearing|hearing
+Finding|Physiologic Function|SIMPLE_SEGMENT|2422,2429|false|false|false|C0018767;C1455844;C2015933|Hearing;Hearing finding;outcomes otolaryngology hearing|hearing
+Event|Event|SIMPLE_SEGMENT|2435,2443|false|false|false|||fullness
+Finding|Functional Concept|SIMPLE_SEGMENT|2447,2452|false|false|false|C1552823|Table Cell Horizontal Align - right|right
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|2447,2456|false|false|false|C0229298|Right ear structure|right ear
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2447,2456|false|false|false|C2127177|right ear symptoms (symptom)|right ear
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|2453,2456|false|false|false|C0013443;C0521421|Ear structure|ear
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2453,2456|false|false|false|C0851354|Ear and labyrinth disorders|ear
+Finding|Body Substance|SIMPLE_SEGMENT|2453,2456|false|false|false|C1546608;C1550629|SpecimenType - Ear|ear
+Finding|Intellectual Product|SIMPLE_SEGMENT|2453,2456|false|false|false|C1546608;C1550629|SpecimenType - Ear|ear
+Event|Event|SIMPLE_SEGMENT|2462,2468|false|false|false|||REVIEW
+Finding|Idea or Concept|SIMPLE_SEGMENT|2462,2468|false|false|false|C0282443;C1552617|Act Class - review;Review (Publication Type)|REVIEW
+Finding|Intellectual Product|SIMPLE_SEGMENT|2462,2468|false|false|false|C0282443;C1552617|Act Class - review;Review (Publication Type)|REVIEW
+Finding|Functional Concept|SIMPLE_SEGMENT|2462,2471|false|false|false|C0699752|Review of|REVIEW OF
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|2462,2479|false|false|false|C0488564;C0488565||REVIEW OF SYSTEMS
+Procedure|Health Care Activity|SIMPLE_SEGMENT|2462,2479|false|false|false|C0489633|Review of systems (procedure)|REVIEW OF SYSTEMS
+Event|Event|SIMPLE_SEGMENT|2472,2479|false|false|false|||SYSTEMS
+Finding|Functional Concept|SIMPLE_SEGMENT|2472,2479|false|false|false|C0449913|System|SYSTEMS
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2485,2488|false|false|false|C0268529|Proline dehydrogenase deficiency|HPI
+Event|Event|SIMPLE_SEGMENT|2485,2488|false|false|false|||HPI
+Finding|Finding|SIMPLE_SEGMENT|2485,2488|false|false|false|C0262512;C1323983|History of present illness (finding);allene oxide synthase activity|HPI
+Finding|Molecular Function|SIMPLE_SEGMENT|2485,2488|false|false|false|C0262512;C1323983|History of present illness (finding);allene oxide synthase activity|HPI
+Event|Event|SIMPLE_SEGMENT|2490,2496|false|false|false|||Denies
+Event|Event|SIMPLE_SEGMENT|2497,2505|true|false|false|||headache
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2497,2505|true|false|false|C0018681|Headache|headache
+Finding|Functional Concept|SIMPLE_SEGMENT|2507,2513|true|false|false|C0234621|Visual|visual
+Finding|Finding|SIMPLE_SEGMENT|2507,2521|true|false|false|C0750280|Visual changes|visual changes
+Event|Event|SIMPLE_SEGMENT|2514,2521|true|false|false|||changes
+Finding|Functional Concept|SIMPLE_SEGMENT|2514,2521|true|false|false|C0392747|Changing|changes
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2524,2535|true|false|false|C0031350|Pharyngitis|pharyngitis
+Event|Event|SIMPLE_SEGMENT|2524,2535|true|false|false|||pharyngitis
+Event|Event|SIMPLE_SEGMENT|2537,2547|false|false|false|||rhinorrhea
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2537,2547|false|false|false|C1260880|Rhinorrhea|rhinorrhea
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|2549,2554|false|false|false|C0028429||nasal
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|2549,2554|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|nasal
+Drug|Organic Chemical|SIMPLE_SEGMENT|2549,2554|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|nasal
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2549,2554|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|nasal
+Finding|Finding|SIMPLE_SEGMENT|2549,2554|false|false|false|C1522019;C4520890|Nasal (intended site);Nasal Route of Administration|nasal
+Finding|Functional Concept|SIMPLE_SEGMENT|2549,2554|false|false|false|C1522019;C4520890|Nasal (intended site);Nasal Route of Administration|nasal
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2549,2565|false|false|false|C0027424|Nasal congestion (finding)|nasal congestion
+Event|Event|SIMPLE_SEGMENT|2555,2565|false|false|false|||congestion
+Finding|Pathologic Function|SIMPLE_SEGMENT|2555,2565|false|false|false|C0700148|Congestion|congestion
+Drug|Organic Chemical|SIMPLE_SEGMENT|2567,2572|false|false|false|C3815497|Cough (guaifenesin)|cough
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2567,2572|false|false|false|C3815497|Cough (guaifenesin)|cough
+Event|Event|SIMPLE_SEGMENT|2567,2572|false|false|false|||cough
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2567,2572|false|false|false|C0010200|Coughing|cough
+Event|Event|SIMPLE_SEGMENT|2574,2580|false|false|false|||fevers
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2574,2580|false|false|false|C0015967|Fever|fevers
+Event|Event|SIMPLE_SEGMENT|2583,2589|false|false|false|||chills
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2583,2589|false|false|false|C0085593|Chills|chills
+Event|Event|SIMPLE_SEGMENT|2591,2597|false|false|false|||sweats
+Finding|Body Substance|SIMPLE_SEGMENT|2591,2597|false|false|false|C0038984;C0038990|Sweat;Sweating|sweats
+Finding|Finding|SIMPLE_SEGMENT|2591,2597|false|false|false|C0038984;C0038990|Sweat;Sweating|sweats
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|2599,2605|false|false|false|C0944911||weight
+Event|Event|SIMPLE_SEGMENT|2599,2605|false|false|false|||weight
+Finding|Finding|SIMPLE_SEGMENT|2599,2605|false|false|false|C0424653;C2053618|Weight symptom (finding);infant weight for previous delivery (history)|weight
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2599,2605|false|false|false|C0424653;C2053618|Weight symptom (finding);infant weight for previous delivery (history)|weight
+Procedure|Health Care Activity|SIMPLE_SEGMENT|2599,2605|false|false|false|C1305866|Weighing patient|weight
+Finding|Finding|SIMPLE_SEGMENT|2599,2610|false|false|false|C1262477;C3540682|Losing Weight (question);Weight Loss|weight loss
+Finding|Intellectual Product|SIMPLE_SEGMENT|2599,2610|false|false|false|C1262477;C3540682|Losing Weight (question);Weight Loss|weight loss
+Event|Event|SIMPLE_SEGMENT|2606,2610|false|false|false|||loss
+Finding|Finding|SIMPLE_SEGMENT|2606,2610|false|false|false|C5890125|Loss (adaptation)|loss
+Event|Event|SIMPLE_SEGMENT|2612,2619|false|false|false|||dyspnea
+Finding|Finding|SIMPLE_SEGMENT|2612,2619|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2612,2619|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|2621,2626|false|false|false|C0817096;C1527391|Anterior thoracic region;Chest|chest
+Finding|Finding|SIMPLE_SEGMENT|2621,2626|false|false|false|C0741025|Chest problem|chest
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|2621,2631|false|false|false|C2926613||chest pain
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2621,2631|false|false|false|C0008031|Chest Pain|chest pain
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|2627,2631|false|false|false|C2598155||pain
+Event|Event|SIMPLE_SEGMENT|2627,2631|false|false|false|||pain
+Finding|Functional Concept|SIMPLE_SEGMENT|2627,2631|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2627,2631|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2627,2642|false|false|false|C0000737|Abdominal Pain|pain, abdominal
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|2633,2642|false|false|false|C0000726|Abdomen|abdominal
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|2644,2648|false|false|false|C2598155||pain
+Event|Event|SIMPLE_SEGMENT|2644,2648|false|false|false|||pain
+Finding|Functional Concept|SIMPLE_SEGMENT|2644,2648|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2644,2648|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|pain
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|2650,2656|false|false|false|C4255480||nausea
+Event|Event|SIMPLE_SEGMENT|2650,2656|false|false|false|||nausea
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2650,2656|false|false|false|C0027497|Nausea|nausea
+Event|Event|SIMPLE_SEGMENT|2658,2666|false|false|false|||vomiting
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2658,2666|false|false|false|C0042963|Vomiting|vomiting
+Event|Event|SIMPLE_SEGMENT|2668,2676|false|false|false|||diarrhea
+Finding|Finding|SIMPLE_SEGMENT|2668,2676|false|false|false|C0011991;C2169706|Diarrhea;rectal discharge diarrhea (physical finding)|diarrhea
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2668,2676|false|false|false|C0011991;C2169706|Diarrhea;rectal discharge diarrhea (physical finding)|diarrhea
+Event|Event|SIMPLE_SEGMENT|2678,2690|false|false|false|||constipation
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2678,2690|false|false|false|C0009806|Constipation|constipation
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2692,2704|false|false|false|C0018932|Hematochezia|hematochezia
+Event|Event|SIMPLE_SEGMENT|2692,2704|false|false|false|||hematochezia
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2692,2704|false|false|false|C1321898|Blood in stool|hematochezia
+Event|Event|SIMPLE_SEGMENT|2707,2714|false|false|false|||dysuria
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2707,2714|false|false|false|C0013428|Dysuria|dysuria
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2716,2720|false|false|false|C5779629|Eruption of skin (disorder)|rash
+Event|Event|SIMPLE_SEGMENT|2716,2720|false|false|false|||rash
+Finding|Pathologic Function|SIMPLE_SEGMENT|2716,2720|false|false|false|C0015230;C0302295;C5779628|Eruptions;Exanthema;Skin rash|rash
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2716,2720|false|false|false|C0015230;C0302295;C5779628|Eruptions;Exanthema;Skin rash|rash
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2722,2734|false|false|false|C0030554|Paresthesia|paresthesias
+Event|Event|SIMPLE_SEGMENT|2722,2734|false|false|false|||paresthesias
+Event|Event|SIMPLE_SEGMENT|2740,2748|false|false|false|||weakness
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2740,2748|false|false|false|C0004093;C3714552|Asthenia;Weakness|weakness
+Finding|Finding|SIMPLE_SEGMENT|2752,2772|false|false|false|C0262926;C0455458|Medical History;PMH - past medical history|Past Medical History
+Event|Event|SIMPLE_SEGMENT|2757,2764|false|false|false|||Medical
+Finding|Functional Concept|SIMPLE_SEGMENT|2757,2764|false|false|false|C0205476;C1547184;C1561579|Medical;Medical referral type;Medical school type|Medical
+Finding|Idea or Concept|SIMPLE_SEGMENT|2757,2764|false|false|false|C0205476;C1547184;C1561579|Medical;Medical referral type;Medical school type|Medical
+Finding|Intellectual Product|SIMPLE_SEGMENT|2757,2764|false|false|false|C0205476;C1547184;C1561579|Medical;Medical referral type;Medical school type|Medical
+Procedure|Health Care Activity|SIMPLE_SEGMENT|2757,2764|false|false|false|C0199168|Medical service|Medical
+Finding|Finding|SIMPLE_SEGMENT|2757,2772|false|false|false|C0262926|Medical History|Medical History
+Finding|Conceptual Entity|SIMPLE_SEGMENT|2765,2772|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Finding|SIMPLE_SEGMENT|2765,2772|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Functional Concept|SIMPLE_SEGMENT|2765,2772|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2776,2780|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2776,2780|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|2776,2780|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|2776,2780|false|false|false|C1412502|ARCN1 gene|COPD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2781,2787|false|false|false|C0004096|Asthma|Asthma
+Event|Event|SIMPLE_SEGMENT|2781,2787|false|false|false|||Asthma
+Event|Event|SIMPLE_SEGMENT|2791,2795|false|false|false|||home
+Finding|Idea or Concept|SIMPLE_SEGMENT|2791,2795|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|2791,2795|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|2791,2795|false|false|false|C1553498|home health encounter|home
+Finding|Finding|SIMPLE_SEGMENT|2804,2812|false|false|false|C0741302|atypia morphology|Atypical
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2804,2823|false|false|false|C0262384|Atypical chest pain|Atypical Chest Pain
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|2813,2818|false|false|false|C0817096;C1527391|Anterior thoracic region;Chest|Chest
+Finding|Finding|SIMPLE_SEGMENT|2813,2818|false|false|false|C0741025|Chest problem|Chest
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|2813,2823|false|false|false|C2926613||Chest Pain
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2813,2823|false|false|false|C0008031|Chest Pain|Chest Pain
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|2819,2823|false|true|false|C2598155||Pain
+Event|Event|SIMPLE_SEGMENT|2819,2823|false|false|false|||Pain
+Finding|Functional Concept|SIMPLE_SEGMENT|2819,2823|false|true|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2819,2823|false|true|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2826,2838|false|false|false|C0020538|Hypertensive disease|Hypertension
+Event|Event|SIMPLE_SEGMENT|2826,2838|false|false|false|||Hypertension
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2841,2855|false|false|false|C0020473;C0020476|Hyperlipidemia;Hyperlipoproteinemias|Hyperlipidemia
+Event|Event|SIMPLE_SEGMENT|2841,2855|false|false|false|||Hyperlipidemia
+Finding|Finding|SIMPLE_SEGMENT|2841,2855|false|false|false|C0428465|Serum lipids high (finding)|Hyperlipidemia
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|2876,2882|false|false|false|C0018792|Heart Atrium|Atrial
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|2876,2895|false|false|false|C2926591||Atrial Fibrillation
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2876,2895|false|false|false|C0004238|Atrial Fibrillation|Atrial Fibrillation
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|2876,2895|false|false|false|C0344434|Atrial Fibrillation by ECG Finding|Atrial Fibrillation
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2883,2895|false|false|false|C0232197|Fibrillation|Fibrillation
+Event|Event|SIMPLE_SEGMENT|2883,2895|false|false|false|||Fibrillation
+Drug|Organic Chemical|SIMPLE_SEGMENT|2899,2907|false|false|false|C1831808|apixaban|Apixaban
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|2899,2907|false|false|false|C1831808|apixaban|Apixaban
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|2910,2917|false|false|false|C0003467;C0003469|Anxiety;Anxiety Disorders|Anxiety
+Event|Event|SIMPLE_SEGMENT|2910,2917|false|false|false|||Anxiety
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2910,2917|false|false|false|C0860603|Anxiety symptoms|Anxiety
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|2920,2928|false|false|false|C0027530|Neck|Cervical
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2920,2940|false|false|false|C0263884|Cervical radiculitis|Cervical Radiculitis
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2929,2940|false|false|false|C0034544|Radiculitis|Radiculitis
+Event|Event|SIMPLE_SEGMENT|2929,2940|false|false|false|||Radiculitis
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|2943,2951|false|false|false|C0027530|Neck|Cervical
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2943,2963|false|false|false|C0158241;C1384641|Cervical spondylosis;Cervical spondylosis without myelopathy|Cervical Spondylosis
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2952,2963|false|false|false|C0038019|Spondylosis|Spondylosis
+Event|Event|SIMPLE_SEGMENT|2952,2963|false|false|false|||Spondylosis
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|2966,2974|false|false|false|C0018787|Heart|Coronary
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|2966,2981|false|false|false|C0205042|Coronary artery|Coronary Artery
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2966,2989|false|false|false|C0010054;C1956346|Coronary Arteriosclerosis;Coronary Artery Disease|Coronary Artery Disease
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|2975,2981|false|false|false|C0003842;C0226004|Arterial system;Arteries|Artery
+Anatomy|Body System|SIMPLE_SEGMENT|2975,2981|false|false|false|C0003842;C0226004|Arterial system;Arteries|Artery
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2975,2989|false|false|false|C0852949|Arteriopathic disease|Artery Disease
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|2982,2989|false|false|false|C0012634|Disease|Disease
+Event|Event|SIMPLE_SEGMENT|2982,2989|false|false|false|||Disease
+Finding|Sign or Symptom|SIMPLE_SEGMENT|2992,3000|false|false|false|C0018681|Headache|Headache
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3003,3009|false|false|false|C0019340;C0854331|Herpes simplex dermatitis|Herpes
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3003,3016|false|false|false|C0019360;C0042338|Herpes zoster (disorder);herpesvirus 3, human|Herpes Zoster
+Disorder|Virus|SIMPLE_SEGMENT|3003,3016|false|false|false|C0019360;C0042338|Herpes zoster (disorder);herpesvirus 3, human|Herpes Zoster
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3010,3016|false|false|false|C0019360|Herpes zoster (disorder)|Zoster
+Event|Event|SIMPLE_SEGMENT|3010,3016|false|false|false|||Zoster
+Finding|Pathologic Function|SIMPLE_SEGMENT|3019,3030|false|false|false|C0017181|Gastrointestinal Hemorrhage|GI Bleeding
+Event|Event|SIMPLE_SEGMENT|3022,3030|false|false|false|||Bleeding
+Finding|Pathologic Function|SIMPLE_SEGMENT|3022,3030|false|false|false|C0019080|Hemorrhage|Bleeding
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3033,3060|false|false|false|C0085096|Peripheral Vascular Diseases|Peripheral Vascular Disease
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3044,3052|false|false|false|C0005847|Blood Vessel|Vascular
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3044,3060|false|false|false|C0042373|Vascular Diseases|Vascular Disease
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3053,3060|false|false|false|C0012634|Disease|Disease
+Event|Event|SIMPLE_SEGMENT|3053,3060|false|false|false|||Disease
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3075,3080|false|false|false|C0020889|Bone structure of ilium|iliac
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|3075,3087|false|false|false|C0850459|iliac stents|iliac stents
+Event|Event|SIMPLE_SEGMENT|3081,3087|false|false|false|||stents
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3094,3097|false|false|false|C0019552;C0022122;C0228391;C4299095|Bone structure of ischium;Hip structure;Lower extremity>Hip;Structure of habenulopeduncular tract|hip
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|3094,3097|false|false|false|C0529134;C1430701;C1505163;C1654726|HHIP protein, human;RPL29 protein, human;ST13 protein, human;heme iron polypeptide|hip
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|3094,3097|false|false|false|C0529134;C1430701;C1505163;C1654726|HHIP protein, human;RPL29 protein, human;ST13 protein, human;heme iron polypeptide|hip
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|3094,3097|false|false|false|C0529134;C1430701;C1505163;C1654726|HHIP protein, human;RPL29 protein, human;ST13 protein, human;heme iron polypeptide|hip
+Finding|Gene or Genome|SIMPLE_SEGMENT|3094,3097|false|false|false|C1335638;C1337104;C1423009;C1538823;C1704840;C1709823;C3538851;C4284725|HHIP gene;HHIP wt Allele;REG3A gene;REG3A wt Allele;RPL29 gene;RPL29 wt Allele;ST13 gene;ST13 wt Allele|hip
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|3094,3097|false|false|false|C1292890|Procedure on hip|hip
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|3094,3109|false|false|false|C0392806|Prosthetic arthroplasty of hip (procedure)|hip replacement
+Event|Event|SIMPLE_SEGMENT|3098,3109|false|false|false|||replacement
+Finding|Functional Concept|SIMPLE_SEGMENT|3098,3109|false|false|false|C0559956|Replacement|replacement
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3098,3109|false|false|false|C0035139;C1555302|Replacement - supply;Surgical Replantation|replacement
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|3098,3109|false|false|false|C0035139;C1555302|Replacement - supply;Surgical Replantation|replacement
+Finding|Functional Concept|SIMPLE_SEGMENT|3112,3118|false|false|false|C0728831|Social|Social
+Finding|Finding|SIMPLE_SEGMENT|3112,3126|false|false|false|C0424945;C3714536|Social History;Social and personal history|Social History
+Event|Event|SIMPLE_SEGMENT|3119,3126|false|false|false|||History
+Finding|Conceptual Entity|SIMPLE_SEGMENT|3119,3126|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Finding|SIMPLE_SEGMENT|3119,3126|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Functional Concept|SIMPLE_SEGMENT|3119,3126|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Classification|SIMPLE_SEGMENT|3132,3138|false|false|false|C1301584;C1546847;C1563343;C1704727;C2700055|Entity Name Part Type - family;Family (taxonomic);Family Collection;Last Name;Living Arrangement - Family|Family
+Finding|Conceptual Entity|SIMPLE_SEGMENT|3132,3138|false|false|false|C1301584;C1546847;C1563343;C1704727;C2700055|Entity Name Part Type - family;Family (taxonomic);Family Collection;Last Name;Living Arrangement - Family|Family
+Finding|Idea or Concept|SIMPLE_SEGMENT|3132,3138|false|false|false|C1301584;C1546847;C1563343;C1704727;C2700055|Entity Name Part Type - family;Family (taxonomic);Family Collection;Last Name;Living Arrangement - Family|Family
+Finding|Intellectual Product|SIMPLE_SEGMENT|3132,3138|false|false|false|C1301584;C1546847;C1563343;C1704727;C2700055|Entity Name Part Type - family;Family (taxonomic);Family Collection;Last Name;Living Arrangement - Family|Family
+Finding|Finding|SIMPLE_SEGMENT|3132,3146|false|false|false|C0241889|Family Medical History|Family History
+Event|Event|SIMPLE_SEGMENT|3139,3146|false|false|false|||History
+Finding|Conceptual Entity|SIMPLE_SEGMENT|3139,3146|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Finding|SIMPLE_SEGMENT|3139,3146|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Finding|Functional Concept|SIMPLE_SEGMENT|3139,3146|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|History
+Event|Event|SIMPLE_SEGMENT|3148,3154|false|false|false|||Mother
+Finding|Idea or Concept|SIMPLE_SEGMENT|3148,3154|false|false|false|C1546508|Relationship - Mother|Mother
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3160,3166|false|false|false|C0004096|Asthma|asthma
+Event|Event|SIMPLE_SEGMENT|3160,3166|false|false|false|||asthma
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3171,3183|false|false|false|C0020538|Hypertensive disease|hypertension
+Event|Event|SIMPLE_SEGMENT|3171,3183|false|false|false|||hypertension
+Finding|Conceptual Entity|SIMPLE_SEGMENT|3185,3191|false|false|false|C1546503;C1547005;C2348513|Father - courtesy title;Indirect exposure mechanism - Father;Relationship - Father|Father
+Finding|Idea or Concept|SIMPLE_SEGMENT|3185,3191|false|false|false|C1546503;C1547005;C2348513|Father - courtesy title;Indirect exposure mechanism - Father;Relationship - Father|Father
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3197,3202|false|false|false|C0009368;C4071907|Abdomen+Pelvis>Colon;Colon structure (body structure)|colon
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3197,3202|false|false|false|C0009373;C0154061;C0496907|Carcinoma in situ of colon;Colonic Diseases;Neoplasm of uncertain or unknown behavior of colon|colon
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|3197,3202|false|false|false|C0009373;C0154061;C0496907|Carcinoma in situ of colon;Colonic Diseases;Neoplasm of uncertain or unknown behavior of colon|colon
+Finding|Finding|SIMPLE_SEGMENT|3197,3202|false|false|false|C0750873|COLON PROBLEM|colon
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|3197,3209|false|false|false|C0007102;C0346629;C0699790|Colon Carcinoma;Malignant neoplasm of large intestine;Malignant tumor of colon|colon cancer
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|3203,3209|false|false|false|C0006826|Malignant Neoplasms|cancer
+Event|Event|SIMPLE_SEGMENT|3203,3209|false|false|false|||cancer
+Event|Event|SIMPLE_SEGMENT|3212,3219|false|false|false|||Brother
+Finding|Conceptual Entity|SIMPLE_SEGMENT|3212,3219|false|false|false|C1546493;C1704648|Brother - courtesy title;Relationship - Brother|Brother
+Finding|Idea or Concept|SIMPLE_SEGMENT|3212,3219|false|false|false|C1546493;C1704648|Brother - courtesy title;Relationship - Brother|Brother
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|3225,3233|false|false|false|C0023418|leukemia|leukemia
+Event|Event|SIMPLE_SEGMENT|3225,3233|false|false|false|||leukemia
+Event|Event|SIMPLE_SEGMENT|3238,3246|false|false|false|||Physical
+Finding|Finding|SIMPLE_SEGMENT|3238,3246|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|Physical
+Finding|Functional Concept|SIMPLE_SEGMENT|3238,3246|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|Physical
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3238,3246|false|false|false|C0031809|Physical Examination|Physical
+Finding|Finding|SIMPLE_SEGMENT|3238,3251|false|false|false|C1509143|physical examination (physical finding)|Physical Exam
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3238,3251|false|false|false|C0031809|Physical Examination|Physical Exam
+Event|Event|SIMPLE_SEGMENT|3247,3251|false|false|false|||Exam
+Finding|Functional Concept|SIMPLE_SEGMENT|3247,3251|false|false|false|C4284036|Exam|Exam
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3247,3251|false|false|false|C0582103|Medical Examination|Exam
+Finding|Finding|SIMPLE_SEGMENT|3253,3261|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|PHYSICAL
+Finding|Functional Concept|SIMPLE_SEGMENT|3253,3261|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|PHYSICAL
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3253,3261|false|false|false|C0031809|Physical Examination|PHYSICAL
+Finding|Finding|SIMPLE_SEGMENT|3253,3273|false|false|false|C1509143|physical examination (physical finding)|PHYSICAL EXAMINATION
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3253,3273|false|false|false|C0031809|Physical Examination|PHYSICAL EXAMINATION
+Event|Activity|SIMPLE_SEGMENT|3262,3273|false|false|false|C4321457|Examination|EXAMINATION
+Event|Event|SIMPLE_SEGMENT|3262,3273|false|false|false|||EXAMINATION
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3262,3273|false|false|false|C0031809;C0582103|Medical Examination;Physical Examination|EXAMINATION
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3277,3286|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|ADMISSION
+Event|Event|SIMPLE_SEGMENT|3323,3329|false|false|false|||VITALS
+Event|Event|SIMPLE_SEGMENT|3356,3363|false|false|false|||GENERAL
+Finding|Classification|SIMPLE_SEGMENT|3356,3363|false|false|false|C4521767|United States Military Commissioned Officer O10 (qualifier value)|GENERAL
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3356,3363|false|false|false|C3812897|General medical service|GENERAL
+Event|Event|SIMPLE_SEGMENT|3365,3373|true|false|false|||Pleasant
+Finding|Mental Process|SIMPLE_SEGMENT|3365,3373|true|false|false|C2987187|Pleasant|Pleasant
+Finding|Finding|SIMPLE_SEGMENT|3375,3379|true|false|false|C5575035|Well (answer to question)|well
+Event|Event|SIMPLE_SEGMENT|3380,3389|true|false|false|||appearing
+Finding|Idea or Concept|SIMPLE_SEGMENT|3397,3405|true|false|false|C0750489|apparent|apparent
+Event|Event|SIMPLE_SEGMENT|3406,3414|true|false|false|||distress
+Finding|Finding|SIMPLE_SEGMENT|3406,3414|true|false|false|C0231303;C0700361|Distress;Emotional distress|distress
+Finding|Mental Process|SIMPLE_SEGMENT|3406,3414|true|false|false|C0231303;C0700361|Distress;Emotional distress|distress
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|3418,3423|true|false|false|C1512338|HEENT|HEENT
+Event|Event|SIMPLE_SEGMENT|3426,3439|true|false|false|||normocephalic
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3456,3468|true|false|false|C0009758|conjunctiva|conjunctival
+Finding|Functional Concept|SIMPLE_SEGMENT|3456,3468|true|false|false|C1522483|Conjunctival Route of Administration|conjunctival
+Finding|Finding|SIMPLE_SEGMENT|3456,3475|true|false|false|C2071267|Conjunctival pallor|conjunctival pallor
+Event|Event|SIMPLE_SEGMENT|3469,3475|true|false|false|||pallor
+Finding|Finding|SIMPLE_SEGMENT|3469,3475|true|false|false|C0241137|Pallor of skin|pallor
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3480,3487|true|false|false|C0036410|Sclera|scleral
+Finding|Finding|SIMPLE_SEGMENT|3480,3495|true|false|false|C0240962|Scleral icterus|scleral icterus
+Finding|Sign or Symptom|SIMPLE_SEGMENT|3488,3495|true|false|false|C0022346|Icterus|icterus
+Event|Event|SIMPLE_SEGMENT|3497,3503|false|false|false|||PERRLA
+Finding|Finding|SIMPLE_SEGMENT|3497,3503|false|false|false|C2143306|PERRLA|PERRLA
+Event|Event|SIMPLE_SEGMENT|3505,3509|false|false|false|||EOMI
+Event|Event|SIMPLE_SEGMENT|3514,3519|false|false|false|||clear
+Finding|Idea or Concept|SIMPLE_SEGMENT|3514,3519|false|false|false|C1550016|Remote control command - Clear|clear
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|3523,3527|false|false|false|C0027530;C3159206|Neck;dendritic spine neck|NECK
+Anatomy|Cell Component|SIMPLE_SEGMENT|3523,3527|false|false|false|C0027530;C3159206|Neck;dendritic spine neck|NECK
+Finding|Finding|SIMPLE_SEGMENT|3523,3527|false|false|false|C0684335;C0812434|Neck problem;Passive joint movement of neck (finding)|NECK
+Event|Event|SIMPLE_SEGMENT|3529,3535|true|false|false|||Supple
+Finding|Functional Concept|SIMPLE_SEGMENT|3529,3535|true|false|false|C0332254|Supple|Supple
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3540,3543|true|false|false|C0226032|Anterior descending branch of left coronary artery|LAD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3540,3543|true|false|false|C0398738;C5550999|Leukocyte adhesion deficiency;Leukocyte adhesion deficiency type 1|LAD
+Event|Event|SIMPLE_SEGMENT|3540,3543|true|false|false|||LAD
+Finding|Gene or Genome|SIMPLE_SEGMENT|3540,3543|true|false|false|C1414063;C1706333|DLD gene;ITGB2 wt Allele|LAD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3548,3559|true|false|false|C0018021|Goiter|thyromegaly
+Event|Event|SIMPLE_SEGMENT|3548,3559|true|false|false|||thyromegaly
+Event|Event|SIMPLE_SEGMENT|3561,3564|true|false|false|||JVP
+Finding|Finding|SIMPLE_SEGMENT|3561,3564|true|false|false|C0428897|Jugular venous pressure|JVP
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3573,3580|false|false|false|C0018787|Heart|CARDIAC
+Finding|Intellectual Product|SIMPLE_SEGMENT|3573,3580|false|false|false|C1314974|Cardiac attachment|CARDIAC
+Event|Event|SIMPLE_SEGMENT|3599,3606|true|false|false|||murmurs
+Finding|Finding|SIMPLE_SEGMENT|3599,3606|true|false|false|C0018808|Heart murmur|murmurs
+Event|Event|SIMPLE_SEGMENT|3607,3611|true|false|false|||rubs
+Finding|Finding|SIMPLE_SEGMENT|3607,3611|true|false|false|C0232267|Pericardial friction rub|rubs
+Event|Event|SIMPLE_SEGMENT|3615,3622|true|false|false|||gallops
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3626,3635|false|false|false|C0024109|Lung|PULMONARY
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|3626,3635|false|false|false|C2707265||PULMONARY
+Finding|Finding|SIMPLE_SEGMENT|3626,3635|false|false|false|C4522268|Pulmonary (intended site)|PULMONARY
+Event|Event|SIMPLE_SEGMENT|3637,3648|false|false|false|||Inspiratory
+Finding|Organism Function|SIMPLE_SEGMENT|3637,3648|false|false|false|C0004048|Inspiration (function)|Inspiratory
+Finding|Organism Function|SIMPLE_SEGMENT|3653,3663|false|false|false|C0231800|Expiration, Respiratory|expiratory
+Finding|Sign or Symptom|SIMPLE_SEGMENT|3653,3671|false|false|false|C0231875|Expiratory wheezing|expiratory wheezes
+Event|Event|SIMPLE_SEGMENT|3664,3671|false|false|false|||wheezes
+Finding|Sign or Symptom|SIMPLE_SEGMENT|3664,3671|false|false|false|C0043144|Wheezing|wheezes
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|3679,3683|false|false|false|C0024109;C4037972|Chest>Lung;Lung|lung
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3679,3683|false|false|false|C0024109;C4037972|Chest>Lung;Lung|lung
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3679,3683|false|false|false|C0024115|Lung diseases|lung
+Finding|Finding|SIMPLE_SEGMENT|3679,3683|false|false|false|C0740941|Lung Problem|lung
+Event|Event|SIMPLE_SEGMENT|3684,3690|false|false|false|||fields
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|3694,3701|false|false|false|C0000726;C0230168|Abdomen;Abdominal Cavity|ABDOMEN
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|3694,3701|false|false|false|C0153662|Malignant neoplasm of abdomen|ABDOMEN
+Event|Event|SIMPLE_SEGMENT|3694,3701|false|false|false|||ABDOMEN
+Finding|Finding|SIMPLE_SEGMENT|3694,3701|false|false|false|C0941288|Abdomen problem|ABDOMEN
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3710,3715|false|false|false|C0021853|Intestines|bowel
+Finding|Finding|SIMPLE_SEGMENT|3710,3722|false|false|false|C0232693|Bowel sounds|bowel sounds
+Event|Event|SIMPLE_SEGMENT|3716,3722|false|false|false|||sounds
+Phenomenon|Natural Phenomenon or Process|SIMPLE_SEGMENT|3716,3722|false|false|false|C0037709||sounds
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3724,3728|true|false|false|C3542022|Short stature, onychodysplasia, facial dysmorphism, hypotrichosis syndrome|soft
+Event|Event|SIMPLE_SEGMENT|3724,3728|true|false|false|||soft
+Event|Event|SIMPLE_SEGMENT|3761,3773|true|false|false|||organomegaly
+Finding|Finding|SIMPLE_SEGMENT|3761,3773|true|false|false|C4054315|Organomegaly|organomegaly
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|3777,3788|false|false|false|C0015385;C0278454|All extremities;Limb structure|EXTREMITIES
+Event|Event|SIMPLE_SEGMENT|3790,3794|true|false|false|||Warm
+Finding|Finding|SIMPLE_SEGMENT|3790,3794|true|false|false|C0582051|Feels warm|Warm
+Phenomenon|Natural Phenomenon or Process|SIMPLE_SEGMENT|3790,3794|true|false|false|C0687712|warming process|Warm
+Finding|Finding|SIMPLE_SEGMENT|3796,3800|true|false|false|C5575035|Well (answer to question)|well
+Event|Event|SIMPLE_SEGMENT|3801,3809|true|false|false|||perfused
+Event|Event|SIMPLE_SEGMENT|3814,3822|true|false|false|||cyanosis
+Finding|Sign or Symptom|SIMPLE_SEGMENT|3814,3822|true|false|false|C0010520|Cyanosis|cyanosis
+Disorder|Anatomical Abnormality|SIMPLE_SEGMENT|3824,3832|true|false|false|C0149651|Clubbing|clubbing
+Event|Event|SIMPLE_SEGMENT|3824,3832|true|false|false|||clubbing
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|3837,3842|true|false|false|C1717255||edema
+Event|Event|SIMPLE_SEGMENT|3837,3842|true|false|false|||edema
+Finding|Pathologic Function|SIMPLE_SEGMENT|3837,3842|true|false|false|C0013604|Edema|edema
+Anatomy|Body System|SIMPLE_SEGMENT|3846,3850|false|false|false|C1123023;C4520765|Skin;Skin, Human|SKIN
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3846,3850|false|false|false|C0178298;C0496955|Neoplasm of uncertain or unknown behavior of skin;Skin and subcutaneous tissue disorders|SKIN
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|3846,3850|false|false|false|C0178298;C0496955|Neoplasm of uncertain or unknown behavior of skin;Skin and subcutaneous tissue disorders|SKIN
+Event|Event|SIMPLE_SEGMENT|3846,3850|false|false|false|||SKIN
+Finding|Body Substance|SIMPLE_SEGMENT|3846,3850|false|false|false|C0444099;C1546781|Skin Specimen;Skin Specimen Source Code|SKIN
+Finding|Intellectual Product|SIMPLE_SEGMENT|3846,3850|false|false|false|C0444099;C1546781|Skin Specimen;Skin Specimen Source Code|SKIN
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|3860,3864|true|false|false|C5779629|Eruption of skin (disorder)|rash
+Event|Event|SIMPLE_SEGMENT|3860,3864|true|false|false|||rash
+Finding|Pathologic Function|SIMPLE_SEGMENT|3860,3864|true|false|false|C0015230;C0302295;C5779628|Eruptions;Exanthema;Skin rash|rash
+Finding|Sign or Symptom|SIMPLE_SEGMENT|3860,3864|true|false|false|C0015230;C0302295;C5779628|Eruptions;Exanthema;Skin rash|rash
+Event|Event|SIMPLE_SEGMENT|3868,3878|false|false|false|||NEUROLOGIC
+Event|Event|SIMPLE_SEGMENT|3920,3929|false|false|false|||sensation
+Finding|Finding|SIMPLE_SEGMENT|3920,3929|false|false|false|C0036658;C0542538|Observation of Sensation;Sensory perception|sensation
+Finding|Organ or Tissue Function|SIMPLE_SEGMENT|3920,3929|false|false|false|C0036658;C0542538|Observation of Sensation;Sensory perception|sensation
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3920,3929|false|false|false|C2229507|sensory exam|sensation
+Event|Event|SIMPLE_SEGMENT|3937,3945|false|false|false|||strength
+Finding|Idea or Concept|SIMPLE_SEGMENT|3937,3945|false|false|false|C0808080|Strength (attribute)|strength
+Finding|Finding|SIMPLE_SEGMENT|3965,3973|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|PHYSICAL
+Finding|Functional Concept|SIMPLE_SEGMENT|3965,3973|false|false|false|C0205485;C1509143|Physical;physical examination (physical finding)|PHYSICAL
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3965,3973|false|false|false|C0031809|Physical Examination|PHYSICAL
+Finding|Finding|SIMPLE_SEGMENT|3965,3985|false|false|false|C1509143|physical examination (physical finding)|PHYSICAL EXAMINATION
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3965,3985|false|false|false|C0031809|Physical Examination|PHYSICAL EXAMINATION
+Event|Activity|SIMPLE_SEGMENT|3974,3985|false|false|false|C4321457|Examination|EXAMINATION
+Event|Event|SIMPLE_SEGMENT|3974,3985|false|false|false|||EXAMINATION
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3974,3985|false|false|false|C0031809;C0582103|Medical Examination;Physical Examination|EXAMINATION
+Finding|Body Substance|SIMPLE_SEGMENT|3989,3998|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|DISCHARGE
+Finding|Intellectual Product|SIMPLE_SEGMENT|3989,3998|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|DISCHARGE
+Finding|Sign or Symptom|SIMPLE_SEGMENT|3989,3998|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|DISCHARGE
+Procedure|Health Care Activity|SIMPLE_SEGMENT|3989,3998|false|false|false|C0030685|Patient Discharge|DISCHARGE
+Event|Event|SIMPLE_SEGMENT|4035,4041|false|false|false|||VITALS
+Event|Event|SIMPLE_SEGMENT|4080,4087|false|false|false|||GENERAL
+Finding|Classification|SIMPLE_SEGMENT|4080,4087|false|false|false|C4521767|United States Military Commissioned Officer O10 (qualifier value)|GENERAL
+Procedure|Health Care Activity|SIMPLE_SEGMENT|4080,4087|false|false|false|C3812897|General medical service|GENERAL
+Event|Event|SIMPLE_SEGMENT|4089,4097|true|false|false|||Pleasant
+Finding|Mental Process|SIMPLE_SEGMENT|4089,4097|true|false|false|C2987187|Pleasant|Pleasant
+Finding|Finding|SIMPLE_SEGMENT|4099,4103|true|false|false|C5575035|Well (answer to question)|well
+Event|Event|SIMPLE_SEGMENT|4104,4113|true|false|false|||appearing
+Finding|Idea or Concept|SIMPLE_SEGMENT|4121,4129|true|false|false|C0750489|apparent|apparent
+Event|Event|SIMPLE_SEGMENT|4130,4138|true|false|false|||distress
+Finding|Finding|SIMPLE_SEGMENT|4130,4138|true|false|false|C0231303;C0700361|Distress;Emotional distress|distress
+Finding|Mental Process|SIMPLE_SEGMENT|4130,4138|true|false|false|C0231303;C0700361|Distress;Emotional distress|distress
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|4142,4147|true|false|false|C1512338|HEENT|HEENT
+Event|Event|SIMPLE_SEGMENT|4150,4163|true|false|false|||normocephalic
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|4180,4192|true|false|false|C0009758|conjunctiva|conjunctival
+Finding|Functional Concept|SIMPLE_SEGMENT|4180,4192|true|false|false|C1522483|Conjunctival Route of Administration|conjunctival
+Finding|Finding|SIMPLE_SEGMENT|4180,4199|true|false|false|C2071267|Conjunctival pallor|conjunctival pallor
+Event|Event|SIMPLE_SEGMENT|4193,4199|true|false|false|||pallor
+Finding|Finding|SIMPLE_SEGMENT|4193,4199|true|false|false|C0241137|Pallor of skin|pallor
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|4204,4211|true|false|false|C0036410|Sclera|scleral
+Finding|Finding|SIMPLE_SEGMENT|4204,4219|true|false|false|C0240962|Scleral icterus|scleral icterus
+Finding|Sign or Symptom|SIMPLE_SEGMENT|4212,4219|true|false|false|C0022346|Icterus|icterus
+Event|Event|SIMPLE_SEGMENT|4221,4227|false|false|false|||PERRLA
+Finding|Finding|SIMPLE_SEGMENT|4221,4227|false|false|false|C2143306|PERRLA|PERRLA
+Event|Event|SIMPLE_SEGMENT|4229,4233|false|false|false|||EOMI
+Event|Event|SIMPLE_SEGMENT|4238,4243|false|false|false|||clear
+Finding|Idea or Concept|SIMPLE_SEGMENT|4238,4243|false|false|false|C1550016|Remote control command - Clear|clear
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|4247,4251|false|false|false|C0027530;C3159206|Neck;dendritic spine neck|NECK
+Anatomy|Cell Component|SIMPLE_SEGMENT|4247,4251|false|false|false|C0027530;C3159206|Neck;dendritic spine neck|NECK
+Finding|Finding|SIMPLE_SEGMENT|4247,4251|false|false|false|C0684335;C0812434|Neck problem;Passive joint movement of neck (finding)|NECK
+Event|Event|SIMPLE_SEGMENT|4253,4259|true|false|false|||Supple
+Finding|Functional Concept|SIMPLE_SEGMENT|4253,4259|true|false|false|C0332254|Supple|Supple
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|4264,4267|true|false|false|C0226032|Anterior descending branch of left coronary artery|LAD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4264,4267|true|false|false|C0398738;C5550999|Leukocyte adhesion deficiency;Leukocyte adhesion deficiency type 1|LAD
+Event|Event|SIMPLE_SEGMENT|4264,4267|true|false|false|||LAD
+Finding|Gene or Genome|SIMPLE_SEGMENT|4264,4267|true|false|false|C1414063;C1706333|DLD gene;ITGB2 wt Allele|LAD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4272,4283|true|false|false|C0018021|Goiter|thyromegaly
+Event|Event|SIMPLE_SEGMENT|4272,4283|true|false|false|||thyromegaly
+Event|Event|SIMPLE_SEGMENT|4285,4288|true|false|false|||JVP
+Finding|Finding|SIMPLE_SEGMENT|4285,4288|true|false|false|C0428897|Jugular venous pressure|JVP
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|4297,4304|false|false|false|C0018787|Heart|CARDIAC
+Finding|Intellectual Product|SIMPLE_SEGMENT|4297,4304|false|false|false|C1314974|Cardiac attachment|CARDIAC
+Event|Event|SIMPLE_SEGMENT|4323,4330|true|false|false|||murmurs
+Finding|Finding|SIMPLE_SEGMENT|4323,4330|true|false|false|C0018808|Heart murmur|murmurs
+Event|Event|SIMPLE_SEGMENT|4331,4335|true|false|false|||rubs
+Finding|Finding|SIMPLE_SEGMENT|4331,4335|true|false|false|C0232267|Pericardial friction rub|rubs
+Event|Event|SIMPLE_SEGMENT|4339,4346|true|false|false|||gallops
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|4350,4359|false|false|false|C0024109|Lung|PULMONARY
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|4350,4359|false|false|false|C2707265||PULMONARY
+Finding|Finding|SIMPLE_SEGMENT|4350,4359|false|false|false|C4522268|Pulmonary (intended site)|PULMONARY
+Event|Event|SIMPLE_SEGMENT|4371,4382|false|false|false|||inspiratory
+Finding|Organism Function|SIMPLE_SEGMENT|4371,4382|false|false|false|C0004048|Inspiration (function)|inspiratory
+Finding|Organism Function|SIMPLE_SEGMENT|4387,4397|false|false|false|C0231800|Expiration, Respiratory|expiratory
+Finding|Sign or Symptom|SIMPLE_SEGMENT|4387,4405|false|false|false|C0231875|Expiratory wheezing|expiratory wheezes
+Event|Event|SIMPLE_SEGMENT|4398,4405|false|false|false|||wheezes
+Finding|Sign or Symptom|SIMPLE_SEGMENT|4398,4405|false|false|false|C0043144|Wheezing|wheezes
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|4414,4418|false|false|false|C0024109;C4037972|Chest>Lung;Lung|lung
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|4414,4418|false|false|false|C0024109;C4037972|Chest>Lung;Lung|lung
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4414,4418|false|false|false|C0024115|Lung diseases|lung
+Finding|Finding|SIMPLE_SEGMENT|4414,4418|false|false|false|C0740941|Lung Problem|lung
+Event|Event|SIMPLE_SEGMENT|4419,4425|false|false|false|||fields
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|4428,4435|false|false|false|C0000726;C0230168|Abdomen;Abdominal Cavity|ABDOMEN
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|4428,4435|false|false|false|C0153662|Malignant neoplasm of abdomen|ABDOMEN
+Event|Event|SIMPLE_SEGMENT|4428,4435|false|false|false|||ABDOMEN
+Finding|Finding|SIMPLE_SEGMENT|4428,4435|false|false|false|C0941288|Abdomen problem|ABDOMEN
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|4444,4449|false|false|false|C0021853|Intestines|bowel
+Finding|Finding|SIMPLE_SEGMENT|4444,4456|false|false|false|C0232693|Bowel sounds|bowel sounds
+Event|Event|SIMPLE_SEGMENT|4450,4456|false|false|false|||sounds
+Phenomenon|Natural Phenomenon or Process|SIMPLE_SEGMENT|4450,4456|false|false|false|C0037709||sounds
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4458,4462|true|false|false|C3542022|Short stature, onychodysplasia, facial dysmorphism, hypotrichosis syndrome|soft
+Event|Event|SIMPLE_SEGMENT|4458,4462|true|false|false|||soft
+Event|Event|SIMPLE_SEGMENT|4495,4507|true|false|false|||organomegaly
+Finding|Finding|SIMPLE_SEGMENT|4495,4507|true|false|false|C4054315|Organomegaly|organomegaly
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|4511,4522|false|false|false|C0015385;C0278454|All extremities;Limb structure|EXTREMITIES
+Event|Event|SIMPLE_SEGMENT|4524,4528|true|false|false|||Warm
+Finding|Finding|SIMPLE_SEGMENT|4524,4528|true|false|false|C0582051|Feels warm|Warm
+Phenomenon|Natural Phenomenon or Process|SIMPLE_SEGMENT|4524,4528|true|false|false|C0687712|warming process|Warm
+Finding|Finding|SIMPLE_SEGMENT|4530,4534|true|false|false|C5575035|Well (answer to question)|well
+Event|Event|SIMPLE_SEGMENT|4535,4543|true|false|false|||perfused
+Event|Event|SIMPLE_SEGMENT|4548,4556|true|false|false|||cyanosis
+Finding|Sign or Symptom|SIMPLE_SEGMENT|4548,4556|true|false|false|C0010520|Cyanosis|cyanosis
+Disorder|Anatomical Abnormality|SIMPLE_SEGMENT|4558,4566|true|false|false|C0149651|Clubbing|clubbing
+Event|Event|SIMPLE_SEGMENT|4558,4566|true|false|false|||clubbing
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|4571,4576|true|false|false|C1717255||edema
+Event|Event|SIMPLE_SEGMENT|4571,4576|true|false|false|||edema
+Finding|Pathologic Function|SIMPLE_SEGMENT|4571,4576|true|false|false|C0013604|Edema|edema
+Anatomy|Body System|SIMPLE_SEGMENT|4580,4584|false|false|false|C1123023;C4520765|Skin;Skin, Human|SKIN
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4580,4584|false|false|false|C0178298;C0496955|Neoplasm of uncertain or unknown behavior of skin;Skin and subcutaneous tissue disorders|SKIN
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|4580,4584|false|false|false|C0178298;C0496955|Neoplasm of uncertain or unknown behavior of skin;Skin and subcutaneous tissue disorders|SKIN
+Event|Event|SIMPLE_SEGMENT|4580,4584|false|false|false|||SKIN
+Finding|Body Substance|SIMPLE_SEGMENT|4580,4584|false|false|false|C0444099;C1546781|Skin Specimen;Skin Specimen Source Code|SKIN
+Finding|Intellectual Product|SIMPLE_SEGMENT|4580,4584|false|false|false|C0444099;C1546781|Skin Specimen;Skin Specimen Source Code|SKIN
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4594,4598|true|false|false|C5779629|Eruption of skin (disorder)|rash
+Event|Event|SIMPLE_SEGMENT|4594,4598|true|false|false|||rash
+Finding|Pathologic Function|SIMPLE_SEGMENT|4594,4598|true|false|false|C0015230;C0302295;C5779628|Eruptions;Exanthema;Skin rash|rash
+Finding|Sign or Symptom|SIMPLE_SEGMENT|4594,4598|true|false|false|C0015230;C0302295;C5779628|Eruptions;Exanthema;Skin rash|rash
+Event|Event|SIMPLE_SEGMENT|4602,4612|false|false|false|||NEUROLOGIC
+Event|Event|SIMPLE_SEGMENT|4654,4663|false|false|false|||sensation
+Finding|Finding|SIMPLE_SEGMENT|4654,4663|false|false|false|C0036658;C0542538|Observation of Sensation;Sensory perception|sensation
+Finding|Organ or Tissue Function|SIMPLE_SEGMENT|4654,4663|false|false|false|C0036658;C0542538|Observation of Sensation;Sensory perception|sensation
+Procedure|Health Care Activity|SIMPLE_SEGMENT|4654,4663|false|false|false|C2229507|sensory exam|sensation
+Event|Event|SIMPLE_SEGMENT|4671,4679|false|false|false|||strength
+Finding|Idea or Concept|SIMPLE_SEGMENT|4671,4679|false|false|false|C0808080|Strength (attribute)|strength
+Event|Event|SIMPLE_SEGMENT|4720,4724|false|false|false|||LABS
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|4720,4724|false|false|false|C0587081|Laboratory test finding|LABS
+Procedure|Health Care Activity|SIMPLE_SEGMENT|4728,4737|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|ADMISSION
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4770,4775|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|SIMPLE_SEGMENT|4770,4775|false|false|false|||BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|4770,4775|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|4788,4794|false|false|false|C0024202|Lymph|Lymphs
+Drug|Antibiotic|SIMPLE_SEGMENT|4800,4805|false|false|false|C0540173;C3275179|Mono-S;Monos|Monos
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|4800,4805|false|false|false|C0540173;C3275179|Mono-S;Monos|Monos
+Drug|Organic Chemical|SIMPLE_SEGMENT|4800,4805|false|false|false|C0540173;C3275179|Mono-S;Monos|Monos
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4812,4815|false|false|false|C0272192;C1836122|Familial eosinophilia;SARCOIDOSIS, EARLY-ONSET|Eos
+Event|Event|SIMPLE_SEGMENT|4812,4815|false|false|false|||Eos
+Finding|Gene or Genome|SIMPLE_SEGMENT|4812,4815|false|false|false|C1421861;C1538729|IKZF4 gene;PRSS33 gene|Eos
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4918,4923|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|SIMPLE_SEGMENT|4918,4923|false|false|false|||BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|4918,4923|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|4924,4927|false|false|false|C0201617|Primed lymphocyte test|Plt
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|4944,4949|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|SIMPLE_SEGMENT|4944,4949|false|false|false|||BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|4944,4949|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Drug|Organic Chemical|SIMPLE_SEGMENT|4944,4957|false|false|false|C0005802|Blood Glucose|BLOOD Glucose
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|4944,4957|false|false|false|C0428554|Finding of blood glucose level|BLOOD Glucose
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|4944,4957|false|false|false|C0392201|Blood glucose measurement|BLOOD Glucose
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|4950,4957|false|false|false|C0017725|glucose|Glucose
+Drug|Organic Chemical|SIMPLE_SEGMENT|4950,4957|false|false|false|C0017725|glucose|Glucose
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|4950,4957|false|false|false|C0017725|glucose|Glucose
+Event|Event|SIMPLE_SEGMENT|4950,4957|false|false|false|||Glucose
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|4950,4957|false|false|false|C5781949|Glucose^1.5H post dose glucagon|Glucose
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|4950,4957|false|false|false|C0337438|Glucose measurement|Glucose
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5032,5037|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|SIMPLE_SEGMENT|5032,5037|false|false|false|||BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|5032,5037|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|5038,5044|false|false|false|C5574646|Natriuretic Peptides B, human|proBNP
+Drug|Hormone|SIMPLE_SEGMENT|5038,5044|false|false|false|C5574646|Natriuretic Peptides B, human|proBNP
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5061,5066|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|SIMPLE_SEGMENT|5061,5066|false|false|false|||BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|5061,5066|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Event|Event|SIMPLE_SEGMENT|5071,5074|false|false|false|||pO2
+Finding|Classification|SIMPLE_SEGMENT|5071,5074|false|false|false|C0391840;C4521535|Partial pressure of Oxygen;US Military enlisted E5|pO2
+Finding|Molecular Function|SIMPLE_SEGMENT|5071,5074|false|false|false|C0391840;C4521535|Partial pressure of Oxygen;US Military enlisted E5|pO2
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5071,5074|false|false|false|C1283004|PO2 measurement|pO2
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|5079,5083|false|false|false|C0391839|Carbon dioxide, partial pressure|pCO2
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5079,5083|false|false|false|C0201931|Carbon dioxide measurement, partial pressure|pCO2
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|5108,5112|false|false|false|C2987514|Anatomical base|Base
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|5108,5112|false|false|false|C0178499;C1550601;C1704464;C1880279|Base;Dental Base;base - RoleClass;nitrogenous base|Base
+Drug|Chemical Viewed Functionally|SIMPLE_SEGMENT|5108,5112|false|false|false|C0178499;C1550601;C1704464;C1880279|Base;Dental Base;base - RoleClass;nitrogenous base|Base
+Drug|Nucleic Acid, Nucleoside, or Nucleotide|SIMPLE_SEGMENT|5108,5112|false|false|false|C0178499;C1550601;C1704464;C1880279|Base;Dental Base;base - RoleClass;nitrogenous base|Base
+Finding|Gene or Genome|SIMPLE_SEGMENT|5108,5112|false|false|false|C1549548;C1705938;C1843354|BPIFA4P gene;Base - General Qualifier;Base - RX Component Type|Base
+Finding|Idea or Concept|SIMPLE_SEGMENT|5108,5112|false|false|false|C1549548;C1705938;C1843354|BPIFA4P gene;Base - General Qualifier;Base - RX Component Type|Base
+Event|Event|SIMPLE_SEGMENT|5113,5115|false|false|false|||XS
+Event|Event|SIMPLE_SEGMENT|5119,5123|false|false|false|||LABS
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|5119,5123|false|false|false|C0587081|Laboratory test finding|LABS
+Finding|Body Substance|SIMPLE_SEGMENT|5127,5136|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|DISCHARGE
+Finding|Intellectual Product|SIMPLE_SEGMENT|5127,5136|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|DISCHARGE
+Finding|Sign or Symptom|SIMPLE_SEGMENT|5127,5136|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|DISCHARGE
+Procedure|Health Care Activity|SIMPLE_SEGMENT|5127,5136|false|false|false|C0030685|Patient Discharge|DISCHARGE
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5169,5174|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|SIMPLE_SEGMENT|5169,5174|false|false|false|||BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|5169,5174|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Anatomy|Cell|SIMPLE_SEGMENT|5175,5178|false|false|false|C0023516|Leukocytes|WBC
+Anatomy|Cell|SIMPLE_SEGMENT|5183,5186|false|false|false|C0014792|Erythrocytes|RBC
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|5183,5186|false|false|false|C1114281||RBC
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5183,5186|false|false|false|C0014792|Erythrocytes|RBC
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|5192,5195|false|false|false|C0019046|Hemoglobin|Hgb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|5192,5195|false|false|false|C0019046|Hemoglobin|Hgb
+Finding|Gene or Genome|SIMPLE_SEGMENT|5192,5195|false|false|false|C1424337|CYGB gene|Hgb
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|5192,5195|false|false|false|C0019029|Hemoglobin concentration|Hgb
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5201,5204|false|false|false|C0018935;C0472699|Hematocrit Measurement;Hemopoietic stem cell transplant|Hct
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|5201,5204|false|false|false|C0018935;C0472699|Hematocrit Measurement;Hemopoietic stem cell transplant|Hct
+Disorder|Virus|SIMPLE_SEGMENT|5210,5213|false|false|false|C2304881|Merkel cell polyomavirus|MCV
+Event|Event|SIMPLE_SEGMENT|5210,5213|false|false|false|||MCV
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|5210,5213|false|false|false|C0524587|Mean Corpuscular Volume|MCV
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5210,5213|false|false|false|C0285131;C1948043|Cisplatin-Methotrexate-Vinblastine Regimen;Erythrocyte Mean Corpuscular Volume Measurement|MCV
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|5210,5213|false|false|false|C0285131;C1948043|Cisplatin-Methotrexate-Vinblastine Regimen;Erythrocyte Mean Corpuscular Volume Measurement|MCV
+Drug|Organic Chemical|SIMPLE_SEGMENT|5218,5221|false|false|false|C0600370|methacholine|MCH
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5218,5221|false|false|false|C0600370|methacholine|MCH
+Event|Event|SIMPLE_SEGMENT|5218,5221|false|false|false|||MCH
+Finding|Gene or Genome|SIMPLE_SEGMENT|5218,5221|false|false|false|C1418669;C2248810|PMCH gene;mesaconyl-CoA hydratase activity|MCH
+Finding|Molecular Function|SIMPLE_SEGMENT|5218,5221|false|false|false|C1418669;C2248810|PMCH gene;mesaconyl-CoA hydratase activity|MCH
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5218,5221|false|false|false|C0369183|Mean corpuscular hemoglobin determination|MCH
+Event|Event|SIMPLE_SEGMENT|5227,5231|false|false|false|||MCHC
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5227,5231|false|false|false|C0474535|Mean corpuscular hemoglobin concentration determination|MCHC
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5260,5263|false|false|false|C0201617|Primed lymphocyte test|Plt
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5280,5285|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|SIMPLE_SEGMENT|5280,5285|false|false|false|||BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|5280,5285|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5286,5289|false|false|false|C0201617|Primed lymphocyte test|Plt
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5306,5311|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|SIMPLE_SEGMENT|5306,5311|false|false|false|||BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|5306,5311|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Drug|Organic Chemical|SIMPLE_SEGMENT|5306,5319|false|false|false|C0005802|Blood Glucose|BLOOD Glucose
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|5306,5319|false|false|false|C0428554|Finding of blood glucose level|BLOOD Glucose
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5306,5319|false|false|false|C0392201|Blood glucose measurement|BLOOD Glucose
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|5312,5319|false|false|false|C0017725|glucose|Glucose
+Drug|Organic Chemical|SIMPLE_SEGMENT|5312,5319|false|false|false|C0017725|glucose|Glucose
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5312,5319|false|false|false|C0017725|glucose|Glucose
+Event|Event|SIMPLE_SEGMENT|5312,5319|false|false|false|||Glucose
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|5312,5319|false|false|false|C5781949|Glucose^1.5H post dose glucagon|Glucose
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5312,5319|false|false|false|C0337438|Glucose measurement|Glucose
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5395,5400|false|false|false|C0851353|Blood and lymphatic system disorders|BLOOD
+Event|Event|SIMPLE_SEGMENT|5395,5400|false|false|false|||BLOOD
+Finding|Body Substance|SIMPLE_SEGMENT|5395,5400|false|false|false|C0005767;C0005768;C0229664|Blood;In Blood;peripheral blood|BLOOD
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5395,5408|false|false|false|C0729820|Blood calcium measurement|BLOOD Calcium
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|5401,5408|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|5401,5408|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|5401,5408|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5401,5408|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Drug|Vitamin|SIMPLE_SEGMENT|5401,5408|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|Calcium
+Event|Event|SIMPLE_SEGMENT|5401,5408|false|false|false|||Calcium
+Finding|Physiologic Function|SIMPLE_SEGMENT|5401,5408|false|false|false|C4553026|Calcium metabolic function|Calcium
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|5401,5408|false|false|false|C0201925|Calcium measurement|Calcium
+Event|Event|SIMPLE_SEGMENT|5430,5437|false|false|false|||STUDIES
+Procedure|Research Activity|SIMPLE_SEGMENT|5430,5437|false|false|false|C0947630|Scientific Study|STUDIES
+Event|Event|SIMPLE_SEGMENT|5448,5451|false|false|false|||CXR
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|5448,5451|false|false|false|C0039985|Plain chest X-ray|CXR
+Finding|Intellectual Product|SIMPLE_SEGMENT|5460,5465|true|false|false|C1547229;C1547295|Acute - Triage Code;Admission Level of Care Code - Acute|acute
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|5466,5481|true|false|false|C0553534|Cardiopulmonary|cardiopulmonary
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5466,5481|true|false|false|C4072686|Cardiovascular disease+Pulmonary disease|cardiopulmonary
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|5482,5489|true|false|false|C1184743|bony process|process
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5482,5489|true|false|false|C1951340|Process Pharmacologic Substance|process
+Event|Event|SIMPLE_SEGMENT|5482,5489|true|false|false|||process
+Finding|Functional Concept|SIMPLE_SEGMENT|5482,5489|true|false|false|C4521054|Process (qualifier value)|process
+Phenomenon|Phenomenon or Process|SIMPLE_SEGMENT|5482,5489|true|false|false|C1522240|Process|process
+Event|Event|SIMPLE_SEGMENT|5492,5495|true|false|false|||EKG
+Finding|Intellectual Product|SIMPLE_SEGMENT|5492,5495|true|false|false|C0013798;C5945056|Electrocardiogram;Electrocardiogram image|EKG
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|5492,5495|true|false|false|C1623258|Electrocardiography|EKG
+Event|Event|SIMPLE_SEGMENT|5497,5500|false|false|false|||NSR
+Finding|Molecular Function|SIMPLE_SEGMENT|5497,5500|false|false|false|C1704493;C2700623|Neutral Sidebent Rotated|NSR
+Finding|Pathologic Function|SIMPLE_SEGMENT|5497,5500|false|false|false|C1704493;C2700623|Neutral Sidebent Rotated|NSR
+Event|Activity|SIMPLE_SEGMENT|5501,5505|false|false|false|C0871208|Rating (action)|rate
+Event|Event|SIMPLE_SEGMENT|5501,5505|false|false|false|||rate
+Finding|Idea or Concept|SIMPLE_SEGMENT|5501,5505|false|false|false|C1549480|Amount type - Rate|rate
+Event|Event|SIMPLE_SEGMENT|5510,5513|false|false|false|||QTC
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5519,5523|false|false|false|C0023211|Left Bundle-Branch Block|LBBB
+Event|Event|SIMPLE_SEGMENT|5519,5523|false|false|false|||LBBB
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|5519,5523|false|false|false|C0344420||LBBB
+Finding|Intellectual Product|SIMPLE_SEGMENT|5526,5531|false|false|false|C4050216;C4724718|BRIEF Health Literacy Screening Tool;Behavior Rating Inventory of Executive Function|Brief
+Finding|Idea or Concept|SIMPLE_SEGMENT|5532,5540|false|false|false|C1547192|Organization unit type - Hospital|Hospital
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|5532,5547|false|false|false|C0488549||Hospital Course
+Finding|Finding|SIMPLE_SEGMENT|5532,5547|false|false|false|C0489547|Hospital course|Hospital Course
+Event|Event|SIMPLE_SEGMENT|5563,5570|false|false|false|||history
+Finding|Conceptual Entity|SIMPLE_SEGMENT|5563,5570|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|history
+Finding|Finding|SIMPLE_SEGMENT|5563,5570|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|history
+Finding|Functional Concept|SIMPLE_SEGMENT|5563,5570|false|false|false|C0019665;C0262512;C0262926;C1705255;C2004062|Concept History;Historical aspects qualifier;History of present illness (finding);History of previous events;Medical History|history
+Finding|Finding|SIMPLE_SEGMENT|5563,5573|false|false|false|C0262926|Medical History|history of
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5574,5578|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5574,5578|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|5574,5578|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|5574,5578|false|false|false|C1412502|ARCN1 gene|COPD
+Event|Event|SIMPLE_SEGMENT|5582,5586|false|false|false|||home
+Finding|Idea or Concept|SIMPLE_SEGMENT|5582,5586|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|5582,5586|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|5582,5586|false|false|false|C1553498|home health encounter|home
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|5591,5597|false|false|false|C0018792|Heart Atrium|atrial
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|5591,5610|false|false|false|C2926591||atrial fibrillation
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5591,5610|false|false|false|C0004238|Atrial Fibrillation|atrial fibrillation
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|5591,5610|false|false|false|C0344434|Atrial Fibrillation by ECG Finding|atrial fibrillation
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5598,5610|false|false|false|C0232197|Fibrillation|fibrillation
+Event|Event|SIMPLE_SEGMENT|5598,5610|false|false|false|||fibrillation
+Drug|Organic Chemical|SIMPLE_SEGMENT|5615,5623|false|false|false|C1831808|apixaban|apixaban
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5615,5623|false|false|false|C1831808|apixaban|apixaban
+Event|Event|SIMPLE_SEGMENT|5615,5623|false|false|false|||apixaban
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5625,5637|false|false|false|C0020538|Hypertensive disease|hypertension
+Event|Event|SIMPLE_SEGMENT|5625,5637|false|false|false|||hypertension
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5639,5642|false|false|false|C0010068;C0175816;C1956346|Cold Hemagglutinin Disease;Coronary Artery Disease;Coronary heart disease|CAD
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|5639,5642|false|false|false|C1504769|DFFB protein, human|CAD
+Drug|Enzyme|SIMPLE_SEGMENT|5639,5642|false|false|false|C1504769|DFFB protein, human|CAD
+Event|Event|SIMPLE_SEGMENT|5639,5642|false|false|false|||CAD
+Finding|Gene or Genome|SIMPLE_SEGMENT|5639,5642|false|false|false|C1413078;C1413983;C1428349;C2239547;C3813548;C4284121|ACOD1 gene;B4GALNT2 gene;CAD gene;CALD1 wt Allele;DFFB gene;DFFB wt Allele|CAD
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|5639,5642|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Research Activity|SIMPLE_SEGMENT|5639,5642|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|5639,5642|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5644,5658|false|false|false|C0020473;C0020476|Hyperlipidemia;Hyperlipoproteinemias|hyperlipidemia
+Event|Event|SIMPLE_SEGMENT|5644,5658|false|false|false|||hyperlipidemia
+Finding|Finding|SIMPLE_SEGMENT|5644,5658|false|false|false|C0428465|Serum lipids high (finding)|hyperlipidemia
+Event|Event|SIMPLE_SEGMENT|5664,5673|false|false|false|||recurrent
+Event|Event|SIMPLE_SEGMENT|5675,5690|false|false|false|||hospitalization
+Procedure|Health Care Activity|SIMPLE_SEGMENT|5675,5690|false|false|false|C0019993|Hospitalization|hospitalization
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5695,5699|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5695,5699|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|5695,5699|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|5695,5699|false|false|false|C1412502|ARCN1 gene|COPD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5695,5712|false|false|false|C0740304|COPD exacerbation|COPD exacerbation
+Event|Event|SIMPLE_SEGMENT|5700,5712|false|false|false|||exacerbation
+Finding|Finding|SIMPLE_SEGMENT|5700,5712|false|false|false|C4086268|Exacerbation|exacerbation
+Event|Event|SIMPLE_SEGMENT|5742,5751|false|false|false|||presented
+Event|Event|SIMPLE_SEGMENT|5757,5764|false|false|false|||dyspnea
+Finding|Finding|SIMPLE_SEGMENT|5757,5764|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Finding|Sign or Symptom|SIMPLE_SEGMENT|5757,5764|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Event|Event|SIMPLE_SEGMENT|5765,5775|false|false|false|||consistent
+Finding|Idea or Concept|SIMPLE_SEGMENT|5765,5775|false|false|false|C0332290|Consistent with|consistent
+Finding|Idea or Concept|SIMPLE_SEGMENT|5765,5780|false|false|false|C0332290|Consistent with|consistent with
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5781,5785|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5781,5785|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|5781,5785|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|5781,5785|false|false|false|C1412502|ARCN1 gene|COPD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5781,5798|false|false|false|C0740304|COPD exacerbation|COPD exacerbation
+Event|Event|SIMPLE_SEGMENT|5786,5798|false|false|false|||exacerbation
+Finding|Finding|SIMPLE_SEGMENT|5786,5798|false|false|false|C4086268|Exacerbation|exacerbation
+Finding|Finding|SIMPLE_SEGMENT|5801,5809|false|false|false|C0332149|Possible|possibly
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|5810,5819|false|false|false|C0027627|Neoplasm Metastasis|secondary
+Event|Event|SIMPLE_SEGMENT|5810,5819|false|false|false|||secondary
+Finding|Functional Concept|SIMPLE_SEGMENT|5810,5819|false|false|false|C1522484|metastatic qualifier|secondary
+Finding|Intellectual Product|SIMPLE_SEGMENT|5823,5828|false|false|false|C1547229;C1547295|Acute - Triage Code;Admission Level of Care Code - Acute|acute
+Finding|Functional Concept|SIMPLE_SEGMENT|5829,5834|false|false|false|C0521026|Viral|viral
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5835,5838|false|false|false|C0041912|Upper Respiratory Infections|URI
+Event|Event|SIMPLE_SEGMENT|5835,5838|false|false|false|||URI
+Finding|Gene or Genome|SIMPLE_SEGMENT|5835,5838|false|false|false|C1421895;C1548524;C3272713|URI1 gene;URI1 wt Allele;Uniform Resource Identifier|URI
+Finding|Intellectual Product|SIMPLE_SEGMENT|5835,5838|false|false|false|C1421895;C1548524;C3272713|URI1 gene;URI1 wt Allele;Uniform Resource Identifier|URI
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5855,5864|false|false|false|C0037199|Sinusitis|sinusitis
+Event|Event|SIMPLE_SEGMENT|5855,5864|false|false|false|||sinusitis
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|5868,5883|false|false|false|C0015183|Eustachian Tube|Eustachian tube
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5868,5895|false|false|false|C0271468|Dysfunction of eustachian tube|Eustachian tube dysfunction
+Finding|Functional Concept|SIMPLE_SEGMENT|5879,5883|false|false|false|C1427122;C1719071|TUBE1 gene;Unspecified tube|tube
+Finding|Gene or Genome|SIMPLE_SEGMENT|5879,5883|false|false|false|C1427122;C1719071|TUBE1 gene;Unspecified tube|tube
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5884,5895|false|false|false|C3887505|DYSFUNCTION - SKIN DISORDERS|dysfunction
+Event|Event|SIMPLE_SEGMENT|5884,5895|false|false|false|||dysfunction
+Finding|Conceptual Entity|SIMPLE_SEGMENT|5884,5895|false|false|false|C0031847;C0277785;C3887504|Dysfunction;Functional disorder;physiopathological|dysfunction
+Finding|Functional Concept|SIMPLE_SEGMENT|5884,5895|false|false|false|C0031847;C0277785;C3887504|Dysfunction;Functional disorder;physiopathological|dysfunction
+Finding|Pathologic Function|SIMPLE_SEGMENT|5884,5895|false|false|false|C0031847;C0277785;C3887504|Dysfunction;Functional disorder;physiopathological|dysfunction
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5899,5903|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5899,5903|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|5899,5903|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|5899,5903|false|false|false|C1412502|ARCN1 gene|COPD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5899,5916|false|false|false|C0740304|COPD exacerbation|COPD exacerbation
+Event|Event|SIMPLE_SEGMENT|5904,5916|false|false|false|||exacerbation
+Finding|Finding|SIMPLE_SEGMENT|5904,5916|false|false|false|C4086268|Exacerbation|exacerbation
+Finding|Body Substance|SIMPLE_SEGMENT|5920,5927|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|SIMPLE_SEGMENT|5920,5927|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|SIMPLE_SEGMENT|5920,5927|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Functional Concept|SIMPLE_SEGMENT|5920,5931|false|false|false|C0332310|Has patient|Patient has
+Event|Event|SIMPLE_SEGMENT|5950,5959|false|false|false|||recurrent
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|5960,5964|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|5960,5964|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|5960,5964|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|5960,5964|false|false|false|C1412502|ARCN1 gene|COPD
+Event|Event|SIMPLE_SEGMENT|5965,5978|false|false|false|||exacerbations
+Event|Event|SIMPLE_SEGMENT|6008,6017|false|false|false|||presented
+Event|Event|SIMPLE_SEGMENT|6023,6030|false|false|false|||dyspnea
+Finding|Finding|SIMPLE_SEGMENT|6023,6030|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Finding|Sign or Symptom|SIMPLE_SEGMENT|6023,6030|false|false|false|C0013404;C2024878|Dyspnea|dyspnea
+Event|Event|SIMPLE_SEGMENT|6031,6041|false|false|false|||consistent
+Finding|Idea or Concept|SIMPLE_SEGMENT|6031,6041|false|false|false|C0332290|Consistent with|consistent
+Finding|Idea or Concept|SIMPLE_SEGMENT|6031,6046|false|false|false|C0332290|Consistent with|consistent with
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6048,6052|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6048,6052|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|6048,6052|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|6048,6052|false|false|false|C1412502|ARCN1 gene|COPD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6048,6065|false|false|false|C0740304|COPD exacerbation|COPD exacerbation
+Event|Event|SIMPLE_SEGMENT|6053,6065|false|false|false|||exacerbation
+Finding|Finding|SIMPLE_SEGMENT|6053,6065|false|false|false|C4086268|Exacerbation|exacerbation
+Finding|Finding|SIMPLE_SEGMENT|6067,6075|false|false|false|C0332149|Possible|possibly
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|6076,6085|false|false|false|C0027627|Neoplasm Metastasis|secondary
+Event|Event|SIMPLE_SEGMENT|6076,6085|false|false|false|||secondary
+Finding|Functional Concept|SIMPLE_SEGMENT|6076,6085|false|false|false|C1522484|metastatic qualifier|secondary
+Finding|Intellectual Product|SIMPLE_SEGMENT|6089,6094|false|false|false|C1547229;C1547295|Acute - Triage Code;Admission Level of Care Code - Acute|acute
+Finding|Functional Concept|SIMPLE_SEGMENT|6095,6100|false|false|false|C0521026|Viral|viral
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6101,6104|false|false|false|C0041912|Upper Respiratory Infections|URI
+Event|Event|SIMPLE_SEGMENT|6101,6104|false|false|false|||URI
+Finding|Gene or Genome|SIMPLE_SEGMENT|6101,6104|false|false|false|C1421895;C1548524;C3272713|URI1 gene;URI1 wt Allele;Uniform Resource Identifier|URI
+Finding|Intellectual Product|SIMPLE_SEGMENT|6101,6104|false|false|false|C1421895;C1548524;C3272713|URI1 gene;URI1 wt Allele;Uniform Resource Identifier|URI
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6122,6131|false|false|false|C0037199|Sinusitis|sinusitis
+Event|Event|SIMPLE_SEGMENT|6122,6131|false|false|false|||sinusitis
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|6134,6149|false|false|false|C0015183|Eustachian Tube|Eustachian tube
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6134,6161|false|false|false|C0271468|Dysfunction of eustachian tube|Eustachian tube dysfunction
+Finding|Functional Concept|SIMPLE_SEGMENT|6145,6149|false|false|false|C1427122;C1719071|TUBE1 gene;Unspecified tube|tube
+Finding|Gene or Genome|SIMPLE_SEGMENT|6145,6149|false|false|false|C1427122;C1719071|TUBE1 gene;Unspecified tube|tube
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6150,6161|false|false|false|C3887505|DYSFUNCTION - SKIN DISORDERS|dysfunction
+Event|Event|SIMPLE_SEGMENT|6150,6161|false|false|false|||dysfunction
+Finding|Conceptual Entity|SIMPLE_SEGMENT|6150,6161|false|false|false|C0031847;C0277785;C3887504|Dysfunction;Functional disorder;physiopathological|dysfunction
+Finding|Functional Concept|SIMPLE_SEGMENT|6150,6161|false|false|false|C0031847;C0277785;C3887504|Dysfunction;Functional disorder;physiopathological|dysfunction
+Finding|Pathologic Function|SIMPLE_SEGMENT|6150,6161|false|false|false|C0031847;C0277785;C3887504|Dysfunction;Functional disorder;physiopathological|dysfunction
+Event|Event|SIMPLE_SEGMENT|6166,6175|false|false|false|||continued
+Finding|Idea or Concept|SIMPLE_SEGMENT|6177,6181|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|6177,6181|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|6177,6181|false|false|false|C1553498|home health encounter|home
+Drug|Organic Chemical|SIMPLE_SEGMENT|6182,6189|false|false|false|C0905678|Spiriva|spiriva
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6182,6189|false|false|false|C0905678|Spiriva|spiriva
+Event|Event|SIMPLE_SEGMENT|6182,6189|false|false|false|||spiriva
+Drug|Organic Chemical|SIMPLE_SEGMENT|6191,6203|false|false|false|C0039771|theophylline|theophylline
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6191,6203|false|false|false|C0039771|theophylline|theophylline
+Event|Event|SIMPLE_SEGMENT|6191,6203|false|false|false|||theophylline
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|6191,6203|false|false|false|C0039773|Assay of theophylline|theophylline
+Drug|Organic Chemical|SIMPLE_SEGMENT|6209,6215|false|false|false|C0965130|Advair|advair
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6209,6215|false|false|false|C0965130|Advair|advair
+Event|Event|SIMPLE_SEGMENT|6209,6215|false|false|false|||advair
+Event|Event|SIMPLE_SEGMENT|6220,6229|false|false|false|||continued
+Drug|Organic Chemical|SIMPLE_SEGMENT|6234,6241|false|false|false|C0038317;C5782153|Steroid [EPC];Steroids|steroid
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6234,6241|false|false|false|C0038317;C5782153|Steroid [EPC];Steroids|steroid
+Event|Event|SIMPLE_SEGMENT|6234,6241|false|false|false|||steroid
+Event|Event|SIMPLE_SEGMENT|6243,6250|false|false|false|||therapy
+Finding|Finding|SIMPLE_SEGMENT|6243,6250|false|false|false|C0039798;C1363945|Therapy Object (animal model);therapeutic aspects|therapy
+Finding|Functional Concept|SIMPLE_SEGMENT|6243,6250|false|false|false|C0039798;C1363945|Therapy Object (animal model);therapeutic aspects|therapy
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|6243,6250|false|false|false|C0087111|Therapeutic procedure|therapy
+Drug|Hormone|SIMPLE_SEGMENT|6259,6269|false|false|false|C0032952|prednisone|prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|6259,6269|false|false|false|C0032952|prednisone|prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6259,6269|false|false|false|C0032952|prednisone|prednisone
+Event|Event|SIMPLE_SEGMENT|6259,6269|false|false|false|||prednisone
+Event|Event|SIMPLE_SEGMENT|6288,6293|false|false|false|||taper
+Procedure|Health Care Activity|SIMPLE_SEGMENT|6288,6293|false|false|false|C0441640||taper
+Event|Event|SIMPLE_SEGMENT|6324,6331|false|false|false|||treated
+Drug|Antibiotic|SIMPLE_SEGMENT|6341,6353|false|false|false|C0282386|levofloxacin|levofloxacin
+Drug|Organic Chemical|SIMPLE_SEGMENT|6341,6353|false|false|false|C0282386|levofloxacin|levofloxacin
+Event|Event|SIMPLE_SEGMENT|6341,6353|false|false|false|||levofloxacin
+Finding|Idea or Concept|SIMPLE_SEGMENT|6355,6358|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Finding|Intellectual Product|SIMPLE_SEGMENT|6355,6358|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6369,6373|false|false|false|C0270724|Infantile Neuroaxonal Dystrophy|plan
+Event|Event|SIMPLE_SEGMENT|6369,6373|false|false|false|||plan
+Finding|Functional Concept|SIMPLE_SEGMENT|6369,6373|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Intellectual Product|SIMPLE_SEGMENT|6369,6373|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Mental Process|SIMPLE_SEGMENT|6369,6373|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Idea or Concept|SIMPLE_SEGMENT|6380,6383|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Intellectual Product|SIMPLE_SEGMENT|6380,6383|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6397,6401|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6397,6401|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|6397,6401|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|6397,6401|false|false|false|C1412502|ARCN1 gene|COPD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6397,6414|false|false|false|C0740304|COPD exacerbation|COPD exacerbation
+Event|Event|SIMPLE_SEGMENT|6402,6414|false|false|false|||exacerbation
+Finding|Finding|SIMPLE_SEGMENT|6402,6414|false|false|false|C4086268|Exacerbation|exacerbation
+Event|Event|SIMPLE_SEGMENT|6432,6439|false|false|false|||concern
+Finding|Idea or Concept|SIMPLE_SEGMENT|6432,6439|false|false|false|C2699424|Concern|concern
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6444,6453|false|false|false|C0037199|Sinusitis|sinusitis
+Event|Event|SIMPLE_SEGMENT|6444,6453|false|false|false|||sinusitis
+Finding|Functional Concept|SIMPLE_SEGMENT|6464,6469|false|false|false|C1552823|Table Cell Horizontal Align - right|right
+Event|Event|SIMPLE_SEGMENT|6470,6478|false|false|false|||tympanic
+Anatomy|Cell Component|SIMPLE_SEGMENT|6480,6488|false|false|false|C0025255;C0596901|Membrane;Membrane Tissue|membrane
+Anatomy|Tissue|SIMPLE_SEGMENT|6480,6488|false|false|false|C0025255;C0596901|Membrane;Membrane Tissue|membrane
+Event|Event|SIMPLE_SEGMENT|6491,6498|false|false|false|||CHRONIC
+Finding|Intellectual Product|SIMPLE_SEGMENT|6491,6498|false|false|false|C1547296|Chronic - Admission Level of Care Code|CHRONIC
+Procedure|Health Care Activity|SIMPLE_SEGMENT|6491,6498|false|false|false|C1555457|Provision of recurring care for chronic illness|CHRONIC
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|6532,6539|false|false|false|C0003467;C0003469|Anxiety;Anxiety Disorders|Anxiety
+Event|Event|SIMPLE_SEGMENT|6532,6539|false|false|false|||Anxiety
+Finding|Sign or Symptom|SIMPLE_SEGMENT|6532,6539|false|false|false|C0860603|Anxiety symptoms|Anxiety
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6540,6548|false|false|false|C1950154|Insomnia homeopathic medication|Insomnia
+Event|Event|SIMPLE_SEGMENT|6540,6548|false|false|false|||Insomnia
+Finding|Sign or Symptom|SIMPLE_SEGMENT|6540,6548|false|false|false|C0917801|Sleeplessness|Insomnia
+Event|Event|SIMPLE_SEGMENT|6553,6562|false|false|false|||continued
+Finding|Idea or Concept|SIMPLE_SEGMENT|6563,6567|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|6563,6567|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|6563,6567|false|false|false|C1553498|home health encounter|home
+Drug|Organic Chemical|SIMPLE_SEGMENT|6568,6577|false|false|false|C0024002|lorazepam|lorazepam
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6568,6577|false|false|false|C0024002|lorazepam|lorazepam
+Event|Event|SIMPLE_SEGMENT|6568,6577|false|false|false|||lorazepam
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|6584,6590|false|false|false|C0018792|Heart Atrium|Atrial
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|6584,6603|false|false|false|C2926591||Atrial Fibrillation
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6584,6603|false|false|false|C0004238|Atrial Fibrillation|Atrial Fibrillation
+Lab|Laboratory or Test Result|SIMPLE_SEGMENT|6584,6603|false|false|false|C0344434|Atrial Fibrillation by ECG Finding|Atrial Fibrillation
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6591,6603|false|false|false|C0232197|Fibrillation|Fibrillation
+Event|Event|SIMPLE_SEGMENT|6591,6603|false|false|false|||Fibrillation
+Event|Event|SIMPLE_SEGMENT|6608,6617|false|false|false|||continued
+Drug|Organic Chemical|SIMPLE_SEGMENT|6618,6627|false|false|false|C0012373|diltiazem|diltiazem
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6618,6627|false|false|false|C0012373|diltiazem|diltiazem
+Event|Event|SIMPLE_SEGMENT|6618,6627|false|false|false|||diltiazem
+Event|Activity|SIMPLE_SEGMENT|6632,6636|false|false|false|C0871208|Rating (action)|rate
+Finding|Idea or Concept|SIMPLE_SEGMENT|6632,6636|false|false|false|C1549480|Amount type - Rate|rate
+Finding|Functional Concept|SIMPLE_SEGMENT|6632,6644|false|false|false|C0489879|rate control|rate control
+Drug|Organic Chemical|SIMPLE_SEGMENT|6637,6644|false|false|false|C0308718;C0728976;C1550141|CONTROL veterinary product;Control brand of phenylpropanolamine;control substance|control
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6637,6644|false|false|false|C0308718;C0728976;C1550141|CONTROL veterinary product;Control brand of phenylpropanolamine;control substance|control
+Drug|Substance|SIMPLE_SEGMENT|6637,6644|false|false|false|C0308718;C0728976;C1550141|CONTROL veterinary product;Control brand of phenylpropanolamine;control substance|control
+Event|Event|SIMPLE_SEGMENT|6637,6644|false|false|false|||control
+Finding|Conceptual Entity|SIMPLE_SEGMENT|6637,6644|false|false|false|C1547100;C1882979;C2587213|Control - Relationship modifier;Control function;Scientific Control|control
+Finding|Functional Concept|SIMPLE_SEGMENT|6637,6644|false|false|false|C1547100;C1882979;C2587213|Control - Relationship modifier;Control function;Scientific Control|control
+Finding|Idea or Concept|SIMPLE_SEGMENT|6637,6644|false|false|false|C1547100;C1882979;C2587213|Control - Relationship modifier;Control function;Scientific Control|control
+Drug|Organic Chemical|SIMPLE_SEGMENT|6650,6658|false|false|false|C1831808|apixaban|apixaban
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6650,6658|false|false|false|C1831808|apixaban|apixaban
+Event|Event|SIMPLE_SEGMENT|6650,6658|false|false|false|||apixaban
+Event|Event|SIMPLE_SEGMENT|6663,6678|false|false|false|||anticoagulation
+Finding|Finding|SIMPLE_SEGMENT|6663,6678|false|false|false|C2919015;C3537050;C5887107|ANTICOAGULATION (finding);Anticoagulation function;Decreased Coagulation Activity [PE]|anticoagulation
+Finding|Physiologic Function|SIMPLE_SEGMENT|6663,6678|false|false|false|C2919015;C3537050;C5887107|ANTICOAGULATION (finding);Anticoagulation function;Decreased Coagulation Activity [PE]|anticoagulation
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|6663,6678|false|false|false|C0003281|Anticoagulation Therapy|anticoagulation
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6684,6696|false|false|false|C0020538|Hypertensive disease|Hypertension
+Event|Event|SIMPLE_SEGMENT|6684,6696|false|false|false|||Hypertension
+Event|Event|SIMPLE_SEGMENT|6701,6710|false|false|false|||continued
+Finding|Idea or Concept|SIMPLE_SEGMENT|6711,6715|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|6711,6715|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|6711,6715|false|false|false|C1553498|home health encounter|home
+Drug|Organic Chemical|SIMPLE_SEGMENT|6716,6721|false|false|false|C0590690|Imdur|imdur
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6716,6721|false|false|false|C0590690|Imdur|imdur
+Event|Event|SIMPLE_SEGMENT|6716,6721|false|false|false|||imdur
+Drug|Organic Chemical|SIMPLE_SEGMENT|6723,6742|false|false|false|C0020261|hydrochlorothiazide|hydrochlorothiazide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6723,6742|false|false|false|C0020261|hydrochlorothiazide|hydrochlorothiazide
+Event|Event|SIMPLE_SEGMENT|6723,6742|false|false|false|||hydrochlorothiazide
+Drug|Organic Chemical|SIMPLE_SEGMENT|6749,6758|false|false|false|C0012373|diltiazem|diltiazem
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6749,6758|false|false|false|C0012373|diltiazem|diltiazem
+Event|Event|SIMPLE_SEGMENT|6749,6758|false|false|false|||diltiazem
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6766,6769|false|false|false|C0010068;C0175816;C1956346|Cold Hemagglutinin Disease;Coronary Artery Disease;Coronary heart disease|CAD
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|6766,6769|false|false|false|C1504769|DFFB protein, human|CAD
+Drug|Enzyme|SIMPLE_SEGMENT|6766,6769|false|false|false|C1504769|DFFB protein, human|CAD
+Event|Event|SIMPLE_SEGMENT|6766,6769|false|false|false|||CAD
+Finding|Gene or Genome|SIMPLE_SEGMENT|6766,6769|false|false|false|C1413078;C1413983;C1428349;C2239547;C3813548;C4284121|ACOD1 gene;B4GALNT2 gene;CAD gene;CALD1 wt Allele;DFFB gene;DFFB wt Allele|CAD
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|6766,6769|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Research Activity|SIMPLE_SEGMENT|6766,6769|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|6766,6769|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|6771,6778|true|false|false|C0018787|Heart|Cardiac
+Finding|Intellectual Product|SIMPLE_SEGMENT|6771,6778|true|false|false|C1314974|Cardiac attachment|Cardiac
+Disorder|Injury or Poisoning|SIMPLE_SEGMENT|6771,6794|true|false|false|C0261588|Cardiac catheterisation as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure|Cardiac catheterization
+Finding|Intellectual Product|SIMPLE_SEGMENT|6771,6794|true|false|false|C1547981|Diagnostic Service Section ID - Cardiac Catheterization|Cardiac catheterization
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|6771,6794|true|false|false|C0018795;C1548828|Cardiac Catheterization Procedures;Consent Type - Cardiac Catheterization|Cardiac catheterization
+Procedure|Health Care Activity|SIMPLE_SEGMENT|6771,6794|true|false|false|C0018795;C1548828|Cardiac Catheterization Procedures;Consent Type - Cardiac Catheterization|Cardiac catheterization
+Event|Event|SIMPLE_SEGMENT|6779,6794|true|false|false|||catheterization
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|6779,6794|true|false|false|C0007430|Catheterization|catheterization
+Event|Event|SIMPLE_SEGMENT|6810,6818|true|false|false|||evidence
+Finding|Idea or Concept|SIMPLE_SEGMENT|6810,6818|true|false|false|C3887511|Evidence|evidence
+Finding|Functional Concept|SIMPLE_SEGMENT|6810,6821|true|false|false|C0332120|Evidence of (contextual qualifier)|evidence of
+Finding|Idea or Concept|SIMPLE_SEGMENT|6823,6834|true|false|false|C0750502|Significant|significant
+Event|Event|SIMPLE_SEGMENT|6835,6843|true|false|false|||stenosis
+Finding|Pathologic Function|SIMPLE_SEGMENT|6835,6843|true|false|false|C1261287|Stenosis|stenosis
+Event|Event|SIMPLE_SEGMENT|6847,6857|true|false|false|||coronaries
+Event|Event|SIMPLE_SEGMENT|6859,6863|false|false|false|||ECHO
+Procedure|Health Care Activity|SIMPLE_SEGMENT|6859,6863|false|false|false|C0058928;C5575284|ECHO protocol;Extension for Community Healthcare Outcomes|ECHO
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|6859,6863|false|false|false|C0058928;C5575284|ECHO protocol;Extension for Community Healthcare Outcomes|ECHO
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|6912,6923|true|false|false|C1980023|Wall motion|wall motion
+Phenomenon|Natural Phenomenon or Process|SIMPLE_SEGMENT|6917,6923|true|false|false|C0026597|Motion|motion
+Disorder|Congenital Abnormality|SIMPLE_SEGMENT|6924,6937|true|false|false|C0000768|Congenital Abnormality|abnormalities
+Event|Event|SIMPLE_SEGMENT|6924,6937|true|false|false|||abnormalities
+Finding|Functional Concept|SIMPLE_SEGMENT|6924,6937|true|false|false|C0000769|teratologic|abnormalities
+Event|Event|SIMPLE_SEGMENT|6943,6952|false|false|false|||continued
+Finding|Idea or Concept|SIMPLE_SEGMENT|6953,6957|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|6953,6957|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|6953,6957|false|false|false|C1553498|home health encounter|home
+Drug|Organic Chemical|SIMPLE_SEGMENT|6958,6965|false|false|false|C0004057|aspirin|aspirin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6958,6965|false|false|false|C0004057|aspirin|aspirin
+Event|Event|SIMPLE_SEGMENT|6958,6965|false|false|false|||aspirin
+Drug|Organic Chemical|SIMPLE_SEGMENT|6970,6982|false|false|false|C0286651|atorvastatin|atorvastatin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|6970,6982|false|false|false|C0286651|atorvastatin|atorvastatin
+Event|Event|SIMPLE_SEGMENT|6970,6982|false|false|false|||atorvastatin
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|6990,6996|false|false|false|C0002871|Anemia|Anemia
+Event|Event|SIMPLE_SEGMENT|6990,6996|false|false|false|||Anemia
+Event|Event|SIMPLE_SEGMENT|7001,7010|false|false|false|||continued
+Finding|Idea or Concept|SIMPLE_SEGMENT|7011,7015|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Finding|Intellectual Product|SIMPLE_SEGMENT|7011,7015|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|7011,7015|false|false|false|C1553498|home health encounter|home
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|7016,7020|false|false|false|C0302583;C1166521;C3714701|Ferrum metallicum, Homeopathic preparation;Iron Drug Class;iron|iron
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|7016,7020|false|false|false|C0302583;C1166521;C3714701|Ferrum metallicum, Homeopathic preparation;Iron Drug Class;iron|iron
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7016,7020|false|false|false|C0302583;C1166521;C3714701|Ferrum metallicum, Homeopathic preparation;Iron Drug Class;iron|iron
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|7016,7020|false|false|false|C0337439|Iron measurement|iron
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|7016,7032|false|false|false|C0721124|Iron Supplement|iron supplements
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7016,7032|false|false|false|C0721124|Iron Supplement|iron supplements
+Event|Event|SIMPLE_SEGMENT|7021,7032|false|false|false|||supplements
+Finding|Idea or Concept|SIMPLE_SEGMENT|7038,7050|false|false|false|C1548597|Marketing basis - Transitional|TRANSITIONAL
+Event|Event|SIMPLE_SEGMENT|7051,7057|false|false|false|||ISSUES
+Finding|Idea or Concept|SIMPLE_SEGMENT|7065,7073|false|false|false|C0549178|Continuous|Continue
+Drug|Antibiotic|SIMPLE_SEGMENT|7074,7086|false|false|false|C0282386|levofloxacin|levofloxacin
+Drug|Organic Chemical|SIMPLE_SEGMENT|7074,7086|false|false|false|C0282386|levofloxacin|levofloxacin
+Event|Event|SIMPLE_SEGMENT|7074,7086|false|false|false|||levofloxacin
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|7092,7096|false|false|false|C0270724|Infantile Neuroaxonal Dystrophy|plan
+Event|Event|SIMPLE_SEGMENT|7092,7096|false|false|false|||plan
+Finding|Functional Concept|SIMPLE_SEGMENT|7092,7096|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Intellectual Product|SIMPLE_SEGMENT|7092,7096|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Mental Process|SIMPLE_SEGMENT|7092,7096|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Idea or Concept|SIMPLE_SEGMENT|7103,7106|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Intellectual Product|SIMPLE_SEGMENT|7103,7106|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Idea or Concept|SIMPLE_SEGMENT|7115,7118|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Finding|Intellectual Product|SIMPLE_SEGMENT|7115,7118|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|7124,7127|false|false|false|C0082420|Endoglin, human|end
+Drug|Immunologic Factor|SIMPLE_SEGMENT|7124,7127|false|false|false|C0082420|Endoglin, human|end
+Event|Event|SIMPLE_SEGMENT|7124,7127|false|false|false|||end
+Finding|Functional Concept|SIMPLE_SEGMENT|7124,7127|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Finding|Gene or Genome|SIMPLE_SEGMENT|7124,7127|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Finding|Body Substance|SIMPLE_SEGMENT|7134,7141|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|SIMPLE_SEGMENT|7134,7141|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|SIMPLE_SEGMENT|7134,7141|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Event|Event|SIMPLE_SEGMENT|7146,7153|false|false|false|||started
+Drug|Organic Chemical|SIMPLE_SEGMENT|7154,7161|false|false|false|C0591139|Bactrim|Bactrim
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7154,7161|false|false|false|C0591139|Bactrim|Bactrim
+Event|Event|SIMPLE_SEGMENT|7162,7165|false|false|false|||PPX
+Finding|Gene or Genome|SIMPLE_SEGMENT|7162,7165|false|false|false|C1418850|PPP4C gene|PPX
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|7169,7172|false|false|false|C0039225|Tablet Dosage Form|tab
+Event|Event|SIMPLE_SEGMENT|7173,7175|false|false|false|||SS
+Finding|Finding|SIMPLE_SEGMENT|7190,7198|false|false|false|C0231448;C5781021|Extended (finding);Extension|extended
+Finding|Functional Concept|SIMPLE_SEGMENT|7190,7198|false|false|false|C0231448;C5781021|Extended (finding);Extension|extended
+Event|Event|SIMPLE_SEGMENT|7199,7206|false|false|false|||courses
+Drug|Organic Chemical|SIMPLE_SEGMENT|7210,7218|false|false|false|C0038317|Steroids|steroids
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7210,7218|false|false|false|C0038317|Steroids|steroids
+Event|Event|SIMPLE_SEGMENT|7210,7218|false|false|false|||steroids
+Event|Event|SIMPLE_SEGMENT|7220,7224|false|false|false|||stop
+Event|Event|SIMPLE_SEGMENT|7231,7246|false|false|false|||discontinuation
+Finding|Finding|SIMPLE_SEGMENT|7231,7246|false|false|false|C0457454;C1444662|Discontinuation (procedure);Discontinued|discontinuation
+Finding|Functional Concept|SIMPLE_SEGMENT|7231,7246|false|false|false|C0457454;C1444662|Discontinuation (procedure);Discontinued|discontinuation
+Drug|Organic Chemical|SIMPLE_SEGMENT|7251,7259|false|false|false|C0038317|Steroids|steroids
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7251,7259|false|false|false|C0038317|Steroids|steroids
+Event|Event|SIMPLE_SEGMENT|7251,7259|false|false|false|||steroids
+Finding|Body Substance|SIMPLE_SEGMENT|7262,7269|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Idea or Concept|SIMPLE_SEGMENT|7262,7269|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Finding|Intellectual Product|SIMPLE_SEGMENT|7262,7269|false|false|false|C1550655;C1578481;C1578483;C1578484;C1578485;C1578486|Disabled Person Code - Patient;Mail Claim Party - Patient;Relationship modifier - Patient;Report source - Patient;Specimen Type - Patient|Patient
+Event|Event|SIMPLE_SEGMENT|7274,7284|false|false|false|||discharged
+Drug|Hormone|SIMPLE_SEGMENT|7288,7298|false|false|false|C0032952|prednisone|prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|7288,7298|false|false|false|C0032952|prednisone|prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7288,7298|false|false|false|C0032952|prednisone|prednisone
+Event|Event|SIMPLE_SEGMENT|7288,7298|false|false|false|||prednisone
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|7310,7314|false|false|false|C0270724|Infantile Neuroaxonal Dystrophy|plan
+Event|Event|SIMPLE_SEGMENT|7310,7314|false|false|false|||plan
+Finding|Functional Concept|SIMPLE_SEGMENT|7310,7314|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Intellectual Product|SIMPLE_SEGMENT|7310,7314|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Finding|Mental Process|SIMPLE_SEGMENT|7310,7314|false|false|false|C0032074;C0599880;C1301732|Planned;Treatment Plan|plan
+Event|Event|SIMPLE_SEGMENT|7319,7324|false|false|false|||taper
+Procedure|Health Care Activity|SIMPLE_SEGMENT|7319,7324|false|false|false|C0441640||taper
+Drug|Hormone|SIMPLE_SEGMENT|7349,7359|false|false|false|C0032952|prednisone|Prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|7349,7359|false|false|false|C0032952|prednisone|Prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7349,7359|false|false|false|C0032952|prednisone|Prednisone
+Finding|Idea or Concept|SIMPLE_SEGMENT|7381,7384|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Finding|Intellectual Product|SIMPLE_SEGMENT|7381,7384|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|7392,7395|false|false|false|C0082420|Endoglin, human|end
+Drug|Immunologic Factor|SIMPLE_SEGMENT|7392,7395|false|false|false|C0082420|Endoglin, human|end
+Event|Event|SIMPLE_SEGMENT|7392,7395|false|false|false|||end
+Finding|Functional Concept|SIMPLE_SEGMENT|7392,7395|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Finding|Gene or Genome|SIMPLE_SEGMENT|7392,7395|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Drug|Hormone|SIMPLE_SEGMENT|7402,7412|false|false|false|C0032952|prednisone|Prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|7402,7412|false|false|false|C0032952|prednisone|Prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7402,7412|false|false|false|C0032952|prednisone|Prednisone
+Finding|Idea or Concept|SIMPLE_SEGMENT|7434,7437|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Finding|Intellectual Product|SIMPLE_SEGMENT|7434,7437|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|7445,7448|false|false|false|C0082420|Endoglin, human|end
+Drug|Immunologic Factor|SIMPLE_SEGMENT|7445,7448|false|false|false|C0082420|Endoglin, human|end
+Event|Event|SIMPLE_SEGMENT|7445,7448|false|false|false|||end
+Finding|Functional Concept|SIMPLE_SEGMENT|7445,7448|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Finding|Gene or Genome|SIMPLE_SEGMENT|7445,7448|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Drug|Hormone|SIMPLE_SEGMENT|7455,7465|false|false|false|C0032952|prednisone|Prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|7455,7465|false|false|false|C0032952|prednisone|Prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7455,7465|false|false|false|C0032952|prednisone|Prednisone
+Finding|Idea or Concept|SIMPLE_SEGMENT|7487,7490|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Finding|Intellectual Product|SIMPLE_SEGMENT|7487,7490|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|7498,7501|false|false|false|C0082420|Endoglin, human|end
+Drug|Immunologic Factor|SIMPLE_SEGMENT|7498,7501|false|false|false|C0082420|Endoglin, human|end
+Event|Event|SIMPLE_SEGMENT|7498,7501|false|false|false|||end
+Finding|Functional Concept|SIMPLE_SEGMENT|7498,7501|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Finding|Gene or Genome|SIMPLE_SEGMENT|7498,7501|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Finding|Idea or Concept|SIMPLE_SEGMENT|7508,7511|false|false|false|C1548556|Etc.|etc
+Event|Activity|SIMPLE_SEGMENT|7517,7524|false|false|false|C3812666|Personal Contact|CONTACT
+Event|Event|SIMPLE_SEGMENT|7517,7524|false|false|false|||CONTACT
+Finding|Functional Concept|SIMPLE_SEGMENT|7517,7524|false|false|false|C0332158;C1705415;C3245509|Communication Contact;Contact - HL7 Attribution;Contact with|CONTACT
+Finding|Idea or Concept|SIMPLE_SEGMENT|7517,7524|false|false|false|C0332158;C1705415;C3245509|Communication Contact;Contact - HL7 Attribution;Contact with|CONTACT
+Finding|Intellectual Product|SIMPLE_SEGMENT|7517,7524|false|false|false|C0332158;C1705415;C3245509|Communication Contact;Contact - HL7 Attribution;Contact with|CONTACT
+Phenomenon|Phenomenon or Process|SIMPLE_SEGMENT|7517,7524|false|false|false|C0392367|Physical contact|CONTACT
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|7539,7542|false|false|false|C0162531|Hereditary Coproporphyria|HCP
+Event|Event|SIMPLE_SEGMENT|7539,7542|false|false|false|||HCP
+Finding|Gene or Genome|SIMPLE_SEGMENT|7539,7542|false|false|false|C1335283;C1412376;C1413681;C1705637;C5780748|AMBP gene;AMBP wt Allele;CPOX gene;PTPN6 gene;PTPN6 wt Allele|HCP
+Event|Event|SIMPLE_SEGMENT|7551,7555|false|false|false|||CODE
+Event|Occupational Activity|SIMPLE_SEGMENT|7551,7555|false|false|false|C0009219|Coding|CODE
+Finding|Intellectual Product|SIMPLE_SEGMENT|7551,7555|false|false|false|C0805701;C0919279;C1554100|A Codes;Code;MDF Attribute Type - Code|CODE
+Procedure|Health Care Activity|SIMPLE_SEGMENT|7551,7562|false|false|false|C0742531|CODE STATUS|CODE STATUS
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|7556,7562|false|false|false|C5889824||STATUS
+Event|Event|SIMPLE_SEGMENT|7556,7562|false|false|false|||STATUS
+Finding|Idea or Concept|SIMPLE_SEGMENT|7556,7562|false|false|false|C1546481|What subject filter - Status|STATUS
+Event|Event|SIMPLE_SEGMENT|7569,7578|false|false|false|||confirmed
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|7582,7593|false|false|false|C0802604;C2598133||Medications
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7582,7593|false|false|false|C0013227|Pharmaceutical Preparations|Medications
+Event|Event|SIMPLE_SEGMENT|7582,7593|false|false|false|||Medications
+Finding|Intellectual Product|SIMPLE_SEGMENT|7582,7593|false|false|false|C4284232|Medications|Medications
+Finding|Finding|SIMPLE_SEGMENT|7582,7606|false|false|false|C1627937|Medications on admission|Medications on Admission
+Event|Event|SIMPLE_SEGMENT|7597,7606|false|false|false|||Admission
+Procedure|Health Care Activity|SIMPLE_SEGMENT|7597,7606|false|false|false|C0184666;C0809949|Admission activity;Hospital admission|Admission
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7625,7635|false|false|false|C0013227|Pharmaceutical Preparations|Medication
+Finding|Intellectual Product|SIMPLE_SEGMENT|7625,7635|false|false|false|C3244316;C4284232|Medications;medication - HL7 publishing domain|Medication
+Finding|Intellectual Product|SIMPLE_SEGMENT|7625,7640|false|false|false|C0746470|MEDICATION LIST|Medication list
+Event|Event|SIMPLE_SEGMENT|7636,7640|false|false|false|||list
+Finding|Intellectual Product|SIMPLE_SEGMENT|7636,7640|false|false|false|C0745732;C3272378|List;Sequence Data Type|list
+Event|Event|SIMPLE_SEGMENT|7644,7652|false|false|false|||accurate
+Drug|Organic Chemical|SIMPLE_SEGMENT|7657,7665|false|false|false|C1815293|Complete, Multiple Vitamins with Iron|complete
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7657,7665|false|false|false|C1815293|Complete, Multiple Vitamins with Iron|complete
+Drug|Vitamin|SIMPLE_SEGMENT|7657,7665|false|false|false|C1815293|Complete, Multiple Vitamins with Iron|complete
+Event|Event|SIMPLE_SEGMENT|7657,7665|false|false|false|||complete
+Finding|Functional Concept|SIMPLE_SEGMENT|7657,7665|false|false|false|C1548561;C1706059;C3853530|Completion Status for valid values - Complete;Data operation - complete;Finish - dosing instruction imperative|complete
+Finding|Idea or Concept|SIMPLE_SEGMENT|7657,7665|false|false|false|C1548561;C1706059;C3853530|Completion Status for valid values - Complete;Data operation - complete;Finish - dosing instruction imperative|complete
+Drug|Organic Chemical|SIMPLE_SEGMENT|7670,7683|false|false|false|C0000970;C2917659|Acetaminophen [EPC];acetaminophen|Acetaminophen
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7670,7683|false|false|false|C0000970;C2917659|Acetaminophen [EPC];acetaminophen|Acetaminophen
+Event|Event|SIMPLE_SEGMENT|7670,7683|false|false|false|||Acetaminophen
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|7670,7683|false|false|false|C0373527|Acetaminophen measurement|Acetaminophen
+Finding|Gene or Genome|SIMPLE_SEGMENT|7698,7701|false|false|false|C1422467|CIAO3 gene|PRN
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|7702,7706|false|false|false|C2598155||Pain
+Event|Event|SIMPLE_SEGMENT|7702,7706|false|false|false|||Pain
+Finding|Functional Concept|SIMPLE_SEGMENT|7702,7706|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Finding|Sign or Symptom|SIMPLE_SEGMENT|7702,7706|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Drug|Organic Chemical|SIMPLE_SEGMENT|7711,7720|false|false|false|C0001927|albuterol|albuterol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7711,7720|false|false|false|C0001927|albuterol|albuterol
+Event|Event|SIMPLE_SEGMENT|7711,7720|false|false|false|||albuterol
+Drug|Organic Chemical|SIMPLE_SEGMENT|7711,7728|false|false|false|C0543495|albuterol sulfate|albuterol sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7711,7728|false|false|false|C0543495|albuterol sulfate|albuterol sulfate
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|7721,7728|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|7721,7728|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7721,7728|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Event|Event|SIMPLE_SEGMENT|7721,7728|false|false|false|||sulfate
+Finding|Functional Concept|SIMPLE_SEGMENT|7746,7756|false|false|false|C0004048;C0205535|Inhalation Route of Administration;Inspiration (function)|inhalation
+Finding|Organism Function|SIMPLE_SEGMENT|7746,7756|false|false|false|C0004048;C0205535|Inhalation Route of Administration;Inspiration (function)|inhalation
+Event|Event|SIMPLE_SEGMENT|7757,7760|false|false|false|||Q4H
+Drug|Organic Chemical|SIMPLE_SEGMENT|7765,7773|false|false|false|C1831808|apixaban|Apixaban
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7765,7773|false|false|false|C1831808|apixaban|Apixaban
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|7782,7785|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|7782,7785|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|7782,7785|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|7782,7785|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|7782,7785|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|7790,7797|false|false|false|C0004057|aspirin|Aspirin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7790,7797|false|false|false|C0004057|aspirin|Aspirin
+Drug|Organic Chemical|SIMPLE_SEGMENT|7817,7829|false|false|false|C0286651|atorvastatin|Atorvastatin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7817,7829|false|false|false|C0286651|atorvastatin|Atorvastatin
+Drug|Organic Chemical|SIMPLE_SEGMENT|7847,7856|false|false|false|C0012373|diltiazem|Diltiazem
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7847,7856|false|false|false|C0012373|diltiazem|Diltiazem
+Finding|Finding|SIMPLE_SEGMENT|7857,7865|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Finding|Functional Concept|SIMPLE_SEGMENT|7857,7865|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Event|Event|SIMPLE_SEGMENT|7866,7873|false|false|false|||Release
+Finding|Functional Concept|SIMPLE_SEGMENT|7866,7873|false|false|false|C0391871;C1283071|Release - action (qualifier value);Released (action)|Release
+Procedure|Health Care Activity|SIMPLE_SEGMENT|7866,7873|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|7866,7873|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|7884,7887|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|7884,7887|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|7884,7887|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|7884,7887|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|7884,7887|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|7892,7900|false|false|false|C1692318|docusate|Docusate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7892,7900|false|false|false|C1692318|docusate|Docusate
+Event|Event|SIMPLE_SEGMENT|7892,7900|false|false|false|||Docusate
+Drug|Organic Chemical|SIMPLE_SEGMENT|7892,7907|false|false|false|C0243237|docusate sodium|Docusate Sodium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7892,7907|false|false|false|C0243237|docusate sodium|Docusate Sodium
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|7901,7907|false|false|false|C0037473;C3541959;C3714642|Sodium Drug Class;Sodium supplements;sodium|Sodium
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|7901,7907|false|false|false|C0037473;C3541959;C3714642|Sodium Drug Class;Sodium supplements;sodium|Sodium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7901,7907|false|false|false|C0037473;C3541959;C3714642|Sodium Drug Class;Sodium supplements;sodium|Sodium
+Event|Event|SIMPLE_SEGMENT|7901,7907|false|false|false|||Sodium
+Finding|Physiologic Function|SIMPLE_SEGMENT|7901,7907|false|false|false|C4553025|Sodium metabolic function|Sodium
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|7901,7907|false|false|false|C0337443|Sodium measurement|Sodium
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|7918,7921|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|7918,7921|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|7918,7921|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|7918,7921|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|7918,7921|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|7926,7937|false|false|false|C0165590|dorzolamide|Dorzolamide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7926,7937|false|false|false|C0165590|dorzolamide|Dorzolamide
+Finding|Functional Concept|SIMPLE_SEGMENT|7941,7946|false|false|false|C1522230|Ophthalmic Route of Administration|Ophth
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|7956,7960|false|false|false|C0991568|Drops - Drug Form|DROP
+Event|Activity|SIMPLE_SEGMENT|7956,7960|false|false|false|C1705648|Dropping|DROP
+Event|Event|SIMPLE_SEGMENT|7956,7960|false|false|false|||DROP
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|7961,7970|false|false|false|C0229118|Structure of both eyes|BOTH EYES
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|7966,7970|false|false|false|C0015392|Eye|EYES
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|7966,7970|false|false|false|C5848506||EYES
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|7971,7974|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|7971,7974|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|7971,7974|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|7971,7974|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|7971,7974|false|false|false|C1332410|BID gene|BID
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|7979,7986|false|false|false|C2346592|Ferrous|Ferrous
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|7979,7994|false|false|false|C0060282|ferrous sulfate|Ferrous Sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7979,7994|false|false|false|C0060282|ferrous sulfate|Ferrous Sulfate
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|7987,7994|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|Sulfate
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|7987,7994|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|Sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|7987,7994|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|Sulfate
+Event|Event|SIMPLE_SEGMENT|7987,7994|false|false|false|||Sulfate
+Drug|Organic Chemical|SIMPLE_SEGMENT|8016,8027|false|false|false|C0082607|fluticasone|Fluticasone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8016,8027|false|false|false|C0082607|fluticasone|Fluticasone
+Event|Event|SIMPLE_SEGMENT|8016,8027|false|false|false|||Fluticasone
+Drug|Organic Chemical|SIMPLE_SEGMENT|8016,8038|false|false|false|C0117996|fluticasone propionate|Fluticasone Propionate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8016,8038|false|false|false|C0117996|fluticasone propionate|Fluticasone Propionate
+Drug|Organic Chemical|SIMPLE_SEGMENT|8028,8038|false|false|false|C0033474;C0392214|Propionates;propionate|Propionate
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|8039,8044|false|false|false|C0028429||NASAL
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8039,8044|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|NASAL
+Drug|Organic Chemical|SIMPLE_SEGMENT|8039,8044|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|NASAL
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8039,8044|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|NASAL
+Finding|Finding|SIMPLE_SEGMENT|8039,8044|false|false|false|C1522019;C4520890|Nasal (intended site);Nasal Route of Administration|NASAL
+Finding|Functional Concept|SIMPLE_SEGMENT|8039,8044|false|false|false|C1522019;C4520890|Nasal (intended site);Nasal Route of Administration|NASAL
+Event|Event|SIMPLE_SEGMENT|8047,8051|false|false|false|||SPRY
+Event|Event|SIMPLE_SEGMENT|8055,8060|false|false|false|||DAILY
+Finding|Gene or Genome|SIMPLE_SEGMENT|8061,8064|false|false|false|C1422467|CIAO3 gene|PRN
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|8065,8074|false|false|false|C1717415||allergies
+Event|Event|SIMPLE_SEGMENT|8065,8074|false|false|false|||allergies
+Finding|Pathologic Function|SIMPLE_SEGMENT|8065,8074|false|false|false|C0020517|Hypersensitivity|allergies
+Drug|Organic Chemical|SIMPLE_SEGMENT|8080,8091|false|false|false|C0082607|fluticasone|Fluticasone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8080,8091|false|false|false|C0082607|fluticasone|Fluticasone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8080,8102|false|false|false|C0939232|fluticasone / salmeterol|Fluticasone-Salmeterol
+Drug|Organic Chemical|SIMPLE_SEGMENT|8080,8109|false|false|false|C4762496|Fluticasone-Salmeterol Diskus|Fluticasone-Salmeterol Diskus
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8080,8109|false|false|false|C4762496|Fluticasone-Salmeterol Diskus|Fluticasone-Salmeterol Diskus
+Drug|Organic Chemical|SIMPLE_SEGMENT|8092,8102|false|false|false|C0073992|salmeterol|Salmeterol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8092,8102|false|false|false|C0073992|salmeterol|Salmeterol
+Event|Event|SIMPLE_SEGMENT|8103,8109|false|false|false|||Diskus
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8122,8125|false|false|false|C0022209;C0598322|Inhalant dose form;isoniazid|INH
+Drug|Organic Chemical|SIMPLE_SEGMENT|8122,8125|false|false|false|C0022209;C0598322|Inhalant dose form;isoniazid|INH
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8122,8125|false|false|false|C0022209;C0598322|Inhalant dose form;isoniazid|INH
+Event|Event|SIMPLE_SEGMENT|8122,8125|false|false|false|||INH
+Finding|Functional Concept|SIMPLE_SEGMENT|8122,8125|false|false|false|C0205535|Inhalation Route of Administration|INH
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|8129,8132|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|8129,8132|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|8129,8132|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|8129,8132|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|8129,8132|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|8138,8149|false|false|false|C0018305|guaifenesin|Guaifenesin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8138,8149|false|false|false|C0018305|guaifenesin|Guaifenesin
+Finding|Gene or Genome|SIMPLE_SEGMENT|8164,8167|false|false|false|C1422467|CIAO3 gene|PRN
+Drug|Organic Chemical|SIMPLE_SEGMENT|8168,8173|false|false|false|C3815497|Cough (guaifenesin)|cough
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8168,8173|false|false|false|C3815497|Cough (guaifenesin)|cough
+Event|Event|SIMPLE_SEGMENT|8168,8173|false|false|false|||cough
+Finding|Sign or Symptom|SIMPLE_SEGMENT|8168,8173|false|false|false|C0010200|Coughing|cough
+Drug|Organic Chemical|SIMPLE_SEGMENT|8179,8198|false|false|false|C0020261|hydrochlorothiazide|Hydrochlorothiazide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8179,8198|false|false|false|C0020261|hydrochlorothiazide|Hydrochlorothiazide
+Drug|Organic Chemical|SIMPLE_SEGMENT|8219,8229|false|false|false|C0022251|isosorbide|Isosorbide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8219,8229|false|false|false|C0022251|isosorbide|Isosorbide
+Drug|Organic Chemical|SIMPLE_SEGMENT|8219,8241|false|false|false|C0064079|isosorbide mononitrate|Isosorbide Mononitrate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8219,8241|false|false|false|C0064079|isosorbide mononitrate|Isosorbide Mononitrate
+Event|Event|SIMPLE_SEGMENT|8230,8241|false|false|false|||Mononitrate
+Finding|Finding|SIMPLE_SEGMENT|8243,8251|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Finding|Functional Concept|SIMPLE_SEGMENT|8243,8251|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Event|Event|SIMPLE_SEGMENT|8252,8259|false|false|false|||Release
+Finding|Functional Concept|SIMPLE_SEGMENT|8252,8259|false|false|false|C0391871;C1283071|Release - action (qualifier value);Released (action)|Release
+Procedure|Health Care Activity|SIMPLE_SEGMENT|8252,8259|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|8252,8259|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Drug|Organic Chemical|SIMPLE_SEGMENT|8282,8293|false|false|false|C0090306|latanoprost|Latanoprost
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8282,8293|false|false|false|C0090306|latanoprost|Latanoprost
+Finding|Functional Concept|SIMPLE_SEGMENT|8301,8306|false|false|false|C1522230|Ophthalmic Route of Administration|Ophth
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8316,8320|false|false|false|C0991568|Drops - Drug Form|DROP
+Event|Activity|SIMPLE_SEGMENT|8316,8320|false|false|false|C1705648|Dropping|DROP
+Event|Event|SIMPLE_SEGMENT|8316,8320|false|false|false|||DROP
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|8321,8330|false|false|false|C0229118|Structure of both eyes|BOTH EYES
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|8326,8330|false|false|false|C0015392|Eye|EYES
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|8326,8330|false|false|false|C5848506||EYES
+Drug|Organic Chemical|SIMPLE_SEGMENT|8340,8349|false|false|false|C0024002|lorazepam|Lorazepam
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8340,8349|false|false|false|C0024002|lorazepam|Lorazepam
+Finding|Gene or Genome|SIMPLE_SEGMENT|8364,8367|false|false|false|C1422467|CIAO3 gene|PRN
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8368,8376|false|false|false|C1950154|Insomnia homeopathic medication|Insomnia
+Event|Event|SIMPLE_SEGMENT|8368,8376|false|false|false|||Insomnia
+Finding|Sign or Symptom|SIMPLE_SEGMENT|8368,8376|false|false|false|C0917801|Sleeplessness|Insomnia
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|8378,8385|false|false|false|C0003467;C0003469|Anxiety;Anxiety Disorders|anxiety
+Event|Event|SIMPLE_SEGMENT|8378,8385|false|false|false|||anxiety
+Finding|Sign or Symptom|SIMPLE_SEGMENT|8378,8385|false|false|false|C0860603|Anxiety symptoms|anxiety
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|8387,8394|false|false|false|C1135208|Vertigo as late effect of cerebrovascular disease|vertigo
+Event|Event|SIMPLE_SEGMENT|8387,8394|false|false|false|||vertigo
+Finding|Sign or Symptom|SIMPLE_SEGMENT|8387,8394|false|false|false|C0042571|Vertigo|vertigo
+Drug|Organic Chemical|SIMPLE_SEGMENT|8400,8413|false|false|false|C0301532;C3714835|Multivitamin Drug Class;Multivitamin preparation|Multivitamins
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8400,8413|false|false|false|C0301532;C3714835|Multivitamin Drug Class;Multivitamin preparation|Multivitamins
+Drug|Vitamin|SIMPLE_SEGMENT|8400,8413|false|false|false|C0301532;C3714835|Multivitamin Drug Class;Multivitamin preparation|Multivitamins
+Event|Event|SIMPLE_SEGMENT|8400,8413|false|false|false|||Multivitamins
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8416,8419|false|false|false|C0039225|Tablet Dosage Form|TAB
+Event|Event|SIMPLE_SEGMENT|8416,8419|false|false|false|||TAB
+Drug|Organic Chemical|SIMPLE_SEGMENT|8434,8444|false|false|false|C0034665|ranitidine|Ranitidine
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8434,8444|false|false|false|C0034665|ranitidine|Ranitidine
+Drug|Organic Chemical|SIMPLE_SEGMENT|8466,8478|false|false|false|C0039771|theophylline|Theophylline
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8466,8478|false|false|false|C0039771|theophylline|Theophylline
+Event|Event|SIMPLE_SEGMENT|8466,8478|false|false|false|||Theophylline
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|8466,8478|false|false|false|C0039773|Assay of theophylline|Theophylline
+Drug|Organic Chemical|SIMPLE_SEGMENT|8466,8481|false|false|false|C0939729|Theophylline SR|Theophylline SR
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8466,8481|false|false|false|C0939729|Theophylline SR|Theophylline SR
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|8492,8495|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|8492,8495|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|8492,8495|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|8492,8495|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|8492,8495|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|8501,8511|false|false|false|C0213771|tiotropium|Tiotropium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8501,8511|false|false|false|C0213771|tiotropium|Tiotropium
+Event|Event|SIMPLE_SEGMENT|8501,8511|false|false|false|||Tiotropium
+Drug|Organic Chemical|SIMPLE_SEGMENT|8501,8519|false|false|false|C1306772|tiotropium bromide|Tiotropium Bromide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8501,8519|false|false|false|C1306772|tiotropium bromide|Tiotropium Bromide
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|8512,8519|false|false|false|C0006222|Bromides|Bromide
+Event|Event|SIMPLE_SEGMENT|8512,8519|false|false|false|||Bromide
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|8512,8519|false|false|false|C0202341|Bromides measurement|Bromide
+Disorder|Congenital Abnormality|SIMPLE_SEGMENT|8522,8525|false|false|false|C1855179|CATARACT, ANTERIOR POLAR|CAP
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8522,8525|false|false|false|C0006935|capsule (pharmacologic)|CAP
+Event|Event|SIMPLE_SEGMENT|8522,8525|false|false|false|||CAP
+Finding|Gene or Genome|SIMPLE_SEGMENT|8522,8525|false|false|false|C1416891;C1418551;C1419093;C1422073;C1422760;C2985259;C4522312|BRD4 gene;BRD4 wt Allele;CAP1 gene;HACD1 gene;LNPEP gene;SERPINB6 gene;SORBS1 gene|CAP
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|8522,8525|false|false|false|C0278651;C0280547;C1879916|CAP Regimen;cisplatin/cyclophosphamide/doxorubicin protocol;cyclophosphamide/doxorubicin/prednisone protocol|CAP
+Drug|Organic Chemical|SIMPLE_SEGMENT|8540,8550|false|false|false|C3464797|Calcitrate|Calcitrate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8540,8550|false|false|false|C3464797|Calcitrate|Calcitrate
+Drug|Organic Chemical|SIMPLE_SEGMENT|8551,8558|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8551,8558|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Vitamin|SIMPLE_SEGMENT|8551,8558|false|false|false|C0042890|Vitamins|Vitamin
+Event|Event|SIMPLE_SEGMENT|8551,8558|false|false|false|||Vitamin
+Drug|Hormone|SIMPLE_SEGMENT|8551,8560|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Organic Chemical|SIMPLE_SEGMENT|8551,8560|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8551,8560|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Vitamin|SIMPLE_SEGMENT|8551,8560|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|8551,8560|false|false|false|C0919758|Vitamin D measurement|Vitamin D
+Event|Event|SIMPLE_SEGMENT|8559,8560|false|false|false|||D
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|8562,8569|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|8562,8569|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|8562,8569|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8562,8569|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Drug|Vitamin|SIMPLE_SEGMENT|8562,8569|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Event|Event|SIMPLE_SEGMENT|8562,8569|false|false|false|||calcium
+Finding|Physiologic Function|SIMPLE_SEGMENT|8562,8569|false|false|false|C4553026|Calcium metabolic function|calcium
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|8562,8569|false|false|false|C0201925|Calcium measurement|calcium
+Drug|Organic Chemical|SIMPLE_SEGMENT|8562,8577|false|false|false|C0108101|calcium citrate|calcium citrate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8562,8577|false|false|false|C0108101|calcium citrate|calcium citrate
+Drug|Organic Chemical|SIMPLE_SEGMENT|8570,8577|false|false|false|C0008857;C0376259|Citrates;citrate|citrate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8570,8577|false|false|false|C0008857;C0376259|Citrates;citrate|citrate
+Event|Event|SIMPLE_SEGMENT|8570,8577|false|false|false|||citrate
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|8570,8577|false|false|false|C0201956|Citrate measurement|citrate
+Drug|Organic Chemical|SIMPLE_SEGMENT|8578,8585|false|false|false|C0042890|Vitamins|vitamin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8578,8585|false|false|false|C0042890|Vitamins|vitamin
+Drug|Vitamin|SIMPLE_SEGMENT|8578,8585|false|false|false|C0042890|Vitamins|vitamin
+Event|Event|SIMPLE_SEGMENT|8578,8585|false|false|false|||vitamin
+Drug|Organic Chemical|SIMPLE_SEGMENT|8578,8588|false|false|false|C0008318;C3265062|cholecalciferol;vitamin D3|vitamin D3
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8578,8588|false|false|false|C0008318;C3265062|cholecalciferol;vitamin D3|vitamin D3
+Drug|Vitamin|SIMPLE_SEGMENT|8578,8588|false|false|false|C0008318;C3265062|cholecalciferol;vitamin D3|vitamin D3
+Anatomy|Body Space or Junction|SIMPLE_SEGMENT|8611,8615|false|false|false|C0226896|Oral cavity|oral
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8611,8615|false|false|false|C1272919|Oral Dosage Form|oral
+Finding|Finding|SIMPLE_SEGMENT|8611,8615|false|false|false|C1527415;C4521986|Oral (intended site);Oral Route of Administration|oral
+Finding|Functional Concept|SIMPLE_SEGMENT|8611,8615|false|false|false|C1527415;C4521986|Oral (intended site);Oral Route of Administration|oral
+Event|Event|SIMPLE_SEGMENT|8616,8621|false|false|false|||DAILY
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|8627,8630|false|false|false|C0056632;C0459207;C2702357;C3488428|Cyclophosphamide/Dacarbazine/Vincristine;cod, unspecified preparation;codfish allergenic extract|cod
+Drug|Food|SIMPLE_SEGMENT|8627,8630|false|false|false|C0056632;C0459207;C2702357;C3488428|Cyclophosphamide/Dacarbazine/Vincristine;cod, unspecified preparation;codfish allergenic extract|cod
+Drug|Immunologic Factor|SIMPLE_SEGMENT|8627,8630|false|false|false|C0056632;C0459207;C2702357;C3488428|Cyclophosphamide/Dacarbazine/Vincristine;cod, unspecified preparation;codfish allergenic extract|cod
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8627,8630|false|false|false|C0056632;C0459207;C2702357;C3488428|Cyclophosphamide/Dacarbazine/Vincristine;cod, unspecified preparation;codfish allergenic extract|cod
+Event|Event|SIMPLE_SEGMENT|8627,8630|false|false|false|||cod
+Finding|Finding|SIMPLE_SEGMENT|8627,8630|false|false|false|C0007465;C0457523;C1420285;C5444130|Cancerization of Pancreatic Ducts;Cause of Death;Cemento-osseous dysplasia;SNRPB gene|cod
+Finding|Gene or Genome|SIMPLE_SEGMENT|8627,8630|false|false|false|C0007465;C0457523;C1420285;C5444130|Cancerization of Pancreatic Ducts;Cause of Death;Cemento-osseous dysplasia;SNRPB gene|cod
+Finding|Pathologic Function|SIMPLE_SEGMENT|8627,8630|false|false|false|C0007465;C0457523;C1420285;C5444130|Cancerization of Pancreatic Ducts;Cause of Death;Cemento-osseous dysplasia;SNRPB gene|cod
+Drug|Food|SIMPLE_SEGMENT|8627,8640|false|false|false|C0009213|cod liver oil|cod liver oil
+Drug|Organic Chemical|SIMPLE_SEGMENT|8627,8640|false|false|false|C0009213|cod liver oil|cod liver oil
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8627,8640|false|false|false|C0009213|cod liver oil|cod liver oil
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|8631,8636|false|false|false|C0023884;C1278929;C4037986|Abdomen>Liver;Liver|liver
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|8631,8636|false|false|false|C0023895;C0496870|Benign neoplasm of liver;Liver diseases|liver
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|8631,8636|false|false|false|C0023895;C0496870|Benign neoplasm of liver;Liver diseases|liver
+Drug|Organic Chemical|SIMPLE_SEGMENT|8631,8636|false|false|false|C0023899;C0721399|Liver brand of Vitamin B 12;liver extract|liver
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8631,8636|false|false|false|C0023899;C0721399|Liver brand of Vitamin B 12;liver extract|liver
+Drug|Vitamin|SIMPLE_SEGMENT|8631,8636|false|false|false|C0023899;C0721399|Liver brand of Vitamin B 12;liver extract|liver
+Event|Event|SIMPLE_SEGMENT|8631,8636|false|false|false|||liver
+Finding|Finding|SIMPLE_SEGMENT|8631,8636|false|false|false|C0577060|Liver problem|liver
+Procedure|Health Care Activity|SIMPLE_SEGMENT|8631,8636|false|false|false|C0872387|Procedures on liver|liver
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8637,8640|false|false|false|C0028908;C1517288;C1947940;C3541397|Food Oil;Oil Dosage Form;Oils;oil ingredients|oil
+Drug|Food|SIMPLE_SEGMENT|8637,8640|false|false|false|C0028908;C1517288;C1947940;C3541397|Food Oil;Oil Dosage Form;Oils;oil ingredients|oil
+Drug|Organic Chemical|SIMPLE_SEGMENT|8637,8640|false|false|false|C0028908;C1517288;C1947940;C3541397|Food Oil;Oil Dosage Form;Oils;oil ingredients|oil
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8637,8640|false|false|false|C0028908;C1517288;C1947940;C3541397|Food Oil;Oil Dosage Form;Oils;oil ingredients|oil
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|8643,8650|false|false|false|C0524463;C1325531|Microbial anatomical capsule structure;Structure of organ capsule|capsule
+Anatomy|Cell Component|SIMPLE_SEGMENT|8643,8650|false|false|false|C0524463;C1325531|Microbial anatomical capsule structure;Structure of organ capsule|capsule
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8643,8650|false|false|false|C0006935|capsule (pharmacologic)|capsule
+Anatomy|Body Space or Junction|SIMPLE_SEGMENT|8652,8656|false|false|false|C0226896|Oral cavity|oral
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8652,8656|false|false|false|C1272919|Oral Dosage Form|oral
+Finding|Finding|SIMPLE_SEGMENT|8652,8656|false|false|false|C1527415;C4521986|Oral (intended site);Oral Route of Administration|oral
+Finding|Functional Concept|SIMPLE_SEGMENT|8652,8656|false|false|false|C1527415;C4521986|Oral (intended site);Oral Route of Administration|oral
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|8657,8660|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|8657,8660|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|8657,8660|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|8657,8660|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|8657,8660|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|8666,8677|false|false|false|C0027235|ipratropium|Ipratropium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8666,8677|false|false|false|C0027235|ipratropium|Ipratropium
+Event|Event|SIMPLE_SEGMENT|8666,8677|false|false|false|||Ipratropium
+Drug|Organic Chemical|SIMPLE_SEGMENT|8666,8685|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8666,8685|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|8678,8685|false|false|false|C0006222|Bromides|Bromide
+Event|Event|SIMPLE_SEGMENT|8678,8685|false|false|false|||Bromide
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|8678,8685|false|false|false|C0202341|Bromides measurement|Bromide
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|8686,8689|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|8686,8689|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8686,8689|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Event|Event|SIMPLE_SEGMENT|8686,8689|false|false|false|||Neb
+Finding|Cell Function|SIMPLE_SEGMENT|8686,8689|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|8686,8689|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|8692,8695|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|8692,8695|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|8692,8695|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|8692,8695|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|8692,8695|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|8692,8695|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|8703,8706|false|false|false|C1422467|CIAO3 gene|PRN
+Event|Event|SIMPLE_SEGMENT|8707,8715|false|false|false|||Wheezing
+Finding|Sign or Symptom|SIMPLE_SEGMENT|8707,8715|false|false|false|C0043144|Wheezing|Wheezing
+Drug|Hormone|SIMPLE_SEGMENT|8721,8731|false|false|false|C0032952|prednisone|PredniSONE
+Drug|Organic Chemical|SIMPLE_SEGMENT|8721,8731|false|false|false|C0032952|prednisone|PredniSONE
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8721,8731|false|false|false|C0032952|prednisone|PredniSONE
+Procedure|Health Care Activity|SIMPLE_SEGMENT|8748,8755|false|false|false|C0441640||Tapered
+Event|Event|SIMPLE_SEGMENT|8763,8767|false|false|false|||DOWN
+Event|Event|SIMPLE_SEGMENT|8772,8781|false|false|false|||Discharge
+Finding|Body Substance|SIMPLE_SEGMENT|8772,8781|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|SIMPLE_SEGMENT|8772,8781|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|SIMPLE_SEGMENT|8772,8781|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|SIMPLE_SEGMENT|8772,8781|false|false|false|C0030685|Patient Discharge|Discharge
+Finding|Finding|SIMPLE_SEGMENT|8772,8793|false|false|false|C0806915|Medication.discharge|Discharge Medications
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|8782,8793|false|false|false|C0802604;C2598133||Medications
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8782,8793|false|false|false|C0013227|Pharmaceutical Preparations|Medications
+Event|Event|SIMPLE_SEGMENT|8782,8793|false|false|false|||Medications
+Finding|Intellectual Product|SIMPLE_SEGMENT|8782,8793|false|false|false|C4284232|Medications|Medications
+Drug|Organic Chemical|SIMPLE_SEGMENT|8798,8811|false|false|false|C0000970;C2917659|Acetaminophen [EPC];acetaminophen|Acetaminophen
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8798,8811|false|false|false|C0000970;C2917659|Acetaminophen [EPC];acetaminophen|Acetaminophen
+Event|Event|SIMPLE_SEGMENT|8798,8811|false|false|false|||Acetaminophen
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|8798,8811|false|false|false|C0373527|Acetaminophen measurement|Acetaminophen
+Finding|Gene or Genome|SIMPLE_SEGMENT|8826,8829|false|false|false|C1422467|CIAO3 gene|PRN
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|8830,8834|false|false|false|C2598155||Pain
+Event|Event|SIMPLE_SEGMENT|8830,8834|false|false|false|||Pain
+Finding|Functional Concept|SIMPLE_SEGMENT|8830,8834|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Finding|Sign or Symptom|SIMPLE_SEGMENT|8830,8834|false|false|false|C0030193;C1549543|Administration Method - Pain;Pain|Pain
+Drug|Organic Chemical|SIMPLE_SEGMENT|8839,8848|false|false|false|C0001927|albuterol|albuterol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8839,8848|false|false|false|C0001927|albuterol|albuterol
+Event|Event|SIMPLE_SEGMENT|8839,8848|false|false|false|||albuterol
+Drug|Organic Chemical|SIMPLE_SEGMENT|8839,8856|false|false|false|C0543495|albuterol sulfate|albuterol sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8839,8856|false|false|false|C0543495|albuterol sulfate|albuterol sulfate
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|8849,8856|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|8849,8856|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8849,8856|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|sulfate
+Event|Event|SIMPLE_SEGMENT|8849,8856|false|false|false|||sulfate
+Finding|Functional Concept|SIMPLE_SEGMENT|8874,8884|false|false|false|C0004048;C0205535|Inhalation Route of Administration;Inspiration (function)|inhalation
+Finding|Organism Function|SIMPLE_SEGMENT|8874,8884|false|false|false|C0004048;C0205535|Inhalation Route of Administration;Inspiration (function)|inhalation
+Event|Event|SIMPLE_SEGMENT|8885,8888|false|false|false|||Q4H
+Drug|Organic Chemical|SIMPLE_SEGMENT|8893,8901|false|false|false|C1831808|apixaban|Apixaban
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8893,8901|false|false|false|C1831808|apixaban|Apixaban
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|8910,8913|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|8910,8913|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|8910,8913|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|8910,8913|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|8910,8913|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|8918,8925|false|false|false|C0004057|aspirin|Aspirin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8918,8925|false|false|false|C0004057|aspirin|Aspirin
+Drug|Organic Chemical|SIMPLE_SEGMENT|8945,8957|false|false|false|C0286651|atorvastatin|Atorvastatin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8945,8957|false|false|false|C0286651|atorvastatin|Atorvastatin
+Drug|Organic Chemical|SIMPLE_SEGMENT|8975,8984|false|false|false|C0012373|diltiazem|Diltiazem
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|8975,8984|false|false|false|C0012373|diltiazem|Diltiazem
+Finding|Finding|SIMPLE_SEGMENT|8985,8993|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Finding|Functional Concept|SIMPLE_SEGMENT|8985,8993|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Event|Event|SIMPLE_SEGMENT|8994,9001|false|false|false|||Release
+Finding|Functional Concept|SIMPLE_SEGMENT|8994,9001|false|false|false|C0391871;C1283071|Release - action (qualifier value);Released (action)|Release
+Procedure|Health Care Activity|SIMPLE_SEGMENT|8994,9001|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|8994,9001|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|9012,9015|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|9012,9015|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|9012,9015|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|9012,9015|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|9012,9015|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|9020,9028|false|false|false|C1692318|docusate|Docusate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9020,9028|false|false|false|C1692318|docusate|Docusate
+Event|Event|SIMPLE_SEGMENT|9020,9028|false|false|false|||Docusate
+Drug|Organic Chemical|SIMPLE_SEGMENT|9020,9035|false|false|false|C0243237|docusate sodium|Docusate Sodium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9020,9035|false|false|false|C0243237|docusate sodium|Docusate Sodium
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|9029,9035|false|false|false|C0037473;C3541959;C3714642|Sodium Drug Class;Sodium supplements;sodium|Sodium
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|9029,9035|false|false|false|C0037473;C3541959;C3714642|Sodium Drug Class;Sodium supplements;sodium|Sodium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9029,9035|false|false|false|C0037473;C3541959;C3714642|Sodium Drug Class;Sodium supplements;sodium|Sodium
+Event|Event|SIMPLE_SEGMENT|9029,9035|false|false|false|||Sodium
+Finding|Physiologic Function|SIMPLE_SEGMENT|9029,9035|false|false|false|C4553025|Sodium metabolic function|Sodium
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|9029,9035|false|false|false|C0337443|Sodium measurement|Sodium
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|9046,9049|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|9046,9049|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|9046,9049|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|9046,9049|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|9046,9049|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|9054,9065|false|false|false|C0165590|dorzolamide|Dorzolamide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9054,9065|false|false|false|C0165590|dorzolamide|Dorzolamide
+Finding|Functional Concept|SIMPLE_SEGMENT|9069,9074|false|false|false|C1522230|Ophthalmic Route of Administration|Ophth
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9084,9088|false|false|false|C0991568|Drops - Drug Form|DROP
+Event|Activity|SIMPLE_SEGMENT|9084,9088|false|false|false|C1705648|Dropping|DROP
+Event|Event|SIMPLE_SEGMENT|9084,9088|false|false|false|||DROP
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|9089,9098|false|false|false|C0229118|Structure of both eyes|BOTH EYES
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|9094,9098|false|false|false|C0015392|Eye|EYES
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|9094,9098|false|false|false|C5848506||EYES
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|9099,9102|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|9099,9102|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|9099,9102|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|9099,9102|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|9099,9102|false|false|false|C1332410|BID gene|BID
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|9107,9114|false|false|false|C2346592|Ferrous|Ferrous
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|9107,9122|false|false|false|C0060282|ferrous sulfate|Ferrous Sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9107,9122|false|false|false|C0060282|ferrous sulfate|Ferrous Sulfate
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|9115,9122|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|Sulfate
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|9115,9122|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|Sulfate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9115,9122|false|false|false|C0038720;C0475337;C3536965|Sulfates, Inorganic;Sulfates, Unspecified or Sulfate Ion;sulfate ion|Sulfate
+Event|Event|SIMPLE_SEGMENT|9115,9122|false|false|false|||Sulfate
+Drug|Organic Chemical|SIMPLE_SEGMENT|9144,9155|false|false|false|C0082607|fluticasone|Fluticasone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9144,9155|false|false|false|C0082607|fluticasone|Fluticasone
+Event|Event|SIMPLE_SEGMENT|9144,9155|false|false|false|||Fluticasone
+Drug|Organic Chemical|SIMPLE_SEGMENT|9144,9166|false|false|false|C0117996|fluticasone propionate|Fluticasone Propionate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9144,9166|false|false|false|C0117996|fluticasone propionate|Fluticasone Propionate
+Drug|Organic Chemical|SIMPLE_SEGMENT|9156,9166|false|false|false|C0033474;C0392214|Propionates;propionate|Propionate
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|9167,9172|false|false|false|C0028429||NASAL
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9167,9172|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|NASAL
+Drug|Organic Chemical|SIMPLE_SEGMENT|9167,9172|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|NASAL
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9167,9172|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|NASAL
+Finding|Finding|SIMPLE_SEGMENT|9167,9172|false|false|false|C1522019;C4520890|Nasal (intended site);Nasal Route of Administration|NASAL
+Finding|Functional Concept|SIMPLE_SEGMENT|9167,9172|false|false|false|C1522019;C4520890|Nasal (intended site);Nasal Route of Administration|NASAL
+Event|Event|SIMPLE_SEGMENT|9175,9179|false|false|false|||SPRY
+Event|Event|SIMPLE_SEGMENT|9183,9188|false|false|false|||DAILY
+Finding|Gene or Genome|SIMPLE_SEGMENT|9189,9192|false|false|false|C1422467|CIAO3 gene|PRN
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|9193,9202|false|false|false|C1717415||allergies
+Event|Event|SIMPLE_SEGMENT|9193,9202|false|false|false|||allergies
+Finding|Pathologic Function|SIMPLE_SEGMENT|9193,9202|false|false|false|C0020517|Hypersensitivity|allergies
+Drug|Organic Chemical|SIMPLE_SEGMENT|9208,9219|false|false|false|C0082607|fluticasone|Fluticasone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9208,9219|false|false|false|C0082607|fluticasone|Fluticasone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9208,9230|false|false|false|C0939232|fluticasone / salmeterol|Fluticasone-Salmeterol
+Drug|Organic Chemical|SIMPLE_SEGMENT|9208,9237|false|false|false|C4762496|Fluticasone-Salmeterol Diskus|Fluticasone-Salmeterol Diskus
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9208,9237|false|false|false|C4762496|Fluticasone-Salmeterol Diskus|Fluticasone-Salmeterol Diskus
+Drug|Organic Chemical|SIMPLE_SEGMENT|9220,9230|false|false|false|C0073992|salmeterol|Salmeterol
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9220,9230|false|false|false|C0073992|salmeterol|Salmeterol
+Event|Event|SIMPLE_SEGMENT|9231,9237|false|false|false|||Diskus
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9250,9253|false|false|false|C0022209;C0598322|Inhalant dose form;isoniazid|INH
+Drug|Organic Chemical|SIMPLE_SEGMENT|9250,9253|false|false|false|C0022209;C0598322|Inhalant dose form;isoniazid|INH
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9250,9253|false|false|false|C0022209;C0598322|Inhalant dose form;isoniazid|INH
+Event|Event|SIMPLE_SEGMENT|9250,9253|false|false|false|||INH
+Finding|Functional Concept|SIMPLE_SEGMENT|9250,9253|false|false|false|C0205535|Inhalation Route of Administration|INH
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|9257,9260|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|9257,9260|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|9257,9260|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|9257,9260|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|9257,9260|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|9266,9277|false|false|false|C0018305|guaifenesin|Guaifenesin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9266,9277|false|false|false|C0018305|guaifenesin|Guaifenesin
+Finding|Gene or Genome|SIMPLE_SEGMENT|9292,9295|false|false|false|C1422467|CIAO3 gene|PRN
+Drug|Organic Chemical|SIMPLE_SEGMENT|9296,9301|false|false|false|C3815497|Cough (guaifenesin)|cough
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9296,9301|false|false|false|C3815497|Cough (guaifenesin)|cough
+Event|Event|SIMPLE_SEGMENT|9296,9301|false|false|false|||cough
+Finding|Sign or Symptom|SIMPLE_SEGMENT|9296,9301|false|false|false|C0010200|Coughing|cough
+Drug|Organic Chemical|SIMPLE_SEGMENT|9307,9326|false|false|false|C0020261|hydrochlorothiazide|Hydrochlorothiazide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9307,9326|false|false|false|C0020261|hydrochlorothiazide|Hydrochlorothiazide
+Drug|Organic Chemical|SIMPLE_SEGMENT|9347,9357|false|false|false|C0022251|isosorbide|Isosorbide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9347,9357|false|false|false|C0022251|isosorbide|Isosorbide
+Drug|Organic Chemical|SIMPLE_SEGMENT|9347,9369|false|false|false|C0064079|isosorbide mononitrate|Isosorbide Mononitrate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9347,9369|false|false|false|C0064079|isosorbide mononitrate|Isosorbide Mononitrate
+Event|Event|SIMPLE_SEGMENT|9358,9369|false|false|false|||Mononitrate
+Finding|Finding|SIMPLE_SEGMENT|9371,9379|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Finding|Functional Concept|SIMPLE_SEGMENT|9371,9379|false|false|false|C0231448;C5781021|Extended (finding);Extension|Extended
+Event|Event|SIMPLE_SEGMENT|9380,9387|false|false|false|||Release
+Finding|Functional Concept|SIMPLE_SEGMENT|9380,9387|false|false|false|C0391871;C1283071|Release - action (qualifier value);Released (action)|Release
+Procedure|Health Care Activity|SIMPLE_SEGMENT|9380,9387|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|9380,9387|false|false|false|C0030685;C0680255;C1963578|Discharge (release);Patient Discharge;Release (procedure)|Release
+Drug|Organic Chemical|SIMPLE_SEGMENT|9410,9421|false|false|false|C0090306|latanoprost|Latanoprost
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9410,9421|false|false|false|C0090306|latanoprost|Latanoprost
+Finding|Functional Concept|SIMPLE_SEGMENT|9429,9434|false|false|false|C1522230|Ophthalmic Route of Administration|Ophth
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9444,9448|false|false|false|C0991568|Drops - Drug Form|DROP
+Event|Activity|SIMPLE_SEGMENT|9444,9448|false|false|false|C1705648|Dropping|DROP
+Event|Event|SIMPLE_SEGMENT|9444,9448|false|false|false|||DROP
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|9449,9458|false|false|false|C0229118|Structure of both eyes|BOTH EYES
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|9454,9458|false|false|false|C0015392|Eye|EYES
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|9454,9458|false|false|false|C5848506||EYES
+Drug|Organic Chemical|SIMPLE_SEGMENT|9468,9477|false|false|false|C0024002|lorazepam|Lorazepam
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9468,9477|false|false|false|C0024002|lorazepam|Lorazepam
+Finding|Gene or Genome|SIMPLE_SEGMENT|9492,9495|false|false|false|C1422467|CIAO3 gene|PRN
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9496,9504|false|false|false|C1950154|Insomnia homeopathic medication|Insomnia
+Event|Event|SIMPLE_SEGMENT|9496,9504|false|false|false|||Insomnia
+Finding|Sign or Symptom|SIMPLE_SEGMENT|9496,9504|false|false|false|C0917801|Sleeplessness|Insomnia
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|9506,9513|false|false|false|C0003467;C0003469|Anxiety;Anxiety Disorders|anxiety
+Event|Event|SIMPLE_SEGMENT|9506,9513|false|false|false|||anxiety
+Finding|Sign or Symptom|SIMPLE_SEGMENT|9506,9513|false|false|false|C0860603|Anxiety symptoms|anxiety
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|9515,9522|false|false|false|C1135208|Vertigo as late effect of cerebrovascular disease|vertigo
+Event|Event|SIMPLE_SEGMENT|9515,9522|false|false|false|||vertigo
+Finding|Sign or Symptom|SIMPLE_SEGMENT|9515,9522|false|false|false|C0042571|Vertigo|vertigo
+Drug|Organic Chemical|SIMPLE_SEGMENT|9528,9541|false|false|false|C0301532;C3714835|Multivitamin Drug Class;Multivitamin preparation|Multivitamins
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9528,9541|false|false|false|C0301532;C3714835|Multivitamin Drug Class;Multivitamin preparation|Multivitamins
+Drug|Vitamin|SIMPLE_SEGMENT|9528,9541|false|false|false|C0301532;C3714835|Multivitamin Drug Class;Multivitamin preparation|Multivitamins
+Event|Event|SIMPLE_SEGMENT|9528,9541|false|false|false|||Multivitamins
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9544,9547|false|false|false|C0039225|Tablet Dosage Form|TAB
+Event|Event|SIMPLE_SEGMENT|9544,9547|false|false|false|||TAB
+Drug|Hormone|SIMPLE_SEGMENT|9562,9572|false|false|false|C0032952|prednisone|PredniSONE
+Drug|Organic Chemical|SIMPLE_SEGMENT|9562,9572|false|false|false|C0032952|prednisone|PredniSONE
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9562,9572|false|false|false|C0032952|prednisone|PredniSONE
+Event|Event|SIMPLE_SEGMENT|9596,9604|false|false|false|||decrease
+Event|Event|SIMPLE_SEGMENT|9605,9609|false|false|false|||dose
+Procedure|Health Care Activity|SIMPLE_SEGMENT|9632,9639|false|false|false|C0441640||Tapered
+Event|Event|SIMPLE_SEGMENT|9647,9651|false|false|false|||DOWN
+Drug|Hormone|SIMPLE_SEGMENT|9657,9667|false|false|false|C0032952|prednisone|prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|9657,9667|false|false|false|C0032952|prednisone|prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9657,9667|false|false|false|C0032952|prednisone|prednisone
+Event|Event|SIMPLE_SEGMENT|9657,9667|false|false|false|||prednisone
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9676,9683|false|false|false|C0039225|Tablet Dosage Form|tablets
+Finding|Functional Concept|SIMPLE_SEGMENT|9687,9695|false|false|false|C1527415|Oral Route of Administration|by mouth
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|9690,9695|false|false|false|C0226896;C0230028|Oral cavity;Oral region|mouth
+Anatomy|Body Space or Junction|SIMPLE_SEGMENT|9690,9695|false|false|false|C0226896;C0230028|Oral cavity;Oral region|mouth
+Finding|Intellectual Product|SIMPLE_SEGMENT|9696,9700|false|false|false|C1720092|Once - dosing instruction fragment|once
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9696,9706|false|false|false|C3537736|Once A Day|once a day
+Finding|Idea or Concept|SIMPLE_SEGMENT|9703,9706|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Intellectual Product|SIMPLE_SEGMENT|9703,9706|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9723,9727|false|false|false|C1999262|Pack|Pack
+Event|Activity|SIMPLE_SEGMENT|9723,9727|false|false|false|C2828395|Packing (action)|Pack
+Event|Event|SIMPLE_SEGMENT|9728,9735|false|false|false|||Refills
+Finding|Idea or Concept|SIMPLE_SEGMENT|9728,9735|false|false|false|C0807726|refill|Refills
+Drug|Organic Chemical|SIMPLE_SEGMENT|9743,9753|false|false|false|C0034665|ranitidine|Ranitidine
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9743,9753|false|false|false|C0034665|ranitidine|Ranitidine
+Drug|Organic Chemical|SIMPLE_SEGMENT|9775,9787|false|false|false|C0039771|theophylline|Theophylline
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9775,9787|false|false|false|C0039771|theophylline|Theophylline
+Event|Event|SIMPLE_SEGMENT|9775,9787|false|false|false|||Theophylline
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|9775,9787|false|false|false|C0039773|Assay of theophylline|Theophylline
+Drug|Organic Chemical|SIMPLE_SEGMENT|9775,9790|false|false|false|C0939729|Theophylline SR|Theophylline SR
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9775,9790|false|false|false|C0939729|Theophylline SR|Theophylline SR
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|9801,9804|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|9801,9804|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|9801,9804|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|9801,9804|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|9801,9804|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|9810,9820|false|false|false|C0213771|tiotropium|Tiotropium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9810,9820|false|false|false|C0213771|tiotropium|Tiotropium
+Event|Event|SIMPLE_SEGMENT|9810,9820|false|false|false|||Tiotropium
+Drug|Organic Chemical|SIMPLE_SEGMENT|9810,9828|false|false|false|C1306772|tiotropium bromide|Tiotropium Bromide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9810,9828|false|false|false|C1306772|tiotropium bromide|Tiotropium Bromide
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|9821,9828|false|false|false|C0006222|Bromides|Bromide
+Event|Event|SIMPLE_SEGMENT|9821,9828|false|false|false|||Bromide
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|9821,9828|false|false|false|C0202341|Bromides measurement|Bromide
+Disorder|Congenital Abnormality|SIMPLE_SEGMENT|9831,9834|false|false|false|C1855179|CATARACT, ANTERIOR POLAR|CAP
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9831,9834|false|false|false|C0006935|capsule (pharmacologic)|CAP
+Event|Event|SIMPLE_SEGMENT|9831,9834|false|false|false|||CAP
+Finding|Gene or Genome|SIMPLE_SEGMENT|9831,9834|false|false|false|C1416891;C1418551;C1419093;C1422073;C1422760;C2985259;C4522312|BRD4 gene;BRD4 wt Allele;CAP1 gene;HACD1 gene;LNPEP gene;SERPINB6 gene;SORBS1 gene|CAP
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|9831,9834|false|false|false|C0278651;C0280547;C1879916|CAP Regimen;cisplatin/cyclophosphamide/doxorubicin protocol;cyclophosphamide/doxorubicin/prednisone protocol|CAP
+Drug|Antibiotic|SIMPLE_SEGMENT|9849,9861|false|false|false|C0282386|levofloxacin|Levofloxacin
+Drug|Organic Chemical|SIMPLE_SEGMENT|9849,9861|false|false|false|C0282386|levofloxacin|Levofloxacin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9878,9886|false|false|false|C0720099|Duration brand of oxymetazoline|Duration
+Drug|Antibiotic|SIMPLE_SEGMENT|9900,9912|false|false|false|C0282386|levofloxacin|levofloxacin
+Drug|Organic Chemical|SIMPLE_SEGMENT|9900,9912|false|false|false|C0282386|levofloxacin|levofloxacin
+Event|Event|SIMPLE_SEGMENT|9900,9912|false|false|false|||levofloxacin
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9922,9928|false|false|false|C0039225|Tablet Dosage Form|tablet
+Finding|Functional Concept|SIMPLE_SEGMENT|9932,9940|false|false|false|C1527415|Oral Route of Administration|by mouth
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|9935,9940|false|false|false|C0226896;C0230028|Oral cavity;Oral region|mouth
+Anatomy|Body Space or Junction|SIMPLE_SEGMENT|9935,9940|false|false|false|C0226896;C0230028|Oral cavity;Oral region|mouth
+Finding|Intellectual Product|SIMPLE_SEGMENT|9941,9945|false|false|false|C1720092|Once - dosing instruction fragment|once
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|9941,9951|false|false|false|C3537736|Once A Day|once a day
+Finding|Idea or Concept|SIMPLE_SEGMENT|9948,9951|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Intellectual Product|SIMPLE_SEGMENT|9948,9951|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|9962,9968|false|false|false|C0039225|Tablet Dosage Form|Tablet
+Event|Event|SIMPLE_SEGMENT|9969,9976|false|false|false|||Refills
+Finding|Idea or Concept|SIMPLE_SEGMENT|9969,9976|false|false|false|C0807726|refill|Refills
+Drug|Antibiotic|SIMPLE_SEGMENT|9994,10006|false|false|false|C0041041|trimethoprim|Trimethoprim
+Drug|Organic Chemical|SIMPLE_SEGMENT|9994,10006|false|false|false|C0041041|trimethoprim|Trimethoprim
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10012,10015|false|false|false|C0039225|Tablet Dosage Form|TAB
+Event|Event|SIMPLE_SEGMENT|10012,10015|false|false|false|||TAB
+Event|Event|SIMPLE_SEGMENT|10025,10036|false|false|false|||prophylaxis
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|10025,10036|false|false|false|C0199176|Prophylactic treatment|prophylaxis
+Finding|Idea or Concept|SIMPLE_SEGMENT|10047,10051|false|false|false|C0233324;C1705313|Term (lexical);Term Birth|term
+Finding|Organism Function|SIMPLE_SEGMENT|10047,10051|false|false|false|C0233324;C1705313|Term (lexical);Term Birth|term
+Drug|Organic Chemical|SIMPLE_SEGMENT|10052,10059|false|false|false|C0038317;C5782153|Steroid [EPC];Steroids|steroid
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10052,10059|false|false|false|C0038317;C5782153|Steroid [EPC];Steroids|steroid
+Finding|Individual Behavior|SIMPLE_SEGMENT|10052,10063|false|false|false|C0281991|Use of steroids|steroid use
+Event|Event|SIMPLE_SEGMENT|10060,10063|false|false|false|||use
+Finding|Functional Concept|SIMPLE_SEGMENT|10060,10063|false|false|false|C0042153;C0457083;C1947944|Usage;Use - dosing instruction imperative;utilization qualifier|use
+Finding|Intellectual Product|SIMPLE_SEGMENT|10060,10063|false|false|false|C0042153;C0457083;C1947944|Usage;Use - dosing instruction imperative;utilization qualifier|use
+Event|Event|SIMPLE_SEGMENT|10065,10067|false|false|false|||RX
+Drug|Antibiotic|SIMPLE_SEGMENT|10069,10085|false|false|false|C0038689|sulfamethoxazole|sulfamethoxazole
+Drug|Organic Chemical|SIMPLE_SEGMENT|10069,10085|false|false|false|C0038689|sulfamethoxazole|sulfamethoxazole
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10069,10098|false|false|false|C0041044|Trimethoprim-Sulfamethoxazole Combination|sulfamethoxazole-trimethoprim
+Drug|Antibiotic|SIMPLE_SEGMENT|10086,10098|false|false|false|C0041041|trimethoprim|trimethoprim
+Drug|Organic Chemical|SIMPLE_SEGMENT|10086,10098|false|false|false|C0041041|trimethoprim|trimethoprim
+Event|Event|SIMPLE_SEGMENT|10086,10098|false|false|false|||trimethoprim
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10114,10120|false|false|false|C0039225|Tablet Dosage Form|tablet
+Anatomy|Body Location or Region|SIMPLE_SEGMENT|10128,10133|false|false|false|C0226896;C0230028|Oral cavity;Oral region|mouth
+Anatomy|Body Space or Junction|SIMPLE_SEGMENT|10128,10133|false|false|false|C0226896;C0230028|Oral cavity;Oral region|mouth
+Finding|Intellectual Product|SIMPLE_SEGMENT|10134,10138|false|false|false|C1720092|Once - dosing instruction fragment|once
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10134,10144|false|false|false|C3537736|Once A Day|once a day
+Finding|Idea or Concept|SIMPLE_SEGMENT|10141,10144|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Finding|Intellectual Product|SIMPLE_SEGMENT|10141,10144|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|day
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10155,10161|false|false|false|C0039225|Tablet Dosage Form|Tablet
+Event|Event|SIMPLE_SEGMENT|10162,10169|false|false|false|||Refills
+Finding|Idea or Concept|SIMPLE_SEGMENT|10162,10169|false|false|false|C0807726|refill|Refills
+Drug|Organic Chemical|SIMPLE_SEGMENT|10177,10187|false|false|false|C3464797|Calcitrate|Calcitrate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10177,10187|false|false|false|C3464797|Calcitrate|Calcitrate
+Drug|Organic Chemical|SIMPLE_SEGMENT|10188,10195|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10188,10195|false|false|false|C0042890|Vitamins|Vitamin
+Drug|Vitamin|SIMPLE_SEGMENT|10188,10195|false|false|false|C0042890|Vitamins|Vitamin
+Event|Event|SIMPLE_SEGMENT|10188,10195|false|false|false|||Vitamin
+Drug|Hormone|SIMPLE_SEGMENT|10188,10197|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Organic Chemical|SIMPLE_SEGMENT|10188,10197|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10188,10197|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Drug|Vitamin|SIMPLE_SEGMENT|10188,10197|false|false|false|C0014695;C0042866;C2936842;C3537249;C3714503|D Vitamin;Vitamin D Drug Class;Vitamin D [EPC];ergocalciferol;vitamin D|Vitamin D
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|10188,10197|false|false|false|C0919758|Vitamin D measurement|Vitamin D
+Event|Event|SIMPLE_SEGMENT|10196,10197|false|false|false|||D
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|10199,10206|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Drug|Element, Ion, or Isotope|SIMPLE_SEGMENT|10199,10206|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|10199,10206|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10199,10206|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Drug|Vitamin|SIMPLE_SEGMENT|10199,10206|false|false|false|C0006675;C0006726;C2936886;C3540037;C3714611|CALCIUM SUPPLEMENTS;Calcium Drug Class;Calcium [EPC];Calcium, Dietary;calcium|calcium
+Event|Event|SIMPLE_SEGMENT|10199,10206|false|false|false|||calcium
+Finding|Physiologic Function|SIMPLE_SEGMENT|10199,10206|false|false|false|C4553026|Calcium metabolic function|calcium
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|10199,10206|false|false|false|C0201925|Calcium measurement|calcium
+Drug|Organic Chemical|SIMPLE_SEGMENT|10199,10214|false|false|false|C0108101|calcium citrate|calcium citrate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10199,10214|false|false|false|C0108101|calcium citrate|calcium citrate
+Drug|Organic Chemical|SIMPLE_SEGMENT|10207,10214|false|false|false|C0008857;C0376259|Citrates;citrate|citrate
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10207,10214|false|false|false|C0008857;C0376259|Citrates;citrate|citrate
+Event|Event|SIMPLE_SEGMENT|10207,10214|false|false|false|||citrate
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|10207,10214|false|false|false|C0201956|Citrate measurement|citrate
+Drug|Organic Chemical|SIMPLE_SEGMENT|10215,10222|false|false|false|C0042890|Vitamins|vitamin
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10215,10222|false|false|false|C0042890|Vitamins|vitamin
+Drug|Vitamin|SIMPLE_SEGMENT|10215,10222|false|false|false|C0042890|Vitamins|vitamin
+Event|Event|SIMPLE_SEGMENT|10215,10222|false|false|false|||vitamin
+Drug|Organic Chemical|SIMPLE_SEGMENT|10215,10225|false|false|false|C0008318;C3265062|cholecalciferol;vitamin D3|vitamin D3
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10215,10225|false|false|false|C0008318;C3265062|cholecalciferol;vitamin D3|vitamin D3
+Drug|Vitamin|SIMPLE_SEGMENT|10215,10225|false|false|false|C0008318;C3265062|cholecalciferol;vitamin D3|vitamin D3
+Anatomy|Body Space or Junction|SIMPLE_SEGMENT|10248,10252|false|false|false|C0226896|Oral cavity|oral
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10248,10252|false|false|false|C1272919|Oral Dosage Form|oral
+Finding|Finding|SIMPLE_SEGMENT|10248,10252|false|false|false|C1527415;C4521986|Oral (intended site);Oral Route of Administration|oral
+Finding|Functional Concept|SIMPLE_SEGMENT|10248,10252|false|false|false|C1527415;C4521986|Oral (intended site);Oral Route of Administration|oral
+Event|Event|SIMPLE_SEGMENT|10253,10258|false|false|false|||DAILY
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|10264,10267|false|false|false|C0056632;C0459207;C2702357;C3488428|Cyclophosphamide/Dacarbazine/Vincristine;cod, unspecified preparation;codfish allergenic extract|cod
+Drug|Food|SIMPLE_SEGMENT|10264,10267|false|false|false|C0056632;C0459207;C2702357;C3488428|Cyclophosphamide/Dacarbazine/Vincristine;cod, unspecified preparation;codfish allergenic extract|cod
+Drug|Immunologic Factor|SIMPLE_SEGMENT|10264,10267|false|false|false|C0056632;C0459207;C2702357;C3488428|Cyclophosphamide/Dacarbazine/Vincristine;cod, unspecified preparation;codfish allergenic extract|cod
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10264,10267|false|false|false|C0056632;C0459207;C2702357;C3488428|Cyclophosphamide/Dacarbazine/Vincristine;cod, unspecified preparation;codfish allergenic extract|cod
+Event|Event|SIMPLE_SEGMENT|10264,10267|false|false|false|||cod
+Finding|Finding|SIMPLE_SEGMENT|10264,10267|false|false|false|C0007465;C0457523;C1420285;C5444130|Cancerization of Pancreatic Ducts;Cause of Death;Cemento-osseous dysplasia;SNRPB gene|cod
+Finding|Gene or Genome|SIMPLE_SEGMENT|10264,10267|false|false|false|C0007465;C0457523;C1420285;C5444130|Cancerization of Pancreatic Ducts;Cause of Death;Cemento-osseous dysplasia;SNRPB gene|cod
+Finding|Pathologic Function|SIMPLE_SEGMENT|10264,10267|false|false|false|C0007465;C0457523;C1420285;C5444130|Cancerization of Pancreatic Ducts;Cause of Death;Cemento-osseous dysplasia;SNRPB gene|cod
+Drug|Food|SIMPLE_SEGMENT|10264,10277|false|false|false|C0009213|cod liver oil|cod liver oil
+Drug|Organic Chemical|SIMPLE_SEGMENT|10264,10277|false|false|false|C0009213|cod liver oil|cod liver oil
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10264,10277|false|false|false|C0009213|cod liver oil|cod liver oil
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|10268,10273|false|false|false|C0023884;C1278929;C4037986|Abdomen>Liver;Liver|liver
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10268,10273|false|false|false|C0023895;C0496870|Benign neoplasm of liver;Liver diseases|liver
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|10268,10273|false|false|false|C0023895;C0496870|Benign neoplasm of liver;Liver diseases|liver
+Drug|Organic Chemical|SIMPLE_SEGMENT|10268,10273|false|false|false|C0023899;C0721399|Liver brand of Vitamin B 12;liver extract|liver
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10268,10273|false|false|false|C0023899;C0721399|Liver brand of Vitamin B 12;liver extract|liver
+Drug|Vitamin|SIMPLE_SEGMENT|10268,10273|false|false|false|C0023899;C0721399|Liver brand of Vitamin B 12;liver extract|liver
+Event|Event|SIMPLE_SEGMENT|10268,10273|false|false|false|||liver
+Finding|Finding|SIMPLE_SEGMENT|10268,10273|false|false|false|C0577060|Liver problem|liver
+Procedure|Health Care Activity|SIMPLE_SEGMENT|10268,10273|false|false|false|C0872387|Procedures on liver|liver
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10274,10277|false|false|false|C0028908;C1517288;C1947940;C3541397|Food Oil;Oil Dosage Form;Oils;oil ingredients|oil
+Drug|Food|SIMPLE_SEGMENT|10274,10277|false|false|false|C0028908;C1517288;C1947940;C3541397|Food Oil;Oil Dosage Form;Oils;oil ingredients|oil
+Drug|Organic Chemical|SIMPLE_SEGMENT|10274,10277|false|false|false|C0028908;C1517288;C1947940;C3541397|Food Oil;Oil Dosage Form;Oils;oil ingredients|oil
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10274,10277|false|false|false|C0028908;C1517288;C1947940;C3541397|Food Oil;Oil Dosage Form;Oils;oil ingredients|oil
+Event|Event|SIMPLE_SEGMENT|10274,10277|false|false|false|||oil
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|10280,10287|false|false|false|C0524463;C1325531|Microbial anatomical capsule structure;Structure of organ capsule|capsule
+Anatomy|Cell Component|SIMPLE_SEGMENT|10280,10287|false|false|false|C0524463;C1325531|Microbial anatomical capsule structure;Structure of organ capsule|capsule
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10280,10287|false|false|false|C0006935|capsule (pharmacologic)|capsule
+Anatomy|Body Space or Junction|SIMPLE_SEGMENT|10289,10293|false|false|false|C0226896|Oral cavity|oral
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10289,10293|false|false|false|C1272919|Oral Dosage Form|oral
+Finding|Finding|SIMPLE_SEGMENT|10289,10293|false|false|false|C1527415;C4521986|Oral (intended site);Oral Route of Administration|oral
+Finding|Functional Concept|SIMPLE_SEGMENT|10289,10293|false|false|false|C1527415;C4521986|Oral (intended site);Oral Route of Administration|oral
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|10294,10297|false|false|false|C4546282|Body integrity dysphoria|BID
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|10294,10297|false|false|false|C1530795|BID protein, human|BID
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|10294,10297|false|false|false|C1530795|BID protein, human|BID
+Event|Event|SIMPLE_SEGMENT|10294,10297|false|false|false|||BID
+Finding|Gene or Genome|SIMPLE_SEGMENT|10294,10297|false|false|false|C1332410|BID gene|BID
+Drug|Organic Chemical|SIMPLE_SEGMENT|10303,10314|false|false|false|C0027235|ipratropium|Ipratropium
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10303,10314|false|false|false|C0027235|ipratropium|Ipratropium
+Event|Event|SIMPLE_SEGMENT|10303,10314|false|false|false|||Ipratropium
+Drug|Organic Chemical|SIMPLE_SEGMENT|10303,10322|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10303,10322|false|false|false|C0700580|ipratropium bromide|Ipratropium Bromide
+Drug|Inorganic Chemical|SIMPLE_SEGMENT|10315,10322|false|false|false|C0006222|Bromides|Bromide
+Event|Event|SIMPLE_SEGMENT|10315,10322|false|false|false|||Bromide
+Procedure|Laboratory Procedure|SIMPLE_SEGMENT|10315,10322|false|false|false|C0202341|Bromides measurement|Bromide
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|10323,10326|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|10323,10326|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10323,10326|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|Neb
+Event|Event|SIMPLE_SEGMENT|10323,10326|false|false|false|||Neb
+Finding|Cell Function|SIMPLE_SEGMENT|10323,10326|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Finding|Gene or Genome|SIMPLE_SEGMENT|10323,10326|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|Neb
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|10329,10332|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biologically Active Substance|SIMPLE_SEGMENT|10329,10332|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10329,10332|false|false|false|C1300458;C1610937|NEB protein, human;Nebulizer solution|NEB
+Event|Event|SIMPLE_SEGMENT|10329,10332|false|false|false|||NEB
+Finding|Cell Function|SIMPLE_SEGMENT|10329,10332|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|10329,10332|false|false|false|C1155733;C1417656|NEB gene;mitotic nuclear membrane disassembly|NEB
+Finding|Gene or Genome|SIMPLE_SEGMENT|10340,10343|false|false|false|C1422467|CIAO3 gene|PRN
+Event|Event|SIMPLE_SEGMENT|10344,10352|false|false|false|||Wheezing
+Finding|Sign or Symptom|SIMPLE_SEGMENT|10344,10352|false|false|false|C0043144|Wheezing|Wheezing
+Event|Event|SIMPLE_SEGMENT|10357,10366|false|false|false|||Discharge
+Finding|Body Substance|SIMPLE_SEGMENT|10357,10366|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|SIMPLE_SEGMENT|10357,10366|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|SIMPLE_SEGMENT|10357,10366|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|SIMPLE_SEGMENT|10357,10366|false|false|false|C0030685|Patient Discharge|Discharge
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10357,10378|false|false|false|C4019243||Discharge Disposition
+Finding|Finding|SIMPLE_SEGMENT|10357,10378|false|false|false|C4759848|Discharge disposition|Discharge Disposition
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10367,10378|false|false|false|C2926604||Disposition
+Event|Event|SIMPLE_SEGMENT|10367,10378|false|false|false|||Disposition
+Procedure|Health Care Activity|SIMPLE_SEGMENT|10367,10378|false|false|false|C0184758|Patient disposition|Disposition
+Event|Event|SIMPLE_SEGMENT|10380,10384|false|false|false|||Home
+Finding|Idea or Concept|SIMPLE_SEGMENT|10380,10384|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|Home
+Finding|Intellectual Product|SIMPLE_SEGMENT|10380,10384|false|false|false|C1548341;C1549632|Address type - Home;Visit User Code - Home|Home
+Procedure|Health Care Activity|SIMPLE_SEGMENT|10380,10384|false|false|false|C1553498|home health encounter|Home
+Event|Occupational Activity|SIMPLE_SEGMENT|10390,10397|false|false|false|C0557854|Services|Service
+Finding|Idea or Concept|SIMPLE_SEGMENT|10390,10397|false|false|false|C3245478|ActInformationPrivacyReason - service|Service
+Event|Event|SIMPLE_SEGMENT|10400,10408|false|false|false|||Facility
+Finding|Intellectual Product|SIMPLE_SEGMENT|10400,10408|false|false|false|C4695111|ADMIN.FACILITY|Facility
+Event|Event|SIMPLE_SEGMENT|10416,10425|false|false|false|||Discharge
+Finding|Body Substance|SIMPLE_SEGMENT|10416,10425|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|SIMPLE_SEGMENT|10416,10425|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|SIMPLE_SEGMENT|10416,10425|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|SIMPLE_SEGMENT|10416,10425|false|false|false|C0030685|Patient Discharge|Discharge
+Finding|Finding|SIMPLE_SEGMENT|10416,10435|false|false|false|C1555319|discharge diagnosis|Discharge Diagnosis
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10426,10435|false|false|false|C0945731||Diagnosis
+Event|Event|SIMPLE_SEGMENT|10426,10435|false|false|false|||Diagnosis
+Finding|Classification|SIMPLE_SEGMENT|10426,10435|false|false|false|C1546899;C1704338|Diagnosis Classification - Diagnosis;diagnosis aspects|Diagnosis
+Finding|Functional Concept|SIMPLE_SEGMENT|10426,10435|false|false|false|C1546899;C1704338|Diagnosis Classification - Diagnosis;diagnosis aspects|Diagnosis
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|10426,10435|false|false|false|C0011900|Diagnosis|Diagnosis
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10437,10454|false|false|false|C0801658||PRIMARY DIAGNOSIS
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10445,10454|false|false|false|C0945731||DIAGNOSIS
+Event|Event|SIMPLE_SEGMENT|10445,10454|false|false|false|||DIAGNOSIS
+Finding|Classification|SIMPLE_SEGMENT|10445,10454|false|false|false|C1546899;C1704338|Diagnosis Classification - Diagnosis;diagnosis aspects|DIAGNOSIS
+Finding|Functional Concept|SIMPLE_SEGMENT|10445,10454|false|false|false|C1546899;C1704338|Diagnosis Classification - Diagnosis;diagnosis aspects|DIAGNOSIS
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|10445,10454|false|false|false|C0011900|Diagnosis|DIAGNOSIS
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10456,10460|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10456,10460|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|10456,10460|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|10456,10460|false|false|false|C1412502|ARCN1 gene|COPD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10456,10473|false|false|false|C0740304|COPD exacerbation|COPD exacerbation
+Event|Event|SIMPLE_SEGMENT|10461,10473|false|false|false|||exacerbation
+Finding|Finding|SIMPLE_SEGMENT|10461,10473|false|false|false|C4086268|Exacerbation|exacerbation
+Disorder|Neoplastic Process|SIMPLE_SEGMENT|10475,10484|false|false|false|C0027627|Neoplasm Metastasis|SECONDARY
+Finding|Functional Concept|SIMPLE_SEGMENT|10475,10484|false|false|false|C1522484|metastatic qualifier|SECONDARY
+Event|Event|SIMPLE_SEGMENT|10485,10494|false|false|false|||DIAGNOSES
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|10485,10494|false|false|false|C0011900|Diagnosis|DIAGNOSES
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10496,10499|false|false|false|C0010068;C0175816;C1956346|Cold Hemagglutinin Disease;Coronary Artery Disease;Coronary heart disease|CAD
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|10496,10499|false|false|false|C1504769|DFFB protein, human|CAD
+Drug|Enzyme|SIMPLE_SEGMENT|10496,10499|false|false|false|C1504769|DFFB protein, human|CAD
+Event|Event|SIMPLE_SEGMENT|10496,10499|false|false|false|||CAD
+Finding|Gene or Genome|SIMPLE_SEGMENT|10496,10499|false|false|false|C1413078;C1413983;C1428349;C2239547;C3813548;C4284121|ACOD1 gene;B4GALNT2 gene;CAD gene;CALD1 wt Allele;DFFB gene;DFFB wt Allele|CAD
+Procedure|Diagnostic Procedure|SIMPLE_SEGMENT|10496,10499|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Research Activity|SIMPLE_SEGMENT|10496,10499|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Procedure|Therapeutic or Preventive Procedure|SIMPLE_SEGMENT|10496,10499|false|false|false|C0011905;C0170509;C0280573;C1707433|Collision-Induced Dissociation;Computer Assisted Diagnosis;CyADIC regimen;cytarabine/daunorubicin protocol|CAD
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10500,10512|false|false|false|C0020538|Hypertensive disease|Hypertension
+Disorder|Mental or Behavioral Dysfunction|SIMPLE_SEGMENT|10513,10520|false|false|false|C0003467;C0003469|Anxiety;Anxiety Disorders|anxiety
+Event|Event|SIMPLE_SEGMENT|10513,10520|false|false|false|||anxiety
+Finding|Sign or Symptom|SIMPLE_SEGMENT|10513,10520|false|false|false|C0860603|Anxiety symptoms|anxiety
+Event|Event|SIMPLE_SEGMENT|10523,10532|false|false|false|||Discharge
+Finding|Body Substance|SIMPLE_SEGMENT|10523,10532|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|SIMPLE_SEGMENT|10523,10532|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|SIMPLE_SEGMENT|10523,10532|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|SIMPLE_SEGMENT|10523,10532|false|false|false|C0030685|Patient Discharge|Discharge
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10533,10542|false|false|false|C3864998||Condition
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10533,10542|false|false|false|C0012634|Disease|Condition
+Event|Event|SIMPLE_SEGMENT|10533,10542|false|false|false|||Condition
+Finding|Conceptual Entity|SIMPLE_SEGMENT|10533,10542|false|false|false|C1705253|Logical Condition|Condition
+Finding|Mental Process|SIMPLE_SEGMENT|10544,10550|false|false|false|C0229992|Psyche structure|Mental
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10544,10557|false|false|false|C0488568;C0488569||Mental Status
+Finding|Finding|SIMPLE_SEGMENT|10544,10557|false|false|false|C0278060|Mental state|Mental Status
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10551,10557|false|false|false|C5889824||Status
+Finding|Idea or Concept|SIMPLE_SEGMENT|10551,10557|false|false|false|C1546481|What subject filter - Status|Status
+Event|Event|SIMPLE_SEGMENT|10559,10564|false|false|false|||Clear
+Finding|Idea or Concept|SIMPLE_SEGMENT|10559,10564|false|false|false|C1550016|Remote control command - Clear|Clear
+Event|Event|SIMPLE_SEGMENT|10569,10577|false|false|false|||coherent
+Finding|Finding|SIMPLE_SEGMENT|10569,10577|false|false|false|C4068804|Coherent|coherent
+Event|Event|SIMPLE_SEGMENT|10579,10584|false|false|false|||Level
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10579,10601|false|false|false|C4050479||Level of Consciousness
+Finding|Finding|SIMPLE_SEGMENT|10579,10601|false|false|false|C0234425|Level of consciousness|Level of Consciousness
+Event|Event|SIMPLE_SEGMENT|10588,10601|false|false|false|||Consciousness
+Finding|Finding|SIMPLE_SEGMENT|10588,10601|false|false|false|C0009791;C0234421;C0517960|Conscious;Consciousness related finding|Consciousness
+Finding|Mental Process|SIMPLE_SEGMENT|10588,10601|false|false|false|C0009791;C0234421;C0517960|Conscious;Consciousness related finding|Consciousness
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10603,10608|false|false|false|C5890168||Alert
+Drug|Organic Chemical|SIMPLE_SEGMENT|10603,10608|false|false|false|C0718338|Alert brand of caffeine|Alert
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10603,10608|false|false|false|C0718338|Alert brand of caffeine|Alert
+Event|Event|SIMPLE_SEGMENT|10603,10608|false|false|false|||Alert
+Finding|Finding|SIMPLE_SEGMENT|10603,10608|false|false|false|C0239110;C0424536;C2004580;C3665546|Alert;Alert note;Consciousness clear;Mentally alert|Alert
+Finding|Functional Concept|SIMPLE_SEGMENT|10603,10608|false|false|false|C0239110;C0424536;C2004580;C3665546|Alert;Alert note;Consciousness clear;Mentally alert|Alert
+Finding|Intellectual Product|SIMPLE_SEGMENT|10603,10608|false|false|false|C0239110;C0424536;C2004580;C3665546|Alert;Alert note;Consciousness clear;Mentally alert|Alert
+Event|Event|SIMPLE_SEGMENT|10613,10624|false|false|false|||interactive
+Finding|Functional Concept|SIMPLE_SEGMENT|10613,10624|false|false|false|C1704675|Interaction|interactive
+Event|Activity|SIMPLE_SEGMENT|10626,10634|false|false|false|C0441655|Activities|Activity
+Finding|Daily or Recreational Activity|SIMPLE_SEGMENT|10626,10634|false|false|false|C0026606;C3668946|Activity (animal life circumstance);Physical activity|Activity
+Finding|Finding|SIMPLE_SEGMENT|10626,10634|false|false|false|C0026606;C3668946|Activity (animal life circumstance);Physical activity|Activity
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10635,10641|false|false|false|C5889824||Status
+Event|Event|SIMPLE_SEGMENT|10635,10641|false|false|false|||Status
+Finding|Idea or Concept|SIMPLE_SEGMENT|10635,10641|false|false|false|C1546481|What subject filter - Status|Status
+Event|Event|SIMPLE_SEGMENT|10643,10653|false|false|false|||Ambulatory
+Finding|Functional Concept|SIMPLE_SEGMENT|10643,10653|false|false|false|C0439841;C1547135;C1561561;C5401192|Ambulatory;Ambulatory (qualifier value);Level of Care - Ambulatory;Referral category - Ambulatory|Ambulatory
+Finding|Idea or Concept|SIMPLE_SEGMENT|10643,10653|false|false|false|C0439841;C1547135;C1561561;C5401192|Ambulatory;Ambulatory (qualifier value);Level of Care - Ambulatory;Referral category - Ambulatory|Ambulatory
+Finding|Intellectual Product|SIMPLE_SEGMENT|10643,10653|false|false|false|C0439841;C1547135;C1561561;C5401192|Ambulatory;Ambulatory (qualifier value);Level of Care - Ambulatory;Referral category - Ambulatory|Ambulatory
+Procedure|Health Care Activity|SIMPLE_SEGMENT|10643,10653|false|false|false|C1561560|ambulatory encounter|Ambulatory
+Event|Event|SIMPLE_SEGMENT|10656,10667|false|false|false|||Independent
+Finding|Finding|SIMPLE_SEGMENT|10656,10667|false|false|false|C0085862;C1299583;C1549571;C1608386|Coordination of Benefits - Independent;Independence;Independently able;Religious Affiliation - Independent|Independent
+Finding|Idea or Concept|SIMPLE_SEGMENT|10656,10667|false|false|false|C0085862;C1299583;C1549571;C1608386|Coordination of Benefits - Independent;Independence;Independently able;Religious Affiliation - Independent|Independent
+Event|Event|SIMPLE_SEGMENT|10671,10680|false|false|false|||Discharge
+Finding|Body Substance|SIMPLE_SEGMENT|10671,10680|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Intellectual Product|SIMPLE_SEGMENT|10671,10680|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Finding|Sign or Symptom|SIMPLE_SEGMENT|10671,10680|false|false|false|C0012621;C0600083;C1546601;C2926602|Body Fluid Discharge;Body Substance Discharge;Discharge Body Fluid|Discharge
+Procedure|Health Care Activity|SIMPLE_SEGMENT|10671,10680|false|false|false|C0030685|Patient Discharge|Discharge
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10671,10693|false|false|false|C3669312||Discharge Instructions
+Finding|Intellectual Product|SIMPLE_SEGMENT|10671,10693|false|false|false|C4282220|Discharge instructions|Discharge Instructions
+Procedure|Health Care Activity|SIMPLE_SEGMENT|10671,10693|false|false|false|C2266673|hospital discharge instructions (treatment)|Discharge Instructions
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10681,10693|false|false|false|C3263700||Instructions
+Event|Event|SIMPLE_SEGMENT|10681,10693|false|false|false|||Instructions
+Finding|Intellectual Product|SIMPLE_SEGMENT|10681,10693|false|false|false|C0302828;C1442085|Instruction [Publication Type];Instructions|Instructions
+Finding|Gene or Genome|SIMPLE_SEGMENT|10695,10699|false|false|false|C4320303|FBXW7-AS1 gene|Dear
+Finding|Gene or Genome|SIMPLE_SEGMENT|10716,10721|false|false|false|C1424898|RXFP2 gene|great
+Event|Event|SIMPLE_SEGMENT|10722,10730|false|false|false|||pleasure
+Finding|Intellectual Product|SIMPLE_SEGMENT|10722,10730|false|false|false|C0679105;C1610547|Production Class Code - Pleasure;pleasurable emotion|pleasure
+Finding|Mental Process|SIMPLE_SEGMENT|10722,10730|false|false|false|C0679105;C1610547|Production Class Code - Pleasure;pleasurable emotion|pleasure
+Event|Activity|SIMPLE_SEGMENT|10738,10742|false|false|false|C1947933|care activity|care
+Event|Event|SIMPLE_SEGMENT|10738,10742|false|false|false|||care
+Finding|Finding|SIMPLE_SEGMENT|10738,10742|false|false|false|C0580931;C2362566|Continuity Assessment Record and Evaluation;In care (finding)|care
+Finding|Intellectual Product|SIMPLE_SEGMENT|10738,10742|false|false|false|C0580931;C2362566|Continuity Assessment Record and Evaluation;In care (finding)|care
+Finding|Intellectual Product|SIMPLE_SEGMENT|10738,10745|false|false|false|C1555558|care of - AddressPartType|care of
+Event|Event|SIMPLE_SEGMENT|10767,10771|false|false|false|||came
+Event|Event|SIMPLE_SEGMENT|10818,10827|false|false|false|||shortness
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10818,10837|false|false|false|C2707305||shortness of breath
+Finding|Sign or Symptom|SIMPLE_SEGMENT|10818,10837|false|false|false|C0013404|Dyspnea|shortness of breath
+Finding|Body Substance|SIMPLE_SEGMENT|10831,10837|false|false|false|C0225386|Breath|breath
+Finding|Finding|SIMPLE_SEGMENT|10841,10845|false|false|false|C5575035|Well (answer to question)|well
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|10849,10854|false|false|false|C0028429||nasal
+Drug|Biomedical or Dental Material|SIMPLE_SEGMENT|10849,10854|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|nasal
+Drug|Organic Chemical|SIMPLE_SEGMENT|10849,10854|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|nasal
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10849,10854|false|false|false|C0721966;C1272939|Nasal brand of oxymetazoline;Nasal dosage form|nasal
+Finding|Finding|SIMPLE_SEGMENT|10849,10854|false|false|false|C1522019;C4520890|Nasal (intended site);Nasal Route of Administration|nasal
+Finding|Functional Concept|SIMPLE_SEGMENT|10849,10854|false|false|false|C1522019;C4520890|Nasal (intended site);Nasal Route of Administration|nasal
+Event|Event|SIMPLE_SEGMENT|10856,10866|false|false|false|||congestion
+Finding|Pathologic Function|SIMPLE_SEGMENT|10856,10866|false|false|false|C0700148|Congestion|congestion
+Event|Event|SIMPLE_SEGMENT|10871,10880|false|false|false|||decreased
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10871,10888|false|false|false|C1384666|hearing impairment|decreased hearing
+Finding|Finding|SIMPLE_SEGMENT|10871,10888|false|false|false|C0018772|Partial Hearing Loss|decreased hearing
+Event|Event|SIMPLE_SEGMENT|10881,10888|false|false|false|||hearing
+Finding|Finding|SIMPLE_SEGMENT|10881,10888|false|false|false|C0018767;C1455844;C2015933|Hearing;Hearing finding;outcomes otolaryngology hearing|hearing
+Finding|Physiologic Function|SIMPLE_SEGMENT|10881,10888|false|false|false|C0018767;C1455844;C2015933|Hearing;Hearing finding;outcomes otolaryngology hearing|hearing
+Event|Event|SIMPLE_SEGMENT|10895,10903|false|false|false|||symptoms
+Finding|Functional Concept|SIMPLE_SEGMENT|10895,10903|false|false|false|C0683368;C1457887|Symptoms;Symptoms aspect|symptoms
+Finding|Sign or Symptom|SIMPLE_SEGMENT|10895,10903|false|false|false|C0683368;C1457887|Symptoms;Symptoms aspect|symptoms
+Finding|Finding|SIMPLE_SEGMENT|10908,10914|false|false|false|C0332148;C0750492|Probable diagnosis;Probably|likely
+Finding|Idea or Concept|SIMPLE_SEGMENT|10908,10914|false|false|false|C0332148;C0750492|Probable diagnosis;Probably|likely
+Drug|Organic Chemical|SIMPLE_SEGMENT|10916,10923|false|false|false|C0163712|Relate - vinyl resin|related
+Event|Event|SIMPLE_SEGMENT|10916,10923|false|false|false|||related
+Finding|Finding|SIMPLE_SEGMENT|10916,10923|false|false|false|C0445223;C1552599|Related (finding);Role Link Type - related|related
+Finding|Functional Concept|SIMPLE_SEGMENT|10916,10923|false|false|false|C0445223;C1552599|Related (finding);Role Link Type - related|related
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|10930,10953|false|false|false|C0458578|Upper respiratory tract|upper respiratory tract
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10930,10963|false|false|false|C0041912|Upper Respiratory Infections|upper respiratory tract infection
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|10936,10947|false|false|false|C0231832|Respiratory rate|respiratory
+Finding|Body Substance|SIMPLE_SEGMENT|10936,10947|false|false|false|C0521346;C1314992;C1546767;C5442009|Respiratory attachment;Respiratory specimen;respiratory|respiratory
+Finding|Functional Concept|SIMPLE_SEGMENT|10936,10947|false|false|false|C0521346;C1314992;C1546767;C5442009|Respiratory attachment;Respiratory specimen;respiratory|respiratory
+Finding|Intellectual Product|SIMPLE_SEGMENT|10936,10947|false|false|false|C0521346;C1314992;C1546767;C5442009|Respiratory attachment;Respiratory specimen;respiratory|respiratory
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|10936,10953|false|false|false|C0035237;C0282335|Respiratory System;Respiratory tract structure|respiratory tract
+Anatomy|Body System|SIMPLE_SEGMENT|10936,10953|false|false|false|C0035237;C0282335|Respiratory System;Respiratory tract structure|respiratory tract
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10936,10963|false|false|false|C0035243|Respiratory Tract Infections|respiratory tract infection
+Anatomy|Body Part, Organ, or Organ Component|SIMPLE_SEGMENT|10948,10953|false|false|false|C1185740|Tract|tract
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10954,10963|false|false|false|C0009450|Communicable Diseases|infection
+Event|Event|SIMPLE_SEGMENT|10954,10963|false|false|false|||infection
+Finding|Pathologic Function|SIMPLE_SEGMENT|10954,10963|false|false|false|C3714514|Infection|infection
+Event|Event|SIMPLE_SEGMENT|10968,10980|false|false|false|||exacerbation
+Finding|Finding|SIMPLE_SEGMENT|10968,10980|false|false|false|C4086268|Exacerbation|exacerbation
+Disorder|Disease or Syndrome|SIMPLE_SEGMENT|10990,10994|false|false|false|C0024117;C3714496|Chronic Obstructive Airway Disease;Chronic obstructive pulmonary disease of horses|COPD
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|10990,10994|false|false|false|C1647218|COPD pharmacologic substance|COPD
+Event|Event|SIMPLE_SEGMENT|10990,10994|false|false|false|||COPD
+Finding|Gene or Genome|SIMPLE_SEGMENT|10990,10994|false|false|false|C1412502|ARCN1 gene|COPD
+Event|Event|SIMPLE_SEGMENT|10999,11006|false|false|false|||started
+Drug|Antibiotic|SIMPLE_SEGMENT|11014,11025|false|false|false|C0003232;C0003237;C3540704;C3540705;C3540706;C3540707;C3540708;C3540709;C3540710|Antibiotic throat preparations;Antibiotics;Antibiotics FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE;Antibiotics for systemic use;Antibiotics, Antitubercular;Antibiotics, Gynecological;Antibiotics, ophthalmologic;Antifungal Antibiotics, Topical;antibiotics, intestinal|antibiotics
+Event|Event|SIMPLE_SEGMENT|11014,11025|false|false|false|||antibiotics
+Event|Event|SIMPLE_SEGMENT|11030,11039|false|false|false|||continued
+Drug|Hormone|SIMPLE_SEGMENT|11046,11056|false|false|false|C0032952|prednisone|prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|11046,11056|false|false|false|C0032952|prednisone|prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|11046,11056|false|false|false|C0032952|prednisone|prednisone
+Event|Event|SIMPLE_SEGMENT|11046,11056|false|false|false|||prednisone
+Event|Event|SIMPLE_SEGMENT|11063,11067|false|false|false|||dose
+Drug|Hormone|SIMPLE_SEGMENT|11071,11081|false|false|false|C0032952|prednisone|prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|11071,11081|false|false|false|C0032952|prednisone|prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|11071,11081|false|false|false|C0032952|prednisone|prednisone
+Event|Event|SIMPLE_SEGMENT|11071,11081|false|false|false|||prednisone
+Event|Event|SIMPLE_SEGMENT|11090,11099|false|false|false|||decreased
+Drug|Hormone|SIMPLE_SEGMENT|11143,11153|false|false|false|C0032952|prednisone|prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|11143,11153|false|false|false|C0032952|prednisone|prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|11143,11153|false|false|false|C0032952|prednisone|prednisone
+Event|Event|SIMPLE_SEGMENT|11143,11153|false|false|false|||prednisone
+Drug|Hormone|SIMPLE_SEGMENT|11168,11178|false|false|false|C0032952|prednisone|Prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|11168,11178|false|false|false|C0032952|prednisone|Prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|11168,11178|false|false|false|C0032952|prednisone|Prednisone
+Finding|Idea or Concept|SIMPLE_SEGMENT|11200,11203|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Finding|Intellectual Product|SIMPLE_SEGMENT|11200,11203|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|11211,11214|false|false|false|C0082420|Endoglin, human|end
+Drug|Immunologic Factor|SIMPLE_SEGMENT|11211,11214|false|false|false|C0082420|Endoglin, human|end
+Event|Event|SIMPLE_SEGMENT|11211,11214|false|false|false|||end
+Finding|Functional Concept|SIMPLE_SEGMENT|11211,11214|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Finding|Gene or Genome|SIMPLE_SEGMENT|11211,11214|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Drug|Hormone|SIMPLE_SEGMENT|11222,11232|false|false|false|C0032952|prednisone|Prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|11222,11232|false|false|false|C0032952|prednisone|Prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|11222,11232|false|false|false|C0032952|prednisone|Prednisone
+Finding|Idea or Concept|SIMPLE_SEGMENT|11254,11257|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Finding|Intellectual Product|SIMPLE_SEGMENT|11254,11257|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|11265,11268|false|false|false|C0082420|Endoglin, human|end
+Drug|Immunologic Factor|SIMPLE_SEGMENT|11265,11268|false|false|false|C0082420|Endoglin, human|end
+Event|Event|SIMPLE_SEGMENT|11265,11268|false|false|false|||end
+Finding|Functional Concept|SIMPLE_SEGMENT|11265,11268|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Finding|Gene or Genome|SIMPLE_SEGMENT|11265,11268|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Drug|Hormone|SIMPLE_SEGMENT|11276,11286|false|false|false|C0032952|prednisone|Prednisone
+Drug|Organic Chemical|SIMPLE_SEGMENT|11276,11286|false|false|false|C0032952|prednisone|Prednisone
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|11276,11286|false|false|false|C0032952|prednisone|Prednisone
+Finding|Idea or Concept|SIMPLE_SEGMENT|11308,11311|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Finding|Intellectual Product|SIMPLE_SEGMENT|11308,11311|false|false|false|C1561538;C1561539|Precision - day;Transaction counts and value totals - day|Day
+Drug|Amino Acid, Peptide, or Protein|SIMPLE_SEGMENT|11319,11322|false|false|false|C0082420|Endoglin, human|end
+Drug|Immunologic Factor|SIMPLE_SEGMENT|11319,11322|false|false|false|C0082420|Endoglin, human|end
+Event|Event|SIMPLE_SEGMENT|11319,11322|false|false|false|||end
+Finding|Functional Concept|SIMPLE_SEGMENT|11319,11322|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Finding|Gene or Genome|SIMPLE_SEGMENT|11319,11322|false|false|false|C1366583;C1561490;C1704837|ENG gene;ENG wt Allele;end - ActRelationshipCheckpoint|end
+Event|Event|SIMPLE_SEGMENT|11330,11337|false|false|false|||Discuss
+Finding|Social Behavior|SIMPLE_SEGMENT|11330,11337|false|false|false|C2584313|Discussion (communication)|Discuss
+Event|Event|SIMPLE_SEGMENT|11359,11364|false|false|false|||taper
+Procedure|Health Care Activity|SIMPLE_SEGMENT|11359,11364|false|false|false|C0441640||taper
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|11395,11406|false|false|false|C0802604;C2598133||medications
+Drug|Pharmacologic Substance|SIMPLE_SEGMENT|11395,11406|false|false|false|C0013227|Pharmaceutical Preparations|medications
+Event|Event|SIMPLE_SEGMENT|11395,11406|false|false|false|||medications
+Finding|Intellectual Product|SIMPLE_SEGMENT|11395,11406|false|false|false|C4284232|Medications|medications
+Finding|Finding|SIMPLE_SEGMENT|11410,11414|false|false|false|C1547403;C1548318;C2024467;C3541383;C5400024;C5575590|Data types - Time;Instructions for Use of the CPT Codebook - Time;Time (foundation metadata concept);Time - Instructions for Selecting a Level of Pathology Clinical Consultation Services;Value type - Time|time
+Finding|Idea or Concept|SIMPLE_SEGMENT|11410,11414|false|false|false|C1547403;C1548318;C2024467;C3541383;C5400024;C5575590|Data types - Time;Instructions for Use of the CPT Codebook - Time;Time (foundation metadata concept);Time - Instructions for Selecting a Level of Pathology Clinical Consultation Services;Value type - Time|time
+Finding|Intellectual Product|SIMPLE_SEGMENT|11410,11414|false|false|false|C1547403;C1548318;C2024467;C3541383;C5400024;C5575590|Data types - Time;Instructions for Use of the CPT Codebook - Time;Time (foundation metadata concept);Time - Instructions for Selecting a Level of Pathology Clinical Consultation Services;Value type - Time|time
+Event|Event|SIMPLE_SEGMENT|11419,11425|false|false|false|||follow
+Event|Event|SIMPLE_SEGMENT|11440,11447|false|false|false|||doctors
+Procedure|Health Care Activity|SIMPLE_SEGMENT|11487,11495|false|false|false|C1522577|follow-up|Followup
+Attribute|Clinical Attribute|SIMPLE_SEGMENT|11496,11508|false|false|false|C3263700||Instructions
+Event|Event|SIMPLE_SEGMENT|11496,11508|false|false|false|||Instructions
+Finding|Intellectual Product|SIMPLE_SEGMENT|11496,11508|false|false|false|C0302828;C1442085|Instruction [Publication Type];Instructions|Instructions
+
