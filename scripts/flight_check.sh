@@ -140,42 +140,47 @@ for k in "${keys[@]}"; do
 done
 pass "Pipeline descriptors found and clean (no JDBC settings)"
 
-# 6) Dry-run sanitize and verify driver + jdbcUrl flags
-tmpdir="$(mktemp -d)"; trap 'rm -rf "$tmpdir"' EXIT
-san="$tmpdir/${DICT_NAME}_local.xml"
-cp -f "$DICT_XML" "$san"
-# Replace impl + driver + strip umls props (same as runners)
-sed -i -E \
-  -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.UmlsJdbcRareWordDictionary</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary</implementationName>#' \
-  -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.UmlsJdbcConceptFactory</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.JdbcConceptFactory</implementationName>#' \
-  -e 's#(key=\"jdbcDriver\" value)=\"[^\"]*\"#\1=\"org.hsqldb.jdbc.JDBCDriver\"#' \
-  -e '/<property key=\"umlsUrl\"/d' -e '/<property key=\"umlsVendor\"/d' -e '/<property key=\"umlsUser\"/d' -e '/<property key=\"umlsPass\"/d' \
-  "$san"
+CTAKES_SANITIZE_DICT="${CTAKES_SANITIZE_DICT:-0}"
+if [[ "$CTAKES_SANITIZE_DICT" -eq 1 ]]; then
+  # 6) Dry-run sanitize and verify driver + jdbcUrl flags
+  tmpdir="$(mktemp -d)"; trap 'rm -rf "$tmpdir"' EXIT
+  san="$tmpdir/${DICT_NAME}_local.xml"
+  cp -f "$DICT_XML" "$san"
+  # Replace impl + driver + strip umls props (same as runners)
+  sed -i -E \
+    -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.UmlsJdbcRareWordDictionary</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary</implementationName>#' \
+    -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.UmlsJdbcConceptFactory</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.JdbcConceptFactory</implementationName>#' \
+    -e 's#(key=\"jdbcDriver\" value)=\"[^\"]*\"#\1=\"org.hsqldb.jdbc.JDBCDriver\"#' \
+    -e '/<property key=\"umlsUrl\"/d' -e '/<property key=\"umlsVendor\"/d' -e '/<property key=\"umlsUser\"/d' -e '/<property key=\"umlsPass\"/d' \
+    "$san"
 
-if [[ "$MODE" == "cluster" ]]; then
-  if [[ "$DICT_SHARED" -eq 1 ]]; then
-    workdb="${DICT_SHARED_PATH%/}/${DICT_NAME}_shared"
+  if [[ "$MODE" == "cluster" ]]; then
+    if [[ "$DICT_SHARED" -eq 1 ]]; then
+      workdb="${DICT_SHARED_PATH%/}/${DICT_NAME}_shared"
+    else
+      workdb="/dev/shm/${DICT_NAME}_S_core_000"
+    fi
+    # Do NOT append flags; cTAKES 6.0.0 pre-validates <path>.script and flags break it
+    sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb}\"#" "$san"
   else
-    workdb="/dev/shm/${DICT_NAME}_S_core_000"
+    tmp_db="/tmp/ctakes_full/$DICT_NAME"
+    sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${tmp_db}\"#" "$san"
   fi
-  # Do NOT append flags; cTAKES 6.0.0 pre-validates <path>.script and flags break it
-  sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb}\"#" "$san"
-else
-  tmp_db="/tmp/ctakes_full/$DICT_NAME"
-  sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${tmp_db}\"#" "$san"
-fi
 
-if command -v rg >/dev/null 2>&1; then
-  has_driver=$(rg -n "org.hsqldb.jdbc.JDBCDriver" -S "$san" >/dev/null && echo 1 || echo 0)
-  has_url=$(rg -n "jdbc:hsqldb:file:" -S "$san" >/dev/null && echo 1 || echo 0)
+  if command -v rg >/dev/null 2>&1; then
+    has_driver=$(rg -n "org.hsqldb.jdbc.JDBCDriver" -S "$san" >/dev/null && echo 1 || echo 0)
+    has_url=$(rg -n "jdbc:hsqldb:file:" -S "$san" >/dev/null && echo 1 || echo 0)
+  else
+    has_driver=$(grep -qE 'org\.hsqldb\.jdbc\.JDBCDriver' "$san" && echo 1 || echo 0)
+    has_url=$(grep -q 'jdbc:hsqldb:file:' "$san" >/dev/null && echo 1 || echo 0)
+  fi
+  if [[ "$has_driver" -eq 1 && "$has_url" -eq 1 ]]; then
+    pass "Sanitized XML uses JDBCDriver + jdbcUrl (dry-run)"
+  else
+    fail "Sanitized XML missing expected driver or jdbcUrl (dry-run)"
+  fi
 else
-  has_driver=$(grep -qE 'org\.hsqldb\.jdbc\.JDBCDriver' "$san" && echo 1 || echo 0)
-  has_url=$(grep -q 'jdbc:hsqldb:file:' "$san" >/dev/null && echo 1 || echo 0)
-fi
-if [[ "$has_driver" -eq 1 && "$has_url" -eq 1 ]]; then
-  pass "Sanitized XML uses JDBCDriver + jdbcUrl (dry-run)"
-else
-  fail "Sanitized XML missing expected driver or jdbcUrl (dry-run)"
+  pass "Skipping sanitize dry-run (CTAKES_SANITIZE_DICT=0): using provided dictionary XML as-is"
 fi
 
 echo "== Flight checks complete."

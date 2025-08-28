@@ -21,6 +21,9 @@ CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.
 JAVA_CP="$BASE_DIR/resources_override:$BASE_DIR/resources:$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$BASE_DIR/.build_tools"
 
 IN=""; OUT=""; RUNNERS="${RUNNERS:-16}"; XMX_MB="${XMX_MB:-6144}"; THREADS="${THREADS:-6}"; MAKE_REPORTS=0
+# Control dictionary handling (default: no sanitization, use provided XML as-is)
+CTAKES_SANITIZE_DICT="${CTAKES_SANITIZE_DICT:-0}"
+DICT_XML_ARG="${DICT_XML:-}"  # allow DICT_XML env or --dict-xml flag
 # Use a single shared read-only HSQLDB dictionary for all shards (reduces duplicate init)
 DICT_SHARED="${DICT_SHARED:-1}"
 # Directory to host the shared dictionary files (properties/script)
@@ -48,6 +51,7 @@ while [[ $# -gt 0 ]]; do
     --keep-shards) KEEP_SHARDS=1; shift 1;;
     --seed) SHARD_SEED="$2"; shift 2;;
     --consolidate-async) CONSOLIDATE_ASYNC=1; shift 1;;
+    -l|--dict-xml) DICT_XML_ARG="$2"; shift 2;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac
 done
@@ -58,9 +62,9 @@ mkdir -p "$OUT"
 
 # Pre-run flight checks (fail fast on missing deps / dict / models)
 if [[ "$DICT_SHARED" -eq 1 ]]; then
-  bash "$BASE_DIR/scripts/flight_check.sh" --mode cluster --require-shared || exit 1
+  CTAKES_SANITIZE_DICT="$CTAKES_SANITIZE_DICT" bash "$BASE_DIR/scripts/flight_check.sh" --mode cluster --require-shared || exit 1
 else
-  bash "$BASE_DIR/scripts/flight_check.sh" --mode cluster || exit 1
+  CTAKES_SANITIZE_DICT="$CTAKES_SANITIZE_DICT" bash "$BASE_DIR/scripts/flight_check.sh" --mode cluster || exit 1
 fi
 
 # Detect Temporal models
@@ -83,7 +87,11 @@ find "$BASE_DIR/tools" -type f -name "*.java" ! -path "*/.ipynb_checkpoints/*" -
 PROPS="$BASE_DIR/docs/builder_full_clinical.properties"
 DICT_NAME=$(awk -F= '/^\s*dictionary.name\s*=/{print $2}' "$PROPS" | tr -d '\r' | xargs)
 if [[ -z "$DICT_NAME" ]]; then DICT_NAME="FullClinical_AllTUIs"; fi
-DICT_XML="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast/${DICT_NAME}.xml"
+if [[ -n "$DICT_XML_ARG" ]]; then
+  DICT_XML="$DICT_XML_ARG"
+else
+  DICT_XML="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast/${DICT_NAME}.xml"
+fi
 SRC_DB_DIR="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast/$DICT_NAME"
 [[ -f "$DICT_XML" ]] || { echo "Dictionary XML not found: $DICT_XML" >&2; exit 1; }
 
@@ -127,12 +135,7 @@ fi
 
 sanitize_dict() {
   local in="$1"; local out="$2"; cp -f "$in" "$out"
-  sed -i -E \
-    -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.UmlsJdbcRareWordDictionary</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary</implementationName>#' \
-    -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.UmlsJdbcConceptFactory</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.JdbcConceptFactory</implementationName>#' \
-    -e 's#(key=\"jdbcDriver\" value)=\"[^\"]*\"#\1=\"org.hsqldb.jdbc.JDBCDriver\"#' \
-    -e '/<property key=\"umlsUrl\"/d' -e '/<property key=\"umlsVendor\"/d' -e '/<property key=\"umlsUser\"/d' -e '/<property key=\"umlsPass\"/d' \
-    "$out"
+  # In non-sanitize mode, this is just a copy; keeping hook for future use
 }
 
 hash_to_shard() { # file n seed -> shard index [0..n-1]
@@ -235,7 +238,12 @@ run_pipeline_sharded() {
       fi
       in_dir="$pending"
     fi
-    xml="$outdir/${DICT_NAME}_local.xml"; sanitize_dict "$DICT_XML" "$xml"
+    # Resolve dictionary XML for this shard
+    if [[ "$CTAKES_SANITIZE_DICT" -eq 1 ]]; then
+      xml="$outdir/${DICT_NAME}_local.xml"; sanitize_dict "$DICT_XML" "$xml"
+    else
+      xml="$DICT_XML"
+    fi
     # Create a per-run piper file with the requested thread count
     tuned_piper="$outdir/$(basename "$piper")"
     if grep -Eq "^\s*threads\s+[0-9]+" "$piper" 2>/dev/null; then
@@ -243,7 +251,7 @@ run_pipeline_sharded() {
     else
       { echo "threads ${THREADS}"; cat "$piper"; } > "$tuned_piper"
     fi
-    if [[ -f "$SRC_DB_DIR/$DICT_NAME.script" ]]; then
+    if [[ "$CTAKES_SANITIZE_DICT" -eq 1 && -f "$SRC_DB_DIR/$DICT_NAME.script" ]]; then
       if [[ "$using_shared_db" -eq 1 ]]; then
         workdb="$shareddb"
       else

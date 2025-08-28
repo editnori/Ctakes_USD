@@ -12,6 +12,8 @@ JAVA_CP="$BASE_DIR/resources_override:$BASE_DIR/resources:$CTAKES_HOME/desc:$CTA
 # Defaults
 IN_PATH_RAW="$BASE_DIR/samples/input/note1.txt"
 OUT_BASE_RAW="$BASE_DIR/outputs/compare"
+DICT_XML_ARG="" # explicit dictionary xml (no sanitization)
+UMLS_KEY_OPT="" # --key value if provided
 
 # Support positional or flags (-i/--in, -o/--out)
 args=("$@")
@@ -22,6 +24,8 @@ while [[ $idx -lt ${#args[@]} ]]; do
   case "${args[$idx]}" in
     -i|--in) IN_PATH_RAW="${args[$((idx+1))]:-}"; idx=$((idx+2));;
     -o|--out) OUT_BASE_RAW="${args[$((idx+1))]:-}"; idx=$((idx+2));;
+    -l|--dict-xml) DICT_XML_ARG="${args[$((idx+1))]:-}"; idx=$((idx+2));;
+    --key) UMLS_KEY_OPT="${args[$((idx+1))]:-}"; idx=$((idx+2));;
     *) echo "Unknown arg: ${args[$idx]}" >&2; exit 1;;
   esac
 done
@@ -30,8 +34,8 @@ done
 if [[ -d "$IN_PATH_RAW" ]]; then IN_PATH="$(cd "$IN_PATH_RAW" && pwd)"; else IN_PATH="$(cd "$(dirname "$IN_PATH_RAW")" && pwd)/$(basename "$IN_PATH_RAW")"; fi
 OUT_BASE="$(mkdir -p "$OUT_BASE_RAW" && cd "$OUT_BASE_RAW" && pwd)"
 
-# Flight checks (smoke mode)
-bash "$BASE_DIR/scripts/flight_check.sh" --mode smoke || exit 1
+# Flight checks (smoke mode) — do not require sanitization
+CTAKES_SANITIZE_DICT=0 bash "$BASE_DIR/scripts/flight_check.sh" --mode smoke || exit 1
 
 # Detect availability of Temporal models (EventAnnotator requires model.jar on classpath)
 HAS_TEMP_MODELS=0
@@ -51,10 +55,15 @@ if [[ "$HAS_TEMP_MODELS" -ne 1 ]]; then
   echo "       Expected resource: CTAKES_HOME/resources/org/apache/ctakes/temporal/models/eventannotator/model.jar"
 fi
 
-# Dictionary descriptor (prefer builder output under cTAKES resources)
+# Dictionary descriptor
 PROPS="$BASE_DIR/docs/builder_full_clinical.properties"
 DICT_NAME=$(awk -F= '/^\s*dictionary.name\s*=/{print $2}' "$PROPS" | tr -d '\r' | xargs)
-DICT_XML="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast/${DICT_NAME}.xml"
+if [[ -z "$DICT_NAME" ]]; then DICT_NAME="FullClinical_AllTUIs"; fi
+if [[ -n "$DICT_XML_ARG" ]]; then
+  DICT_XML="$DICT_XML_ARG"
+else
+  DICT_XML="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast/${DICT_NAME}.xml"
+fi
 if [[ ! -f "$DICT_XML" ]]; then
   echo "Dictionary XML not found: $DICT_XML" >&2
   exit 1
@@ -82,33 +91,17 @@ prep_smoking_desc() {
   done
 }
 
-sanitize_dict() {
-  local in="$1"; local out="$2"; cp -f "$in" "$out"
-  sed -i -E \
-    -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.UmlsJdbcRareWordDictionary</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary</implementationName>#' \
-    -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.UmlsJdbcConceptFactory</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.JdbcConceptFactory</implementationName>#' \
-    -e 's#<property key=\"jdbcDriver\" value=\"[^\"]*\"#<property key=\"jdbcDriver\" value=\"org.hsqldb.jdbc.JDBCDriver\"#' \
-    -e '/<property key=\"umlsUrl\"/d' \
-    -e '/<property key=\"umlsVendor\"/d' \
-    -e '/<property key=\"umlsUser\"/d' \
-    -e '/<property key=\"umlsPass\"/d' \
-    "$out"
-}
-
-prep_xml() {
+# Use explicit dictionary XML as-is; no sanitization by default. You may still enable
+# sanitization by exporting CTAKES_SANITIZE_DICT=1 before running, but the default is pass-through.
+resolve_xml() {
   local outdir="$1"
-  local san="$outdir/${DICT_NAME}_local.xml"
-  sanitize_dict "$DICT_XML" "$san"
-  local src_db="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast/$DICT_NAME/$DICT_NAME"
-  if [[ -f "$src_db.script" ]]; then
-    local tmp_db="/tmp/ctakes_full/$DICT_NAME"
-    mkdir -p "$(dirname "$tmp_db")"
-    cp -f "$src_db.properties" "$tmp_db.properties"
-    cp -f "$src_db.script" "$tmp_db.script"
-    # Do NOT append flags; cTAKES validates by probing <path>.script and will fail if flags present
-    sed -i -E "s#(key=\"jdbcUrl\" value=)\"[^\"]+\"#\1\"jdbc:hsqldb:file:${tmp_db}\"#" "$san"
+  if [[ "${CTAKES_SANITIZE_DICT:-0}" == "1" ]]; then
+    local san="$outdir/${DICT_NAME}_local.xml"
+    cp -f "$DICT_XML" "$san"
+    echo "$san"
+  else
+    echo "$DICT_XML"
   fi
-  echo "$san"
 }
 
 run() {
@@ -116,7 +109,7 @@ run() {
   mkdir -p "$out"
   out="$(cd "$out" && pwd)"
   local xml
-  xml=$(prep_xml "$out")
+  xml=$(resolve_xml "$out")
   # Ensure EventAnnotator default model path is available (some releases package under models/, not ae/)
   local event_src="$CTAKES_HOME/resources/org/apache/ctakes/temporal/models/eventannotator/model.jar"
   local event_dst="$CTAKES_HOME/resources/org/apache/ctakes/temporal/ae/eventannotator/model.jar"
@@ -126,9 +119,9 @@ run() {
   fi
   if [[ -d "$in" ]]; then in=$(cd "$in" && pwd); else in=$(cd "$(dirname "$in")" && pwd)/"$(basename "$in")"; fi
   pushd "$CTAKES_HOME" >/dev/null
-  java -Xms2g -Xmx6g -cp "$JAVA_CP" \
+  java -Xms2g -Xmx6g ${UMLS_KEY_OPT:+-Dctakes.umls_apikey=$UMLS_KEY_OPT} -cp "$JAVA_CP" \
     org.apache.ctakes.core.pipeline.PiperFileRunner \
-    -p "$piper" -i "$in" -o "$out" -l "$xml" |& tee "$out/run.log"
+    -p "$piper" -i "$in" -o "$out" -l "$xml" ${UMLS_KEY_OPT:+--key $UMLS_KEY_OPT} |& tee "$out/run.log"
   popd >/dev/null
 
   # Build per-pipeline Excel XML workbook with a short name to avoid Windows path limits

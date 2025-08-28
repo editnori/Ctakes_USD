@@ -22,24 +22,7 @@ mkdir -p "$OUT_BASE"
 RESULTS="$OUT_BASE/results_$(date +%Y%m%d_%H%M%S).csv"
 echo "pipeline,resolved_pipeline,order,elapsed_sec,xmi_count,out_dir" > "$RESULTS"
 
-sanitize_dict() {
-  local in="$1"
-  local out="$2"
-  if [[ -f "$in" ]]; then
-    sed -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.UmlsJdbcRareWordDictionary</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary</implementationName>#' \
-        -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.UmlsJdbcConceptFactory</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.JdbcConceptFactory</implementationName>#' \
-        -e 's#<property name=\"jdbcDriver\" value=\"[^\"]*\"#<property name=\"jdbcDriver\" value=\"org.hsqldb.jdbc.JDBCDriver\"#' \
-        -e '/<property name=\"umlsUrl\"/d' \
-        -e '/<property name=\"umlsVendor\"/d' \
-        -e '/<property name=\"umlsUser\"/d' \
-        -e '/<property name=\"umlsPass\"/d' \
-        "$in" > "$out"
-    echo "$out"
-  else
-    # Might be a classpath resource; just return as-is
-    echo "$in"
-  fi
-}
+sanitize_dict() { cp -f "$1" "$2" 2>/dev/null || true; echo "${2:-$1}"; }
 
 resolve_pipeline() {
   local path="$1"
@@ -67,22 +50,8 @@ IFS=,
   mkdir -p "$outdir"
 
   resolved=$(resolve_pipeline "$p")
-  # Use a sanitized local XML that doesn't require UMLS auth when the path is a real file
   XML_ARG="$DICT_XML"
-  if [[ -f "$DICT_XML" ]]; then
-    tmpxml="$outdir/$(basename "$DICT_XML" .xml)_local.xml"
-    XML_ARG=$(sanitize_dict "$DICT_XML" "$tmpxml")
-    # If a source HSQL DB exists adjacent to the descriptor under resources, relocate to /tmp and rewrite jdbcUrl
-    SRC_DB_DIR="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast/$DICT_NAME"
-    if [[ -f "$SRC_DB_DIR/$DICT_NAME.script" ]]; then
-      TMP_DB="/tmp/ctakes_full/$DICT_NAME"
-      mkdir -p "$(dirname "$TMP_DB")"
-      cp -f "$SRC_DB_DIR/$DICT_NAME.properties" "$TMP_DB.properties"
-      cp -f "$SRC_DB_DIR/$DICT_NAME.script" "$TMP_DB.script"
-      sed -i -E "s#(key=\"jdbcUrl\" value=)\"[^\"]+\"#\1\"jdbc:hsqldb:file:${TMP_DB}\"#" "$XML_ARG"
-      sed -i -E "s#(key=\"jdbcDriver\" value=)\"[^\"]+\"#\1\"org.hsqldb.jdbc.JDBCDriver\"#" "$XML_ARG"
-    fi
-  fi
+  # Use provided XML as-is (no sanitization/relocation by default)
   start=$(date +%s)
   echo "==> $name"
   if [[ -f "$resolved" ]]; then

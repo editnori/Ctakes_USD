@@ -33,6 +33,7 @@ SLF4J=${SLF4J:-}
 APIKEY=${APIKEY:-${UMLS_KEY:-6370dcdd-d438-47ab-8749-5a8fb9d013f2}}
 # Default to local WSD-enabled TS Fast pipeline; override by exporting PIPER
 PIPER=${PIPER:-$BASE_DIR/pipelines/wsd/TsDefaultFastPipeline_WSD.piper}
+CTAKES_SANITIZE_DICT="${CTAKES_SANITIZE_DICT:-0}"
 
 # Default dictionary XML template: use builder output under cTAKES resources unless overridden
 PROPS="$BASE_DIR/docs/builder_full_clinical.properties"
@@ -52,16 +53,19 @@ for i in $(seq -f "%03g" 0 $((RUNNERS-1))); do
   shard="$SHARDS/$i"; [ -d "$shard" ] || continue
   outdir="$OUT/shard_$i"; mkdir -p "$outdir"
 
-  workdb="/dev/shm/${DICT_NAME}_w$i"; rm -rf "$workdb"; mkdir -p "$workdb"
-  # copy script/properties if present adjacent to template (optional)
-  for ext in script properties; do
-    src="${DBTEMPLATE%.xml}.$ext"; [ -f "$src" ] && cp -f "$src" "$workdb/${DICT_NAME}.$ext" || true
-  done
-
-  xml="$outdir/${DICT_NAME}_$i.xml"
-  sed -e 's|jdbcDriver" value="[^"]*|jdbcDriver" value="org.hsqldb.jdbc.JDBCDriver|g' \
-      -e "s|jdbcUrl\" value=\"[^\"]*|jdbcUrl\" value=\"jdbc:hsqldb:file:$workdb/${DICT_NAME}|g" \
-      "$DBTEMPLATE" > "$xml"
+  if [[ "$CTAKES_SANITIZE_DICT" -eq 1 ]]; then
+    workdb="/dev/shm/${DICT_NAME}_w$i"; rm -rf "$workdb"; mkdir -p "$workdb"
+    # copy script/properties if present adjacent to template (optional)
+    for ext in script properties; do
+      src="${DBTEMPLATE%.xml}.$ext"; [ -f "$src" ] && cp -f "$src" "$workdb/${DICT_NAME}.$ext" || true
+    done
+    xml="$outdir/${DICT_NAME}_$i.xml"
+    sed -e 's|jdbcDriver" value="[^"]*|jdbcDriver" value="org.hsqldb.jdbc.JDBCDriver|g' \
+        -e "s|jdbcUrl\" value=\"[^\"]*|jdbcUrl\" value=\"jdbc:hsqldb:file:$workdb/${DICT_NAME}|g" \
+        "$DBTEMPLATE" > "$xml"
+  else
+    xml="$DBTEMPLATE"
+  fi
 
   CP="$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$BASE_DIR/.build_tools"
   [ -n "$HSQLJAR" ] && CP="$CP:$HSQLJAR"

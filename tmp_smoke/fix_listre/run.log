@@ -1,0 +1,57 @@
+28 Aug 2025 11:27:44  INFO PiperFileReader - Loading Piper File /mnt/c/Users/Layth M Qassem/Desktop/CtakesBun/pipelines/smoke/TsDefaultFast_XmiOnly.piper ...
+28 Aug 2025 11:27:44  INFO PiperFileReader - Loading Piper File TsDefaultFastPipeline ...
+...28 Aug 2025 11:27:46  INFO PiperFileReader - Loading Piper File TsDefaultTokenizerPipeline ...
+..
+28 Aug 2025 11:27:47  INFO PiperFileReader - Loading Piper File TsChunkerSubPipe ...
+...
+28 Aug 2025 11:27:47  INFO PiperFileReader - Loading Piper File TsDictionarySubPipe ...
+...
+28 Aug 2025 11:27:48  INFO PiperFileReader - Loading Piper File TsAttributeCleartkSubPipe ...
+........
+
+
+28 Aug 2025 11:27:52  INFO SentenceDetector - Sentence detector model file: org/apache/ctakes/core/models/sentdetect/sd-med-model.zip
+28 Aug 2025 11:27:52  INFO TokenizerAnnotatorPTB - Initializing org.apache.ctakes.core.ae.TokenizerAnnotatorPTB
+28 Aug 2025 11:27:53  INFO ContextDependentTokenizerAnnotator - Finite state machines loaded.
+28 Aug 2025 11:27:53  INFO POSTagger - POS tagger model file: org/apache/ctakes/postagger/models/mayo-pos.zip
+28 Aug 2025 11:27:53  INFO Chunker - Chunker model file: org/apache/ctakes/chunker/models/chunker-model.zip
+28 Aug 2025 11:27:54  INFO AbstractJCasTermAnnotator - Using dictionary lookup window type: org.apache.ctakes.typesystem.type.textspan.Sentence
+28 Aug 2025 11:27:54  INFO AbstractJCasTermAnnotator - Exclusion tagset loaded: CC CD DT EX IN LS MD PDT POS PP PP$ PRP PRP$ RP TO VB VBD VBG VBN VBP VBZ WDT WP WPS WRB 
+28 Aug 2025 11:27:54  INFO AbstractJCasTermAnnotator - Using minimum term text span: 3
+28 Aug 2025 11:27:54  INFO AbstractJCasTermAnnotator - Using Dictionary Descriptor: /mnt/c/Users/Layth M Qassem/Desktop/CtakesBun/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0/resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs.xml
+28 Aug 2025 11:27:54  INFO DictionaryDescriptorParser - Parsing dictionary specifications: 
+28 Aug 2025 11:27:54 ERROR UmlsUserApprover -   umlsUser CHANGE_ME not allowed.  It is a placeholder reminder.
+28 Aug 2025 11:27:54 ERROR UmlsUserApprover -   umlsPass CHANGE_ME not allowed.  It is a placeholder reminder.
+28 Aug 2025 11:27:54 ERROR UmlsUserApprover - 
+
+
+Starting 2021 NIH is using a new method for UMLS license authentication.  
+
+To use the UMLS dictionary you must obtain a UMLS API Key.  
+After obtaining a Key, there are several methods to utilize it with Apache cTAKES.  
+
+You may specify the value of your Key with a single parameter: 
+ctakes.umls_apikey in your Operating System, 
+umlsKey in your Operating System, 
+umlsKey in your Piper File, 
+umlsKey in your Dictionary Properties XML, 
+--key in your Piper Runner command line, 
+--key in your Clinical Pipeline Script command line, 
+-Dctakes.umls_apikey in your Java command parameters, or 
+-DumlsKey in your Java command parameters.  
+
+The single key settings above will be preferred over the pre-2021 [UserName , Password] method.  
+The pre-2021 [UserName , Password] method may still be used if the username is set to 
+umls_api_key and the password is set to the value of your Key.  
+
+For more information visit 
+https://cwiki.apache.org/confluence/display/CTAKES/cTAKES+4.0.0.1 
+https://uts.nlm.nih.gov/ 
+
+
+
+28 Aug 2025 11:27:54 ERROR PiperFileRunner - Initialization of CAS Processor with name "org.apache.ctakes.dictionary.lookup2.concurrent.ThreadSafeFastLookup-8" failed.  
+28 Aug 2025 11:27:54  INFO PiperFileRunner - 
+For more information please see log file /mnt/c/Users/Layth M Qassem/Desktop/CtakesBun/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0/cTAKES.error.log
+28 Aug 2025 11:27:54  INFO PiperFileRunner - This is a log file on your machine listing information that may be useful in debugging your failed run.
+28 Aug 2025 11:27:54  INFO PiperFileRunner - Seriously, don't ignore this message.  If you want to get to the root of a problem, check the error log file /mnt/c/Users/Layth M Qassem/Desktop/CtakesBun/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0/cTAKES.error.log

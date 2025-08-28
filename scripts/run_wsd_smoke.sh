@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Run the WSD-enabled DefaultFast pipeline with offline dictionary and write XMI + CSV/BSV/HTML tables.
-# Also builds an Excel-compatible workbook (XML) summarizing the run.
+# Run the WSD-enabled DefaultFast pipeline and write XMI + CSV/BSV/HTML tables.
+# Uses the provided dictionary XML as-is (no sanitization by default).
 # Usage:
-#   scripts/run_wsd_smoke.sh [-i samples/input] [-o outputs/wsd_smoke] [-l <dictionary.xml>] [--no-report]
+#   scripts/run_wsd_smoke.sh [-i samples/input] [-o outputs/wsd_smoke] [-l <dictionary.xml>] [--no-report] [--key <UMLS_API_KEY>]
 
 IN_DIR="samples/input"
 OUT_DIR="outputs/wsd_smoke"
 DICT_XML=""
+UMLS_KEY="${UMLS_KEY:-}"
 REPORT=1
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -i|--in) IN_DIR="$2"; shift 2;;
     -o|--out) OUT_DIR="$2"; shift 2;;
-    -l|--lookup) DICT_XML="$2"; shift 2;;
+    -l|--lookup|-l|--dict-xml) DICT_XML="$2"; shift 2;;
+    --key) UMLS_KEY="$2"; shift 2;;
     --no-report) REPORT=0; shift 1;;
     *) echo "Unknown arg: $1" >&2; exit 1;;
   esac
@@ -40,28 +42,7 @@ fi
 # Compile local tools (including our SimpleWsdDisambiguatorAnnotator)
 find "$BASE_DIR/tools" -name "*.java" -print0 | xargs -0 javac -cp "$JAVA_CP" -d "$BASE_DIR/.build_tools"
 
-# Create an offline+portable dictionary xml copy for this run
-SAN_XML="$OUT_DIR/$(basename "$DICT_XML" .xml)_wsd_local.xml"
-cp -f "$DICT_XML" "$SAN_XML"
-sed -i -E \
-  -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.UmlsJdbcRareWordDictionary</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary</implementationName>#' \
-  -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.UmlsJdbcConceptFactory</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.concept.JdbcConceptFactory</implementationName>#' \
-  -e 's#<property key=\"jdbcDriver\" value=\"[^\"]*\"#<property key=\"jdbcDriver\" value=\"org.hsqldb.jdbc.JDBCDriver\"#' \
-  -e '/<property key=\"umlsUrl\"/d' \
-  -e '/<property key=\"umlsVendor\"/d' \
-  -e '/<property key=\"umlsUser\"/d' \
-  -e '/<property key=\"umlsPass\"/d' \
-  "$SAN_XML"
-
-# Ensure HSQL db path has no spaces; copy to /tmp if needed
-SRC_DB="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs/FullClinical_AllTUIs"
-if [[ -f "$SRC_DB.script" ]]; then
-  TMP_DB="/tmp/ctakes_full/FullClinical_AllTUIs"
-  mkdir -p "$(dirname "$TMP_DB")"
-  cp -f "$SRC_DB.properties" "$TMP_DB.properties"
-  cp -f "$SRC_DB.script" "$TMP_DB.script"
-  sed -i -E "s#(key=\"jdbcUrl\" value=)\"[^\"]+\"#\1\"jdbc:hsqldb:file:${TMP_DB}\"#" "$SAN_XML"
-fi
+XML_ARG="$DICT_XML"
 
 IN_ABS="$(cd "$IN_DIR" && pwd)"
 OUT_ABS="$(mkdir -p "$OUT_DIR" && cd "$OUT_DIR" && pwd)"
@@ -71,17 +52,17 @@ LOG="$OUT_ABS/logs/run_$(date +%Y%m%d_%H%M%S).log"
 echo "CTAKES_HOME: $CTAKES_HOME"
 echo "IN:          $IN_ABS"
 echo "OUT:         $OUT_ABS"
-echo "DICT_XML:    $SAN_XML"
+echo "DICT_XML:    $XML_ARG"
 echo "Log:         $LOG"
 
 pushd "$CTAKES_HOME" >/dev/null
-java -Xms2g -Xmx6g \
+java -Xms2g -Xmx6g ${UMLS_KEY:+-Dctakes.umls_apikey=$UMLS_KEY} \
   -cp "$JAVA_CP" \
   org.apache.ctakes.core.pipeline.PiperFileRunner \
   -p "$(pwd -P)/../..//pipelines/wsd/TsDefaultFastPipeline_WSD.piper" \
   -i "$IN_ABS" \
   -o "$OUT_ABS" \
-  -l "$SAN_XML" |& tee "$LOG"
+  -l "$XML_ARG" ${UMLS_KEY:+--key $UMLS_KEY} |& tee "$LOG"
 popd >/dev/null
 
 echo "Outputs:"
@@ -104,7 +85,7 @@ if [[ "$REPORT" -eq 1 ]]; then
     -o "$OUT_ABS" \
     -p "$PIPELINE_PIPER" \
     -l "$LOG" \
-    -d "$SAN_XML" \
+    -d "$XML_ARG" \
     -w "$REPORT_PATH" || echo "WARN: report build failed (see logs)."
   echo "- Report:     $REPORT_PATH"
 fi
