@@ -48,3 +48,7 @@ apache-ctakes-*/
 /umls_loader/
 samples/mimic_*/
 samples/mimic_output/
+
+# Local temp & jar extracts
+/META-INF/
+/tmp_*/
