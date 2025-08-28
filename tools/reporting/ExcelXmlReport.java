@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Build a single Excel 2003 XML workbook (Excel-compatible) consolidating cTAKES run outputs.
+ * Build a single XLSX workbook consolidating cTAKES run outputs.
  * Sheets:
  * - RunInfo: parsed from run log (build version, times, counts), piper file, dict xml
  * - Mentions: aggregated BSV tables from bsv_table/ (adds Document column)
@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  * - SheetGuide: describes columns and their module origins
  *
  * Usage:
- *   java tools.reporting.ExcelXmlReport -o <output_dir> -w <workbook.xml> [-l <run.log>] [-p <pipeline.piper>] [-d <dict.xml>] [-M <mode>]
+ *   java tools.reporting.ExcelXmlReport -o <output_dir> -w <workbook.xlsx> [-l <run.log>] [-p <pipeline.piper>] [-d <dict.xml>] [-M <mode>]
  *
  * Modes:
  *   - summary: fast, avoids XMI parse; uses counts and lightweight stats
@@ -28,8 +28,8 @@ import java.util.regex.Pattern;
  */
 public class ExcelXmlReport {
     private static final String NS = "urn:schemas-microsoft-com:office:spreadsheet";
-    // Default header fill ARGB for XLSX (Excel styles) — overridden per pipeline when possible
-    private static String HEADER_FILL_ARGB = "FFEFEFEF"; // light gray default
+    // Header fill color for XLSX styles (ARGB). Defaults to light gray; can be overridden per pipeline.
+    private static String HEADER_FILL_ARGB = "FFEFEFEF";
     private static final Map<String,String> PIPELINE_COLOR_ARGB;
     static {
         Map<String,String> m = new LinkedHashMap<>();
@@ -51,7 +51,7 @@ public class ExcelXmlReport {
     public static void main(String[] args) throws Exception {
         Map<String, String> cli = parseArgs(args);
         if (!cli.containsKey("-o") || !cli.containsKey("-w")) {
-            System.err.println("Usage: java tools.reporting.ExcelXmlReport -o <output_dir> -w <workbook.xml> [-l <run.log>] [-p <pipeline.piper>] [-d <dict.xml>] [-M <mode>]");
+            System.err.println("Usage: java tools.reporting.ExcelXmlReport -o <output_dir> -w <workbook.xlsx> [-l <run.log>] [-p <pipeline.piper>] [-d <dict.xml>] [-M <mode>]");
             System.exit(2);
         }
         Path outDir = Paths.get(cli.get("-o")).toAbsolutePath().normalize();
@@ -75,13 +75,14 @@ public class ExcelXmlReport {
         if (pipelines != null && pipelines.size() > 1) {
             LinkedHashMap<String, List<List<String>>> sheets = new LinkedHashMap<>();
             sheets.put("Pipelines Summary", pipelines);
-            // Aggregate processing metrics across subruns (AE/Writer init/process/files)
+            // Aggregate processing metrics across subruns
             List<List<String>> procAgg = buildProcessingMetricsAggregateForParent(outDir);
             if (procAgg != null && procAgg.size() > 1) sheets.put("Processing Metrics (Aggregate)", procAgg);
             // Add a clinician-friendly summary sheet
             List<List<String>> clinician = buildClinicianSummaryIfAny(outDir);
             if (clinician != null && clinician.size() > 1) sheets.put("Clinician Summary", clinician);
             Files.createDirectories(workbook.getParent());
+            // Force .xlsx
             if (!workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
                 workbook = java.nio.file.Paths.get(workbook.toString() + ".xlsx");
             }
@@ -151,12 +152,38 @@ public class ExcelXmlReport {
             sheets.put("CuiList", cuiTotals);
         }
 
+<<<<<<< HEAD
         Files.createDirectories(workbook.getParent());
         if (!workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
             workbook = java.nio.file.Paths.get(workbook.toString() + ".xlsx");
         }
+=======
+        // Set header color per pipeline for single-run workbooks
+        String pipelineKey = detectPipelineKeyFromOutDir(outDir);
+        if (pipelineKey != null && PIPELINE_COLOR_ARGB.containsKey(pipelineKey)) {
+            HEADER_FILL_ARGB = PIPELINE_COLOR_ARGB.get(pipelineKey);
+        } else {
+            HEADER_FILL_ARGB = "FFEFEFEF";
+        }
+        Files.createDirectories(workbook.getParent());
+        // Force .xlsx
+        if (!workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
+            workbook = java.nio.file.Paths.get(workbook.toString() + ".xlsx");
+        }
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         writeWorkbookXlsx(sheets, workbook);
         System.out.println("[report] Wrote workbook: " + workbook);
+    }
+
+    private static String detectPipelineKeyFromOutDir(Path outDir) {
+        if (outDir == null) return null;
+        String name = outDir.getFileName() != null ? outDir.getFileName().toString() : outDir.toString();
+        int idx = name.indexOf("_mimic");
+        String key = idx > 0 ? name.substring(0, idx) : name;
+        for (String k : PIPELINE_COLOR_ARGB.keySet()) {
+            if (key.equals(k)) return k;
+        }
+        return key;
     }
 
     // =============== Aggregate Clinical Concepts from per-document CSVs ===============
@@ -623,6 +650,25 @@ public class ExcelXmlReport {
             ));
         }
         return rows;
+    }
+
+    // Parse elapsed strings like "1 minutes, 38 seconds" or "4 minutes, 16 seconds" into total seconds
+    private static String secondsFromElapsed(String s) {
+        if (s == null) return "";
+        long total = 0L;
+        try {
+            java.util.regex.Matcher m = java.util.regex.Pattern
+                    .compile("(\\d+)\\s*(hour|hours|minute|minutes|second|seconds)", java.util.regex.Pattern.CASE_INSENSITIVE)
+                    .matcher(s);
+            while (m.find()) {
+                long v = Long.parseLong(m.group(1));
+                String unit = m.group(2).toLowerCase(java.util.Locale.ROOT);
+                if (unit.startsWith("hour")) total += v * 3600L;
+                else if (unit.startsWith("minute")) total += v * 60L;
+                else total += v;
+            }
+        } catch (Exception ignore) {}
+        return total > 0 ? String.valueOf(total) : "";
     }
 
     // =============== Clinician Summary (parent compare) ===============
@@ -1567,22 +1613,34 @@ public class ExcelXmlReport {
         sb.append("<sheetViews><sheetView workbookViewId=\"0\"><pane ySplit=\"1\" topLeftCell=\"A2\" activePane=\"bottomLeft\" state=\"frozen\"/></sheetView></sheetViews>");
         // Approximate auto-fit: compute widths based on max string length per column
         int cols = 0;
+<<<<<<< HEAD
         if (data != null) {
             for (List<String> row : data) cols = Math.max(cols, row.size());
         }
+=======
+        if (data != null) { for (List<String> row : data) cols = Math.max(cols, row.size()); }
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         if (cols > 0) {
             int[] maxLen = new int[cols];
             for (int i=0;i<cols;i++) maxLen[i] = 0;
             for (List<String> row : data) {
                 for (int c=0;c<row.size();c++) {
                     String v = row.get(c);
+<<<<<<< HEAD
                     int len = v == null ? 0 : v.length();
+=======
+                    int len = (v==null) ? 0 : v.length();
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
                     if (len > maxLen[c]) maxLen[c] = len;
                 }
             }
             sb.append("<cols>");
             for (int c=0;c<cols;c++) {
+<<<<<<< HEAD
                 int w = Math.max(10, Math.min(80, (int)Math.round(maxLen[c] * 1.1) + 2));
+=======
+                int w = Math.max(10, Math.min(80, (int)Math.round(maxLen[c]*1.1) + 2));
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
                 sb.append("<col min=\""+(c+1)+"\" max=\""+(c+1)+"\" width=\""+w+"\" customWidth=\"1\"/>");
             }
             sb.append("</cols>");
@@ -1628,7 +1686,11 @@ public class ExcelXmlReport {
         sb.append("</fonts>");
         sb.append("<fills count=\"2\">");
         sb.append("<fill><patternFill patternType=\"none\"/></fill>");
+<<<<<<< HEAD
         // Header fill (ARGB): dynamic per pipeline if available
+=======
+        // Header fill (ARGB): dynamic per pipeline if set, else light gray
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         String fill = (HEADER_FILL_ARGB==null||HEADER_FILL_ARGB.trim().isEmpty()) ? "FFEFEFEF" : HEADER_FILL_ARGB;
         sb.append("<fill><patternFill patternType=\"solid\"><fgColor rgb=\""+fill+"\"/><bgColor indexed=\"64\"/></patternFill></fill>");
         sb.append("</fills>");
@@ -1642,6 +1704,7 @@ public class ExcelXmlReport {
         return sb.toString();
     }
 
+<<<<<<< HEAD
     private static String detectPipelineKeyFromOutDir(Path outDir) {
         if (outDir == null) return null;
         String name = outDir.getFileName() != null ? outDir.getFileName().toString() : outDir.toString();
@@ -1656,6 +1719,9 @@ public class ExcelXmlReport {
     }
 
     // Build aggregated processing metrics across all immediate subruns under a compare parent dir
+=======
+    // Build aggregated processing metrics across immediate subruns under a compare parent dir
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
     private static List<List<String>> buildProcessingMetricsAggregateForParent(Path outDir) throws IOException {
         List<List<String>> rows = new ArrayList<>();
         rows.add(Arrays.asList("Phase","AE/Writer","Init Count (sum)","Process Count (sum)","Files Written (sum)"));
@@ -1679,11 +1745,16 @@ public class ExcelXmlReport {
                             for (Path p : lds) { long m = p.toFile().lastModified(); if (m > lm) { lm = m; latest = p; } }
                         }
                         if (latest != null) runLog = latest; else runLog = null;
+<<<<<<< HEAD
                     } else {
                         runLog = null;
                     }
                 }
                 // Parse this subrun's metrics and add to aggregate
+=======
+                    } else runLog = null;
+                }
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
                 Map<String,int[]> counts = parseAeCountsFromRun(runLog, sub);
                 for (Map.Entry<String,int[]> e : counts.entrySet()) {
                     int[] dest = agg.computeIfAbsent(e.getKey(), k -> new int[3]);
@@ -1692,12 +1763,21 @@ public class ExcelXmlReport {
                 }
             }
         } catch (IOException ignore) {}
+<<<<<<< HEAD
         // Emit ordered rows
         for (Map.Entry<String,int[]> e : agg.entrySet()) {
             String key = e.getKey();
             int[] c = e.getValue();
             String phase = phaseForAeLabel(key, friendlyAeLabel(key));
             rows.add(Arrays.asList(phase, friendlyAeLabel(key) + " ("+key+")", String.valueOf(c[0]), String.valueOf(c[1]), String.valueOf(c[2])));
+=======
+        for (Map.Entry<String,int[]> e : agg.entrySet()) {
+            String key = e.getKey();
+            int[] c = e.getValue();
+            String label = friendlyAeLabel(key);
+            String phase = phaseForAeLabel(key, label);
+            rows.add(Arrays.asList(phase, label + " ("+key+")", String.valueOf(c[0]), String.valueOf(c[1]), String.valueOf(c[2])));
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         }
         if (rows.size() == 1) rows.add(Arrays.asList("No data found"));
         return rows;
@@ -1708,6 +1788,7 @@ public class ExcelXmlReport {
         if (runLog != null && Files.isRegularFile(runLog)) {
             List<String> lines = Files.readAllLines(runLog, StandardCharsets.UTF_8);
             for (String line : lines) {
+<<<<<<< HEAD
                 String s = line;
                 int idx = s.indexOf(" - ");
                 if (idx > 0) {
@@ -1716,12 +1797,25 @@ public class ExcelXmlReport {
                     if (name.isEmpty() || isNoiseLogger(name)) continue;
                     int[] arr = counts.computeIfAbsent(name, k -> new int[3]);
                     String rest = s.substring(idx+3).toLowerCase(Locale.ROOT);
+=======
+                int idx = line.indexOf(" - ");
+                if (idx > 0) {
+                    String left = line.substring(0, idx);
+                    String name = left.replaceFirst("^.* INFO ", "").trim();
+                    if (name.isEmpty()) continue;
+                    int[] arr = counts.computeIfAbsent(name, k -> new int[3]);
+                    String rest = line.substring(idx+3).toLowerCase(java.util.Locale.ROOT);
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
                     if (rest.contains("initializing")) arr[0]++;
                     if (rest.contains("process(jcas)") || rest.startsWith("processing") || rest.contains("starting processing") || rest.contains("finished processing")) arr[1]++;
                 }
             }
         }
+<<<<<<< HEAD
         // Supplement with files written
+=======
+        // Approximate files written by counting files in output folders
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         Map<String,Integer> fileTotals = new LinkedHashMap<>();
         fileTotals.put("FileTreeXmiWriter", countFiles(outDir.resolve("xmi"), ".xmi"));
         fileTotals.put("SemanticTableFileWriter", countFiles(outDir.resolve("bsv_table"), ".BSV") + countFiles(outDir.resolve("csv_table"), ".CSV") + countFiles(outDir.resolve("html_table"), ".HTML"));
@@ -1734,6 +1828,11 @@ public class ExcelXmlReport {
         }
         return counts;
     }
+<<<<<<< HEAD
+=======
+
+    // (use existing countFiles overload earlier in class)
+>>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
     private static String colRef(int idx) {
         StringBuilder sb = new StringBuilder();
         while (idx > 0) { idx--; sb.insert(0, (char)('A' + (idx % 26))); idx /= 26; }

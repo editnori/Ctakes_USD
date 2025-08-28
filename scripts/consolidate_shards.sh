@@ -59,7 +59,7 @@ for t in "${types[@]}"; do
 done
 shopt -u nullglob
 
-# Sweep stray cuicounts anywhere under shard_* (not only shard_*/cui_count)
+# Sweep stray *.cuicount.bsv anywhere under immediate shards into parent/cui_count
 mkdir -p "$PARENT/cui_count"
 stray_moved=0
 while IFS= read -r -d '' f; do
@@ -81,13 +81,9 @@ if [[ ! -s "$PARENT/run.log" ]]; then
     if [[ -f "$sh/run.log" ]]; then cat "$sh/run.log" >> "$combined"; fi
   done
   if [[ -s "$combined" ]]; then
-    # Deduplicate repeated Build Version/Date lines (keep the first occurrence)
+    # Deduplicate repeated Build Version/Date lines (keep first occurrence)
     tmp_combined="$(mktemp)"
-    awk '{
-      if ($0 ~ /\] Build (Version|Date):/){
-        if (!seen[$0]++) print;
-      } else { print }
-    }' "$combined" > "$tmp_combined" && mv "$tmp_combined" "$combined"
+    awk '{ if ($0 ~ /\] Build (Version|Date):/) { if (!seen[$0]++) print; } else { print } }' "$combined" > "$tmp_combined" && mv "$tmp_combined" "$combined"
     echo "[consolidate] Wrote combined run.log (dedup Build Version/Date lines)"
   else
     rm -f "$combined" 2>/dev/null || true
