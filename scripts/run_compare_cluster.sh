@@ -334,7 +334,7 @@ run_pipeline_sharded() {
   } || true
 
   # Post-processing: consolidate shards, optionally async; then optionally build per-pipeline report
-  local REPORT_EXT="${REPORT_EXT:-xml}"
+  local REPORT_EXT="${REPORT_EXT:-xlsx}"
   local rpt="$parent/ctakes-${name}-${gshort}.${REPORT_EXT}"
   if [[ "$CONSOLIDATE" -eq 1 ]]; then
     if [[ "$any_fail" -eq 0 ]]; then

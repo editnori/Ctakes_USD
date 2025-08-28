@@ -126,7 +126,7 @@ run() {
 
   # Build per-pipeline Excel XML workbook with a short name to avoid Windows path limits
   local stamp="$(date +%Y%m%d-%H%M%S)"
-  local report_name="ctakes-${name}-${stamp}.xml"
+  local report_name="ctakes-${name}-${stamp}.xlsx"
   if grep -q "ResourceInitializationException" "$out/run.log"; then
     echo "WARN: $name failed to initialize one or more AEs; skipping report. See $out/run.log"
   else
@@ -167,7 +167,7 @@ echo "Compare outputs in: $OUT_BASE"
 
 # Build a combined Pipelines Summary workbook at the parent level
 STAMP="$(date +%Y%m%d-%H%M%S)"
-PARENT_REPORT="$OUT_BASE/ctakes-report-compare-${STAMP}.xml"
+PARENT_REPORT="$OUT_BASE/ctakes-report-compare-${STAMP}.xlsx"
 bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$OUT_BASE" -w "$PARENT_REPORT" || \
   echo "WARN: parent summary report build failed (see logs)."
 echo "- Summary:    $PARENT_REPORT"

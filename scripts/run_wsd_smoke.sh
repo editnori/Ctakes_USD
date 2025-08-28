@@ -79,7 +79,7 @@ if [[ "$REPORT" -eq 1 ]]; then
   PIPELINE_PIPER="$BASE_DIR/pipelines/wsd/TsDefaultFastPipeline_WSD.piper"
   # Build report with a descriptive default name if -w not provided
   # Short report name to avoid Windows path limits
-  REPORT_NAME_BASE="ctakes-wsd-$(date +%Y%m%d-%H%M%S).xml"
+  REPORT_NAME_BASE="ctakes-wsd-$(date +%Y%m%d-%H%M%S).xlsx"
   REPORT_PATH="$OUT_ABS/$REPORT_NAME_BASE"
   bash "$BASE_DIR/scripts/build_xlsx_report.sh" \
     -o "$OUT_ABS" \

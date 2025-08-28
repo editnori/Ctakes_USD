@@ -49,12 +49,12 @@ if [[ -z "$WORKBOOK" ]]; then
     DICT_NAME="$(basename "$DICT_XML" .xml)"
   fi
   TS="$(date +%Y%m%d-%H%M%S)"
-  # Compose: ctakes-report-<out>-<pipeline>-<dict>-<timestamp>.xml (omit missing parts)
+  # Compose: ctakes-report-<out>-<pipeline>-<dict>-<timestamp>.xlsx (omit missing parts)
   NAME_PARTS=("ctakes-report" "$BASE_NAME")
   [[ -n "$PIPE_NAME" ]] && NAME_PARTS+=("$PIPE_NAME")
   [[ -n "$DICT_NAME" ]] && NAME_PARTS+=("$DICT_NAME")
   NAME_PARTS+=("$TS")
-  WORKBOOK="$OUT_ABS/$(IFS='-'; echo "${NAME_PARTS[*]}").xml"
+  WORKBOOK="$OUT_ABS/$(IFS='-'; echo "${NAME_PARTS[*]}").xlsx"
 fi
 
 # Ensure WORKBOOK is absolute so path isn't affected by pushd into CTAKES_HOME
