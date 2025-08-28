@@ -5,12 +5,12 @@ set -euo pipefail
 # Usage: scripts/prepare_shared_dict.sh [-d <dict_name>] [-t <target_dir>]
 # Defaults:
 #   - dict_name from docs/builder_full_clinical.properties (dictionary.name)
-#   - target_dir=/dev/shm
+#   - target_dir from DICT_SHARED_PATH if set, otherwise /dev/shm
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0}"
 
-DICT_NAME=""; TARGET_DIR="/dev/shm"
+DICT_NAME=""; TARGET_DIR="${DICT_SHARED_PATH:-/dev/shm}"
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -d|--dict) DICT_NAME="$2"; shift 2;;
@@ -33,8 +33,9 @@ TARGET_PREFIX="${TARGET_DIR%/}/${DICT_NAME}_shared"
 cp -f "$SRC_DIR/$DICT_NAME.properties" "${TARGET_PREFIX}.properties"
 cp -f "$SRC_DIR/$DICT_NAME.script" "${TARGET_PREFIX}.script"
 
-echo "Prepared: ${TARGET_PREFIX}.(properties|script)"
+size_b=$(wc -c < "${TARGET_PREFIX}.script" 2>/dev/null || echo 0)
+echo "Prepared: ${TARGET_PREFIX}.(properties|script) size=$(numfmt --to=iec 2>/dev/null <<<"$size_b" || echo "$size_b")"
 echo "Export to reuse:"
 echo "  export DICT_SHARED=1"
 echo "  export DICT_SHARED_PATH=\"${TARGET_DIR%/}\""
-echo "Runner will use: jdbc:hsqldb:file:${TARGET_PREFIX};ifexists=true;readonly=true"
+echo "Runner will use: jdbc:hsqldb:file:${TARGET_PREFIX}"
