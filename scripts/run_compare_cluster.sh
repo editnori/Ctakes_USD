@@ -55,6 +55,13 @@ done
 OUT="${OUT:-$BASE_DIR/outputs/compare}"
 mkdir -p "$OUT"
 
+# Pre-run flight checks (fail fast on missing deps / dict / models)
+if [[ "$DICT_SHARED" -eq 1 ]]; then
+  bash "$BASE_DIR/scripts/flight_check.sh" --mode cluster --require-shared || exit 1
+else
+  bash "$BASE_DIR/scripts/flight_check.sh" --mode cluster || exit 1
+fi
+
 # Detect Temporal models
 HAS_TEMP_MODELS=0
 if [[ -f "$CTAKES_HOME/resources/org/apache/ctakes/temporal/models/eventannotator/model.jar" ]]; then
@@ -185,6 +192,12 @@ run_pipeline_sharded() {
       echo "[dict] Creating shared read-only HSQLDB copy: ${shareddb}" >&2
       cp -f "$SRC_DB_DIR/$DICT_NAME.properties" "${shareddb}.properties"
       cp -f "$SRC_DB_DIR/$DICT_NAME.script" "${shareddb}.script"
+      # Sanity: verify copy exists and is reasonably large
+      if [[ ! -s "${shareddb}.script" ]]; then
+        echo "[dict][fatal] Shared dictionary copy missing or empty: ${shareddb}.script" >&2
+        echo "              Check DICT_SHARED_PATH=${DICT_SHARED_PATH} exists and has free space." >&2
+        exit 1
+      fi
     else
       echo "[dict] Using existing shared read-only HSQLDB: ${shareddb}" >&2
     fi
@@ -236,6 +249,10 @@ run_pipeline_sharded() {
         workdb="/dev/shm/${DICT_NAME}_${name}_$i"; mkdir -p "$(dirname "$workdb")"
         cp -f "$SRC_DB_DIR/$DICT_NAME.properties" "$workdb.properties"
         cp -f "$SRC_DB_DIR/$DICT_NAME.script" "$workdb.script"
+        if [[ ! -s "$workdb.script" ]]; then
+          echo "[${name}_$i][fatal] Per-shard dictionary copy missing or empty: $workdb.script" | tee -a "$outdir/run.log" >&2
+          exit 1
+        fi
       fi
       # Point JDBC to the shared/per-shard DB with HSQLDB 2.x flags: fail if DB missing and use read-only for concurrent readers
       sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb};ifexists=true;readonly=true\"#" "$xml"

@@ -29,6 +29,9 @@ done
 if [[ -d "$IN_PATH_RAW" ]]; then IN_PATH="$(cd "$IN_PATH_RAW" && pwd)"; else IN_PATH="$(cd "$(dirname "$IN_PATH_RAW")" && pwd)/$(basename "$IN_PATH_RAW")"; fi
 OUT_BASE="$(mkdir -p "$OUT_BASE_RAW" && cd "$OUT_BASE_RAW" && pwd)"
 
+# Flight checks (smoke mode)
+bash "$BASE_DIR/scripts/flight_check.sh" --mode smoke || exit 1
+
 # Detect availability of Temporal models (EventAnnotator requires model.jar on classpath)
 HAS_TEMP_MODELS=0
 # Check resources directory first (packaged in distribution)
@@ -101,7 +104,7 @@ prep_xml() {
     mkdir -p "$(dirname "$tmp_db")"
     cp -f "$src_db.properties" "$tmp_db.properties"
     cp -f "$src_db.script" "$tmp_db.script"
-    sed -i -E "s#(key=\"jdbcUrl\" value=)\"[^\"]+\"#\1\"jdbc:hsqldb:file:${tmp_db}\"#" "$san"
+    sed -i -E "s#(key=\"jdbcUrl\" value=)\"[^\"]+\"#\1\"jdbc:hsqldb:file:${tmp_db};ifexists=true;readonly=true\"#" "$san"
   fi
   echo "$san"
 }

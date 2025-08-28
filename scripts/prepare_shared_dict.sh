@@ -37,5 +37,4 @@ echo "Prepared: ${TARGET_PREFIX}.(properties|script)"
 echo "Export to reuse:"
 echo "  export DICT_SHARED=1"
 echo "  export DICT_SHARED_PATH=\"${TARGET_DIR%/}\""
-echo "Runner will use: jdbc:hsqldb:file:${TARGET_PREFIX};readonly=true;hsqldb.lock_file=false"
-
+echo "Runner will use: jdbc:hsqldb:file:${TARGET_PREFIX};ifexists=true;readonly=true"
