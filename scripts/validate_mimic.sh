@@ -23,6 +23,7 @@ THREADS="${THREADS:-4}"
 XMX_MB="${XMX_MB:-4096}"
 SEED="${SEED:-42}"
 CONSOLIDATE_ASYNC=0
+ONLY=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -33,6 +34,7 @@ while [[ $# -gt 0 ]]; do
     --threads) THREADS="$2"; shift 2;;
     --xmx) XMX_MB="$2"; shift 2;;
     --seed) SEED="$2"; shift 2;;
+    --only) ONLY="$2"; shift 2;;
     --consolidate-async) CONSOLIDATE_ASYNC=1; shift 1;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac
@@ -57,7 +59,11 @@ find "$IN_DIR" -type f -name '*.txt' | LC_ALL=C sort | head -n "$COUNT" | \
 export RUNNERS THREADS XMX_MB SEED
 EXTRA=""; [[ "$CONSOLIDATE_ASYNC" -eq 1 ]] && EXTRA="--consolidate-async"
 echo "Running compare pipelines on subset (RUNNERS=$RUNNERS THREADS=$THREADS XMX=$XMX_MB)"
-bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$SUBSET_DIR" -o "$OUT_BASE" --reports $EXTRA || true
+if [[ -n "$ONLY" ]]; then
+  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$SUBSET_DIR" -o "$OUT_BASE" --only "$ONLY" --reports $EXTRA || true
+else
+  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$SUBSET_DIR" -o "$OUT_BASE" --reports $EXTRA || true
+fi
 
 # Build manifest from outputs
 MAN_OUT_DIR="$OUT_BASE"

@@ -221,6 +221,8 @@ run_pipeline_sharded() {
       cd "$CTAKES_HOME" >/dev/null
       stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m \
         -Dorg.slf4j.simpleLogger.defaultLogLevel=info \
+        -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.core.ae.RegexSpanFinder=warn \
+        -Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=warn \
         -cp "$JAVA_CP" \
         org.apache.ctakes.core.pipeline.PiperFileRunner \
         -p "$tuned_piper" -i "$in_dir" -o "$outdir" -l "$xml" \

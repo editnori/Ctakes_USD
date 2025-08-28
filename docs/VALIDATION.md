@@ -25,11 +25,21 @@ scripts/validate_mimic.sh
 #   --threads N         threads per runner (default: 4)
 #   --xmx MB            heap per runner (default: 4096)
 #   --seed VAL          sharding seed (default: 42)
+#   --only "S_core"     run only the specified pipeline key(s), space-separated
 #   --consolidate-async consolidate + report in background (default: off)
 
 # 3) Interpret results
 # - If baseline exists: VALIDATION OK / MISMATCH (diff shown)
 # - If baseline missing: a new baseline manifest is created at samples/mimic_output/manifest.txt
+```
+
+Examples
+```
+# Validate only the sectioned core pipeline
+scripts/validate_mimic.sh --only S_core
+
+# Validate temporal-only pipelines (if models are present)
+scripts/validate_mimic.sh --only "S_core_temp D_core_temp"
 ```
 
 What’s in the manifest?
@@ -43,4 +53,3 @@ Notes
 - Do not commit raw notes under `samples/mimic/`. The repo’s `.gitignore` excludes `*.txt` in that folder.
 - The baseline manifest is small and may be committed if you want a shared reference. Keep in mind different JVMs/OSes can cause minor variations; in that case, re‑seed per environment.
 - The validator uses the same compare pipelines as large runs; it exercises dictionary, temporal models (if present), and writers.
-
