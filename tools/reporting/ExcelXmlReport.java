@@ -431,7 +431,7 @@ public class ExcelXmlReport {
     private static List<List<String>> buildPipelinesSummaryIfAny(Path outDir) {
         List<List<String>> rows = new ArrayList<>();
         rows.add(Arrays.asList(
-                "Pipeline Dir","Documents","Average Seconds per Document",
+                "Pipeline Dir","Documents","Average Seconds per Document","Init Time (s)","Process Time (s)","Total Time (s)",
                 "Clinical Concepts","Avg Confidence","% Concepts with DocTimeRel",
                 "Relations per Doc","Coref Markables per Doc",
                 "Distinct CUIs per Doc","Disambig Rate","Avg Candidate Count","Sec per 100 Concepts",
@@ -593,6 +593,15 @@ public class ExcelXmlReport {
             String recRelations = (i==bestRelIdx) ? "Yes" : "";
             String docsStr = String.valueOf(m.docCount);
             String avgSecStr = String.format(java.util.Locale.ROOT, "%.2f", r.avgSec);
+            String initSecStr = ""; String procSecStr = ""; String totalSecStr = "";
+            try {
+                java.nio.file.Path rlog = (r.runLog==null || r.runLog.isEmpty()) ? null : java.nio.file.Paths.get(r.runLog);
+                if (rlog != null && java.nio.file.Files.isRegularFile(rlog)) {
+                    initSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Initialization Time Elapsed"));
+                    procSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Processing Time Elapsed"));
+                    totalSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Total Run Time Elapsed"));
+                }
+            } catch (Exception ignore) {}
             String confStr = m.mentionCount>0?String.format(java.util.Locale.ROOT, "%.3f", m.avgConfidence):"";
             String dtrStr = m.mentionCount>0?String.format(java.util.Locale.ROOT, "%.1f%%", 100.0*m.docTimeRelCount/m.mentionCount):"";
             String rpdStr = m.docCount>0?String.format(java.util.Locale.ROOT, "%.2f", (double)m.relationCount/m.docCount):"";
@@ -605,7 +614,7 @@ public class ExcelXmlReport {
             String scoreStr = String.format(java.util.Locale.ROOT, "%.3f", score);
             rows.add(Arrays.asList(
                     r.name,
-                    docsStr, avgSecStr,
+                    docsStr, avgSecStr, initSecStr, procSecStr, totalSecStr,
                     String.valueOf(m.mentionCount),
                     confStr, dtrStr,
                     rpdStr, corefStr,
@@ -1177,6 +1186,24 @@ public class ExcelXmlReport {
         return last;
     }
 
+    // Parse elapsed strings like "1 minutes, 38 seconds" or "4 minutes, 16 seconds" (from run.log) into seconds string
+    private static String secondsFromElapsed(String s) {
+        if (s == null) return "";
+        s = s.trim(); if (s.isEmpty()) return "";
+        long total = 0;
+        try {
+            java.util.regex.Matcher m = java.util.regex.Pattern.compile("(\\d+)\\s*(hour|hours|minute|minutes|second|seconds)", java.util.regex.Pattern.CASE_INSENSITIVE).matcher(s);
+            while (m.find()) {
+                long v = Long.parseLong(m.group(1));
+                String unit = m.group(2).toLowerCase(java.util.Locale.ROOT);
+                if (unit.startsWith("hour")) total += v * 3600L;
+                else if (unit.startsWith("minute")) total += v * 60L;
+                else total += v;
+            }
+        } catch (Exception ignore) {}
+        return total > 0 ? String.valueOf(total) : "";
+    }
+
     private static Path findPiperFromLog(Path log) {
         if (log == null) return null;
         Pattern p = Pattern.compile("Loading Piper File (.*?\\.piper)");
@@ -1540,6 +1567,28 @@ public class ExcelXmlReport {
         sb.append("<worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\">");
         // Freeze top row
         sb.append("<sheetViews><sheetView workbookViewId=\"0\"><pane ySplit=\"1\" topLeftCell=\"A2\" activePane=\"bottomLeft\" state=\"frozen\"/></sheetView></sheetViews>");
+        // Approximate auto-fit: compute widths based on max string length per column
+        int cols = 0;
+        if (data != null) {
+            for (List<String> row : data) cols = Math.max(cols, row.size());
+        }
+        if (cols > 0) {
+            int[] maxLen = new int[cols];
+            for (int i=0;i<cols;i++) maxLen[i] = 0;
+            for (List<String> row : data) {
+                for (int c=0;c<row.size();c++) {
+                    String v = row.get(c);
+                    int len = v == null ? 0 : v.length();
+                    if (len > maxLen[c]) maxLen[c] = len;
+                }
+            }
+            sb.append("<cols>");
+            for (int c=0;c<cols;c++) {
+                int w = Math.max(10, Math.min(80, (int)Math.round(maxLen[c] * 1.1) + 2));
+                sb.append("<col min=\""+(c+1)+"\" max=\""+(c+1)+"\" width=\""+w+"\" customWidth=\"1\"/>");
+            }
+            sb.append("</cols>");
+        }
         sb.append("<sheetData>");
         int headerCols = 0;
         if (data != null) {
