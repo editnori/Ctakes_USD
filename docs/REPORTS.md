@@ -9,7 +9,7 @@ Generates a single Excel-compatible workbook (XML) per run with multiple sheets:
 - Tokens: aggregated tokens and spans.
 
 Why XML, not .xlsx?
-- This uses the Excel 2003 XML (SpreadsheetML) format which Excel opens natively. It avoids pulling in extra libraries.
+- Reports are written as true XLSX workbooks. We avoid external heavy dependencies by writing minimal XLSX parts.
 - You can open the `.xml` in Excel and “Save As” `.xlsx` if desired.
 
 Build a report for a run:
@@ -28,7 +28,7 @@ Optional arguments:
 - `-p <pipeline.piper>`: pipeline file to list modules (auto-discovered from log if available)
 - `-l <run.log>`: run log path (auto-discovered under `logs/` or `run.log`)
 - `-d <dict.xml>`: dictionary XML path (auto-detected in output dir)
-- `-w <workbook.xml>`: output workbook path
+- `-w <workbook.xlsx>`: output workbook path
 
 Interpreting the sheets:
 - See `Pipeline Map` for pipeline order and which module produced each Clinical Concepts column.

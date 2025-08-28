@@ -12,7 +12,7 @@ Directories:
 - `cui_list/`: Concept list (basic) per document.
 - `cui_count/`: Counts of CUIs per document.
 - `bsv_tokens/`: Token list with text spans per document.
- - `report.xml`: Excel 2003 XML workbook (multi-sheet) summarizing the run.
+ - `ctakes-*.xlsx`: XLSX workbook (multi-sheet) summarizing the run.
 
 File naming pattern: `<docname>_table.(BSV|CSV|HTML)` for tables, and `<docname>.txt.xmi` for XMI.
 
