@@ -20,6 +20,11 @@ CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.
 JAVA_CP="$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$BASE_DIR/.build_tools"
 
 IN=""; OUT=""; RUNNERS="${RUNNERS:-16}"; XMX_MB="${XMX_MB:-6144}"; THREADS="${THREADS:-6}"; MAKE_REPORTS=0
+# Use a single shared read-only HSQLDB dictionary for all shards (reduces duplicate init)
+DICT_SHARED="${DICT_SHARED:-1}"
+# Directory to host the shared dictionary files (properties/script)
+# Defaults to /dev/shm (tmpfs); set DICT_SHARED_PATH to persist across runs/hosts (e.g., /var/tmp/ctakes_dict_cache)
+DICT_SHARED_PATH="${DICT_SHARED_PATH:-/dev/shm}"
 PARENT_DIR=""; RESUME=0; ONLY=""; SKIP_PARENT=0; CONSOLIDATE=1; KEEP_SHARDS=0; SHARD_SEED="${SEED:-}"
 CONSOLIDATE_ASYNC=1
 declare -a CONSOLIDATE_PIDS=()
@@ -47,7 +52,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 [[ -z "$IN" ]] && { echo "-i|--in is required" >&2; exit 2; }
-OUT="${OUT:-$BASE_DIR/outputs/compare_cluster}"
+OUT="${OUT:-$BASE_DIR/outputs/compare}"
 mkdir -p "$OUT"
 
 # Detect Temporal models
@@ -171,6 +176,19 @@ run_pipeline_sharded() {
   if [[ -f "$event_src" && ! -f "$event_dst" ]]; then mkdir -p "$(dirname "$event_dst")"; cp -f "$event_src" "$event_dst"; fi
 
   local -a pids=()
+  # Prepare shared dictionary DB copy in /dev/shm if requested
+  local shareddb="${DICT_SHARED_PATH%/}/${DICT_NAME}_shared"
+  local using_shared_db=0
+  if [[ "$DICT_SHARED" -eq 1 && -f "$SRC_DB_DIR/$DICT_NAME.script" ]]; then
+    using_shared_db=1
+    if [[ ! -f "${shareddb}.script" ]]; then
+      echo "[dict] Creating shared read-only HSQLDB copy: ${shareddb}" >&2
+      cp -f "$SRC_DB_DIR/$DICT_NAME.properties" "${shareddb}.properties"
+      cp -f "$SRC_DB_DIR/$DICT_NAME.script" "${shareddb}.script"
+    else
+      echo "[dict] Using existing shared read-only HSQLDB: ${shareddb}" >&2
+    fi
+  fi
   for i in $(seq -f "%03g" 0 $((RUNNERS-1))); do
     shard="$shards_dir/$i"; [[ -d "$shard" ]] || continue
     outdir="$parent/shard_$i"; mkdir -p "$outdir"
@@ -212,23 +230,48 @@ run_pipeline_sharded() {
       { echo "threads ${THREADS}"; cat "$piper"; } > "$tuned_piper"
     fi
     if [[ -f "$SRC_DB_DIR/$DICT_NAME.script" ]]; then
-      workdb="/dev/shm/${DICT_NAME}_${name}_$i"; mkdir -p "$(dirname "$workdb")"
-      cp -f "$SRC_DB_DIR/$DICT_NAME.properties" "$workdb.properties"
-      cp -f "$SRC_DB_DIR/$DICT_NAME.script" "$workdb.script"
-      sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb}\"#" "$xml"
+      if [[ "$using_shared_db" -eq 1 ]]; then
+        workdb="$shareddb"
+      else
+        workdb="/dev/shm/${DICT_NAME}_${name}_$i"; mkdir -p "$(dirname "$workdb")"
+        cp -f "$SRC_DB_DIR/$DICT_NAME.properties" "$workdb.properties"
+        cp -f "$SRC_DB_DIR/$DICT_NAME.script" "$workdb.script"
+      fi
+      # Point JDBC to the shared/per-shard DB with read-only + no lock file to allow concurrent readers
+      sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb};readonly=true;hsqldb.lock_file=false\"#" "$xml"
     fi
     (
+      set +e
       cd "$CTAKES_HOME" >/dev/null
-      stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m \
-        -Dorg.slf4j.simpleLogger.defaultLogLevel=info \
-        -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.core.ae.RegexSpanFinder=warn \
-        -Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=warn \
-        -cp "$JAVA_CP" \
-        org.apache.ctakes.core.pipeline.PiperFileRunner \
-        -p "$tuned_piper" -i "$in_dir" -o "$outdir" -l "$xml" \
-        | sed -u "s/^/[${name}_$i] /" | tee "$outdir/run.log"
+      attempt=1
+      last_ec=0
+      while (( attempt <= 3 )); do
+        stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m \
+          -Dorg.slf4j.simpleLogger.defaultLogLevel=info \
+          -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary=warn \
+          -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary.lookup2=warn \
+          -Dorg.slf4j.simpleLogger.log.org.cleartk=warn \
+          -Dorg.slf4j.simpleLogger.log.opennlp=warn \
+          -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.core.ae.RegexSpanFinder=warn \
+          -Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=warn \
+          -cp "$JAVA_CP" \
+          org.apache.ctakes.core.pipeline.PiperFileRunner \
+          -p "$tuned_piper" -i "$in_dir" -o "$outdir" -l "$xml" \
+          | sed -u "s/^/[${name}_$i] /" | tee -a "$outdir/run.log"
+        ec=${PIPESTATUS[0]}
+        last_ec=$ec
+        if (( ec == 0 )); then
+          break
+        fi
+        echo "[${name}_$i] attempt $attempt failed (exit=$ec). Retrying..." | tee -a "$outdir/run.log"
+        sleep_sec=$(( 2 ** (attempt - 1) ))
+        sleep "$sleep_sec"
+        attempt=$(( attempt + 1 ))
+      done
+      set -e
       # Clean temporary pending dir if created
       if [[ "${pending:-}" =~ ^$parent/pending_ ]]; then rm -rf "$pending" 2>/dev/null || true; fi
+      exit $last_ec
     ) &
     pids+=($!)
   done
@@ -263,14 +306,14 @@ run_pipeline_sharded() {
         if [[ "$KEEP_SHARDS" -eq 1 ]]; then
           if [[ "$MAKE_REPORTS" -gt 0 ]]; then
             ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards && \
-              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true ) &
+              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true ) &
           else
             ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards ) &
           fi
         else
           if [[ "$MAKE_REPORTS" -gt 0 ]]; then
             ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" && \
-              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true ) &
+              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true ) &
           else
             ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" ) &
           fi
@@ -285,12 +328,12 @@ run_pipeline_sharded() {
         fi
         # Build report synchronously if requested
         if [[ "$MAKE_REPORTS" -eq 1 ]]; then
-          echo "[report] Building per-pipeline report (sync, summary): $rpt"
-          bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true
+          echo "[report] Building per-pipeline report (sync, csv): $rpt"
+          bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true
           echo "- Report: $rpt"
         elif [[ "$MAKE_REPORTS" -eq 2 ]]; then
-          echo "[report] Building per-pipeline report (async, summary): $rpt"
-          ( bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true ) &
+          echo "[report] Building per-pipeline report (async, csv): $rpt"
+          ( bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true ) &
           REPORT_PIDS+=($!)
         fi
       fi
@@ -317,7 +360,7 @@ done
 if [[ "$SKIP_PARENT" -eq 0 ]]; then
   STAMP="$(date +%Y%m%d-%H%M%S)"
   PARENT_REPORT="$OUT/ctakes-report-compare-${STAMP}.xlsx"
-  bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$OUT" -w "$PARENT_REPORT" -M summary || true
+  bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$OUT" -w "$PARENT_REPORT" -M csv || true
   echo "- Summary: $PARENT_REPORT"
 else
   echo "[report] Skipping parent compare summary (--no-parent-report)"

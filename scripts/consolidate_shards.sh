@@ -34,8 +34,8 @@ done
 
 echo "[consolidate] Parent: $PARENT"
 
-# Six canonical output types (tokens excluded by default)
-types=(xmi bsv_table csv_table html_table cui_list cui_count)
+# Canonical output types (now include tokens for report Tokens sheet)
+types=(xmi bsv_table csv_table html_table cui_list cui_count bsv_tokens)
 
 shopt -s nullglob
 for t in "${types[@]}"; do

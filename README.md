@@ -13,10 +13,16 @@ Clinician quick start (5 steps)
    - `scripts/validate_mimic.sh` (or `scripts/validate_mimic.sh --only S_core`)
    - You’ll see a small manifest to verify results. OK ⇒ proceed.
 3) Set inputs and run at scale (safe defaults):
-   - `export INPUT_ROOT=/workspace/SD5000_1`
-   - `export OUT_BASE=/workspace/outputs/compare`
+   - `export INPUT_ROOT=<path_to_notes>`
+   - `export OUT_BASE=outputs/compare`
    - `export RUNNERS=32 THREADS=8 XMX_MB=8192 SEED=42`
-   - `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"`
+   - Optional shared dictionary cache (faster startup):
+     - `bash scripts/prepare_shared_dict.sh -t /var/tmp/ctakes_dict_cache`
+     - `export DICT_SHARED=1 DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache`
+   - Preview the plan:
+     - `bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"`
+   - Run:
+     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"`
 4) Monitor progress (any time):
    - `scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"`
 5) Open the workbook(s):
@@ -49,7 +55,7 @@ chmod +x scripts/*.sh
 
 Updating to latest
 ```
-cd /workspace/CtakesBun
+cd <repo_root>
 git fetch origin
 git checkout main
 git pull --ff-only origin main
@@ -87,9 +93,9 @@ When you finish 10 runs and want one view:
 This links each run’s pipeline folders into `<combined_dir>` and builds `ctakes-runs-summary-<ts>.xlsx` in summary mode.
 
 What happens behind the scenes
-- The pipelines write per‑note Clinical Concepts CSVs during the run.
+- The pipelines write per‑note Clinical Concepts CSVs during the run (and CUI counts/tokens when configured).
 - Consolidation moves shard outputs to the top level, restores the tuned `.piper` and a combined `run.log`, then removes shards.
-- The workbook builder reads the CSVs, CUI counts, tokens, `.piper`, and `run.log`. It does not parse XMI for the fast path.
+- The workbook builder reads the CSVs, CUI counts, tokens, `.piper`, and `run.log`. Reports are built in CSV mode (no XMI parsing).
 
 Options you might change
 - `-n/--runners`, `-t/--threads`, `-m/--xmx`: parallelism and heap (watch memory).
@@ -98,7 +104,7 @@ Options you might change
 
 Repository layout
 ```
-scripts/           # runners, consolidation, detached helper, multi-run summary
+scripts/           # runners, consolidation, status, prepare-shared-dict, detached helper, multi-run summary
 pipelines/         # compare pipelines and shared writer includes
 tools/reporting/   # Excel workbook builder, CSV aggregator
 tools/reporting/uima/ClinicalConceptCsvWriter.java  # in-pipeline per-note CSV writer
@@ -116,8 +122,14 @@ All commands (reference)
   - `-m|--xmx <MB>` heap per runner (default 6144).
   - `--seed <val>` stable sharding seed.
   - `--resume` resume only missing docs (checks top‑level `xmi/`).
-  - `--reports` build per‑pipeline reports during run (async with `--reports-async`).
+  - `--reports` build per‑pipeline reports during run (CSV mode; async with `--reports-async`).
   - `--no-consolidate` keep `shard_*` (normally removed during consolidation).
+
+- `scripts/status.sh` — dry-run status of what would be executed.
+  - `-i|--in <dir>` input root.
+  - `-o|--out <dir>` output base (default `outputs/compare`).
+  - `--only` limit pipelines; shows which will run.
+  - Prints environment (RUNNERS/THREADS/XMX), dictionary + shared cache status, and report mode.
 
 - `scripts/consolidate_shards.sh`
   - `-p|--parent <run_dir>` required.
@@ -137,14 +149,14 @@ All commands (reference)
 
 ## Copy-Paste Commands (Ubuntu/Debian)
 
-These are ready to run from `/workspace/CtakesBun`.
+These are ready to run from the repository root.
 
 ### 1. Update Repo to Latest Main
 
 Non-destructive (fast-forward only):
 
 ```bash
-cd /workspace/CtakesBun
+cd <repo_root>
 git fetch origin
 git checkout main
 git pull --ff-only origin main
@@ -153,7 +165,7 @@ git pull --ff-only origin main
 Discard local changes (force update):
 
 ```bash
-cd /workspace/CtakesBun
+cd <repo_root>
 git fetch origin main
 git reset --hard origin/main
 ```
@@ -172,18 +184,24 @@ scripts/validate_mimic.sh
 # Results will be compared/seeded at samples/mimic_output/manifest.txt
 ```
 
-### 4. Run Large Compare (async consolidate + async reports)
+### 4. Run Large Compare (CSV-mode reports)
 
 ```bash
-export INPUT_ROOT="/workspace/SD5000_1"
-export OUT_BASE="/workspace/outputs/compare"
+export INPUT_ROOT="<path_to_notes>"
+export OUT_BASE="outputs/compare"
 export RUNNERS=32
 export THREADS=8
 export XMX_MB=8192
 export SEED=42
 ulimit -n 65535 || true
 
-scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"
+# Optional: shared dictionary cache for faster startup
+bash scripts/prepare_shared_dict.sh -t /var/tmp/ctakes_dict_cache
+export DICT_SHARED=1
+export DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache
+
+bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
+bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"
 ```
 
 ### 5. Check Progress and Outputs
@@ -255,7 +273,7 @@ scripts/install_bundle.sh --deps \
 
 ```bash
 # 1) Update repo
-cd /workspace/CtakesBun
+cd <repo_root>
 git fetch origin
 git checkout main
 git pull --ff-only origin main
@@ -264,16 +282,22 @@ git pull --ff-only origin main
 chmod +x scripts/*.sh
 
 # 3) Set environment variables
-export INPUT_ROOT="/workspace/SD5000_1"
-export OUT_BASE="/workspace/outputs/compare"
+export INPUT_ROOT="<path_to_notes>"
+export OUT_BASE="outputs/compare"
 export RUNNERS=32
 export THREADS=8
 export XMX_MB=8192
 export SEED=42
 ulimit -n 65535 || true
 
+# Optional: shared dictionary cache
+bash scripts/prepare_shared_dict.sh -t /var/tmp/ctakes_dict_cache
+export DICT_SHARED=1
+export DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache
+
 # 4) Run the comparison (async consolidate + async reports)
-scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"
+bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
+bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"
 
 # 5) Check progress in another terminal
 scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
@@ -281,7 +305,8 @@ scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
 
 Validation (100‑note MIMIC sample)
 - Place ~100 `.txt` notes under `samples/mimic/`
-- Run: `scripts/validate_mimic.sh` (or `--only S_core` to validate one system)
+- Run: `scripts/validate_mimic.sh` (or `--only S_core`)
+- Subset handling: `--subset-mode reuse|link|copy` (default: link). Auto‑reuse when input folder already has exactly `COUNT` notes.
 - Compares against `samples/mimic_output/manifest.txt` if present, or seeds it on first run.
 
 ## Pipelines: What Runs by Default

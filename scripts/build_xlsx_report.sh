@@ -63,8 +63,8 @@ case "$WORKBOOK" in
   *) WORKBOOK="$(cd "$BASE_DIR" && pwd)/$WORKBOOK" ;;
 esac
 
-# Compile reporting tool (skip Jupyter checkpoints)
-find "$BASE_DIR/tools" -type f -name "*.java" ! -path "*/.ipynb_checkpoints/*" -print0 | \
+# Compile reporting tools only (skip unrelated tools and Jupyter checkpoints)
+find "$BASE_DIR/tools/reporting" -type f -name "*.java" ! -path "*/.ipynb_checkpoints/*" -print0 | \
   xargs -0 javac -cp "$JAVA_CP" -d "$BASE_DIR/.build_tools"
 
 args=( tools.reporting.ExcelXmlReport -o "$OUT_ABS" -w "$WORKBOOK" )
