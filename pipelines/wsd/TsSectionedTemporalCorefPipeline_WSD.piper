@@ -1,0 +1,33 @@
+// Thread-safe Sectioned Temporal + Coref pipeline with WSD
+
+threads 3
+
+load TsFullTokenizerPipeline
+add ContextDependentTokenizerAnnotator
+addDescription POSTagger
+load TsChunkerSubPipe
+
+// Dictionary + WSD + Assertion
+load TsDictionarySubPipe
+add tools.wsd.SimpleWsdDisambiguatorAnnotator
+load TsAttributeCleartkSubPipe
+// Ensure subject defaults to 'patient' to prevent writer NPEs
+add tools.fixes.DefaultSubjectAnnotator
+
+// Temporal events and relations
+load TsTemporalSubPipe
+
+// Coreference resolution
+load TsCorefSubPipe
+
+// Write XMI under subdirectory (save full CAS before other writers)
+add FileTreeXmiWriter SubDirectory=xmi
+
+add SemanticTableFileWriter SubDirectory=bsv_table
+add SemanticTableFileWriter SubDirectory=csv_table TableType=CSV
+add SemanticTableFileWriter SubDirectory=html_table TableType=HTML
+add CuiListFileWriter SubDirectory=cui_list
+add CuiCountFileWriter SubDirectory=cui_count
+add TokenTableFileWriter SubDirectory=bsv_tokens
+
+addLast util.log.FinishedLogger

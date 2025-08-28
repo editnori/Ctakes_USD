@@ -19,7 +19,7 @@ CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.
 JAVA_CP="$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$BASE_DIR/.build_tools"
 
 IN=""; OUT=""; RUNNERS="${RUNNERS:-16}"; XMX_MB="${XMX_MB:-6144}"; THREADS="${THREADS:-6}"; MAKE_REPORTS=0
-PARENT_DIR=""; RESUME=0; ONLY=""; SKIP_PARENT=0; CONSOLIDATE=1; KEEP_SHARDS=0
+PARENT_DIR=""; RESUME=0; ONLY=""; SKIP_PARENT=0; CONSOLIDATE=1; KEEP_SHARDS=0; SHARD_SEED="${SEED:-}"
 declare -a REPORT_PIDS=()
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -36,6 +36,7 @@ while [[ $# -gt 0 ]]; do
     --no-parent-report) SKIP_PARENT=1; shift 1;;
     --no-consolidate) CONSOLIDATE=0; shift 1;;
     --keep-shards) KEEP_SHARDS=1; shift 1;;
+    --seed) SHARD_SEED="$2"; shift 2;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac
 done
@@ -116,17 +117,29 @@ sanitize_dict() {
     "$out"
 }
 
+hash_to_shard() { # file n seed -> shard index [0..n-1]
+  local f="$1"; local n="$2"; local seed="${3:-}"
+  local h
+  if command -v sha1sum >/dev/null 2>&1; then
+    h=$(printf "%s" "$f$seed" | sha1sum | awk '{print $1}')
+    # take last 8 hex digits for speed
+    h=$(( 0x${h:0:8} ))
+  else
+    h=$(printf "%s" "$f$seed" | cksum | awk '{print $1}')
+  fi
+  echo $(( h % n ))
+}
+
 make_shards() {
-  local src="$1"; local shards_dir="$2"; local n="$3"
+  local src="$1"; local shards_dir="$2"; local n="$3"; local seed="$4"
   mkdir -p "$shards_dir"
-  local i=0
+  # Stable file list
   while IFS= read -r -d '' f; do
-    local g; g=$(( i % n ))
+    local g; g=$(hash_to_shard "$f" "$n" "$seed")
     local gd; gd=$(printf "%03d" "$g")
     mkdir -p "$shards_dir/$gd"
     ln "$f" "$shards_dir/$gd/"
-    i=$((i+1))
-  done < <(find "$src" -type f -name '*.txt' -print0)
+  done < <(find "$src" -type f -name '*.txt' -print0 | sort -z)
 }
 
 run_pipeline_sharded() {
@@ -144,7 +157,7 @@ run_pipeline_sharded() {
   if [[ -d "$shards_dir" ]]; then
     echo "[resume] Using existing shards at $shards_dir" >&2
   else
-    make_shards "$group_dir" "$shards_dir" "$RUNNERS"
+    make_shards "$group_dir" "$shards_dir" "$RUNNERS" "$SHARD_SEED"
   fi
 
   # Ensure Temporal model path variant exists
@@ -159,8 +172,7 @@ run_pipeline_sharded() {
     # Build a pending set if resuming: include only notes that don't have XMI yet
     local in_dir="$shard"
     if [[ "$RESUME" -eq 1 ]]; then
-      local pending="$parent/pending_$i"
-      rm -rf "$pending" && mkdir -p "$pending"
+      local pending; pending=$(mktemp -d -p "$parent" "pending_${i}_XXXXXX")
       # Index processed docs by basename
       declare -A done=()
       if [[ -d "$outdir/xmi" ]]; then
@@ -181,6 +193,7 @@ run_pipeline_sharded() {
       # If nothing pending, skip this shard
       if ! find "$pending" -type f -name '*.txt' | head -n1 | grep -q .; then
         echo "[resume] shard $i already complete; skipping" >&2
+        rmdir "$pending" 2>/dev/null || true
         continue
       fi
       in_dir="$pending"
@@ -207,6 +220,8 @@ run_pipeline_sharded() {
         org.apache.ctakes.core.pipeline.PiperFileRunner \
         -p "$tuned_piper" -i "$in_dir" -o "$outdir" -l "$xml" \
         | sed -u "s/^/[${name}_$i] /" | tee "$outdir/run.log"
+      # Clean temporary pending dir if created
+      if [[ "${pending:-}" =~ ^$parent/pending_ ]]; then rm -rf "$pending" 2>/dev/null || true; fi
     ) &
     pids+=($!)
   done

@@ -129,3 +129,5 @@ echo
 echo "Expected all files:  $EXPECTED_ALL  (7 per doc per pipeline)"
 echo "Current all files:   $CURRENT_ALL"
 echo "Progress (all types): ${PCT_ALL}%"
+echo
+echo "Tip: Use --resume in run_compare_cluster.sh to continue only missing docs (per shard) by checking top-level xmi/."

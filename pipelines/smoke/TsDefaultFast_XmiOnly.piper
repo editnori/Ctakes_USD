@@ -1,0 +1,13 @@
+// Thread-safe Default Fast pipeline (XMI only)
+
+threads 3
+
+// Load the built-in thread-safe fast clinical pipeline
+load TsDefaultFastPipeline
+
+// Write XMI under subdirectory
+add FileTreeXmiWriter SubDirectory=xmi
+
+// Finished log
+addLast util.log.FinishedLogger
+

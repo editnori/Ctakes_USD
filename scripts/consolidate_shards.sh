@@ -85,10 +85,10 @@ if ! ls -1 "$PARENT"/*.piper >/dev/null 2>&1; then
   done
 fi
 
-# Optionally remove the now-empty shard dirs and shards/ input links
+# Optionally remove the now-empty shard dirs and shards/ input links (and any pending_* scratch dirs)
 if [[ "$KEEP" -eq 0 ]]; then
-  echo "[consolidate] Removing shard_* and shards/ directories"
-  rm -rf "$PARENT"/shard_* "$PARENT"/shards 2>/dev/null || true
+  echo "[consolidate] Removing shard_* and shards/ directories and pending_* scratch"
+  rm -rf "$PARENT"/shard_* "$PARENT"/shards "$PARENT"/pending_* 2>/dev/null || true
 fi
 
 echo "[consolidate] Done: $PARENT"
