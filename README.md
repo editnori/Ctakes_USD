@@ -1,4 +1,4 @@
-# cTAKES Compare Runs — Fast, Clean, Repeatable
+# cTAKES Compare Runs
 
 This repo runs Apache cTAKES at scale, writes the right per‑note artifacts during the run, then builds a modern Excel workbook in one step.
 
