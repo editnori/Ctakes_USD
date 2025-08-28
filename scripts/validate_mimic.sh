@@ -44,6 +44,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+## Ensure UMLS key default (hardcoded fallback if env not set)
+export UMLS_KEY="${UMLS_KEY:-6370dcdd-d438-47ab-8749-5a8fb9d013f2}"
+
 ## Auto-switch dictionary sharing based on runners unless user explicitly set DICT_SHARED
 if [[ -z "${DICT_SHARED+x}" ]]; then
   if (( RUNNERS > 1 )); then
@@ -52,11 +55,13 @@ if [[ -z "${DICT_SHARED+x}" ]]; then
 fi
 
 [[ -d "$IN_DIR" ]] || mkdir -p "$IN_DIR"
-if ! find "$IN_DIR" -type f -name '*.txt' | head -n1 | grep -q .; then
+# Robust check for .txt files (case-insensitive), supports nested dirs
+if ! ( compgen -G "$IN_DIR/*.txt" >/dev/null 2>&1 || compgen -G "$IN_DIR/*.TXT" >/dev/null 2>&1 \
+       || find "$IN_DIR" -type f -iname '*.txt' -print -quit | grep -q . ); then
   cat >&2 <<EOF
-No .txt notes found under $IN_DIR
-- Place ~100 synthetic/de-identified validation notes under: $BASE_DIR/samples/mimic
-- Then re-run: scripts/validate_mimic.sh
+No .txt notes found under: $IN_DIR
+- Place ~100 synthetic/de-identified validation notes there, or pass -i <path>
+Then re-run: scripts/validate_mimic.sh -i "$IN_DIR" [...]
 EOF
   exit 2
 fi
@@ -91,10 +96,13 @@ esac
 export RUNNERS THREADS XMX_MB SEED
 EXTRA=""; [[ "$CONSOLIDATE_ASYNC" -eq 1 ]] && EXTRA="--consolidate-async"
 echo "Running compare pipelines on subset (RUNNERS=$RUNNERS THREADS=$THREADS XMX=$XMX_MB)"
+# Pass dictionary XML if provided in env and exists
+DICT_FLAG=()
+if [[ -n "${DICT_XML:-}" && -f "$DICT_XML" ]]; then DICT_FLAG=( -l "$DICT_XML" ); fi
 if [[ -n "$ONLY" ]]; then
-  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --only "$ONLY" --reports $EXTRA || true
+  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --only "$ONLY" --reports "${DICT_FLAG[@]}" $EXTRA || true
 else
-  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --reports $EXTRA || true
+  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --reports "${DICT_FLAG[@]}" $EXTRA || true
 fi
 
 # Build manifest from outputs
