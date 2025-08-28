@@ -1257,7 +1257,10 @@ public class ExcelXmlReport {
         Path cc = outDir.resolve("cui_count");
         List<Path> files = new ArrayList<>();
         if (Files.isDirectory(cc)) {
-            try (DirectoryStream<Path> ds = Files.newDirectoryStream(cc, path -> path.toString().endsWith(".bsv") || path.toString().endsWith(".BSV"))) {
+            try (DirectoryStream<Path> ds = Files.newDirectoryStream(cc, path -> {
+                String n = path.toString().toLowerCase(java.util.Locale.ROOT);
+                return n.endsWith(".bsv") || n.endsWith(".cuicount") || n.endsWith(".cuicount.bsv");
+            })) {
                 for (Path p : ds) files.add(p);
             }
         }
@@ -1266,7 +1269,10 @@ public class ExcelXmlReport {
             for (Path sh : ds) {
                 Path scc = sh.resolve("cui_count");
                 if (!Files.isDirectory(scc)) continue;
-                try (DirectoryStream<Path> ds2 = Files.newDirectoryStream(scc, path -> path.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".bsv"))) {
+                try (DirectoryStream<Path> ds2 = Files.newDirectoryStream(scc, path -> {
+                    String n = path.toString().toLowerCase(java.util.Locale.ROOT);
+                    return n.endsWith(".bsv") || n.endsWith(".cuicount") || n.endsWith(".cuicount.bsv");
+                })) {
                     for (Path p : ds2) files.add(p);
                 } catch (IOException ignore) {}
             }
