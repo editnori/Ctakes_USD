@@ -384,15 +384,6 @@ for grp in "${INPUT_GROUPS[@]}"; do
   done
 done
 
-if [[ "$SKIP_PARENT" -eq 0 ]]; then
-  STAMP="$(date +%Y%m%d-%H%M%S)"
-  PARENT_REPORT="$OUT/ctakes-report-compare-${STAMP}.${REPORT_EXT}"
-  bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$OUT" -w "$PARENT_REPORT" -M csv || true
-  echo "- Summary: $PARENT_REPORT"
-else
-  echo "[report] Skipping parent compare summary (--no-parent-report)"
-fi
-
 if [[ "$MAKE_REPORTS" -eq 2 && ${#REPORT_PIDS[@]} -gt 0 ]]; then
   echo "[report] Waiting for async per-pipeline reports to finish (${#REPORT_PIDS[@]} jobs) ..."
   for rpid in "${REPORT_PIDS[@]}"; do
@@ -407,4 +398,13 @@ if [[ "$CONSOLIDATE_ASYNC" -eq 1 && ${#CONSOLIDATE_PIDS[@]} -gt 0 ]]; then
     wait "$cpid" || true
   done
   echo "[post] All async consolidation/report jobs completed."
+fi
+
+if [[ "$SKIP_PARENT" -eq 0 ]]; then
+  STAMP="$(date +%Y%m%d-%H%M%S)"
+  PARENT_REPORT="$OUT/ctakes-report-compare-${STAMP}.${REPORT_EXT}"
+  bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$OUT" -w "$PARENT_REPORT" -M csv || true
+  echo "- Summary: $PARENT_REPORT"
+else
+  echo "[report] Skipping parent compare summary (--no-parent-report)"
 fi

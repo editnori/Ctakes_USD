@@ -118,11 +118,10 @@ echo "  XML         : $DICT_XML $( [[ -f "$DICT_XML" ]] && echo '[OK]' || echo '
 echo "  Shared DB   : DICT_SHARED=$DICT_SHARED DICT_SHARED_PATH=$DICT_SHARED_PATH"
 echo "  Cache Files : ${SHARED_PREFIX}.(script|properties) exists=$HAS_SHARED"
 echo "Writers       : XMI + tables + lists + tokens (default)"
-echo "Consolidation : moves xmi, bsv_table, csv_table, html_table, cui_list, cui_count, bsv_tokens"
+echo "Consolidation : moves xmi, bsv_table, csv_table, csv_table_concepts, html_table, cui_list, cui_count, bsv_tokens"
 echo "Reports Build : build_xlsx_report.sh -M csv (no XMI parsing)"
 
 echo "\nRun example:"
 echo "  export RUNNERS=$RUNNERS THREADS=$THREADS XMX_MB=$XMX_MB SEED=${SEED:-42}"
 echo "  export DICT_SHARED=$DICT_SHARED DICT_SHARED_PATH=\"$DICT_SHARED_PATH\""
 echo "  bash scripts/run_compare_cluster.sh -i \"$IN\" -o \"$OUT\" --reports"
-
