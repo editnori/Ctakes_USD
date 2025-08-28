@@ -421,7 +421,7 @@ public class ExcelXmlReport {
                 if (subName.equalsIgnoreCase("shards") || subName.startsWith("shard_")) { hasShardsDir = true; continue; }
                 // Ignore standard output directories of a single run
                 String low = subName.toLowerCase(java.util.Locale.ROOT);
-                if (low.equals("xmi") || low.equals("bsv_table") || low.equals("csv_table") || low.equals("html_table") ||
+                if (low.equals("xmi") || low.equals("bsv_table") || low.equals("csv_table") || low.equals("csv_table_concepts") || low.equals("html_table") ||
                     low.equals("cui_list") || low.equals("cui_count") || low.equals("bsv_tokens") || low.equals("logs") ||
                     low.startsWith("pending_")) {
                     continue;
@@ -1283,17 +1283,75 @@ public class ExcelXmlReport {
                 for (Path p : ds) files.add(p);
             }
         }
-        for (Path p : files) {
-            List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
-            for (String line : lines) {
-                if (line.trim().isEmpty()) continue;
-                String[] parts = line.split("\\|", -1);
-                if (parts.length >= 2) {
-                    String rawCui = parts[0].trim();
-                    boolean neg = rawCui.startsWith("-");
-                    String cui = neg ? rawCui.substring(1) : rawCui;
-                    rows.add(Arrays.asList(baseName(p), cui, String.valueOf(neg), parts[1].trim()));
+        // If we found explicit cui_count files, aggregate them and return
+        if (!files.isEmpty()) {
+            for (Path p : files) {
+                List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
+                for (String line : lines) {
+                    if (line.trim().isEmpty()) continue;
+                    String[] parts = line.split("\\|", -1);
+                    if (parts.length >= 2) {
+                        String rawCui = parts[0].trim();
+                        boolean neg = rawCui.startsWith("-");
+                        String cui = neg ? rawCui.substring(1) : rawCui;
+                        rows.add(Arrays.asList(baseName(p), cui, String.valueOf(neg), parts[1].trim()));
+                    }
                 }
+            }
+            return rows;
+        }
+        // Fallback: derive per-document CUI counts from csv_table_concepts when cui_count is absent
+        Map<String, Map<String, long[]>> perDoc = new LinkedHashMap<>(); // doc -> (cui -> [affirmed, negated])
+        List<Path> csvDirs = new ArrayList<>();
+        Path c1 = outDir.resolve("csv_table_concepts");
+        if (Files.isDirectory(c1)) csvDirs.add(c1);
+        try (DirectoryStream<Path> shards = Files.newDirectoryStream(outDir, p -> Files.isDirectory(p) && p.getFileName().toString().startsWith("shard_"))) {
+            for (Path sh : shards) {
+                Path sc1 = sh.resolve("csv_table_concepts");
+                if (Files.isDirectory(sc1)) csvDirs.add(sc1);
+            }
+        } catch (IOException ignore) {}
+        for (Path dir : csvDirs) {
+            try (DirectoryStream<Path> ds = Files.newDirectoryStream(dir, p -> p.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".csv"))) {
+                for (Path p : ds) {
+                    String doc = baseName(p);
+                    List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
+                    if (lines.isEmpty()) continue;
+                    List<String> header = parseCsvLine(lines.get(0));
+                    int idxCui = indexOf(header, "CUI");
+                    int idxNeg = indexOf(header, "Negated");
+                    int idxPol = indexOf(header, "Polarity");
+                    if (idxCui < 0) continue;
+                    Map<String,long[]> map = perDoc.computeIfAbsent(doc, k -> new LinkedHashMap<>());
+                    for (int i=1;i<lines.size();i++) {
+                        String line = lines.get(i);
+                        if (line == null) continue; line = line.trim(); if (line.isEmpty()) continue;
+                        List<String> cols = parseCsvLine(line);
+                        if (idxCui >= cols.size()) continue;
+                        String cui = nvl(cols.get(idxCui)).trim();
+                        if (cui.isEmpty() || cui.equalsIgnoreCase("null")) continue;
+                        boolean neg = false;
+                        if (idxNeg >= 0 && idxNeg < cols.size()) {
+                            String nv = nvl(cols.get(idxNeg));
+                            neg = "true".equalsIgnoreCase(nv) || "1".equals(nv);
+                        } else if (idxPol >= 0 && idxPol < cols.size()) {
+                            String pv = nvl(cols.get(idxPol));
+                            try { neg = Integer.parseInt(pv) < 0; } catch (Exception ignore2) {}
+                        }
+                        long[] arr = map.computeIfAbsent(cui, k -> new long[2]);
+                        if (neg) arr[1]++; else arr[0]++;
+                    }
+                }
+            }
+        }
+        // Emit rows per document
+        for (Map.Entry<String, Map<String,long[]>> e : perDoc.entrySet()) {
+            String doc = e.getKey();
+            for (Map.Entry<String,long[]> c : e.getValue().entrySet()) {
+                String cui = c.getKey(); long[] arr = c.getValue();
+                long affirmed = arr[0]; long negated = arr[1];
+                if (affirmed > 0) rows.add(Arrays.asList(doc, cui, "false", String.valueOf(affirmed)));
+                if (negated > 0) rows.add(Arrays.asList(doc, cui, "true", String.valueOf(negated)));
             }
         }
         return rows;

@@ -82,4 +82,4 @@ fi
 java $JAVA_HEAP_OPTS -cp "$JAVA_CP" "${args[@]}"
 popd >/dev/null
 
-echo "Excel XML workbook: $WORKBOOK"
+echo "Excel workbook: $WORKBOOK"
