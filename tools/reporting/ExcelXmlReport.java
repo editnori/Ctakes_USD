@@ -28,6 +28,25 @@ import java.util.regex.Pattern;
  */
 public class ExcelXmlReport {
     private static final String NS = "urn:schemas-microsoft-com:office:spreadsheet";
+    // Default header fill ARGB for XLSX (Excel styles) — overridden per pipeline when possible
+    private static String HEADER_FILL_ARGB = "FFEFEFEF"; // light gray default
+    private static final Map<String,String> PIPELINE_COLOR_ARGB;
+    static {
+        Map<String,String> m = new LinkedHashMap<>();
+        // Legacy-aligned palette (ARGB: FF + RRGGBB)
+        m.put("S_core", "FF00A3E0");
+        m.put("S_core_rel", "FF4F81BD");
+        m.put("S_core_temp", "FF9BBB59");
+        m.put("S_core_temp_coref", "FF2C3E50");
+        m.put("S_core_temp_coref_smoke", "FF8AB4F8");
+        m.put("D_core_rel", "FFC0504D");
+        m.put("D_core_temp", "FF8064A2");
+        m.put("D_core_temp_coref", "FF4BACC6");
+        m.put("D_core_temp_coref_smoke", "FF2E86C1");
+        m.put("WSD_Compare", "FF8E44AD");
+        m.put("TsSectionedTemporalCoref", "FFE07A00");
+        PIPELINE_COLOR_ARGB = Collections.unmodifiableMap(m);
+    }
 
     public static void main(String[] args) throws Exception {
         Map<String, String> cli = parseArgs(args);
@@ -51,11 +70,14 @@ public class ExcelXmlReport {
         System.out.println("[report]   mode     = " + mode);
 
         // Build sheets
-        // Special case: If this looks like a compare parent dir with multiple subruns, build a single-sheet summary and exit early.
+        // Special case: If this looks like a compare parent dir with multiple subruns, build summary sheets and exit early.
         List<List<String>> pipelines = buildPipelinesSummaryIfAny(outDir);
         if (pipelines != null && pipelines.size() > 1) {
             LinkedHashMap<String, List<List<String>>> sheets = new LinkedHashMap<>();
             sheets.put("Pipelines Summary", pipelines);
+            // Aggregate processing metrics across subruns (AE/Writer init/process/files)
+            List<List<String>> procAgg = buildProcessingMetricsAggregateForParent(outDir);
+            if (procAgg != null && procAgg.size() > 1) sheets.put("Processing Metrics (Aggregate)", procAgg);
             // Add a clinician-friendly summary sheet
             List<List<String>> clinician = buildClinicianSummaryIfAny(outDir);
             if (clinician != null && clinician.size() > 1) sheets.put("Clinician Summary", clinician);
@@ -67,6 +89,14 @@ public class ExcelXmlReport {
             }
             System.out.println("Wrote workbook: " + workbook);
             return;
+        }
+
+        // Set header color per pipeline for single-run workbooks
+        String pipelineKey = detectPipelineKeyFromOutDir(outDir);
+        if (pipelineKey != null && PIPELINE_COLOR_ARGB.containsKey(pipelineKey)) {
+            HEADER_FILL_ARGB = PIPELINE_COLOR_ARGB.get(pipelineKey);
+        } else {
+            HEADER_FILL_ARGB = "FFEFEFEF";
         }
 
         List<List<String>> runInfo = buildRunInfo(runLog, piper, dictXml, outDir);
@@ -1551,8 +1581,9 @@ public class ExcelXmlReport {
         sb.append("</fonts>");
         sb.append("<fills count=\"2\">");
         sb.append("<fill><patternFill patternType=\"none\"/></fill>");
-        // Light gray header fill (ARGB): FFEFEFEF
-        sb.append("<fill><patternFill patternType=\"solid\"><fgColor rgb=\"FFEFEFEF\"/><bgColor indexed=\"64\"/></patternFill></fill>");
+        // Header fill (ARGB): dynamic per pipeline if available
+        String fill = (HEADER_FILL_ARGB==null||HEADER_FILL_ARGB.trim().isEmpty()) ? "FFEFEFEF" : HEADER_FILL_ARGB;
+        sb.append("<fill><patternFill patternType=\"solid\"><fgColor rgb=\""+fill+"\"/><bgColor indexed=\"64\"/></patternFill></fill>");
         sb.append("</fills>");
         sb.append("<borders count=\"1\"><border/></borders>");
         sb.append("<cellStyleXfs count=\"1\"><xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\"/></cellStyleXfs>");
@@ -1562,6 +1593,99 @@ public class ExcelXmlReport {
         sb.append("</cellXfs>");
         sb.append("</styleSheet>");
         return sb.toString();
+    }
+
+    private static String detectPipelineKeyFromOutDir(Path outDir) {
+        if (outDir == null) return null;
+        String name = outDir.getFileName() != null ? outDir.getFileName().toString() : outDir.toString();
+        // Examples: S_core_mimic_20250828-211236, D_core_temp_coref_smoke_mimic_...
+        int idx = name.indexOf("_mimic");
+        String key = idx > 0 ? name.substring(0, idx) : name;
+        // Ensure key is one of known pipeline prefixes if possible
+        for (String k : PIPELINE_COLOR_ARGB.keySet()) {
+            if (key.equals(k)) return k;
+        }
+        return key;
+    }
+
+    // Build aggregated processing metrics across all immediate subruns under a compare parent dir
+    private static List<List<String>> buildProcessingMetricsAggregateForParent(Path outDir) throws IOException {
+        List<List<String>> rows = new ArrayList<>();
+        rows.add(Arrays.asList("Phase","AE/Writer","Init Count (sum)","Process Count (sum)","Files Written (sum)"));
+        if (outDir == null || !Files.isDirectory(outDir)) return rows;
+        Map<String,int[]> agg = new LinkedHashMap<>(); // key label -> [init, process, files]
+        try (DirectoryStream<Path> ds = Files.newDirectoryStream(outDir)) {
+            for (Path sub : ds) {
+                if (!Files.isDirectory(sub)) continue;
+                String subName = sub.getFileName().toString();
+                String low = subName.toLowerCase(java.util.Locale.ROOT);
+                if (low.equals("xmi") || low.equals("bsv_table") || low.equals("csv_table") || low.equals("csv_table_concepts") || low.equals("html_table") ||
+                        low.equals("cui_list") || low.equals("cui_count") || low.equals("bsv_tokens") || low.equals("logs") || low.startsWith("pending_") || low.startsWith("shard_")) {
+                    continue;
+                }
+                Path runLog = sub.resolve("run.log");
+                if (!Files.isRegularFile(runLog)) {
+                    Path logs = sub.resolve("logs");
+                    if (Files.isDirectory(logs)) {
+                        Path latest = null; long lm = Long.MIN_VALUE;
+                        try (DirectoryStream<Path> lds = Files.newDirectoryStream(logs, p -> p.getFileName().toString().endsWith(".log"))) {
+                            for (Path p : lds) { long m = p.toFile().lastModified(); if (m > lm) { lm = m; latest = p; } }
+                        }
+                        if (latest != null) runLog = latest; else runLog = null;
+                    } else {
+                        runLog = null;
+                    }
+                }
+                // Parse this subrun's metrics and add to aggregate
+                Map<String,int[]> counts = parseAeCountsFromRun(runLog, sub);
+                for (Map.Entry<String,int[]> e : counts.entrySet()) {
+                    int[] dest = agg.computeIfAbsent(e.getKey(), k -> new int[3]);
+                    int[] src = e.getValue();
+                    dest[0] += src[0]; dest[1] += src[1]; dest[2] += src[2];
+                }
+            }
+        } catch (IOException ignore) {}
+        // Emit ordered rows
+        for (Map.Entry<String,int[]> e : agg.entrySet()) {
+            String key = e.getKey();
+            int[] c = e.getValue();
+            String phase = phaseForAeLabel(key, friendlyAeLabel(key));
+            rows.add(Arrays.asList(phase, friendlyAeLabel(key) + " ("+key+")", String.valueOf(c[0]), String.valueOf(c[1]), String.valueOf(c[2])));
+        }
+        if (rows.size() == 1) rows.add(Arrays.asList("No data found"));
+        return rows;
+    }
+
+    private static Map<String,int[]> parseAeCountsFromRun(Path runLog, Path outDir) throws IOException {
+        Map<String,int[]> counts = new LinkedHashMap<>();
+        if (runLog != null && Files.isRegularFile(runLog)) {
+            List<String> lines = Files.readAllLines(runLog, StandardCharsets.UTF_8);
+            for (String line : lines) {
+                String s = line;
+                int idx = s.indexOf(" - ");
+                if (idx > 0) {
+                    String left = s.substring(0, idx);
+                    String name = left.replaceFirst("^.* INFO ", "").trim();
+                    if (name.isEmpty() || isNoiseLogger(name)) continue;
+                    int[] arr = counts.computeIfAbsent(name, k -> new int[3]);
+                    String rest = s.substring(idx+3).toLowerCase(Locale.ROOT);
+                    if (rest.contains("initializing")) arr[0]++;
+                    if (rest.contains("process(jcas)") || rest.startsWith("processing") || rest.contains("starting processing") || rest.contains("finished processing")) arr[1]++;
+                }
+            }
+        }
+        // Supplement with files written
+        Map<String,Integer> fileTotals = new LinkedHashMap<>();
+        fileTotals.put("FileTreeXmiWriter", countFiles(outDir.resolve("xmi"), ".xmi"));
+        fileTotals.put("SemanticTableFileWriter", countFiles(outDir.resolve("bsv_table"), ".BSV") + countFiles(outDir.resolve("csv_table"), ".CSV") + countFiles(outDir.resolve("html_table"), ".HTML"));
+        fileTotals.put("CuiListFileWriter", countFiles(outDir.resolve("cui_list"), ".bsv"));
+        fileTotals.put("CuiCountFileWriter", countFiles(outDir.resolve("cui_count"), ".bsv") + countFiles(outDir, ".cuicount.bsv"));
+        fileTotals.put("TokenTableFileWriter", countFiles(outDir.resolve("bsv_tokens"), ".BSV"));
+        for (Map.Entry<String,Integer> e : fileTotals.entrySet()) {
+            int[] arr = counts.computeIfAbsent(e.getKey(), k -> new int[3]);
+            arr[2] += e.getValue();
+        }
+        return counts;
     }
     private static String colRef(int idx) {
         StringBuilder sb = new StringBuilder();
