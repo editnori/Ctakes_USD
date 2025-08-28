@@ -237,8 +237,8 @@ run_pipeline_sharded() {
         cp -f "$SRC_DB_DIR/$DICT_NAME.properties" "$workdb.properties"
         cp -f "$SRC_DB_DIR/$DICT_NAME.script" "$workdb.script"
       fi
-      # Point JDBC to the shared/per-shard DB with read-only + no lock file to allow concurrent readers
-      sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb};readonly=true;hsqldb.lock_file=false\"#" "$xml"
+      # Point JDBC to the shared/per-shard DB with HSQLDB 2.x flags: fail if DB missing and use read-only for concurrent readers
+      sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb};ifexists=true;readonly=true\"#" "$xml"
     fi
     (
       set +e
