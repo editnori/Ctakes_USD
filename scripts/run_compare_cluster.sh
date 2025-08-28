@@ -12,7 +12,8 @@ set -euo pipefail
 #
 # Usage:
 #   scripts/run_compare_cluster.sh -i <input_root_or_dir> -o <output_base> \
-#     [-n RUNNERS] [-m XMX_MB] [-t THREADS] [--reports|--reports-async] [--no-consolidate|--keep-shards]
+#     [-n RUNNERS] [-m XMX_MB] [-t THREADS] [--reports|--reports-sync|--reports-async] \
+#     [--no-consolidate|--keep-shards|--consolidate-async]
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0}"
@@ -20,7 +21,7 @@ JAVA_CP="$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HO
 
 IN=""; OUT=""; RUNNERS="${RUNNERS:-16}"; XMX_MB="${XMX_MB:-6144}"; THREADS="${THREADS:-6}"; MAKE_REPORTS=0
 PARENT_DIR=""; RESUME=0; ONLY=""; SKIP_PARENT=0; CONSOLIDATE=1; KEEP_SHARDS=0; SHARD_SEED="${SEED:-}"
-CONSOLIDATE_ASYNC=0
+CONSOLIDATE_ASYNC=1
 declare -a CONSOLIDATE_PIDS=()
 declare -a REPORT_PIDS=()
 while [[ $# -gt 0 ]]; do
@@ -30,7 +31,8 @@ while [[ $# -gt 0 ]]; do
     -n|--runners) RUNNERS="$2"; shift 2;;
     -m|--xmx) XMX_MB="$2"; shift 2;;
     -t|--threads) THREADS="$2"; shift 2;;
-    --reports) MAKE_REPORTS=1; shift 1;;
+    --reports) MAKE_REPORTS=2; shift 1;;
+    --reports-sync) MAKE_REPORTS=1; shift 1;;
     --reports-async) MAKE_REPORTS=2; shift 1;;
     --parent) PARENT_DIR="$2"; shift 2;;
     --resume) RESUME=1; shift 1;;
