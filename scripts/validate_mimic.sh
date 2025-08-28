@@ -38,20 +38,11 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-ALT_DIR="$BASE_DIR/samples/public_demo"
 [[ -d "$IN_DIR" ]] || mkdir -p "$IN_DIR"
-if ! find "$IN_DIR" -type f -name '*.txt' | head -n1 | grep -q .; then
-  # Fallback to public_demo if present
-  if find "$ALT_DIR" -type f -name '*.txt' | head -n1 | grep -q .; then
-    IN_DIR="$ALT_DIR"
-  fi
-fi
-
 if ! find "$IN_DIR" -type f -name '*.txt' | head -n1 | grep -q .; then
   cat >&2 <<EOF
 No .txt notes found under $IN_DIR
-- Place ~100 de-identified notes under: $BASE_DIR/samples/mimic (not pushed),
-  or publicly shareable notes under: $ALT_DIR (can be pushed).
+- Place ~100 synthetic/de-identified validation notes under: $BASE_DIR/samples/mimic
 - Then re-run: scripts/validate_mimic.sh
 EOF
   exit 2

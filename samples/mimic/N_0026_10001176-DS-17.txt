@@ -1,0 +1,312 @@
+ 
+Name:  ___                   Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___.
+ 
+Chief Complaint:
+fever
+ 
+Major Surgical or Invasive Procedure:
+none
+
+ 
+History of Present Illness:
+___ with history of morbid obesity, coronary artery disease, 
+presenting today with cough productive of brown sputum and 
+fevers up to 103.2 for last 2 days. Also endorses chills. 
+Husband with similar symptoms 2d prior, now improving without 
+antibiotics. Denies any chest pain but states that he she has 
+been more short of breath.  
+ 
+In the ED, initial VS: 101.3 97 168/58 18 93% ra. CXR showed b/l 
+perihilar prominence but no evidence of CHF or pneumonia. CT A/P 
+showed no acute abdominal process. Labs notable for WBC 7.2 with 
+81%N, TroT <.01 x1, lactate 2, UA with trace leuks. Given 
+clinical picture and fever, patient was treated for presumptive 
+PNA with Levofloxacin 750mg IV. She was also given Ativan 2mg 
+PO, Tylenol 2g, Zofran 4mg. SpO2 dropped to 91& with ambulation. 
+Pt. initially wanted to leave, but was convinced to stay. VS at 
+transfer: 100.3 98 18 127/71 95%ra.  
+.  
+Currently, she is tired but denies F/C/SOB.  
+.  
+ROS: As per HPI  
+
+ 
+Past Medical History:
+MYOCARDIAL INFARCT - INFEROPOSTERIOR  
+HYPERCHOLESTEROLEMIA  
+DM (diabetes mellitus), type 2, uncontrolled  
+HYPERTENSION - ESSENTIAL, UNSPEC  
+Anemia  
+Thyroid nodule  
+Asymptomatic carotid artery stenosis  
+OBESITY - MORBID  
+ESOPHAGEAL REFLUX  
+HYPOTHYROIDISM, UNSPEC  
+ANXIETY STATES, UNSPEC  
+DERMATITIS - ECZEMATOUS  
+HEADACHE  
+COLONIC ADENOMA  
+DISC DISEASE - LUMBAR  
+Ovarian Retention Cyst  
+.  
+
+ 
+Social History:
+___
+Family History:
+Non contributory 
+ 
+Physical Exam:
+Physical Exam on Admission:
+VS - Temp 98.3F, BP 141/61, HR 101, R 20, O2-sat 93% RA  
+GENERAL - morbidly obese female in NAD, comfortable, appropriate 
+ 
+HEENT - NC/AT, PERRLA, EOMI, sclerae anicteric, MM slightly dry, 
+OP clear  
+NECK - supple, no thyromegaly, no JVD, no carotid bruits  
+LUNGS - very distant breath sounds, scattered exp wheezes, no 
+crackles, resp unlabored, no accessory muscle use  
+HEART - RRR, no MRG, nl S1-S2  
+ABDOMEN - NABS, obese, soft/NT/ND, no masses or HSM, no 
+rebound/guarding  
+EXTREMITIES - WWP, no c/c/e, 2+ peripheral pulses (radials, DPs) 
+ 
+SKIN - no rashes or lesions  
+NEURO - awake, A&Ox3 
+.
+Physical Exam on Discharge:
+VS - Tm 100.3 Tc 98.6 BP 137/46 HR  R 20 O2-sat 94% RA  
+GENERAL - morbidly obese female in NAD, comfortable, appropriate 
+ 
+HEENT - NC/AT, PERRLA, EOMI, sclerae anicteric, MM slightly dry, 
+OP clear  
+NECK - supple, no thyromegaly, no JVD, no carotid bruits  
+LUNGS - very distant breath sounds, few scattered exp wheezes, 
+no crackles, resp unlabored, no accessory muscle use  
+HEART - RRR, no MRG, nl S1-S2  
+ABDOMEN - NABS, obese, soft/NT/ND, no masses or HSM, no 
+rebound/guarding  
+EXTREMITIES - WWP, no c/c/e, 2+ peripheral pulses (radials, DPs) 
+ 
+SKIN - no rashes or lesions  
+NEURO - awake, A&Ox3  
+
+ 
+Pertinent Results:
+Labs on Admission:
+
+___ 10:00PM   WBC-7.2 RBC-4.11* HGB-11.5* HCT-35.4* MCV-86 
+MCH-27.8 MCHC-32.3 RDW-15.5
+___ 10:00PM   NEUTS-81.1* LYMPHS-10.8* MONOS-6.9 EOS-0.8 
+BASOS-0.4
+___ 10:00PM   cTropnT-<0.01
+___ 10:00PM   LIPASE-21
+___ 10:00PM   ALT(SGPT)-54* AST(SGOT)-50* ALK PHOS-64 TOT 
+BILI-0.4
+___ 10:00PM   GLUCOSE-119* UREA N-14 CREAT-0.7 SODIUM-136 
+POTASSIUM-3.9 CHLORIDE-98 TOTAL CO2-28 ANION GAP-14
+___ 10:11PM   LACTATE-2.0
+___ 10:47PM URINE  COLOR-Yellow APPEAR-Clear SP ___
+___ 10:47PM URINE  BLOOD-NEG NITRITE-NEG PROTEIN-NEG 
+GLUCOSE-NEG KETONE-NEG BILIRUBIN-NEG UROBILNGN-NEG PH-5.5 
+LEUK-TR
+___ 10:47PM URINE  RBC-<1 WBC-4 BACTERIA-NONE YEAST-NONE 
+EPI-1
+___ 10:47PM URINE  MUCOUS-RARE
+
+Imaging:
+
+CXR ___:
+IMPRESSION:  Mild perihilar prominence, suspected to represent 
+mildly prominent pulmonary vessels without definite pneumonia.  
+Streaky left basilar opacification seen only on the frontal view 
+is probably due to minor atelectasis or scarring. 
+.  
+CT A/P ___: 
+1.  No acute intra-abdominal pathology. There is diverticulosis 
+and sequelae of prior inflammation, but no active 
+diverticulitis. 
+2.  3-mm nodule seen along the right major fissure and right 
+lower lobe.  According to ___ guidelines, in the absence 
+of risk factors, no further followup is needed.  If patient has 
+risk factors such as smoking, followup chest CT at 12 months is 
+recommended to document stability. 
+
+CXR ___:
+There are low lung volumes with an appearance of bronchovascular 
+crowding.  Despite this, there is likely mild vascular 
+congestion and edema.  No focal consolidation is seen with 
+linear bibasilar atelectasis.  The heart is top normal in size 
+with aortic totuosity.  
+  
+IMPRESSION:  Mild pulmonary edema  
+.
+Urine legionella-negative
+.
+Labs on Discharge:
+.
+___ 05:25AM BLOOD WBC-11.6* RBC-3.34* Hgb-9.3* Hct-28.5* 
+MCV-86 MCH-27.9 MCHC-32.6 RDW-15.9* Plt ___
+___ 05:25AM BLOOD ___ PTT-33.8 ___
+___ 05:25AM BLOOD Glucose-106* UreaN-15 Creat-0.6 Na-134 
+K-3.8 Cl-96 HCO3-28 AnGap-14
+___ 06:15AM BLOOD ALT-68* AST-50* AlkPhos-66 TotBili-0.5
+___ 05:25AM BLOOD Calcium-8.7 Phos-2.4* Mg-1.8
+___ 10:47PM URINE Color-Yellow Appear-Clear Sp ___
+___ 10:47PM URINE Blood-NEG Nitrite-NEG Protein-NEG 
+Glucose-NEG Ketone-NEG Bilirub-NEG Urobiln-NEG pH-5.5 Leuks-TR
+___ 10:47PM URINE RBC-<1 WBC-4 Bacteri-NONE Yeast-NONE 
+Epi-___ with diabetes, morbid obesity, s/p MI, HTN who presents with 
+2 days of fevers and cough productive of rust colored sputum 
+with associated SOB.  
+.  
+# Fevers: Likely secondary to pneumonia, but possibly a viral 
+illness. Most likely not bacterial process but no leukocytosis, 
+just PMN predominance. Urine legionella neg. CXR underwhelming 
+for pnuemonia but given poor PO intake and overall constellation 
+of symptoms without other localizing source and neg CT, so 
+patient was treated presumptively for CAP.  O2 sats stable on 
+room air during the day, but at night de-satted.  On exam, lungs 
+with improved wheezing since yesterday. With ambulation, O2 87, 
+on ___, repeat cxr with pulm edema likely due to IV fluid bolus 
+day prior. She was given lasix 40mg POx1.  On day of d/c, sats 
+mid ___ on RA, down to 88% with prolonged ambulation.  Pt not 
+subjectively SOB, likely this is baseline given pt's habitus.  
+Treated with albuterol nebs and Levofloxacin 750mg PO daily.  On 
+d/c, will complete 5 day course of levofloxacin.  
+.  
+# Hypotnatremia: Na 134 on am of discharge, improved from lowest 
+of 129 .  Based on urine lytes/osm and serum osm, most likely 
+SIADH secondary to pulmonary process.
+.
+# Diabetes: Stable.  Continued home Lantus 100U qhs and ISS.  
+Held metformin in house.  Was on diabetic diet.  
+.  
+# HTN: Continued home lisinopril, metoprolol.  Held lasix 
+initially in setting of dehydration initially.  Re-started on 
+d/c.  
+.  
+# CAD: No CP now, ECG shows <1mm STD laterally, c/w prior. 
+Continued home asa, metoprolol. Heart healthy diet. 
+.  
+# HL: Stable.  Continued home simvastatin pending med rec given 
+80mg.  
+.  
+# Anxiety: Stable.  Continued home lorazepam, escitalopram.  
+.  
+# Anemia: Hct now at baseline 35.   
+.  
+# GERD: Stable.  Substituted omeprazole for home esomeprazole.
+.
+#incidental radiographic findings-pulmonary nodule. Will require 
+follow up.  
+.  
+TRANSITIONS OF CARE:
+- will complete day 5 of levofloxacin course on ___
+- will have labs checked (particularly Na) and faxed to PCP ___ 
+___
+- will f/u with PCP next week
+- 3mm lung nodule seen on CXR; can be followed as outpt
+- CODE: Confirmed full  
+- CONTACT: Husband ___ ___  
+
+ 
+___ on Admission:
+Humalog SSI  
+Lasix 40mg daily  
+Dicyclomine 10mg Q4-6H:PRN  
+Levothyroxine 25mcg daily  
+Escitalopram 20mg daily  
+Metoprolol succinate 50mg daily  
+Lantus 92 units QHS  
+Vicodin 1 tab Q4-6H:PRN  
+Lorazepam 2mg QHS:PRN  
+Esomeprazole 40mg BID  
+Lisinopril 20mg daily  
+Simvastatin 80mg QHS  
+Metformin 1000mg BID  
+Ferrous sulfate 325mg TID  
+
+ 
+Discharge Medications:
+1. Escitalopram Oxalate 20 mg PO DAILY 
+2. Lisinopril 20 mg PO DAILY 
+hold for sbp<100 
+3. esomeprazole magnesium *NF* 40 mg Oral BID 
+4. Ferrous Sulfate 325 mg PO TID 
+5. DiCYCLOmine 10 mg PO QID:PRN pain 
+6. Levothyroxine Sodium 25 mcg PO DAILY 
+7. Metoprolol Succinate XL 50 mg PO DAILY 
+8. Lorazepam 2 mg PO HS:PRN insomnia 
+9. Glargine 100 Units Bedtime
+Insulin SC Sliding Scale using HUM InsulinMax Dose Override 
+Reason: home dosing
+
+10. Levofloxacin 750 mg PO DAILY Start: In am 
+last day is ___ 
+RX *levofloxacin 750 mg once a day Disp #*1 Tablet Refills:*0
+11. Hydrocodone-Acetaminophen (5mg-500mg 1 TAB PO Q6H:PRN pain 
+hold for sedation, RR<10 
+12. Simvastatin 80 mg PO DAILY 
+13. MetFORMIN (Glucophage) 1000 mg PO BID 
+14. Furosemide 40 mg PO DAILY 
+15. Outpatient Lab Work
+Please check chem7 and CBC on ___ and fax results to:
+Name: ___ 
+Fax: ___ 
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Community Acquired Pneumonia
+Diabetes Mellitus Type 2
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Dear Ms. ___, 
+
+You were admitted to the hospital for a pneumonia.  You were 
+started on antibiotics which you will need to continue for one 
+more day (as listed below).  You were also a little bit 
+dehydrated when you came in, so you received some IV fluids to 
+help hydrate you. 
+
+You sodium levels in your blood were a bit low.  This was most 
+likely due to the infection in your lungs.  As we treated your 
+pneumonia, your sodium levels improved.
+
+The following changes were made to your medications: 
+- Please START levofloxacin 750mg daily for 1 more day
+
+If you begin to feel more short of breath or more sick, please 
+don't hesitate to call your primary care physician.
+
+Please follow up with your primary care doctor on discharge as 
+scheduled below.
+
+Please have your labs checked before your appointment with Dr. 
+___ included below.
+
+It was a pleasure taking care of you, we wish you all the best!
+ 
+Followup Instructions:
+___

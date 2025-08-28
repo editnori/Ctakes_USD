@@ -1,0 +1,292 @@
+ 
+Name:  ___                 Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: CARDIOTHORACIC
+ 
+Allergies: 
+lisinopril
+ 
+Attending: ___
+ 
+Chief Complaint:
+Substernal chest pain and throat tightness with exertion
+
+ 
+Major Surgical or Invasive Procedure:
+___
+1. Off pump coronary artery bypass graft x3, left internal 
+mammary artery to left anterior descending artery and saphenous 
+vein grafts to diagonal, and obtuse marginal arteries.
+2. Endoscopic harvesting of the long saphenous vein.
+
+ 
+History of Present Illness:
+This is a ___ patient with extensive coronary artery 
+disease history with previous stenting presented again with 
+symptoms and was investigated and found to have a significant 
+lesion in the left anterior descending artery diagonal and the 
+obtuse marginal arteries.  Left ventricular function is well 
+preserved and she was electively admitted for off pump coronary 
+artery bypass grafting.
+
+ 
+Past Medical History:
+Coronary artery disease(s/p MI ___, BMS to proximal LAD ___, 
+DES to mid LAD ___, DES to edge ISR of mid LAD DES and stenosis 
+distal to stent ___, DES to OM1, ___. 
+diastolic congestive heart failure
+Hypertension
+Dyslipidemia
+Morbid obesity
+COPD
+GERD
+Rt rotator cuff injury/bursitis(outpt ___, 
+Migraines, 
+Depression/Anxiety
+DJD
+Hemorrhoids 
+Rosacea 
+Left foot tendion repair
+ 
+Social History:
+___
+Family History:
+She was a ward of the ___ and does not know her family.  
+
+ 
+Physical Exam:
+Physical Exam
+
+Pulse: 86 Resp:20  O2 sat:98%
+B/P  Right: 132/68   Left:
+Height: 5'2    Weight:210 
+
+General: AAOx3, NAD 
+Skin: Dry [x] intact [x]
+HEENT: PERRLA [x] EOMI [x]
+Neck:  Supple [x] Full ROM [x]
+Chest: Lungs clear bilaterally [x]
+Heart: RRR [x]  Irregular []  Murmur [] grade ______
+Abdomen: Soft [x]non-distended [x]non-tender [x]bowel sounds 
++[x]
+Extremities: Warm [x], well-perfused [x]  Edema [] _____
+Varicosities: None [x]
+Neuro: Grossly intact [x]
+
+Pulses:
+Femoral      Right: +2  Left:+2
+DP           Right:+2   Left:+2
+___           Right:+2   Left:+2
+Radial       Right:cath site  Left:+2
+
+Carotid Bruit: None      
+
+ 
+Pertinent Results:
+Echocargiogram ___
+LEFT ATRIUM: Normal LA size. 
+RIGHT ATRIUM/INTERATRIAL SEPTUM: Normal RA size. A catheter or 
+pacing wire is seen in the RA and extending into the RV. 
+Left-to-right shunt across the interatrial septum at rest. 
+LEFT VENTRICLE: Wall thickness and cavity ___ were 
+obtained from 2D images. Normal regional LV systolic function. 
+Overall normal LVEF (>55%). 
+RIGHT VENTRICLE: Normal RV chamber size and free wall motion. 
+AORTA: Normal diameter of aorta at the sinus, ascending and arch 
+levels. Simple atheroma in ascending aorta. Normal descending 
+aorta diameter. Simple atheroma in descending aorta. 
+AORTIC VALVE: Normal aortic valve leaflets (3). No AS. No AR. 
+MITRAL VALVE: Normal mitral valve leaflets with trivial MR. 
+___ VALVE: Normal tricuspid valve leaflets with trivial 
+TR. 
+PULMONIC VALVE/PULMONARY ARTERY: Normal pulmonic valve leaflet. 
+No PS. Physiologic PR. 
+PERICARDIUM: No pericardial effusion. 
+Conclusions  
+Pre operative:
+The left atrium is normal in size. There is a small PFO with a 
+left-to-right shunt across the interatrial septum. Regional left 
+ventricular wall motion is normal. Overall left ventricular 
+systolic function is normal (LVEF>55%). Right ventricular 
+chamber size and free wall motion are normal. The diameters of 
+aorta at the sinus, ascending and arch levels are normal. There 
+are simple atheroma in the ascending aorta. There are simple 
+atheroma in the descending thoracic aorta. The aortic valve 
+leaflets (3) appear structurally normal with good leaflet 
+excursion and no aortic stenosis or aortic regurgitation. The 
+mitral valve appears structurally normal with trivial mitral 
+regurgitation. There is no pericardial effusion. 
+
+Chest X-Ray ___ 
+There is mild-to-moderate cardiomegaly.  Bilateral pleural 
+effusions are 
+small.  Aside from atelectasis in the left lower lobe, the lungs 
+are grossly clear.  Almost complete resolution of atelectasis in 
+the left upper lobe.  Sternal wires are aligned.  Widened 
+mediastinum has improved.  A small air-fluid level in the 
+retrosternal region suggests the presence of a tiny pneumothorax 
+and small effusion.  These are most likely located in the left 
+side. 
+
+___ 06:05AM BLOOD WBC-11.7* RBC-3.06* Hgb-10.4* Hct-30.5* 
+MCV-100* MCH-33.9* MCHC-34.0 RDW-13.5 Plt ___
+___ 06:15AM BLOOD WBC-11.1* RBC-3.23* Hgb-11.1* Hct-32.1* 
+MCV-99* MCH-34.4* MCHC-34.6 RDW-13.3 Plt ___
+___ 08:20AM BLOOD WBC-14.0* RBC-3.26* Hgb-10.8* Hct-32.3* 
+MCV-99* MCH-33.2* MCHC-33.4 RDW-13.3 Plt ___
+___ 06:05AM BLOOD Na-137 K-4.1 Cl-97
+___ 06:15AM BLOOD Glucose-161* UreaN-19 Creat-1.1 Na-136 
+K-4.0 Cl-97 HCO3-29 AnGap-14
+___ 08:00AM BLOOD Glucose-230* UreaN-14 Creat-0.9 Na-136 
+K-4.1 Cl-98 HCO3-26 AnGap-16
+___ 08:20AM BLOOD Glucose-238* UreaN-16 Creat-1.0 Na-134 
+K-4.6 Cl-100 HCO3-22 AnGap-17
+___:00AM BLOOD Glucose-98 UreaN-13 Creat-0.9 Na-136 
+K-4.7 Cl-106 HCO___ AnGap-12
+ 
+Brief Hospital Course:
+The patient was brought to the Operating Room on ___ where 
+the patient underwent Off pump coronary artery bypass graft x3, 
+left internal mammary artery to left anterior descending artery 
+and saphenous vein grafts to diagonal, and obtuse marginal
+arteries. Endoscopic harvesting of the long saphenous vein.
+Overall the patient tolerated the procedure well and 
+post-operatively was transferred to the CVICU in stable 
+condition for recovery and invasive monitoring. She required 
+Nitroglycerin for hypertension her first night post op but was 
+transitioned to oral betablocker and diuretics. POD 1 found the 
+patient extubated, alert and oriented and breathing comfortably. 
+ The patient was neurologically intact and hemodynamically 
+stable. The patient was transferred to the telemetry floor for 
+further recovery. Chest tubes and pacing wires were discontinued 
+without complication. She was started on plavix due to being 
+done off pump and will it need to be continued for six months. 
+Blood sugars were closely monitored and she was restarted on her 
+home regime which have slowly improved. The patient was 
+evaluated by the physical therapy service for assistance with 
+strength and mobility.  By the time of discharge on POD 5 the 
+patient was ambulating freely, the wound was healing and pain 
+was controlled with oral analgesics.  The patient was discharged 
+home with visiting nurse services in good condition with 
+appropriate follow up instructions.
+
+ 
+Medications on Admission:
+Preadmission medications listed are correct and complete.  
+Information was obtained from webOMR.
+1. Atorvastatin 40 mg PO DAILY 
+2. Albuterol Inhaler 2 PUFF IH Q4H:PRN wheezing 
+3. Benzonatate 100 mg PO TID:PRN tos 
+4. Clopidogrel 75 mg PO DAILY 
+5. Fluticasone Propionate 110mcg 2 PUFF IH BID 
+6. Glargine 80 Units Bedtime
+Insulin SC Sliding Scale using HUM Insulin
+7. Isosorbide Mononitrate (Extended Release) 60 mg PO DAILY 
+8. Metoprolol Succinate XL 100 mg PO DAILY 
+9. Metronidazole Gel 0.75%-Vaginal 1 Appl VG HS 
+10. Naproxen 500 mg PO Q8H:PRN pain 
+11. Nitroglycerin SL 0.4 mg SL PRN cp 
+12. Oxycodone-Acetaminophen (5mg-325mg) 1 TAB PO Q6H:PRN pain 
+13. Pantoprazole 40 mg PO Q12H 
+14. Ropinirole 0.25 mg PO QPM 
+15. Valsartan 80 mg PO DAILY 
+16. Aspirin 325 mg PO DAILY 
+17. Vitamin D 400 UNIT PO DAILY 
+
+ 
+Discharge Medications:
+1. Aspirin EC 81 mg PO DAILY 
+2. Atorvastatin 40 mg PO DAILY 
+RX *atorvastatin 40 mg 1 tablet(s) by mouth daily Disp #*30 
+Tablet Refills:*0
+3. Clopidogrel 75 mg PO DAILY 
+RX *clopidogrel 75 mg 1 tablet(s) by mouth daily Disp #*90 
+Tablet Refills:*1
+4. Fluticasone Propionate 110mcg 2 PUFF IH BID 
+RX *fluticasone [Flovent HFA] 220 mcg 2 puffs twice a day Disp 
+#*1 Inhaler Refills:*0
+5. Glargine 50 Units Bedtime
+Insulin SC Sliding Scale using HUM Insulin
+6. Oxycodone-Acetaminophen (5mg-325mg) 1 TAB PO Q6H:PRN pain 
+RX *oxycodone-acetaminophen 5 mg-325 mg 1 tablet(s) by mouth Q 4 
+hrs Disp #*30 Tablet Refills:*0
+7. Pantoprazole 40 mg PO Q24H 
+RX *pantoprazole 40 mg 1 tablet(s) by mouth daily Disp #*30 
+Tablet Refills:*0
+8. Ropinirole 0.25 mg PO QPM 
+9. Furosemide 40 mg PO DAILY Duration: 7 Days 
+RX *furosemide [Lasix] 40 mg 1 tablet(s) by mouth daily Disp #*7 
+Tablet Refills:*0
+10. Ibuprofen 600 mg PO Q6H:PRN pain 
+take with food 
+RX *ibuprofen 600 mg 1 tablet(s) by mouth three times a day Disp 
+#*90 Tablet Refills:*0
+11. Metoprolol Tartrate 25 mg PO TID 
+Hold for HR < 55 or SBP < 90 and call medical provider. 
+RX *metoprolol tartrate 25 mg 1 tablet(s) by mouth three times a 
+day Disp #*90 Tablet Refills:*1
+12. Potassium Chloride 20 mEq PO DAILY 
+RX *potassium chloride 20 mEq 1 tablet by mouth daily Disp #*7 
+Tablet Refills:*0
+13. Albuterol Inhaler 2 PUFF IH Q4H:PRN wheezing 
+RX *albuterol  2 puffs PRN Q 4 hrs Disp #*1 Inhaler Refills:*0
+14. Vitamin D 400 UNIT PO DAILY 
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+___ Diagnosis:
+Coronary artery disease(s/p MI ___, BMS to proximal LAD ___, 
+DES to mid LAD ___, DES to edge ISR of mid LAD DES and stenosis 
+distal to stent ___, DES to OM1, ___. 
+diastolic congestive heart failure
+Hypertension
+Dyslipidemia
+Morbid obesity
+COPD
+GERD
+Rt rotator cuff injury/bursitis(outpt ___, 
+Migraines, 
+Depression/Anxiety
+DJD
+Hemorrhoids 
+Rosacea 
+Left foot tendion repair
+
+ 
+Discharge Condition:
+Alert and oriented x3 nonfocal
+Ambulating, gait steady
+Sternal pain managed with oral analgesics
+Sternal Incision - healing well, no erythema or drainage
+ 
+
+ 
+Discharge Instructions:
+Please shower daily including washing incisions gently with mild 
+soap, no baths or swimming, and look at your incisions
+Please NO lotions, cream, powder, or ointments to incisions
+Each morning you should weigh yourself and then in the evening 
+take your temperature, these should be written down on the chart
+No driving for approximately one month and while taking 
+narcotics, will be discussed at follow up appointment with 
+surgeon when you will be able to drive
+No lifting more than 10 pounds for 10 weeks
+
+**Please call cardiac surgery office with any questions or 
+concerns ___. Answering service will contact on call 
+person during off hours**
+Females: Please wear bra to reduce pulling on incision, avoid 
+rubbing on lower edge
+
+ 
+Followup Instructions:
+___

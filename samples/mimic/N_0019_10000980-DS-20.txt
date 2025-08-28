@@ -1,0 +1,323 @@
+ 
+Name:  ___          Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___
+ 
+Chief Complaint:
+Shortness of breath
+ 
+Major Surgical or Invasive Procedure:
+None
+ 
+History of Present Illness:
+___ yo woman with h/o hypertension, hyperlipidemia, diabetes 
+mellitus on insulin therapy, h/o cerebellar-medullary stroke in 
+___, CKD stage III-IV presenting with fatigue and dyspnea on 
+exertion (DOE) for a few weeks, markedly worse this morning. 
+Over the past few weeks, the patient noted DOE and shortness of 
+breath (SOB) even at rest. She has also felt more tired than 
+usual. She notes no respiratory issues like this before. She 
+cannot walk up stair due to DOE, and feels SOB after only a 
+short distance. She is unsure how long the episodes last, but 
+states that her breathing improves with albuterol which she gets 
+from her husband. She had a bad cough around a month ago, but 
+denies any recent fevers, chills, or night sweats. No chest 
+pain, nausea, or dizziness.
+ 
+Past Medical History:
+1. CAD RISK FACTORS: +Diabetes, +Dyslipidemia, +Hypertension
+2. CARDIAC HISTORY: 
+MI in ___
+3. OTHER PAST MEDICAL HISTORY:  
+Hypertension
+Hyperlipidemia
+Diabetes mellitus on insulin therapy
+h/o cerebellar-medullary stroke in ___
+CKD stage III-IV
+PVD
+ 
+Social History:
+___
+Family History:
+Denies cardiac family history. Family hx of DM and HTN; 
+otherwise non-contributory.
+ 
+Physical Exam:
+Admission exam:
+GENERAL- Oriented x3. Mood, affect appropriate.
+VS- T= 98.1 BP= 200/103 HR= 65 RR= 26 O2 sat= 100% on RA
+HEENT- NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva were 
+pink, no pallor or cyanosis of the oral mucosa. No xanthalesma.
+NECK- JVD to angle of mandible
+CARDIAC- RR, normal S1, S2. No murmurs, rubs or gallops. No 
+thrills, lifts.
+LUNGS- Kyphosis. Resp were labored, mild exp wheezes 
+bilaterally.
+ABDOMEN- Soft, non-tender, not distended. Abd aorta not enlarged 
+by palpation. No abdominal bruits.
+EXTREMITIES- No clubbing, cyanosis or edema. No femoral bruits.
+SKIN- No stasis dermatitis, ulcers, scars, or xanthomas.
+NEURO- CNII-XII grossly intact. Strength ___ in LEs and UEs. 
+Diminished sensation along lateral aspect of left leg to light 
+touch
+
+Discharge exam:
+Lungs: CTAB
+Otherwise unchanged
+ 
+Pertinent Results:
+Admission Labs
+___ 01:18PM BLOOD WBC-6.4# RBC-3.15* Hgb-9.5* Hct-30.1* 
+MCV-96 MCH-30.1 MCHC-31.5 RDW-14.1 Plt ___
+___ 01:18PM BLOOD Glucose-150* UreaN-33* Creat-1.6* Na-144 
+K-4.8 Cl-111* HCO3-18* AnGap-20
+___ 01:18PM BLOOD CK(CPK)-245*
+___ 01:18PM BLOOD cTropnT-0.05*
+___ 01:18PM BLOOD CK-MB-6 proBNP-4571*
+___ 03:56AM BLOOD Calcium-9.4 Phos-4.9* Mg-2.0 Cholest-230*
+
+Pertinent Labs
+___ 06:09AM BLOOD WBC-4.3 RBC-3.27* Hgb-9.9* Hct-31.4* 
+MCV-96 MCH-30.4 MCHC-31.6 RDW-14.5 Plt ___
+___ 06:09AM BLOOD Glucose-138* UreaN-31* Creat-1.4* Na-144 
+K-4.3 Cl-107 HCO3-26 AnGap-15
+
+___ 06:09AM BLOOD ALT-20 AST-17
+___ 03:56AM BLOOD Triglyc-97 HDL-65 CHOL/HD-3.5 
+LDLcalc-146*
+___ 03:56AM BLOOD %HbA1c-8.1* eAG-186*
+
+___ 01:18PM BLOOD CK(CPK)-245* CK-MB-6 cTropnT-0.05*
+___ 08:43PM BLOOD CK(CPK)-198  CK-MB-5 cTropnT-0.03*
+___ 03:56AM BLOOD CK(CPK)-173  CK-MB-5 cTropnT-0.04*
+___ 06:09AM BLOOD                      cTropnT-0.01
+
+___ 01:18PM proBNP-4571*
+
+ECG ___  7:56:06 ___  
+Baseline artifact. Sinus rhythm. The Q-T interval is 400 
+milliseconds. Q waves in leads V1-V2 with ST-T wave 
+abnormalities extending to lead V6. Consider prior anterior 
+myocardial infarction. Since the previous tracing of ___ 
+atrial premature beats are not seen. The Q-T interval is 
+shorter. ST-T wave abnormalities are less prominent.  
+ 
+CXR ___:
+PA and lateral views of the chest demonstrate low lung volumes. 
+Tiny bilateral pleural effusions are new since ___. No 
+signs of pneumonia or pulmonary vascular congestion. Heart is 
+top normal in size though this is stable. Aorta is markedly 
+tortuous, unchanged. Aortic arch calcifications are seen. There 
+is no pneumothorax. No focal consolidation. Partially imaged 
+upper abdomen is unremarkable.
+IMPRESSION: Tiny pleural effusions, new. Otherwise unremarkable.
+
+ECHO ___:
+The left atrium is mildly dilated. The estimated right atrial 
+pressure is ___ mmHg. Left ventricular wall thickness, cavity 
+size and regional/global systolic function are normal (LVEF 
+>55%). Right ventricular chamber size and free wall motion are 
+normal. The diameters of aorta at the sinus, ascending and arch 
+levels are normal. The aortic valve leaflets (3) are mildly 
+thickened but aortic stenosis is not present. No masses or 
+vegetations are seen on the aortic valve, but cannot be fully 
+excluded due to suboptimal image quality. Trace aortic 
+regurgitation is seen. The mitral valve leaflets are 
+structurally normal. An eccentric, anteriorly directed jet of 
+mild to moderate (___) mitral regurgitation is seen. Moderate 
+[2+] tricuspid regurgitation is seen. There is moderate 
+pulmonary artery systolic hypertension. The end-diastolic 
+pulmonic regurgitation velocity is increased suggesting 
+pulmonary artery diastolic hypertension. There is an anterior 
+space which most likely represents a prominent fat pad.
+IMPRESSION: Suboptimal image quality. Normal biventricular 
+cavity sizes with preserved global and regional biventricular 
+systolic function. Pulmonary artery hypertension. Mild-moderate 
+mitral regurgitation. Moderate tricuspid regurgitation. 
+Compared with the prior study (images reviewed) of ___, the 
+severity of mitral and tricuspid regurgitation are increased and 
+moderate PA hypertension is now identified.
+ 
+Brief Hospital Course:
+___ woman with h/o hypertension, hypelipidemia, diabetes 
+mellitus on insulin, cerebellar-medullary stroke in ___, 
+stage ___ CKD followed by Dr ___ presenting with fatigue and 
+DOE for a few weeks, markedly worse the morning of admission. 
+The patient has known diastolic dysfunction. Of note, she has 
+been noncompliant with her medications at home. On arrival to 
+the floor, she required hydralazine 20 mg to bring down her BP. 
+She has likely had elevated BPs at home for a while, which is 
+contributing to her SOB, CHF exacerbation, and secondary demand 
+myonecrosis (hypertensive urgency) with mildly elevated 
+troponin.
+
+# CAD: Although she did not have a classic anginal presentation, 
+patient has several risk factors for acute coronary syndrome. 
+Her only symptom was SOB in the setting of elevated BPs 
+attributed to medication noncompliance at home. Her troponin 
+fell from 0.05 at admission to 0.01 at discharge in the setting 
+of renal dysfunction, but there was not a clear rise and fall to 
+suggest an acute infarction from plaque rupture and thrombosis. 
+She was scheduled for an outpatient stress test to evaluate for 
+evidence of ischemia from flow-limiting CAD. We decreased ASA to 
+81 mg from 325 mg daily to decrease the risk of bleeding. Her 
+LDL was found to be 146. We wanted to change her from 
+simvastatin to the more potent atorvastatin (and avoid issues 
+with drug-drug interactions), but her insurance would not cover 
+atorvastatin. She was therefore switched to pravastatin 80 mg at 
+discharge. From a cardiac standpoint, we did not feel that 
+Plavix was necessary for CAD, but her neurologist was contacted 
+and wanted Plavix continued. We had to stop metoprolol due to HR 
+in the ___ during admission even off metoprolol.
+  
+# Pump: Last echo in ___ showed low normal LVEF. Her current 
+presentation was consistent with CHF exacerbation with bilateral 
+pleural effusions, dyspnea, and elevated NT-Pro-BNP. Her TTE 
+showed mild-moderate mitral and moderate tricuspid 
+regurgitation, LVEF 50-55%, and pulmonary hypertension. We 
+changed her HCTZ to Lasix 40 mg PO at discharge. This medication 
+can be uptitrated as needed.
+
+# Hypertension: The patient's nephrologist, Dr. ___, agreed 
+with our proposed medication adjustments, but recommended 
+staying away from clonidine. There has been a H/O medication 
+non-adherence. Social work was involved in discharge planning, 
+and ___ will be assisting the patient at home. We added 
+lisinopril 20 mg daily, Lasix 40 mg daily and continued 
+nifedipine 120 mg daily. Her atenolol was stopped due to her 
+renal dysfunction, but her metoprolol had to be stopped due to 
+bradycardia. She should continue on once a day medication dosing 
+to help with compliance.
+
+# ? COPD: The patient may have a component of COPD as she was 
+wheezing on admission and responded to albuterol. She was given 
+a prescription for albuterol prn.
+
+Transitional Issues:
+- She will be scheduled for outpt stress stress test
+- She has follow-up appointments with Dr. ___ and Dr. 
+___ and both can work on uptitrating her BP 
+meds as needed.
+- ___ will need to work with patient on medication compliance.
+ 
+Medications on Admission:
+ATENOLOL - 100 mg Tablet - 1.5 Tablet(s) by mouth once a day 
+CLONIDINE - 0.1 mg/24 hour Patch Weekly - place on shoulder once 
+a week
+CLOPIDOGREL [PLAVIX] - 75 mg Tablet - 1 Tablet(s) by mouth once 
+a day generic is available preferable, please call Dr ___ 
+an appointment  
+FENOFIBRATE MICRONIZED - 134 mg Capsule - 1 Capsule(s) by mouth 
+once a day
+HYDROCHLOROTHIAZIDE - 25 mg Tablet - 1 (One) Tablet(s) by mouth 
+once a day
+NIFEDIPINE [NIFEDIAC CC] - 60 mg Tablet Extended Release - 2 
+Tablet(s) by mouth once a day
+NITROGLYCERIN [NITROSTAT] - 0.3 mg Tablet, Sublingual - 1 
+Tablet(s) sublingually sl as needed for prn chest pain may use 3 
+doses, 5 minutes apart; if no relief, ED visit 
+RANITIDINE HCL - 300 mg Tablet - 1 Tablet(s) by mouth once a day
+SIMVASTATIN - 80 mg Tablet - 1 Tablet(s) by mouth at bedtime
+
+Medications - OTC  
+ASPIRIN [ENTERIC COATED ASPIRIN] - 325 mg Tablet, Delayed 
+Release (E.C.) - 1 (One) Tablet(s) by mouth once a day
+INSULIN NPH & REGULAR HUMAN [HUMULIN 70/30] - 100 unit/mL 
+(70-30) Suspension - 30 units at dinner at dinner
+MULTIVITAMIN - (OTC) - Tablet - 1 Tablet(s) by mouth once a day
+ 
+Discharge Medications:
+1. clopidogrel 75 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily). Disp:*30 Tablet(s)* Refills:*2*
+2. nitroglycerin 0.4 mg Tablet, Sublingual Sig: One (1) Tablet, 
+Sublingual Sublingual PRN (as needed) as needed for chest pain: 
+may take up to 3 over 15 minutes. Disp:*30 Tablet, 
+Sublingual(s)* Refills:*0*
+3. multivitamin     Tablet Sig: One (1) Tablet PO DAILY (Daily). 
+Disp:*30 Tablet(s)* Refills:*2*
+4. ranitidine HCl 150 mg Tablet Sig: Two (2) Tablet PO DAILY 
+(Daily). Disp:*60 Tablet(s)* Refills:*2*
+5. pravastatin 80 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily). Disp:*30 Tablet(s)* Refills:*2*
+6. aspirin 81 mg Tablet, Chewable Sig: One (1) Tablet, Chewable 
+PO DAILY (Daily). Disp:*30 Tablet, Chewable(s)* Refills:*2*
+7. lisinopril 20 mg Tablet Sig: One (1) Tablet PO DAILY (Daily). 
+Disp:*30 Tablet(s)* Refills:*2*
+8. nifedipine 60 mg Tablet Extended Release Sig: Two (2) Tablet 
+Extended Release PO DAILY (Daily). Disp:*30 Tablet Extended 
+Release(s)* Refills:*2*
+9. furosemide 40 mg Tablet Sig: One (1) Tablet PO DAILY (Daily). 
+Disp:*30 Tablet(s)* Refills:*2*
+10. insulin NPH & regular human 100 unit/mL (70-30) Insulin Pen 
+Sig: Thirty (30) units Subcutaneous at dinner. Disp:*900 units* 
+Refills:*2*
+11. albuterol sulfate 90 mcg/actuation HFA Aerosol Inhaler Sig: 
+___ puffs Inhalation every ___ hours as needed for shortness of 
+breath or wheezing. Disp:*1 inhaler* Refills:*1*
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+-Hypertension with hypertensive urgency
+-Myocardial infarction attributed to demand myonecrosis
+-Acute on chronic left ventricular diastolic heart failure
+-Chronic kidney disease, stage ___
+-Chronic obstructive pulmonary disease
+-Prior cerebellar-medullary stroke
+-Hyperlipidemia
+-Diabetes mellitus requiring insulin therapy
+-Medication non-adherence
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+ 
+Discharge Instructions:
+Dear Ms. ___, 
+
+You were admitted for shortness of breath. You were found to 
+have elevated blood pressure on admission in the setting of not 
+taking all of your medications regularly. We obtained an 
+echocargiogram of your heart which showed some strain on your 
+heart possibly related to your elevated blood pressures.
+
+You will be contacted about an outpatient stress test. This will 
+be completed within the next month.
+
+You will be prescribed several new medications as shown below. A 
+visiting nurse ___ come to your home to help with managing your 
+medications. You should dispose of all your home medications and 
+only take the medications shown on this discharge paperwork.
+
+Medications:
+STOP Hydrochlorothiazide
+STOP Simvastatin
+STOP Clonidine
+STOP Atenolol due to low heart rate
+CHANGE 325mg to 81mg once daily
+START Lisinopril 20mg once daily
+START Lasix 40mg once daily
+START Pravastin 80mg once daily
+
+If you experience any chest pain, excessive shortness of breath, 
+or any other symptoms concerning to you, please call or come 
+into the emergency department for further evaluation.
+
+Thank you for allowing us at the ___ to participate in your care.
+ 
+Followup Instructions:
+___

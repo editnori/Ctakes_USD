@@ -46,6 +46,5 @@ apache-ctakes-*/
 /org/
 /build/
 /umls_loader/
-samples/mimic/*.txt
 samples/mimic_*/
 samples/mimic_output/

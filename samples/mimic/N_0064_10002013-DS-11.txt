@@ -1,0 +1,306 @@
+ 
+Name:  ___                 Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+lisinopril
+ 
+Attending: ___
+ 
+Chief Complaint:
+Chest pain
+ 
+Major Surgical or Invasive Procedure:
+None
+ 
+History of Present Illness:
+Ms. ___ is a ___ year old woman with extensive cardiac history 
+including multivessel vessel CAD S/P stenting of the LAD with 
+in-stent restenosis and stenting of the CX, S/P CABG in ___ with known occluded SVG-D1 with patent LIMA-LAD and SVG-OM 
+in ___, poorly controlled type 2 diabetes mellitus, 
+hypertension, COPD, GERD, now presenting with new chest pain.
+  At 5 pm on the day of presentation, she was resting at home 
+when she had onset of severe stabbing pain left of the sternum. 
+This pain radiated across her chest but not to the arm or jaw. 
+She took 1 nitroglycerin, which improved her pain slightly. She 
+reports that the pain came in waves lasting 5 minutes. She also 
+endorsed left chest wall tenderness. She did not remember when 
+she last had chest pain prior to this. The pain was not clearly 
+exertional. The sharp pains occurred when she was lying down. 
+She says the area is very tender. Lying on the left side causes 
+pain. She did have nausea the past 3 mornings which resolved. 
+She denied vomiting, diaphoresis, fevers or chills. She had an 
+episode of diarrhea yesterday, but no abdominal pain. She 
+already took a full dose aspirin on the day of presentation.  
+  In the ED, initial vitals were: T 98.0, HR 88, BP 127/65, RR 
+16, SaO2 100% on RA. FSBG 302->94. Labs notable for Troponin-T < 
+0.01, CK-MB < 1, D-Dimer 268, Cr 1.2, Mg 1.4. Normal LFTs; CBC, 
+Chem 7, coags WNL. CXR showed no acute cardiopulmonary 
+abnormality. Bedside echocardiogram showed no substantial 
+pericardial effusion or tamponade. Patient was given fluticasone 
+propionate inhaled, OxyCODONE--Acetaminophen (5mg-325mg), 
+Magnesium Sulfate 2 gm IV. 
+
+On arrival to the cardiology ward, the patient reported that her 
+pain was still there but it felt "slow"  ___ but at its worse 
+was ___. The area was tender. She had no breathing complaints. 
+She felt a little congested this evening when the pain started.
+ 
+Past Medical History:
+-COPD
+-CAD s/p CABG and stenting, as above
+-Depression  
+-DM  
+-GERD  
+-Hypertension
+-Migraines
+-Chronic shoulder pain on narcotics
+-OSA
+-Peripheral neuropathy
+-Restless leg
+ 
+Social History:
+___
+Family History:
+Patient was ward of the ___, doesn't know full details of 
+family history. Mother with possible alcohol abuse. Father 
+deceased at ___ from Hodgkin's Disease per old records.
+ 
+Physical Exam:
+On admission
+General: Obese middle aged ___ woman, alert, oriented, in no 
+acute distress
+Vital Signs: T 98.7, BP 98/65, HR 79, RR 18, SaO2 95% on RA
+Weight: 89 kg
+HEENT: Sclera anicteric, mucous membranes moist, oropharynx 
+clear
+NECK: difficult to appreciate JVP
+CV: Regular rate and rhythm, normal S1 + S2; no murmurs, rubs, 
+gallops
+Chest: Tenderness to palpation of the left anterior chest wall
+Lungs: Clear to auscultation bilaterally--no wheezes, rales, 
+rhonchi
+Abdomen: Soft, non-tender, non-distended, obese
+GU: No Foley
+Ext: Warm, well perfused; no clubbing, cyanosis or edema
+
+Exam unchanged at discharge, left chest wall tender with 
+palpation with pain after change in position
+ 
+Pertinent Results:
+___ 10:31PM BLOOD WBC-9.4 RBC-3.51* Hgb-12.0 Hct-34.3 
+MCV-98 MCH-34.2* MCHC-35.0 RDW-11.8 RDWSD-42.3 Plt ___
+
+___ 10:31PM BLOOD Glucose-105* UreaN-21* Creat-1.2* Na-137 
+K-3.4 Cl-97 HCO3-24 AnGap-19
+___ 10:31PM BLOOD ALT-15 AST-16 CK(CPK)-39 AlkPhos-53 
+TotBili-0.3
+___ 10:31PM BLOOD Albumin-3.9 Calcium-9.1 Phos-4.4 Mg-1.4*
+
+___ 10:57PM BLOOD D-Dimer-268
+___ 10:31PM BLOOD CK-MB-1  cTropnT-<0.01
+___ 06:00AM BLOOD CK-MB-<1 cTropnT-<0.01
+
+___ 06:00AM BLOOD WBC-9.3 RBC-3.44* Hgb-11.8 Hct-33.1* 
+MCV-96 MCH-34.3* MCHC-35.6 RDW-11.9 RDWSD-41.3 Plt ___
+___ 06:00AM BLOOD Glucose-147* UreaN-21* Creat-1.2* Na-139 
+K-3.0* Cl-99 HCO3-24 AnGap-19
+___ 06:00AM BLOOD Calcium-8.7 Phos-4.4 Mg-2.0
+
+ECG ___ 8:33:29 ___
+Baseline artifact. Sinus rhythm. Borderline P-R interval 
+prolongation. Prominent voltage in leads I and aVL but does not 
+meet criteria for left ventricular hypertrophy. There are marked 
+ST segment depressions and T wave inversions in leads I, II, aVL 
+and apical lateral leads. Compared to the previous tracing of 
+___ the rate then was faster. ST-T wave abnormalities were 
+similar. Consider left ventricular hypertrophy as before. 
+Clinical correlation is suggested.
+
+CXR ___
+Patient is status post median sternotomy and CABG. Heart size is 
+normal. Mediastinal and hilar contours are unchanged. Pulmonary 
+vasculature is normal. No focal consolidation, pleural effusion 
+or pneumothorax is seen. No acute osseous abnormality is 
+detected.
+IMPRESSION: No acute cardiopulmonary abnormality.
+
+Dipyridamole-MIBI Stress test ___
+___ yp woman with HL, HTN, DM, PVD and diastolic CHF; s/p MI and 
+multiple PCIs f/b CABG x 3 in ___ with known SVG-OM occlusion 
+was referred to evaluate an atypical chest discomfort. The 
+patient was administered 0.142 mg/kg/min of Persantine over 4 
+minutes. Prior to the procedure the patient reported an isolated 
+left-sided chest discomfort that had been present since 
+admission and was tender to mild palpation; ___. This 
+discomfort did not change in intensity during the procedure. In 
+the presence of diffuse ST-T wave changes, no additional ECG 
+changes were noted during the procedure. The hemodynamic 
+response to the Persantine infusion was appropriate. 
+Post-infusion, the patient was administered 125 mg Aminophylline 
+IV.
+IMPRESSION: Non-anginal type symptoms with no additional ST 
+segment changes from baseline.
+Imaging:
+  Left ventricular cavity size is normal.
+  Rest and stress perfusion images reveal uniform tracer uptake 
+throughout the left ventricular myocardium.  The previously 
+noted perfusion defect involving the inferolateral wall has 
+resolved.
+  Gated images reveal normal wall motion. The calculated left 
+ventricular ejection fraction is 64%.
+IMPRESSION: Normal myocardial perfusion study. Interval 
+normalization of prior LCx territory perfusion defect.
+ 
+Brief Hospital Course:
+This is a ___ with type 2 diabetes mellitus on insulin, CAD s/p 
+MI, S/P multiple PCIs and CABG ___ (LIMA-LAD, SVG-OM1; also 
+SVG-D1 known occluded ___ with chronic stable angina 
+admitted with atypical, stabbing, focal chest pain.
+
+# Chest pain: Initially the patient was started on a heparin 
+drip and other ACS protocol medications. Her home losartan and 
+furosemide were held due to low blood pressures. Suspicion for 
+cardiac etiology of chest pain was ultimately not high. She had 
+an isolated ongoing ___ left-sided chest discomfort exacerbated 
+by changes in position and with chest wall tenderness to light 
+palpation. Despite prolonged chest pain, troponin-T and CK-MB 
+negative x2 and EKGs mostly unchanged from prior. Given known 
+H/O CAD, a vasodilator nuclear stress test was performed and was 
+reassuring. Her discomfort did not change in intensity during 
+the stress test drug infusion. In the presence of diffuse ST-T 
+wave changes, no additional ECG changes were noted during the 
+procedure. The hemodynamic response to the Persantine infusion 
+was appropriate. Her perfusion study was normal with interval 
+normalization of prior LCx territory perfusion defect. Given the 
+stabbing quality and tenderness to palpation of the area of 
+discomfort, her symptoms were most likely related to 
+costochondritis or other musculoskeletal causes. She was started 
+on aspirin 650 mg q6h with plans to trial for 2 days and 
+continue through the week if symptoms improve.
+
+Chronic medical problems:
+# Diabetes mellitus: Continued levemir and was switched to a 
+sliding scale of Humalog.
+# Hypertension: Losartan was held as above due to hypotension 
+and once daily isosorbide mononitrate was switched temporarily 
+to isosorbide dinitrate TID. 
+# For her hyperlipidemia, COPD and GERD, her home regimens were 
+continued.  
+
+TRANSITIONAL ISSUES:
+- Patient had low blood pressures initially (88-92 systolic). 
+Would benefit from close monitoring and titration of blood 
+pressure medications as an outpatient
+- She was hypokalemic (K 3.0) during admission (with ___ and 
+furosemide already held). Please recheck CHEM-10 at ___ ___ 
+visit on ___ to determine whether she might benefit from K 
+supplementation
+- Cr elevated to 1.2 on discharge (up from most recent 1.1.1). 
+Please recheck at ___ office on ___
+- Full code
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Oxycodone-Acetaminophen (5mg-325mg) 1 TAB PO Q8H:PRN pain 
+2. Nitroglycerin SL 0.3 mg SL Q5MIN:PRN pain 
+3. Metoprolol Succinate XL 250 mg PO DAILY 
+4. Levemir Flexpen (insulin detemir) 90 units subcutaneous in 
+the evening 
+5. albuterol sulfate 90 mcg/actuation inhalation q4hrs wheezing 
+6. Vitamin D 1000 UNIT PO DAILY 
+7. TraZODone 100 mg PO HS 
+8. Isosorbide Mononitrate (Extended Release) 120 mg PO DAILY 
+9. Aspirin 325 mg PO DAILY 
+10. Atorvastatin 80 mg PO HS 
+11. Fluticasone Propionate 110mcg 2 PUFF IH BID 
+12. Pantoprazole 40 mg PO Q12H 
+13. Ropinirole 0.5 mg PO QPM 
+14. HumaLOG KwikPen (insulin lispro) 0   SUBCUTANEOUS AS 
+DIRECTED 
+15. Albuterol 0.083% Neb Soln 1 NEB IH Q6H:PRN wheeze 
+16. Methocarbamol 500 mg PO TID:PRN muscle pain 
+17. Losartan Potassium 25 mg PO DAILY 
+18. Furosemide 20 mg PO DAILY 
+19. diclofenac sodium 1 % topical TID:PRN pain
+ 
+Discharge Medications:
+1. Albuterol 0.083% Neb Soln 1 NEB IH Q6H:PRN wheeze 
+2. Atorvastatin 80 mg PO HS 
+3. Fluticasone Propionate 110mcg 2 PUFF IH BID 
+4. Methocarbamol 500 mg PO TID:PRN muscle pain 
+5. Nitroglycerin SL 0.3 mg SL Q5MIN:PRN pain 
+6. Pantoprazole 40 mg PO Q12H 
+7. Ropinirole 0.5 mg PO QPM 
+8. TraZODone 100 mg PO HS 
+9. Vitamin D 1000 UNIT PO DAILY 
+10. albuterol sulfate 90 mcg/actuation INHALATION Q4HRS wheezing
+11. diclofenac sodium 1 % topical TID:PRN pain 
+12. Furosemide 20 mg PO DAILY 
+13. Isosorbide Mononitrate (Extended Release) 120 mg PO DAILY 
+14. Metoprolol Succinate XL 250 mg PO DAILY 
+15. HumaLOG KwikPen (insulin lispro) 0   SUBCUTANEOUS AS 
+DIRECTED 
+16. Levemir Flexpen (insulin detemir) 90 units subcutaneous in 
+the evening 
+17. Losartan Potassium 25 mg PO DAILY 
+18. Oxycodone-Acetaminophen (5mg-325mg) 1 TAB PO Q8H:PRN pain 
+19. Aspirin 650 mg PO Q6H 
+RX *aspirin 650 mg 1 tablet(s) by mouth every six (6) hours Disp 
+#*28 Tablet Refills:*0
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+- Chest wall pain atypical for angina
+- Musculoskeletal pain
+- Known native coronary artery and bypass graft disease
+- Type 2 Diabetes mellitus, with
+- Chronic kidney disease, stage 3
+- Acute kidney injury
+- Chronic obstructive pulmonary disease
+- Hypertension
+- Hypotension
+- Hypokalemia
+- Chronic shoulder pain on narcotics
+- Obstructive sleep apnea
+- Gastroseophageal reflux disease
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Dear Ms. ___,
+It was our pleasure participating in your care here at ___. 
+You were admitted with severe chest pain. You underwent a stress 
+test that showed the pain is unlikely from a big blockage in the 
+arteries that feed your heart. Your lab work also did not 
+suggest injury to the heart.
+
+The pain you are experiencing is most likely musculoskeletal and 
+should hopefully improve with supportive measures such as 
+Tylenol (maximum 3 grams per day) and time. You will also be 
+prescribed high dose aspirin (650mg). Please try this for two 
+days and if there is improvement in your symptoms continue it 
+for the week. 
+
+If your symptoms worsen, you develop shortness of breath or any 
+other concerning symptom, please let your doctor know right 
+away.
+
+Again, it was our pleasure participating in your care.
+
+We wish you the very ___,
+Your ___ Cardiology Team
+ 
+Followup Instructions:
+___

@@ -1,0 +1,173 @@
+ 
+Name:  ___              Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: NEUROSURGERY
+ 
+Allergies: 
+Penicillins
+ 
+Attending: ___
+ 
+Chief Complaint:
+Wound Infection
+ 
+Major Surgical or Invasive Procedure:
+Right Craniotomy and Evacuation of Abscess on ___
+ 
+History of Present Illness:
+Ms. ___ is a ___ y/o woman with a past medical history
+of MS, and a right parietal brain abscess which was discovered
+approxiamtely one month ago, when she presented with left arm 
+and
+face numbness. The abscess was drained in the OR on ___, and she
+was initially started on broad spectrum antibiotics until 
+culture
+data returned with S. anginosus and fusobacterium, she was then
+transitioned to Ceftriaxone 2g IV q12h, and flagyl 500mg TID,
+which she has been on since through her PICC line. On ___, she
+was seen in ___ clinic and a repeat MRI was performed
+which revealed increased edema with persistent ring enhancing
+abnormality at the right parietal surgical site, concerning for
+ongoing abscess. She was therefore scheduled for repeat drainage
+on ___. She was seen as an outpatient in the infectious disease
+office today, ___, and it was recommended that she be admitted
+to the hospital one day early for broadening of her antibiotic
+regimen prior to drainage.
+
+She states that over the past month, her symptoms, including 
+left
+upper extremity weakness and numbness, have come and gone,
+although she thinks that overall they have worsened slightly. 
+She
+denies any fevers/chills, or headaches. No changes in vision, 
+leg
+weakness or trouble with coordination or balance.
+
+She denies shortness of breath, chest pain, abdominal pain.
+
+ 
+Past Medical History:
+Multiple sclerosis
+ 
+Social History:
+___
+Family History:
+Mother with pancreatic cancer, brother-lung cancer, two sisters 
+with brain cancer.
+
+ 
+Physical Exam:
+PHYSICAL EXAMINATION ON ADMISSION:
+General Physical Exam:
+General - Appears comfortable
+HEENT - MMM, no scleral icterus, no proptosis, sclera and
+conjunctiva with no edema/injection. Neck is supple.
+CV - RRR, no murmurs, rubs, or gallops. No carotid bruits
+Pulm - CTA b/l
+Abd - soft, non-tender, normal bowel sounds
+Extremities - no cyanosis, no edema
+Skin - warm and pink with no rashes
+Neurologic Exam:
+MENTAL STATUS: Awake and alert, oriented x 3, responds to
+multi-step commands which cross the midline. Knows recent and
+distant events. No hemisensory or visual neglect.
+
+PHYSICAL EXAMINATION ON DISCHARGE:
+XXXXXX
+ 
+Pertinent Results:
+MRI Brain for Operative Planning: ___
+Decrease in size of known right frontal vertex rim-enhancing 
+lesion, but unchanged vasogenic edema and mass effect.
+
+Non-Contrast Head CT: ___
+POST-OP SCAN 
+IMPRESSION:  
+Status post redo right parietal vertex craniotomy with no 
+evidence of hemorrhage.  Stable vasogenic edema extending in the 
+right frontal and parietal lobes. 
+
+ 
+Brief Hospital Course:
+Ms. ___ is a ___ y/o F who was admitted to the neurosurgery 
+service on the day of admission, ___ from the Infectious 
+Disease Clinic in anticipation for evacuation of the brain 
+abscess. She underwent a MRI prior surgery for operative 
+planning. She underwent a right craniotomy and evacuation of 
+abscess on ___. She tolerated the procedure well and was 
+extubated in the operating room. She was then transferred to the 
+ICU for recovery. She underwent a post-operative non-contrasat 
+head CT which revealed normal post operative changes and no new 
+hemorrahge. 
+
+On ___, she was sitting in the chair, hemodynamically and 
+neurologically intact. She transfered to the floor in stable 
+conditions. 
+
+Mrs. ___ was followed by Infectious Disease.  They 
+recommended that the patient be started on vancomycin and 
+meropenem until culture data from her head wound was obtained.  
+
+On ___, cultures revealed no growth. The patient was continued 
+on Vancomycin, meropenem was changed to ertapenum.
+
+The patient continued to progress well, although she had some 
+residual left-sided weakness.  She also complained of some 
+left-handed numbness and pain.  
+
+On ___, the patient had a MR head with and without contrast 
+including DWI, which showed slight improvement. She was 
+discharged home on ___ with appropriate follow-up, and all 
+questions were answered before discharge.
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. CeftriaXONE 1 gm IV Q12H 
+2. MetRONIDAZOLE (FLagyl) 500 mg PO TID 
+3. OxycoDONE (Immediate Release)  5 mg PO Q6H:PRN pain 
+4. Acetaminophen 325-650 mg PO Q6H:PRN pain 
+5. LeVETiracetam 1000 mg PO BID 
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Brain Abscess
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Your staples should stay clean and dry until they are removed. 
+
+Have a friend or family member check the wound for signs of 
+infection such as redness or drainage daily. 
+Take your pain medicine as prescribed if needed. You do not 
+need to take it if you do not have pain.
+Exercise should be limited to walking; no lifting >10lbs, 
+straining, or excessive bending.
+Increase your intake of fluids and fiber, as narcotic pain 
+medicine can cause constipation. We generally recommend taking 
+an over the counter stool softener, such as Docusate (Colace) 
+while taking narcotic pain medication.
+DO not take any anti-inflammatory medicines such as Motrin, 
+Aspirin, Advil, or Ibuprofen etc. until follow up.
+ You have been discharged on Keppra (Levetiracetam) for 
+anti-seizure medicine; you will not require blood work 
+monitoring.
+Do not drive until your follow up appointment.
+
+ 
+Followup Instructions:
+___

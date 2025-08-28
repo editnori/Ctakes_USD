@@ -1,0 +1,499 @@
+ 
+Name:  ___                Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Codeine / Augmentin / Topamax
+ 
+Attending: ___.
+ 
+Chief Complaint:
+RLE pain and swelling
+ 
+Major Surgical or Invasive Procedure:
+Ultrasound guided steroid injection of the right trochanteric 
+bursa (right hip)
+
+ 
+History of Present Illness:
+This is a ___ woman with a history of breast cancer with
+BRCA1 gene mutation, COPD, cerebral aneurysm, sleep apnea,
+depression, hyperlipidemia, antiphospholipid syndrome with hx
+DVT/PE ___ ago on warfarin who presents for evaluation of severe
+right lower extremity pain.
+
+She was just admitted to the hospital for lumpectomy
+(infiltrating ductal carcinoma of left breast) and sentinel 
+lymph
+node biopsy on ___, complicated by hematoma status post
+evacuation on ___. Prior to these procedures, she had 
+severe
+right lower extremity pain similar to today and underwent a DVT
+ultrasound on ___ which was negative. Her anticoagulation was
+held in the hospital due to the hematoma, and she had DVT
+prophylaxis with pneumoboots.
+
+During her postoperative hematoma her anticoagulation was held.
+She did not have extremity pain during her time in the hospital.
+However, upon returning home, she developed severe pain which 
+she
+describes as cramps in her mid calf on the right. She also has
+pain that intermittently occurs in the right thigh which she
+describes as spasms. She has not had numbness, tingling, or
+weakness on that side. She was seen in breast clinic today where
+she complained of this pain, and was referred to the ED for
+further evaluation. She initially triggered as a pulseless
+extremity because of nonpalpable pulses in the right foot. She
+has been taking Tylenol as well as tramadol with minimal pain
+relief. 
+
+Of note, she resumed her warfarin without any enoxaparin bridge
+this past ___. She has been wearing compression stockings and
+elevating her leg in an attempt to relieve the pain. 
+
+In the ED, initial vitals:   
+T 98.7  HR 85  BP 175/77  RR 20  O2 Sat 98% RA 
+
+- Exam notable for:  
+Right lower extremity with dopplerable pulses, palpable pulses 
+in
+the left lower extremity. The right lower extremity is warm.
+There is tenderness to palpation of the right calf. Tenderness 
+to
+palpation of the right thigh.
+
+- Labs notable for:  
+Chem panel: Unremarkable with Cr 0.8
+CK 67
+CBC: WBC 5.6, Hgb 10.8 with MCV 93, Plt 264
+Coags: ___ 14.8, PTT 28.2, INR 1.4
+Lactate 1.1
+UA: Mod Leuk, few bacteria
+
+- Imaging notable for:  
+
+RLE Ultrasound ___
+Right calf veins not visualized. Otherwise, no evidence of deep
+venous
+thrombosis in the right lower extremity veins.
+
+CT Lower Extremity Right ___
+Unremarkable contrast enhanced CT of the right calf with a two
+vessel runoff to the foot.
+The veins of the lower extremity are not opacified therefore
+cannot be
+assessed for patency. Consider repeat ultrasound to more fully
+evaluate.
+No focal collection or obvious muscular abnormality identified 
+by
+CT.
+
+- Pt given:  
+IV Morphine 4mg
+IV APAP 1g
+IV NS
+IV Dilaudid 5 mg total (1mg x 5)
+Warfarin 7.5mg
+Atorvastatin 40mg
+Omeprazole 20mg
+
+Surgery was consulted: Recommend vascular surgery consult for
+possible dvt with history of multiple vein stripping procedures
+and DVTs. Also recommend admission to medicine for pain control. 
+
+
+Vascular surgery was consulted: There is no clear vascular
+etiology for her pain.
+
+- Vitals prior to transfer:   
+T 98.3  HR 83  BP 140/55  RR 20  O2 Sat 100% RA 
+
+Upon arrival to the floor, the patient reports the pain is ___.
+She reports again that this pain is similar to the pain she had
+on ___ but even then an ultrasound showed no DVT. She is able 
+to
+move her toes but has pain with lifting her leg. She has never
+had this kind of pain before, even with the vein stripping that
+she had in the past (age ___. She has no chest pain or shortness
+of breath. She has had no recent travel or trauma to her leg. 
+
+ 
+Past Medical History:
+Dyslipidemia, 
+Varicose veins (R>L) s/p ligation, 
+COPD, 
+OSA (+CPap), 
+recent URI (received course of Zithromax), 
+bilateral PEs (___), 
+antiphospholipid antibody syndrome (on lifelong 
+anticoagulation),
+
+T2DM (last A1C 6.2 on ___, 
+cerebral aneurysm (followed by Dr. ___, unchanged), 
+GERD, 
+diverticulosis, 
+h/o colon polyps, 
+depression, 
+s/p right CMC joint arthroplasty, 
+b/l rotator cuff repair, 
+excision right ___ digit mass, 
+CCY w/stone & pancreatic duct exploration (___), 
+hysterectomy, 
+tonsillectomy 
+
+ 
+Social History:
+___
+Family History:
+Mother ___ ___ OVARIAN CANCER dx age ___ 
+Father ___ ___ BRAIN CANCER 
+PGM OVARIAN CANCER 
+Aunt OVARIAN CANCER paternal aunt in 
+ ___ 
+MGM ENDOMETRIAL CANCER 
+MGF PROSTATE CANCER 
+Brother ___ ___ KIDNEY CANCER 
+ RENAL FAILURE 
+ CONGESTIVE HEART 
+ FAILURE 
+ DIABETES MELLITUS 
+ TOBACCO ABUSE 
+ ALCOHOL ABUSE 
+Sister ___ ___ OVARIAN CANCER dx age ___ 
+Brother ___ THROAT CANCER dx age ___, died in 
+ ___ 
+Sister BRCA1 MUTATION, BREAST CANCER 
+Daughter Living ___ ABNORMAL PAP SMEAR ___
+ SUBSTANCE ABUSE 
+Son Died ___ SUBSTANCE ABUSE ___ - heroin overdose on ___.
+ 
+Physical Exam:
+ADMISSION EXAM:
+==================
+VITALS:  T 97.9 BP 125 / 80 HR 82 RR 16  O2 Sat 94 RA 
+General: Alert, oriented, no acute distress  
+HEENT: MMM, oropharynx clear, EOMI, PERRL, neck supple, JVP not
+elevated
+Chest: L breast incisions well healed. S/p L axilla surgical
+drain removal.
+CV: Regular rate and rhythm, normal S1 + S2, no murmurs
+Lungs: Clear to auscultation bilaterally, no wheezes or crackles
+Abdomen: Soft, non-tender, non-distended, bowel sounds present
+Ext: Warm, well perfused, right lower extremity is tender to
+palpation and movement limited by pain. Swelling of RLE > LLE.
+Palpable 2+ ___ pulses bilaterally.
+Skin: Warm, dry, varicose veins noted in lower extremities. 
+Neuro: CNII-XII intact, grossly normal strength and sensation 
+and
+symmetric bilaterally
+
+DISCHARGE EXAM:
+================
+VITALS: Temp: 98.2 (Tm 98.9), BP: 133/74 (127-147/72-83), HR: 76
+(76-91), RR: 18, O2 sat: 99% (90-99), O2 delivery: Ra     
+General: Alert, oriented, no acute distress  
+HEENT: MMM, oropharynx clear, EOMI, PERRL, neck supple, JVP not
+elevated
+Chest: L breast incisions well healed. S/p L axilla surgical
+drain removal.
+CV: RRR, no murmurs
+Lungs: Clear
+Abdomen: Soft, non-tender, non-distended, bowel sounds present
+Ext: Warm, well perfused. No asymmetric swelling. Minimally
+tender to palpation along the right trochanteric bursa and
+minimally tender to palpation along the right tibia. Normal ROM
+though pain elicited with knee flexion; improves with leg raise
+and extension. Palpable 2+ ___ pulses bilaterally.
+Skin: varicose veins noted in lower extremities. 
+Neuro: lower extremity sensation is equal on both sides to light
+touch. Normal bilateral lower extremity strength. Negative
+babinsky.  Ambulating in hallway independently though it 
+precipitates 
+right tibial pain
+ 
+Pertinent Results:
+ADMISSION LABS:
+================
+___ 12:00PM BLOOD WBC-5.6 RBC-3.48* Hgb-10.8* Hct-32.3* 
+MCV-93 MCH-31.0 MCHC-33.4 RDW-14.7 RDWSD-48.6* Plt ___
+___ 12:00PM BLOOD Neuts-73.6* ___ Monos-4.9* 
+Eos-0.9* Baso-0.7 Im ___ AbsNeut-4.09 AbsLymp-1.08* 
+AbsMono-0.27 AbsEos-0.05 AbsBaso-0.04
+___ 12:00PM BLOOD ___ PTT-28.2 ___
+___ 12:00PM BLOOD Glucose-107* UreaN-7 Creat-0.8 Na-139 
+K-4.0 Cl-100 HCO3-26 AnGap-13
+___ 05:40AM BLOOD Calcium-8.6 Phos-4.8* Mg-2.2 Iron-36
+___ 05:40AM BLOOD calTIBC-291 VitB12-331 Ferritn-50 TRF-224
+___ 07:15AM BLOOD 25VitD-45
+___ 12:25PM BLOOD Lactate-1.1
+
+DISCHARGE LABS:
+================
+___ 04:41AM BLOOD WBC-5.6 RBC-3.36* Hgb-10.1* Hct-31.1* 
+MCV-93 MCH-30.1 MCHC-32.5 RDW-14.5 RDWSD-48.7* Plt ___
+___ 04:41AM BLOOD ___
+___ 04:41AM BLOOD Glucose-132* UreaN-15 Creat-0.7 Na-140 
+K-5.0 Cl-103 HCO3-26 AnGap-11
+___ 04:41AM BLOOD Calcium-9.2 Phos-4.0 Mg-2.4
+
+IMAGING:
+===================
+Unilat lower extremity vein- R ___
+Right calf veins not visualized. Otherwise, no evidence of deep
+venous thrombosis in the right lower extremity veins.
+
+CT RLE ___
+Unremarkable contrast enhanced CT of the right calf with a two 
+vessel runoff to the foot. 
+The veins of the lower extremity are not opacified therefore 
+cannot be assessed for patency.  Consider repeat ultrasound to 
+more fully evaluate. 
+No focal collection or obvious muscular abnormality identified 
+by CT
+
+___:
+1..  Uneventful ultrasound-guided injection of long-acting 
+anesthetic and
+steroid into theright greater trochanteric bursa.
+2.  Prior injection, small amount of fluid in the right greater 
+trochanteric
+bursa and dystrophic calcification within the bursal space.  
+Findings raise
+suspicion for chronic trochanteric bursitis.
+ 
+Brief Hospital Course:
+SUMMARY:
+==================
+Ms. ___ is a ___ with a PMH significant for 
+antiphospholipid syndrome with DVTs and PEs on Coumadin, recent 
+L-sided breast cancer s/p lumpectomy, who presented to the ED 
+with acute on chronic right lower extremity and right hip pain, 
+making it difficult to ambulate. Right lower extremity U/S and 
+CT did not reveal a DVT though calf veins were not well 
+visualized. 
+
+ACTIVE ISSUES:
+==================
+# Right trochanteric bursitis
+# Right anterior lower leg pain
+# Right sided varicose veins
+Pt endorsed >4mths of pain in RLE that became acutely worse over 
+the last few wks.  Her initial exam was most consistent with 
+severe trochanteric bursitis on the right. She also has some 
+focal pain along the right tibia which she felt was most 
+consistent with pain from her varicose veins. The XRs of her 
+tibia/fibula and right hip were without obvious pathology. There 
+are no concerning neurologic symptoms to suggest a 
+radiculopathy, no weakness or numbness though she may have some 
+degree of chronic sciatica.  Mildly decreased patellar reflex on 
+the right as compared to left may have been in the setting of 
+pain and guarding; strength was normal bilaterally as was her 
+sensation. 
+She underwent U/S guided steroid injection of her trochanteric 
+bursa w/ significant improvement in symptoms; ___ stated that 
+there was some fluid near the bursa, suggestive of acute on 
+chronic trochanteric bursitis. Her anterior shin pain improved 
+with initiation of gabapentin and lidocaine patch in addition to 
+her home tylenol and an increase in the frequency of her home 
+tramadol (q8h PRN to q4h PRN).  Pt was not given her home 
+hydromorphone PRN, though she did require one dose of 0.5 mg IV 
+hydromorphone following her injection in the setting of an acute 
+pain episode. She was discharged with Tramadol 50mg x15 tablets 
+given increased requirement. By discharge, she was able ambulate 
+and was felt safe for discharge home with a cane per ___ 
+evaluation.  Pt was eager to leave and will reach out to her 
+vascular surgeon for an appointment early in the new year for 
+treatment of her painful varicose veins.
+
+# Iron deficiency anemia:
+Anemia is new since ___. Normocytic. Downtrended overnight to 
+8.9 from 10.8. No concern for active bleeding. Per iron studies, 
+she is iron deficient with a ferritin of 50. She endorses 
+fatigue and restless leg syndrome. Etiology is unclear, though 
+it may be related to the recent left breast hematoma of her 
+breast (unlikely though the timing fits). Prior EGD with 
+gastritis (___) for which she is on a BID PPI; prior 
+colonoscopy ___ with findings that may be suggestive of 
+celiac disease, though ttg at that time was normal with a normal 
+IgA. She also had two polyps biopsied and were normal. On this 
+admission, a vitamin D level was obtained to assess for evidence 
+of malabsorption iso daily supplementation: level was 45. She 
+was given ferric gluconate IV x1 on ___. TTG was repeated and 
+pending at discharge. 
+
+CHRONIC ISSUES:
+===================
+# History of DVT/PE on warfarin:
+# Antiphospholipid antibody syndrome:
+# Subtherapeutic INR:
+Lupus anticoagulant positive in ___. She has been taking her 
+home dose of warfarin (5 mg ___ and 7.5 mg other days). Her 
+warfarin was held last ___ iso hematoma and she was not 
+bridged with Lovenox upon reinitiation. INR on this admission 
+was subtherapeutic at 1.4. Bridged during this hospitalization 
+with Lovenox for goal INR ___. She was given an increased dose 
+of warfarin, 7.5 mg daily while in house. INR at discharge was 
+1.9, with plan to continue home warfarin regimen. Patient will 
+get repeat INR on ___. 
+
+# Vitamin D deficiency: pt takes 2,000 U vitamin D daily. Repeat 
+level IS 45 which suggests against malabsorption to account for 
+her iron deficiency. 
+
+TRANSITIONAL ISSUES:
+====================
+Code status: Full, presumed
+HCP: ___, granddaughter - ___.
+
+- Right trochanteric bursitis:
+[] Consider repeat injection
+[] Consider physical therapy
+
+- Right anterior leg pain
+[] discharged on gabapentin 600 mg three times daily
+[] discharged with tramadol 50mg, home regimen is Q8hrs and 
+required Q4hrs during hospitalization. Will give two day supply 
+of increased dose. Plan to see PCP next week.
+[] Consider outpatient MRI of the lumbar spine for chronic pain 
+[] Consider EMG
+[] Vascular surgery follow up as outpt for treatment of painful 
+veins
+
+- Iron deficiency anemia:
+[] Consider repeat IV iron infusion
+[] F/u pending TTG
+[] Consider further work up (though may be related to left 
+breast hematoma)
+
+- History of DVT/PE, antiphospholipid antibody syndrome, 
+subtherapeutic INR:
+[] F/u ___ clinic on ___. Patient can continue home 
+Warfarin regimen
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Atorvastatin 40 mg PO QPM 
+2. Docusate Sodium 100 mg PO BID 
+3. Omeprazole 20 mg PO BID 
+4. Senna 8.6 mg PO HS 
+5. Sertraline 150 mg PO DAILY 
+6. TraZODone 50 mg PO QHS:PRN sleep 
+7. TraMADol 50 mg PO Q8H:PRN Pain - Moderate 
+  Reason for PRN duplicate override: Alternating agents for 
+similar severity
+8. Polyethylene Glycol 17 g PO DAILY:PRN Constipation - First 
+Line 
+9. ProAir HFA (albuterol sulfate) 90 mcg/actuation inhalation 
+Q4H:PRN 
+10. Acetaminophen 1000 mg PO Q8H:PRN Pain - Mild/Fever 
+11. Albuterol 0.083% Neb Soln 1 NEB IH Q6H:PRN cough, wheeze 
+12. Vitamin D ___ UNIT PO DAILY 
+13. Erythromycin 0.5% Ophth Oint 0.5 in BOTH EYES QID 
+14. Furosemide 20 mg PO DAILY:PRN Leg swelling 
+15. HYDROmorphone (Dilaudid) 2 mg PO Q4H:PRN Pain - Severe 
+16. Warfarin 7.5 mg PO 2X/WEEK (___) 
+17. Warfarin 5 mg PO 5X/WEEK (___) 
+
+ 
+Discharge Medications:
+1.  Gabapentin 600 mg PO TID 
+RX *gabapentin 600 mg 1 tablet(s) by mouth three times daily 
+Disp #*90 Tablet Refills:*0 
+2.  Lidocaine 5% Patch 1 PTCH TD QAM right hip 
+RX *lidocaine 5 % Apply ___ patches daily Disp #*12 Patch 
+Refills:*0 
+3.  TraMADol 50 mg PO Q6H:PRN Pain - Moderate 
+RX *tramadol 50 mg 1 tablet(s) by mouth Every six hours as 
+needed Disp #*15 Tablet Refills:*0 
+4.  Acetaminophen 1000 mg PO Q8H:PRN Pain - Mild/Fever  
+5.  Albuterol 0.083% Neb Soln 1 NEB IH Q6H:PRN cough, wheeze  
+6.  Atorvastatin 40 mg PO QPM  
+7.  Docusate Sodium 100 mg PO BID  
+8.  Erythromycin 0.5% Ophth Oint 0.5 in BOTH EYES QID  
+9.  Furosemide 20 mg PO DAILY:PRN Leg swelling  
+10.  Omeprazole 20 mg PO BID  
+11.  Polyethylene Glycol 17 g PO DAILY:PRN Constipation - First 
+Line  
+12.  ProAir HFA (albuterol sulfate) 90 mcg/actuation inhalation 
+Q4H:PRN  
+13.  Senna 8.6 mg PO HS  
+14.  Sertraline 150 mg PO DAILY  
+15.  TraZODone 50 mg PO QHS:PRN sleep  
+16.  Vitamin D ___ UNIT PO DAILY  
+17.  Warfarin 5 mg PO 2X/WEEK (___)  
+18.  Warfarin 7.5 mg PO 5X/WEEK (___)  
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+PRIMARY:
+=================
+Right trochanteric bursitis
+Right anterior leg pain
+Right sided varicose veins 
+
+SECONDARY:
+=================
+Iron deficiency anemia
+History of DVT/PE on warfarin
+Antiphospholipid antibody syndrome
+Subtherapeutic INR
+Vitamin D deficiency
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - requires assistance or aid (walker 
+or cane).
+
+ 
+Discharge Instructions:
+Dear ___, 
+
+You were admitted because you were having a lot of leg pain, 
+making it difficult to walk. 
+
+In the hospital, we gave you a steroid injection near your right 
+thigh for a condition called, Trochanteric Bursitis. We also 
+gave you a medication called Gabapentin to help with your leg 
+pain lower down. 
+
+We also started you on a medication called Lovenox in order to 
+bridge you back to your warfarin - currently, your warfarin dose 
+is 7.5 mg daily and your INR was 1.9 at discharge (goal ___. 
+
+Finally, you received 1 dose of intravenous iron because you are 
+iron deficient which may be why you are more fatigued than 
+usual.
+
+When you go home, please take your medications as prescribed and 
+make an appointment with your primary care doctor. We do not 
+know what exactly is causing the lower leg pain, so you may want 
+to talk to your doctor about having an MRI of your spine. You 
+can also ask your doctor about prescribing a medication called 
+DICLOFENAC GEL, also called VOLTAREN. This is essentially Motrin 
+or Advil in a topical form and may help your pain.
+
+Additionally, please talk to your doctor about why you may be 
+iron deficient. 
+
+It was a pleasure taking part in your care. We wish you all the 
+best with your health.
+
+Sincerely,
+The team at ___
+
+ 
+Followup Instructions:
+___

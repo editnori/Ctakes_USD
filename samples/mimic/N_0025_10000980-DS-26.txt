@@ -1,0 +1,421 @@
+ 
+Name:  ___          Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___.
+ 
+Chief Complaint:
+shortness of breath
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+Patient is a ___ with history of coronary artery disease c/b
+ischemic MR ___ DES to LCX ___, TTE ___ with mild regional LV
+systolic dysfunction), heart failure with preserved ejection
+fraction (LVEF 50% ___, peripheral vascular disease, chronic
+kidney disease (stage IV), prior unprovoked DVT c/b severe UGIB
+while on AC, HTN, dyslipidemia, and T2DM who presents with
+several days of shortness of breath.     
+
+Patients says that she first noticed rather acute onset dyspnea
+starting ___ when trying to walk up the stairs in her home. 
+
+She had to sit down and catch her breath, whereas just days 
+prior
+she was able to mount ___ of stairs without difficulty. 
+Patient denies any associated chest pain or palpitations.  No
+dizziness or lightheadedness.  Patient further denies any cough,
+fevers/chills, or pleuritic chest discomfort.  She has not
+experienced any symptoms consistent with orthopnea or PND.  No
+increased ___ swelling, patient notes that she has experienced
+this in the past.  
+
+Patient takes her weight nearly every day, 7lbs reported weight
+gain over the past week (154lbs -> 161lbs), which she attributes
+to eating more over the ___.  She is currently
+taking torsemide 40mg qd, no missed doses.  No issues with
+abdominal bloating or constipation.  No recent travel.  
+Patient's
+husband just recovered from a viral URI.       
+
+In the ED, initial VS were: 97.2 90 186/87 22 100% RA   
+
+Exam notable for:
+Obvious bilateral wheezing.
+No overt volume overload.  
+
+EKG: NSR (92bpm), normal axis, normal PR/QRS intervals, QTc 479,
+q-waves III/aVF, TWIs III/aVF/V3/V6, submm lateral STDs, no 
+STEs.
+
+Labs showed:  
+CBC 6.0>9.0/27.8<176 (PMNs 75.2%, MCV 97)
+BMP 142/4.8/105/___/2.4/189
+Trop <.01
+proBNP 4512
+VBG 7.33/40
+UA: 1.010 SG, pH 6.0, urobilinogen NEG, bilirubin NEG, leuk NEG,
+blood NEG, nitrite NEG, protein 100, glucose NEG, ketones NEG,
+RBC 1, WBC 1, few bacteria
+
+Imaging showed: 
+CXR ___
+FINDINGS:  
+Lungs are moderately well-expanded. There is an asymmetric right
+lower lung opacity, new from ___. The heart appears mildly
+enlarged and there is mild pulmonary vascular congestion. No
+pleural effusion or pneumothorax. 
+IMPRESSION:  
+Right lower lobe opacity could represent pneumonia in the right
+clinical setting, although atelectasis or asymmetric pulmonary
+edema could account for this finding. Dedicated PA and lateral
+views could be helpful for further assessment. 
+ 
+Consults: NONE  
+
+Patient received:  
+___ 21:45 IH Albuterol 0.083% Neb Soln 1 NEB  
+___ 22:08 IH Albuterol 0.083% Neb Soln 1 NEB  
+___ 22:08 IH Ipratropium Bromide Neb 1 NEB  
+___ 22:47 IH Albuterol 0.083% Neb Soln 1 NEB 
+___ 22:47 IH Ipratropium Bromide Neb 1 NEB 
+___ 22:51 IV Azithromycin 
+___ 22:51 IV CefTRIAXone
+___ 22:51 PO PredniSONE 60 mg
+___ 22:51 IV Furosemide 80 mg 
+___ 23:01 IV CefTRIAXone 1 gm  
+___ 00:13 IV Azithromycin 500 mg
+___ 00:23 PO/NG Atorvastatin 80 mg
+___ 00:23 PO/NG Carvedilol 25 mg
+___ 00:23 PO NIFEdipine (Extended Release) 60 mg 
+___ 00:23 IH Albuterol 0.083% Neb Soln 1 NEB 
+___ 00:23 IH Ipratropium Bromide Neb 1 NEB
+___ 00:26 PO/NG Gabapentin 100 mg
+___ 00:44 SC Insulin 4 Units
+
+Transfer VS were: 98.2 77 141/76 18 100% 2L NC 
+   
+On arrival to the floor, patient recounts the history as above. 
+She says that she feels improved after treatment in the ED, no
+ongoing SOB. 
+ 
+10-point ROS is otherwise NEGATIVE.
+
+ 
+Past Medical History:
+Coronary artery disease
+Peripheral vascular disease
+Type II Diabetes Mellitus c/b diabetic retinopathy
+Obesity
+Esophageal ring
+Hypertension
+Dyslipidemia
+Bilateral unprovoked posterior tibial DVTs (___) off AC given
+severe UGIB
+CKD Stage IV iso DM/HTN, secondary hyperparathyroidism
+Anemia
+Gout
+ 
+Social History:
+___
+Family History:
+Niece had some sort of cancer. Father died in his ___ due to 
+lung disease. Mother died in her ___ due to an unknown cause. 
+No early CAD or sudden cardiac death. No other known history of 
+cancer. 
+ 
+Physical Exam:
+==============================
+ ADMISSION PHYSICAL EXAM
+==============================
+VS: 97.5 162/93 78 16 100RA   
+GENERAL: Pleasant female appearing younger than her stated age,
+taking deep breaths while speaking  
+HEENT: EOMI, PERRL, anicteric sclera, pink conjunctiva, MMM.  
+NECK: JVD 10 CM. 
+HEART: RRR, S1/S2, no murmurs, gallops, or rubs.  
+LUNGS: CTAB, no wheezes. 
+ABDOMEN: Obese abdomen, normoactive BS throughout, nondistended,
+nontender in all quadrants, no rebound/guarding, no
+hepatosplenomegaly.  
+EXTREMITIES: No cyanosis, clubbing, or edema.  
+PULSES: 2+ radial pulses bilaterally.  
+NEURO: A&Ox3, moving all 4 extremities with purpose.  
+SKIN: Warm and well perfused, no excoriations or lesions, no
+rashes.  
+ 
+==============================
+DISCHARGE PHYSICAL EXAM
+==============================
+VS: Afeb, 144/78, HR 57, 97% RA, RR 12
+GEN: Well appearing in NAD
+Neck:  No JVD appreciated
+CV: RRR no m/r/g, no carotid bruits appreciated
+PULM: CTAB no wheezes, rales, or crackles.  Symmetric expansion
+EXT: warm well perfused, no pitting edema 
+ 
+Pertinent Results:
+==============================
+ ADMISSION LABS
+==============================
+___ 09:37PM BLOOD WBC-6.0 RBC-2.88* Hgb-9.0* Hct-27.8* 
+MCV-97 MCH-31.3 MCHC-32.4 RDW-15.1 RDWSD-52.0* Plt ___
+___ 09:37PM BLOOD Neuts-75.2* Lymphs-17.6* Monos-4.4* 
+Eos-1.8 Baso-0.3 Im ___ AbsNeut-4.49 AbsLymp-1.05* 
+AbsMono-0.26 AbsEos-0.11 AbsBaso-0.02
+___ 06:40AM BLOOD ___ PTT-25.9 ___
+___ 09:37PM BLOOD Glucose-189* UreaN-38* Creat-2.4* Na-142 
+K-4.8 Cl-105 HCO3-20* AnGap-17
+___ 09:37PM BLOOD proBNP-4512*
+___ 09:37PM BLOOD cTropnT-<0.01
+___ 06:40AM BLOOD CK-MB-6 cTropnT-0.05*
+___ 02:01PM BLOOD CK-MB-5 cTropnT-0.04*
+___ 09:37PM BLOOD Calcium-9.4 Phos-4.1 Mg-2.3
+___ 09:41PM BLOOD ___ pO2-30* pCO2-40 pH-7.33* 
+calTCO2-22 Base XS--5
+ 
+==============================
+ IMAGING
+==============================
+TTE ___: The left atrial volume index is mildly increased. 
+The estimated right atrial pressure is ___ mmHg. Left 
+ventricular wall thicknesses and cavity size are normal. There 
+is mild regional left ventricular systolic dysfunction with 
+basal inferoseptal, inferior, inferolateral as well as mid 
+inferior/inferoseptal wall motion abnormalities. Doppler 
+parameters are most consistent with Grade II (moderate) left 
+ventricular diastolic dysfunction. Right ventricular chamber 
+size and free wall motion are normal. The diameters of aorta at 
+the sinus, ascending and arch levels are normal. The aortic 
+valve leaflets (3) are mildly thickened but aortic stenosis is 
+not present. There is no aortic valve stenosis. Trace aortic 
+regurgitation is seen. The mitral valve leaflets are moderately 
+thickened. Mild (1+) mitral regurgitation is seen. The tricuspid 
+valve leaflets are mildly thickened. There is mild pulmonary 
+artery systolic hypertension. There is no pericardial effusion. 
+
+ IMPRESSION:   1) Mild regional LV systolic dysfunction c/w 
+prior myocardial infarction in the RCA territory.   2) Grade II 
+LV diastolic dysfunction.
+ Compared with the prior study (images reviewed) of ___, LV 
+sytolic function appears mildly less vigorous. Regional wall 
+motion abnormalities encompassess slightly greater territory.  
+
+CXR PA & LAT ___: No focal consolidation or pulmonary 
+edema.
+
+BILATERAL LOWER EXTREMITY DOPPLER ULTRASOUND ___:   
+1. Nonocclusive thrombosis of one of the paired posterior tibial 
+veins in the bilateral lower extremities which appears grossly 
+unchanged compared to bilateral lower extremity ultrasound ___.  No new deep venous thrombosis in either 
+extremity. 
+2. Right ___ cyst measuring up to 1.8 cm across maximal 
+diameter is 
+unchanged in size compared to ___. 
+  
+==============================
+ MICROBIOLOGY
+==============================
+ URINE CULTURE ___: ENTEROCOCCUS SP..    >100,000 CFU/mL.
+ BLOOD CULTURE ___: Blood Culture: PENDING 
+ BLOOD CULTURE ___: Blood Culture: PENDING 
+
+==============================
+ DISCHARGE LABS
+==============================
+___ 05:45AM BLOOD WBC-5.1 RBC-2.57* Hgb-7.9* Hct-24.5* 
+MCV-95 MCH-30.7 MCHC-32.2 RDW-15.0 RDWSD-51.8* Plt ___
+___ 05:45AM BLOOD Glucose-144* UreaN-49* Creat-2.6* Na-147 
+K-4.0 Cl-105 HCO3-24 AnGap-___ yo F  PMH CAD c/b ischemic MR ___ DES to ___ ___, TTE ___ 
+with mild regional LV systolic dysfunction), HFpEF (LVEF 50% 
+___, PAD, CKD (stage IV), prior DVT c/b severe UGIV on AC, 
+T2DM presents with subacute SOB, weight gain, c/f acute heart 
+failure exacerbation.  She underwent diuresis with IV Lasix 80 
+mg, 120mg IV x2 with rapid improvement in subjective dyspnea.  
+___ showed no acute DVT, CXR without sign of consolidation.  
+Given her improvement in dyspnea, no supplemental O2 
+requirement, the patient was discharged w/o medication changes.
+
+# Shortness of breath
+# Hypoxia
+# acute exacerbation of chronic diastolic heart failure with 
+preserved LVEF (50%)
+Dry weight per pt 154 lbs.  Admission weight above baseline, BNP 
+elevated.  Regarding trigger, suspect dietary vs uncontrolled 
+BP. No EKG changes for ACS, trop negative, repeat TTE showed 
+mild regional LV systolic dysfunction c/w prior myocardial 
+infarction in the RCA territory, as well as Grade II LV 
+diastolic dysfunction and similar to prior ___ TTE. Doubt PNA 
+given CXR and lack of cough/fever, doubt PE given low Wells' 
+score 1.5, and stable repeat ___. Underwent diuresis with IV 
+Lasix 80 mg, 120mg IV x2 with rapid improvement in subjective 
+dyspnea.  Resumed home torsemide 40mg, nifedipine 60mg BID and 
+carvedilol 25mg BID.  Was stable on RA prior to discharge.
+
+# Hypertension - Patient missed her antiHTN medications earlier 
+day of admission. Continued home carvedilol 25mg BID and 
+nifedipine 60mg BID with holding parameters. Appears that a 
+trial of ___ or spironolactone would be limited by 
+hyperkalemia, so this was deferred.
+     
+# Urinary frequency/urge incontinence: occurred in setting of 
+diuresis, however UCx ordered in ED did grow enterococci, likely 
+colonization. If symptoms persists would revaluate/treat.
+         
+CHRONIC STABLE ISSUES
+
+# Normocytic anemia (recent baseline Hb 9.4 ___ - Hb was at 
+baseline, no signs of active bleeding.  Likely multifactorial, 
+anemia of chronic disease as well as decreased erythropoiten 
+production iso CKD.
+ 
+# Non anion gap metabolic acidosis - Patient has intermittently 
+had a NAGMA in the past.  No recent diarrhea.  ___ suspect Type 
+IV RTA given advanced age and history of T2DM (both of which can 
+cause hyporeninemia).
+
+# Stage IV Chronic Kidney Disease (baseline Cr 2.3-2.8) - CKD 
+iso HTN and T2DM, Cr is currently at baseline. Low K/Phos/Na 
+diet. Continued home calcitriol, avoided nephrotoxins and 
+renally dosed all medications.
+
+# Coronary artery disease ___ DES to LCX ___: troponins were 
+trended from < 0.01 to 0.05 to 0.04 then stopped. CK-MB was 
+flat.  Patient deneied any chest pain. A TTE showed mild 
+regional LV systolic dysfunction c/w prior myocardial infarction 
+in the RCA territory and similar to prior ___ TTE. Continued 
+home aspirin 81mg qd, home carvedilol 25mg BID with holding 
+parameters, home atorvastatin 80mg qHS.
+ 
+# Type II Diabetes Mellitus (last HbA1C 6.4% ___ - Under 
+excellent control, most recently in the pre-diabetic range.
+- Continue home 70/30 sliding scale (___t dinner if 
+blood sugar over 130, 10 units 90-130, none if blood sugar under 
+90) 
+
+# Dyslipidemia: continued home atorvastatin
+
+# Insomnia: continued home gabapentin
+
+# Gout: continued home allopurinol
+ 
+==============================
+ TRANSITIONAL ISSUES
+==============================
+- Discharge weight: 69.2kg
+- Discharge creatinine: 2.6
+- Discharge oral diuretic: torsemide 40mg daily
+- Transitional issue: consider outpatient epo with renal 
+- Transitional issue: BP goal of 140/90 per accord or even 
+130/80 per ACC/AHA ___ guidelines however anticipate difficulty 
+in adding additional agents iso CKD (limits use of clonidine) 
+and baseline potassium (would likely limit ___ or 
+spironolactone) 
+- TTE showed prior LV hypokinesis, could consider MIBI or 
+outpatient pharmacological stress test
+- had some urinary retention/incontinence while undergoing IV 
+diuresis would assess for recurrent symptoms at routine 
+outpatient visits
+
+#CODE: Full (confirmed)  
+#CONTACT: ___ (husband) ___
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Allopurinol ___ mg PO EVERY OTHER DAY 
+2. Atorvastatin 80 mg PO QPM 
+3. Calcitriol 0.5 mcg PO DAILY 
+4. Carvedilol 25 mg PO BID 
+5. Gabapentin 100 mg PO QHS 
+6. NIFEdipine (Extended Release) 60 mg PO BID 
+7. Torsemide 40 mg PO DAILY 
+8. Nitroglycerin SL 0.3 mg SL Q5MIN:PRN chest pain 
+9. Acetaminophen 325-650 mg PO Q6H:PRN Pain - Mild 
+10. Aspirin 81 mg PO DAILY 
+11. Insulin SC 
+      Sliding Scale
+Insulin SC Sliding Scale using 70/30 Insulin
+
+ 
+Discharge Medications:
+1.  Acetaminophen 325-650 mg PO Q6H:PRN Pain - Mild  
+2.  Allopurinol ___ mg PO EVERY OTHER DAY  
+3.  Aspirin 81 mg PO DAILY  
+4.  Atorvastatin 80 mg PO QPM  
+5.  Calcitriol 0.5 mcg PO DAILY  
+6.  Carvedilol 25 mg PO BID  
+7.  Gabapentin 100 mg PO QHS  
+8.  Insulin SC 
+      Sliding Scale
+Insulin SC Sliding Scale using 70/30 Insulin 
+9.  NIFEdipine (Extended Release) 60 mg PO BID  
+10.  Nitroglycerin SL 0.3 mg SL Q5MIN:PRN chest pain  
+11.  Torsemide 40 mg PO DAILY  
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+PRIMARY DIAGNOSIS
+- Acute on chronic diastolic congestive heart failure
+
+SECONDARY DIAGNOSES
+- Hypertension
+- History of prior DVT
+- Anemia, NOS
+- Chronic Kidney Disease stage IV
+- Coronary Artery Disease ___ drug eluting stent
+- Diabetes Mellitus Type 2 controlled
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Dear ___,
+
+You were admitted to the hospital with shortness of breath and 
+weight gain.  This was likely caused by an exacerbation of your 
+heart failure possibly from salty foods over the holiday. 
+
+While you were in the hospital:
+- we gave you IV diuretics to help remove extra fluid
+- we checked for pneumonia with a chest x-ray, there was no sign 
+of a pneumonia
+- we checked for signs on new clots in your legs, there was no 
+new clot
+
+Now that you are going home:
+- continue to take all of your medications as prescribed
+- monitor your salt intake, this should be no more than 2 grams 
+every day, ask your doctors for help with this if you do not 
+know how to keep track of your salt
+- continue to weigh yourself every morning, call your doctor if 
+weight goes up more than 3 lbs.
+- follow-up with your primary care doctor regarding your blood 
+pressure and blood sugar control
+
+It was a pleasure taking care of you!
+
+Your ___ Inpatient Care Team
+ 
+Followup Instructions:
+___

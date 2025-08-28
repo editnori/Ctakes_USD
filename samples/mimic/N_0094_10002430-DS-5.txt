@@ -1,0 +1,304 @@
+ 
+Name:  ___              Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   M
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Corgard / Vasotec
+ 
+Attending: ___
+ 
+Chief Complaint:
+leg edema
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+HISTORY OF PRESENTING ILLNESS:  
+ Mr. ___ is an ___ year old gentleman with history of CAD 
+(s/p 3V CABG ___, LM PCI ___, pulmonary HTN, AFib on 
+anticoagulation, ___ (EF 50%) who presents with volume overload 
+and new found RV dilation on office echocardiogram.  
+ Patient reports he has had 10 days of waking up feeling nervous 
+and jittery. He also endorses weight gain, and new onset lower 
+extremity swelling. He has not had chest pain, palpitations, 
+orthopnea, or PND. He has not had any fevers, cough, recent 
+travel, medication non compliance, increased salty food intake. 
+He also has not had dyspnea on exertion and rides 4 miles per 
+day on a stationary bike and does 6 minutes of weight lifting.  
+ He presented to Dr. ___ today for evaluation. There 
+he had a TTE that showed new RV dilation and was referred to the 
+___ ED for further evaluation with concern for pulmonary 
+embolism.  
+ 
+ In the ED, initial vitals were:  
+ T98. HR 70, BP 166/65, RR 16, 100% RA.  
+ Exam in ED notable for bilateral pitting edema to knees. Labs 
+notable for mild hyponatremia, Cr 1.1. ALT/AST mildly elevated 
+at 81/64. WBC 4, Hgb 11.3, INR 1.3. DDimer <150. UA 
+unremarkable.  
+ CXR with mild cardiomegaly but no evidence of consolidation or 
+pulmonary edema. CTA was negative for PE, showed severe 
+emphysema and dilated pulmonary artery.  
+ Patient received 20 mg IV Lasix with significant urine output 
+per patient. He was then admitted to the heart failure service 
+for acute heart failure exacerbation and further workup of RV 
+dilation.  
+ Vitals on transfer: Afebrile, HR 66, BP 129/54, RR 19, 95%RA.  
+ 
+ On review of systems, he denies any prior history of stroke, 
+TIA, deep venous thrombosis, pulmonary embolism, bleeding at the 
+time of surgery, myalgias, joint pains, cough, hemoptysis, black 
+stools or red stools. He denies recent fevers, chills or rigors. 
+He denies exertional buttock or calf pain. All of the other 
+review of systems were negative.  
+ 
+ Cardiac review of systems is notable for absence of chest pain, 
+paroxysmal nocturnal dyspnea, orthopnea, palpitations, syncope 
+or presyncope.  
+ 
+
+ 
+Past Medical History:
+Past Medical History:
+BILATERAL MODERATE CAROTID DISEASE 
+CONGESTIVE HEART FAILURE 
+CORONARY ARTERY DISEASE 
+GASTROESOPHAGEAL REFLUX 
+HYPERTENSION 
+SEVERE EMPHYSEMA 
+PULMONARY HYPERTENSION 
+RIGHT BUNDLE BRANCH BLOCK 
+BENIGN PROSTATIC HYPERTROPHY 
+HYPERLIPIDEMIA 
+PAROXYSMAL ATRIAL FIBRILLATION 
+H/O HISTIOPLASMOSIS 
+
+Past Surgical History:
+CARDIOVERSION ___ 
+RIGHT LOWER LOBE LOBECTOMY ___ 
+CORONARY BYPASS SURGERY ___ 
+
+ 
+Social History:
+___
+Family History:
+Non-contributory
+ 
+Physical Exam:
+ADMISSION
+Vitals: 98 159/62 16 98% on RA weight 143 lbs (bed scale)  
+ General: very pleasant older gentleman lying in bed speaking in 
+full sentences in NAD  
+ HEENT: PERRL, EOMI, no scleral icterus, oropharynx clear  
+ Neck: supple, JVP at 6cm, no adenopathy  
+ CV: regular rate and rhythm, normal S1, physiologic split S2, 
+___ systolic murmur at LLSB. No rubs or gallops.  
+ Lungs: CTAB, no crackles, wheezes, or rhonchi  
+ Abdomen: soft, non distended, non tender to deep palpation, +BS 
+ 
+ GU: no CVA tenderness, no foley  
+ Extr: warm, well perfused, 2+ pulses in radial and DP, 2+ edema 
+in bilateral lower extremities to knees  
+ Neuro: aoxo3, CN2-12 grossly intact, moving all 4 extremities 
+without deficit, stable gait  
+ Skin: warm, well perfused, dry, no rashes or lesions  
+
+DISCHARGE
+Vitals: 98.3 100-121/49-59 54-62 18 96RA
+Tele: no tele
+Last 8 hours I/O: ___
+Last 24 hours I/O: 1200/3150
+Weight on admission: 64.3
+Today's weight: 63.1
+
+General: elderly, NAD  
+Neck: JVP at base of clavicle when 90 degrees
+Lungs:  CTAB no crackles
+CV: RRR, split S2
+Abdomen: slightly obese, soft, NTND, NABS
+Ext: no edema
+ 
+Pertinent Results:
+ADMISSION
+___ 04:02PM BLOOD WBC-4.0 RBC-4.32* Hgb-11.3* Hct-35.1* 
+MCV-81* MCH-26.2 MCHC-32.2 RDW-16.3* RDWSD-48.3* Plt ___
+___ 04:02PM BLOOD ___ PTT-35.8 ___
+___ 04:02PM BLOOD Glucose-93 UreaN-17 Creat-1.1 Na-131* 
+K-3.8 Cl-93* HCO3-27 AnGap-15
+___ 04:02PM BLOOD ALT-81* AST-64* AlkPhos-89 TotBili-0.7
+___ 04:02PM BLOOD CK-MB-3 cTropnT-<0.01 proBNP-1284*
+___ 04:02PM BLOOD Albumin-4.2 Calcium-9.7 Mg-2.2
+___ 04:34PM BLOOD D-Dimer-<150
+___ 04:02PM BLOOD TSH-3.0
+
+DISCHARGE
+___ 04:04AM BLOOD WBC-6.5# RBC-4.57* Hgb-12.2* Hct-36.8* 
+MCV-81* MCH-26.7 MCHC-33.2 RDW-16.4* RDWSD-47.8* Plt ___
+___ 04:04AM BLOOD ___ PTT-34.1 ___
+___ 04:04AM BLOOD Glucose-113* UreaN-32* Creat-1.4* Na-133 
+K-3.9 Cl-94* HCO3-26 AnGap-17
+___ 04:04AM BLOOD ALT-79* AST-57* AlkPhos-83 TotBili-0.6
+___ 04:04AM BLOOD Calcium-10.0 Phos-4.4 Mg-2.0
+
+ECHO ___
+The left atrium is moderately dilated. The right atrium is 
+moderately dilated. No atrial septal defect is seen by 2D or 
+color Doppler. Left ventricular wall thicknesses and cavity size 
+are normal. There is mild regional left ventricular systolic 
+dysfunction with hypokinesis of the mid-anterior and mid-distal 
+inferior wall. The estimated cardiac index is normal 
+(>=2.5L/min/m2). Doppler parameters are indeterminate for left 
+ventricular diastolic function. The right ventricular cavity is 
+mildly dilated with depressed free wall contractility (RV free 
+wall is not well seen). The aortic valve leaflets (3) are mildly 
+thickened but aortic stenosis is not present. The mitral valve 
+leaflets are mildly thickened. There is no mitral valve 
+prolapse. Trivial mitral regurgitation is seen. The tricuspid 
+valve leaflets are mildly thickened. Moderate [2+] tricuspid 
+regurgitation is seen. There is moderate pulmonary artery 
+systolic hypertension. The pulmonic valve leaflets are 
+thickened. There is no pericardial effusion. 
+
+IMPRESSION: Mild regional left ventricular dysfunction c/w 
+multivessel CAD, with overall mildly depressed global systolic 
+function. Mildly dilated right ventricle with depressed free 
+wall systolic function. Moderate tricuspid regurgitation with 
+moderate pulmonary hypertension.  
+ 
+Brief Hospital Course:
+Mr. ___ is an ___ year old gentleman with history of CAD 
+(s/p CABG and PCI), pAF, PAH, diastolic CHF who presents with 
+weight gain, leg swelling and new evidence of right ventricle 
+dilation concerning for acute on chronic heart failure 
+exacerbation.  
+
+#Acute on Chronic Diastolic Heart Failure Exacerbation: with 
+component of RV failure by report of OSH echo.  Likely primary 
+process is lung disease causing elevated RV pressures and 
+subsequent poor filling of LV.  He diuresed quite well with 20 
+IV Lasix which is consistent with RV failure.  Started on 
+torsemide 10 daily but this is likely too aggressive.  We 
+obtained an echo but read PND at time of discharge.  We sent him 
+home on a diuretic regimen on torsemide 5 mg daily (and 
+discontinued home triamterene-HCTZ).  Close follow up with Dr. 
+___ ensured.
+
+#Elevated Transaminases:  Patient with mildly elevated AST and 
+ALT. Most likely etiologies in this patient include amiodarone 
+toxicity and congestive hepatopathy.  Encouraged outpatient 
+trending. 
+
+#Pulmonary disease: patient with extensive emphysema on CTA 
+though patient has no history of smoking.  As this may be 
+driving R heart failure, Dr. ___ requested pulmonology 
+consult prior to discharge but patient was insistent on leaving. 
+ Instead scheduled outpatient appointment. 
+ 
+#Atrial Fibrillation: Continue home amiodarone 200mg daily, 
+Apixaban 5mg BID  
+
+#CAD: Continue ASA 81mg, rosuvastatin 40mg qHS  
+
+#HTN: continue home losartan 25mg qD.
+
+TRANSITIONAL ISSUES
+[] New medication: Torsemide 5 mg daily
+[] Discontinued triamterene/HCTZ in favor of above
+[] LFTs mild elevated in house; consider possible 
+discontinuing/changing amiodarone
+[] Please check LFT's and Creatinine at follow up appointment as 
+these were elevated while hospitalized
+[] Follow up appointment with cardiology, Dr. ___
+[] Follow up appointment with pulmonology
+[] Follow up appointment with PCP
+
+***Discharge weight 63.1 kg***  
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Amiodarone 200 mg PO DAILY 
+2. Apixaban 5 mg PO BID 
+3. Aspirin 81 mg PO DAILY 
+4. Docusate Sodium 100 mg PO BID 
+5. Losartan Potassium 25 mg PO DAILY 
+6. Omeprazole 10 mg PO DAILY 
+7. Triamterene-HCTZ (37.5/25) 1 CAP PO DAILY 
+8. Senna 17.2 mg PO HS 
+9. Align (bifidobacterium infantis) 4 mg oral DAILY 
+10. coenzyme Q10 100 mg oral DAILY 
+11. Rosuvastatin Calcium 40 mg PO QPM 
+12. Vitamin D 1000 UNIT PO DAILY 
+13. Tamsulosin 0.4 mg PO QHS 
+
+ 
+Discharge Medications:
+1. Amiodarone 200 mg PO DAILY 
+2. Apixaban 5 mg PO BID 
+3. Aspirin 81 mg PO DAILY 
+4. Docusate Sodium 100 mg PO BID 
+5. Losartan Potassium 25 mg PO DAILY 
+6. Rosuvastatin Calcium 40 mg PO QPM 
+7. Senna 17.2 mg PO HS 
+RX *sennosides [senna] 8.6 mg 1 capsule by mouth once a day Disp 
+#*30 Capsule Refills:*0
+8. Vitamin D 1000 UNIT PO DAILY 
+9. Torsemide 5 mg PO DAILY 
+RX *torsemide 5 mg 1 tablet(s) by mouth once a day Disp #*30 
+Tablet Refills:*0
+10. Align (bifidobacterium infantis) 4 mg oral DAILY 
+11. coenzyme Q10 100 mg oral DAILY 
+12. Omeprazole 10 mg PO DAILY 
+13. Tamsulosin 0.4 mg PO QHS 
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Primary:
+Acute on chronic diastolic congestive heart failure
+Cor pulmonale
+
+Secondary:
+Pulmonary hypertension
+Paroxysmal atrial fibrillation
+Hyponatremia
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Dear Mr. ___,
+
+You were hospitalized for progressive leg swelling over the past 
+week and a half.  We started you on a new medication here that 
+should help prevent this from happening.  Of note, Dr. ___ was 
+concerned about a clot in your lungs, but our scans showed NO 
+clot.  With this news, you were discharged home with PCP and 
+cardiology follow up.
+
+Please continue to take your torsemide in order to maintain your 
+weight. Please weight yourself everyday and call your 
+cardiologist if you weight changes by three pounds.
+
+You also have "pulmonary hypertension," which may be due to your 
+underlying lung disease. Amiodarone can also cause lung changes 
+and we recommend following up with the lung doctors as ___ 
+outpatient to see if this may be contributing. 
+
+It was a pleasure taking care of you!
+Your ___ team
+ 
+Followup Instructions:
+___

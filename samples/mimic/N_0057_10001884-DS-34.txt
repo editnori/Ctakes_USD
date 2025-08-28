@@ -1,0 +1,441 @@
+ 
+Name:  ___             Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+IV Dye, Iodine Containing Contrast Media / Oxycodone / 
+cilostazol / Varenicline
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Shortness of breath
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+Ms. ___ is a ___ yo woman with a PMH notable for COPD on 
+home O2(hospitalized ___, multiple recent ED visits), Afib on 
+apixaban, HTN, CAD, and HLD who presents with several days of 
+worsening dyspnea.
+
+Patient has had several ED visits for dyspnea and a recent 
+hospitalization for a COPD exacerbation in ___. She has 
+been on steroid therapy with several attempts to taper over the 
+last several months. After her most recent ED visit on ___ 
+she was on placed on 60 mg PO prednisone with a taper down by 10 
+mg each day. Her SOB worsened with the taper and she was seen on 
+___ by her PCP who started her on a course of prednisone 30 mg 
+PO to be tapered down by 5 mg every 3 days. With the taper she 
+is currently on prednisone 25 mg QD.
+
+She reports that her SOB improved slightly after starting the 
+steroids on ___. However, last night it acutely worsened and she 
+was unable to sleep. She usually uses 3 pillows to sleep but was 
+only comfortable seated upright last night. This morning she 
+increased her oxygen to 3L and felt better. She is usually on 2L 
+NC at home. She reports that for the last several months she has 
+been using two different albuterol inhalers each every ___ 
+hours. She knows that this is more than they are prescribed for 
+but it makes her comfortable. She mostly stays put on the second 
+floor of her home. She states that she can walk to the bathroom 
+without being short of breath, but does not use the stairs 
+unless she has to leave the house because it worsens her 
+breathing. She endorses a cough occasionally productive of ___ 
+sputum. This is consistent with her baseline. She endorses one 
+episode of non-exertional chest pain today that spontaneously 
+resolved. She denies fever, chills, recent sick contacts, and 
+lower extremity edema.
+
+In the ED, initial vital signs were: T 98.5 P 80 BP 154/97 R 20 
+O2 sat 97% NC.  
+- Exam notable for: Diffuse expiratory wheezing, prolonged 
+expiratory phase, left inspiratory crackles, irregularly 
+irregular rhthym, minimal pedal edema  
+- Labs were notable for CBC wnl, proBNP 235, Trop 0.02, chem 
+notable for bicarb 31, AG 13, UA notable for 40 RBCs  
+- Studies performed include CXR with stable mild/moderate 
+cardiomegaly, atelectasis at bases, otherwise clear lung fields
+- Patient was given Albuterol neb x 1, ipratropium neb x 1, 
+Azithromycin 500 mg PO, Prednisone 25 mg PO
+
+Upon arrival to the floor, the patient states that she is doing 
+well. She says that her SOB has improved since this morning and 
+is better than last night when she could not sleep.  
+ 
+Review of Systems:  
+ (+) per HPI  
+ (-) fever, chills, night sweats, headache, vision changes, 
+rhinorrhea, congestion, sore throat, abdominal pain, nausea, 
+vomiting, diarrhea, constipation, BRBPR, melena, hematochezia, 
+dysuria, hematuria.  
+ 
+Past Medical History:
+ASTHMA/COPD  
+ATYPICAL CHEST PAIN  
+CERVICAL RADICULITIS  
+CERVICAL SPONDYLOSIS  
+CORONARY ARTERY DISEASE  
+HEADACHE  
+HIP REPLACEMENT  
+HYPERLIPIDEMIA  
+HYPERTENSION  
+OSTEOARTHRITIS  
+HERPES ZOSTER  
+ATRIAL FIBRILLATION  
+ANXIETY  
+GASTROINTESTINAL BLEEDING  
+OSTEOARTHRITIS    
+PERIPHERAL VASCULAR DISEASE (s/p bilateral iliac stents)
+ 
+Social History:
+___
+Family History:
+Mother: ___, HTN  
+Father: ___ CA  
+Brother: CA?  
+Brother: ___ 
+ 
+Physical ___:
+=================
+ADMISSION EXAM:
+=================
+Vitals- T 98.0 BP 148/70 HR 70 RR 24 O2Sat 96% on 2L NC  
+GENERAL: AOx3, NAD, sitting up in bed
+HEENT: Normocephalic, atraumatic.  Pupils equal, round, and 
+reactive bilaterally, extraocular muscles intact.  No 
+conjunctival pallor or injection, sclera anicteric and without 
+injection. Moist mucous membranes, good dentition.  Oropharynx 
+is clear.
+NECK: Supple. JVD not visualized.
+CARDIAC: Irregularly irregular, ___ systolic murmur best at the 
+LSB, no rubs or gallops.
+LUNGS: Poor air movement throughout. Mild diffuse inspiratory 
+and expiratory wheezes. No use of accessory muscles of 
+breathing. No rhonchi or rales.
+BACK: No CVA tenderness 
+ABDOMEN:  Normal bowels sounds, non distended, non-tender to 
+deep palpation in all four quadrants. No organomegaly.
+EXTREMITIES: No clubbing or cyanosis. Bilateral pitting edema to 
+the mid shin. Pulses DP/Radial 2+ bilaterally.
+SKIN: No rash or ulcers
+NEUROLOGIC: CN2-12 intact.  Moves all extremities spontaneously. 
+ Normal sensation. 
+=================
+DISCHARGE EXAM:
+=================
+Vitals- T 98.7 BP 154/85 HR 77 RR 18 O2Sat 99% on 3L NC  
+GENERAL: AOx3, NAD, sitting up in bed
+HEENT: NCAT.  PERRL. EOMI. Sclera anicteric and not injected. 
+MMM.   Oropharynx is clear.
+NECK: Supple. No LAD. JVP not appreciated at 45 degrees.
+CARDIAC: Irregularly irregular, normal rate. ___ systolic murmur 
+at the RUSB. No rubs or gallops.
+LUNGS: Poor air movement throughout all zones of the lungs. No 
+wheezes. No prolonged expiratory phase. No rhonchi or rales. 
+Does typically sit cross legged in the bed with forearms on her 
+legs in a tripod position.
+BACK: No CVA tenderness. 
+ABDOMEN:  +BS, soft, nontender, nondistended
+EXTREMITIES: Trace pitting edema to the mid shin. 2+ DP pulses 
+bilaterally. No TTP.
+SKIN: No rash or ulcers.
+NEUROLOGIC: CN2-12 intact.  Moves all extremities spontaneously. 
+ Normal sensation. 
+ 
+Pertinent Results:
+==================
+ADMISSION LABS:
+==================
+___ 02:27PM BLOOD WBC-7.4 RBC-4.57 Hgb-12.3 Hct-39.3 MCV-86 
+MCH-26.9 MCHC-31.3* RDW-23.6* RDWSD-70.9* Plt ___
+___ 02:27PM BLOOD Neuts-86.5* Lymphs-6.1* Monos-6.6 
+Eos-0.0* Baso-0.0 Im ___ AbsNeut-6.38* AbsLymp-0.45* 
+AbsMono-0.49 AbsEos-0.00* AbsBaso-0.00*
+___ 02:27PM BLOOD Glucose-132* UreaN-17 Creat-1.0 Na-137 
+K-3.7 Cl-93* HCO3-31 AnGap-17
+==================
+PERTINENT RESULTS:
+==================
+LABS:
+==================
+___ 12:15AM BLOOD ___ pO2-103 pCO2-49* pH-7.42 
+calTCO2-33* Base XS-5
+===
+___ 02:27PM BLOOD cTropnT-0.02* proBNP-235
+___ 09:05PM BLOOD CK-MB-6 cTropnT-<0.01
+___ 07:45AM BLOOD CK-MB-6 cTropnT-0.02*
+===
+___ 07:45AM BLOOD THEOPHYLLINE-17.3 (10.0-20.0)
+==================
+IMAGING:
+==================
+CXR (___): PA and lateral views the chest provided. Biapical 
+pleural parenchymal scarring noted.  No focal consolidation 
+concerning for pneumonia. No effusion or pneumothorax.  No signs 
+of congestion or edema. Cardiomediastinal silhouette is stable 
+with an unfolded thoracic aorta and top-normal heart size. Bony 
+structures are intact.
+===
+CT Chest (___):
+1.  Moderate upper lobe predominant centrilobular and paraseptal 
+emphysema.
+2.  New left lower lobe nodule, potentially measuring as large 
+as 6 x 8 mm, warrants close follow-up.  Stable to slightly 
+smaller 4 mm right middle lobe nodule.
+3.  Severe coronary artery calcifications.  Aortic valve 
+calcifications. 
+4.  Enlargement of the main and right pulmonary arteries is 
+suggestive of chronic pulmonary arterial hypertension. 
+5.  Fusiform aneurysmal dilatation of the abdominal aorta 
+measuring up to 3.7 cm has progressed compared to prior 
+examination.
+==================
+DISCHARGE LABS:
+==================
+___ 07:45AM BLOOD WBC-7.8 RBC-4.74 Hgb-12.7 Hct-41.0 MCV-87 
+MCH-26.8 MCHC-31.0* RDW-23.7* RDWSD-71.7* Plt ___
+___ 07:45AM BLOOD Glucose-94 UreaN-18 Creat-1.0 Na-135 
+K-3.3 Cl-93* HCO3-31 AnGap-14
+___ 07:45AM BLOOD Calcium-9.8 Phos-2.8 Mg-2.0
+ 
+Brief Hospital Course:
+Ms. ___ is a ___ y/o woman with a PMH notable for COPD on 
+home O2 (hospitalized ___, multiple recent ED visits), Afib 
+on apixaban, HTN, CAD, and HLD who presented with dyspnea and 
+orthopnea in the setting of a steroid taper for recent COPD 
+exacerbation. Her dyspnea was thought to be multifactorial due 
+to her severe COPD and with a component of anxiety. The patient 
+was not thought to be having an acute COPD exacerbation.
+
+================
+ACTIVE ISSUES:
+================
+
+# Dyspnea: Patient was admitted after one night of worsened 
+orthopnea and dyspnea in the setting of a steroid taper from 30 
+mg to 25 mg. Her dyspnea was thought to be multifactorial due to 
+her severe COPD and with a component of anxiety. The patient was 
+not thought to be having an acute COPD exacerbation. The patient 
+was treated with occasional duonebs and lorazepam 0.5 mg PRN 
+that helped relieve her dyspnea. Pulmonology was consulted. The 
+patient underwent CT that showed emphysema but no evidence of 
+infection such as ___. The patient was initiated on a steroid 
+taper on ___ of prednisone 30 mg for 3 days, then 20 mg for 3 
+days, then 10 mg until outpatient follow-up. Pulmonology 
+recommended increasing her Advair dose to 500/50, which was 
+done. They also recommended switching from theophylline to 
+roflumilast and initiation of long-term azithromycin therapy 
+provided the patient's QTc was not prolonged; this was deferred 
+to the outpatient setting. Throughout her admission she had O2 
+sats greater than 95% on 2L NC. She did not desaturate on 
+ambulation. 
+
+# Anxiety/Insomnia: Patient with a history of anxiety and 
+insomnia, thought to be contributing to her experience of 
+dyspnea. The patient was discharged with lorazepam Q8H as needed 
+for anxiety. The patient would likely benefit from therapy with 
+an SSRI.
+
+# Demand Ischemia: Patient with troponin 0.02, <0.01, then 0.02. 
+ECG without acute ischemic changes.
+
+# Microscopic hematuria: On admission the patient had a UA with 
+40 RBCs. Occasional UAs over the last year in OMR with 
+microscopic hematuria. Would recommend repeat UA as an 
+outpatient or work-up for microscopic hematuria.
+
+================
+CHRONIC ISSUES:
+================
+
+# Smoking: Patient recently quit smoking one month ago. Patient 
+was provided with a nicotine patch 7 mg while in house; could 
+consider continuing as an outpatient if patient endorses 
+cravings.
+
+# Atrial fibrillation: Patient continued on diltiazem 240 mg PO 
+BID and apixaban 5 mg BID.
+
+# HTN: Patient with a history of hypertension. Blood pressure 
+well-controlled. Continued on isosorbide mononitrate ER 240 mg 
+PO daily and hydrochlorothiazide 50 mg PO daily.
+
+# CAD: Cardiac catheterization in ___ without evidence of 
+significant stenosis of coronaries. ECHO on ___ with EF>55% 
+and no regional or global wall motion abnormalities. The patient 
+was continued on aspirin 81 mg daily and atorvastatin 10 mg QPM.
+
+===================
+TRANSITIONAL ISSUES:
+===================
+#New Medications:
+-Prednisone 30 mg PO QD through ___, then on ___ mg for 3 
+days, then on ___ mg until outpatient follow-up
+-Increased Advair (Fluticasone-Salmeterol) to 500/50 dose
+-Lorazepam 0.5 mg PO Q8H PRN for anxiety
+
+#Follow-up:
+-Appointment arranged with PCP, ___ ___
+-Appointment arranged with Pulmonologist, Dr. ___, ___
+
+#COPD: Patient was seen by pulmonology during admission who had 
+the following recommendations to consider as an outpatient.
+-Switch to roflumilast from theophylline
+-Daily azithromycin for treatment of chronic inflammation 
+provided QTc within normal limits.
+-Patient may benefit from treatment of anxiety with an SSRI, as 
+her anxiety is likely contributing to her experience of dyspnea.
+-In the future, palliative care consult for consideration of 
+opioid treatment of dyspnea
+
+#Microscopic hematuria: Patient had a UA with 40 RBCs on 
+admission 
+-Recommend repeat UA as an outpatient or work-up for microscopic 
+hematuria
+
+#Lung nodule: New left lower lobe nodule, potentially measuring 
+as large as 6 x 8 mm, warrants close follow-up.  Stable to 
+slightly smaller 4 mm right middle lobe nodule. Follow-up CT in 
+___ months as per ___ guidelines for evaluation 
+of new left lower lobe pulmonary nodule.
+
+#Code Status: Full code
+#Emergency Contact/HCP: ___ (HUSBAND) ___
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. PredniSONE 5 mg PO DAILY 
+Tapered dose - DOWN 
+2. Acetaminophen 325 mg PO Q4H:PRN Pain 
+3. Ipratropium Bromide Neb 1 NEB IH Q6H:PRN Wheezing 
+4. Tiotropium Bromide 1 CAP IH DAILY 
+5. Guaifenesin 1 teaspoon PO Q3H:PRN cough 
+6. Lorazepam 0.5 mg PO QHS vertigo/insomnia 
+7. Diltiazem Extended-Release 240 mg PO BID 
+8. Dorzolamide 2% Ophth. Soln. 1 DROP BOTH EYES BID 
+9. Docusate Sodium 100 mg PO BID 
+10. Fluticasone Propionate NASAL 2 SPRY NU DAILY:PRN allergies 
+11. Apixaban 5 mg PO BID 
+12. Ranitidine 300 mg PO DAILY 
+13. Atorvastatin 10 mg PO QPM 
+14. Ferrous Sulfate 325 mg PO DAILY 
+15. Multivitamins 1 TAB PO DAILY 
+16. Isosorbide Mononitrate (Extended Release) 240 mg PO DAILY 
+17. Fluticasone-Salmeterol Diskus (250/50)  1 INH IH BID 
+18. Latanoprost 0.005% Ophth. Soln. 1 DROP BOTH EYES QHS 
+19. Calcitrate-Vitamin D (calcium citrate-vitamin D3) 315 mg - 
+200 units  oral DAILY 
+20. Theophylline SR 300 mg PO BID 
+21. Aspirin 81 mg PO DAILY 
+22. albuterol sulfate 90 mcg/actuation inhalation Q4H 
+23. Hydrochlorothiazide 50 mg PO DAILY 
+24. cod liver oil 1 capsule  oral BID 
+
+ 
+Discharge Medications:
+1. Acetaminophen 325 mg PO Q4H:PRN Pain 
+2. Apixaban 5 mg PO BID 
+3. Aspirin 81 mg PO DAILY 
+4. Atorvastatin 10 mg PO QPM 
+5. Diltiazem Extended-Release 240 mg PO BID 
+6. Docusate Sodium 100 mg PO BID 
+7. Dorzolamide 2% Ophth. Soln. 1 DROP BOTH EYES BID 
+8. Ferrous Sulfate 325 mg PO DAILY 
+9. Fluticasone Propionate NASAL 2 SPRY NU DAILY:PRN allergies 
+10. Hydrochlorothiazide 50 mg PO DAILY 
+11. Isosorbide Mononitrate (Extended Release) 240 mg PO DAILY 
+12. Latanoprost 0.005% Ophth. Soln. 1 DROP BOTH EYES QHS 
+13. Multivitamins 1 TAB PO DAILY 
+14. PredniSONE 30 mg PO DAILY 
+RX *prednisone 10 mg 3 tablet(s) by mouth Daily Disp #*30 Tablet 
+Refills:*0
+15. Ranitidine 300 mg PO DAILY 
+16. Theophylline SR 300 mg PO BID 
+17. Tiotropium Bromide 1 CAP IH DAILY 
+18. Guaifenesin 1 teaspoon PO Q3H:PRN cough 
+19. Ipratropium Bromide Neb 1 NEB IH Q6H:PRN Wheezing 
+20. cod liver oil 1 capsule  oral BID 
+21. Calcitrate-Vitamin D (calcium citrate-vitamin D3) 315 mg - 
+200 units  oral DAILY 
+22. albuterol sulfate 90 mcg/actuation inhalation Q4H 
+23. Fluticasone-Salmeterol Diskus (500/50)  1 INH IH BID 
+RX *fluticasone-salmeterol [Advair Diskus] 500 mcg-50 mcg/dose 1 
+dose Inhaled Twice a day Disp #*1 Disk Refills:*1
+24. Lorazepam 0.5 mg PO Q8H:PRN Anxiety 
+RX *lorazepam [Ativan] 0.5 mg 0.5 (One half) mg by mouth Every 8 
+hours Disp #*30 Tablet Refills:*0
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Primary Diagnosis:
+Chronic obstruction pulmonary disease exacerbation
+
+Secondary Diagnoses:
+Tobacco use disorder
+Atrial fibrillation
+Hypertension
+Anxiety
+Coronary Artery Disease
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Dear Ms. ___,
+
+It was a privilege taking care of you during your admission to 
+___. You were admitted to the hospital for 
+shortness of breath and concern that you were having a flare of 
+your COPD.
+
+While in the hospital we increased your dose of steroids to help 
+your breathing. You also received several nebulizer treatments 
+that helped your breathing. You were also expressing some 
+anxiety that may have been contributing to your shortness of 
+breath. You were given a medication called Ativan for your 
+anxiety that also seemed to help your breathing.
+
+During your admission you were seen by the pulmonary 
+specialists. They recommended a CT scan that showed that you 
+have extensive COPD but did not show any infection. They also 
+suggested increasing the dose of your Advair inhaler, which we 
+did.
+
+If you feel short of breath, first please check your oxygen 
+level. If it is less than 90, you can use oxygen and your 
+inhaler. If not, try to wait a few minutes, take a few deep 
+breaths and see if your shortness of breath improves. You can 
+use the medication called Ativan(lorazepam) to help with the 
+shortness of breath(no more than three times a day). If still 
+not improved, you can use one of the inhalers/oxygen. 
+
+Please follow-up with all your appointments as listed below and 
+continue to take all of your medications as prescribed. If you 
+experience any of the danger signs listed you should call your 
+doctor immediately or go to the Emergency Room.
+
+We wish you the best!
+
+Sincerely,
+Your ___ Care Team
+ 
+Followup Instructions:
+___

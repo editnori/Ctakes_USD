@@ -1,0 +1,208 @@
+ 
+Name:  ___                    Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Penicillins / Dilantin ___
+ 
+Attending: ___.
+ 
+Chief Complaint:
+diarrhea
+ 
+Major Surgical or Invasive Procedure:
+none
+
+ 
+History of Present Illness:
+Ms. ___ is an ___ F with a medical history notable for 
+irritable bowel syndrome and dementia. 
+
+She reports no problems with her bowels for many years until the 
+acute onset of diarrhea ___ morning. Prior to 
+this event she had no recent travel or sick contacts but did eat 
+corned beef and cabbage at her local ___ hall (last ___ was 
+___). She noted nausea with non-bloody, 
+non-bilious vomitting and loose watery diarrhea. She had no 
+fever, abdominal cramping, or blood in her stool.
+
+Since that time her nausea/vomitting have improved but her 
+diarrhea has not improved despite Imodium. She was unable to 
+keep down oral foods and presented to the ED today. 
+
+Vital signs on arrival to ___ ED: T 97.6, P 97, BP 167/81, 
+100% on RA. Her evaluation in the ED was notable for guaiac 
+positive stool, a WBC count of 4.1, and an elevated BUN to 33. 
+In the ED she received 1 liter of normal saline.
+
+Review of Systems: Pain assessment on arrival to the floor: ___ 
+(no pain). No recent illnesses. No fevers, chills, or night 
+sweats. No SOB, cough, or chest pain. No urinary symptoms. Other 
+systems reviewed in detail and all otherwise negative.
+ 
+Past Medical History:
+Hypertension
+Dementia
+Osteoporosis
+Irritable bowel syndrome
+Macrocytosis of unclear etiology
+Left ear hearing loss
+Status post hysterectomy
+Status post appendectomy
+Status post ovarian cyst removal
+Cataract surgery
+Glaucoma
+ 
+Social History:
+___
+Family History:
+Not relevant to the current admission.
+ 
+Physical Exam:
+Vital Signs: T 98.6, P 64, BP 124/72, 95% on RA.
+
+Physical examination:
+- Gen: Elderly female sitting up in bed in NAD.
+- HEENT: Hard of hearing. Right ear better than left.
+- Chest: Normal respirations and breathing comfortably on room 
+air. Lungs clear to auscultation bilaterally.
+- CV: Regular rhythm. Normal S1, S2. No murmurs or gallops. JVP 
+<5 cm. 
+- Abdomen: Normal bowel sounds. Soft, nontender, nondistended. 
+- Extremities: No ankle edema.
+- Neuro: Alert, oriented x ___. Most of history aided by 
+daughter. Does not know home medications or specifics timing of 
+recent events. Has short-term memory impairment. Speech and 
+language are normal. 
+- Psych: Appearance, behavior, and affect all normal.
+
+ 
+Pertinent Results:
+Admission Labs:
+___ 09:35AM BLOOD WBC-4.1 (Neuts-58 Bands-2 Lymphs-24 
+Monos-15* Eos-0 Baso-1 ___ Myelos-0) RBC-4.40 
+Hgb-14.9 Hct-43.5 MCV-99* MCH-33.8* MCHC-34.2 RDW-13.2 Plt 
+___
+___ 09:35AM BLOOD Glucose-118* UreaN-33* Creat-1.1 Na-144 
+K-3.4 Cl-107 HCO3-21* AnGap-19 ALT-21 AST-22 AlkPhos-53 
+TotBili-0.6 Lipase-16 Albumin-4.6
+ - ___ 10:30AM URINE Color-Yellow Appear-Hazy Sp ___ 
+Blood-NEG Nitrite-NEG Protein-30 Glucose-NEG Ketone-NEG 
+Bilirub-NEG Urobiln-NEG pH-6.0 Leuks-NEG RBC-1 WBC-4 Bacteri-MOD 
+Yeast-NONE Epi-0 CastGr-7* CastHy-93* CastCel-1*
+.
+Microbiology:
+___ Stool Cultures:
+___ 9:58 pm STOOL     CONSISTENCY: WATERY      Source: 
+Stool. 
+   FECAL CULTURE (Pending): 
+   CAMPYLOBACTER CULTURE (Pending): 
+   CLOSTRIDIUM DIFFICILE TOXIN A & B TEST (Final ___: 
+      Feces negative for C.difficile toxin A & B by EIA. 
+           (Reference Range-Negative). 
+.
+___ Urine Cultures NGTD
+___ 06:47AM BLOOD WBC-6.6# RBC-3.72* Hgb-12.3 Hct-36.5 
+MCV-98 MCH-33.2* MCHC-33.8 RDW-12.6 Plt ___
+___ 06:47AM BLOOD Glucose-93 UreaN-12 Creat-0.7 Na-143 
+K-3.7 Cl-109* HCO3-28 AnGap-10
+___ 09:35AM BLOOD ALT-21 AST-22 AlkPhos-53 TotBili-0.6
+___ 09:35AM BLOOD cTropnT-<0.01
+___ 06:47AM BLOOD Calcium-8.2* Phos-2.4* Mg-1.___ y/o F with PMhx of IBS and Dementia who presented with ___ 
+days of nausea, vomiting and non-bloody diarrhea. Pt was notably 
+dehydrated on admission with acute renal failure and symptomatic 
+orthostasis. She was treated with IVF and bowel rest.  
+Infectious work up including Cdiff returned negative and 
+presentation was most consistent with norovirus.  Pt was slowly 
+advanced a diet and diarrhea improved.  Renal function returned 
+to baseline with IVF and pt was tolerating a bland diet without 
+any evidence of orthostasis by the day of discharge.  Pt was 
+seen by ___ who felt that she was safe for discharge home without 
+services.  
+.
+Conjunctivitis (left eye): At the time of admission, pt reported 
+being treated with azithromycin drops for left eye 
+conjunctivitis but was having ongoing symptoms. Pt was started 
+on erythromycin opthalmic ointment with some improvement in 
+conjunctival injection.  She was instructed to monitor for any 
+worsening in eye symptoms and was scheduled for follow up with 
+her PCP.
+.
+Otherwise, there were no changes made to her chronic medication 
+regimen 
+.
+Code Status: DNR/DNI confirmed on admission with patient and her 
+HCP.
+
+ 
+Medications on Admission:
+-list confirmed with primary caregiver on admission-
+___ 10 mg daily 
+Namenda 10 mg daily
+Aspirin 162.5 mg daily    
+Raloxifene (Evista) 60 mg daily   
+Multivitamin daily
+Glucosamine    
+Calcium supplement
+Cholecalciferol (Vitamin D3) 1,000 units daily   
+Ascorbic Acid SR 500 mg daily
+ 
+Discharge Medications:
+1. donepezil 5 mg Tablet Sig: Two (2) Tablet PO HS (at bedtime). 
+ 
+2. Namenda 10 mg Tablet Sig: One (1) Tablet PO qhs ().  
+3. aspirin 162 mg Tablet, Delayed Release (E.C.) Sig: One (1) 
+Tablet, Delayed Release (E.C.) PO once a day.  
+4. raloxifene 60 mg Tablet Sig: One (1) Tablet PO once a week.  
+5. multivitamin  Oral
+6. Glucosamine  Oral
+7. Vitamin D  Oral
+8. ascorbic acid  Oral
+9. Calcium 500  Oral
+10. erythromycin 5 mg/gram (0.5 %) Ointment Sig: 0.5 inch 
+Ophthalmic four times a day for 5 days: apply to left eye  for 
+another 5 days .
+Disp:*qs tube* Refills:*0*
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Primary: 
+Gastrointestinal Virus
+Dehydration 
+Symptomatic orthostasis
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+You were admitted with an acute diarrheal illness and 
+dehydration.  This was likely due to a virus which can be very 
+contagious.  You have been treated with IV fluids and supportive 
+care with improvement in your symptoms.  You have been seen by 
+physical therapy who agree that you are safe to return home 
+today.  We encourage you take as much oral hydration as possible 
+and continue advancing your diet as tolerated.  Please keep your 
+appointment with Dr. ___ on ___.
+.
+We have given you a new prescription to help treat the left eye 
+conjunctivitis, please continue using the erythromycin ointment 
+for another 5 days.  If you develop any rash on your face, 
+fevers, visual changes or worsening in eye symptoms, please call 
+your PCP or return for urgent evaluation.
+.
+Otherwise, we have not made any changes to your medications
+ 
+Followup Instructions:
+___

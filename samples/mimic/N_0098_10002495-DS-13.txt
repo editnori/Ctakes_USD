@@ -1,0 +1,405 @@
+ 
+Name:  ___                  Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   M
+ 
+Service: MEDICINE
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___.
+ 
+Chief Complaint:
+cardiogenic ___, NSTEMI
+ 
+Major Surgical or Invasive Procedure:
+- cardiac catheterization with DES to mid-LAD occlusion via R 
+radial access
+- IABP placement and removal
+ 
+History of Present Illness:
+Mr. ___ is a ___ M with HTN, HLD, DMII, and prior MI with 
+medical management w/o cath presented to ___ with ___ 
+transferred to ___ for catheterization for concern for STEMI. 
+
+Patient has long standing angina pain w/ exertion. On ___ night 
+had acute onset b/l non-radiating ___ CP not resolved with SL 
+NTG that persisted on ___ morning. In addition had 3 episodes 
+of diarrhea and weakness/malaise so he went to ___. No 
+orthopnea, PND, ___ edema, palpitations, or SOB. 
+
+In the ED, initial vitals were:  
+Exam: Chest pain ___ nonradiating
+Labs: Trop I 1.14, WBC 29.6, Hct 38.7, Plt 148, INR 1.25, Na 
+127, K+ 4.6, BUN 30/Cr1.86
+Imaging: EKG showed ST elevations in AVR (2mm), borderline 
+elevation in V1, and otherwise diffuse ST depressions. Bedside 
+ECHO w/ septal wall motion abnormalities. CXR w/o any acute 
+abnormalities. 
+Patient was given: Heparin gtt, Nitro gtt, ASA 324mg, Ticagrelor 
+180mg @ 1500, Vanco 125mg PO, ___
+
+Transferred to ___ for cardiac cath. Vitals on transfer were: 
+106/64, 86, 100% on 2L, afebrile
+Cath lab where he still had ___ pain on heparin and nitro gtt. 
+Catheterization showed mid-LAD septal occlusion, diffuse disease 
+throughout RCA, complete occlusion of circumflex w/ collaterals, 
+and 20% stenosis of L main. DES to mid-LAD occlusion via R 
+radial access. Hypotensive throughout so given 750cc IVF. 
+Coughing post-procedure with LVEDP 25 so given Lasix 20mg IV. 
+Was then hypertensive to 150 so given further Lasix 40mg IV.
+
+Admitted to CCU for hypotension throughout procedure, WBC 30, 
+and lack of ___ beds. In the CCU, patient reports no chest pain 
+but continues to have productive cough and diarrhea.
+
+Of note, two weeks ago had endoscopy and diagnosed with H 
+Pylori. Currently on clarithromycin and amoxicillin. On ___ 
+night developed diarrhea. Also had 15lb weight loss in past 4 
+months.
+
+ 
+Past Medical History:
+1) HTN
+2) HLD
+3) DMII
+4) CAD s/p MI - medically managed
+5) H. Pylori
+6) Spinal stenosis
+ 
+Social History:
+___
+Family History:
+Father: possible dilated cardiomyopathy
+No family history of early MI, arrhythmia, or sudden cardiac 
+death; otherwise non-contributory.  
+ 
+Physical Exam:
+On admission:
+---------------
+VS: afebrile, 160/80, 114, 94% on 15L Non-rebreather
+Weight: 69kg
+Tele: NSR
+Gen: Slightly tachypneic older man audibly wheezing but 
+comfortably finishing sentences 
+HEENT: EOMI, PERRLA,
+NECK: No JVD
+CV: Tachycardic, difficult to appreciate heart sounds due to 
+significant rhonchi 
+LUNGS: b/l rhonchi throughout w/ mild end expiratory wheezing 
+and R base crackles
+ABD: Soft, Non-tender, non-distended
+EXT: 2+ L radial pulses, R arm w/ band in place and normal 
+motor/sensory function intact distally, RLE non-palpable DP but 
+dopplerable, 1+ LLE DP. b/l ___ slightly cold but normal 
+sensation w/ full motor strength and ROM
+SKIN: No rashes or chronic edematous changes
+NEURO: Alert and attentive, AOX3, Moving all extremities
+
+At discharge:
+--------------
+Weight:  63.7kg (63.4) 
+I/O: 980/800
+T 98.4 BP 123/68 (102-133/62-87) P 86 (71-100) RR 20 O2 99% RA   
+ 
+Gen: awake, alert, oriented to self, date, hospital
+HEENT: EOMI, PERRLA,
+NECK: No JVD
+CV: Tachycardic, difficult to appreciate heart sounds 
+LUNGS:  Bibasilar crackles
+ABD: Soft, Non-tender, non-distended
+EXT: 2+ b/l radial pulses, R arm  normal motor/sensory function 
+intact distally, RLE non-palpable DP but dopplerable, trace 
+edema b/l. b/l ___ slightly cold but normal sensation w/ full 
+motor strength and ROM
+SKIN: No rashes or chronic edematous changes
+NEURO: Alert and attentive, AOX3, Moving all extremities
+
+ 
+Pertinent Results:
+Labs on Admission:
+-------------------
+___ 09:23PM   WBC-36.8* RBC-4.40* HGB-14.0 HCT-40.6 MCV-92 
+MCH-31.8 MCHC-34.5 RDW-12.5 RDWSD-41.8
+___ 09:23PM   PLT SMR-NORMAL PLT COUNT-176
+___ 09:23PM   NEUTS-81* BANDS-10* LYMPHS-3* MONOS-6 EOS-0 
+BASOS-0 ___ MYELOS-0 AbsNeut-33.49* AbsLymp-1.10* 
+AbsMono-2.21* AbsEos-0.00* AbsBaso-0.00*
+___ 09:23PM   ___ PTT-49.6* ___
+___ 09:23PM   GLUCOSE-264* UREA N-30* CREAT-1.4* 
+SODIUM-129* POTASSIUM-4.1 CHLORIDE-96 TOTAL CO2-14* ANION 
+GAP-23*
+___ 09:23PM   CALCIUM-8.2* PHOSPHATE-3.0 MAGNESIUM-1.7 
+CHOLEST-157
+___ 09:23PM   %HbA1c-5.9 eAG-123
+___ 09:23PM   CK-MB-44* cTropnT-0.69*
+___ 09:23PM   TRIGLYCER-90 HDL CHOL-42 CHOL/HDL-3.7 
+LDL(CALC)-97
+___ 09:23PM   HYPOCHROM-NORMAL ANISOCYT-NORMAL POIKILOCY-1+ 
+MACROCYT-NORMAL MICROCYT-NORMAL POLYCHROM-NORMAL BURR-1+
+
+Labs at Discharge:
+-------------------
+___ 05:50AM BLOOD WBC-11.2* RBC-3.59* Hgb-11.2* Hct-34.7* 
+MCV-97 MCH-31.2 MCHC-32.3 RDW-13.2 RDWSD-46.7* Plt ___
+___ 05:50AM BLOOD Neuts-76* Bands-0 Lymphs-16* Monos-5 
+Eos-2 Baso-0 ___ Metas-1* Myelos-0 AbsNeut-8.51* 
+AbsLymp-1.79 AbsMono-0.56 AbsEos-0.22 AbsBaso-0.00*
+___ 05:50AM BLOOD ___ PTT-27.3 ___
+___ 05:50AM BLOOD Glucose-165* UreaN-43* Creat-1.1 Na-136 
+K-4.3 Cl-103 HCO3-22 AnGap-15
+___ 05:50AM BLOOD ALT-38 AST-32 LD(LDH)-481* AlkPhos-99 
+TotBili-0.4
+___ 05:50AM BLOOD Albumin-3.3* Calcium-8.4 Phos-3.6 Mg-2.4
+
+Relevant Imaging:
+-----------------
+TTE ___:
+The left atrium is mildly dilated. The estimated right atrial 
+pressure is ___ mmHg. Left ventricular wall thicknesses and 
+cavity size are normal. Overall left ventricular systolic 
+function is moderately depressed (LVEF= ? 35-40% - assessment 
+limited by suboptimal image quality and significant beat to beat 
+variability). There is hypokinesis of the mid-distal LV segments 
+and apex. There is no ventricular septal defect. Right 
+ventricular chamber size and free wall motion are normal. The 
+ascending aorta is mildly dilated. The number of aortic valve 
+leaflets cannot be determined. There is mild aortic valve 
+stenosis (valve area 1.2-1.9cm2). No aortic regurgitation is 
+seen. The mitral valve appears structurally normal with trivial 
+mitral regurgitation. The pulmonary artery systolic pressure 
+could not be determined. There is a trivial/physiologic 
+pericardial effusion. 
+
+Compared with the prior focused study (images reviewed) of 
+___, left ventricular systolic function is probably 
+similar, although suboptimal image quality of both studies 
+precludes definite comparison.  
+
+___ CXR
+ 
+IMPRESSION:  
+  
+Generalized improvement in both lungs is probably due to 
+decrease in pulmonary 
+edema, now mild, and decrease in previous moderate right pleural 
+effusion.  
+There is still substantial consolidation in the right upper lobe 
+probably 
+pneumonia but the bilateral lower lobe components have improved. 
+ Heart size 
+top-normal.  No pneumothorax. 
+
+MICRO
+========
+FINAL REPORT ___
+
+   C. difficile DNA amplification assay (Final ___: 
+      CLOSTRIDIUM DIFFICILE. 
+         Positive for toxigenic C. difficile by the Illumigene 
+DNA
+         amplification.            (Reference Range-Negative). 
+
+___ 12:53 pm SPUTUM      Source: Expectorated. 
+
+   GRAM STAIN (Final ___: 
+      <10 PMNs and <10 epithelial cells/100X field. 
+      2+   ___ per 1000X FIELD):   GRAM NEGATIVE ROD(S). 
+      2+   ___ per 1000X FIELD):   BUDDING YEAST. 
+      QUALITY OF SPECIMEN CANNOT BE ASSESSED. 
+
+   RESPIRATORY CULTURE (Preliminary): 
+      Further incubation required to determine the presence or 
+absence of
+      commensal respiratory flora. 
+      KLEBSIELLA PNEUMONIAE.    SPARSE GROWTH. 
+         Cefazolin interpretative criteria are based on a dosage 
+regimen of
+         2g every 8h. 
+      GRAM NEGATIVE ROD #2.    SPARSE GROWTH. 
+
+                              SENSITIVITIES: MIC expressed in 
+MCG/ML
+                      
+_________________________________________________________
+                             KLEBSIELLA PNEUMONIAE
+                             |   
+AMPICILLIN/SULBACTAM--     4 S
+CEFAZOLIN-------------   <=4 S
+CEFEPIME--------------   <=1 S
+CEFTAZIDIME-----------   <=1 S
+CEFTRIAXONE-----------   <=1 S
+CIPROFLOXACIN---------<=0.25 S
+GENTAMICIN------------   <=1 S
+MEROPENEM-------------<=0.25 S
+PIPERACILLIN/TAZO-----   <=4 S
+TOBRAMYCIN------------   <=1 S
+TRIMETHOPRIM/SULFA----   <=1 S
+
+ 
+Brief Hospital Course:
+Mr. ___ is a ___ M w/ HTN, HLD, DMII, and old MI transferred 
+from ___ w/ NSTEMI w/ diffuse 3 vessel disease s/p DES to 
+mid-LAD occlusion found to have severe Cdiff.
+
+ACTIVE ISSUES
+==============
+# NSTEMI 
+NSTEMI based on STE aVR and V1 but o/w ST depressions w/ 
+significant multi vessel disease but significant stenosis in LAD 
+s/p DES that occluded diagnonal. Repeat cath unchanged. He was 
+started on plavix, atorvastatin, ACE-I, and metoprolol. Echo 
+showed LVEF 35-40% with hypokinesis of mid-distal LV segments 
+and apex. He was started on warfarin for his hypokinetic LV as 
+well as his atrial fibrillation as discussed below.
+
+# ___
+Possibly mixed cardiogenic/distributive given mixed venous O2 
+65%, CI 2.1, PCWP 25. He initially required pressors and balloon 
+pump and was then successfully weaned off both. He remained 
+hemodynamically stable during rest of hospital course. 
+
+# Atrial Fibrillation
+Patient with a reported history of paroxysmal afib per his PCP 
+for which he was maintained on digoxin as well as aspirin 325mg 
+PO daily prior to admission.  He was found to be in atrial 
+fibrillation during admission and the decision was made to 
+anticoagulate with Coumadin.  He was continued on home dose 
+digoxin.  His home dose aspirin was decreased as discussed above 
+with initiation of Coumadin.
+
+# Hematuria: 
+Likely traumatic in setting of systemic anticoagulation, as 
+patient pulled at ___. Cytology was negative. He will followup 
+outpatient with urology.
+
+# Dyspnea: 
+Patient had acute episodes of dyspnea.  This was mainly 
+attributed to pulmonary edema and improved with diruesis.  
+Additionally, CXR showed possible consolidation of RUL, 
+concerning for aspiration pneumonia. However, treatment was 
+deferred as he had no other focal signs of infectious pna.  He 
+did have sputum cultures which grew Klebsiella pneumonia but on 
+discussion with ID, felt this did not warrant any treatment as 
+he was asymptomatic.  He was discharged on po lasix 20 mg daily 
+with next electrolytes to be checked ___. 
+ 
+# C diff, severe: 
+Had loose stool in setting of antibiotic tx for Hpylori 
+(initiated outpatient). Given WBC >15, ___, age >___ treated as 
+severe. Patient was started on vancomycin 125mg PO qid for 14 
+day course (day ___, last day ___. 
+ 
+# GASTROESOPHAGEAL REFLUX DISEASE (GERD): 
+Endoscopy confirmed H Pylori treated with PPI + 
+clarithromycin/amoxicillin since ___ for 14 days. Omeprazole 
+was continued. Antibiotics held in setting of c.diff infection. 
+
+# Delirium: 
+Patient with frequent sundowning during hospitalization 
+requiring Seroquel po.
+
+CHRONIC ISSUES
+===============
+# Spinal Stenosis: Continued gabapentin, d/ced naproxen.  Did 
+not complain of pain throughout hospital course.  Explained he 
+should not take any more NSAIDS in setting of recent ACS and now 
+on Coumadin, Plavix and asa. 
+# DM: maintained on ISS during admission and discharged on home 
+glipizide and metformin
+# HTN: Home dose metoprolol uptitrated.  Home dose lisinopril 
+decreased.  Home dose imdur discontinued.
+# HLD: Transitioned home dose simvastatin to atorvastatin
+
+TRANSITIONAL ISSUES
+=====================
+- Discharge weight: 63.7kg 
+- patient will require urology followup given hematuria during 
+admission.  Urine cytology negative.
+- patient will need to be treated for hpylori once he completes 
+a course of PO Vancomycin for Severe CDiff
+- Please check electrolytes on ___ on lasix
+- Coumadin initiated given atrial fibrillation, ASA decreased 
+from 325 mg to 81 mg daily
+- Started on Plavix given recent stent placement, atorvastatin 
+80 mg (stopped simvastatin), and Lasix 20 mg po daily
+- Home metoprolol was increased from 25 mg XL to 50 mg XL daily, 
+lisinopril decreased to 2.5 mg po daily and home imdur was 
+discontinued
+- patient will need to continue a 14 day course of PO Vanc (day 
+___- ___ last day ___ for cdiff infection
+- Patient instructed to not take any NSAIDS
+- SLP treatment at rehab for pharyngeal strengthening exercises
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Gabapentin 600 mg PO TID 
+2. Naproxen 500 mg PO DAILY 
+3. MetFORMIN (Glucophage) 500 mg PO BID 
+4. Metoprolol Succinate XL 25 mg PO DAILY 
+5. GlipiZIDE 2.5 mg PO BID 
+6. Simvastatin 40 mg PO QPM 
+7. Isosorbide Mononitrate (Extended Release) 60 mg PO DAILY 
+8. Lisinopril 10 mg PO DAILY 
+9. Digoxin 0.125 mg PO DAILY 
+10. Aspirin 325 mg PO DAILY 
+
+ 
+Discharge Medications:
+1. Aspirin EC 81 mg PO DAILY 
+2. Digoxin 0.125 mg PO DAILY 
+3. Metoprolol Succinate XL 50 mg PO DAILY 
+4. Atorvastatin 80 mg PO QPM 
+5. Warfarin 4 mg PO DAILY16 
+6. GlipiZIDE 2.5 mg PO BID 
+7. Clopidogrel 75 mg PO DAILY 
+8. Omeprazole 20 mg PO BID 
+9. Vancomycin Oral Liquid ___ mg PO Q6H 
+10. MetFORMIN (Glucophage) 500 mg PO BID 
+11. Gabapentin 600 mg PO TID 
+12. Lisinopril 2.5 mg PO DAILY 
+13. Furosemide 20 mg PO DAILY 
+
+ 
+Discharge Disposition:
+Extended Care
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+NSTEMI s/p ___, likely mixed cardiogenic/distributive 
+Hematuria
+Dyspnea
+C. dif, severe
+GERD
+Delirium
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+ 
+Discharge Instructions:
+Dear Mr. ___,
+
+You were admitted to ___ because you were experiencing chest 
+pain due to a heart attack. In the cath lab you were found to 
+have blockage of your arteries, and a stent was placed. We also 
+managed your low blood pressure, infectious diarrhea, and trauma 
+from foley placement. You responded well. 
+
+Please continue taking your medications as prescribed.  You are 
+being started on coumadin.  Please do not take any non-steroidal 
+antiinflammatory drugs (NSAIDS) such as ibuprofen, advil, 
+motrin, aleve, naproxen.  Please also follow-up with your 
+cardiology and PCP appointments as scheduled
+
+It was a pleasure taking care of you,
+Your ___ Care Team
+ 
+Followup Instructions:
+___

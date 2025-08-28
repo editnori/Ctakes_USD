@@ -1,0 +1,317 @@
+ 
+Name:  ___             Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+IV Dye, Iodine Containing Contrast Media / Oxycodone / 
+cilostazol
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Pneumonia identified by outpatient CXR
+
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+___ PMH of Asthma, COPD, tobacco use,  p/w 4 days of "cold like" 
+symptoms. Pt noted that she has a chronic cough at baseline, 
+worse at night, but noted that her cough was now productive of 
+___ sputum and was a/w wheezing and subjective fevers (but did 
+not take her temperature). Pt also noted that baseline DOE 
+increased to mild shortness of breath at rest during the same 
+time period. Pt took tylenol and robitussin to good effect. Pt 
+denied any CP, but noted that she felt her heart "flutter" 
+during this time period. No changed in her 2 pillow orthopnea.
+
+Pt did not have any recent sick contacts and denied any 
+association w/ headache, sore throat, sneezing, rhinorrhea, 
+nausea, vomiting, diarrhea, abdominal pain.  
+
+In ED VS were T97.8 P78 BP136/97 R18 O296%NC. WBC was normal but 
+pt noted to have wheezing on exam, and CXR was suggestive of RML 
+PNA so was given 125mg methylprednisone, 750mg levaquin, and 
+combo nebs (albuterol/ipratropim). CHEM/Coags/UA negative. 
+
+Given co-morbidities, decision was made to admit pt while 
+initiating Abx therapy. 
+
+ 
+Past Medical History:
+ASTHMA/COPD/Tobacco use
+Peripheral Arterial disease s/p recent common iliac stenting
+ATRIAL TACHYCARDIA   
+ATYPICAL CHEST PAIN   
+CERVICAL RADICULITIS   
+CERVICAL SPONDYLOSIS   
+CORONARY ARTERY DISEASE   
+HEADACHE   
+HIP REPLACEMENT   
+HYPERLIPIDEMIA   
+HYPERTENSION   
+OSTEOARTHRITIS   
+HERPES ZOSTER   
+TOBACCO ABUSE   
+ATRIAL FIBRILLATION   
+ANXIETY    
+GASTROINTESTINAL BLEEDING   
+OSTEOARTHRITIS   
+ATHEROSCLEROTIC CARDIOVASCULAR DISEASE   
+PERIPHERAL VASCULAR DISEASE   
+URINARY TRACT INFECTION   
+CATARACT SURGERY ___ 
+
+Surgery:
+BILATERAL COMMON ILIAC ARTERY STENTING ___ 
+BUNIONECTOMY   
+HIP REPLACEMENT   
+PRIOR CESAREAN SECTION   
+GANGLION CYST 
+ 
+Social History:
+___
+Family History:
+Mother: ___, HTN  
+Father: ___ CA  
+Brother: CA?  
+Brother: ___ 
+
+ 
+Physical ___:
+ADMISSION PHYSICAL EXAM:
+============================
+Tm98.4, BP141/82, P71, R20, O297%RA
+GENERAL: AOx3, pleasant affect, NAD
+HEENT: MMM. no LAD. no JVD
+HEART: RRR, S1/S2 normal, no murmurs/gallops/rubs.
+LUNGS: Coarse breath sounds b/l with expiratory wheezing 
+diffusely, RML/RLL crackles, no incr WOB (no accessory muscle 
+use), no resp distress
+ABDOMEN: soft, nontender, nondistended. normoactive BS  
+EXT: Warm, dry, well perfused, 1+ peripheral edema to mid calves 
+b/l 
+SKIN: dry, warm, no rashes
+NEURO/PSYCH: AOx3, fluent speech, MAE spontaneously
+
+DISCHARGE PHYSICAL EXAM:
+============================
+Tm:98.7, BP148-154/76-89, P72-81, R20, O29___-99RA
+GENERAL: AOx3, pleasant affect, NAD
+HEENT: MMM. no LAD. no JVD
+HEART: RRR, S1/S2 normal, no murmurs/gallops/rubs.
+LUNGS: Coarse breath sounds b/l with scant expiratory wheeze, no 
+incr WOB (no accessory muscle use), no resp distress
+ABDOMEN: soft, nontender, nondistended. normoactive BS  
+EXT: Warm, dry, well perfused, 1+ peripheral edema to mid calves 
+b/l 
+SKIN: dry, warm, no rashes
+NEURO/PSYCH: AOx3, fluent speech, MAE spontaneously
+
+ 
+Pertinent Results:
+PERTINENT LABS:
+==========================
+___ 05:13PM BLOOD WBC-5.0 RBC-4.70 Hgb-13.8 Hct-42.7 MCV-91 
+MCH-29.3 MCHC-32.3 RDW-14.3 Plt ___
+___ 06:05AM BLOOD WBC-9.0# RBC-4.25 Hgb-12.6 Hct-38.6 
+MCV-91 MCH-29.7 MCHC-32.7 RDW-14.4 Plt ___
+___ 05:13PM BLOOD Neuts-53.9 ___ Monos-6.6 Eos-0.5 
+Baso-0.8
+___ 05:13PM BLOOD ___ PTT-31.7 ___
+___ 12:39PM BLOOD UreaN-16 Creat-0.8 Na-138 K-3.5 Cl-98 
+HCO3-29 AnGap-15
+___ 06:05AM BLOOD Glucose-142* UreaN-15 Creat-0.7 Na-138 
+K-3.5 Cl-100 HCO3-29 AnGap-13
+___ 12:39PM BLOOD proBNP-233
+___ 05:13PM BLOOD Calcium-9.9 Phos-2.5* Mg-1.8
+___ 05:35PM BLOOD Lactate-1.5
+
+PERTINENT MICRO:
+==========================
+Urinalysis:
+___ 05:30PM URINE Blood-NEG Nitrite-NEG Protein-TR 
+Glucose-NEG Ketone-NEG Bilirub-NEG Urobiln-NEG pH-7.0 Leuks-NEG
+___ 05:30PM URINE RBC-0 WBC-<1 Bacteri-NONE Yeast-NONE 
+Epi-1
+
+Blood Cx (___): NGTD (preliminary)
+
+PERTINENT STUDIES:
+==========================
+
+EKG: Sinus rhythm with frequent atrial premature beats. Left 
+bundle-branch block with extensive repolarization abnormalities. 
+Compared to the previous tracing of ___ the rhythm is now 
+sinus 
+
+CXR (___): Right middle lobe opacity concerning for 
+pneumonia.
+ 
+Brief Hospital Course:
+BRIEF HOSPITAL COURSE:
+===========================
+___ PMH of Asthma, COPD, CAD, tobacco use, who presented w/ 4 
+days of shortness of breath and productive cough ___ sputum), 
+who was found to have RML opacity on CXR at outpatient clinic so 
+was referred to the ED.
+
+ACTIVE ISSUES:
+===========================
+#Community Acquired Pneumonia
+Pt presented to outpatient cardiology appointment w/ 4 days of 
+shortness of breath and productive cough ___ sputum), and was 
+referred to primary care clinic (Dr. ___. Dr ___ 
+___ a CXR which showed RML opacity on CXR. Given pt's 
+underlying lung pathology (COPD ___ longstanding tobacco use), 
+and multiple co-morbidities, she was admitted briefly to 
+initiate antibiotics/steroids and ensure that she remained 
+clinically stable.
+
+While RML opacification was suggestive of CAP, COPD flare was 
+also consideration given afebrile status and normal WBC. Exam 
+significant for afebrile status, saturation of 97% on RA 
+(baseline 95% RA), and coarse breath sounds w/ diffuse 
+expiratory wheezing.
+
+Pt was treated w/ Levaquin 750mg daily (planned 5d course), 
+steroids (recieved 125 methylprednisone then 4d course of PO 
+prednisone), and had nebulizer treatments for symptom relief. 
+
+Given her clinical stability, she was discharged home with an 
+outpatient f/u w/ PCP (Dr. ___ on ___. Until then, 
+pt will need to complete course of Antibiotics and Steroids. Pt 
+was instructed to continue her outpatient COPD treatment regimen 
+on discharge.
+
+CHRONIC ISSUES:
+==========================
+#Coronary Artery Disease
+Pt has a known history of CAD, but did not have any chest pain 
+during this hospitalization and EKG was unchanged from prior. 
+Accordingly, she was continued on home dosages of plavix, 
+aspirin, isosorbid mononitrate and diltiazem
+
+#Hypertension
+Pt has a known history of hypertension and was continued on her 
+home dose hydrochlorothiazide.
+
+#Glaucoma
+Pt was continued on latanoprost drops before bed.
+
+#Hyperlipidemia
+Pt was continued on home dose simvastatin.
+
+Transitional Issues:
+=====================
+1. Pt will need to continue Levaquin 750mg daily to complete 5 
+day course (Day 1 - ___
+2. Pt will need to continue Prednisone 40mg daily to complete 4 
+day course (Day 1 - ___
+3. Pt will need to f/u w/ PCP ___ ___ to assess response to 
+tx and for general health care maintenance
+4. Pt will need to use Nebulizer treatments at home for 
+symptomatic relief for the next wk until pneumonia clears
+
+Code Status: FULL (confirmed w/ pt)
+Contact: ___ (husband ___, ___ (___)
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Albuterol 0.083% Neb Soln 1 NEB IH Q6H:PRN shortness of 
+breath 
+2. Albuterol Inhaler 2 PUFF IH Q4H:PRN shortness of breath 
+3. Symbicort (budesonide-formoterol) 160-4.5 mcg/actuation 
+inhalation BID 
+4. Clopidogrel 75 mg PO DAILY 
+5. Diltiazem Extended-Release 180 mg PO DAILY 
+6. Fluticasone Propionate NASAL 2 SPRY NU DAILY:PRN nasal 
+congestion 
+7. Hydrochlorothiazide 50 mg PO DAILY 
+8. Isosorbide Mononitrate (Extended Release) 240 mg PO DAILY 
+9. Latanoprost 0.005% Ophth. Soln. 1 DROP LEFT EYE HS 
+10. Simvastatin 20 mg PO DAILY 
+11. Theophylline ER 300 mg PO BID 
+12. Tiotropium Bromide 1 CAP IH DAILY 
+13. Acetaminophen 325 mg PO Q4H:PRN pain 
+14. Aspirin 81 mg PO DAILY 
+15. Calcarb 600 With Vitamin D (calcium carbonate-vitamin D3) 
+315/200 mg oral daily 
+16. cod liver oil 1,250-135 unit oral BID 
+17. Multivitamins W/minerals 1 TAB PO DAILY 
+
+ 
+Discharge Medications:
+1. Acetaminophen 325 mg PO Q4H:PRN pain 
+2. Albuterol 0.083% Neb Soln 1 NEB IH Q6H:PRN shortness of 
+breath 
+3. Aspirin 81 mg PO DAILY 
+4. Clopidogrel 75 mg PO DAILY 
+5. Diltiazem Extended-Release 180 mg PO DAILY 
+6. Fluticasone Propionate NASAL 2 SPRY NU DAILY:PRN nasal 
+congestion 
+7. Hydrochlorothiazide 50 mg PO DAILY 
+8. Isosorbide Mononitrate (Extended Release) 240 mg PO DAILY 
+9. Latanoprost 0.005% Ophth. Soln. 1 DROP LEFT EYE HS 
+10. Multivitamins W/minerals 1 TAB PO DAILY 
+11. Simvastatin 20 mg PO DAILY 
+12. Theophylline ER 300 mg PO BID 
+13. Tiotropium Bromide 1 CAP IH DAILY 
+14. Albuterol Inhaler 2 PUFF IH Q4H:PRN shortness of breath 
+15. Calcarb 600 With Vitamin D (calcium carbonate-vitamin D3) 
+315/200 mg oral daily 
+16. cod liver oil 1,250-135 unit oral BID 
+17. Symbicort (budesonide-formoterol) 160-4.5 mcg/actuation 
+INHALATION BID 
+18. Cepastat (Phenol) Lozenge 2 LOZ PO Q2H:PRN sore throat 
+RX *phenol [Cepastat] 14.5 mg 2 lozenges every ___ as needed 
+for sore throat Disp #*36 Lozenge Refills:*0
+19. Levofloxacin 750 mg PO Q24H Duration: 2 Days 
+RX *levofloxacin 750 mg 1 tablet(s) by mouth daily Disp #*2 
+Tablet Refills:*0
+20. PredniSONE 40 mg PO DAILY Duration: 2 Days 
+RX *prednisone 20 mg 2 tablet(s) by mouth daily Disp #*4 Tablet 
+Refills:*0
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Community Acquired Pneumonia
+COPD
+Asthma
+
+ 
+Discharge Condition:
+Discharge Condition: Stable
+Mental Status: AOx3 (Baseline)
+Ambulatory Status: Baseline
+
+ 
+Discharge Instructions:
+Ms. ___,
+
+It was a pleasure taking care of you while you were hospitalized 
+at ___. As you know, you were 
+admitted for initial treatment of pneumonia, to ensure that you 
+were responding well to the antibiotics, given your history of 
+COPD/Asthma. Fortunately, you responded quite well to the 
+Antiobiotics, Steroids, and Nebulizer treatments that were 
+administered. Since your breathing was stable and you were 
+responding appropriately to treatments, you were discharged to 
+home. However, you should be vigilant in making sure that you 
+continue the antibiotics & steroids for the short course listed 
+on the medication page. You should also be sure to see Dr. ___ 
+at your next appointment to ensure that your pneumonia has 
+resolved.
+ 
+Followup Instructions:
+___
