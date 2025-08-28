@@ -20,6 +20,9 @@ JAVA_CP="$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HO
 
 IN=""; OUT=""; RUNNERS="${RUNNERS:-16}"; XMX_MB="${XMX_MB:-6144}"; THREADS="${THREADS:-6}"; MAKE_REPORTS=0
 PARENT_DIR=""; RESUME=0; ONLY=""; SKIP_PARENT=0; CONSOLIDATE=1; KEEP_SHARDS=0; SHARD_SEED="${SEED:-}"
+ENHANCED_CSV=${ENHANCED_CSV:-0}
+CONSOLIDATE_ASYNC=0
+declare -a CONSOLIDATE_PIDS=()
 declare -a REPORT_PIDS=()
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -37,6 +40,7 @@ while [[ $# -gt 0 ]]; do
     --no-consolidate) CONSOLIDATE=0; shift 1;;
     --keep-shards) KEEP_SHARDS=1; shift 1;;
     --seed) SHARD_SEED="$2"; shift 2;;
+    --consolidate-async) CONSOLIDATE_ASYNC=1; shift 1;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac
 done
@@ -247,41 +251,51 @@ run_pipeline_sharded() {
     done
   } || true
 
-  # Optional summary workbook across shards (short name)
-  # Post-processing: consolidate shards into top-level folders before any report
+  # Post-processing: consolidate shards, optionally async; then optionally build per-pipeline report
+  local rpt="$parent/ctakes-${name}-${gshort}.xlsx"
   if [[ "$CONSOLIDATE" -eq 1 ]]; then
     if [[ "$any_fail" -eq 0 ]]; then
-      echo "[post] Consolidating shards into top-level outputs for $name/$gshort"
-      if [[ "$KEEP_SHARDS" -eq 1 ]]; then
-        bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards || true
+      if [[ "$CONSOLIDATE_ASYNC" -eq 1 ]]; then
+        echo "[post] Queueing consolidation for $name/$gshort (async)"
+        if [[ "$KEEP_SHARDS" -eq 1 ]]; then
+          if [[ "$MAKE_REPORTS" -gt 0 ]]; then
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards && \
+              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true ) &
+          else
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards ) &
+          fi
+        else
+          if [[ "$MAKE_REPORTS" -gt 0 ]]; then
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" && \
+              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true ) &
+          else
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" ) &
+          fi
+        fi
+        CONSOLIDATE_PIDS+=($!)
       else
-        bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" || true
+        echo "[post] Consolidating shards into top-level outputs for $name/$gshort"
+        if [[ "$KEEP_SHARDS" -eq 1 ]]; then
+          bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards || true
+        else
+          bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" || true
+        fi
+        # Build report synchronously if requested
+        if [[ "$MAKE_REPORTS" -eq 1 ]]; then
+          echo "[report] Building per-pipeline report (sync, summary): $rpt"
+          bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true
+          echo "- Report: $rpt"
+        elif [[ "$MAKE_REPORTS" -eq 2 ]]; then
+          echo "[report] Building per-pipeline report (async, summary): $rpt"
+          ( bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true ) &
+          REPORT_PIDS+=($!)
+        fi
       fi
     else
       echo "[post] Skipping consolidation due to shard failures; resume then consolidate"
     fi
   else
     echo "[post] Skipping consolidation (--no-consolidate)"
-  fi
-
-  # Optional summary workbook (after consolidation)
-  # Optional per-document CSVs that match Clinical Concepts columns
-  if [[ "$ENHANCED_CSV" -eq 1 && "$any_fail" -eq 0 ]]; then
-    echo "[post] Building per-document Clinical Concepts CSVs into $ENH_CSV_DIR/"
-    : # Enhanced per-doc CSV now produced in-pipeline via ClinicalConceptCsvWriter
-  fi
-
-  # Optional summary workbook (after consolidation)
-  if [[ "$MAKE_REPORTS" -eq 1 ]]; then
-    local rpt="$parent/ctakes-${name}-${gshort}.xml"
-    echo "[report] Building per-pipeline report (sync, summary): $rpt"
-    bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true
-    echo "- Report: $rpt"
-  elif [[ "$MAKE_REPORTS" -eq 2 ]]; then
-    local rpt="$parent/ctakes-${name}-${gshort}.xml"
-    echo "[report] Building per-pipeline report (async, summary): $rpt"
-    ( bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M summary || true ) &
-    REPORT_PIDS+=($!)
   fi
   if [[ "$any_fail" -eq 1 ]]; then
     echo "Completed $name on group $gshort with warnings -> $parent" >&2
@@ -312,4 +326,12 @@ if [[ "$MAKE_REPORTS" -eq 2 && ${#REPORT_PIDS[@]} -gt 0 ]]; then
     wait "$rpid" || true
   done
   echo "[report] All async reports completed."
+fi
+
+if [[ "$CONSOLIDATE_ASYNC" -eq 1 && ${#CONSOLIDATE_PIDS[@]} -gt 0 ]]; then
+  echo "[post] Waiting for async consolidation/report jobs to finish (${#CONSOLIDATE_PIDS[@]} jobs) ..."
+  for cpid in "${CONSOLIDATE_PIDS[@]}"; do
+    wait "$cpid" || true
+  done
+  echo "[post] All async consolidation/report jobs completed."
 fi

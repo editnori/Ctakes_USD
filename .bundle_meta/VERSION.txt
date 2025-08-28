@@ -1,0 +1,3 @@
+Bundle built: 2025-08-28T08:40:57Z
+cTAKES tree: /mnt/c/Users/Layth M Qassem/Desktop/CtakesBun/apache-ctakes-6.0.0-bin
+NOTICE present.

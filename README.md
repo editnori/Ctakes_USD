@@ -69,6 +69,7 @@ scripts/           # runners, consolidation, detached helper, multi-run summary
 pipelines/         # compare pipelines and shared writer includes
 tools/reporting/   # Excel workbook builder, CSV aggregator
 tools/reporting/uima/ClinicalConceptCsvWriter.java  # in-pipeline per-note CSV writer
+samples/mimic/     # place ~100 de‑identified MIMIC notes (.txt) for validation
 ```
 
 I ignore the cTAKES distro and runtime outputs in git. Keep those local.
@@ -100,3 +101,8 @@ All commands (reference)
 - `scripts/run_detached.sh` — run any script under `nohup`, write log + PID to `logs/`.
 
 - `scripts/build_multi_run_summary.sh` — one summary across multiple runs.
+
+Validation (100‑note MIMIC sample)
+- Place ~100 `.txt` notes under `samples/mimic/`
+- Run: `scripts/validate_mimic.sh`
+- Compares against `samples/mimic_output/manifest.txt` if present, or seeds it on first run.
