@@ -242,6 +242,8 @@ chmod +x scripts/*.sh
 # Place ~100 .txt files in samples/mimic/ first, then:
 scripts/validate_mimic.sh
 # Results will be compared/seeded at samples/mimic_output/manifest.txt
+# To accept updated expected outputs, re-run with:
+#   scripts/validate_mimic.sh --update-baseline
 ```
 
 ### 4. Run Large Compare (CSV-mode reports)

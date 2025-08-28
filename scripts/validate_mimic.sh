@@ -28,6 +28,7 @@ SEED="${SEED:-42}"
 CONSOLIDATE_ASYNC=0
 ONLY=""
 
+UPDATE_BASELINE=0
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -i|--in) IN_DIR="$2"; shift 2;;
@@ -40,6 +41,7 @@ while [[ $# -gt 0 ]]; do
     --only) ONLY="$2"; shift 2;;
     --subset-mode) SUBSET_MODE="$2"; _EXPLICIT_SUBSET_MODE=1; shift 2;;
     --consolidate-async) CONSOLIDATE_ASYNC=1; shift 1;;
+    --update-baseline) UPDATE_BASELINE=1; shift 1;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac
 done
@@ -129,13 +131,21 @@ BASELINE_MAN="$BASELINE_DIR/manifest.txt"
 mkdir -p "$BASELINE_DIR"
 if [[ -f "$BASELINE_MAN" ]]; then
   echo "Comparing against baseline: $BASELINE_MAN"
-  # Ignore volatile header fields (e.g., Date) when comparing manifests
-  if diff -u <(sed '/^# Date:/d' "$BASELINE_MAN") <(sed '/^# Date:/d' "$CUR_MAN") >/dev/null; then
+  # Normalize both sides: drop volatile Date header and strip trailing timestamp suffix from bracketed run names
+  normalize() {
+    sed -E '/^# Date:/d; s/\] /]/; s/^(\[[^]_]+)_[0-9]{8}-[0-9]{6}(\])/\1\2/' "$1"
+  }
+  if diff -u <(normalize "$BASELINE_MAN") <(normalize "$CUR_MAN") >/dev/null; then
     echo "VALIDATION OK: current outputs match baseline manifest (ignoring Date)."
   else
     echo "VALIDATION MISMATCH: differences found vs baseline manifest (ignoring Date):" >&2
-    diff -u <(sed '/^# Date:/d' "$BASELINE_MAN") <(sed '/^# Date:/d' "$CUR_MAN") || true
-    exit 1
+    diff -u <(normalize "$BASELINE_MAN") <(normalize "$CUR_MAN") || true
+    if [[ "$UPDATE_BASELINE" -eq 1 ]]; then
+      echo "Updating baseline manifest (per --update-baseline): $BASELINE_MAN"
+      cp -f "$CUR_MAN" "$BASELINE_MAN"
+    else
+      exit 1
+    fi
   fi
 else
   echo "Seeding baseline manifest at: $BASELINE_MAN"

@@ -331,9 +331,24 @@ def main():
             tmp[r.pipeline].append((r.doc, r.cui, r.negated, r.count))
         per_pipeline_perdoc = {k: sorted(v, key=lambda x: (x[0], x[1])) for k, v in tmp.items()}
 
-    mapping: Optional[Dict[str, str]] = None
+    # Default locked color palette per pipeline (legacy-aligned), can be overridden via --pipeline-colors
+    default_mapping: Dict[str, str] = {
+        "S_core": "#00A3E0",
+        "S_core_rel": "#4F81BD",
+        "S_core_temp": "#9BBB59",
+        "S_core_temp_coref": "#2C3E50",
+        "S_core_temp_coref_smoke": "#8AB4F8",
+        "D_core_rel": "#C0504D",
+        "D_core_temp": "#8064A2",
+        "D_core_temp_coref": "#4BACC6",
+        "D_core_temp_coref_smoke": "#2E86C1",
+        "WSD_Compare": "#8E44AD",
+        "TsSectionedTemporalCoref": "#E07A00",
+    }
+
+    mapping: Optional[Dict[str, str]] = dict(default_mapping)
     if args.pipeline_colors:
-        mapping = {}
+        # Override defaults with user-provided mapping
         for part in re.split(r"[;,]", args.pipeline_colors):
             part = part.strip()
             if not part:
@@ -364,4 +379,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
