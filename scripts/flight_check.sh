@@ -128,8 +128,14 @@ fi
 for k in "${keys[@]}"; do
   p="${SETS[$k]:-}"
   [[ -n "$p" && -f "$p" ]] || fail "Missing pipeline file for $k: $p"
-  if rg -n "jdbc(Url|Driver)" -S "$p" >/dev/null 2>&1; then
-    fail "Pipeline $k embeds JDBC settings (should be only in sanitized XML): $(basename "$p")"
+  if command -v rg >/dev/null 2>&1; then
+    if rg -n "jdbc(Url|Driver)" -S "$p" >/dev/null 2>&1; then
+      fail "Pipeline $k embeds JDBC settings (should be only in sanitized XML): $(basename "$p")"
+    fi
+  else
+    if grep -qE 'jdbc(Url|Driver)' "$p"; then
+      fail "Pipeline $k embeds JDBC settings (should be only in sanitized XML): $(basename "$p")"
+    fi
   fi
 done
 pass "Pipeline descriptors found and clean (no JDBC settings)"
@@ -166,11 +172,9 @@ else
   has_url=$(grep -qE 'jdbc:hsqldb:file:.*ifexists=true;readonly=true' "$san" && echo 1 || echo 0)
 fi
 if [[ "$has_driver" -eq 1 && "$has_url" -eq 1 ]]; then
-   rg -n "jdbc:hsqldb:file:.*ifexists=true;readonly=true" -S "$san" >/dev/null; then
   pass "Sanitized XML uses JDBCDriver + jdbcUrl with flags (dry-run)"
 else
   fail "Sanitized XML missing expected driver or jdbcUrl flags (dry-run)"
 fi
 
 echo "== Flight checks complete."
-

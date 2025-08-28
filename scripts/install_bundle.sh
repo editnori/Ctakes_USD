@@ -34,7 +34,7 @@ install_deps() {
   fi
   echo "Installing prerequisites via apt-get (Java 17 JDK + CLI tools)..."
   ${SUDO}apt-get update -y
-  ${SUDO}apt-get install -y openjdk-17-jdk curl coreutils findutils gawk sed grep tar
+  ${SUDO}apt-get install -y openjdk-17-jdk curl coreutils findutils gawk sed grep tar ripgrep
 }
 
 while [[ $# -gt 0 ]]; do
