@@ -33,6 +33,8 @@ PARENT_DIR=""; RESUME=0; ONLY=""; SKIP_PARENT=0; CONSOLIDATE=1; KEEP_SHARDS=0; S
 CONSOLIDATE_ASYNC=1
 declare -a CONSOLIDATE_PIDS=()
 declare -a REPORT_PIDS=()
+# UMLS key handling: default to env UMLS_KEY, fallback to project default if provided
+UMLS_KEY="${UMLS_KEY:-6370dcdd-d438-47ab-8749-5a8fb9d013f2}"
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -i|--in) IN="$2"; shift 2;;
@@ -280,7 +282,7 @@ run_pipeline_sharded() {
       attempt=1
       last_ec=0
       while (( attempt <= 3 )); do
-        stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m \
+        stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m ${UMLS_KEY:+-Dctakes.umls_apikey=$UMLS_KEY} \
           -Dorg.slf4j.simpleLogger.defaultLogLevel=info \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary=warn \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary.lookup2=warn \
@@ -290,7 +292,7 @@ run_pipeline_sharded() {
           -Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=warn \
           -cp "$JAVA_CP" \
           org.apache.ctakes.core.pipeline.PiperFileRunner \
-          -p "$tuned_piper" -i "$in_dir" -o "$outdir" -l "$xml" \
+          -p "$tuned_piper" -i "$in_dir" -o "$outdir" -l "$xml" ${UMLS_KEY:+--key $UMLS_KEY} \
           | sed -u "s/^/[${name}_$i] /" | tee -a "$outdir/run.log"
         ec=${PIPESTATUS[0]}
         last_ec=$ec
