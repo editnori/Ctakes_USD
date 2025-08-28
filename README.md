@@ -7,6 +7,21 @@ What you get
 - Per‑note “Clinical Concepts” CSVs (written during the run) for quick spot‑checks.
 - XMI for each note (full record) if you need to drill down.
 
+Clinician quick start (5 steps)
+1) Install once (Ubuntu/Debian): see “First‑time install” below (2 commands).
+2) Put ~100 sample notes under `samples/mimic/` and validate:
+   - `scripts/validate_mimic.sh` (or `scripts/validate_mimic.sh --only S_core`)
+   - You’ll see a small manifest to verify results. OK ⇒ proceed.
+3) Set inputs and run at scale (safe defaults):
+   - `export INPUT_ROOT=/workspace/SD5000_1`
+   - `export OUT_BASE=/workspace/outputs/compare`
+   - `export RUNNERS=32 THREADS=8 XMX_MB=8192 SEED=42`
+   - `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"`
+4) Monitor progress (any time):
+   - `scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"`
+5) Open the workbook(s):
+   - Per‑pipeline `.xlsx` files live in each pipeline run folder under `OUT_BASE`.
+
 Prerequisites
 - Java 17+
 - cTAKES 6.0.0. Set `CTAKES_HOME` to `apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0` (or your install).
@@ -30,6 +45,14 @@ scripts/install_bundle.sh --deps \
   -u https://github.com/editnori/Ctakes_USD/releases/download/bundle/CtakesBun-bundle.tgz \
   -s 0aae08a684ee5332aac0136e057cac0ee4fc29b34f2d5e3c3e763dc12f59e825
 chmod +x scripts/*.sh
+```
+
+Updating to latest
+```
+cd /workspace/CtakesBun
+git fetch origin
+git checkout main
+git pull --ff-only origin main
 ```
 
 Quick start
@@ -258,7 +281,7 @@ scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
 
 Validation (100‑note MIMIC sample)
 - Place ~100 `.txt` notes under `samples/mimic/`
-- Run: `scripts/validate_mimic.sh`
+- Run: `scripts/validate_mimic.sh` (or `--only S_core` to validate one system)
 - Compares against `samples/mimic_output/manifest.txt` if present, or seeds it on first run.
 
 ## Pipelines: What Runs by Default
