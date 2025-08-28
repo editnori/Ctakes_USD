@@ -1,6 +1,8 @@
 // Shared writer block: consistent outputs across pipelines
 
-// XMI first: full CAS snapshot
+// Clean up CAS invariants before writing XMI
+add tools.fixes.PredicateRelationsDedupe
+// XMI: full CAS snapshot
 add FileTreeXmiWriter SubDirectory=xmi
 
 // Tabular semantic mention summaries
