@@ -22,6 +22,16 @@ scripts/install_bundle.sh --deps
 scripts/install_bundle.sh --deps -u https://…/CtakesBun-bundle.tgz -s <sha256>
 ```
 
+First‑time install (Ubuntu/Debian)
+```
+git clone https://github.com/editnori/Ctakes_USD.git CtakesBun
+cd CtakesBun
+scripts/install_bundle.sh --deps \
+  -u https://github.com/editnori/Ctakes_USD/releases/download/bundle/CtakesBun-bundle.tgz \
+  -s 0aae08a684ee5332aac0136e057cac0ee4fc29b34f2d5e3c3e763dc12f59e825
+chmod +x scripts/*.sh
+```
+
 Quick start
 1) Start the run (detached optional):
    - `scripts/run_detached.sh scripts/run_compare_cluster.sh -i <input_dir> -o <output_base> --reports`
@@ -250,3 +260,39 @@ Validation (100‑note MIMIC sample)
 - Place ~100 `.txt` notes under `samples/mimic/`
 - Run: `scripts/validate_mimic.sh`
 - Compares against `samples/mimic_output/manifest.txt` if present, or seeds it on first run.
+
+## Pipelines: What Runs by Default
+
+By default the runner executes a set of pipelines; if Temporal models are found, you get 10 pipelines, otherwise 4 (non‑temporal).
+
+Key prefixes
+- `S_`: Section‑aware (TsFullTokenizerPipeline). Keeps section boundaries for downstream AEs.
+- `D_`: Default core (TsDefaultTokenizerPipeline). No explicit section handling.
+
+Suffixes
+- `_core`: Core NLP + Dictionary + WSD + Assertion + Writers.
+- `_rel`: Adds clinical relations (degree/location/modifier) via TsRelationSubPipe.
+- `_temp`: Adds temporal events/links via THYME classifiers (requires models).
+- `_coref`: Adds coreference resolution (Markable chains).
+- `_smoke`: Adds Smoking Status classification AEs (rule‑based + PCS).
+
+Pipelines (keys → file → summary)
+- `S_core` → `pipelines/compare/TsSectionedFast_WSD_Compare.piper` — Section‑aware tokenization, dictionary lookup, WSD, assertion, unified writers.
+- `S_core_rel` → `pipelines/compare/TsSectionedRelation_WSD_Compare.piper` — `S_core` + clinical relations (degree/location modifiers).
+- `S_core_temp` → `pipelines/compare/TsSectionedTemporal_WSD_Compare.piper` — `S_core` + temporal events/relations (THYME models).
+- `S_core_temp_coref` → `pipelines/compare/TsSectionedTemporalCoref_WSD_Compare.piper` — `S_core_temp` + coreference resolution.
+- `S_core_temp_coref_smoke` → `pipelines/compare/TsSectionedTemporalCoref_WSD_Smoking_Compare.piper` — `S_core_temp_coref` + Smoking Status annotators.
+- `D_core_rel` → `pipelines/compare/TsDefaultRelation_WSD_Compare.piper` — Default tokenizer `D_core` + relations.
+- `D_core_temp` → `pipelines/compare/TsDefaultTemporal_WSD_Compare.piper` — `D_core` + temporal events/relations.
+- `D_core_temp_coref` → `pipelines/compare/TsDefaultTemporalCoref_WSD_Compare.piper` — `D_core_temp` + coreference.
+- `D_core_temp_coref_smoke` → `pipelines/compare/TsDefaultTemporalCoref_WSD_Smoking_Compare.piper` — `D_core_temp_coref` + Smoking Status.
+- `D_core_coref` → `pipelines/compare/TsDefaultCoref_WSD_Compare.piper` — `D_core` + coreference (no temporal, no relations).
+
+What “Core” does
+- Tokenize, POS tag, chunk; dictionary lookup (fast HSQL rare‑word index); WSD (`tools.wsd.SimpleWsdDisambiguatorAnnotator` picks one best); assertion features (polarity/uncertainty/conditional/generic/subject) with a safety default subject (patient).
+- Writers produce: XMI, `bsv_table/`, `csv_table/`, `html_table/`, `cui_list/`, `cui_count/`, `bsv_tokens/`, and `csv_table_concepts/` (per‑doc Clinical Concepts with full columns).
+
+Select a single pipeline (or a subset)
+- One pipeline: `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only S_core --reports`
+- Multiple: `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only "S_core D_core_temp" --reports`
+- Temporal only (if models present): `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only "S_core_temp D_core_temp" --reports`
