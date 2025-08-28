@@ -102,6 +102,150 @@ All commands (reference)
 
 - `scripts/build_multi_run_summary.sh` — one summary across multiple runs.
 
+## Copy-Paste Commands (Ubuntu/Debian)
+
+These are ready to run from `/workspace/CtakesBun`.
+
+### 1. Update Repo to Latest Main
+
+Non-destructive (fast-forward only):
+
+```bash
+cd /workspace/CtakesBun
+git fetch origin
+git checkout main
+git pull --ff-only origin main
+```
+
+Discard local changes (force update):
+
+```bash
+cd /workspace/CtakesBun
+git fetch origin main
+git reset --hard origin/main
+```
+
+### 2. Fix Script Permissions (one-time)
+
+```bash
+chmod +x scripts/*.sh
+```
+
+### 3. Quick Validation (100-note sample)
+
+```bash
+# Place ~100 .txt files in samples/mimic/ first, then:
+scripts/validate_mimic.sh
+# Results will be compared/seeded at samples/mimic_output/manifest.txt
+```
+
+### 4. Run Large Compare (async consolidate + async reports)
+
+```bash
+export INPUT_ROOT="/workspace/SD5000_1"
+export OUT_BASE="/workspace/outputs/compare"
+export RUNNERS=32
+export THREADS=8
+export XMX_MB=8192
+export SEED=42
+ulimit -n 65535 || true
+
+scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"
+```
+
+### 5. Check Progress and Outputs
+
+Check overall progress:
+
+```bash
+scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
+```
+
+Monitor live logs (replace `*` with actual run directory once created):
+
+```bash
+tail -n 50 -F "$OUT_BASE"/*/shard_*/run.log
+```
+
+List generated Excel workbooks:
+
+```bash
+ls -1 "$OUT_BASE"/*/ctakes-*.xlsx
+```
+
+Sanity-check input distribution (per subfolder):
+
+```bash
+for dir in "$INPUT_ROOT"/*/; do 
+  [ -d "$dir" ] || continue
+  count=$(find "$dir" -type f -name "*.txt" | wc -l)
+  [ "$count" -gt 0 ] && echo "$(basename "$dir"): $count files"
+done
+```
+
+Watch overall XMI progress and latest file (10s interval):
+
+```bash
+watch -n 10 '
+  total=$(find "$INPUT_ROOT" -type f -name "*.txt" | wc -l);
+  done=$(find "$OUT_BASE" -type f -name "*.xmi" | wc -l);
+  pct=$((done*100/ (total>0?total:1) ));
+  echo "Progress: $done/$total (${pct}%)";
+  echo "Files remaining: $((total-done))";
+  ls -lt "$OUT_BASE"/*/*.xmi 2>/dev/null | head -1
+'
+```
+
+Example progress output:
+
+```
+Input notes:        30000
+Pipelines planned:   10 (S_core S_core_rel D_core_rel D_core_coref S_core_temp S_core_temp_coref D_core_temp D_core_temp_coref S_core_temp_coref_smoke D_core_temp_coref_smoke)
+Expected XMI total:  300000
+Current XMI count:   504
+Progress (XMI):      0.17%
+
+Expected all files:  2100000  (7 per doc per pipeline)
+Current all files:   3054
+Progress (all types): 0.15%
+```
+
+### 6. Install Bundle on New Machine
+
+```bash
+scripts/install_bundle.sh --deps \
+  -u https://github.com/editnori/Ctakes_USD/releases/download/bundle/CtakesBun-bundle.tgz \
+  -s 0aae08a684ee5332aac0136e057cac0ee4fc29b34f2d5e3c3e763dc12f59e825
+```
+
+### All-in-One Main Workflow
+
+```bash
+# 1) Update repo
+cd /workspace/CtakesBun
+git fetch origin
+git checkout main
+git pull --ff-only origin main
+
+# 2) Fix permissions if needed
+chmod +x scripts/*.sh
+
+# 3) Set environment variables
+export INPUT_ROOT="/workspace/SD5000_1"
+export OUT_BASE="/workspace/outputs/compare"
+export RUNNERS=32
+export THREADS=8
+export XMX_MB=8192
+export SEED=42
+ulimit -n 65535 || true
+
+# 4) Run the comparison (async consolidate + async reports)
+scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"
+
+# 5) Check progress in another terminal
+scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
+```
+
 Validation (100‑note MIMIC sample)
 - Place ~100 `.txt` notes under `samples/mimic/`
 - Run: `scripts/validate_mimic.sh`
