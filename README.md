@@ -15,11 +15,11 @@ Prerequisites
 If you want a one‑shot install with your exact cTAKES build and dictionary, use the bundle workflow in `docs/BUNDLE.md`:
 
 ```
-# Local file present:
-scripts/install_bundle.sh
+# Local file present (Ubuntu/Debian, also installs deps):
+scripts/install_bundle.sh --deps
 
 # Or download from your release URL:
-scripts/install_bundle.sh -u https://…/CtakesBun-bundle.tgz -s <sha256>
+scripts/install_bundle.sh --deps -u https://…/CtakesBun-bundle.tgz -s <sha256>
 ```
 
 Quick start
