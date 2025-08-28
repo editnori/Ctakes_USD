@@ -59,6 +59,20 @@ for t in "${types[@]}"; do
 done
 shopt -u nullglob
 
+# Sweep stray cuicounts anywhere under shard_* (not only shard_*/cui_count)
+mkdir -p "$PARENT/cui_count"
+stray_moved=0
+while IFS= read -r -d '' f; do
+  bn="$(basename "$f")"
+  if [[ ! -e "$PARENT/cui_count/$bn" ]]; then
+    mv "$f" "$PARENT/cui_count/$bn"
+    stray_moved=$((stray_moved+1))
+  fi
+done < <(find "$PARENT" -maxdepth 2 -type f -name '*.cuicount.bsv' -print0)
+if [[ "$stray_moved" -gt 0 ]]; then
+  echo "[consolidate] Moved $stray_moved stray *.cuicount.bsv files into cui_count/"
+fi
+
 # Ensure a combined run.log exists at parent level (do not overwrite non-empty)
 if [[ ! -s "$PARENT/run.log" ]]; then
   combined="$PARENT/run.log"
@@ -103,4 +117,18 @@ if [[ "$MAKE_WB" -eq 1 ]]; then
   echo "[consolidate] Building workbook ($WB_MODE): $WB_PATH"
   bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$PARENT" -w "$WB_PATH" -M "$WB_MODE" || true
   echo "[consolidate] Workbook created: $WB_PATH"
+fi
+
+# Build aggregated CUI counts workbook/CSVs (best-effort)
+BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+if command -v python3 >/dev/null 2>&1; then
+  COLORS="S_core=#00A3E0;S_core_rel=#4F81BD;S_core_temp=#9BBB59;S_core_temp_coref=#2C3E50;D_core_rel=#C0504D;D_core_temp=#8064A2;D_core_temp_coref=#4BACC6;WSD_Compare=#8E44AD;TsSectionedTemporalCoref=#E07A00"
+  OUT_BASE="$PARENT/cui_count/cui_counts"
+  python3 "$BASE_DIR/scripts/consolidate_cuicount.py" \
+    --input-root "$PARENT" \
+    --out-base "$OUT_BASE" \
+    --derive-pipeline-from-path \
+    --pipeline-colors "$COLORS" \
+    --include-per-doc \
+    || echo "[consolidate] WARN: cuicount aggregation step failed; continuing"
 fi
