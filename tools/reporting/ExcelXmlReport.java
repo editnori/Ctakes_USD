@@ -190,18 +190,15 @@ public class ExcelXmlReport {
         );
         rows.add(header);
 
-        // Candidate directories: top-level csv_table_concepts or csv_table, then shard_*/csv_table_concepts or csv_table
+        // Candidate directories: prefer only csv_table_concepts at top-level and in shards.
+        // We intentionally avoid csv_table to prevent mixing column schemas that inflate doc counts.
         List<Path> csvDirs = new ArrayList<>();
         Path c1 = outDir.resolve("csv_table_concepts");
-        Path c2 = outDir.resolve("csv_table");
         if (Files.isDirectory(c1)) csvDirs.add(c1);
-        if (Files.isDirectory(c2)) csvDirs.add(c2);
         try (DirectoryStream<Path> shards = Files.newDirectoryStream(outDir, p -> Files.isDirectory(p) && p.getFileName().toString().startsWith("shard_"))) {
             for (Path sh : shards) {
                 Path sc1 = sh.resolve("csv_table_concepts");
-                Path sc2 = sh.resolve("csv_table");
                 if (Files.isDirectory(sc1)) csvDirs.add(sc1);
-                if (Files.isDirectory(sc2)) csvDirs.add(sc2);
             }
         } catch (IOException ignore) {}
 
@@ -216,11 +213,21 @@ public class ExcelXmlReport {
                     if (fileCount % 1000 == 0) System.out.println("[report]   aggregated " + fileCount + " per-doc CSVs from " + dir.getFileName());
                     List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
                     if (lines.isEmpty()) continue;
-                    // Read header to confirm, but accept any order as long as counts match
+                    // Read header and require an exact match to the expected columns to avoid pulling in csv_table rows
                     String h = lines.get(0);
                     // Simple CSV parse for header to count columns
                     List<String> cols = parseCsvLine(h);
                     int expected = header.size();
+                    boolean headerMatches = cols.size() == expected;
+                    if (headerMatches) {
+                        for (int i=0;i<expected;i++) {
+                            if (!header.get(i).equalsIgnoreCase(cols.get(i))) { headerMatches = false; break; }
+                        }
+                    }
+                    if (!headerMatches) {
+                        // Skip files that are not our per-doc Clinical Concepts CSVs
+                        continue;
+                    }
                     for (int i=1;i<lines.size();i++) {
                         String line = lines.get(i);
                         if (line == null) continue;
@@ -449,7 +456,7 @@ public class ExcelXmlReport {
                 "Pipeline Dir","Documents","Average Seconds per Document","Init Time (s)","Process Time (s)","Total Time (s)",
                 "Clinical Concepts","Avg Confidence","% Concepts with DocTimeRel",
                 "Relations per Doc","Coref Markables per Doc",
-                "Distinct CUIs per Doc","Disambig Rate","Avg Candidate Count","Sec per 100 Concepts",
+                "Distinct CUIs","Disambig Rate","Avg Candidate Count","Sec per 100 Concepts",
                 "Score (general)","Recommended",
                 "Recommended (Speed)","Recommended (Temporal)","Recommended (Relations)",
                 "Reason","Run Log"
@@ -521,7 +528,8 @@ public class ExcelXmlReport {
             SubdirMetrics m = r.m; double docs = Math.max(1, m.docCount);
             double mentions = Math.max(1, m.mentionCount);
             double cpd = m.mentionCount / docs;
-            double dpd = m.distinctCuiCount > 0 ? (m.distinctCuiCount / docs) : 0.0;
+            // Use global distinct CUI count (not averaged per doc) for ranking and display
+            double dpd = m.distinctCuiCount;
             double conf = m.avgConfidence;
             double disr = m.mentionCount>0 ? (m.disambTrueCount/(double)m.mentionCount) : 0.0;
             double dtrp = m.mentionCount>0 ? (100.0*m.docTimeRelCount/m.mentionCount) : 0.0;
@@ -621,7 +629,7 @@ public class ExcelXmlReport {
             String dtrStr = m.mentionCount>0?String.format(java.util.Locale.ROOT, "%.1f%%", 100.0*m.docTimeRelCount/m.mentionCount):"";
             String rpdStr = m.docCount>0?String.format(java.util.Locale.ROOT, "%.2f", (double)m.relationCount/m.docCount):"";
             String corefStr = m.docCount>0?String.format(java.util.Locale.ROOT, "%.2f", (double)m.markableCount/m.docCount):"";
-            String dpdStr = m.docCount>0?String.format(java.util.Locale.ROOT, "%.2f", (double)m.distinctCuiCount/m.docCount):"";
+            String dpdStr = String.valueOf(m.distinctCuiCount);
             String disrStr = m.mentionCount>0?String.format(java.util.Locale.ROOT, "%.2f", (double)m.disambTrueCount/m.mentionCount):"";
             String acStr = m.mentionCount>0?String.format(java.util.Locale.ROOT, "%.2f", (double)m.candidateCountSum/m.mentionCount):"";
             double cpd = m.docCount>0 ? (double)m.mentionCount/m.docCount : 0.0;
