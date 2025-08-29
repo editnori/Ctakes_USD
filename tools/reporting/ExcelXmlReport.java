@@ -2987,8 +2987,9 @@ private static String[] semFromTui(String tui) {
         java.util.regex.Pattern writePat = java.util.regex.Pattern.compile("Writing XMI to .*[/\\\\]([^/\\\\]+)\\.txt\\.xmi");
         java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("d MMM yyyy HH:mm:ss", java.util.Locale.ENGLISH);
         // Also parse explicit timing markers from TimingStartAE/TimingEndAE if present
-        java.util.regex.Pattern tStart = java.util.regex.Pattern.compile("^\\[timing] START\\t([^\\t]+)\\t(\\d+)$");
-        java.util.regex.Pattern tEnd = java.util.regex.Pattern.compile("^\\[timing] END\\t([^\\t]+)\\t(\\d*)\\t(\\d+)\\t(\\-?\\d+)$");
+        // Handle both plain [timing] and prefixed formats like [S_core_000] [timing]
+        java.util.regex.Pattern tStart = java.util.regex.Pattern.compile("(?:^|\\[[^\\]]+\\]\\s+)\\[timing] START\\t([^\\t]+)\\t(\\d+)$");
+        java.util.regex.Pattern tEnd = java.util.regex.Pattern.compile("(?:^|\\[[^\\]]+\\]\\s+)\\[timing] END\\t([^\\t]+)\\t(\\d*)\\t(\\d+)\\t(\\-?\\d+)$");
         try (java.io.BufferedReader br = java.nio.file.Files.newBufferedReader(runLog, java.nio.charset.StandardCharsets.UTF_8)) {
             String line;
             while ((line = br.readLine()) != null) {
