@@ -631,6 +631,10 @@ public class ExcelXmlReport {
                     totalSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Total Run Time Elapsed"));
                     java.util.List<DocTiming> dtsR = parseDocTimings(rlog);
                     timedDocs = dtsR.size();
+                    // If document count is 0 but we have timed docs, use timed docs count
+                    if (m.docCount == 0 && timedDocs > 0) {
+                        m.docCount = timedDocs;
+                    }
                     if (m.docCount > 0) coverageStr = String.format(java.util.Locale.ROOT, "%.1f%%", (100.0 * timedDocs) / m.docCount);
                     // Fallbacks from processing window if any are empty
                     ProcWindow win = computeProcessingWindow(rlog);
@@ -669,7 +673,13 @@ public class ExcelXmlReport {
                     reason, r.runLog
             ));
             // Accumulate for parent-level CSV
-            try { addPipelineTimingRow(outDir, r.name, m.docCount, timedDocs, avgSecStr, initSecStr, procSecStr, totalSecStr, r.runLog); } catch (Exception ignore) {}
+            try { 
+                addPipelineTimingRow(outDir, r.name, m.docCount, timedDocs, avgSecStr, initSecStr, procSecStr, totalSecStr, r.runLog);
+                // Also consolidate individual timing CSVs into parent timing_csv directory
+                Path runDir = r.runLog != null && !r.runLog.isEmpty() ? 
+                    java.nio.file.Paths.get(r.runLog).getParent() : null;
+                if (runDir != null) consolidateTimingCsv(outDir, runDir);
+            } catch (Exception ignore) {}
         }
         return rows;
     }
@@ -1238,14 +1248,32 @@ public class ExcelXmlReport {
         return m;
     }
     private static String parseValueFromLog(Path runLog, String key) {
-        // Return the last occurrence (final summary), not the first
+        // For "Documents Processed", return the maximum value found (not the last occurrence)
+        // For other keys, return the last occurrence (final summary)
         String last = "";
+        int maxDocs = 0;
+        boolean isDocumentCount = key.equalsIgnoreCase("Documents Processed");
         try (java.io.BufferedReader br = java.nio.file.Files.newBufferedReader(runLog, java.nio.charset.StandardCharsets.UTF_8)) {
             String line; while ((line = br.readLine()) != null) {
                 int i = line.indexOf(':');
                 if (i > 0) {
                     String k = line.substring(0,i).trim();
-                    if (k.equalsIgnoreCase(key)) last = line.substring(i+1).trim();
+                    if (k.equalsIgnoreCase(key)) {
+                        String val = line.substring(i+1).trim();
+                        if (isDocumentCount) {
+                            try {
+                                int docCount = Integer.parseInt(val.replace(",", ""));
+                                if (docCount > maxDocs) {
+                                    maxDocs = docCount;
+                                    last = val;
+                                }
+                            } catch (Exception ignore) {
+                                last = val;
+                            }
+                        } else {
+                            last = val;
+                        }
+                    }
                 }
             }
         } catch (IOException ignore) {}
@@ -2891,6 +2919,43 @@ private static String[] semFromTui(String tui) {
         }
     }
     private static String nvlCsv(String s) { return (s==null||s.isEmpty())?"0":s; }
+    
+    private static void consolidateTimingCsv(Path parentOutDir, Path runDir) throws IOException {
+        if (parentOutDir == null || runDir == null) return;
+        Path srcCsv = runDir.resolve("timing_csv/timing.csv");
+        if (!java.nio.file.Files.isRegularFile(srcCsv)) return;
+        
+        Path destDir = parentOutDir.resolve("timing_csv");
+        java.nio.file.Files.createDirectories(destDir);
+        
+        // Create a consolidated CSV with all individual document timings
+        Path consolidatedCsv = destDir.resolve("all_document_timings.csv");
+        boolean exists = java.nio.file.Files.isRegularFile(consolidatedCsv);
+        
+        String runName = runDir.getFileName().toString();
+        try (java.io.BufferedReader br = java.nio.file.Files.newBufferedReader(srcCsv, java.nio.charset.StandardCharsets.UTF_8);
+             java.io.BufferedWriter bw = java.nio.file.Files.newBufferedWriter(consolidatedCsv, 
+                 java.nio.charset.StandardCharsets.UTF_8, 
+                 java.nio.file.StandardOpenOption.CREATE, 
+                 java.nio.file.StandardOpenOption.APPEND)) {
+            
+            String line = br.readLine(); // Read header
+            if (!exists && line != null) {
+                // Write header with pipeline column
+                bw.write("Pipeline," + line);
+                bw.newLine();
+            }
+            
+            // Write data lines with pipeline prefix
+            while ((line = br.readLine()) != null) {
+                if (!line.trim().isEmpty()) {
+                    bw.write(runName + "," + line);
+                    bw.newLine();
+                }
+            }
+        }
+    }
+    
     private static String escCsv(String s) {
         if (s == null) return "";
         if (s.contains(",") || s.contains("\"") || s.contains("\n")) return '"' + s.replace("\"","\"\"") + '"';
