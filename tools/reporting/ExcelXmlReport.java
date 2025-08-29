@@ -2834,9 +2834,28 @@ private static String[] semFromTui(String tui) {
         java.util.regex.Pattern startPat = java.util.regex.Pattern.compile("Started processing:\\s+([^\\s]+)");
         java.util.regex.Pattern writePat = java.util.regex.Pattern.compile("Writing XMI to .*[/\\\\]([^/\\\\]+)\\.txt\\.xmi");
         java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("d MMM yyyy HH:mm:ss", java.util.Locale.ENGLISH);
+        // Also parse explicit timing markers from TimingStartAE/TimingEndAE if present
+        java.util.regex.Pattern tStart = java.util.regex.Pattern.compile("^\\[timing] START\\t([^\\t]+)\\t(\\d+)$");
+        java.util.regex.Pattern tEnd = java.util.regex.Pattern.compile("^\\[timing] END\\t([^\\t]+)\\t(\\d*)\\t(\\d+)\\t(\\-?\\d+)$");
         try (java.io.BufferedReader br = java.nio.file.Files.newBufferedReader(runLog, java.nio.charset.StandardCharsets.UTF_8)) {
             String line;
             while ((line = br.readLine()) != null) {
+                java.util.regex.Matcher mts = tStart.matcher(line);
+                if (mts.find()) {
+                    String doc = stripTxt(mts.group(1));
+                    long ms = 0L; try { ms = Long.parseLong(mts.group(2)); } catch (Exception ignore) {}
+                    DocTiming dt = byDoc.computeIfAbsent(doc, k -> new DocTiming());
+                    dt.doc = doc; if (dt.startMs == 0L) dt.startMs = ms;
+                    continue;
+                }
+                java.util.regex.Matcher mte = tEnd.matcher(line);
+                if (mte.find()) {
+                    String doc = stripTxt(mte.group(1));
+                    long end = 0L; try { end = Long.parseLong(mte.group(3)); } catch (Exception ignore) {}
+                    DocTiming dt = byDoc.computeIfAbsent(doc, k -> new DocTiming());
+                    dt.doc = doc; dt.endMs = Math.max(dt.endMs, end);
+                    continue;
+                }
                 java.util.regex.Matcher m = tsPat.matcher(line);
                 if (!m.find()) continue;
                 String ts = m.group(1);
