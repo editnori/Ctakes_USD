@@ -628,6 +628,19 @@ public class ExcelXmlReport {
                     initSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Initialization Time Elapsed"));
                     procSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Processing Time Elapsed"));
                     totalSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Total Run Time Elapsed"));
+                    // Fallbacks from processing window if any are empty
+                    ProcWindow win = computeProcessingWindow(rlog);
+                    if (win != null) {
+                        if ((procSecStr==null || procSecStr.isEmpty()) && win.earliestStart!=null && win.latestEnd!=null && win.latestEnd > win.earliestStart) {
+                            procSecStr = String.valueOf((win.latestEnd - win.earliestStart)/1000L);
+                        }
+                        if ((initSecStr==null || initSecStr.isEmpty()) && win.runStart!=null && win.earliestStart!=null && win.earliestStart > win.runStart) {
+                            initSecStr = String.valueOf((win.earliestStart - win.runStart)/1000L);
+                        }
+                        if ((totalSecStr==null || totalSecStr.isEmpty()) && win.runStart!=null && win.latestEnd!=null && win.latestEnd > win.runStart) {
+                            totalSecStr = String.valueOf((win.latestEnd - win.runStart)/1000L);
+                        }
+                    }
                 }
             } catch (Exception ignore) {}
             String confStr = m.mentionCount>0?String.format(java.util.Locale.ROOT, "%.3f", m.avgConfidence):"";
@@ -1231,6 +1244,29 @@ public class ExcelXmlReport {
             }
         } catch (IOException ignore) {}
         return last;
+    }
+
+    private static class ProcWindow { Long runStart; Long earliestStart; Long latestEnd; }
+    private static ProcWindow computeProcessingWindow(Path runLog) {
+        if (runLog == null || !java.nio.file.Files.isRegularFile(runLog)) return null;
+        ProcWindow w = new ProcWindow();
+        java.text.SimpleDateFormat fmt = new java.text.SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", java.util.Locale.ENGLISH);
+        java.text.SimpleDateFormat fmtNoTz = new java.text.SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy", java.util.Locale.ENGLISH);
+        try (java.io.BufferedReader br = java.nio.file.Files.newBufferedReader(runLog, java.nio.charset.StandardCharsets.UTF_8)) {
+            String line; while ((line = br.readLine()) != null) {
+                int i = line.indexOf(':'); if (i <= 0) continue;
+                String k = line.substring(0,i).trim(); String v = line.substring(i+1).trim();
+                if (k.equalsIgnoreCase("Run Start Time")) {
+                    Long t = parseDateLenient(v, fmt, fmtNoTz); if (t != null) w.runStart = t;
+                } else if (k.equalsIgnoreCase("Processing Start Time")) {
+                    Long t = parseDateLenient(v, fmt, fmtNoTz); if (t != null && (w.earliestStart==null || t < w.earliestStart)) w.earliestStart = t;
+                } else if (k.equalsIgnoreCase("Processing End Time")) {
+                    Long t = parseDateLenient(v, fmt, fmtNoTz); if (t != null && (w.latestEnd==null || t > w.latestEnd)) w.latestEnd = t;
+                }
+            }
+        } catch (Exception ignore) {}
+        if (w.runStart==null && w.earliestStart==null && w.latestEnd==null) return null;
+        return w;
     }
 
     // Compute average seconds per doc using run-level Processing Start/End across shards.
@@ -2772,6 +2808,8 @@ private static String[] semFromTui(String tui) {
             double avgSec = (sum/1000.0) / dts.size();
             rows.add(Arrays.asList("Average Per-Note Duration (s)", String.format(Locale.ROOT, "%.2f", avgSec)));
             rows.add(Arrays.asList("Min/Max Per-Note Duration (s)", String.format(Locale.ROOT, "%.2f / %.2f", min/1000.0, max/1000.0)));
+            // Also write a CSV artifact for external consumption
+            try { writeTimingCsv(outDir, dts); } catch (Exception ignore) {}
         }
         
         // Top CUIs by total count
@@ -2808,6 +2846,27 @@ private static String[] semFromTui(String tui) {
             }
         }
         return total;
+    }
+
+    private static void writeTimingCsv(Path outDir, java.util.List<DocTiming> dts) throws IOException {
+        if (outDir == null || dts == null || dts.isEmpty()) return;
+        java.nio.file.Path dir = outDir.resolve("timing_csv");
+        java.nio.file.Files.createDirectories(dir);
+        java.nio.file.Path csv = dir.resolve("timing.csv");
+        try (java.io.BufferedWriter bw = java.nio.file.Files.newBufferedWriter(csv, java.nio.charset.StandardCharsets.UTF_8)) {
+            bw.write("Document,StartMillis,EndMillis,DurationMillis,DurationSeconds\n");
+            for (DocTiming dt : dts) {
+                long dur = Math.max(0L, dt.endMs - dt.startMs);
+                String line = String.join(",",
+                        escCsv(dt.doc), String.valueOf(dt.startMs), String.valueOf(dt.endMs), String.valueOf(dur), String.format(java.util.Locale.ROOT, "%.3f", dur/1000.0));
+                bw.write(line); bw.write("\n");
+            }
+        }
+    }
+    private static String escCsv(String s) {
+        if (s == null) return "";
+        if (s.contains(",") || s.contains("\"") || s.contains("\n")) return '"' + s.replace("\"","\"\"") + '"';
+        return s;
     }
 
     private static int countXmiDocs(Path xmiDir) throws IOException {
