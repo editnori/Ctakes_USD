@@ -23,5 +23,4 @@ add TokenTableFileWriter SubDirectory=bsv_tokens
 addLast util.log.FinishedLogger
 
 // Emit timing END markers after all writers
-load tools.timing.TimingEndAE
 add tools.timing.TimingEndAE
