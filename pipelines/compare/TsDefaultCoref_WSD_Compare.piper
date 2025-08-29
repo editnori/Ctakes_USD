@@ -2,6 +2,10 @@
 
 threads 3
 
+// Emit timing START markers near pipeline begin
+load tools.timing.TimingStartAE
+add tools.timing.TimingStartAE
+
 // Core tokenizer, POS, chunking
 load TsDefaultTokenizerPipeline
 add ContextDependentTokenizerAnnotator
