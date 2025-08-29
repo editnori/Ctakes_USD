@@ -453,7 +453,7 @@ public class ExcelXmlReport {
     private static List<List<String>> buildPipelinesSummaryIfAny(Path outDir) {
         List<List<String>> rows = new ArrayList<>();
         rows.add(Arrays.asList(
-                "Pipeline Dir","Documents","Average Seconds per Document","Init Time (s)","Process Time (s)","Total Time (s)",
+                "Pipeline Dir","Documents","Average Seconds per Document","Init Time (s)","Process Time (s)","Total Time (s)","Timed Docs","Timing Coverage (%)",
                 "Clinical Concepts","Avg Confidence","% Concepts with DocTimeRel",
                 "Relations per Doc","Coref Markables per Doc",
                 "Distinct CUIs","Disambig Rate","Avg Candidate Count","Sec per 100 Concepts",
@@ -622,12 +622,16 @@ public class ExcelXmlReport {
             String docsStr = String.valueOf(m.docCount);
             String avgSecStr = String.format(java.util.Locale.ROOT, "%.2f", r.avgSec);
             String initSecStr = ""; String procSecStr = ""; String totalSecStr = "";
+            int timedDocs = 0; String coverageStr = "";
             try {
                 java.nio.file.Path rlog = (r.runLog==null || r.runLog.isEmpty()) ? null : java.nio.file.Paths.get(r.runLog);
                 if (rlog != null && java.nio.file.Files.isRegularFile(rlog)) {
                     initSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Initialization Time Elapsed"));
                     procSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Processing Time Elapsed"));
                     totalSecStr = secondsFromElapsed(parseValueFromLog(rlog, "Total Run Time Elapsed"));
+                    java.util.List<DocTiming> dtsR = parseDocTimings(rlog);
+                    timedDocs = dtsR.size();
+                    if (m.docCount > 0) coverageStr = String.format(java.util.Locale.ROOT, "%.1f%%", (100.0 * timedDocs) / m.docCount);
                     // Fallbacks from processing window if any are empty
                     ProcWindow win = computeProcessingWindow(rlog);
                     if (win != null) {
@@ -655,7 +659,7 @@ public class ExcelXmlReport {
             String scoreStr = String.format(java.util.Locale.ROOT, "%.3f", score);
             rows.add(Arrays.asList(
                     r.name,
-                    docsStr, avgSecStr, initSecStr, procSecStr, totalSecStr,
+                    docsStr, avgSecStr, initSecStr, procSecStr, totalSecStr, String.valueOf(timedDocs), coverageStr,
                     String.valueOf(m.mentionCount),
                     confStr, dtrStr,
                     rpdStr, corefStr,
@@ -664,6 +668,8 @@ public class ExcelXmlReport {
                     recSpeed, recTemporal, recRelations,
                     reason, r.runLog
             ));
+            // Accumulate for parent-level CSV
+            try { addPipelineTimingRow(outDir, r.name, m.docCount, timedDocs, avgSecStr, initSecStr, procSecStr, totalSecStr, r.runLog); } catch (Exception ignore) {}
         }
         return rows;
     }
@@ -2810,6 +2816,10 @@ private static String[] semFromTui(String tui) {
             rows.add(Arrays.asList("Min/Max Per-Note Duration (s)", String.format(Locale.ROOT, "%.2f / %.2f", min/1000.0, max/1000.0)));
             // Also write a CSV artifact for external consumption
             try { writeTimingCsv(outDir, dts); } catch (Exception ignore) {}
+        } else {
+            // Timing markers missing: add placeholder lines to avoid blanks
+            rows.add(Arrays.asList("Average Per-Note Duration (s)", ""));
+            rows.add(Arrays.asList("Min/Max Per-Note Duration (s)", ""));
         }
         
         // Top CUIs by total count
@@ -2863,6 +2873,24 @@ private static String[] semFromTui(String tui) {
             }
         }
     }
+    private static synchronized void addPipelineTimingRow(Path parentOutDir, String pipeline, int docs, int timedDocs, String avgSec, String initSec, String procSec, String totalSec, String runLog) throws IOException {
+        if (parentOutDir == null) return;
+        java.nio.file.Path dir = parentOutDir.resolve("timing_csv");
+        java.nio.file.Files.createDirectories(dir);
+        java.nio.file.Path csv = dir.resolve("pipeline_timing.csv");
+        boolean exists = java.nio.file.Files.isRegularFile(csv);
+        try (java.io.BufferedWriter bw = java.nio.file.Files.newBufferedWriter(csv, java.nio.charset.StandardCharsets.UTF_8, java.nio.file.StandardOpenOption.CREATE, java.nio.file.StandardOpenOption.APPEND)) {
+            if (!exists) {
+                bw.write("Pipeline,Documents,TimedDocs,TimingCoverage(%),AvgSecondsPerDoc,InitSeconds,ProcessSeconds,TotalSeconds,RunLog\n");
+            }
+            double cov = (docs > 0) ? (100.0 * timedDocs / docs) : 0.0;
+            String line = String.join(",",
+                    escCsv(pipeline), String.valueOf(docs), String.valueOf(timedDocs), String.format(java.util.Locale.ROOT, "%.1f", cov),
+                    nvlCsv(avgSec), nvlCsv(initSec), nvlCsv(procSec), nvlCsv(totalSec), escCsv(runLog));
+            bw.write(line); bw.write("\n");
+        }
+    }
+    private static String nvlCsv(String s) { return (s==null||s.isEmpty())?"0":s; }
     private static String escCsv(String s) {
         if (s == null) return "";
         if (s.contains(",") || s.contains("\"") || s.contains("\n")) return '"' + s.replace("\"","\"\"") + '"';

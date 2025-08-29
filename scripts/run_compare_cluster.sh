@@ -288,6 +288,8 @@ run_pipeline_sharded() {
           -Dorg.slf4j.simpleLogger.defaultLogLevel=info \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary=warn \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary.lookup2=warn \
+          -Dorg.slf4j.simpleLogger.log.org.apache.uima=warn \
+          -Dorg.slf4j.simpleLogger.log.de.tudarmstadt.ukp=warn \
           -Dorg.slf4j.simpleLogger.log.org.cleartk=warn \
           -Dorg.slf4j.simpleLogger.log.opennlp=warn \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.core.ae.RegexSpanFinder=warn \
