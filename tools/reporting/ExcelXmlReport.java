@@ -9,6 +9,8 @@ import java.util.regex.Pattern;
 
 /**
  * Build a single XLSX workbook consolidating cTAKES run outputs.
+ * Note: This tool now emits XLSX only; the legacy Excel 2003 XML writer
+ * has been removed to reduce confusion and maintenance overhead.
  * Sheets:
  * - RunInfo: parsed from run log (build version, times, counts), piper file, dict xml
  * - Mentions: aggregated BSV tables from bsv_table/ (adds Document column)
@@ -81,7 +83,8 @@ public class ExcelXmlReport {
             // Add a clinician-friendly summary sheet
             List<List<String>> clinician = buildClinicianSummaryIfAny(outDir);
             if (clinician != null && clinician.size() > 1) sheets.put("Clinician Summary", clinician);
-            Files.createDirectories(workbook.getParent());
+            Path parent = workbook.getParent();
+            if (parent != null) Files.createDirectories(parent);
             // Force .xlsx
             if (!workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
                 workbook = java.nio.file.Paths.get(workbook.toString() + ".xlsx");
@@ -152,25 +155,12 @@ public class ExcelXmlReport {
             sheets.put("CuiList", cuiTotals);
         }
 
-<<<<<<< HEAD
-        Files.createDirectories(workbook.getParent());
-        if (!workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
-            workbook = java.nio.file.Paths.get(workbook.toString() + ".xlsx");
-        }
-=======
-        // Set header color per pipeline for single-run workbooks
-        String pipelineKey = detectPipelineKeyFromOutDir(outDir);
-        if (pipelineKey != null && PIPELINE_COLOR_ARGB.containsKey(pipelineKey)) {
-            HEADER_FILL_ARGB = PIPELINE_COLOR_ARGB.get(pipelineKey);
-        } else {
-            HEADER_FILL_ARGB = "FFEFEFEF";
-        }
-        Files.createDirectories(workbook.getParent());
+        Path parent2 = workbook.getParent();
+        if (parent2 != null) Files.createDirectories(parent2);
         // Force .xlsx
         if (!workbook.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".xlsx")) {
             workbook = java.nio.file.Paths.get(workbook.toString() + ".xlsx");
         }
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         writeWorkbookXlsx(sheets, workbook);
         System.out.println("[report] Wrote workbook: " + workbook);
     }
@@ -1230,24 +1220,6 @@ public class ExcelXmlReport {
         return last;
     }
 
-    // Parse elapsed strings like "1 minutes, 38 seconds" or "4 minutes, 16 seconds" (from run.log) into seconds string
-    private static String secondsFromElapsed(String s) {
-        if (s == null) return "";
-        s = s.trim(); if (s.isEmpty()) return "";
-        long total = 0;
-        try {
-            java.util.regex.Matcher m = java.util.regex.Pattern.compile("(\\d+)\\s*(hour|hours|minute|minutes|second|seconds)", java.util.regex.Pattern.CASE_INSENSITIVE).matcher(s);
-            while (m.find()) {
-                long v = Long.parseLong(m.group(1));
-                String unit = m.group(2).toLowerCase(java.util.Locale.ROOT);
-                if (unit.startsWith("hour")) total += v * 3600L;
-                else if (unit.startsWith("minute")) total += v * 60L;
-                else total += v;
-            }
-        } catch (Exception ignore) {}
-        return total > 0 ? String.valueOf(total) : "";
-    }
-
     private static Path findPiperFromLog(Path log) {
         if (log == null) return null;
         Pattern p = Pattern.compile("Loading Piper File (.*?\\.piper)");
@@ -1613,34 +1585,20 @@ public class ExcelXmlReport {
         sb.append("<sheetViews><sheetView workbookViewId=\"0\"><pane ySplit=\"1\" topLeftCell=\"A2\" activePane=\"bottomLeft\" state=\"frozen\"/></sheetView></sheetViews>");
         // Approximate auto-fit: compute widths based on max string length per column
         int cols = 0;
-<<<<<<< HEAD
-        if (data != null) {
-            for (List<String> row : data) cols = Math.max(cols, row.size());
-        }
-=======
         if (data != null) { for (List<String> row : data) cols = Math.max(cols, row.size()); }
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         if (cols > 0) {
             int[] maxLen = new int[cols];
             for (int i=0;i<cols;i++) maxLen[i] = 0;
             for (List<String> row : data) {
                 for (int c=0;c<row.size();c++) {
                     String v = row.get(c);
-<<<<<<< HEAD
-                    int len = v == null ? 0 : v.length();
-=======
                     int len = (v==null) ? 0 : v.length();
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
                     if (len > maxLen[c]) maxLen[c] = len;
                 }
             }
             sb.append("<cols>");
             for (int c=0;c<cols;c++) {
-<<<<<<< HEAD
-                int w = Math.max(10, Math.min(80, (int)Math.round(maxLen[c] * 1.1) + 2));
-=======
                 int w = Math.max(10, Math.min(80, (int)Math.round(maxLen[c]*1.1) + 2));
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
                 sb.append("<col min=\""+(c+1)+"\" max=\""+(c+1)+"\" width=\""+w+"\" customWidth=\"1\"/>");
             }
             sb.append("</cols>");
@@ -1686,11 +1644,7 @@ public class ExcelXmlReport {
         sb.append("</fonts>");
         sb.append("<fills count=\"2\">");
         sb.append("<fill><patternFill patternType=\"none\"/></fill>");
-<<<<<<< HEAD
-        // Header fill (ARGB): dynamic per pipeline if available
-=======
         // Header fill (ARGB): dynamic per pipeline if set, else light gray
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         String fill = (HEADER_FILL_ARGB==null||HEADER_FILL_ARGB.trim().isEmpty()) ? "FFEFEFEF" : HEADER_FILL_ARGB;
         sb.append("<fill><patternFill patternType=\"solid\"><fgColor rgb=\""+fill+"\"/><bgColor indexed=\"64\"/></patternFill></fill>");
         sb.append("</fills>");
@@ -1704,24 +1658,7 @@ public class ExcelXmlReport {
         return sb.toString();
     }
 
-<<<<<<< HEAD
-    private static String detectPipelineKeyFromOutDir(Path outDir) {
-        if (outDir == null) return null;
-        String name = outDir.getFileName() != null ? outDir.getFileName().toString() : outDir.toString();
-        // Examples: S_core_mimic_20250828-211236, D_core_temp_coref_smoke_mimic_...
-        int idx = name.indexOf("_mimic");
-        String key = idx > 0 ? name.substring(0, idx) : name;
-        // Ensure key is one of known pipeline prefixes if possible
-        for (String k : PIPELINE_COLOR_ARGB.keySet()) {
-            if (key.equals(k)) return k;
-        }
-        return key;
-    }
-
-    // Build aggregated processing metrics across all immediate subruns under a compare parent dir
-=======
     // Build aggregated processing metrics across immediate subruns under a compare parent dir
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
     private static List<List<String>> buildProcessingMetricsAggregateForParent(Path outDir) throws IOException {
         List<List<String>> rows = new ArrayList<>();
         rows.add(Arrays.asList("Phase","AE/Writer","Init Count (sum)","Process Count (sum)","Files Written (sum)"));
@@ -1745,16 +1682,8 @@ public class ExcelXmlReport {
                             for (Path p : lds) { long m = p.toFile().lastModified(); if (m > lm) { lm = m; latest = p; } }
                         }
                         if (latest != null) runLog = latest; else runLog = null;
-<<<<<<< HEAD
-                    } else {
-                        runLog = null;
-                    }
-                }
-                // Parse this subrun's metrics and add to aggregate
-=======
                     } else runLog = null;
                 }
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
                 Map<String,int[]> counts = parseAeCountsFromRun(runLog, sub);
                 for (Map.Entry<String,int[]> e : counts.entrySet()) {
                     int[] dest = agg.computeIfAbsent(e.getKey(), k -> new int[3]);
@@ -1763,21 +1692,12 @@ public class ExcelXmlReport {
                 }
             }
         } catch (IOException ignore) {}
-<<<<<<< HEAD
-        // Emit ordered rows
-        for (Map.Entry<String,int[]> e : agg.entrySet()) {
-            String key = e.getKey();
-            int[] c = e.getValue();
-            String phase = phaseForAeLabel(key, friendlyAeLabel(key));
-            rows.add(Arrays.asList(phase, friendlyAeLabel(key) + " ("+key+")", String.valueOf(c[0]), String.valueOf(c[1]), String.valueOf(c[2])));
-=======
         for (Map.Entry<String,int[]> e : agg.entrySet()) {
             String key = e.getKey();
             int[] c = e.getValue();
             String label = friendlyAeLabel(key);
             String phase = phaseForAeLabel(key, label);
             rows.add(Arrays.asList(phase, label + " ("+key+")", String.valueOf(c[0]), String.valueOf(c[1]), String.valueOf(c[2])));
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         }
         if (rows.size() == 1) rows.add(Arrays.asList("No data found"));
         return rows;
@@ -1788,16 +1708,6 @@ public class ExcelXmlReport {
         if (runLog != null && Files.isRegularFile(runLog)) {
             List<String> lines = Files.readAllLines(runLog, StandardCharsets.UTF_8);
             for (String line : lines) {
-<<<<<<< HEAD
-                String s = line;
-                int idx = s.indexOf(" - ");
-                if (idx > 0) {
-                    String left = s.substring(0, idx);
-                    String name = left.replaceFirst("^.* INFO ", "").trim();
-                    if (name.isEmpty() || isNoiseLogger(name)) continue;
-                    int[] arr = counts.computeIfAbsent(name, k -> new int[3]);
-                    String rest = s.substring(idx+3).toLowerCase(Locale.ROOT);
-=======
                 int idx = line.indexOf(" - ");
                 if (idx > 0) {
                     String left = line.substring(0, idx);
@@ -1805,17 +1715,12 @@ public class ExcelXmlReport {
                     if (name.isEmpty()) continue;
                     int[] arr = counts.computeIfAbsent(name, k -> new int[3]);
                     String rest = line.substring(idx+3).toLowerCase(java.util.Locale.ROOT);
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
                     if (rest.contains("initializing")) arr[0]++;
                     if (rest.contains("process(jcas)") || rest.startsWith("processing") || rest.contains("starting processing") || rest.contains("finished processing")) arr[1]++;
                 }
             }
         }
-<<<<<<< HEAD
-        // Supplement with files written
-=======
         // Approximate files written by counting files in output folders
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
         Map<String,Integer> fileTotals = new LinkedHashMap<>();
         fileTotals.put("FileTreeXmiWriter", countFiles(outDir.resolve("xmi"), ".xmi"));
         fileTotals.put("SemanticTableFileWriter", countFiles(outDir.resolve("bsv_table"), ".BSV") + countFiles(outDir.resolve("csv_table"), ".CSV") + countFiles(outDir.resolve("html_table"), ".HTML"));
@@ -1828,11 +1733,8 @@ public class ExcelXmlReport {
         }
         return counts;
     }
-<<<<<<< HEAD
-=======
 
     // (use existing countFiles overload earlier in class)
->>>>>>> b5eddaa (feat(report): XLSX-only, pipeline-colored headers, auto-fit; parent aggregate metrics sheet; add time columns to Pipelines Summary; consolidate: sweep stray cuicount + dedup Build lines)
     private static String colRef(int idx) {
         StringBuilder sb = new StringBuilder();
         while (idx > 0) { idx--; sb.insert(0, (char)('A' + (idx % 26))); idx /= 26; }
@@ -2090,196 +1992,7 @@ public class ExcelXmlReport {
         return dot>0 ? n.substring(0, dot) : n;
     }
 
-    private static String esc(String s) {
-        if (s == null) return "";
-        return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;");
-    }
-
-    private static String styleForHeader(String sheet, String header) {
-        if (sheet == null || header == null) return null;
-        String h = header.toLowerCase(Locale.ROOT);
-        if (sheet.equals("Mentions") || sheet.equals("MentionsDetails") || sheet.equals("MentionsFull") || sheet.equals("Clinical Concepts")) {
-            if (h.contains("confidence") || h.contains("conceptscore") || h.contains("disambiguated") || h.contains("candidate")) return "sWsd";
-            if (h.equals("cui") || h.equals("tui") || h.contains("preferred") || h.contains("codingscheme") || h.contains("semantic")) return "sDict";
-            if (h.equals("section")) return "sMeta";
-            if (h.equals("doctimerel")) return "sTemporal";
-            if (h.contains("degreeof") || h.contains("locationof")) return "sRelation";
-            if (h.equals("coref")) return "sCoref";
-            if (h.contains("polarity") || h.contains("negated") || h.contains("uncertain") || h.contains("conditional") || h.contains("generic") || h.contains("subject") || h.contains("historyof")) return "sAssert";
-            if (h.equals("begin") || h.equals("end") || h.equals("text") || h.equals("document")) return "sTok";
-            return "sHeader";
-        }
-        if (sheet.equals("CuiCounts") || sheet.equals("CuiList")) return "sDict";
-        if (sheet.equals("Tokens")) return "sTok";
-        if (sheet.equals("Modules")) return "sMeta";
-        if (sheet.equals("Overview") || sheet.equals("SheetGuide") || sheet.equals("ClinicianGuide")) return "sMeta";
-        return "sHeader";
-    }
-
-    private static String buildWorkbookXml(LinkedHashMap<String, List<List<String>>> sheets) {
-        // Retained for compatibility; not used by main paths. Avoids breaking external callers.
-        StringBuilder sb = new StringBuilder();
-        sb.append("<?xml version=\"1.0\"?>\n");
-        sb.append("<Workbook xmlns=\""+NS+"\" xmlns:ss=\""+NS+"\">\n");
-        sb.append(" <Styles>\n");
-        sb.append("  <Style ss:ID=\"sHeader\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#D9E1F2\" ss:Pattern=\"Solid\"/></Style>\n");
-        sb.append("  <Style ss:ID=\"sTok\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#E2F0D9\" ss:Pattern=\"Solid\"/></Style>\n");
-        sb.append("  <Style ss:ID=\"sDict\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#FFF2CC\" ss:Pattern=\"Solid\"/></Style>\n");
-        sb.append("  <Style ss:ID=\"sWsd\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#CFE2F3\" ss:Pattern=\"Solid\"/></Style>\n");
-        sb.append("  <Style ss:ID=\"sAssert\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#F4CCCC\" ss:Pattern=\"Solid\"/></Style>\n");
-        sb.append("  <Style ss:ID=\"sTemporal\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#FCE4D6\" ss:Pattern=\"Solid\"/></Style>\n");
-        sb.append("  <Style ss:ID=\"sRelation\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#DAEEF3\" ss:Pattern=\"Solid\"/></Style>\n");
-        sb.append("  <Style ss:ID=\"sCoref\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#E7E6E6\" ss:Pattern=\"Solid\"/></Style>\n");
-        sb.append("  <Style ss:ID=\"sMeta\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#D9D2E9\" ss:Pattern=\"Solid\"/></Style>\n");
-        sb.append(" </Styles>\n");
-        for (Map.Entry<String, List<List<String>>> e : sheets.entrySet()) {
-            String name = e.getKey();
-            List<List<String>> rows = e.getValue();
-            sb.append(" <Worksheet ss:Name=\""+esc(sheetName(name))+"\">\n");
-            sb.append("  <Table>\n");
-            for (int r=0;r<rows.size();r++) {
-                List<String> row = rows.get(r);
-                sb.append("   <Row>\n");
-                for (int c=0;c<row.size();c++) {
-                    String cell = row.get(c);
-                    String style = "";
-                    if (r==0) {
-                        style = styleForHeader(name, cell);
-                        if (style == null) style = "sHeader";
-                        style = " ss:StyleID=\""+style+"\"";
-                    } else if (isSectionTitleRow(name, row)) {
-                        style = " ss:StyleID=\"sMeta\"";
-                    } else if (isSubHeaderRow(name, row)) {
-                        style = " ss:StyleID=\"sHeader\"";
-                    }
-                    sb.append("    <Cell"+style+">\n");
-                    sb.append("     <Data ss:Type=\"String\">"+esc(cell)+"</Data>\n");
-                    sb.append("    </Cell>\n");
-                }
-                sb.append("   </Row>\n");
-            }
-            sb.append("  </Table>\n");
-            sb.append(" </Worksheet>\n");
-        }
-        sb.append("</Workbook>\n");
-        return sb.toString();
-    }
-
-    private static void writeWorkbookXml(LinkedHashMap<String, List<List<String>>> sheets, Path workbook) throws IOException {
-        try (BufferedWriter bw = Files.newBufferedWriter(workbook, StandardCharsets.UTF_8)) {
-            bw.write("<?xml version=\"1.0\"?>\n");
-            bw.write("<Workbook xmlns=\""+NS+"\" xmlns:ss=\""+NS+"\">\n");
-            bw.write(" <Styles>\n");
-            bw.write("  <Style ss:ID=\"sHeader\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#D9E1F2\" ss:Pattern=\"Solid\"/></Style>\n");
-            bw.write("  <Style ss:ID=\"sTok\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#E2F0D9\" ss:Pattern=\"Solid\"/></Style>\n");
-            bw.write("  <Style ss:ID=\"sDict\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#FFF2CC\" ss:Pattern=\"Solid\"/></Style>\n");
-            bw.write("  <Style ss:ID=\"sWsd\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#CFE2F3\" ss:Pattern=\"Solid\"/></Style>\n");
-            bw.write("  <Style ss:ID=\"sAssert\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#F4CCCC\" ss:Pattern=\"Solid\"/></Style>\n");
-            bw.write("  <Style ss:ID=\"sTemporal\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#FCE4D6\" ss:Pattern=\"Solid\"/></Style>\n");
-            bw.write("  <Style ss:ID=\"sRelation\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#DAEEF3\" ss:Pattern=\"Solid\"/></Style>\n");
-            bw.write("  <Style ss:ID=\"sCoref\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#E7E6E6\" ss:Pattern=\"Solid\"/></Style>\n");
-            bw.write("  <Style ss:ID=\"sMeta\"><Font ss:Bold=\"1\"/><Interior ss:Color=\"#D9D2E9\" ss:Pattern=\"Solid\"/></Style>\n");
-            bw.write(" </Styles>\n");
-            for (Map.Entry<String, List<List<String>>> e : sheets.entrySet()) {
-                String name = e.getKey();
-                List<List<String>> rows = e.getValue();
-                bw.write(" <Worksheet ss:Name=\""+esc(sheetName(name))+"\">\n");
-                bw.write("  <Table>\n");
-                for (int r=0;r<rows.size();r++) {
-                    List<String> row = rows.get(r);
-                    bw.write("   <Row>\n");
-                    for (int c=0;c<row.size();c++) {
-                        String cell = row.get(c);
-                        String style = "";
-                        if (r==0) {
-                            style = styleForHeader(name, cell);
-                            if (style == null) style = "sHeader";
-                            style = " ss:StyleID=\""+style+"\"";
-                        } else if (isSectionTitleRow(name, row)) {
-                            style = " ss:StyleID=\"sMeta\"";
-                        } else if (isSubHeaderRow(name, row)) {
-                            style = " ss:StyleID=\"sHeader\"";
-                        }
-                        bw.write("    <Cell"+style+">\n");
-                        bw.write("     <Data ss:Type=\"String\">"+esc(cell)+"</Data>\n");
-                        bw.write("    </Cell>\n");
-                    }
-                    bw.write("   </Row>\n");
-                }
-                bw.write("  </Table>\n");
-                bw.write(" </Worksheet>\n");
-            }
-            bw.write("</Workbook>\n");
-        }
-    }
-
-    private static boolean isSectionTitleRow(String sheet, List<String> row) {
-        if (row == null || row.isEmpty()) return false;
-        String first = row.get(0) == null ? "" : row.get(0).trim();
-        // Overview sections
-        if (sheet.equals("Overview") && row.size() >= 2) {
-            if ((first.equals("Run Info") && row.get(1).equals("Value")) ||
-                (first.equals("Metric") && row.get(1).equals("Value")) ||
-                (first.equals("Top Concepts (Chosen by WSD)") && row.get(1).equals("Count"))) return true;
-        }
-        // Pipeline Map sections
-        if (sheet.equals("Pipeline Map")) {
-            if (first.equals("Pipeline Map") ||
-                first.equals("Pipeline (Order/Step/AE/Label)") ||
-                first.equals("Pipeline (Order/Phase/Step/AE/Label)") ||
-                first.equals("Clinical Concepts Column Mapping") ||
-                first.equals("Color Legend") ||
-                first.equals("Assertion Meanings") ||
-                first.equals("WSD Scoring") ||
-                first.equals("Interpretation Guide")) return true;
-        }
-        // Processing Metrics sections
-        if (sheet.equals("Processing Metrics")) {
-            if (first.equals("Legend") || first.equals("Doc Timings")) return true;
-        }
-        // Pipelines Summary sheet title
-        if (sheet.equals("Pipelines Summary") && (first.equals("Pipeline Dir") || first.equals("Pipelines Summary"))) return true;
-        return false;
-    }
-
-    private static boolean isSubHeaderRow(String sheet, List<String> row) {
-        if (row == null || row.isEmpty()) return false;
-        // Column headers for sections
-        if (sheet.equals("Overview") && row.size() >= 2) {
-            String a = row.get(0), b = row.get(1);
-            if (("Run Info".equals(a) && "Value".equals(b)) ||
-                ("Metric".equals(a) && "Value".equals(b)) ||
-                ("Top Concepts (Chosen by WSD)".equals(a) && "Count".equals(b))) return true;
-        }
-        if (sheet.equals("Pipeline Map")) {
-            // Recognize common subheader rows we emit
-            List<String> r = row;
-            if (r.size() >= 5 && r.get(0).equals("Order") && r.get(1).equals("Phase") && r.get(2).equals("Step") && r.get(3).equals("AE") && r.get(4).equals("Label")) return true;
-            if (r.size() >= 4 && r.get(0).equals("Column") && r.get(1).equals("Source Color") && r.get(2).equals("Meaning") && r.get(3).equals("Module/Source")) return true;
-            if (r.size() >= 3 && r.get(0).equals("Color") && r.get(1).equals("Columns/Scope") && r.get(2).equals("AE/Module")) return true;
-            if (r.size() >= 3 && r.get(0).equals("Field") && r.get(1).equals("Meaning") && r.get(2).equals("Example")) return true;
-            if (r.size() >= 2 && r.get(0).equals("Step") && r.get(1).equals("Explanation")) return true;
-            if (r.size() >= 2 && r.get(0).equals("Example") && r.get(1).equals("Explanation")) return true;
-            if (r.size() >= 4 && r.get(0).equals("AE") && r.get(1).equals("What it does") && r.get(2).equals("Example") && r.get(3).equals("Columns in report")) return true;
-        }
-        if (sheet.equals("Processing Metrics")) {
-            List<String> r = row;
-            if (r.size() >= 2 && r.get(0).equals("Column") && r.get(1).equals("Meaning")) return true;
-            if (r.size() >= 5 && r.get(0).equals("Phase") && r.get(1).equals("AE/Writer") && r.get(2).equals("Init Count") && r.get(3).equals("Process Count")) return true;
-            if (r.size() >= 4 && r.get(0).equals("Document") && r.get(1).equals("Start") && r.get(2).equals("End") && r.get(3).equals("Duration (s)")) return true;
-        }
-        if (sheet.equals("Pipelines Summary")) {
-            List<String> r = row;
-            if (r.size() >= 4 && r.get(0).equals("Pipeline Dir") && r.get(1).equals("Documents") && r.get(2).equals("Average Seconds per Document") && r.get(3).equals("Run Log")) return true;
-        }
-        return false;
-    }
-
-    private static String sheetName(String s) {
-        if (s == null) return "Sheet";
-        String n = s.replaceAll("[\\\\/:*?\"<>|]","_");
-        return n.length() > 31 ? n.substring(0,31) : n;
-    }
+    // NOTE: Legacy Excel 2003 XML writer removed. Codebase now emits XLSX only.
 
     // Build map: docId -> ("begin,end" -> [section, semGroup, semType])
     private static Map<String, Map<String, String[]>> buildBsvSpanMap(Path bsvDir) throws IOException {
