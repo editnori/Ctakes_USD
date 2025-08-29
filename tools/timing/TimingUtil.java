@@ -22,20 +22,7 @@ final class TimingUtil {
                 }
             }
         } catch (Throwable ignore) {}
-        try {
-            // Try UIMA example SourceDocumentInformation
-            org.apache.uima.cas.FSIterator<?> it2 = jCas.getAnnotationIndex(SourceDocumentInformation.type).iterator();
-            if (it2.hasNext()) {
-                Object o2 = it2.next();
-                if (o2 instanceof SourceDocumentInformation) {
-                    String uri = ((SourceDocumentInformation) o2).getUri();
-                    if (uri != null && !uri.isEmpty()) {
-                        try { return stripTxt(extless(Paths.get(URI.create(uri)).getFileName().toString())); } catch (Exception ignore) {}
-                        try { return stripTxt(extless(Paths.get(uri).getFileName().toString())); } catch (Exception ignore) {}
-                    }
-                }
-            }
-        } catch (Throwable ignore) {}
+        // Avoid touching org.apache.uima.examples.SourceDocumentInformation; not all pipelines include that type
         // Fallback: synthetic ID based on hash
         String txt = jCas.getDocumentText();
         int h = (txt==null?0:txt.length()) ^ System.identityHashCode(jCas);
