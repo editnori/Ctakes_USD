@@ -501,6 +501,11 @@ public class ExcelXmlReport {
                         avg = String.format(java.util.Locale.ROOT, "%.2f", (sum/1000.0)/dts.size()); }
                 }
                 if (avg == null || avg.isEmpty() || "0.00".equals(avg)) {
+                    // Final fallback for sharded logs: derive from earliest Processing Start Time and latest Processing End Time across shards
+                    Double wnd = computeAvgFromProcessingWindow(runLog, m.docCount);
+                    if (wnd != null && wnd > 0) avg = String.format(java.util.Locale.ROOT, "%.2f", wnd);
+                }
+                if (avg == null || avg.isEmpty() || "0.00".equals(avg)) {
                     // Fallback: derive from a per-run workbook (e.g., summary of shards)
                     Double derived = computeAvgSecFromSummary(sub);
                     if (derived != null && derived > 0) avg = String.format(java.util.Locale.ROOT, "%.2f", derived);
@@ -1226,6 +1231,43 @@ public class ExcelXmlReport {
             }
         } catch (IOException ignore) {}
         return last;
+    }
+
+    // Compute average seconds per doc using run-level Processing Start/End across shards.
+    // We scan all occurrences and take earliest start and latest end, then divide window by docCount.
+    private static Double computeAvgFromProcessingWindow(Path runLog, int docCount) {
+        if (runLog == null || !java.nio.file.Files.isRegularFile(runLog) || docCount <= 0) return null;
+        java.text.SimpleDateFormat fmt = new java.text.SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", java.util.Locale.ENGLISH);
+        java.text.SimpleDateFormat fmtNoTz = new java.text.SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy", java.util.Locale.ENGLISH);
+        long earliestStart = Long.MAX_VALUE, latestEnd = Long.MIN_VALUE;
+        try (java.io.BufferedReader br = java.nio.file.Files.newBufferedReader(runLog, java.nio.charset.StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                int i = line.indexOf(':');
+                if (i <= 0) continue;
+                String k = line.substring(0,i).trim();
+                if (!k.equalsIgnoreCase("Processing Start Time") && !k.equalsIgnoreCase("Processing End Time")) continue;
+                String v = line.substring(i+1).trim();
+                Long ts = parseDateLenient(v, fmt, fmtNoTz);
+                if (ts == null) continue;
+                if (k.equalsIgnoreCase("Processing Start Time")) {
+                    if (ts < earliestStart) earliestStart = ts;
+                } else {
+                    if (ts > latestEnd) latestEnd = ts;
+                }
+            }
+        } catch (Exception ignore) {}
+        if (earliestStart == Long.MAX_VALUE || latestEnd == Long.MIN_VALUE || latestEnd <= earliestStart) return null;
+        double totalSec = (latestEnd - earliestStart) / 1000.0;
+        if (totalSec <= 0) return null;
+        return totalSec / Math.max(1, docCount);
+    }
+
+    private static Long parseDateLenient(String s, java.text.SimpleDateFormat fmt, java.text.SimpleDateFormat fmtNoTz) {
+        if (s == null || s.isEmpty()) return null;
+        try { return fmt.parse(s).getTime(); } catch (Exception ignore) {}
+        try { return fmtNoTz.parse(s).getTime(); } catch (Exception ignore) {}
+        return null;
     }
 
     private static Path findPiperFromLog(Path log) {
