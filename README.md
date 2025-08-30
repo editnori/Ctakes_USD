@@ -17,7 +17,7 @@ Clinician quick start (5 steps)
    - `export OUT_BASE=outputs/compare`
    - Either use autoscale (recommended):
      - `export SEED=42`
-     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale`
+     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale --consolidate-async`
    - Or set manual values:
      - `export RUNNERS=32 THREADS=8 XMX_MB=8192 SEED=42`
    - Optional shared dictionary cache (faster startup):
@@ -26,7 +26,7 @@ Clinician quick start (5 steps)
    - Preview the plan:
      - `bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"`
    - Run (autoscale):
-     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale`
+     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale --consolidate-async`
 4) Monitor progress (any time):
    - `scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"`
 5) Open the workbook(s):
@@ -103,7 +103,7 @@ What happens behind the scenes
 - Report builds run in CSV mode by default (no XMI parsing).
 
 Options you might change
-- `--autoscale`: derive `RUNNERS/THREADS/XMX` from host cores and memory.
+- `--autoscale --consolidate-async`: derive `RUNNERS/THREADS/XMX` from host cores and memory.
 - `-n/--runners`, `-t/--threads`, `-m/--xmx`: manual parallelism and heap (watch memory).
 - `--max-pipelines N`: run up to N pipelines concurrently (throttled at top-level).
 - `--resume`: continue only missing documents.
@@ -195,7 +195,7 @@ All commands (reference)
   - `--keep-shards` consolidate but retain `shard_*` and `shards/` directories.
   - `--only "<keys>"` run only specific pipelines (e.g., `"S_core D_core_temp"`).
   - `-l|--dict-xml <file>` override dictionary XML descriptor.
-  - `--autoscale` derive `RUNNERS/THREADS/XMX` from host cores and memory (fast default).
+  - `--autoscale --consolidate-async` derive `RUNNERS/THREADS/XMX` from host cores and memory (fast default).
   - `--max-pipelines <N>` run up to N pipeline-group tasks concurrently at the top level.
   - `--reports-sync` build per‑pipeline report synchronously; `--reports-async` to run in background.
   - `--no-parent-report` skip building the parent compare workbook at the OUT base.
@@ -278,7 +278,7 @@ export DICT_SHARED=1
 export DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache
 
 bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
-bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale
+bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale --consolidate-async
 ```
 
 ### 5. Check Progress and Outputs
@@ -374,7 +374,7 @@ export DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache
 
 # 4) Run the comparison (async consolidate + async reports; autoscale)
 bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
-bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale
+bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale --consolidate-async
 
 # 5) Check progress in another terminal
 scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
@@ -421,5 +421,6 @@ Select a single pipeline (or a subset)
 - One pipeline: `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only S_core --reports`
 - Multiple: `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only "S_core D_core_temp" --reports`
 - Temporal only (if models present): `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only "S_core_temp D_core_temp" --reports`
+
 
 

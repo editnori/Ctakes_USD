@@ -25,6 +25,9 @@ IN=""; OUT=""; RUNNERS="${RUNNERS:-16}"; XMX_MB="${XMX_MB:-6144}"; THREADS="${TH
 MAX_PIPELINES="${MAX_PIPELINES:-1}"
 # Optional: autoscale runners/threads/xmx based on host cores/memory
 AUTOSCALE=0
+# Optional: build per-note-type workbooks after consolidation
+NOTE_SPLITS=0
+NOTE_TYPES_ARG="${NOTE_TYPES:-}"
 # Global report extension default (used outside functions as well)
 REPORT_EXT="${REPORT_EXT:-xlsx}"
 # Control dictionary handling (default: no sanitization, use provided XML as-is)
@@ -73,6 +76,8 @@ while [[ $# -gt 0 ]]; do
     --only) ONLY="$2"; shift 2;;
     --max-pipelines) MAX_PIPELINES="$2"; shift 2;;
     --autoscale) AUTOSCALE=1; shift 1;;
+    --note-type-splits) NOTE_SPLITS=1; shift 1;;
+    --note-types) NOTE_TYPES_ARG="$2"; shift 2;;
     --no-parent-report) SKIP_PARENT=1; shift 1;;
     --no-consolidate) CONSOLIDATE=0; shift 1;;
     --keep-shards) KEEP_SHARDS=1; shift 1;;
@@ -430,16 +435,32 @@ run_pipeline_sharded() {
         if [[ "$KEEP_SHARDS" -eq 1 ]]; then
           if [[ "$MAKE_REPORTS" -gt 0 ]]; then
             ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards && \
-              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true ) &
+              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true; \
+              if [[ "$NOTE_SPLITS" -eq 1 ]]; then \
+                if [[ -n "$NOTE_TYPES_ARG" ]]; then bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv --types "$NOTE_TYPES_ARG" || true; \
+                else bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv || true; fi; \
+              fi ) &
           else
-            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards ) &
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards; \
+              if [[ "$NOTE_SPLITS" -eq 1 ]]; then \
+                if [[ -n "$NOTE_TYPES_ARG" ]]; then bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv --types "$NOTE_TYPES_ARG" || true; \
+                else bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv || true; fi; \
+              fi ) &
           fi
         else
           if [[ "$MAKE_REPORTS" -gt 0 ]]; then
             ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" && \
-              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true ) &
+              bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true; \
+              if [[ "$NOTE_SPLITS" -eq 1 ]]; then \
+                if [[ -n "$NOTE_TYPES_ARG" ]]; then bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv --types "$NOTE_TYPES_ARG" || true; \
+                else bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv || true; fi; \
+              fi ) &
           else
-            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" ) &
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent"; \
+              if [[ "$NOTE_SPLITS" -eq 1 ]]; then \
+                if [[ -n "$NOTE_TYPES_ARG" ]]; then bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv --types "$NOTE_TYPES_ARG" || true; \
+                else bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv || true; fi; \
+              fi ) &
           fi
         fi
         CONSOLIDATE_PIDS+=($!)
@@ -459,6 +480,14 @@ run_pipeline_sharded() {
           echo "[report] Building per-pipeline report (async, csv): $rpt"
           ( bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true ) &
           REPORT_PIDS+=($!)
+        fi
+        # Build per-note-type workbooks if requested
+        if [[ "$NOTE_SPLITS" -eq 1 ]]; then
+          if [[ -n "$NOTE_TYPES_ARG" ]]; then
+            bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv --types "$NOTE_TYPES_ARG" || true
+          else
+            bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv || true
+          fi
         fi
       fi
     else
