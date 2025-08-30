@@ -222,11 +222,6 @@ All commands (reference)
 
 - `scripts/build_multi_run_summary.sh` - one summary across multiple runs.
 
-Deprecated scripts (kept for reference)
-- `scripts/deprecated/ctakes_cluster_run.sh` – use `scripts/run_compare_cluster.sh`.
-- `scripts/deprecated/build_report.sh` – use `scripts/build_xlsx_report.sh`.
-- `scripts/deprecated/consolidate_cuicount.py` – use the CuiCounts sheet in the Java workbook.
-
 ## Copy-Paste Commands (Ubuntu/Debian)
 
 These are ready to run from the repository root.
