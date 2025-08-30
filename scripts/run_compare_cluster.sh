@@ -331,7 +331,9 @@ run_pipeline_sharded() {
     fi
     # Rewrite relative includes to absolute repo paths so includes resolve from any location
     if command -v sed >/dev/null 2>&1; then
-      sed -i -E "s#\b(load|include)\s+\.\.\/\.\.\/pipelines/#\\1 $BASE_DIR/pipelines/#g" "$tuned_piper" || true
+      # Rewrite lines like: "load ../../pipelines/..." or "include ../../pipelines/..."
+      # Anchor at start with optional leading spaces to avoid accidental matches in comments.
+      sed -i -E "s#^[[:space:]]*(load|include)[[:space:]]+\.\.\/\.\.\/pipelines/#\\1 $BASE_DIR/pipelines/#g" "$tuned_piper" || true
     fi
 
     # Ensure TimingEndAE writes a per-shard timing CSV to accelerate reporting
@@ -366,6 +368,8 @@ run_pipeline_sharded() {
     (
       set +e
       cd "$BASE_DIR" >/dev/null
+      # Ensure per-shard temp directory exists for -Djava.io.tmpdir
+      mkdir -p "$outdir/tmp" || true
       attempt=1
       last_ec=0
   while (( attempt <= 3 )); do
