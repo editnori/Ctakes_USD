@@ -338,8 +338,8 @@ run_pipeline_sharded() {
     fi
     # Create a per-run piper file with the requested thread count
     tuned_piper="$outdir/$(basename "$piper")"
-    if grep -Eq "^\s*threads\s+[0-9]+" "$piper" 2>/dev/null; then
-      sed -E "s#^\s*threads\s+[0-9]+#threads ${THREADS}#" "$piper" > "$tuned_piper"
+    if grep -Eq "^[[:space:]]*threads[[:space:]]+[0-9]+" "$piper" 2>/dev/null; then
+      sed -E "s#^[[:space:]]*threads[[:space:]]+[0-9]+#threads ${THREADS}#" "$piper" > "$tuned_piper"
     else
       { echo "threads ${THREADS}"; cat "$piper"; } > "$tuned_piper"
     fi
@@ -354,7 +354,7 @@ run_pipeline_sharded() {
     timing_file="$outdir/timing_csv/timing.csv"; mkdir -p "$(dirname "$timing_file")"
     if ! grep -Eq "TimingEndAE.*TimingFile=" "$tuned_piper" 2>/dev/null; then
       # Append TimingFile to any TimingEndAE add line
-      sed -i -E "/^[[:space:]]*add[[:space:]]+tools\\.timing\\.TimingEndAE(\s|$)/ s#$# TimingFile=\"$timing_file\"#" "$tuned_piper" || true
+      sed -i -E "/^[[:space:]]*add[[:space:]]+tools\\.timing\\.TimingEndAE([[:space:]]|$)/ s|$| TimingFile=\"$timing_file\"|" "$tuned_piper" || true
     fi
     if [[ "$CTAKES_SANITIZE_DICT" -eq 1 && -f "$SRC_DB_DIR/$DICT_NAME.script" ]]; then
       if [[ "$using_shared_db" -eq 1 ]]; then
