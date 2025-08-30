@@ -2957,7 +2957,7 @@ private static String[] semFromTui(String tui) {
                 List<String> r = mentionsFull.get(i);
                 if (idxCui < 0 || idxDoc < 0) continue;
                 total++;
-                docsWithMentions.add(r.get(idxDoc));
+                if (idxDoc >= 0 && r.size() > idxDoc) { docsWithMentions.add(r.get(idxDoc)); }
                 String neg = (idxNeg>=0 && r.size()>idxNeg) ? r.get(idxNeg) : "";
                 String unc = (idxUnc>=0 && r.size()>idxUnc) ? r.get(idxUnc) : "";
                 String gen = (idxGen>=0 && r.size()>idxGen) ? r.get(idxGen) : "";
@@ -2969,7 +2969,7 @@ private static String[] semFromTui(String tui) {
                 if (idxDtr>=0 && r.size()>idxDtr && !nvl(r.get(idxDtr)).isEmpty()) dtrCount++;
                 if (idxDeg>=0 && r.size()>idxDeg && "true".equalsIgnoreCase(r.get(idxDeg))) degCount++;
                 if (idxCoref>=0 && r.size()>idxCoref && "true".equalsIgnoreCase(r.get(idxCoref))) corefCount++;
-                String cui = r.get(idxCui);
+                String cui = (idxCui >= 0 && r.size() > idxCui) ? r.get(idxCui) : "";
                 if (cui != null && !cui.isEmpty()) { distinctCuis.add(cui); nonEmptyCui++; }
             }
             rows.add(Arrays.asList("Documents With Clinical Concepts", String.valueOf(docsWithMentions.size())));
@@ -3008,7 +3008,7 @@ private static String[] semFromTui(String tui) {
             for (int i = 1; i < mentionsFull.size(); i++) {
                 List<String> r = mentionsFull.get(i);
                 if (idxCui < 0) continue;
-                String cui = r.get(idxCui);
+                String cui = (idxCui >= 0 && r.size() > idxCui) ? r.get(idxCui) : "";
                 String pref = (idxPref>=0 && r.size()>idxPref) ? r.get(idxPref) : "";
                 if (pref == null || pref.isEmpty()) {
                     String text = (idxText>=0 && r.size()>idxText) ? r.get(idxText) : "";
@@ -3411,3 +3411,4 @@ private static String[] semFromTui(String tui) {
         return rows;
     }
 }
+
