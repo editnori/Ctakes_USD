@@ -283,6 +283,20 @@ run_pipeline_sharded() {
     else
       echo "[dict] Using existing shared read-only HSQLDB: ${shareddb}" >&2
     fi
+    # HSQLDB file databases cannot be opened by multiple JVMs concurrently.
+    # If we will run more than one shard or more than one pipeline concurrently,
+    # fall back to per-shard RAM copies to avoid lock acquisition failures.
+    if [[ "${DICT_SHARED_FORCE:-0}" -ne 1 ]]; then
+      if (( RUNNERS > 1 )) || (( ${MAX_PIPELINES:-1} > 1 )); then
+        echo "[dict] Disabling shared DB for concurrency (RUNNERS=${RUNNERS}, MAX_PIPELINES=${MAX_PIPELINES:-1})." >&2
+        echo "       Using per-shard copies under /dev/shm to avoid HSQLDB lock conflicts." >&2
+        using_shared_db=0
+      fi
+    fi
+    # Clear a stale lock file if present when using the shared DB and only 1 JVM will run
+    if [[ "$using_shared_db" -eq 1 ]]; then
+      rm -f "${shareddb}.lck" 2>/dev/null || true
+    fi
   fi
   for i in $(seq -f "%03g" 0 $((RUNNERS-1))); do
     shard="$shards_dir/$i"; [[ -d "$shard" ]] || continue
