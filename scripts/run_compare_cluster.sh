@@ -329,6 +329,11 @@ run_pipeline_sharded() {
     else
       { echo "threads ${THREADS}"; cat "$piper"; } > "$tuned_piper"
     fi
+    # Rewrite relative includes to absolute repo paths so includes resolve from any location
+    if command -v sed >/dev/null 2>&1; then
+      sed -i -E "s#\b(load|include)\s+\.\.\/\.\.\/pipelines/#\\1 $BASE_DIR/pipelines/#g" "$tuned_piper" || true
+    fi
+
     # Ensure TimingEndAE writes a per-shard timing CSV to accelerate reporting
     timing_file="$outdir/timing_csv/timing.csv"; mkdir -p "$(dirname "$timing_file")"
     if ! grep -Eq "TimingEndAE.*TimingFile=" "$tuned_piper" 2>/dev/null; then
@@ -360,7 +365,7 @@ run_pipeline_sharded() {
     fi
     (
       set +e
-      cd "$CTAKES_HOME" >/dev/null
+      cd "$BASE_DIR" >/dev/null
       attempt=1
       last_ec=0
   while (( attempt <= 3 )); do
@@ -557,3 +562,5 @@ if [[ "$SKIP_PARENT" -eq 0 ]]; then
 else
   echo "[report] Skipping parent compare summary (--no-parent-report)"
 fi
+
+
