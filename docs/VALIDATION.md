@@ -53,3 +53,5 @@ Notes
 - Do not commit raw notes under `samples/mimic/`. The repo’s `.gitignore` excludes `*.txt` in that folder.
 - The baseline manifest is small and may be committed if you want a shared reference. Keep in mind different JVMs/OSes can cause minor variations; in that case, re‑seed per environment.
 - The validator uses the same compare pipelines as large runs; it exercises dictionary, temporal models (if present), and writers.
+
+

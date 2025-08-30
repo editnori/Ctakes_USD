@@ -1,5 +1,0 @@
-Pipeline,Type,Jar,Path,notes
-TsDefaultFastPipeline.piper,full,ctakes-clinical-pipeline-6.0.0.jar,org/apache/ctakes/clinical/pipeline/TsDefaultFastPipeline.piper,thread-safe fast baseline (entities+assertion)
-TsDefaultRelationPipeline.piper,full,ctakes-relation-extractor-6.0.0.jar,org/apache/ctakes/relation/extractor/pipeline/TsDefaultRelationPipeline.piper,adds clinical relations (degree/location/modifier)
-TsDefaultTemporalPipeline.piper,full,ctakes-temporal-6.0.0.jar,org/apache/ctakes/temporal/pipeline/TsDefaultTemporalPipeline.piper,adds events and temporal relations
-TsDefaultTemporalCorefPipeline.piper,full,ctakes-coreference-6.0.0.jar,org/apache/ctakes/coreference/pipeline/TsDefaultTemporalCorefPipeline.piper,adds coreference to temporal stack

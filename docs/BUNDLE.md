@@ -52,3 +52,5 @@ Dependencies (Ubuntu/Debian)
 - `scripts/install_bundle.sh --deps` installs: `openjdk-17-jdk curl coreutils findutils gawk sed grep tar`.
 - The script verifies `java`, `javac`, and `jar` are on PATH and prints their versions.
 - Parallel runs stage the HSQL dictionary under `/dev/shm` for speed/locking; ensure it exists (it does on Ubuntu by default).
+
+

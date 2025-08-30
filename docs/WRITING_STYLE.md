@@ -1,7 +1,7 @@
 # How I Write: Grammar, Mechanics, and Voice
 
-Author: Layth M Qassem  
-Date: 2025-08-22  
+Author: Layth M Qassem
+Date: 2025-08-22
 Purpose: Document my actual writing patterns so others can replicate them
 
 I analyzed my SmartSig documentation, Confluence pages, and technical specs to extract how I actually write. Not theory. Patterns from real documents I've shipped.
@@ -16,7 +16,7 @@ Active voice unless passive adds clarity. "We deployed v1.8.2" not "v1.8.2 was d
 
 Parallel structure in lists. Lists always follow paragraphs that set them up. Never float bullets without context. My actual pattern from production docs explains what's coming, then lists:
 - Checks if exact signature exists in whitelist
-- Evaluates text complexity  
+- Evaluates text complexity
 - Routes to appropriate engine
 
 All start with verbs. Same grammatical shape. The paragraph before explained why we need these three steps.
@@ -49,9 +49,9 @@ Technical terms with immediate definition. "GCN_SEQNO (FDB) and (Medi-Span) are 
 
 ## Tense Consistency
 
-Present for system behavior: "SmartSig processes prescriptions"  
-Past for what happened: "We deployed the fix at 14:32 UTC"  
-Future only with dates: "We will migrate on 2025-09-15"  
+Present for system behavior: "SmartSig processes prescriptions"
+Past for what happened: "We deployed the fix at 14:32 UTC"
+Future only with dates: "We will migrate on 2025-09-15"
 
 Never vague future like "we plan to optimize." Either commit with a date or state the condition: "After validation passes, we migrate."
 
@@ -73,7 +73,7 @@ Wrong way (scattered bullets):
 
 Benefits:
 - Fast
-- Reliable  
+- Reliable
 - Scalable
 
 Right way (integrated with context):
@@ -107,8 +107,8 @@ JSON/XML with real data:
 SQL with comments only when needed:
 
 ```sql
-SELECT om.ORDER_MED_ID, om.PAT_ID  
-FROM ORDER_MED AS om  
+SELECT om.ORDER_MED_ID, om.PAT_ID
+FROM ORDER_MED AS om
 JOIN CLARITY_MEDICATION AS med  -- links to medication master
 ```
 
@@ -138,7 +138,7 @@ Data as singular when referring to a set. "This data shows" not "these data show
 
 Hard-Ban Words (never use)
 - leverage — say "use"
-- utilize — say "use"  
+- utilize — say "use"
 - synergy/synergize — delete entirely
 - holistic — be specific instead
 - innovative/innovation — show what's new with specifics
@@ -162,7 +162,7 @@ Hard-Ban Words (never use)
 - circle back — say "revisit" or "discuss again"
 - low-hanging fruit — say "quick wins" or list specific items
 - move the needle — show the actual metric movement
-- boil the ocean — say "overly ambitious" 
+- boil the ocean — say "overly ambitious"
 - bandwidth (for human capacity) — say "time" or "capacity"
 
 Soft-Ban Words (only with immediate numbers)
@@ -224,12 +224,12 @@ Never in documentation. Zero. None.
 
 Slack status only:
 - ✅ for completed
-- ⚠️ for warning/risk  
+- ⚠️ for warning/risk
 - ⛔ for blocked
 - ℹ️ for FYI
 
 Banned everywhere:
-🚀 (not "launching"), 💯 (not "100%"), 🔥 (not "on fire"), 
+🚀 (not "launching"), 💯 (not "100%"), 🔥 (not "on fire"),
 🎉 (not "celebrating"), 🙌 (not "praising"), 😍 (not "loving it"),
 🤯 (not "mind-blown"), 💪 (not "strong"), 🏆 (not "winning")
 
@@ -259,12 +259,12 @@ Never do these:
 
 ## Quick Grammar Fixes
 
-Less vs fewer: Less time, fewer errors  
-While vs although: While = during time, although = contrast  
-Since vs because: Since = time unless obvious  
-Affect vs effect: Affect = verb, effect = noun (usually)  
-Ensure vs insure: Ensure = make certain, insure = insurance  
-Compliment vs complement: Compliment = praise, complement = complete  
+Less vs fewer: Less time, fewer errors
+While vs although: While = during time, although = contrast
+Since vs because: Since = time unless obvious
+Affect vs effect: Affect = verb, effect = noun (usually)
+Ensure vs insure: Ensure = make certain, insure = insurance
+Compliment vs complement: Compliment = praise, complement = complete
 Comprise: The whole comprises the parts (never "comprised of")
 
 ## My Actual Templates
@@ -288,4 +288,6 @@ Read your document aloud. If you wouldn't say it to a colleague, rewrite it. If 
 Every sentence should survive this question: "Can someone act on this?" If not, cut it or add specifics.
 
 This isn't about perfection. It's about clarity. Write like you've built the thing, broken it, fixed it, and explained it to confused stakeholders at 3 AM. Because that's what we actually do.
+
+
 

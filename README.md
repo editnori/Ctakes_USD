@@ -304,7 +304,7 @@ ls -1 "$OUT_BASE"/*/ctakes-*.xlsx
 Sanity-check input distribution (per subfolder):
 
 ```bash
-for dir in "$INPUT_ROOT"/*/; do 
+for dir in "$INPUT_ROOT"/*/; do
   [ -d "$dir" ] || continue
   count=$(find "$dir" -type f -name "*.txt" | wc -l)
   [ "$count" -gt 0 ] && echo "$(basename "$dir"): $count files"
@@ -421,3 +421,5 @@ Select a single pipeline (or a subset)
 - One pipeline: `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only S_core --reports`
 - Multiple: `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only "S_core D_core_temp" --reports`
 - Temporal only (if models present): `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only "S_core_temp D_core_temp" --reports`
+
+

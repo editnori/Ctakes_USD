@@ -1,16 +1,16 @@
 # Pipelines and Combinations
 
-Two entry scripts exercise WSD-enabled pipelines:
+Use `scripts/run_compare_cluster.sh` to run one or more WSD-enabled pipelines at scale.
 
-- `scripts/run_wsd_smoke.sh`: quick core+WSD run on a sample directory.
-  - Piper: `pipelines/wsd/TsDefaultFastPipeline_WSD.piper`
-  - Writers: shared block from `pipelines/includes/Writers_Xmi_Table.piper`
+- Single pipeline example (WSD fast):
+  - `bash scripts/run_compare_cluster.sh -i <input_dir> -o <out_base> --only S_core --reports`
+  - Piper: `pipelines/compare/TsSectionedFast_WSD_Compare.piper`
+  - Writers: shared block `pipelines/includes/Writers_Xmi_Table.piper` for consistent outputs
 
-- `scripts/run_compare_smoke.sh`: runs multiple combinations to compare modules.
-  - Pipelines:
-    - Sectioned core, relation, temporal, temporal+coref
-    - Default (non-sectioned) relation, temporal, temporal+coref, coref
-  - Each loads the same unified writers include, so outputs are consistent.
+- Multiple pipelines (compare families):
+  - Sectioned core, relation, temporal, temporal+coref
+  - Default (non-sectioned) relation, temporal, temporal+coref, coref
+  - Use `--only "S_core S_core_rel S_core_temp S_core_temp_coref D_core_rel D_core_temp D_core_temp_coref D_core_coref"`
 
 WSD configuration (uniform across pipelines):
 
@@ -31,4 +31,5 @@ Extending coverage:
   add an enhanced table writer across all pipelines for consistent headers.
 - To include per-source vocab/code, use a concept source that emits those fields
   and add columns to the enhanced writer.
+
 

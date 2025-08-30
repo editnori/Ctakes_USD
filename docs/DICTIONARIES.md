@@ -7,9 +7,9 @@ Key terms:
 - Concept Factory: The component that builds `refsem:UmlsConcept` features for a mention (CUI/TUI/preferredText/codingScheme/etc.).
 - SAB (Source Vocabulary): UMLS source code (e.g., SNOMEDCT_US, RXNORM). Appears in UMLS MRCONSO.RRF as `SAB` and the source `CODE`.
 
-## What We Use in WSD Smoke
+## What We Use in WSD‑Enabled Runs
 
-The WSD smoke run uses a single dictionary per run — an offline copy of the FullClinical fast dictionary:
+Cluster runs use a single dictionary per run — an offline copy of the FullClinical fast dictionary:
 
 1) The runner copies your chosen dictionary XML to the run output dir and rewrites it for offline use:
    - `UmlsJdbcRareWordDictionary` → `JdbcRareWordDictionary` (uses HSQL files)
@@ -44,7 +44,7 @@ Fields used (existing in cTAKES):
 - Mention-level: `textsem:IdentifiedAnnotation.confidence`.
 - Concept-level: `refsem:UmlsConcept.score`.
 
-Current WSD smoke scoring (custom, local):
+Current WSD scoring (custom, local):
 - Implemented in `tools.wsd.SimpleWsdDisambiguatorAnnotator`.
 - Picks one best concept per mention by token overlap between the sentence context and the candidate’s preferred text.
 - ConceptScore = |context ∩ candidate| / |candidate|, tie‑break by longer preferred text.
@@ -56,11 +56,11 @@ Graph-based WSD (optional next step):
 
 ## Which Dictionary is Used?
 
-In our pipelines, exactly one dictionary is used per run: the one specified by the (sanitized) dictionary XML passed to Piper. The HSQL files behind it are the fast rare‑word index. Alternative setups (UMLS JDBC or YTEX) are options you can switch to; they are not active in the current WSD smoke pipeline.
+In our pipelines, exactly one dictionary is used per run: the one specified by the (sanitized) dictionary XML passed to Piper. The HSQL files behind it are the fast rare‑word index. Alternative setups (UMLS JDBC or YTEX) are options you can switch to.
 
 ## Report Columns and Sources
 
-Workbook (`report.xml`) sheets:
+Workbook sheets:
 - Overview: run timings and file paths (plus XMI document count) and high-level metrics.
 - Modules: exact `load`/`add` lines from the `.piper` file.
 - Clinical Concepts: chosen concept per mention (post-WSD) with fields consolidated: Section, Semantic Group/Type, Type, Polarity/Confidence/Assertion flags, CandidateCount/Disambiguated, CUI/TUI/PreferredText/CodingScheme/ConceptScore, Candidates, Text.
@@ -76,3 +76,5 @@ Mapping:
 Notes:
 - Some writers encode negation in CUI counts by prefixing a hyphen (e.g., `-C0000000`). The workbook’s CuiCounts sheet splits this into `CUI` and a `Negated` flag and strips the leading `-`.
 - Some legacy cTAKES writers may append a "-c" suffix to CUIs in certain tables. The workbook normalizes CUIs by stripping a trailing "-c" when aggregating Mentions.
+
+

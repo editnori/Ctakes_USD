@@ -1,7 +1,7 @@
 # cTAKES 6.0.0 Catalog — Modules, Pipelines, and How To Run Them
 
-**Author:** Layth M Qassem  
-**Date:** 2025-08-23  
+**Author:** Layth M Qassem
+**Date:** 2025-08-23
 **Purpose:** One place that shows every NLP module available in this cTAKES build, every pipeline that ships in the jars, and how those pieces connect. I include a runnable stress‑test plan so we can evaluate speed and accuracy across all pipelines without guessing.
 
 ## How This Catalog Works
@@ -18,12 +18,12 @@ Piper is a recipe. JARs are the engines. Sub‑pipelines are reusable blocks the
 
 ## What’s In This Build (numbers that matter)
 
-- 36 full pipelines (ready to run). 17 sub‑pipelines (building blocks). 24 example pipelines (demos). Source: the CSV. 
-- Clinical: DefaultFastPipeline, SectionedFastPipeline, and their thread‑safe Ts variants. 
-- Temporal: DefaultTemporalPipeline (+ relations), Sectioned variants, and Ts variants. 
-- Coreference: Temporal+Coref / Relation+Coref variants that load the coref sub‑pipe. 
-- Relation extractor: clinical modifier relations (degree, location, modifiers). 
-- Tokenizer stacks: DefaultTokenizerPipeline, FullTokenizerPipeline (section/paragraph/list aware), Ts variants. 
+- 36 full pipelines (ready to run). 17 sub‑pipelines (building blocks). 24 example pipelines (demos). Source: the CSV.
+- Clinical: DefaultFastPipeline, SectionedFastPipeline, and their thread‑safe Ts variants.
+- Temporal: DefaultTemporalPipeline (+ relations), Sectioned variants, and Ts variants.
+- Coreference: Temporal+Coref / Relation+Coref variants that load the coref sub‑pipe.
+- Relation extractor: clinical modifier relations (degree, location, modifiers).
+- Tokenizer stacks: DefaultTokenizerPipeline, FullTokenizerPipeline (section/paragraph/list aware), Ts variants.
 - Dictionary: DictionarySubPipe (fast rare‑word dictionary). Assertion: AttributeCleartkSubPipe (negation, uncertainty, subject, etc.).
 
 ## Modules We Will Use (grouped)
@@ -149,7 +149,7 @@ What we do not set (and why):
 ### Outputs beyond XMI (CSV/TSV/pretty)
 
 If you want table/CSV‑like outputs in addition to XMI, add these CAS Consumers to your pipeline:
-- `org.apache.ctakes.core.cc.SemanticTableFileWriter` — table of recognized semantic items (TSV by default). 
+- `org.apache.ctakes.core.cc.SemanticTableFileWriter` — table of recognized semantic items (TSV by default).
 - `org.apache.ctakes.core.cc.TokenTableFileWriter` — tokens table (useful for audits).
 - `org.apache.ctakes.core.cc.CuiListFileWriter` / `CuiCountFileWriter` — per‑doc CUI list/counts.
 - `org.apache.ctakes.core.cc.pretty.plaintext.PrettyTextWriter` — human‑readable annotated plaintext.
@@ -394,3 +394,5 @@ Two direct questions I get when teams come from MetaMap or CUI matchers with exp
 - Concept confidence: The fast dictionary lookup in cTAKES is a rules/matching engine. It does not emit a MetaMap‑style numeric confidence for each CUI by default. Assertion and temporal components are machine‑learned (ClearTK), but the shipping pipelines annotate categorical properties (e.g., polarity/negation, uncertainty, DocTimeRel) rather than exposing classifier probabilities. If you need scores, you’d instrument those AEs or add writer code to emit their internal margins/probabilities. Not part of default outputs.
 
 - Word Sense Disambiguation (WSD): cTAKES 6.0.0 does not ship a dedicated WSD pipeline or annotator. Disambiguation is handled indirectly by dictionary design (rare‑word dictionary, windowing, chunk boundaries) and by context modules (assertion, temporal, coref) that filter or classify mentions. If you need WSD proper, you integrate an external WSD component or add a custom AE.
+
+

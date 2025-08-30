@@ -1,6 +1,6 @@
 # Outputs Overview
 
-This repo configures consistent outputs across all pipelines (smoke and compare).
+This repo configures consistent outputs across all pipelines.
 Each run writes the same directories under the chosen output path.
 
 Directories:
@@ -12,7 +12,7 @@ Directories:
 - `cui_list/`: Concept list (basic) per document.
 - `cui_count/`: Counts of CUIs per document.
 - `bsv_tokens/`: Token list with text spans per document.
- - `ctakes-*.xlsx`: XLSX workbook (multi-sheet) summarizing the run.
+- `ctakes-*.xlsx`: XLSX workbook (multi-sheet) summarizing the run.
 
 File naming pattern: `<docname>_table.(BSV|CSV|HTML)` for tables, and `<docname>.txt.xmi` for XMI.
 
@@ -55,3 +55,5 @@ Source vocab and codes:
   per–source codes. To get `code_system`/`code` (e.g., SNOMEDCT, RXNORM), switch to a
   dictionary or concept factory that emits per-source codes (e.g., YTEX-backed UMLS),
   then add columns to an enhanced writer.
+
+

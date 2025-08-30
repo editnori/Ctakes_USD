@@ -1,4 +1,4 @@
-# Excel Report (Multi-Sheet)
+# Excel Report (Multi-Sheet, XLSX)
 
 Generates a single Excel-compatible workbook (XML) per run with multiple sheets:
 - Overview: Run Info + high-level metrics plus “Top Concepts (Chosen by WSD)”.
@@ -8,21 +8,14 @@ Generates a single Excel-compatible workbook (XML) per run with multiple sheets:
 - CuiCounts: aggregated CUI counts per doc (with Negated column).
 - Tokens: aggregated tokens and spans.
 
-Why XML, not .xlsx?
-- Reports are written as true XLSX workbooks. We avoid external heavy dependencies by writing minimal XLSX parts.
-- You can open the `.xml` in Excel and “Save As” `.xlsx` if desired.
+Format
+- Reports are written as true `.xlsx` workbooks (no external heavy dependencies).
 
 Build a report for a run:
 
-```
-# scripts/run_wsd_smoke.sh now auto-builds the workbook as part of the run.
-# Disable with --no-report if needed.
-
-# Manual (re)build:
-./scripts/build_xlsx_report.sh -o outputs/wsd_smoke
-# Workbook name defaults to: ctakes-report-<run>-<pipeline>-<dictionary>-<timestamp>.xml
-# Example: outputs/wsd_smoke/ctakes-report-wsd_smoke-TsDefaultFastPipeline_WSD-FullClinical_AllTUIs_wsd_local-YYYYMMDD-HHMMSS.xml
-```
+Recommended usage
+- Build per-pipeline workbooks during a cluster run: `scripts/run_compare_cluster.sh … --reports`
+- Manual (re)build from a run directory: `./scripts/build_xlsx_report.sh -o <run_dir> -M csv`
 
 Optional arguments:
 - `-p <pipeline.piper>`: pipeline file to list modules (auto-discovered from log if available)
@@ -59,8 +52,10 @@ Keeping writers consistent:
 - All pipelines load the same writer include: `pipelines/includes/Writers_Xmi_Table.piper`, so directory layout is the same across runs.
 
 Cluster runs and consolidation:
-- The cluster runner consolidates `shard_*` outputs into top-level folders (xmi, bsv_table, csv_table, html_table, cui_list, cui_count) before building reports. If running the report tool manually on a sharded run, it can also aggregate across `shard_*` folders when top-level folders are absent.
+- The cluster runner consolidates `shard_*` outputs into top-level folders (xmi, bsv_table, csv_table, html_table, cui_list, cui_count) and writes `timing_csv/timing.csv` and `metrics.json` before building reports. The report tool can also aggregate across `shard_*` when top-level folders are absent.
 \n+Future improvements
 -------------------
 - Add `SAB` and source `CODE` columns when a SAB-aware concept factory is used (UMLS JDBC or YTEX-backed).
 - Integrate graph-based WSD scoring (semantic relatedness) and surface the score in `Confidence/ConceptScore`.
+
+

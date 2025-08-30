@@ -10,10 +10,7 @@ Overview
 Key Outputs
 -----------
 - HSQL dictionary DB: `apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0/resources/.../FullClinical_AllTUIs/`
-- Dictionary XML (offline copy created per run): `outputs/*/FullClinical_AllTUIs_*_local.xml`
-- WSD outputs (smoke script):
-  - XMI: `outputs/wsd_smoke/xmi/`
-  - Tables: `outputs/wsd_smoke/{bsv_table,csv_table,html_table}/`
+- Dictionary XML (offline copy created per run): `<run_dir>/FullClinical_AllTUIs_*_local.xml`
 
 Build the Full Dictionary
 -------------------------
@@ -27,16 +24,12 @@ Known gotcha: HSQL file URLs cannot include spaces. The run scripts copy the DB 
 
 Run WSD (local, default)
 ------------------------
-- Pipeline: `pipelines/wsd/TsDefaultFastPipeline_WSD.piper`
-  - Default tokenizer, chunker, dictionary lookup.
-  - Local WSD AE: `tools.wsd.SimpleWsdDisambiguatorAnnotator` (no YTEX dependency).
-  - Writers: XMI + Semantic tables (BSV, CSV, HTML).
-
-- Script: `scripts/run_wsd_smoke.sh`
-  - Creates an offline copy of the dictionary XML.
+- Pipelines: see `pipelines/wsd/*.piper` and compare variants under `pipelines/compare/*WSD_Compare.piper`.
+- Runner: `scripts/run_compare_cluster.sh -i <in> -o <out> --only S_core --reports`
+  - Creates an offline copy of the dictionary XML if `CTAKES_SANITIZE_DICT=1`.
   - Ensures HSQL DB path is space-free and rewires `jdbcUrl`.
   - Compiles local tools.
-  - Runs the WSD pipeline and writes outputs under `outputs/wsd_smoke/`.
+  - Writes outputs under the selected run folder.
 
 YTEX WSD (optional)
 -------------------
@@ -49,11 +42,11 @@ YTEX WSD (optional)
 
 CSV/BSV/HTML Tables
 -------------------
-- The WSD pipeline enables `SemanticTableFileWriter` in three styles:
+- Pipelines enable `SemanticTableFileWriter` in three styles:
   - BSV: default (pipe-delimited)
   - CSV: `TableType=CSV`
   - HTML: `TableType=HTML`
-- See outputs under `outputs/wsd_smoke/` (or your selected `-o` directory).
+- See outputs under your chosen `-o` directory.
 
 Troubleshooting
 ---------------
@@ -61,18 +54,19 @@ Troubleshooting
 - UMLS prompt: Use the offline-local dictionary XML (the run scripts generate it automatically).
 - Memory: Dictionary connect and WSD benefit from larger heaps (`-Xmx6g` to `-Xmx8g`).
 
-Files and Scripts Added
------------------------
+Files and Scripts
+-----------------
 - Tools:
   - `tools/wsd/SimpleWsdDisambiguatorAnnotator.java` – local WSD AE (single CUI selection).
   - `tools/ytex/LoadUmlsForYtex.java` – UMLS RRF → HSQL loader for optional YTEX DB.
 - Pipelines:
   - `pipelines/wsd/TsDefaultFastPipeline_WSD.piper` – WSD + XMI + BSV/CSV/HTML tables.
 - Scripts:
-  - `scripts/run_wsd_smoke.sh` – run WSD pipeline and produce outputs.
   - `scripts/build_ytex_umls_db.sh` – build local UMLS DB for YTEX.
 
 Future Improvements (Roadmap)
 -----------------------------
 - SAB-aware concepts in reports: When using a SAB-aware concept factory, include `SAB` and `CODE` columns alongside `CUI/TUI/PreferredText/CodingScheme` in the Clinical Concepts sheet.
 - Graph-based WSD: Add a graph-relatedness WSD annotator backed by the local MRCONSO/MRSTY/MRREL DB (HSQL) for improved disambiguation, with Confidence reflecting graph scores.
+
+
