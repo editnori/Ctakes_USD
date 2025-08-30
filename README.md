@@ -33,7 +33,7 @@ Clinician quick start (5 steps)
    - Per‑pipeline `.xlsx` files live in each pipeline run folder under `OUT_BASE`.
 
 Prerequisites
-- Java 17+
+- Java 11+
 - cTAKES 6.0.0. Set `CTAKES_HOME` to `apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0` (or your install).
 - Input notes under one directory (`.txt` files).
 
@@ -97,9 +97,10 @@ When you finish 10 runs and want one view:
 This links each run’s pipeline folders into `<combined_dir>` and builds `ctakes-runs-summary-<ts>.xlsx` in summary mode.
 
 What happens behind the scenes
-- The pipelines write per‑note Clinical Concepts CSVs during the run (and CUI counts/tokens when configured).
-- Consolidation moves shard outputs to the top level, restores the tuned `.piper` and a combined `run.log`, then removes shards.
-- The workbook builder reads the CSVs, CUI counts, tokens, `.piper`, and `run.log`. Reports are built in CSV mode (no XMI parsing).
+- Pipelines write per-note Clinical Concepts CSVs during the run (and CUI counts/tokens when configured).
+- Consolidation (async when requested) moves shard outputs to top level, restores the tuned `.piper`, writes `run.log`, `timing_csv/timing.csv`, and a lightweight `metrics.json`, then removes shards.
+- Parent compare workbook includes Pipelines Summary, Note Types Summary (aggregated by input group), and aggregate processing metrics.
+- Report builds run in CSV mode by default (no XMI parsing).
 
 Options you might change
 - `--autoscale`: derive `RUNNERS/THREADS/XMX` from host cores and memory.
@@ -115,7 +116,6 @@ pipelines/         # compare pipelines and shared writer includes
 tools/reporting/   # Excel workbook builder, CSV aggregator
 tools/reporting/uima/ClinicalConceptCsvWriter.java  # in-pipeline per-note CSV writer
 samples/mimic/     # place ~100 de-identified MIMIC notes (.txt) for validation
-scripts/deprecated # kept for reference; replaced by newer scripts
 ```
 
 I ignore the cTAKES distro and runtime outputs in git. Keep those local.
@@ -191,6 +191,14 @@ All commands (reference)
   - `--resume` resume only missing docs (checks top‑level `xmi/`).
   - `--reports` build per‑pipeline reports during run (CSV mode; async with `--reports-async`).
   - `--no-consolidate` keep `shard_*` (normally removed during consolidation).
+  - `--consolidate-async` queue consolidation/report jobs and wait for them at the end.
+  - `--keep-shards` consolidate but retain `shard_*` and `shards/` directories.
+  - `--only "<keys>"` run only specific pipelines (e.g., `"S_core D_core_temp"`).
+  - `-l|--dict-xml <file>` override dictionary XML descriptor.
+  - `--autoscale` derive `RUNNERS/THREADS/XMX` from host cores and memory (fast default).
+  - `--max-pipelines <N>` run up to N pipeline-group tasks concurrently at the top level.
+  - `--reports-sync` build per‑pipeline report synchronously; `--reports-async` to run in background.
+  - `--no-parent-report` skip building the parent compare workbook at the OUT base.
 
 - `scripts/status.sh` — dry-run status of what would be executed.
   - `-i|--in <dir>` input root.

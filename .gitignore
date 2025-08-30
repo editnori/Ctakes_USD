@@ -52,3 +52,23 @@ samples/mimic_output/
 # Local temp & jar extracts
 /META-INF/
 /tmp_*/
+
+# Gradle cache
+.gradle/
+
+# Local AI artifacts
+.claude/
+
+# Logs
+*.log
+
+run (*.log
+
+# Gradle cache
+.gradle/
+# Local AI artifacts
+.claude/
+# Logs
+*.log
+# Local captured logs
+run (10).log

@@ -86,6 +86,9 @@ public class ExcelXmlReport {
             // Aggregate processing metrics across subruns
             List<List<String>> procAgg = buildProcessingMetricsAggregateForParent(outDir);
             if (procAgg != null && procAgg.size() > 1) sheets.put("Processing Metrics (Aggregate)", procAgg);
+            // Group-by note type (derived from run directory name: <pipeline>_<group>_<timestamp>)
+            List<List<String>> byType = buildNoteTypeSummary(outDir);
+            if (byType != null && byType.size() > 1) sheets.put("Note Types Summary", byType);
             // Add a clinician-friendly summary sheet
             List<List<String>> clinician = buildClinicianSummaryIfAny(outDir);
             if (clinician != null && clinician.size() > 1) sheets.put("Clinician Summary", clinician);
@@ -169,6 +172,89 @@ public class ExcelXmlReport {
         }
         writeWorkbookXlsx(sheets, workbook);
         System.out.println("[report] Wrote workbook: " + workbook);
+    }
+
+    // Build a group-by summary using run dir naming convention: <pipeline>_<group>_<timestamp>
+    private static List<List<String>> buildNoteTypeSummary(Path outDir) throws IOException {
+        List<List<String>> rows = new ArrayList<>();
+        rows.add(Arrays.asList("Note Type","Documents","Avg Seconds per Doc","Clinical Concepts","Avg Confidence","% Concepts with DocTimeRel","Relations per Doc","Coref Markables per Doc","Distinct CUIs","Avg Candidate Count","Sec per 100 Concepts"));
+        if (outDir == null || !Files.isDirectory(outDir)) return rows;
+        class R { String group; SubdirMetrics m; double avgSec; }
+        Map<String,List<R>> byGroup = new LinkedHashMap<>();
+        try (DirectoryStream<Path> ds = Files.newDirectoryStream(outDir)) {
+            for (Path sub : ds) {
+                if (!Files.isDirectory(sub)) continue;
+                String name = sub.getFileName().toString();
+                // Skip non-run folders
+                String low = name.toLowerCase(java.util.Locale.ROOT);
+                if (low.equals("xmi") || low.equals("bsv_table") || low.equals("csv_table") || low.equals("csv_table_concepts") || low.equals("html_table") ||
+                    low.equals("cui_list") || low.equals("cui_count") || low.equals("bsv_tokens") || low.equals("logs") || low.startsWith("pending_") || low.startsWith("shard_")) {
+                    continue;
+                }
+                String grp = parseGroupFromRunName(name);
+                if (grp == null || grp.isEmpty()) grp = "(unknown)";
+                // Prefer fast metrics paths
+                SubdirMetrics m = computeMetricsFromJsonIfAny(sub);
+                if (m == null) m = computeMetricsFromTimingAndCounts(sub);
+                if (m == null) m = computeSubdirMetricsFromCsv(sub);
+                if (m == null && "1".equals(System.getenv("REPORT_ALLOW_XMI"))) m = computeSubdirMetrics(sub);
+                if (m == null) m = new SubdirMetrics();
+                String avg = null;
+                Path runLog = sub.resolve("run.log");
+                if (Files.isRegularFile(runLog)) avg = parseValueFromLog(runLog, "Average Seconds per Document");
+                double avgSec = parseDouble(avg);
+                if (avgSec <= 0) {
+                    List<DocTiming> dts = parseDocTimings(runLog);
+                    if (!dts.isEmpty()) { long sum=0; for (DocTiming dt : dts) sum += Math.max(0, dt.endMs - dt.startMs); avgSec = (sum/1000.0)/dts.size(); }
+                }
+                R r = new R(); r.group = grp; r.m = m; r.avgSec = avgSec;
+                byGroup.computeIfAbsent(grp, k -> new ArrayList<>()).add(r);
+            }
+        } catch (IOException ignore) {}
+        // Aggregate per group
+        for (Map.Entry<String,List<R>> e : byGroup.entrySet()) {
+            String grp = e.getKey(); List<R> list = e.getValue();
+            int docs = 0; long mentions=0; int distinct=0; double confSum=0; int confDocs=0; long dtr=0; long rel=0; long mark=0; long candSum=0; double avgSecWeighted=0;
+            for (R r : list) {
+                SubdirMetrics m = r.m; int d = Math.max(0, m.docCount);
+                docs += d; mentions += m.mentionCount; distinct += m.distinctCuiCount; dtr += m.docTimeRelCount; rel += m.relationCount; mark += m.markableCount; candSum += m.candidateCountSum;
+                if (d > 0 && r.avgSec > 0) avgSecWeighted += r.avgSec * d;
+                if (m.docCount>0) { confSum += m.avgConfidence; confDocs++; }
+            }
+            double avgSec = docs>0 ? (avgSecWeighted / docs) : 0.0;
+            double conf = confDocs>0 ? (confSum / confDocs) : 0.0;
+            double dtrPct = mentions>0 ? (100.0 * dtr / mentions) : 0.0;
+            double relPerDoc = docs>0 ? (double)rel / docs : 0.0;
+            double corefPerDoc = docs>0 ? (double)mark / docs : 0.0;
+            double cpd = docs>0 ? (double)mentions / docs : 0.0;
+            double avgCand = mentions>0 ? (double)candSum / mentions : 0.0;
+            double s100 = cpd>0 ? (avgSec / cpd * 100.0) : 0.0;
+            rows.add(Arrays.asList(
+                    grp,
+                    String.valueOf(docs),
+                    String.format(java.util.Locale.ROOT, "%.2f", avgSec),
+                    String.valueOf(mentions),
+                    String.format(java.util.Locale.ROOT, "%.3f", conf),
+                    String.format(java.util.Locale.ROOT, "%.1f%%", dtrPct),
+                    String.format(java.util.Locale.ROOT, "%.2f", relPerDoc),
+                    String.format(java.util.Locale.ROOT, "%.2f", corefPerDoc),
+                    String.valueOf(distinct),
+                    String.format(java.util.Locale.ROOT, "%.2f", avgCand),
+                    String.format(java.util.Locale.ROOT, "%.2f", s100)
+            ));
+        }
+        if (rows.size() == 1) rows.add(Arrays.asList("No data found"));
+        return rows;
+    }
+
+    private static String parseGroupFromRunName(String name) {
+        if (name == null) return null;
+        int lastUnd = name.lastIndexOf('_');
+        if (lastUnd <= 0) return null;
+        int prevUnd = name.lastIndexOf('_', lastUnd - 1);
+        if (prevUnd <= 0) return null;
+        // Suffix after lastUnd is timestamp; between prevUnd and lastUnd is group
+        return name.substring(prevUnd + 1, lastUnd);
     }
 
     private static String detectPipelineKeyFromOutDir(Path outDir) {
