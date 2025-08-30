@@ -514,36 +514,23 @@ run_pipeline_sharded() {
   fi
 }
 
-# Build task list (pipeline x group)
-declare -a _TASKS=()
+# Execute tasks with top-level concurrency control
+declare -a TOP_PIDS=()
 for key in "${keys[@]}"; do
   piper="${SETS[$key]}"; [[ -f "$piper" ]] || { echo "Missing pipeline: $piper" >&2; continue; }
   for grp in "${INPUT_GROUPS[@]}"; do
-    _TASKS+=("${key}:::${piper}:::${grp}")
+    # throttle top-level task fan-out
+    while (( $(jobs -rp | wc -l) >= ${MAX_PIPELINES:-1} )); do sleep 1; done
+    run_pipeline_sharded "$key" "$piper" "$grp" "$OUT" &
+    TOP_PIDS+=($!)
   done
 done
-
-run_tasks() {
-  local -a tasks=("$@")
-  local max_jobs="$MAX_PIPELINES"
-  [[ -z "$max_jobs" || "$max_jobs" -lt 1 ]] && max_jobs=1
-  local -a t_pids=()
-  for t in "${tasks[@]}"; do
-    IFS=':::' read -r key piper grp <<<"$t"
-    # throttle
-    while (( $(jobs -rp | wc -l) >= max_jobs )); do sleep 1; done
-    run_pipeline_sharded "$key" "$piper" "$grp" "$OUT" &
-    t_pids+=($!)
-  done
-  # Wait for all top-level tasks
-  local any_fail=0
-  for pid in "${t_pids[@]}"; do
-    if ! wait "$pid"; then any_fail=1; fi
-  done
-  return $any_fail
-}
-
-run_tasks "${_TASKS[@]}" || echo "[warn] One or more pipeline-group tasks reported failures" >&2
+# Wait for all top-level tasks
+top_any_fail=0
+for pid in "${TOP_PIDS[@]}"; do
+  if ! wait "$pid"; then top_any_fail=1; fi
+done
+if (( top_any_fail )); then echo "[warn] One or more pipeline-group tasks reported failures" >&2; fi
 
 if [[ "$MAKE_REPORTS" -eq 2 && ${#REPORT_PIDS[@]} -gt 0 ]]; then
   echo "[report] Waiting for async per-pipeline reports to finish (${#REPORT_PIDS[@]} jobs) ..."
