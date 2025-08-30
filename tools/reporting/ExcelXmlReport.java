@@ -33,6 +33,8 @@ public class ExcelXmlReport {
     // Header fill color for XLSX styles (ARGB). Defaults to light gray; can be overridden per pipeline.
     private static String HEADER_FILL_ARGB = "FFEFEFEF";
     private static final Map<String,String> PIPELINE_COLOR_ARGB;
+    // Progress print interval; 0 disables incremental progress logs
+    private static int REPORT_PROGRESS_INTERVAL = getIntEnv("REPORT_PROGRESS_INTERVAL", 10000);
     static {
         Map<String,String> m = new LinkedHashMap<>();
         // Legacy-aligned palette (ARGB: FF + RRGGBB)
@@ -70,6 +72,10 @@ public class ExcelXmlReport {
         if (runLog != null) System.out.println("[report]   runLog   = " + runLog);
         if (dictXml != null) System.out.println("[report]   dictXml  = " + dictXml);
         System.out.println("[report]   mode     = " + mode);
+        // If caller selects csv/summary, default to no incremental parse logging unless explicitly requested
+        if (!"full".equalsIgnoreCase(mode) && REPORT_PROGRESS_INTERVAL == 1000) {
+            REPORT_PROGRESS_INTERVAL = 0;
+        }
 
         // Build sheets
         // Special case: If this looks like a compare parent dir with multiple subruns, build summary sheets and exit early.
@@ -210,7 +216,7 @@ public class ExcelXmlReport {
             })) {
                 for (Path p : ds) {
                     fileCount++;
-                    if (fileCount % 1000 == 0) System.out.println("[report]   aggregated " + fileCount + " per-doc CSVs from " + dir.getFileName());
+                    if (REPORT_PROGRESS_INTERVAL > 0 && fileCount % REPORT_PROGRESS_INTERVAL == 0) System.out.println("[report]   aggregated " + fileCount + " per-doc CSVs from " + dir.getFileName());
                     List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
                     if (lines.isEmpty()) continue;
                     // Read header and require an exact match to the expected columns to avoid pulling in csv_table rows
@@ -449,6 +455,16 @@ public class ExcelXmlReport {
         return n;
     }
 
+    private static int getIntEnv(String name, int defVal) {
+        try {
+            String v = System.getenv(name);
+            if (v == null || v.trim().isEmpty()) return defVal;
+            return Integer.parseInt(v.trim());
+        } catch (Exception e) {
+            return defVal;
+        }
+    }
+
     // =============== Combined Pipelines Summary (for compare runs) ===============
     private static List<List<String>> buildPipelinesSummaryIfAny(Path outDir) {
         List<List<String>> rows = new ArrayList<>();
@@ -492,8 +508,17 @@ public class ExcelXmlReport {
                         runLog = null;
                     }
                 }
-                SubdirMetrics m = computeMetricsFromReportIfAny(sub);
-                if (m == null) m = computeSubdirMetrics(sub);
+                // Prefer a light-weight metrics computation that avoids XMI parsing.
+                // Order of preference:
+                //  1) metrics.json (if present, precomputed fast path)
+                //  2) timing_csv/pipeline_timing.csv + cui_count totals
+                //  3) csv_table_concepts (derive metrics from per-doc CSVs)
+                //  4) fallback to XMI parsing only if explicitly allowed (REPORT_ALLOW_XMI=1)
+                SubdirMetrics m = computeMetricsFromJsonIfAny(sub);
+                if (m == null) m = computeMetricsFromTimingAndCounts(sub);
+                if (m == null) m = computeSubdirMetricsFromCsv(sub);
+                if (m == null && "1".equals(System.getenv("REPORT_ALLOW_XMI"))) m = computeSubdirMetrics(sub);
+                if (m == null) m = new SubdirMetrics();
                 String avg = (runLog!=null) ? parseValueFromLog(runLog, "Average Seconds per Document") : null;
                 if (avg == null || avg.isEmpty() || "".equals(avg) || "0.00".equals(avg)) {
                     java.util.List<DocTiming> dts = parseDocTimings(runLog);
@@ -725,8 +750,11 @@ public class ExcelXmlReport {
                         if (latest != null) runLog = latest; else continue;
                     } else continue;
                 }
-                SubdirMetrics m = computeMetricsFromReportIfAny(sub);
-                if (m == null) m = computeSubdirMetrics(sub);
+                SubdirMetrics m = computeMetricsFromJsonIfAny(sub);
+                if (m == null) m = computeMetricsFromTimingAndCounts(sub);
+                if (m == null) m = computeSubdirMetricsFromCsv(sub);
+                if (m == null && "1".equals(System.getenv("REPORT_ALLOW_XMI"))) m = computeSubdirMetrics(sub);
+                if (m == null) m = new SubdirMetrics();
                 String avg = parseValueFromLog(runLog, "Average Seconds per Document");
                 double avgSec = parseDouble(avg);
                 if (avgSec <= 0) {
@@ -1162,6 +1190,145 @@ public class ExcelXmlReport {
         long candidateCountSum;       // sum of CandidateCount across mentions
         boolean hasSmoking;           // any smoking status annotation present
     }
+
+    // Fast path: read a precomputed metrics.json if present (written by split-report tool or future runs)
+    private static SubdirMetrics computeMetricsFromJsonIfAny(Path subDir) {
+        try {
+            Path m = subDir.resolve("metrics.json");
+            if (!Files.isRegularFile(m)) return null;
+            String s = new String(Files.readAllBytes(m), StandardCharsets.UTF_8);
+            // very small ad-hoc JSON parse (no external deps)
+            SubdirMetrics out = new SubdirMetrics();
+            out.docCount = intJson(s, "docCount");
+            out.mentionCount = intJson(s, "mentionCount");
+            out.avgConfidence = doubleJson(s, "avgConfidence");
+            out.docTimeRelCount = intJson(s, "docTimeRelCount");
+            out.relationCount = intJson(s, "relationCount");
+            out.markableCount = intJson(s, "markableCount");
+            out.distinctCuiCount = intJson(s, "distinctCuiCount");
+            out.disambTrueCount = intJson(s, "disambTrueCount");
+            out.candidateCountSum = intJson(s, "candidateCountSum");
+            out.hasSmoking = boolJson(s, "hasSmoking");
+            return out;
+        } catch (Exception ignore) {
+            return null;
+        }
+    }
+    private static int intJson(String s, String k) { try { java.util.regex.Matcher m = java.util.regex.Pattern.compile("\""+k+"\"\s*:\\s*([-0-9]+)").matcher(s); if (m.find()) return Integer.parseInt(m.group(1)); } catch (Exception ignore) {} return 0; }
+    private static double doubleJson(String s, String k) { try { java.util.regex.Matcher m = java.util.regex.Pattern.compile("\""+k+"\"\s*:\\s*([0-9]+(\\.[0-9]+)?)").matcher(s); if (m.find()) return Double.parseDouble(m.group(1)); } catch (Exception ignore) {} return 0.0; }
+    private static boolean boolJson(String s, String k) { try { java.util.regex.Matcher m = java.util.regex.Pattern.compile("\""+k+"\"\s*:\\s*(true|false)").matcher(s); if (m.find()) return Boolean.parseBoolean(m.group(1)); } catch (Exception ignore) {} return false; }
+
+    // Fast path: use timing CSV and cui_count to fill basic metrics without XMI parse
+    private static SubdirMetrics computeMetricsFromTimingAndCounts(Path subDir) {
+        try {
+            SubdirMetrics m = new SubdirMetrics();
+            // Count docs by XMI files (including shards)
+            int docs = 0;
+            Path xmi = subDir.resolve("xmi");
+            if (Files.isDirectory(xmi)) docs += countFiles(xmi, ".xmi");
+            try (DirectoryStream<Path> shards = Files.newDirectoryStream(subDir, p -> Files.isDirectory(p) && p.getFileName().toString().startsWith("shard_"))) {
+                for (Path sh : shards) {
+                    Path sx = sh.resolve("xmi");
+                    if (Files.isDirectory(sx)) docs += countFiles(sx, ".xmi");
+                }
+            } catch (IOException ignore) {}
+            m.docCount = docs;
+
+            // Sum cui_count *.bsv files
+            long mentions = 0L; int distinct = 0; java.util.Set<String> seen = new java.util.HashSet<>();
+            Path cc = subDir.resolve("cui_count");
+            if (Files.isDirectory(cc)) {
+                try (DirectoryStream<Path> ds = Files.newDirectoryStream(cc, p -> p.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".bsv"))) {
+                    for (Path p : ds) {
+                        List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
+                        for (String line : lines) {
+                            if (line == null || line.trim().isEmpty()) continue;
+                            String[] parts = line.split("\\|", -1);
+                            if (parts.length < 2) continue;
+                            String raw = parts[0].trim();
+                            String cui = raw.startsWith("-") ? raw.substring(1) : raw;
+                            seen.add(cui);
+                            try { mentions += Long.parseLong(parts[1].trim()); } catch (Exception ignore) {}
+                        }
+                    }
+                }
+            }
+            m.mentionCount = (int)Math.min(Integer.MAX_VALUE, mentions);
+            m.distinctCuiCount = seen.size();
+            return m;
+        } catch (Exception ignore) {
+            return null;
+        }
+    }
+
+    // Light parse from per-doc CSVs only (no XMI)
+    private static SubdirMetrics computeSubdirMetricsFromCsv(Path subDir) {
+        Path cdir = subDir.resolve("csv_table_concepts");
+        java.util.List<Path> csvDirs = new java.util.ArrayList<>();
+        if (Files.isDirectory(cdir)) csvDirs.add(cdir);
+        try (DirectoryStream<Path> shards = Files.newDirectoryStream(subDir, p -> Files.isDirectory(p) && p.getFileName().toString().startsWith("shard_"))) {
+            for (Path sh : shards) {
+                Path sc = sh.resolve("csv_table_concepts");
+                if (Files.isDirectory(sc)) csvDirs.add(sc);
+            }
+        } catch (IOException ignore) {}
+        if (csvDirs.isEmpty()) return null;
+        SubdirMetrics m = new SubdirMetrics();
+        // Count docs via XMI dir if present
+        try {
+            int docs = 0;
+            Path xmi = subDir.resolve("xmi"); if (Files.isDirectory(xmi)) docs += countFiles(xmi, ".xmi");
+            try (DirectoryStream<Path> shards = Files.newDirectoryStream(subDir, p -> Files.isDirectory(p) && p.getFileName().toString().startsWith("shard_"))) {
+                for (Path sh : shards) { Path sx = sh.resolve("xmi"); if (Files.isDirectory(sx)) docs += countFiles(sx, ".xmi"); }
+            } catch (IOException ignore) {}
+            m.docCount = docs;
+        } catch (Exception ignore) {}
+
+        java.util.Set<String> distinct = new java.util.HashSet<>();
+        long mentions = 0L; long disambTrue = 0L; long candSum = 0L; long dtr = 0L; double confSum = 0.0; long confN = 0L;
+        for (Path dir : csvDirs) {
+            try (DirectoryStream<Path> ds = Files.newDirectoryStream(dir, p -> p.toString().toLowerCase(java.util.Locale.ROOT).endsWith(".csv"))) {
+                for (Path p : ds) {
+                    List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
+                    if (lines.isEmpty()) continue;
+                    List<String> header = parseCsvLine(lines.get(0));
+                    int iCui = indexOf(header, "CUI");
+                    int iConf = indexOf(header, "Confidence");
+                    int iDtr = indexOf(header, "DocTimeRel");
+                    int iDis = indexOf(header, "Disambiguated");
+                    int iCand = indexOf(header, "CandidateCount");
+                    for (int i=1;i<lines.size();i++) {
+                        String line = lines.get(i);
+                        if (line == null || line.trim().isEmpty()) continue;
+                        List<String> cols = parseCsvLine(line);
+                        if (iCui>=0 && iCui<cols.size()) distinct.add(cols.get(iCui));
+                        mentions++;
+                        if (iDis>=0 && iDis<cols.size()) {
+                            String v = cols.get(iDis);
+                            if ("true".equalsIgnoreCase(v) || "1".equals(v)) disambTrue++;
+                        }
+                        if (iCand>=0 && iCand<cols.size()) {
+                            try { candSum += Long.parseLong(cols.get(iCand)); } catch (Exception ignore) {}
+                        }
+                        if (iDtr>=0 && iDtr<cols.size()) {
+                            String v = cols.get(iDtr);
+                            if (v != null && !v.trim().isEmpty() && !"NONE".equalsIgnoreCase(v)) dtr++;
+                        }
+                        if (iConf>=0 && iConf<cols.size()) {
+                            try { confSum += Double.parseDouble(cols.get(iConf)); confN++; } catch (Exception ignore) {}
+                        }
+                    }
+                }
+            } catch (IOException ignore) {}
+        }
+        m.mentionCount = (int)Math.min(Integer.MAX_VALUE, mentions);
+        m.distinctCuiCount = distinct.size();
+        m.disambTrueCount = (int)Math.min(Integer.MAX_VALUE, disambTrue);
+        m.candidateCountSum = Math.min(Integer.MAX_VALUE, (int) candSum);
+        m.docTimeRelCount = (int)Math.min(Integer.MAX_VALUE, dtr);
+        m.avgConfidence = confN > 0 ? (confSum / confN) : 0.0;
+        return m;
+    }
     private static SubdirMetrics computeSubdirMetrics(Path subDir) {
         SubdirMetrics m = new SubdirMetrics();
         Path xmiDir = subDir.resolve("xmi");
@@ -1183,7 +1350,7 @@ public class ExcelXmlReport {
             try (DirectoryStream<Path> ds = Files.newDirectoryStream(xd, p -> p.toString().endsWith(".xmi") || p.toString().endsWith(".XMI"))) {
                 for (Path p : ds) {
                 parsed++;
-                if (parsed % 1000 == 0) System.out.println("[report]   parsed " + parsed + " XMI files (metrics)");
+                if (REPORT_PROGRESS_INTERVAL > 0 && parsed % REPORT_PROGRESS_INTERVAL == 0) System.out.println("[report]   parsed " + parsed + " XMI files (metrics)");
                 m.docCount++;
                 try {
                     javax.xml.parsers.DocumentBuilderFactory dbf = javax.xml.parsers.DocumentBuilderFactory.newInstance();
@@ -1424,7 +1591,7 @@ public class ExcelXmlReport {
         })) {
             for (Path p : ds) {
                 fileCount++;
-                if (fileCount % 1000 == 0) System.out.println("[report]   aggregated " + fileCount + " files from " + dir.getFileName());
+                if (REPORT_PROGRESS_INTERVAL > 0 && fileCount % REPORT_PROGRESS_INTERVAL == 0) System.out.println("[report]   aggregated " + fileCount + " files from " + dir.getFileName());
                 List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
                 if (lines.isEmpty()) continue;
                 for (int i=1;i<lines.size();i++) { // skip header

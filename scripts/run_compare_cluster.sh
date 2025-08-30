@@ -21,6 +21,10 @@ CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.
 JAVA_CP="$BASE_DIR/resources_override:$BASE_DIR/resources:$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$BASE_DIR/.build_tools"
 
 IN=""; OUT=""; RUNNERS="${RUNNERS:-16}"; XMX_MB="${XMX_MB:-6144}"; THREADS="${THREADS:-6}"; MAKE_REPORTS=0
+# Optional: limit concurrent pipeline-group executions (kept 1 by default for stability)
+MAX_PIPELINES="${MAX_PIPELINES:-1}"
+# Optional: autoscale runners/threads/xmx based on host cores/memory
+AUTOSCALE=0
 # Global report extension default (used outside functions as well)
 REPORT_EXT="${REPORT_EXT:-xlsx}"
 # Control dictionary handling (default: no sanitization, use provided XML as-is)
@@ -35,6 +39,23 @@ PARENT_DIR=""; RESUME=0; ONLY=""; SKIP_PARENT=0; CONSOLIDATE=1; KEEP_SHARDS=0; S
 CONSOLIDATE_ASYNC=1
 declare -a CONSOLIDATE_PIDS=()
 declare -a REPORT_PIDS=()
+declare -a CHILD_PIDS=()
+# Graceful shutdown: on INT/TERM, signal children and wait
+_graceful_exit() {
+  echo "[runner] Caught termination signal; attempting graceful shutdown..." >&2
+  local p
+  for p in "${CHILD_PIDS[@]}"; do
+    if kill -0 "$p" 2>/dev/null; then kill "$p" 2>/dev/null || true; fi
+  done
+  # Give background jobs up to 20s to finish
+  local end=$(( $(date +%s) + 20 ))
+  while (( $(date +%s) < end )); do
+    jobs -rp >/dev/null 2>&1 || break
+    sleep 1
+  done
+  exit 143
+}
+trap _graceful_exit INT TERM
 # UMLS key handling: default to env UMLS_KEY, fallback to project default if provided
 UMLS_KEY="${UMLS_KEY:-6370dcdd-d438-47ab-8749-5a8fb9d013f2}"
 while [[ $# -gt 0 ]]; do
@@ -50,6 +71,8 @@ while [[ $# -gt 0 ]]; do
     --parent) PARENT_DIR="$2"; shift 2;;
     --resume) RESUME=1; shift 1;;
     --only) ONLY="$2"; shift 2;;
+    --max-pipelines) MAX_PIPELINES="$2"; shift 2;;
+    --autoscale) AUTOSCALE=1; shift 1;;
     --no-parent-report) SKIP_PARENT=1; shift 1;;
     --no-consolidate) CONSOLIDATE=0; shift 1;;
     --keep-shards) KEEP_SHARDS=1; shift 1;;
@@ -63,6 +86,52 @@ done
 [[ -z "$IN" ]] && { echo "-i|--in is required" >&2; exit 2; }
 OUT="${OUT:-$BASE_DIR/outputs/compare}"
 mkdir -p "$OUT"
+
+# Optional autoscale: derive sensible defaults
+if [[ "$AUTOSCALE" -eq 1 ]]; then
+  # Detect cores
+  if command -v nproc >/dev/null 2>&1; then
+    CORES=$(nproc)
+  elif [[ -f /proc/cpuinfo ]]; then
+    CORES=$(grep -c '^processor' /proc/cpuinfo 2>/dev/null || echo 1)
+  else
+    CORES=${NUMBER_OF_PROCESSORS:-1}
+  fi
+  [[ -z "$CORES" || "$CORES" -lt 1 ]] && CORES=1
+  # Detect memory (MB)
+  if [[ -f /proc/meminfo ]]; then
+    MEM_MB=$(awk '/MemTotal:/ {printf "%d", $2/1024}' /proc/meminfo 2>/dev/null || echo 0)
+  else
+    MEM_MB=${MEM_MB:-0}
+  fi
+  # Allow override via env TARGET_MEM_FRAC (default 0.65)
+  TARGET_MEM_FRAC=${TARGET_MEM_FRAC:-0.65}
+  # Choose XMX per runner based on total memory
+  if [[ "$MEM_MB" -ge 1048576 ]]; then       # >= 1 TB
+    XMX_MB=${XMX_MB:-12288}
+  elif [[ "$MEM_MB" -ge 524288 ]]; then       # >= 512 GB
+    XMX_MB=${XMX_MB:-9216}
+  else
+    XMX_MB=${XMX_MB:-6144}
+  fi
+  # Threads per runner: default 4 on large-core boxes, else 6
+  if [[ "$CORES" -ge 64 ]]; then
+    THREADS=${THREADS:-4}
+  else
+    THREADS=${THREADS:-6}
+  fi
+  # Runners limited by cores and memory
+  max_by_cpu=$(( CORES / (THREADS>0?THREADS:1) ))
+  [[ "$max_by_cpu" -lt 1 ]] && max_by_cpu=1
+  usable_mem_mb=$(awk -v m="$MEM_MB" -v f="$TARGET_MEM_FRAC" 'BEGIN{ printf "%d", (m*f) }')
+  max_by_mem=$(( usable_mem_mb / (XMX_MB>0?XMX_MB:1) ))
+  [[ "$max_by_mem" -lt 1 ]] && max_by_mem=1
+  # Cap aggressively to avoid GC thrash, leave 20% headroom
+  RUNNERS=$(( max_by_cpu < max_by_mem ? max_by_cpu : max_by_mem ))
+  # Constrain to a reasonable ceiling unless explicitly overridden
+  if [[ "$RUNNERS" -gt 192 ]]; then RUNNERS=192; fi
+  echo "[autoscale] CORES=${CORES} MEM_MB=${MEM_MB} -> RUNNERS=${RUNNERS} THREADS=${THREADS} XMX_MB=${XMX_MB}" >&2
+fi
 
 # Pre-run flight checks (fail fast on missing deps / dict / models)
 if [[ "$DICT_SHARED" -eq 1 ]]; then
@@ -255,6 +324,12 @@ run_pipeline_sharded() {
     else
       { echo "threads ${THREADS}"; cat "$piper"; } > "$tuned_piper"
     fi
+    # Ensure TimingEndAE writes a per-shard timing CSV to accelerate reporting
+    timing_file="$outdir/timing_csv/timing.csv"; mkdir -p "$(dirname "$timing_file")"
+    if ! grep -Eq "TimingEndAE.*TimingFile=" "$tuned_piper" 2>/dev/null; then
+      # Append TimingFile to any TimingEndAE add line
+      sed -i -E "/^[[:space:]]*add[[:space:]]+tools\\.timing\\.TimingEndAE(\s|$)/ s#$# TimingFile=\"$timing_file\"#" "$tuned_piper" || true
+    fi
     if [[ "$CTAKES_SANITIZE_DICT" -eq 1 && -f "$SRC_DB_DIR/$DICT_NAME.script" ]]; then
       if [[ "$using_shared_db" -eq 1 ]]; then
         workdb="$shareddb"
@@ -284,7 +359,11 @@ run_pipeline_sharded() {
       attempt=1
       last_ec=0
   while (( attempt <= 3 )); do
-        stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m ${UMLS_KEY:+-Dctakes.umls_apikey=$UMLS_KEY} \
+        stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m \
+          -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+UseStringDeduplication -XX:MaxGCPauseMillis=200 \
+          -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError ${JVM_OPTS:-} \
+          -Djava.io.tmpdir="$outdir/tmp" \
+          ${UMLS_KEY:+-Dctakes.umls_apikey=$UMLS_KEY} \
           -Dorg.slf4j.simpleLogger.defaultLogLevel=info \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary=warn \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary.lookup2=warn \
@@ -314,11 +393,15 @@ run_pipeline_sharded() {
       exit $last_ec
     ) &
     pids+=($!)
+    CHILD_PIDS+=($!)
   done
   # Wait for shards but do not abort the whole script if one fails
   local any_fail=0
   for pid in "${pids[@]}"; do
-    if ! wait "$pid"; then any_fail=1; echo "WARN: shard PID $pid failed in $name/$gshort" >&2; fi
+    if ! wait "$pid"; then
+      any_fail=1
+      echo "WARN: shard PID $pid failed in $name/$gshort" >&2
+    fi
   done
 
   # Save a parent-level combined run.log and pipeline file for reporting/metrics
@@ -386,17 +469,52 @@ run_pipeline_sharded() {
   fi
   if [[ "$any_fail" -eq 1 ]]; then
     echo "Completed $name on group $gshort with warnings -> $parent" >&2
+    # Collect failed shard logs for quick triage
+    mkdir -p "$parent/errors"
+    for sh in $(ls -1d "$parent"/shard_* 2>/dev/null | sort); do
+      if [[ -f "$sh/run.log" ]]; then
+        # Consider failure if no xmi produced in shard or last line contains attempt failed
+        if ! find "$sh/xmi" -maxdepth 1 -type f -name '*.xmi' -print -quit | grep -q . || \
+           tail -n 5 "$sh/run.log" | grep -qi 'attempt .* failed'; then
+          cp -f "$sh/run.log" "$parent/errors/$(basename "$sh").log" || true
+        fi
+      fi
+    done
   else
     echo "Completed $name on group $gshort -> $parent"
   fi
 }
 
+# Build task list (pipeline x group)
+declare -a _TASKS=()
 for key in "${keys[@]}"; do
   piper="${SETS[$key]}"; [[ -f "$piper" ]] || { echo "Missing pipeline: $piper" >&2; continue; }
-for grp in "${INPUT_GROUPS[@]}"; do
-    run_pipeline_sharded "$key" "$piper" "$grp" "$OUT"
+  for grp in "${INPUT_GROUPS[@]}"; do
+    _TASKS+=("${key}:::${piper}:::${grp}")
   done
 done
+
+run_tasks() {
+  local -a tasks=("$@")
+  local max_jobs="$MAX_PIPELINES"
+  [[ -z "$max_jobs" || "$max_jobs" -lt 1 ]] && max_jobs=1
+  local -a t_pids=()
+  for t in "${tasks[@]}"; do
+    IFS=':::' read -r key piper grp <<<"$t"
+    # throttle
+    while (( $(jobs -rp | wc -l) >= max_jobs )); do sleep 1; done
+    run_pipeline_sharded "$key" "$piper" "$grp" "$OUT" &
+    t_pids+=($!)
+  done
+  # Wait for all top-level tasks
+  local any_fail=0
+  for pid in "${t_pids[@]}"; do
+    if ! wait "$pid"; then any_fail=1; fi
+  done
+  return $any_fail
+}
+
+run_tasks "${_TASKS[@]}" || echo "[warn] One or more pipeline-group tasks reported failures" >&2
 
 if [[ "$MAKE_REPORTS" -eq 2 && ${#REPORT_PIDS[@]} -gt 0 ]]; then
   echo "[report] Waiting for async per-pipeline reports to finish (${#REPORT_PIDS[@]} jobs) ..."
@@ -417,7 +535,8 @@ fi
 if [[ "$SKIP_PARENT" -eq 0 ]]; then
   STAMP="$(date +%Y%m%d-%H%M%S)"
   PARENT_REPORT="$OUT/ctakes-report-compare-${STAMP}.${REPORT_EXT}"
-  bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$OUT" -w "$PARENT_REPORT" -M csv || true
+  # Default to csv mode to avoid XMI parse for parent; caller can override via REPORT_ALLOW_XMI=1
+  bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$OUT" -w "$PARENT_REPORT" -M "${REPORT_MODE:-csv}" || true
   echo "- Summary: $PARENT_REPORT"
 else
   echo "[report] Skipping parent compare summary (--no-parent-report)"

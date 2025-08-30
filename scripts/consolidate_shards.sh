@@ -90,6 +90,19 @@ if [[ ! -s "$PARENT/run.log" ]]; then
   fi
 fi
 
+# Build timing CSV from combined run.log to accelerate reports
+if [[ -s "$PARENT/run.log" ]]; then
+  tdir="$PARENT/timing_csv"; mkdir -p "$tdir"
+  tcsv="$tdir/timing.csv"
+  if [[ ! -s "$tcsv" ]]; then
+    echo "[consolidate] Building timing CSV from run.log"
+    {
+      echo "Document,StartMillis,EndMillis,DurationMillis,DurationSeconds"
+      awk -F"\t" '/\[timing\] END\t/ { doc=$2; start=$3; end=$4; dur=$5; if (dur=="" && start!="" && end!="") { dur=end-start } if (doc!="") { printf "%s,%s,%s,%s,%.3f\n", doc, start, end, dur, (dur==""?0:dur/1000.0) } }' "$PARENT/run.log"
+    } > "$tcsv" || true
+  fi
+fi
+
 # Ensure a copy of the tuned piper exists at parent level
 if ! ls -1 "$PARENT"/*.piper >/dev/null 2>&1; then
   for sh in $(ls -1d "$PARENT"/shard_* 2>/dev/null | sort); do
@@ -123,3 +136,30 @@ if [[ "$MAKE_WB" -eq 1 ]]; then
 fi
 
 # Dedicated CUI-count workbook is now provided within the Java-built per-pipeline workbooks (CuiCounts sheet).
+
+# Write a lightweight metrics.json for fast report path (docCount, mentionCount, distinctCuiCount)
+{
+  xmi_docs=0
+  if [[ -d "$PARENT/xmi" ]]; then xmi_docs=$(find "$PARENT/xmi" -type f -name '*.xmi' | wc -l | tr -d ' '); fi
+  # Sum cui_count totals
+  mentions=0
+  distinct=$(mktemp)
+  if [[ -d "$PARENT/cui_count" ]]; then
+    while IFS='|' read -r key cnt _rest; do
+      [[ -z "$key" ]] && continue
+      key="${key#-}"
+      echo "$key" >> "$distinct"
+      cnt=${cnt//[$' \t\r\n']}
+      [[ -n "$cnt" ]] && mentions=$(( mentions + cnt ))
+    done < <(cat "$PARENT"/cui_count/*.bsv 2>/dev/null || true)
+  fi
+  distinct_count=$(sort -u "$distinct" 2>/dev/null | wc -l | tr -d ' ')
+  rm -f "$distinct" 2>/dev/null || true
+  cat > "$PARENT/metrics.json" <<EOF
+{
+  "docCount": $xmi_docs,
+  "mentionCount": $mentions,
+  "distinctCuiCount": $distinct_count
+}
+EOF
+} || true

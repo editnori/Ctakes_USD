@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(chmod:*)",
+      "Bash(/home/layth888/mount-repos.sh:*)",
+      "Bash(cd:*)",
+      "Bash(codex:*)",
+      "Bash(kill:*)",
+      "Bash(pkill:*)"
+    ],
+    "deny": [],
+    "additionalDirectories": [
+      "/mnt/c/Users/Layth M Qassem/.codex"
+    ]
+  }
+}

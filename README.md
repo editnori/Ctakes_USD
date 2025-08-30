@@ -12,17 +12,21 @@ Clinician quick start (5 steps)
 2) Put ~100 sample notes under `samples/mimic/` and validate:
    - `scripts/validate_mimic.sh` (or `scripts/validate_mimic.sh --only S_core`)
    - You’ll see a small manifest to verify results. OK ⇒ proceed.
-3) Set inputs and run at scale (safe defaults):
+3) Set inputs and run at scale (fast defaults):
    - `export INPUT_ROOT=<path_to_notes>`
    - `export OUT_BASE=outputs/compare`
-   - `export RUNNERS=32 THREADS=8 XMX_MB=8192 SEED=42`
+   - Either use autoscale (recommended):
+     - `export SEED=42`
+     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale`
+   - Or set manual values:
+     - `export RUNNERS=32 THREADS=8 XMX_MB=8192 SEED=42`
    - Optional shared dictionary cache (faster startup):
      - `bash scripts/prepare_shared_dict.sh -t /var/tmp/ctakes_dict_cache`
      - `export DICT_SHARED=1 DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache`
    - Preview the plan:
      - `bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"`
-   - Run:
-     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"`
+   - Run (autoscale):
+     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale`
 4) Monitor progress (any time):
    - `scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"`
 5) Open the workbook(s):
@@ -98,7 +102,9 @@ What happens behind the scenes
 - The workbook builder reads the CSVs, CUI counts, tokens, `.piper`, and `run.log`. Reports are built in CSV mode (no XMI parsing).
 
 Options you might change
-- `-n/--runners`, `-t/--threads`, `-m/--xmx`: parallelism and heap (watch memory).
+- `--autoscale`: derive `RUNNERS/THREADS/XMX` from host cores and memory.
+- `-n/--runners`, `-t/--threads`, `-m/--xmx`: manual parallelism and heap (watch memory).
+- `--max-pipelines N`: run up to N pipelines concurrently (throttled at top-level).
 - `--resume`: continue only missing documents.
 - `--seed <val>`: keep shard assignment stable across runs (with the same `--runners`).
 
@@ -108,7 +114,8 @@ scripts/           # runners, consolidation, status, prepare-shared-dict, detach
 pipelines/         # compare pipelines and shared writer includes
 tools/reporting/   # Excel workbook builder, CSV aggregator
 tools/reporting/uima/ClinicalConceptCsvWriter.java  # in-pipeline per-note CSV writer
-samples/mimic/     # place ~100 de‑identified MIMIC notes (.txt) for validation
+samples/mimic/     # place ~100 de-identified MIMIC notes (.txt) for validation
+scripts/deprecated # kept for reference; replaced by newer scripts
 ```
 
 I ignore the cTAKES distro and runtime outputs in git. Keep those local.
@@ -205,7 +212,12 @@ All commands (reference)
 
 - `scripts/run_detached.sh` — run any script under `nohup`, write log + PID to `logs/`.
 
-- `scripts/build_multi_run_summary.sh` — one summary across multiple runs.
+- `scripts/build_multi_run_summary.sh` - one summary across multiple runs.
+
+Deprecated scripts (kept for reference)
+- `scripts/deprecated/ctakes_cluster_run.sh` – use `scripts/run_compare_cluster.sh`.
+- `scripts/deprecated/build_report.sh` – use `scripts/build_xlsx_report.sh`.
+- `scripts/deprecated/consolidate_cuicount.py` – use the CuiCounts sheet in the Java workbook.
 
 ## Copy-Paste Commands (Ubuntu/Debian)
 
@@ -246,7 +258,7 @@ scripts/validate_mimic.sh
 #   scripts/validate_mimic.sh --update-baseline
 ```
 
-### 4. Run Large Compare (CSV-mode reports)
+### 4. Run Large Compare (CSV-mode reports, autoscale)
 
 ```bash
 export INPUT_ROOT="<path_to_notes>"
@@ -263,7 +275,7 @@ export DICT_SHARED=1
 export DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache
 
 bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
-bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"
+bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale
 ```
 
 ### 5. Check Progress and Outputs
@@ -357,9 +369,9 @@ bash scripts/prepare_shared_dict.sh -t /var/tmp/ctakes_dict_cache
 export DICT_SHARED=1
 export DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache
 
-# 4) Run the comparison (async consolidate + async reports)
+# 4) Run the comparison (async consolidate + async reports; autoscale)
 bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
-bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED"
+bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale
 
 # 5) Check progress in another terminal
 scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"

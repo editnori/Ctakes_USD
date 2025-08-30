@@ -12,7 +12,8 @@ PIPER=""
 RUN_LOG=""
 DICT_XML=""
 WORKBOOK=""
-MODE=""
+# Default to fast CSV mode unless caller overrides (-M)
+MODE="csv"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in

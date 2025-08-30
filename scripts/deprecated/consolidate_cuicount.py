@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# DEPRECATED: Prefer Java workbook builder (tools/reporting/ExcelXmlReport.java) and CuiCounts sheet.
 from __future__ import annotations
 
 import argparse
