@@ -57,6 +57,8 @@ WRITER_BUFFER_KB_OPT="${WRITER_BUFFER_KB:-}"
 SKIP_RELATIONS=${SKIP_RELATIONS:-0}
 RELATIONS_LITE=${RELATIONS_LITE:-0}
 RELATIONS_LITE_PARALLEL=${RELATIONS_LITE_PARALLEL:-0}
+RELATIONS_FULL_PARALLEL=${RELATIONS_FULL_PARALLEL:-0}
+RELATIONS_LITE_PARALLEL=${RELATIONS_LITE_PARALLEL:-0}
 RELATIONS_HEAP_BOOST_PCT="${RELATIONS_HEAP_BOOST_PCT:-}"
 RELATIONS_XMX_CAP_MB="${RELATIONS_XMX_CAP_MB:-}"
 RELATIONS_LITE_PARALLEL=${RELATIONS_LITE_PARALLEL:-0}
@@ -121,6 +123,8 @@ while [[ $# -gt 0 ]]; do
     --writer-buffer-kb) WRITER_BUFFER_KB_OPT="$2"; shift 2;;
     --skip-relations) SKIP_RELATIONS=1; shift 1;;
     --relations-lite) RELATIONS_LITE=1; shift 1;;
+    --relations-lite-parallel) RELATIONS_LITE=1; RELATIONS_LITE_PARALLEL=1; shift 1;;
+    --relations-full-parallel) RELATIONS_FULL_PARALLEL=1; shift 1;;
     --relations-lite-parallel) RELATIONS_LITE=1; RELATIONS_LITE_PARALLEL=1; shift 1;;
     --relations-lite-parallel) RELATIONS_LITE=1; RELATIONS_LITE_PARALLEL=1; shift 1;;
     --no-xmi) NO_XMI=1; shift 1;;
@@ -469,10 +473,29 @@ run_pipeline_sharded() {
       sed -i -E "s#^[[:space:]]*(load|include)[[:space:]]+\.\.\/\.\.\/pipelines/#\\1 $BASE_DIR/pipelines/#g" "$tuned_piper" || true
     fi
 
-    # Optionally drop relation extractors to avoid ClearTK NPEs and speed up
+    # Optionally drop or alter relation extractors
     if [[ "$SKIP_RELATIONS" -eq 1 ]]; then
       sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
       echo "[${name}_$i][piper] Relations disabled (--skip-relations)" | tee -a "$write_dir/run.log" >&2
+    elif [[ "$RELATIONS_FULL_PARALLEL" -eq 1 ]]; then
+      # Replace full relations sub-pipe with non-threadsafe AEs (Modifier + Degree + Location) using explicit classifier model paths
+      mod_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/modifier_extractor/model.jar"
+      deg_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/degree_of/model.jar"
+      loc_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/location_of/model.jar"
+      if [[ ! -f "$mod_model" || ! -f "$deg_model" || ! -f "$loc_model" ]]; then
+        echo "[${name}_$i][piper] Full-parallel relations requested but one or more model jars missing; disabling relations" | tee -a "$write_dir/run.log" >&2
+        sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
+      else
+        awk -v mod="$mod_model" -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
+               if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
+                 print "add org.apache.ctakes.relationextractor.ae.ModifierExtractorAnnotator classifierJarPath=\"file:" mod "\"";
+                 print "add org.apache.ctakes.relationextractor.ae.DegreeOfRelationExtractorAnnotator classifierJarPath=\"file:" deg "\"";
+                 print "add org.apache.ctakes.relationextractor.ae.LocationOfRelationExtractorAnnotator classifierJarPath=\"file:" loc "\"";
+                 replaced=1;
+               } else { print }
+             }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+        echo "[${name}_$i][piper] Relations set to FULL-PARALLEL (--relations-full-parallel)" | tee -a "$write_dir/run.log" >&2
+      fi
     elif [[ "$RELATIONS_LITE" -eq 1 ]]; then
       # Replace TsRelationSubPipe with a safer minimal set (degree, location) and include explicit classifier model paths
       deg_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/degree_of/model.jar"
@@ -616,10 +639,12 @@ run_pipeline_sharded() {
         if [[ "$SKIP_RELATIONS" -ne 1 && "$RELATIONS_LITE" -ne 1 && "$patched_rel_fallback" -eq 0 ]]; then
           if grep -qE "ModifierExtractorAnnotator|ThreadSafeModifierExtractor" "$write_dir/run.log" && \
              grep -qE "FeatureNodeArrayEncoder|getValue\(\) is null|Cannot invoke \"Object.toString\(\)\"" "$write_dir/run.log"; then
+            mod_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/modifier_extractor/model.jar"
             deg_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/degree_of/model.jar"
             loc_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/location_of/model.jar"
             if [[ -f "$deg_model" && -f "$loc_model" ]]; then
-              if [[ "$RELATIONS_LITE_PARALLEL" -eq 1 ]]; then
+              if [[ "$RELATIONS_LITE_PARALLEL" -eq 1 || "$RELATIONS_FULL_PARALLEL" -eq 1 ]]; then
+                # Prefer parallel lite fallback when parallel modes are requested
                 awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
                        if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
                          print "add org.apache.ctakes.relationextractor.ae.DegreeOfRelationExtractorAnnotator classifierJarPath=\"file:" deg "\"";
@@ -840,4 +865,3 @@ if [[ "$SKIP_PARENT" -eq 0 ]]; then
 else
   echo "[report] Skipping parent compare summary (--no-parent-report)"
 fi
-
