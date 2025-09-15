@@ -428,6 +428,11 @@ run_pipeline_sharded() {
     fi
     # Normalize line endings (avoid $'\r' errors if the file was edited on Windows)
     strip_crlf "$tuned_piper"
+    # Ensure TimingStartAE is present near the top (once) for accurate per-doc durations
+    if ! grep -Eq "^[[:space:]]*add[[:space:]]+tools\\.timing\\.TimingStartAE([[:space:]]|$)" "$tuned_piper" 2>/dev/null; then
+      # Insert after the first non-comment, non-empty line
+      awk 'BEGIN{ins=0} { if(!ins && $0 !~ /^[[:space:]]*($|\/\/)/){ print; print "add tools.timing.TimingStartAE"; ins=1 } else { print } } END{ if(!ins) print "add tools.timing.TimingStartAE" }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+    fi
     # Rewrite relative includes to absolute repo paths so includes resolve from any location
     if command -v sed >/dev/null 2>&1; then
       # Rewrite lines like: "load ../../pipelines/..." or "include ../../pipelines/..."

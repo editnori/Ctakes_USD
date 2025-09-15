@@ -106,7 +106,7 @@ if [[ -s "$PARENT/run.log" ]]; then
     echo "[consolidate] Building timing CSV from run.log"
     {
       echo "Document,StartMillis,EndMillis,DurationMillis,DurationSeconds"
-      awk -F"\t" '/\[timing\] END\t/ { doc=$2; start=$3; end=$4; dur=$5; if (dur=="" && start!="" && end!="") { dur=end-start } if (doc!="") { printf "%s,%s,%s,%s,%.3f\n", doc, start, end, dur, (dur==""?0:dur/1000.0) } }' "$PARENT/run.log"
+      awk -F"\t" '/\[timing\] END\t/ { doc=$2; start=$3; end=$4; dur=$5; if (((dur=="" || dur<0) && start!="" && end!="")) { dur=end-start } if (doc!="") { printf "%s,%s,%s,%s,%.3f\n", doc, start, end, dur, (dur==""?0:dur/1000.0) } }' "$PARENT/run.log"
     } > "$tcsv" || true
   fi
 fi
@@ -192,11 +192,36 @@ fi
   fi
   distinct_count=$(sort -u "$distinct" 2>/dev/null | wc -l | tr -d ' ')
   rm -f "$distinct" 2>/dev/null || true
+  # Timing stats from timing_csv/timing.csv
+  timed_docs=0; mean_sec=0; p50_sec=0; p95_sec=0; wall_sec=0
+  if [[ -s "$PARENT/timing_csv/timing.csv" ]]; then
+    tmpdur="$(mktemp)"; tmpse="$(mktemp)"
+    # Collect positive durations (seconds)
+    awk -F, 'NR>1 && $5!="" { if ($5+0>0) print $5 }' "$PARENT/timing_csv/timing.csv" | LC_ALL=C sort -n > "$tmpdur"
+    timed_docs=$(wc -l < "$tmpdur" | tr -d ' ')
+    if (( timed_docs > 0 )); then
+      mean_sec=$(awk '{s+=$1} END{ if(NR>0) printf "%.3f", s/NR }' "$tmpdur")
+      p50_idx=$(( (timed_docs + 1) / 2 ))
+      p95_idx=$(( (95*timed_docs + 99) / 100 ))
+      p50_sec=$(awk -v i=$p50_idx 'NR==i{ printf "%.3f", $1; exit }' "$tmpdur")
+      p95_sec=$(awk -v i=$p95_idx 'NR==i{ printf "%.3f", $1; exit }' "$tmpdur")
+    fi
+    # Wall clock based on min StartMillis and max EndMillis
+    awk -F, 'NR>1 { s=$2; e=$3; if (s!="" && (min=="" || s+0<min+0)) min=s; if (e!="" && (max=="" || e+0>max+0)) max=e } END{ if (min!="" && max!="") printf "%.3f", (max-min)/1000.0 }' "$PARENT/timing_csv/timing.csv" > "$tmpse"
+    if [[ -s "$tmpse" ]]; then wall_sec=$(cat "$tmpse"); fi
+    rm -f "$tmpdur" "$tmpse" 2>/dev/null || true
+  fi
   cat > "$PARENT/metrics.json" <<EOF
 {
   "docCount": $xmi_docs,
   "mentionCount": $mentions,
-  "distinctCuiCount": $distinct_count
+  "distinctCuiCount": $distinct_count,
+  "docTimedCount": $timed_docs,
+  "meanSecondsPerDoc": $mean_sec,
+  "p50SecondsPerDoc": $p50_sec,
+  "p95SecondsPerDoc": $p95_sec,
+  "wallSeconds": $wall_sec,
+  "throughputDocsPerMinute": $(awk -v n="$timed_docs" -v w="$wall_sec" 'BEGIN{ if (w>0) printf "%.3f", (n/w)*60; else printf "0" }')
 }
 EOF
 } || true
