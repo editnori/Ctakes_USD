@@ -19,6 +19,7 @@ Validates only these pipelines:
 Examples:
   bash scripts/validate_main.sh
   bash scripts/validate_main.sh -i samples/mimic -o outputs/validation_main --runners 4 --threads 4 --xmx 4096
+  bash scripts/validate_main.sh -i samples/mimic -o outputs/validation_main --autoscale
 EOF
   exit 0
 fi

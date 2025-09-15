@@ -10,7 +10,7 @@ set -euo pipefail
 # Usage:
 #   scripts/validate_mimic.sh [-i <mimic_dir>] [-n <count>] [-o <out_dir>]
 #                             [--runners N] [--threads N] [--xmx MB] [--seed VAL]
-#                             [--consolidate-async]
+#                             [--consolidate-async] [--autoscale]
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0}"
@@ -27,6 +27,7 @@ XMX_MB="${XMX_MB:-4096}"
 SEED="${SEED:-42}"
 CONSOLIDATE_ASYNC=0
 ONLY=""
+AUTOSCALE=0
 
 UPDATE_BASELINE=0
 while [[ $# -gt 0 ]]; do
@@ -41,6 +42,7 @@ while [[ $# -gt 0 ]]; do
     --only) ONLY="$2"; shift 2;;
     --subset-mode) SUBSET_MODE="$2"; _EXPLICIT_SUBSET_MODE=1; shift 2;;
     --consolidate-async) CONSOLIDATE_ASYNC=1; shift 1;;
+    --autoscale) AUTOSCALE=1; shift 1;;
     --update-baseline) UPDATE_BASELINE=1; shift 1;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac
@@ -96,7 +98,7 @@ case "$SUBSET_MODE" in
 esac
 
 export RUNNERS THREADS XMX_MB SEED
-EXTRA=""; [[ "$CONSOLIDATE_ASYNC" -eq 1 ]] && EXTRA="--consolidate-async"
+EXTRA=""; [[ "$CONSOLIDATE_ASYNC" -eq 1 ]] && EXTRA="--consolidate-async"; [[ "$AUTOSCALE" -eq 1 ]] && EXTRA+=" --autoscale"
 # Default to CSV-only outputs for faster validation unless VALIDATION_WITH_FULL=1
 TOGGLES=()
 if [[ "${VALIDATION_WITH_FULL:-0}" -ne 1 ]]; then
