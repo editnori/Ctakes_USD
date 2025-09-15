@@ -440,14 +440,21 @@ run_pipeline_sharded() {
       sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
       echo "[${name}_$i][piper] Relations disabled (--skip-relations)" | tee -a "$write_dir/run.log" >&2
     elif [[ "$RELATIONS_LITE" -eq 1 ]]; then
-      # Replace TsRelationSubPipe with a safer minimal set (degree, location) to avoid ModifierExtractor NPEs
-      awk 'BEGIN{replaced=0} {
-             if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
-               print "addDescription concurrent.ThreadSafeDegreeExtractor";
-               print "addDescription concurrent.ThreadSafeLocationExtractor";
-               replaced=1;
-             } else { print }
-           }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+      # Replace TsRelationSubPipe with a safer minimal set (degree, location) and include explicit classifier model paths
+      deg_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/degree_of/model.jar"
+      loc_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/location_of/model.jar"
+      if [[ ! -f "$deg_model" || ! -f "$loc_model" ]]; then
+        echo "[${name}_$i][piper] Relations LITE requested, but relation models not found under resources; disabling relations" | tee -a "$write_dir/run.log" >&2
+        sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
+      else
+        awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
+               if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
+                 print "addDescription concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
+                 print "addDescription concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
+                 replaced=1;
+               } else { print }
+             }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+      fi
       echo "[${name}_$i][piper] Relations set to LITE (--relations-lite)" | tee -a "$write_dir/run.log" >&2
     fi
 
@@ -563,13 +570,20 @@ run_pipeline_sharded() {
         if [[ "$SKIP_RELATIONS" -ne 1 && "$RELATIONS_LITE" -ne 1 && "$patched_rel_fallback" -eq 0 ]]; then
           if grep -qE "ModifierExtractorAnnotator|ThreadSafeModifierExtractor" "$write_dir/run.log" && \
              grep -qE "FeatureNodeArrayEncoder|getValue\(\) is null|Cannot invoke \"Object.toString\(\)\"" "$write_dir/run.log"; then
-            awk 'BEGIN{replaced=0} {
-                   if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
-                     print "addDescription concurrent.ThreadSafeDegreeExtractor";
-                     print "addDescription concurrent.ThreadSafeLocationExtractor";
-                     replaced=1;
-                   } else { print }
-                 }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+            deg_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/degree_of/model.jar"
+            loc_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/location_of/model.jar"
+            if [[ -f "$deg_model" && -f "$loc_model" ]]; then
+              awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
+                     if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
+                       print "addDescription concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
+                       print "addDescription concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
+                       replaced=1;
+                     } else { print }
+                   }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+            else
+              # If models missing, remove relations entirely
+              sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
+            fi
             echo "[${name}_$i][auto-fallback] Detected Modifier NPE; patched relations -> LITE (Degree+Location)" | tee -a "$write_dir/run.log" >&2
             patched_rel_fallback=1
           fi
