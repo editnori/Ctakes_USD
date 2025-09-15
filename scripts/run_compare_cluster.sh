@@ -454,8 +454,8 @@ run_pipeline_sharded() {
       else
         awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
                if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
-                 print "addDescription concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
-                 print "addDescription concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
+                 print "add concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
+                 print "add concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
                  replaced=1;
                } else { print }
              }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
@@ -580,8 +580,8 @@ run_pipeline_sharded() {
             if [[ -f "$deg_model" && -f "$loc_model" ]]; then
               awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
                      if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
-                       print "addDescription concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
-                       print "addDescription concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
+                       print "add concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
+                       print "add concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
                        replaced=1;
                      } else { print }
                    }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
