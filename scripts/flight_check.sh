@@ -109,6 +109,8 @@ fi
 declare -A SETS=(
   [S_core]="$BASE_DIR/pipelines/compare/TsSectionedFast_WSD_Compare.piper"
   [S_core_rel]="$BASE_DIR/pipelines/compare/TsSectionedRelation_WSD_Compare.piper"
+  [S_core_smoke]="$BASE_DIR/pipelines/compare/TsSectionedSmoking_WSD_Compare.piper"
+  [S_core_rel_smoke]="$BASE_DIR/pipelines/compare/TsSectionedCoreRelSmoke_WSD_Compare.piper"
   [S_core_temp]="$BASE_DIR/pipelines/compare/TsSectionedTemporal_WSD_Compare.piper"
   [S_core_temp_coref]="$BASE_DIR/pipelines/compare/TsSectionedTemporalCoref_WSD_Compare.piper"
   [S_core_temp_coref_smoke]="$BASE_DIR/pipelines/compare/TsSectionedTemporalCoref_WSD_Smoking_Compare.piper"
