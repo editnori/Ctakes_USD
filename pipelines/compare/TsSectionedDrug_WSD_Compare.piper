@@ -13,9 +13,8 @@ load TsChunkerSubPipe
 // Optional dictionary (kept for consistency with other pipelines)
 load TsDictionarySubPipe
 
-// Drug NER (ctakes-drug-ner)
-add org.apache.ctakes.drugner.ae.DrugMentionAnnotator
+// Drug NER (ctakes-drug-ner) with TypeSystem import via descriptor wrapper
+addDescription org/apache/ctakes/drugner/ae/DrugMentionAnnotator_WithTypes
 
 // Writers
 load ../../pipelines/includes/Writers_Xmi_Table.piper
-

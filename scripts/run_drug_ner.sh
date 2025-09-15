@@ -64,8 +64,8 @@ addDescription Chunker
 addDescription AdjustNounPhraseToIncludeFollowingNP
 addDescription AdjustNounPhraseToIncludeFollowingPPNP
 
-// Drug NER
-add org.apache.ctakes.drugner.ae.DrugMentionAnnotator
+// Drug NER (with TypeSystem wrapper descriptor)
+addDescription org/apache/ctakes/drugner/ae/DrugMentionAnnotator_WithTypes
 
 // Writers (XMI + tables + concepts CSV)
 load ${BASE_DIR}/pipelines/includes/Writers_Xmi_Table.piper
