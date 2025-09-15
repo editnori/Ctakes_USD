@@ -43,6 +43,9 @@ CONSOLIDATE_ASYNC=1
 declare -a CONSOLIDATE_PIDS=()
 declare -a REPORT_PIDS=()
 declare -a CHILD_PIDS=()
+# Optional: write shard outputs to tmpfs (/dev/shm) then move to disk
+TMPFS_WRITES=${TMPFS_WRITES:-0}
+TMPFS_PATH="${TMPFS_PATH:-/dev/shm}"
 # Artifact/AE toggles (defaults preserve current behavior)
 SKIP_RELATIONS=${SKIP_RELATIONS:-0}
 RELATIONS_LITE=${RELATIONS_LITE:-0}
@@ -98,6 +101,8 @@ while [[ $# -gt 0 ]]; do
     --seed) SHARD_SEED="$2"; shift 2;;
     --consolidate-async) CONSOLIDATE_ASYNC=1; shift 1;;
     -l|--dict-xml) DICT_XML_ARG="$2"; shift 2;;
+    --tmpfs-writes) TMPFS_WRITES=1; shift 1;;
+    --tmpfs-path) TMPFS_PATH="$2"; shift 2;;
     --skip-relations) SKIP_RELATIONS=1; shift 1;;
     --relations-lite) RELATIONS_LITE=1; shift 1;;
     --no-xmi) NO_XMI=1; shift 1;;
@@ -338,7 +343,18 @@ run_pipeline_sharded() {
   fi
   for i in $(seq -f "%03g" 0 $((RUNNERS-1))); do
     shard="$shards_dir/$i"; [[ -d "$shard" ]] || continue
-    outdir="$parent/shard_$i"; mkdir -p "$outdir"
+    outdir="$parent/shard_$i"; mkdir -p "$outdir" || true
+    # Determine write directory (tmpfs vs disk)
+    write_dir="$outdir"
+    if [[ "$TMPFS_WRITES" -eq 1 ]]; then
+      # Fallback to /tmp if TMPFS_PATH does not exist or not writable
+      base_tmpfs="$TMPFS_PATH"
+      if [[ ! -d "$base_tmpfs" || ! -w "$base_tmpfs" ]]; then base_tmpfs="/tmp"; fi
+      stage_root="${base_tmpfs%/}/ctakes_stage/$(basename "$parent")"
+      write_dir="$stage_root/shard_$i"
+      mkdir -p "$write_dir" || true
+      echo "[${name}_$i][tmpfs] Writing shard outputs to $write_dir, will move to $outdir at end" | tee -a "$outdir/run.log" >&2
+    fi
     # Build a pending set if resuming: include only notes that don't have XMI yet
     local in_dir="$shard"
     if [[ "$RESUME" -eq 1 ]]; then
@@ -375,7 +391,7 @@ run_pipeline_sharded() {
       xml="$DICT_XML"
     fi
     # Create a per-run piper file with the requested thread count
-    tuned_piper="$outdir/$(basename "$piper")"
+    tuned_piper="$write_dir/$(basename "$piper")"
     if grep -Eq "^[[:space:]]*threads[[:space:]]+[0-9]+" "$piper" 2>/dev/null; then
       sed -E "s#^[[:space:]]*threads[[:space:]]+[0-9]+#threads ${THREADS}#" "$piper" > "$tuned_piper"
     else
@@ -393,7 +409,7 @@ run_pipeline_sharded() {
     # Optionally drop relation extractors to avoid ClearTK NPEs and speed up
     if [[ "$SKIP_RELATIONS" -eq 1 ]]; then
       sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
-      echo "[${name}_$i][piper] Relations disabled (--skip-relations)" | tee -a "$outdir/run.log" >&2
+      echo "[${name}_$i][piper] Relations disabled (--skip-relations)" | tee -a "$write_dir/run.log" >&2
     elif [[ "$RELATIONS_LITE" -eq 1 ]]; then
       # Replace TsRelationSubPipe with a safer minimal set (degree, location) to avoid ModifierExtractor NPEs
       awk 'BEGIN{replaced=0} {
@@ -403,7 +419,7 @@ run_pipeline_sharded() {
                replaced=1;
              } else { print }
            }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
-      echo "[${name}_$i][piper] Relations set to LITE (--relations-lite)" | tee -a "$outdir/run.log" >&2
+      echo "[${name}_$i][piper] Relations set to LITE (--relations-lite)" | tee -a "$write_dir/run.log" >&2
     fi
 
     # Optionally replace writer include with a per-shard writers file respecting CSV-only/flags
@@ -439,11 +455,11 @@ run_pipeline_sharded() {
       # Ensure CSV table and concept CSV remain
       # Rewrite include path in tuned piper
       sed -i -E "s#(^[[:space:]]*load[[:space:]]+).*/Writers_Xmi_Table\.piper#\\1$shard_writers#" "$tuned_piper"
-      echo "[${name}_$i][piper] Writers tailored: CSV_ONLY=$CSV_ONLY NO_XMI=$NO_XMI NO_HTML=$NO_HTML NO_BSV=$NO_BSV NO_TOKENS=$NO_TOKENS" | tee -a "$outdir/run.log" >&2
+      echo "[${name}_$i][piper] Writers tailored: CSV_ONLY=$CSV_ONLY NO_XMI=$NO_XMI NO_HTML=$NO_HTML NO_BSV=$NO_BSV NO_TOKENS=$NO_TOKENS" | tee -a "$write_dir/run.log" >&2
     fi
 
     # Ensure TimingEndAE writes a per-shard timing CSV to accelerate reporting
-    timing_file="$outdir/timing_csv/timing.csv"; mkdir -p "$(dirname "$timing_file")"
+    timing_file="$write_dir/timing_csv/timing.csv"; mkdir -p "$(dirname "$timing_file")"
     if ! grep -Eq "TimingEndAE.*TimingFile=" "$tuned_piper" 2>/dev/null; then
       # Append TimingFile to any TimingEndAE add line
       sed -i -E "/^[[:space:]]*add[[:space:]]+tools\\.timing\\.TimingEndAE([[:space:]]|$)/ s|$| TimingFile=\"$timing_file\"|" "$tuned_piper" || true
@@ -464,18 +480,18 @@ run_pipeline_sharded() {
       # cTAKES 6.0.0 validates the URL by resolving <path>.script; flags in the URL break that check.
       sed -i -E "s#(key=\"jdbcUrl\" value)=\"[^\"]+\"#\1=\"jdbc:hsqldb:file:${workdb}\"#" "$xml"
       # Debug: record resolved DB path and JDBC URL for this shard
-      echo "[${name}_$i][dict] workdb=${workdb}" | tee -a "$outdir/run.log" >&2
+      echo "[${name}_$i][dict] workdb=${workdb}" | tee -a "$write_dir/run.log" >&2
       if command -v rg >/dev/null 2>&1; then
-        rg -n "jdbcUrl" -S "$xml" | sed -u "s/^/[${name}_$i][dict] /" | tee -a "$outdir/run.log" >&2 || true
+        rg -n "jdbcUrl" -S "$xml" | sed -u "s/^/[${name}_$i][dict] /" | tee -a "$write_dir/run.log" >&2 || true
       else
-        grep -n "jdbcUrl" "$xml" | sed -u "s/^/[${name}_$i][dict] /" | tee -a "$outdir/run.log" >&2 || true
+        grep -n "jdbcUrl" "$xml" | sed -u "s/^/[${name}_$i][dict] /" | tee -a "$write_dir/run.log" >&2 || true
       fi
     fi
     (
       set +e
       cd "$BASE_DIR" >/dev/null
       # Ensure per-shard temp directory exists for -Djava.io.tmpdir
-      mkdir -p "$outdir/tmp" || true
+      mkdir -p "$write_dir/tmp" || true
       attempt=1
       last_ec=0
       patched_rel_fallback=0
@@ -483,7 +499,7 @@ run_pipeline_sharded() {
         stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m \
           -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+UseStringDeduplication -XX:MaxGCPauseMillis=200 \
           -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError ${JVM_OPTS:-} \
-          -Djava.io.tmpdir="$outdir/tmp" \
+          -Djava.io.tmpdir="$write_dir/tmp" \
           ${UMLS_KEY:+-Dctakes.umls_apikey=$UMLS_KEY} \
           -Dorg.slf4j.simpleLogger.defaultLogLevel=info \
           -Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary=warn \
@@ -496,17 +512,17 @@ run_pipeline_sharded() {
           -Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=${XMI_LOG_LEVEL:-warn} \
           -cp "$JAVA_CP" \
           org.apache.ctakes.core.pipeline.PiperFileRunner \
-          -p "$tuned_piper" -i "$in_dir" -o "$outdir" -l "$xml" ${UMLS_KEY:+--key $UMLS_KEY} \
-          | sed -u "s/^/[${name}_$i] /" | tee -a "$outdir/run.log"
+          -p "$tuned_piper" -i "$in_dir" -o "$write_dir" -l "$xml" ${UMLS_KEY:+--key $UMLS_KEY} \
+          | sed -u "s/^/[${name}_$i] /" | tee -a "$write_dir/run.log"
         ec=${PIPESTATUS[0]}
         last_ec=$ec
         if (( ec == 0 )); then
           break
         fi
-        echo "[${name}_$i] attempt $attempt failed (exit=$ec). Retrying..." | tee -a "$outdir/run.log"
+        echo "[${name}_$i] attempt $attempt failed (exit=$ec). Retrying..." | tee -a "$write_dir/run.log"
         # Auto-fallback 1: ClearTK Modifier NPE -> patch to LITE once (Degree+Location)
         if [[ "$SKIP_RELATIONS" -ne 1 && "$RELATIONS_LITE" -ne 1 && "$patched_rel_fallback" -eq 0 ]]; then
-          if grep -qE "ModifierExtractorAnnotator|ThreadSafeModifierExtractor" "$outdir/run.log" && \
+          if grep -qE "ModifierExtractorAnnotator|ThreadSafeModifierExtractor" "$write_dir/run.log" && \
              grep -qE "FeatureNodeArrayEncoder|getValue\(\) is null|Cannot invoke \"Object.toString\(\)\"" "$outdir/run.log"; then
             awk 'BEGIN{replaced=0} {
                    if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
@@ -515,19 +531,19 @@ run_pipeline_sharded() {
                      replaced=1;
                    } else { print }
                  }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
-            echo "[${name}_$i][auto-fallback] Detected Modifier NPE; patched relations -> LITE (Degree+Location)" | tee -a "$outdir/run.log" >&2
+            echo "[${name}_$i][auto-fallback] Detected Modifier NPE; patched relations -> LITE (Degree+Location)" | tee -a "$write_dir/run.log" >&2
             patched_rel_fallback=1
           fi
         fi
         # Auto-fallback 2: Degree/Location AE initialization failure -> remove all relation AEs and continue
         if [[ "$SKIP_RELATIONS" -ne 1 && "$patched_rel_fallback" -eq 0 ]]; then
-          if grep -qE "Initialization of CAS Processor.*ThreadSafe(Degree|Location)Extractor" "$outdir/run.log"; then
+          if grep -qE "Initialization of CAS Processor.*ThreadSafe(Degree|Location)Extractor" "$write_dir/run.log"; then
             # Remove explicit Degree/Location lines (if present) and any TsRelationSubPipe load
             sed -i -E \
               -e '/^[[:space:]]*addDescription[[:space:]]+concurrent\.ThreadSafe(Degree|Location)Extractor([[:space:]]|$)/d' \
               -e '/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d' \
               "$tuned_piper"
-            echo "[${name}_$i][auto-fallback] Degree/Location init failed; relations disabled for this shard" | tee -a "$outdir/run.log" >&2
+            echo "[${name}_$i][auto-fallback] Degree/Location init failed; relations disabled for this shard" | tee -a "$write_dir/run.log" >&2
             patched_rel_fallback=1
           fi
         fi
@@ -538,6 +554,17 @@ run_pipeline_sharded() {
       set -e
       # Clean temporary pending dir if created
       if [[ "${pending:-}" =~ ^$parent/pending_ ]]; then rm -rf "$pending" 2>/dev/null || true; fi
+      # If using tmpfs, move results and logs to disk outdir for consolidation and later resume
+      if [[ "$TMPFS_WRITES" -eq 1 ]]; then
+        mkdir -p "$outdir" || true
+        # Move contents from write_dir -> outdir (preserve hidden files)
+        shopt -s dotglob nullglob
+        if compgen -G "$write_dir/*" >/dev/null 2>&1 || [[ -e "$write_dir/".* ]]; then
+          cp -a "$write_dir"/* "$outdir"/ 2>/dev/null || true
+        fi
+        shopt -u dotglob nullglob
+        rm -rf "$write_dir" 2>/dev/null || true
+      fi
       exit $last_ec
     ) &
     pids+=($!)
