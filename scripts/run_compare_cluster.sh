@@ -57,6 +57,9 @@ WRITER_BUFFER_KB_OPT="${WRITER_BUFFER_KB:-}"
 SKIP_RELATIONS=${SKIP_RELATIONS:-0}
 RELATIONS_LITE=${RELATIONS_LITE:-0}
 RELATIONS_LITE_PARALLEL=${RELATIONS_LITE_PARALLEL:-0}
+RELATIONS_HEAP_BOOST_PCT="${RELATIONS_HEAP_BOOST_PCT:-}"
+RELATIONS_XMX_CAP_MB="${RELATIONS_XMX_CAP_MB:-}"
+RELATIONS_LITE_PARALLEL=${RELATIONS_LITE_PARALLEL:-0}
 NO_XMI=${NO_XMI:-0}
 NO_HTML=${NO_HTML:-0}
 NO_BSV=${NO_BSV:-0}
@@ -119,6 +122,7 @@ while [[ $# -gt 0 ]]; do
     --skip-relations) SKIP_RELATIONS=1; shift 1;;
     --relations-lite) RELATIONS_LITE=1; shift 1;;
     --relations-lite-parallel) RELATIONS_LITE=1; RELATIONS_LITE_PARALLEL=1; shift 1;;
+    --relations-lite-parallel) RELATIONS_LITE=1; RELATIONS_LITE_PARALLEL=1; shift 1;;
     --no-xmi) NO_XMI=1; shift 1;;
     --no-html) NO_HTML=1; shift 1;;
     --no-bsv) NO_BSV=1; shift 1;;
@@ -163,6 +167,29 @@ if [[ "$AUTOSCALE" -eq 1 ]]; then
     XMX_MB=${XMX_MB:-9216}
   else
     XMX_MB=${XMX_MB:-6144}
+  fi
+  # If relations are enabled, boost heap per runner on big-memory hosts
+  if [[ "${SKIP_RELATIONS:-0}" -ne 1 ]]; then
+    boost_pct=""
+    if [[ -n "$RELATIONS_HEAP_BOOST_PCT" ]]; then
+      boost_pct="$RELATIONS_HEAP_BOOST_PCT"
+    else
+      if [[ "$MEM_MB" -ge 131072 ]]; then        # >= 128 GB
+        boost_pct=140
+      elif [[ "$MEM_MB" -ge 65536 ]]; then       # >= 64 GB
+        boost_pct=125
+      else
+        boost_pct=100
+      fi
+      # Parallel lite benefits more from memory headroom
+      if [[ "$RELATIONS_LITE_PARALLEL" -eq 1 && "$boost_pct" -lt 150 ]]; then boost_pct=150; fi
+    fi
+    if [[ "$boost_pct" -gt 100 ]]; then
+      XMX_MB=$(( (XMX_MB * boost_pct) / 100 ))
+      # Optional cap
+      if [[ -n "$RELATIONS_XMX_CAP_MB" && "$XMX_MB" -gt "$RELATIONS_XMX_CAP_MB" ]]; then XMX_MB="$RELATIONS_XMX_CAP_MB"; fi
+      echo "[autoscale] relations heap boost applied: boost=${boost_pct}% -> XMX_MB=${XMX_MB}" >&2
+    fi
   fi
   # Threads per runner: default 4 on large-core boxes, else 6
   if [[ "$CORES" -ge 64 ]]; then
@@ -813,5 +840,4 @@ if [[ "$SKIP_PARENT" -eq 0 ]]; then
 else
   echo "[report] Skipping parent compare summary (--no-parent-report)"
 fi
-
 
