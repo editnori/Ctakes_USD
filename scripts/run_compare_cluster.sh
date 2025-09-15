@@ -442,7 +442,8 @@ run_pipeline_sharded() {
       mkdir -p "$outdir/tmp" || true
       attempt=1
       last_ec=0
-  while (( attempt <= 3 )); do
+      patched_rel_fallback=0
+      while (( attempt <= 3 )); do
         stdbuf -oL -eL java -Xms${XMX_MB}m -Xmx${XMX_MB}m \
           -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+UseStringDeduplication -XX:MaxGCPauseMillis=200 \
           -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError ${JVM_OPTS:-} \
@@ -467,6 +468,21 @@ run_pipeline_sharded() {
           break
         fi
         echo "[${name}_$i] attempt $attempt failed (exit=$ec). Retrying..." | tee -a "$outdir/run.log"
+        # Auto-fallback: if failure matches ClearTK Modifier NPE and relations not already disabled/lite, switch to LITE once
+        if [[ "$SKIP_RELATIONS" -ne 1 && "$RELATIONS_LITE" -ne 1 && "$patched_rel_fallback" -eq 0 ]]; then
+          if grep -qE "ModifierExtractorAnnotator|ThreadSafeModifierExtractor" "$outdir/run.log" && \
+             grep -qE "FeatureNodeArrayEncoder|getValue\(\) is null|Cannot invoke \"Object.toString\(\)\"" "$outdir/run.log"; then
+            awk 'BEGIN{replaced=0} {
+                   if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe(\b|[[:space:]]|$)/ && !replaced) {
+                     print "addDescription concurrent.ThreadSafeDegreeExtractor";
+                     print "addDescription concurrent.ThreadSafeLocationExtractor";
+                     replaced=1;
+                   } else { print }
+                 }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+            echo "[${name}_$i][auto-fallback] Detected Modifier NPE; patched relations -> LITE (Degree+Location)" | tee -a "$outdir/run.log" >&2
+            patched_rel_fallback=1
+          fi
+        fi
         sleep_sec=$(( 2 ** (attempt - 1) ))
         sleep "$sleep_sec"
         attempt=$(( attempt + 1 ))
