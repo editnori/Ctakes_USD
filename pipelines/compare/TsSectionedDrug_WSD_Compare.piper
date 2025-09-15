@@ -1,0 +1,21 @@
+// Sectioned core + Drug NER with unified writers
+
+threads 3
+
+// Emit timing START markers near pipeline begin
+add tools.timing.TimingStartAE
+
+// Section-aware tokenizer, POS, chunking
+load TsFullTokenizerPipeline
+add ContextDependentTokenizerAnnotator
+load TsChunkerSubPipe
+
+// Optional dictionary (kept for consistency with other pipelines)
+load TsDictionarySubPipe
+
+// Drug NER (ctakes-drug-ner)
+add org.apache.ctakes.drugner.ae.DrugMentionAnnotator
+
+// Writers
+load ../../pipelines/includes/Writers_Xmi_Table.piper
+

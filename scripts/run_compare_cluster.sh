@@ -291,6 +291,7 @@ declare -A SETS=(
   [D_core_temp_coref]="$BASE_DIR/pipelines/compare/TsDefaultTemporalCoref_WSD_Compare.piper"
   [D_core_temp_coref_smoke]="$BASE_DIR/pipelines/compare/TsDefaultTemporalCoref_WSD_Smoking_Compare.piper"
   [D_core_coref]="$BASE_DIR/pipelines/compare/TsDefaultCoref_WSD_Compare.piper"
+  [S_drug]="$BASE_DIR/pipelines/compare/TsSectionedDrug_WSD_Compare.piper"
 )
 if [[ -n "$ONLY" ]]; then
   keys=($ONLY)
