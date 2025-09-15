@@ -24,4 +24,12 @@ EOF
 fi
 
 ONLY_SET="S_core_rel_smoke"
-exec bash "$BASE_DIR/scripts/run_compare_cluster.sh" --only "$ONLY_SET" "$@"
+# Default to minimal artifacts for speed unless explicitly overridden by env
+# MAIN_WITH_FULL=1 will keep default writers
+EXTRA_FLAGS=()
+if [[ "${MAIN_WITH_FULL:-0}" -ne 1 ]]; then
+  EXTRA_FLAGS+=( --csv-only )
+fi
+# Reduce noisy XMI serializer logs if XMI is enabled later
+export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
+exec bash "$BASE_DIR/scripts/run_compare_cluster.sh" --only "$ONLY_SET" "${EXTRA_FLAGS[@]}" "$@"

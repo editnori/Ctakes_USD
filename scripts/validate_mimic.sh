@@ -97,14 +97,21 @@ esac
 
 export RUNNERS THREADS XMX_MB SEED
 EXTRA=""; [[ "$CONSOLIDATE_ASYNC" -eq 1 ]] && EXTRA="--consolidate-async"
+# Default to CSV-only outputs for faster validation unless VALIDATION_WITH_FULL=1
+TOGGLES=()
+if [[ "${VALIDATION_WITH_FULL:-0}" -ne 1 ]]; then
+  TOGGLES+=( --csv-only )
+fi
+# Quieter XMI logs if enabled
+export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
 echo "Running compare pipelines on subset (RUNNERS=$RUNNERS THREADS=$THREADS XMX=$XMX_MB)"
 # Pass dictionary XML if provided in env and exists
 DICT_FLAG=()
 if [[ -n "${DICT_XML:-}" && -f "$DICT_XML" ]]; then DICT_FLAG=( -l "$DICT_XML" ); fi
 if [[ -n "$ONLY" ]]; then
-  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --only "$ONLY" --reports "${DICT_FLAG[@]}" $EXTRA || true
+  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --only "$ONLY" --reports "${DICT_FLAG[@]}" ${TOGGLES[*]} $EXTRA || true
 else
-  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --reports "${DICT_FLAG[@]}" $EXTRA || true
+  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --reports "${DICT_FLAG[@]}" ${TOGGLES[*]} $EXTRA || true
 fi
 
 # Build manifest from outputs
@@ -118,11 +125,14 @@ echo "Building manifest: $CUR_MAN"
   echo "# CTAKES_HOME: $CTAKES_HOME"
   for run in $(ls -1d "$MAN_OUT_DIR"/*/ 2>/dev/null | sort); do
     name=$(basename "$run")
-    docs=$(find "$run/xmi" -type f -name '*.xmi' 2>/dev/null | wc -l | awk '{print $1}')
+    # Prefer csv_table doc count; fallback to XMI if absent
+    docs_csv=$(find "$run/csv_table" -type f -name '*.CSV' 2>/dev/null | wc -l | awk '{print $1}')
+    docs_xmi=$(find "$run/xmi" -type f -name '*.xmi' 2>/dev/null | wc -l | awk '{print $1}')
+    docs=$(( docs_csv > 0 ? docs_csv : docs_xmi ))
     c_hash=$( (find "$run/cui_count" -type f -name '*.bsv' -print0 2>/dev/null | xargs -0 cat 2>/dev/null | LC_ALL=C sort | sha256sum 2>/dev/null | awk '{print $1}') || true )
-    b_hash=$( (find "$run/bsv_table" -type f -name '*.BSV' -print0 2>/dev/null | xargs -0 cat 2>/dev/null | LC_ALL=C sort | sha256sum 2>/dev/null | awk '{print $1}') || true )
+    csv_hash=$( (find "$run/csv_table" -type f -name '*.CSV' -print0 2>/dev/null | xargs -0 cat 2>/dev/null | LC_ALL=C sort | sha256sum 2>/dev/null | awk '{print $1}') || true )
     t_hash=$( (find "$run/bsv_tokens" -type f -name '*.BSV' -print0 2>/dev/null | xargs -0 cat 2>/dev/null | LC_ALL=C sort | sha256sum 2>/dev/null | awk '{print $1}') || true )
-    echo "[$name] docs=$docs cui_count_hash=${c_hash:-NA} bsv_table_hash=${b_hash:-NA} tokens_hash=${t_hash:-NA}"
+    echo "[$name] docs=$docs cui_count_hash=${c_hash:-NA} csv_table_hash=${csv_hash:-NA} tokens_hash=${t_hash:-NA}"
   done
 } > "$CUR_MAN"
 
