@@ -104,6 +104,10 @@ TOGGLES=()
 if [[ "${VALIDATION_WITH_FULL:-0}" -ne 1 ]]; then
   TOGGLES+=( --csv-only )
 fi
+# Optional: safer relations (exclude Modifier extractor) to avoid ClearTK NPEs
+if [[ "${VALIDATION_RELATIONS_LITE:-0}" -eq 1 ]]; then
+  TOGGLES+=( --relations-lite )
+fi
 # Quieter XMI logs if enabled
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
 echo "Running compare pipelines on subset (RUNNERS=$RUNNERS THREADS=$THREADS XMX=$XMX_MB)"

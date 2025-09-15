@@ -45,6 +45,7 @@ declare -a REPORT_PIDS=()
 declare -a CHILD_PIDS=()
 # Artifact/AE toggles (defaults preserve current behavior)
 SKIP_RELATIONS=${SKIP_RELATIONS:-0}
+RELATIONS_LITE=${RELATIONS_LITE:-0}
 NO_XMI=${NO_XMI:-0}
 NO_HTML=${NO_HTML:-0}
 NO_BSV=${NO_BSV:-0}
@@ -92,6 +93,7 @@ while [[ $# -gt 0 ]]; do
     --consolidate-async) CONSOLIDATE_ASYNC=1; shift 1;;
     -l|--dict-xml) DICT_XML_ARG="$2"; shift 2;;
     --skip-relations) SKIP_RELATIONS=1; shift 1;;
+    --relations-lite) RELATIONS_LITE=1; shift 1;;
     --no-xmi) NO_XMI=1; shift 1;;
     --no-html) NO_HTML=1; shift 1;;
     --no-bsv) NO_BSV=1; shift 1;;
@@ -367,6 +369,16 @@ run_pipeline_sharded() {
     if [[ "$SKIP_RELATIONS" -eq 1 ]]; then
       sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
       echo "[${name}_$i][piper] Relations disabled (--skip-relations)" | tee -a "$outdir/run.log" >&2
+    elif [[ "$RELATIONS_LITE" -eq 1 ]]; then
+      # Replace TsRelationSubPipe with a safer minimal set (degree, location) to avoid ModifierExtractor NPEs
+      awk 'BEGIN{replaced=0} {
+             if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe(\b|[[:space:]]|$)/ && !replaced) {
+               print "addDescription concurrent.ThreadSafeDegreeExtractor";
+               print "addDescription concurrent.ThreadSafeLocationExtractor";
+               replaced=1;
+             } else { print }
+           }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+      echo "[${name}_$i][piper] Relations set to LITE (--relations-lite)" | tee -a "$outdir/run.log" >&2
     fi
 
     # Optionally replace writer include with a per-shard writers file respecting CSV-only/flags

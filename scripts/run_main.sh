@@ -30,6 +30,10 @@ EXTRA_FLAGS=()
 if [[ "${MAIN_WITH_FULL:-0}" -ne 1 ]]; then
   EXTRA_FLAGS+=( --csv-only )
 fi
+# Optional: safer relations (exclude Modifier extractor) to avoid ClearTK NPEs
+if [[ "${MAIN_RELATIONS_LITE:-0}" -eq 1 ]]; then
+  EXTRA_FLAGS+=( --relations-lite )
+fi
 # Reduce noisy XMI serializer logs if XMI is enabled later
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
 exec bash "$BASE_DIR/scripts/run_compare_cluster.sh" --only "$ONLY_SET" "${EXTRA_FLAGS[@]}" "$@"
