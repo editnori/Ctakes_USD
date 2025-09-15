@@ -27,29 +27,25 @@ ONLY_SET="S_core_rel_smoke"
 # Default to minimal artifacts for speed unless explicitly overridden by env
 # MAIN_WITH_FULL=1 will keep default writers
 EXTRA_FLAGS=()
+# Defaults: Minimal outputs (concepts + timing) and safer relations
 if [[ "${MAIN_WITH_FULL:-0}" -ne 1 ]]; then
   EXTRA_FLAGS+=( --csv-only )
-fi
-# Optional: safer relations (exclude Modifier extractor) to avoid ClearTK NPEs
-if [[ "${MAIN_RELATIONS_LITE:-0}" -eq 1 ]]; then
-  EXTRA_FLAGS+=( --relations-lite )
-fi
-# Optional: keep only concepts CSV (drop semantic csv_table)
-if [[ "${MAIN_CONCEPTS_ONLY:-0}" -eq 1 ]]; then
-  EXTRA_FLAGS+=( --concepts-only )
-fi
-# Optional: drop CUI list/count artifacts
-if [[ "${MAIN_NO_CUI_LIST:-0}" -eq 1 ]]; then
-  EXTRA_FLAGS+=( --no-cui-list )
-fi
-if [[ "${MAIN_NO_CUI_COUNT:-0}" -eq 1 ]]; then
-  EXTRA_FLAGS+=( --no-cui-count )
-fi
-# Optional: emit a single combined concepts_all.csv (and optionally remove per-doc CSVs)
-if [[ "${MAIN_SINGLE_TABLE_ONLY:-0}" -eq 1 ]]; then
-  EXTRA_FLAGS+=( --single-table-only )
-elif [[ "${MAIN_SINGLE_TABLE:-0}" -eq 1 ]]; then
-  EXTRA_FLAGS+=( --single-table )
+  # Default: relations-lite unless explicitly disabled
+  if [[ "${MAIN_RELATIONS_LITE:-1}" -eq 1 ]]; then EXTRA_FLAGS+=( --relations-lite ); fi
+  # Default: concepts-only (drop wide semantic csv_table)
+  if [[ "${MAIN_CONCEPTS_ONLY:-1}" -eq 1 ]]; then EXTRA_FLAGS+=( --concepts-only ); fi
+  # Default: no CUI list/count
+  if [[ "${MAIN_NO_CUI_LIST:-1}" -eq 1 ]]; then EXTRA_FLAGS+=( --no-cui-list ); fi
+  if [[ "${MAIN_NO_CUI_COUNT:-1}" -eq 1 ]]; then EXTRA_FLAGS+=( --no-cui-count ); fi
+  # Default: produce single combined table and remove per-doc CSVs
+  if [[ "${MAIN_SINGLE_TABLE_ONLY:-1}" -eq 1 ]]; then
+    EXTRA_FLAGS+=( --single-table-only )
+  elif [[ "${MAIN_SINGLE_TABLE:-0}" -eq 1 ]]; then
+    EXTRA_FLAGS+=( --single-table )
+  fi
+else
+  # Full mode: allow opting back into safer relations if requested
+  if [[ "${MAIN_RELATIONS_LITE:-0}" -eq 1 ]]; then EXTRA_FLAGS+=( --relations-lite ); fi
 fi
 # Reduce noisy XMI serializer logs if XMI is enabled later
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}

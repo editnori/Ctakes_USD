@@ -103,27 +103,18 @@ EXTRA=""; [[ "$CONSOLIDATE_ASYNC" -eq 1 ]] && EXTRA="--consolidate-async"; [[ "$
 TOGGLES=()
 if [[ "${VALIDATION_WITH_FULL:-0}" -ne 1 ]]; then
   TOGGLES+=( --csv-only )
-fi
-# Optional: safer relations (exclude Modifier extractor) to avoid ClearTK NPEs
-if [[ "${VALIDATION_RELATIONS_LITE:-0}" -eq 1 ]]; then
-  TOGGLES+=( --relations-lite )
-fi
-# Optional: keep only concepts CSV (drop semantic csv_table)
-if [[ "${VALIDATION_CONCEPTS_ONLY:-0}" -eq 1 ]]; then
-  TOGGLES+=( --concepts-only )
-fi
-# Optional: drop CUI list/count artifacts
-if [[ "${VALIDATION_NO_CUI_LIST:-0}" -eq 1 ]]; then
-  TOGGLES+=( --no-cui-list )
-fi
-if [[ "${VALIDATION_NO_CUI_COUNT:-0}" -eq 1 ]]; then
-  TOGGLES+=( --no-cui-count )
-fi
-# Optional: emit a single combined concepts_all.csv (and optionally remove per-doc CSVs)
-if [[ "${VALIDATION_SINGLE_TABLE_ONLY:-0}" -eq 1 ]]; then
-  TOGGLES+=( --single-table-only )
-elif [[ "${VALIDATION_SINGLE_TABLE:-0}" -eq 1 ]]; then
-  TOGGLES+=( --single-table )
+  # Defaults: Minimal + safer relations for validation
+  if [[ "${VALIDATION_RELATIONS_LITE:-1}" -eq 1 ]]; then TOGGLES+=( --relations-lite ); fi
+  if [[ "${VALIDATION_CONCEPTS_ONLY:-1}" -eq 1 ]]; then TOGGLES+=( --concepts-only ); fi
+  if [[ "${VALIDATION_NO_CUI_LIST:-1}" -eq 1 ]]; then TOGGLES+=( --no-cui-list ); fi
+  if [[ "${VALIDATION_NO_CUI_COUNT:-1}" -eq 1 ]]; then TOGGLES+=( --no-cui-count ); fi
+  if [[ "${VALIDATION_SINGLE_TABLE_ONLY:-1}" -eq 1 ]]; then
+    TOGGLES+=( --single-table-only )
+  elif [[ "${VALIDATION_SINGLE_TABLE:-0}" -eq 1 ]]; then
+    TOGGLES+=( --single-table )
+  fi
+else
+  if [[ "${VALIDATION_RELATIONS_LITE:-0}" -eq 1 ]]; then TOGGLES+=( --relations-lite ); fi
 fi
 # Quieter XMI logs if enabled
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}

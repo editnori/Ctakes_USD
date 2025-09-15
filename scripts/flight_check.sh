@@ -142,6 +142,17 @@ for k in "${keys[@]}"; do
 done
 pass "Pipeline descriptors found and clean (no JDBC settings)"
 
+# Output policy preview (defaults)
+echo "-- Default Output Policy --"
+echo "Pipelines     : ${ONLY_KEYS:-S_core_rel_smoke}"
+echo "Writers       : Minimal (concepts CSV + timing)"
+echo "  - csv_table_concepts per-doc CSV: ON"
+echo "  - csv_table per-doc semantic CSV: OFF (concepts-only)"
+echo "  - XMI/HTML/BSV/Tokens: OFF by default"
+echo "  - Cui list/count: OFF by default"
+echo "Consolidation : concepts_all.csv (single-table) + timing_csv/timing.csv"
+echo "Stability     : relations-lite enabled by default; auto-fallback on Modifier NPE"
+
 CTAKES_SANITIZE_DICT="${CTAKES_SANITIZE_DICT:-0}"
 if [[ "$CTAKES_SANITIZE_DICT" -eq 1 ]]; then
   # 6) Dry-run sanitize and verify driver + jdbcUrl flags
