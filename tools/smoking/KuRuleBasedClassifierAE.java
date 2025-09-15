@@ -7,8 +7,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 public class KuRuleBasedClassifierAE extends JCasAnnotator_ImplBase {
     public static AnalysisEngineDescription createAnnotatorDescription() throws ResourceInitializationException {
-        return DescriptorLoader.load("org/apache/ctakes/smoking/status/analysis_engine/KuRuleBasedClassifierAnnotator.xml");
+        return DescriptorLoader.load("ctakes-smoking-status/desc/analysis_engine/KuRuleBasedClassifierAnnotator.xml");
     }
     @Override public void process(JCas jCas) { }
 }
-

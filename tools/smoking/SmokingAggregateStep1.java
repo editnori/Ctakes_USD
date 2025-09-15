@@ -13,7 +13,7 @@ import org.apache.uima.util.XMLInputSource;
 
 public class SmokingAggregateStep1 extends JCasAnnotator_ImplBase {
     private static final String RESOURCE =
-            "org/apache/ctakes/smoking/status/analysis_engine/ProductionPostSentenceAggregate_step1.xml";
+            "ctakes-smoking-status/desc/analysis_engine/ProductionPostSentenceAggregate_step1.xml";
 
     public static AnalysisEngineDescription createAnnotatorDescription() throws ResourceInitializationException {
         try {

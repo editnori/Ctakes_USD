@@ -7,8 +7,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 public class SmokingStatusDictLookupAE extends JCasAnnotator_ImplBase {
     public static AnalysisEngineDescription createAnnotatorDescription() throws ResourceInitializationException {
-        return DescriptorLoader.load("org/apache/ctakes/smoking/status/analysis_engine/SmokingStatusDictionaryLookupAnnotator.xml");
+        return DescriptorLoader.load("ctakes-smoking-status/desc/analysis_engine/SmokingStatusDictionaryLookupAnnotator.xml");
     }
     @Override public void process(JCas jCas) { }
 }
-
