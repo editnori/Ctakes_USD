@@ -64,10 +64,7 @@ if [[ -n "$ONLY" ]]; then
   # shellcheck disable=SC2206
   keys=($ONLY)
 else
-  keys=(S_core S_core_rel D_core_rel D_core_coref)
-  if [[ "$HAS_TEMP_MODELS" -eq 1 ]]; then
-    keys+=(S_core_temp S_core_temp_coref D_core_temp D_core_temp_coref S_core_temp_coref_smoke D_core_temp_coref_smoke)
-  fi
+  keys=(S_core_rel_smoke)
 fi
 
 # Validate and collect present pipelines

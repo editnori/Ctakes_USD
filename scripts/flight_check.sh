@@ -123,7 +123,7 @@ if [[ -n "$ONLY_KEYS" ]]; then
   # shellcheck disable=SC2206
   keys=($ONLY_KEYS)
 else
-  keys=("${!SETS[@]}")
+  keys=(S_core_rel_smoke)
 fi
 for k in "${keys[@]}"; do
   p="${SETS[$k]:-}"

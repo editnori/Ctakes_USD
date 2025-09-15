@@ -220,11 +220,8 @@ declare -A SETS=(
 if [[ -n "$ONLY" ]]; then
   keys=($ONLY)
 else
-  # Default remains multi-pipeline for back-compat, but single-pass main wrapper will select S_core_rel_smoke.
-  keys=(S_core S_core_rel D_core_rel D_core_coref)
-  if [[ "$HAS_TEMP_MODELS" -eq 1 ]]; then
-    keys+=(S_core_temp S_core_temp_coref D_core_temp D_core_temp_coref S_core_temp_coref_smoke D_core_temp_coref_smoke)
-  fi
+  # Default: single main pipeline (Sectioned Core + Relations + Smoking)
+  keys=(S_core_rel_smoke)
 fi
 
 sanitize_dict() {
