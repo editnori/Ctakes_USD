@@ -46,6 +46,10 @@ declare -a CHILD_PIDS=()
 # Optional: write shard outputs to tmpfs (/dev/shm) then move to disk
 TMPFS_WRITES=${TMPFS_WRITES:-0}
 TMPFS_PATH="${TMPFS_PATH:-/dev/shm}"
+# Optional writer performance tuning for ClinicalConceptCsvWriter
+WRITER_THREADS_OPT="${WRITER_THREADS:-}"
+WRITER_ASYNC=${WRITER_ASYNC:-0}
+WRITER_BUFFER_KB_OPT="${WRITER_BUFFER_KB:-}"
 # Artifact/AE toggles (defaults preserve current behavior)
 SKIP_RELATIONS=${SKIP_RELATIONS:-0}
 RELATIONS_LITE=${RELATIONS_LITE:-0}
@@ -103,6 +107,9 @@ while [[ $# -gt 0 ]]; do
     -l|--dict-xml) DICT_XML_ARG="$2"; shift 2;;
     --tmpfs-writes) TMPFS_WRITES=1; shift 1;;
     --tmpfs-path) TMPFS_PATH="$2"; shift 2;;
+    --writer-threads) WRITER_THREADS_OPT="$2"; shift 2;;
+    --writer-async) WRITER_ASYNC=1; shift 1;;
+    --writer-buffer-kb) WRITER_BUFFER_KB_OPT="$2"; shift 2;;
     --skip-relations) SKIP_RELATIONS=1; shift 1;;
     --relations-lite) RELATIONS_LITE=1; shift 1;;
     --no-xmi) NO_XMI=1; shift 1;;
@@ -465,6 +472,11 @@ run_pipeline_sharded() {
       # If user wants a single concepts table only, drop the broader semantic CSV per-doc table
       if [[ "${CONCEPTS_ONLY:-0}" -eq 1 ]]; then
         sed -i -E "/^[[:space:]]*add[[:space:]]+SemanticTableFileWriter[[:space:]].*SubDirectory=csv_table([[:space:]]|$)/d" "$shard_writers" || true
+      fi
+      # Writer performance params: append to ClinicalConceptCsvWriter line if requested
+      if [[ -n "${WRITER_THREADS_OPT}" || "${WRITER_ASYNC}" -eq 1 || -n "${WRITER_BUFFER_KB_OPT}" ]]; then
+        sed -i -E "s#(^[[:space:]]*add[[:space:]]+tools\.reporting\.uima\.ClinicalConceptCsvWriter\b[^$]*)$#\1${WRITER_THREADS_OPT:+ WriterThreads=${WRITER_THREADS_OPT}}$([[ ${WRITER_ASYNC} -eq 1 ]] && echo ' AsyncWrite=true' || echo '')${WRITER_BUFFER_KB_OPT:+ BufferKB=${WRITER_BUFFER_KB_OPT}}#" "$shard_writers" || true
+        echo "[${name}_$i][piper] ClinicalConceptCsvWriter tuned (${WRITER_THREADS_OPT:+WriterThreads=${WRITER_THREADS_OPT} }$([[ ${WRITER_ASYNC} -eq 1 ]] && echo 'AsyncWrite=true ' || echo '')${WRITER_BUFFER_KB_OPT:+BufferKB=${WRITER_BUFFER_KB_OPT}})" | tee -a "$write_dir/run.log" >&2
       fi
       # Ensure CSV table and concept CSV remain
       # Rewrite include path in tuned piper

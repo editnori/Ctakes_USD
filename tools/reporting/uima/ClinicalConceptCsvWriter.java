@@ -21,11 +21,16 @@ import org.apache.uima.jcas.cas.FSArray;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.StandardOpenOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * UIMA writer that emits a per-document normalized Clinical Concepts CSV
@@ -40,7 +45,45 @@ public class ClinicalConceptCsvWriter extends JCasAnnotator_ImplBase {
     @ConfigurationParameter(name = PARAM_SUBDIR, mandatory = false)
     private String subDir = "csv_table_concepts";
 
+    public static final String PARAM_WRITER_THREADS = "WriterThreads";
+    @ConfigurationParameter(name = PARAM_WRITER_THREADS, mandatory = false)
+    private Integer writerThreads = 1;
+
+    public static final String PARAM_ASYNC_WRITE = "AsyncWrite";
+    @ConfigurationParameter(name = PARAM_ASYNC_WRITE, mandatory = false)
+    private Boolean asyncWrite = false;
+
+    public static final String PARAM_BUFFER_KB = "BufferKB";
+    @ConfigurationParameter(name = PARAM_BUFFER_KB, mandatory = false)
+    private Integer bufferKB = 64; // 64KB default
+
+    public static final String PARAM_INCLUDE_CANDIDATES = "IncludeCandidates";
+    @ConfigurationParameter(name = PARAM_INCLUDE_CANDIDATES, mandatory = false)
+    private Boolean includeCandidates = true;
+
+    public static final String PARAM_MAX_CANDIDATES = "MaxCandidates";
+    @ConfigurationParameter(name = PARAM_MAX_CANDIDATES, mandatory = false)
+    private Integer maxCandidates = -1; // -1 = all
+
+    public static final String PARAM_INCLUDE_DTR = "IncludeDocTimeRel";
+    @ConfigurationParameter(name = PARAM_INCLUDE_DTR, mandatory = false)
+    private Boolean includeDocTimeRel = true;
+
+    public static final String PARAM_INCLUDE_DEGREE = "IncludeDegreeOf";
+    @ConfigurationParameter(name = PARAM_INCLUDE_DEGREE, mandatory = false)
+    private Boolean includeDegreeOf = true;
+
+    public static final String PARAM_INCLUDE_LOCATION = "IncludeLocationOf";
+    @ConfigurationParameter(name = PARAM_INCLUDE_LOCATION, mandatory = false)
+    private Boolean includeLocationOf = true;
+
+    public static final String PARAM_INCLUDE_COREF = "IncludeCoref";
+    @ConfigurationParameter(name = PARAM_INCLUDE_COREF, mandatory = false)
+    private Boolean includeCoref = true;
+
     private String outputBase;
+    private static ExecutorService pool;
+    private static int poolThreads = 0;
 
     @Override
     public void initialize(UimaContext context) {
@@ -50,6 +93,31 @@ public class ClinicalConceptCsvWriter extends JCasAnnotator_ImplBase {
         outputBase = (od == null) ? "." : od.toString();
         Object sd = context.getConfigParameterValue(PARAM_SUBDIR);
         if (sd != null && !sd.toString().trim().isEmpty()) subDir = sd.toString().trim();
+
+        // Normalize params
+        if (writerThreads == null || writerThreads < 1) writerThreads = 1;
+        if (asyncWrite == null) asyncWrite = false;
+        if (bufferKB == null || bufferKB < 1) bufferKB = 64;
+        if (includeCandidates == null) includeCandidates = true;
+        if (maxCandidates == null) maxCandidates = -1;
+        if (includeDocTimeRel == null) includeDocTimeRel = true;
+        if (includeDegreeOf == null) includeDegreeOf = true;
+        if (includeLocationOf == null) includeLocationOf = true;
+        if (includeCoref == null) includeCoref = true;
+
+        // Create or resize pool if async mode requested
+        if (Boolean.TRUE.equals(asyncWrite) && writerThreads > 1) {
+            synchronized (ClinicalConceptCsvWriter.class) {
+                if (pool == null || poolThreads != writerThreads) {
+                    if (pool != null) {
+                        pool.shutdown();
+                        try { pool.awaitTermination(5, TimeUnit.SECONDS); } catch (InterruptedException ignored) {}
+                    }
+                    pool = Executors.newFixedThreadPool(writerThreads);
+                    poolThreads = writerThreads;
+                }
+            }
+        }
     }
 
     @Override
@@ -63,78 +131,137 @@ public class ClinicalConceptCsvWriter extends JCasAnnotator_ImplBase {
         try { Files.createDirectories(dir); } catch (IOException e) { throw new AnalysisEngineProcessException(e); }
         Path out = dir.resolve(docId + ".CSV");
 
-        // Build helper maps
-        Map<IdentifiedAnnotation, String> docTimeRel = buildDocTimeRelMap(jCas);
-        Map<IdentifiedAnnotation, Boolean> hasDegreeOf = buildDegreeOfMap(jCas);
-        Map<IdentifiedAnnotation, String> locationText = buildLocationTextMap(jCas, text);
-        CorefInfo coref = buildCoref(jCas, text);
+        final String content = buildCsvContent(jCas, docId, text);
+        if (Boolean.TRUE.equals(asyncWrite) && writerThreads > 1 && pool != null) {
+            pool.submit(() -> {
+                try (BufferedWriter bw = new BufferedWriter(
+                        new OutputStreamWriter(Files.newOutputStream(out, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE),
+                                StandardCharsets.UTF_8),
+                        Math.max(1024, bufferKB * 1024))) {
+                    bw.write(content);
+                } catch (IOException ioException) {
+                    // Best effort; no rethrow in async path
+                    ioException.printStackTrace();
+                }
+            });
+        } else {
+            try (BufferedWriter bw = new BufferedWriter(
+                    new OutputStreamWriter(Files.newOutputStream(out, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE),
+                            StandardCharsets.UTF_8),
+                    Math.max(1024, bufferKB * 1024))) {
+                bw.write(content);
+            } catch (IOException e) {
+                throw new AnalysisEngineProcessException(e);
+            }
+        }
+    }
 
-        // Section map by span
+    @Override
+    public void destroy() {
+        if (pool != null) {
+            pool.shutdown();
+            try { pool.awaitTermination(30, TimeUnit.SECONDS); } catch (InterruptedException ignored) {}
+        }
+    }
+
+    private String buildCsvContent(JCas jCas, String docId, String text) {
+        StringBuilder sb = new StringBuilder(8192);
+        // Header
+        sb.append(String.join(",", Arrays.asList(
+                "Document","Begin","End","Text",
+                "Section","SmokingStatus",
+                "Semantic Group","Semantic Type","SemanticsFallback","CUI","TUI","PreferredText","PrefTextFallback","CodingScheme",
+                "CandidateCount","Candidates","Confidence","ConceptScore","Disambiguated",
+                "DocTimeRel","DegreeOf","LocationOfText","Coref","CorefChainId","CorefRepText",
+                "Polarity","Negated","Uncertain","Conditional","Generic","Subject","HistoryOf"
+        ))).append('\n');
+
+        // Build helper maps based on included flags
+        Map<IdentifiedAnnotation, String> docTimeRel = includeDocTimeRel ? buildDocTimeRelMap(jCas) : Collections.emptyMap();
+        Map<IdentifiedAnnotation, Boolean> hasDegreeOf = includeDegreeOf ? buildDegreeOfMap(jCas) : Collections.emptyMap();
+        Map<IdentifiedAnnotation, String> locationText = includeLocationOf ? buildLocationTextMap(jCas, text) : Collections.emptyMap();
+        CorefInfo coref = includeCoref ? buildCoref(jCas, text) : new CorefInfo();
         List<Segment> segments = new ArrayList<>(JCasUtil.select(jCas, Segment.class));
 
-        try (BufferedWriter bw = Files.newBufferedWriter(out, StandardCharsets.UTF_8)) {
-            // Header
-            bw.write(String.join(",", Arrays.asList(
-                    "Document","Begin","End","Text",
-                    "Section","SmokingStatus",
-                    "Semantic Group","Semantic Type","SemanticsFallback","CUI","TUI","PreferredText","PrefTextFallback","CodingScheme",
-                    "CandidateCount","Candidates","Confidence","ConceptScore","Disambiguated",
-                    "DocTimeRel","DegreeOf","LocationOfText","Coref","CorefChainId","CorefRepText",
-                    "Polarity","Negated","Uncertain","Conditional","Generic","Subject","HistoryOf"
-            )));
-            bw.write("\n");
-
-            final String smoking = detectSmoking(jCas);
-            for (IdentifiedAnnotation ia : JCasUtil.select(jCas, IdentifiedAnnotation.class)) {
-                // Only output concept-bearing clinical concepts
-                FSArray arr = ia.getOntologyConceptArr();
-                int candCount = (arr == null) ? 0 : arr.size();
-                String bestCui = ""; String bestTui = ""; String bestPref = ""; String bestScheme = ""; boolean disamb = false; double bestScore = 0.0;
-                List<String> candStrs = new ArrayList<>();
-                if (candCount > 0) {
-                    for (int i=0;i<arr.size();i++) {
-                        if (!(arr.get(i) instanceof UmlsConcept)) continue;
-                        UmlsConcept c = (UmlsConcept) arr.get(i);
-                        if (i == 0) { // best
-                            bestCui = nvl(c.getCui()); bestTui = nvl(c.getTui()); bestPref = nvl(c.getPreferredText()); bestScheme = nvl(c.getCodingScheme()); disamb = c.getDisambiguated(); bestScore = c.getScore();
+        final String smoking = detectSmoking(jCas);
+        for (IdentifiedAnnotation ia : JCasUtil.select(jCas, IdentifiedAnnotation.class)) {
+            // Only output concept-bearing clinical concepts
+            FSArray arr = ia.getOntologyConceptArr();
+            int candCount = (arr == null) ? 0 : arr.size();
+            String bestCui = ""; String bestTui = ""; String bestPref = ""; String bestScheme = ""; boolean disamb = false; double bestScore = 0.0;
+            List<String> candStrs = includeCandidates ? new ArrayList<>() : Collections.emptyList();
+            if (candCount > 0) {
+                int emitted = 0;
+                for (int i = 0; i < arr.size(); i++) {
+                    if (!(arr.get(i) instanceof UmlsConcept)) continue;
+                    UmlsConcept c = (UmlsConcept) arr.get(i);
+                    // Choose best as highest score if present else first
+                    if (i == 0 || c.getScore() > bestScore) {
+                        bestCui = nvl(c.getCui()); bestTui = nvl(c.getTui()); bestPref = nvl(c.getPreferredText()); bestScheme = nvl(c.getCodingScheme()); disamb = c.getDisambiguated(); bestScore = c.getScore();
+                    }
+                    if (includeCandidates) {
+                        if (maxCandidates < 0 || emitted < maxCandidates) {
+                            String cui = nvl(c.getCui()).isEmpty() ? (bestCui.isEmpty()?"?":bestCui) : c.getCui();
+                            String tui = nvl(c.getTui()).isEmpty() ? (bestTui.isEmpty()?"?":bestTui) : c.getTui();
+                            String pref = nvl(c.getPreferredText()); if (pref.isEmpty()) pref = bestPref.isEmpty()?safeText(text, ia.getBegin(), ia.getEnd()):bestPref;
+                            candStrs.add(cui + ":" + tui + ":" + pref);
+                            emitted++;
                         }
-                        String cui = nvl(c.getCui()).isEmpty() ? (bestCui.isEmpty()?"?":bestCui) : c.getCui();
-                        String tui = nvl(c.getTui()).isEmpty() ? (bestTui.isEmpty()?"?":bestTui) : c.getTui();
-                        String pref = nvl(c.getPreferredText()); if (pref.isEmpty()) pref = bestPref.isEmpty()?safeText(text, ia.getBegin(), ia.getEnd()):bestPref;
-                        candStrs.add(cui + ":" + tui + ":" + pref);
                     }
                 }
-                if (candCount <= 0 && bestCui.isEmpty()) continue; // skip non-concept mentions
-
-                String section = findSection(segments, ia);
-                String[] sem = semFromTui(bestTui);
-                String sg = sem==null?"":sem[0]; String st = sem==null?"":sem[1]; boolean semFallback = (sem==null);
-                boolean prefFallback = false;
-                String prefOut = bestPref;
-                if (prefOut == null || prefOut.isEmpty()) { prefOut = safeText(text, ia.getBegin(), ia.getEnd()); prefFallback = true; }
-
-                String dtr = nvl(docTimeRel.get(ia));
-                boolean deg = hasDegreeOf.getOrDefault(ia, false);
-                String locTxt = nvl(locationText.get(ia));
-                boolean isCoref = coref.chainIdByMention.containsKey(ia);
-                String chainId = nvl(coref.chainIdByMention.get(ia));
-                String chainRep = nvl(coref.repTextByChain.get(chainId));
-
-                List<String> row = Arrays.asList(
-                        docId,
-                        String.valueOf(ia.getBegin()), String.valueOf(ia.getEnd()), csvEsc(safeText(text, ia.getBegin(), ia.getEnd())),
-                        csvEsc(normalizeSection(section)), csvEsc(smoking),
-                        csvEsc(sg), csvEsc(st), semFallback?"true":"", nvl(bestCui), nvl(bestTui), csvEsc(prefOut), prefFallback?"true":"", csvEsc(nvl(bestScheme)),
-                        String.valueOf(candCount), csvEsc(String.join("; ", candStrs)), String.valueOf(ia.getConfidence()), String.valueOf(bestScore), String.valueOf(disamb),
-                        csvEsc(dtr), String.valueOf(deg), csvEsc(locTxt), String.valueOf(isCoref), csvEsc(chainId), csvEsc(chainRep),
-                        String.valueOf(ia.getPolarity()), String.valueOf(ia.getPolarity()<0), String.valueOf(ia.getUncertainty()!=0), String.valueOf(ia.getConditional()), String.valueOf(ia.getGeneric()), csvEsc(nvl(ia.getSubject())), String.valueOf(ia.getHistoryOf())
-                );
-                bw.write(String.join(",", row));
-                bw.write("\n");
             }
-        } catch (IOException e) {
-            throw new AnalysisEngineProcessException(e);
+            if (candCount <= 0 && bestCui.isEmpty()) continue; // skip non-concept mentions
+
+            String section = findSection(segments, ia);
+            String[] sem = semFromTui(bestTui);
+            String sg = sem==null?"":sem[0]; String st = sem==null?"":sem[1]; boolean semFallback = (sem==null);
+            boolean prefFallback = false;
+            String prefOut = bestPref;
+            if (prefOut == null || prefOut.isEmpty()) { prefOut = safeText(text, ia.getBegin(), ia.getEnd()); prefFallback = true; }
+
+            String dtr = includeDocTimeRel ? nvl(docTimeRel.get(ia)) : "";
+            boolean deg = includeDegreeOf && hasDegreeOf.getOrDefault(ia, false);
+            String locTxt = includeLocationOf ? nvl(locationText.get(ia)) : "";
+            boolean isCoref = includeCoref && coref.chainIdByMention.containsKey(ia);
+            String chainId = includeCoref ? nvl(coref.chainIdByMention.get(ia)) : "";
+            String chainRep = includeCoref ? nvl(coref.repTextByChain.get(chainId)) : "";
+
+            // Build row
+            sb.append(docId).append(',')
+              .append(ia.getBegin()).append(',')
+              .append(ia.getEnd()).append(',')
+              .append(csvEsc(safeText(text, ia.getBegin(), ia.getEnd()))).append(',')
+              .append(csvEsc(normalizeSection(section))).append(',')
+              .append(csvEsc(smoking)).append(',')
+              .append(csvEsc(sg)).append(',')
+              .append(csvEsc(st)).append(',')
+              .append(semFallback?"true":"").append(',')
+              .append(nvl(bestCui)).append(',')
+              .append(nvl(bestTui)).append(',')
+              .append(csvEsc(prefOut)).append(',')
+              .append(prefFallback?"true":"").append(',')
+              .append(csvEsc(nvl(bestScheme))).append(',')
+              .append(candCount).append(',')
+              .append(includeCandidates ? csvEsc(String.join("; ", candStrs)) : "").append(',')
+              .append(String.valueOf(ia.getConfidence())).append(',')
+              .append(String.valueOf(bestScore)).append(',')
+              .append(String.valueOf(disamb)).append(',')
+              .append(csvEsc(dtr)).append(',')
+              .append(deg).append(',')
+              .append(csvEsc(locTxt)).append(',')
+              .append(isCoref).append(',')
+              .append(csvEsc(chainId)).append(',')
+              .append(csvEsc(chainRep)).append(',')
+              .append(ia.getPolarity()).append(',')
+              .append(ia.getPolarity()<0).append(',')
+              .append(ia.getUncertainty()!=0).append(',')
+              .append(ia.getConditional()).append(',')
+              .append(ia.getGeneric()).append(',')
+              .append(csvEsc(nvl(ia.getSubject()))).append(',')
+              .append(ia.getHistoryOf())
+              .append('\n');
         }
+        return sb.toString();
     }
 
     private String getDocId(JCas jCas) {
