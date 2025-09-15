@@ -56,6 +56,7 @@ WRITER_BUFFER_KB_OPT="${WRITER_BUFFER_KB:-}"
 # Artifact/AE toggles (defaults preserve current behavior)
 SKIP_RELATIONS=${SKIP_RELATIONS:-0}
 RELATIONS_LITE=${RELATIONS_LITE:-0}
+RELATIONS_LITE_PARALLEL=${RELATIONS_LITE_PARALLEL:-0}
 NO_XMI=${NO_XMI:-0}
 NO_HTML=${NO_HTML:-0}
 NO_BSV=${NO_BSV:-0}
@@ -117,6 +118,7 @@ while [[ $# -gt 0 ]]; do
     --writer-buffer-kb) WRITER_BUFFER_KB_OPT="$2"; shift 2;;
     --skip-relations) SKIP_RELATIONS=1; shift 1;;
     --relations-lite) RELATIONS_LITE=1; shift 1;;
+    --relations-lite-parallel) RELATIONS_LITE=1; RELATIONS_LITE_PARALLEL=1; shift 1;;
     --no-xmi) NO_XMI=1; shift 1;;
     --no-html) NO_HTML=1; shift 1;;
     --no-bsv) NO_BSV=1; shift 1;;
@@ -452,15 +454,27 @@ run_pipeline_sharded() {
         echo "[${name}_$i][piper] Relations LITE requested, but relation models not found under resources; disabling relations" | tee -a "$write_dir/run.log" >&2
         sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
       else
-        awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
-               if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
-                 print "add concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
-                 print "add concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
-                 replaced=1;
-               } else { print }
-             }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+        if [[ "$RELATIONS_LITE_PARALLEL" -eq 1 ]]; then
+          # Use non-threadsafe annotators to allow per-thread parallelism inside a JVM
+          awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
+                 if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
+                   print "add org.apache.ctakes.relationextractor.ae.DegreeOfRelationExtractorAnnotator classifierJarPath=\"file:" deg "\"";
+                   print "add org.apache.ctakes.relationextractor.ae.LocationOfRelationExtractorAnnotator classifierJarPath=\"file:" loc "\"";
+                   replaced=1;
+                 } else { print }
+               }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+          echo "[${name}_$i][piper] Relations set to LITE-PARALLEL (--relations-lite-parallel)" | tee -a "$write_dir/run.log" >&2
+        else
+          awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
+                 if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
+                   print "add concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
+                   print "add concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
+                   replaced=1;
+                 } else { print }
+               }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+          echo "[${name}_$i][piper] Relations set to LITE (--relations-lite)" | tee -a "$write_dir/run.log" >&2
+        fi
       fi
-      echo "[${name}_$i][piper] Relations set to LITE (--relations-lite)" | tee -a "$write_dir/run.log" >&2
     fi
 
     # Optionally replace writer include with a per-shard writers file respecting CSV-only/flags
@@ -578,13 +592,23 @@ run_pipeline_sharded() {
             deg_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/degree_of/model.jar"
             loc_model="$CTAKES_HOME/resources/org/apache/ctakes/relation/extractor/models/location_of/model.jar"
             if [[ -f "$deg_model" && -f "$loc_model" ]]; then
-              awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
-                     if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
-                       print "add concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
-                       print "add concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
-                       replaced=1;
-                     } else { print }
-                   }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+              if [[ "$RELATIONS_LITE_PARALLEL" -eq 1 ]]; then
+                awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
+                       if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
+                         print "add org.apache.ctakes.relationextractor.ae.DegreeOfRelationExtractorAnnotator classifierJarPath=\"file:" deg "\"";
+                         print "add org.apache.ctakes.relationextractor.ae.LocationOfRelationExtractorAnnotator classifierJarPath=\"file:" loc "\"";
+                         replaced=1;
+                       } else { print }
+                     }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+              else
+                awk -v deg="$deg_model" -v loc="$loc_model" 'BEGIN{replaced=0} {
+                       if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
+                         print "add concurrent.ThreadSafeDegreeExtractor classifierJarPath=\"file:" deg "\"";
+                         print "add concurrent.ThreadSafeLocationExtractor classifierJarPath=\"file:" loc "\"";
+                         replaced=1;
+                       } else { print }
+                     }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
+              fi
             else
               # If models missing, remove relations entirely
               sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
@@ -789,6 +813,5 @@ if [[ "$SKIP_PARENT" -eq 0 ]]; then
 else
   echo "[report] Skipping parent compare summary (--no-parent-report)"
 fi
-
 
 
