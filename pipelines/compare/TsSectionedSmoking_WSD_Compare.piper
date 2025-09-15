@@ -17,8 +17,9 @@ add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambi
 load TsAttributeCleartkSubPipe
 add tools.fixes.DefaultSubjectAnnotator
 
-// Smoking Status (document-level)
-add org.apache.ctakes.smokingstatus.ae.SmokingStatusAnnotator
+// Smoking Status (document-level) via descriptors to ensure model/resources resolve from classpath
+addDescription tools.smoking.SmokingAggregateStep1
+addDescription tools.smoking.SmokingAggregateStep2Libsvm
 
 // Writers
 load ../../pipelines/includes/Writers_Xmi_Table.piper
