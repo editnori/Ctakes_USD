@@ -108,6 +108,23 @@ fi
 if [[ "${VALIDATION_RELATIONS_LITE:-0}" -eq 1 ]]; then
   TOGGLES+=( --relations-lite )
 fi
+# Optional: keep only concepts CSV (drop semantic csv_table)
+if [[ "${VALIDATION_CONCEPTS_ONLY:-0}" -eq 1 ]]; then
+  TOGGLES+=( --concepts-only )
+fi
+# Optional: drop CUI list/count artifacts
+if [[ "${VALIDATION_NO_CUI_LIST:-0}" -eq 1 ]]; then
+  TOGGLES+=( --no-cui-list )
+fi
+if [[ "${VALIDATION_NO_CUI_COUNT:-0}" -eq 1 ]]; then
+  TOGGLES+=( --no-cui-count )
+fi
+# Optional: emit a single combined concepts_all.csv (and optionally remove per-doc CSVs)
+if [[ "${VALIDATION_SINGLE_TABLE_ONLY:-0}" -eq 1 ]]; then
+  TOGGLES+=( --single-table-only )
+elif [[ "${VALIDATION_SINGLE_TABLE:-0}" -eq 1 ]]; then
+  TOGGLES+=( --single-table )
+fi
 # Quieter XMI logs if enabled
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
 echo "Running compare pipelines on subset (RUNNERS=$RUNNERS THREADS=$THREADS XMX=$XMX_MB)"

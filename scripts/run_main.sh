@@ -34,6 +34,23 @@ fi
 if [[ "${MAIN_RELATIONS_LITE:-0}" -eq 1 ]]; then
   EXTRA_FLAGS+=( --relations-lite )
 fi
+# Optional: keep only concepts CSV (drop semantic csv_table)
+if [[ "${MAIN_CONCEPTS_ONLY:-0}" -eq 1 ]]; then
+  EXTRA_FLAGS+=( --concepts-only )
+fi
+# Optional: drop CUI list/count artifacts
+if [[ "${MAIN_NO_CUI_LIST:-0}" -eq 1 ]]; then
+  EXTRA_FLAGS+=( --no-cui-list )
+fi
+if [[ "${MAIN_NO_CUI_COUNT:-0}" -eq 1 ]]; then
+  EXTRA_FLAGS+=( --no-cui-count )
+fi
+# Optional: emit a single combined concepts_all.csv (and optionally remove per-doc CSVs)
+if [[ "${MAIN_SINGLE_TABLE_ONLY:-0}" -eq 1 ]]; then
+  EXTRA_FLAGS+=( --single-table-only )
+elif [[ "${MAIN_SINGLE_TABLE:-0}" -eq 1 ]]; then
+  EXTRA_FLAGS+=( --single-table )
+fi
 # Reduce noisy XMI serializer logs if XMI is enabled later
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
 exec bash "$BASE_DIR/scripts/run_compare_cluster.sh" --only "$ONLY_SET" "${EXTRA_FLAGS[@]}" "$@"
