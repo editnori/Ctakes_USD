@@ -13,21 +13,24 @@ set -euo pipefail
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0}"
 
-IN=""; OUT=""; THREADS="${THREADS:-3}"; XMX_MB="${XMX_MB:-4096}"
+IN=""; OUT=""; THREADS="${THREADS:-3}"; XMX_MB="${XMX_MB:-4096}"; MINIMAL_WRITERS=0
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -i|--in) IN="$2"; shift 2;;
     -o|--out) OUT="$2"; shift 2;;
     --threads) THREADS="$2"; shift 2;;
     --xmx) XMX_MB="$2"; shift 2;;
+    --minimal-writers) MINIMAL_WRITERS=1; shift 1;;
     -h|--help)
       cat <<EOF
 Drug NER Side Test
-Runs preprocessing + DrugMentionAnnotator, writes XMI and tables, captures timing.
+Runs preprocessing + DrugMentionAnnotator, writes RxNorm CSVs, captures timing.
 
 Examples:
   CTAKES_HOME=... bash scripts/run_drug_ner.sh -i samples/mimic -o outputs/drug_ner_test
   THREADS=4 XMX_MB=6144 bash scripts/run_drug_ner.sh -i <notes> -o outputs/drug_ner_test
+  # Minimal writers (only per-doc RxNorm CSVs + timing):
+  bash scripts/run_drug_ner.sh -i <notes> -o outputs/drug_ner_min --minimal-writers
 EOF
       exit 0;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
@@ -46,6 +49,35 @@ find "$BASE_DIR/tools" -type f -name "*.java" -print0 | \
 
 # Build a temporary Piper file
 piper="$OUT/run_drug_ner_$(date +%Y%m%d-%H%M%S).piper"
+if [[ "$MINIMAL_WRITERS" -eq 1 ]]; then
+cat > "$piper" <<PIPER
+// Minimal preprocessing + Drug NER + writers
+threads ${THREADS}
+
+// Timing at start
+add tools.timing.TimingStartAE
+
+// Preprocessing stack analogous to AggregatePlaintextProcessor
+addDescription SimpleSegmentAnnotator
+addDescription SentenceDetectorAnnotator
+addDescription TokenizerAnnotator
+addDescription LvgAnnotator
+addDescription ContextDependentTokenizerAnnotator
+addDescription POSTagger
+addDescription Chunker
+addDescription AdjustNounPhraseToIncludeFollowingNP
+addDescription AdjustNounPhraseToIncludeFollowingPPNP
+
+// Drug NER (with TypeSystem wrapper descriptor)
+addDescription org/apache/ctakes/drugner/ae/DrugMentionAnnotator_WithTypes
+
+// Writers: only minimal RxNorm per-document CSVs
+add tools.reporting.uima.DrugRxNormCsvWriter SubDirectory=rxnorm_min
+
+// Append a timing file line to persist per-doc durations
+add tools.timing.TimingEndAE TimingFile="${OUT}/timing_csv/timing.csv"
+PIPER
+else
 cat > "$piper" <<PIPER
 // Minimal preprocessing + Drug NER + writers
 threads ${THREADS}
@@ -75,6 +107,7 @@ add tools.reporting.uima.DrugRxNormCsvWriter SubDirectory=rxnorm_min
 // Append a timing file line to persist per-doc durations
 add tools.timing.TimingEndAE TimingFile="${OUT}/timing_csv/timing.csv"
 PIPER
+fi
 
 echo "[drug-ner] Piper: $piper"
 
