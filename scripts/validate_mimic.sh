@@ -104,17 +104,23 @@ TOGGLES=()
 if [[ "${VALIDATION_WITH_FULL:-0}" -ne 1 ]]; then
   TOGGLES+=( --csv-only )
   # Defaults: Minimal + safer relations for validation
-  if [[ "${VALIDATION_RELATIONS_LITE:-1}" -eq 1 ]]; then TOGGLES+=( --relations-lite ); fi
-  if [[ "${VALIDATION_CONCEPTS_ONLY:-1}" -eq 1 ]]; then TOGGLES+=( --concepts-only ); fi
-  if [[ "${VALIDATION_NO_CUI_LIST:-1}" -eq 1 ]]; then TOGGLES+=( --no-cui-list ); fi
-  if [[ "${VALIDATION_NO_CUI_COUNT:-1}" -eq 1 ]]; then TOGGLES+=( --no-cui-count ); fi
-  if [[ "${VALIDATION_SINGLE_TABLE_ONLY:-1}" -eq 1 ]]; then
+  if [[ "${VALIDATION_RELATIONS_LITE:-1}" -eq 1 ]]; then
+    if supports_flag "--relations-lite"; then TOGGLES+=( --relations-lite );
+    elif supports_flag "--skip-relations"; then TOGGLES+=( --skip-relations ); fi
+  fi
+  if [[ "${VALIDATION_CONCEPTS_ONLY:-1}" -eq 1 && $(supports_flag "--concepts-only" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --concepts-only ); fi
+  if [[ "${VALIDATION_NO_CUI_LIST:-1}" -eq 1 && $(supports_flag "--no-cui-list" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --no-cui-list ); fi
+  if [[ "${VALIDATION_NO_CUI_COUNT:-1}" -eq 1 && $(supports_flag "--no-cui-count" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --no-cui-count ); fi
+  if [[ "${VALIDATION_SINGLE_TABLE_ONLY:-1}" -eq 1 && $(supports_flag "--single-table-only" && echo 1 || echo 0) -eq 1 ]]; then
     TOGGLES+=( --single-table-only )
-  elif [[ "${VALIDATION_SINGLE_TABLE:-0}" -eq 1 ]]; then
+  elif [[ "${VALIDATION_SINGLE_TABLE:-0}" -eq 1 && $(supports_flag "--single-table" && echo 1 || echo 0) -eq 1 ]]; then
     TOGGLES+=( --single-table )
   fi
 else
-  if [[ "${VALIDATION_RELATIONS_LITE:-0}" -eq 1 ]]; then TOGGLES+=( --relations-lite ); fi
+  if [[ "${VALIDATION_RELATIONS_LITE:-0}" -eq 1 ]]; then
+    if supports_flag "--relations-lite"; then TOGGLES+=( --relations-lite );
+    elif supports_flag "--skip-relations"; then TOGGLES+=( --skip-relations ); fi
+  fi
 fi
 # Quieter XMI logs if enabled
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
@@ -172,6 +178,10 @@ if [[ -f "$BASELINE_MAN" ]]; then
     fi
   fi
 else
+RUNNER="$BASE_DIR/scripts/run_compare_cluster.sh"
+supports_flag() {
+  local f="$1"; [[ -f "$RUNNER" ]] && grep -q -- " $f)" "$RUNNER" 2>/dev/null
+}
   echo "Seeding baseline manifest at: $BASELINE_MAN"
   cp -f "$CUR_MAN" "$BASELINE_MAN"
   echo "Baseline created. Commit only if appropriate; do NOT add raw notes to git."

@@ -24,28 +24,41 @@ EOF
 fi
 
 ONLY_SET="S_core_rel_smoke"
+# Detect runner and feature-gate flags for compatibility with older versions
+RUNNER="$BASE_DIR/scripts/run_compare_cluster.sh"
+supports_flag() {
+  local f="$1"; [[ -f "$RUNNER" ]] && grep -q -- " $f)" "$RUNNER" 2>/dev/null
+}
 # Default to minimal artifacts for speed unless explicitly overridden by env
 # MAIN_WITH_FULL=1 will keep default writers
 EXTRA_FLAGS=()
 # Defaults: Minimal outputs (concepts + timing) and safer relations
 if [[ "${MAIN_WITH_FULL:-0}" -ne 1 ]]; then
   EXTRA_FLAGS+=( --csv-only )
-  # Default: relations-lite unless explicitly disabled
-  if [[ "${MAIN_RELATIONS_LITE:-1}" -eq 1 ]]; then EXTRA_FLAGS+=( --relations-lite ); fi
-  # Default: concepts-only (drop wide semantic csv_table)
-  if [[ "${MAIN_CONCEPTS_ONLY:-1}" -eq 1 ]]; then EXTRA_FLAGS+=( --concepts-only ); fi
-  # Default: no CUI list/count
-  if [[ "${MAIN_NO_CUI_LIST:-1}" -eq 1 ]]; then EXTRA_FLAGS+=( --no-cui-list ); fi
-  if [[ "${MAIN_NO_CUI_COUNT:-1}" -eq 1 ]]; then EXTRA_FLAGS+=( --no-cui-count ); fi
-  # Default: produce single combined table and remove per-doc CSVs
-  if [[ "${MAIN_SINGLE_TABLE_ONLY:-1}" -eq 1 ]]; then
+  # Default: relations-lite unless explicitly disabled; fallback to --skip-relations if lite unsupported
+  if [[ "${MAIN_RELATIONS_LITE:-1}" -eq 1 ]]; then
+    if supports_flag "--relations-lite"; then EXTRA_FLAGS+=( --relations-lite );
+    elif supports_flag "--skip-relations"; then EXTRA_FLAGS+=( --skip-relations ); fi
+  fi
+  # Default: concepts-only (drop wide semantic csv_table) if supported
+  if [[ "${MAIN_CONCEPTS_ONLY:-1}" -eq 1 && $(supports_flag "--concepts-only" && echo 1 || echo 0) -eq 1 ]]; then
+    EXTRA_FLAGS+=( --concepts-only )
+  fi
+  # Default: no CUI list/count if supported
+  if [[ "${MAIN_NO_CUI_LIST:-1}" -eq 1 && $(supports_flag "--no-cui-list" && echo 1 || echo 0) -eq 1 ]]; then EXTRA_FLAGS+=( --no-cui-list ); fi
+  if [[ "${MAIN_NO_CUI_COUNT:-1}" -eq 1 && $(supports_flag "--no-cui-count" && echo 1 || echo 0) -eq 1 ]]; then EXTRA_FLAGS+=( --no-cui-count ); fi
+  # Default: produce single combined table and remove per-doc CSVs if supported
+  if [[ "${MAIN_SINGLE_TABLE_ONLY:-1}" -eq 1 && $(supports_flag "--single-table-only" && echo 1 || echo 0) -eq 1 ]]; then
     EXTRA_FLAGS+=( --single-table-only )
-  elif [[ "${MAIN_SINGLE_TABLE:-0}" -eq 1 ]]; then
+  elif [[ "${MAIN_SINGLE_TABLE:-0}" -eq 1 && $(supports_flag "--single-table" && echo 1 || echo 0) -eq 1 ]]; then
     EXTRA_FLAGS+=( --single-table )
   fi
 else
   # Full mode: allow opting back into safer relations if requested
-  if [[ "${MAIN_RELATIONS_LITE:-0}" -eq 1 ]]; then EXTRA_FLAGS+=( --relations-lite ); fi
+  if [[ "${MAIN_RELATIONS_LITE:-0}" -eq 1 ]]; then
+    if supports_flag "--relations-lite"; then EXTRA_FLAGS+=( --relations-lite );
+    elif supports_flag "--skip-relations"; then EXTRA_FLAGS+=( --skip-relations ); fi
+  fi
 fi
 # Reduce noisy XMI serializer logs if XMI is enabled later
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
