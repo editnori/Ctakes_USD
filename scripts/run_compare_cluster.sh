@@ -710,6 +710,39 @@ run_pipeline_sharded() {
   done
   # Wait for shards but do not abort the whole script if one fails
   local any_fail=0
+  # Optional: start an overall progress monitor for this pipeline/group
+  if [[ "$PROGRESS" -eq 1 ]]; then
+    (
+      total_docs=$(find "$shards_dir" -type f -name '*.txt' 2>/dev/null | wc -l | awk '{print $1}')
+      reported=-1
+      while :; do
+        # Sum timing END lines across shard logs (documents finished)
+        done_docs=0
+        for sh in $(ls -1d "$parent"/shard_* 2>/dev/null | sort); do
+          if [[ -f "$sh/run.log" ]]; then
+            c=$(grep -c "^\[timing\] END\t" "$sh/run.log" 2>/dev/null || true)
+            done_docs=$(( done_docs + c ))
+          fi
+        done
+        if (( done_docs != reported )); then
+          pct=0
+          if (( total_docs > 0 )); then pct=$(( done_docs * 100 / total_docs )); fi
+          echo "[overall][${name}/${gshort}] progress ${done_docs}/${total_docs} (${pct}%)" >&2
+          reported=$done_docs
+        fi
+        # exit when all docs done or when no shard child pids remain
+        if (( total_docs > 0 && done_docs >= total_docs )); then break; fi
+        sleep "${PROGRESS_EVERY:-10}"
+        # break if no shard processes still running
+        alive=0
+        for pid in "${pids[@]}"; do
+          if kill -0 "$pid" 2>/dev/null; then alive=1; break; fi
+        done
+        (( alive == 1 )) || break
+      done
+    ) &
+    CHILD_PIDS+=($!)
+  fi
   for pid in "${pids[@]}"; do
     if ! wait "$pid"; then
       any_fail=1
