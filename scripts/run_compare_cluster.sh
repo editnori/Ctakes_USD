@@ -46,6 +46,9 @@ declare -a CHILD_PIDS=()
 # Optional: write shard outputs to tmpfs (/dev/shm) then move to disk
 TMPFS_WRITES=${TMPFS_WRITES:-0}
 TMPFS_PATH="${TMPFS_PATH:-/dev/shm}"
+# Optional progress logging injection
+PROGRESS=${PROGRESS:-0}
+PROGRESS_EVERY=${PROGRESS_EVERY:-10}
 # Optional writer performance tuning for ClinicalConceptCsvWriter
 WRITER_THREADS_OPT="${WRITER_THREADS:-}"
 WRITER_ASYNC=${WRITER_ASYNC:-0}
@@ -107,6 +110,8 @@ while [[ $# -gt 0 ]]; do
     -l|--dict-xml) DICT_XML_ARG="$2"; shift 2;;
     --tmpfs-writes) TMPFS_WRITES=1; shift 1;;
     --tmpfs-path) TMPFS_PATH="$2"; shift 2;;
+    --progress) PROGRESS=1; shift 1;;
+    --progress-every) PROGRESS_EVERY="$2"; shift 2;;
     --writer-threads) WRITER_THREADS_OPT="$2"; shift 2;;
     --writer-async) WRITER_ASYNC=1; shift 1;;
     --writer-buffer-kb) WRITER_BUFFER_KB_OPT="$2"; shift 2;;
@@ -405,6 +410,9 @@ run_pipeline_sharded() {
       fi
       in_dir="$pending"
     fi
+    # Compute total docs for progress logging (pending subset or full shard)
+    local total_docs
+    total_docs=$(find "$in_dir" -type f -name '*.txt' 2>/dev/null | wc -l | awk '{print $1}')
     # Resolve dictionary XML for this shard
     if [[ "$CTAKES_SANITIZE_DICT" -eq 1 ]]; then
       xml="$outdir/${DICT_NAME}_local.xml"; sanitize_dict "$DICT_XML" "$xml"
@@ -489,6 +497,11 @@ run_pipeline_sharded() {
     if ! grep -Eq "TimingEndAE.*TimingFile=" "$tuned_piper" 2>/dev/null; then
       # Append TimingFile to any TimingEndAE add line
       sed -i -E "/^[[:space:]]*add[[:space:]]+tools\\.timing\\.TimingEndAE([[:space:]]|$)/ s|$| TimingFile=\"$timing_file\"|" "$tuned_piper" || true
+    fi
+    # Optionally inject a simple progress logger AE near the end
+    if [[ "$PROGRESS" -eq 1 ]]; then
+      echo "add tools.timing.ProgressLoggerAE TotalDocs=$total_docs Label=\"${name}_$i\" EveryN=${PROGRESS_EVERY} ProgressFile=\"$write_dir/progress.tsv\"" >> "$tuned_piper"
+      echo "[${name}_$i][piper] Progress logger enabled (TotalDocs=$total_docs, EveryN=${PROGRESS_EVERY})" | tee -a "$write_dir/run.log" >&2
     fi
     if [[ "$CTAKES_SANITIZE_DICT" -eq 1 && -f "$SRC_DB_DIR/$DICT_NAME.script" ]]; then
       if [[ "$using_shared_db" -eq 1 ]]; then
