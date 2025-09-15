@@ -201,6 +201,18 @@ SRC_DB_DIR="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast/$DIC
 
 short_name() { local p="$1"; p="${p%/}"; basename "$p" | tr ' ' '_' | cut -c1-40; }
 
+# Utility: strip Windows CR from files in-place (best-effort)
+strip_crlf() {
+  local f="$1"; [[ -f "$f" ]] || return 0
+  sed -i $'s/\r$//' "$f" 2>/dev/null || perl -pi -e 's/\r$//' "$f" 2>/dev/null || true
+}
+
+# Utility: create a hardlink, fall back to copy if cross-device
+safe_link() {
+  local src="$1"; local dst_dir="$2"
+  ln "$src" "$dst_dir" 2>/dev/null || cp -f "$src" "$dst_dir" 2>/dev/null || true
+}
+
 # Resolve input groups
 declare -a INPUT_GROUPS=()
 if [[ -d "$IN" ]]; then
@@ -263,7 +275,7 @@ make_shards() {
     local g; g=$(hash_to_shard "$f" "$n" "$seed")
     local gd; gd=$(printf "%03d" "$g")
     mkdir -p "$shards_dir/$gd"
-    ln "$f" "$shards_dir/$gd/"
+    safe_link "$f" "$shards_dir/$gd/"
   done < <(find "$src" -type f -name '*.txt' -print0 | sort -z)
 }
 
@@ -369,6 +381,8 @@ run_pipeline_sharded() {
     else
       { echo "threads ${THREADS}"; cat "$piper"; } > "$tuned_piper"
     fi
+    # Normalize line endings (avoid $'\r' errors if the file was edited on Windows)
+    strip_crlf "$tuned_piper"
     # Rewrite relative includes to absolute repo paths so includes resolve from any location
     if command -v sed >/dev/null 2>&1; then
       # Rewrite lines like: "load ../../pipelines/..." or "include ../../pipelines/..."
@@ -383,7 +397,7 @@ run_pipeline_sharded() {
     elif [[ "$RELATIONS_LITE" -eq 1 ]]; then
       # Replace TsRelationSubPipe with a safer minimal set (degree, location) to avoid ModifierExtractor NPEs
       awk 'BEGIN{replaced=0} {
-             if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe(\b|[[:space:]]|$)/ && !replaced) {
+             if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
                print "addDescription concurrent.ThreadSafeDegreeExtractor";
                print "addDescription concurrent.ThreadSafeLocationExtractor";
                replaced=1;
@@ -394,32 +408,33 @@ run_pipeline_sharded() {
 
     # Optionally replace writer include with a per-shard writers file respecting CSV-only/flags
     # Locate Writers_Xmi_Table include and swap with $outdir/_writers.piper after tailoring
-    if grep -Eq "^[[:space:]]*load[[:space:]]+.*Writers_Xmi_Table\.piper\b" "$tuned_piper" 2>/dev/null; then
+    if grep -Eq "^[[:space:]]*load[[:space:]]+.*Writers_Xmi_Table\.piper([[:space:]]|$)" "$tuned_piper" 2>/dev/null; then
       base_writers="$BASE_DIR/pipelines/includes/Writers_Xmi_Table.piper"
       shard_writers="$outdir/_writers.piper"
       cp -f "$base_writers" "$shard_writers"
+      strip_crlf "$shard_writers"
       # Apply artifact toggles
       if [[ "$CSV_ONLY" -eq 1 || "$NO_XMI" -eq 1 ]]; then
-        sed -i -E "/^[[:space:]]*add[[:space:]]+FileTreeXmiWriter\b/d" "$shard_writers" || true
+        sed -i -E "/^[[:space:]]*add[[:space:]]+FileTreeXmiWriter([[:space:]]|$)/d" "$shard_writers" || true
       fi
       if [[ "$CSV_ONLY" -eq 1 || "$NO_HTML" -eq 1 ]]; then
         sed -i -E "/^[[:space:]]*add[[:space:]]+SemanticTableFileWriter[[:space:]].*TableType=HTML/d" "$shard_writers" || true
       fi
       if [[ "$CSV_ONLY" -eq 1 || "$NO_BSV" -eq 1 ]]; then
-        sed -i -E "/^[[:space:]]*add[[:space:]]+SemanticTableFileWriter[[:space:]].*SubDirectory=bsv_table\b/d" "$shard_writers" || true
+        sed -i -E "/^[[:space:]]*add[[:space:]]+SemanticTableFileWriter[[:space:]].*SubDirectory=bsv_table([[:space:]]|$)/d" "$shard_writers" || true
       fi
       if [[ "$CSV_ONLY" -eq 1 || "$NO_TOKENS" -eq 1 ]]; then
-        sed -i -E "/^[[:space:]]*add[[:space:]]+TokenTableFileWriter\b/d" "$shard_writers" || true
+        sed -i -E "/^[[:space:]]*add[[:space:]]+TokenTableFileWriter([[:space:]]|$)/d" "$shard_writers" || true
       fi
       if [[ "$NO_CUI_LIST" -eq 1 ]]; then
-        sed -i -E "/^[[:space:]]*add[[:space:]]+CuiListFileWriter\b/d" "$shard_writers" || true
+        sed -i -E "/^[[:space:]]*add[[:space:]]+CuiListFileWriter([[:space:]]|$)/d" "$shard_writers" || true
       fi
       if [[ "$NO_CUI_COUNT" -eq 1 ]]; then
-        sed -i -E "/^[[:space:]]*add[[:space:]]+CuiCountFileWriter\b/d" "$shard_writers" || true
+        sed -i -E "/^[[:space:]]*add[[:space:]]+CuiCountFileWriter([[:space:]]|$)/d" "$shard_writers" || true
       fi
       # If user wants a single concepts table only, drop the broader semantic CSV per-doc table
       if [[ "${CONCEPTS_ONLY:-0}" -eq 1 ]]; then
-        sed -i -E "/^[[:space:]]*add[[:space:]]+SemanticTableFileWriter[[:space:]].*SubDirectory=csv_table\b/d" "$shard_writers" || true
+        sed -i -E "/^[[:space:]]*add[[:space:]]+SemanticTableFileWriter[[:space:]].*SubDirectory=csv_table([[:space:]]|$)/d" "$shard_writers" || true
       fi
       # Ensure CSV table and concept CSV remain
       # Rewrite include path in tuned piper
@@ -489,18 +504,30 @@ run_pipeline_sharded() {
           break
         fi
         echo "[${name}_$i] attempt $attempt failed (exit=$ec). Retrying..." | tee -a "$outdir/run.log"
-        # Auto-fallback: if failure matches ClearTK Modifier NPE and relations not already disabled/lite, switch to LITE once
+        # Auto-fallback 1: ClearTK Modifier NPE -> patch to LITE once (Degree+Location)
         if [[ "$SKIP_RELATIONS" -ne 1 && "$RELATIONS_LITE" -ne 1 && "$patched_rel_fallback" -eq 0 ]]; then
           if grep -qE "ModifierExtractorAnnotator|ThreadSafeModifierExtractor" "$outdir/run.log" && \
              grep -qE "FeatureNodeArrayEncoder|getValue\(\) is null|Cannot invoke \"Object.toString\(\)\"" "$outdir/run.log"; then
             awk 'BEGIN{replaced=0} {
-                   if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe(\b|[[:space:]]|$)/ && !replaced) {
+                   if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
                      print "addDescription concurrent.ThreadSafeDegreeExtractor";
                      print "addDescription concurrent.ThreadSafeLocationExtractor";
                      replaced=1;
                    } else { print }
                  }' "$tuned_piper" > "$tuned_piper.__tmp" && mv "$tuned_piper.__tmp" "$tuned_piper"
             echo "[${name}_$i][auto-fallback] Detected Modifier NPE; patched relations -> LITE (Degree+Location)" | tee -a "$outdir/run.log" >&2
+            patched_rel_fallback=1
+          fi
+        fi
+        # Auto-fallback 2: Degree/Location AE initialization failure -> remove all relation AEs and continue
+        if [[ "$SKIP_RELATIONS" -ne 1 && "$patched_rel_fallback" -eq 0 ]]; then
+          if grep -qE "Initialization of CAS Processor.*ThreadSafe(Degree|Location)Extractor" "$outdir/run.log"; then
+            # Remove explicit Degree/Location lines (if present) and any TsRelationSubPipe load
+            sed -i -E \
+              -e '/^[[:space:]]*addDescription[[:space:]]+concurrent\.ThreadSafe(Degree|Location)Extractor([[:space:]]|$)/d' \
+              -e '/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d' \
+              "$tuned_piper"
+            echo "[${name}_$i][auto-fallback] Degree/Location init failed; relations disabled for this shard" | tee -a "$outdir/run.log" >&2
             patched_rel_fallback=1
           fi
         fi
@@ -619,7 +646,7 @@ run_pipeline_sharded() {
     for sh in $(ls -1d "$parent"/shard_* 2>/dev/null | sort); do
       if [[ -f "$sh/run.log" ]]; then
         # Consider failure if no xmi produced in shard or last line contains attempt failed
-        if ! find "$sh/xmi" -maxdepth 1 -type f -name '*.xmi' -print -quit | grep -q . || \
+        if { [[ -d "$sh/xmi" ]] && ! find "$sh/xmi" -maxdepth 1 -type f -name '*.xmi' -print -quit 2>/dev/null | grep -q .; } || \
            tail -n 5 "$sh/run.log" | grep -qi 'attempt .* failed'; then
           cp -f "$sh/run.log" "$parent/errors/$(basename "$sh").log" || true
         fi
