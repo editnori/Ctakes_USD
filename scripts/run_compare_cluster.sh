@@ -30,11 +30,11 @@ NOTE_SPLITS=0
 NOTE_TYPES_ARG="${NOTE_TYPES:-}"
 # Global report extension default (used outside functions as well)
 REPORT_EXT="${REPORT_EXT:-xlsx}"
-# Control dictionary handling (default: no sanitization, use provided XML as-is)
-CTAKES_SANITIZE_DICT="${CTAKES_SANITIZE_DICT:-0}"
+# Control dictionary handling (default: sanitize + per-shard copies for speed)
+CTAKES_SANITIZE_DICT="${CTAKES_SANITIZE_DICT:-1}"
 DICT_XML_ARG="${DICT_XML:-}"  # allow DICT_XML env or --dict-xml flag
-# Use a single shared read-only HSQLDB dictionary for all shards (reduces duplicate init)
-DICT_SHARED="${DICT_SHARED:-1}"
+# Use per-shard HSQLDB copies by default for maximum concurrency (set DICT_SHARED=1 to use a shared copy)
+DICT_SHARED="${DICT_SHARED:-0}"
 # Directory to host the shared dictionary files (properties/script)
 # Defaults to /dev/shm (tmpfs); set DICT_SHARED_PATH to persist across runs/hosts (e.g., /var/tmp/ctakes_dict_cache)
 DICT_SHARED_PATH="${DICT_SHARED_PATH:-/dev/shm}"
@@ -108,6 +108,7 @@ while [[ $# -gt 0 ]]; do
     --no-cui-count) NO_CUI_COUNT=1; shift 1;;
     --single-table) SINGLE_TABLE=1; shift 1;;
     --single-table-only) SINGLE_TABLE=1; SINGLE_TABLE_ONLY=1; shift 1;;
+    --concepts-only) CONCEPTS_ONLY=1; shift 1;;
     --csv-only) CSV_ONLY=1; NO_XMI=1; NO_HTML=1; NO_BSV=1; NO_TOKENS=1; shift 1;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac

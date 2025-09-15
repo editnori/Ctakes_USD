@@ -25,7 +25,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-DICT_SHARED="${DICT_SHARED:-1}"
+DICT_SHARED="${DICT_SHARED:-0}"
 DICT_SHARED_PATH="${DICT_SHARED_PATH:-/dev/shm}"
 
 PROPS="$BASE_DIR/docs/builder_full_clinical.properties"
@@ -153,7 +153,7 @@ echo "  - Cui list/count: OFF by default"
 echo "Consolidation : concepts_all.csv (single-table) + timing_csv/timing.csv"
 echo "Stability     : relations-lite enabled by default; auto-fallback on Modifier NPE"
 
-CTAKES_SANITIZE_DICT="${CTAKES_SANITIZE_DICT:-0}"
+CTAKES_SANITIZE_DICT="${CTAKES_SANITIZE_DICT:-1}"
 if [[ "$CTAKES_SANITIZE_DICT" -eq 1 ]]; then
   # 6) Dry-run sanitize and verify driver + jdbcUrl flags
   tmpdir="$(mktemp -d)"; trap 'rm -rf "$tmpdir"' EXIT
