@@ -43,6 +43,13 @@ CONSOLIDATE_ASYNC=1
 declare -a CONSOLIDATE_PIDS=()
 declare -a REPORT_PIDS=()
 declare -a CHILD_PIDS=()
+# Artifact/AE toggles (defaults preserve current behavior)
+SKIP_RELATIONS=${SKIP_RELATIONS:-0}
+NO_XMI=${NO_XMI:-0}
+NO_HTML=${NO_HTML:-0}
+NO_BSV=${NO_BSV:-0}
+NO_TOKENS=${NO_TOKENS:-0}
+CSV_ONLY=${CSV_ONLY:-0}
 # Graceful shutdown: on INT/TERM, signal children and wait
 _graceful_exit() {
   echo "[runner] Caught termination signal; attempting graceful shutdown..." >&2
@@ -84,6 +91,12 @@ while [[ $# -gt 0 ]]; do
     --seed) SHARD_SEED="$2"; shift 2;;
     --consolidate-async) CONSOLIDATE_ASYNC=1; shift 1;;
     -l|--dict-xml) DICT_XML_ARG="$2"; shift 2;;
+    --skip-relations) SKIP_RELATIONS=1; shift 1;;
+    --no-xmi) NO_XMI=1; shift 1;;
+    --no-html) NO_HTML=1; shift 1;;
+    --no-bsv) NO_BSV=1; shift 1;;
+    --no-tokens) NO_TOKENS=1; shift 1;;
+    --csv-only) CSV_ONLY=1; NO_XMI=1; NO_HTML=1; NO_BSV=1; NO_TOKENS=1; shift 1;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac
 done
@@ -351,6 +364,37 @@ run_pipeline_sharded() {
       # Rewrite lines like: "load ../../pipelines/..." or "include ../../pipelines/..."
       # Anchor at start with optional leading spaces to avoid accidental matches in comments.
       sed -i -E "s#^[[:space:]]*(load|include)[[:space:]]+\.\.\/\.\.\/pipelines/#\\1 $BASE_DIR/pipelines/#g" "$tuned_piper" || true
+    fi
+
+    # Optionally drop relation extractors to avoid ClearTK NPEs and speed up
+    if [[ "$SKIP_RELATIONS" -eq 1 ]]; then
+      sed -i -E "/^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/d" "$tuned_piper" || true
+      echo "[${name}_$i][piper] Relations disabled (--skip-relations)" | tee -a "$outdir/run.log" >&2
+    fi
+
+    # Optionally replace writer include with a per-shard writers file respecting CSV-only/flags
+    # Locate Writers_Xmi_Table include and swap with $outdir/_writers.piper after tailoring
+    if grep -Eq "^[[:space:]]*load[[:space:]]+.*Writers_Xmi_Table\.piper\b" "$tuned_piper" 2>/dev/null; then
+      base_writers="$BASE_DIR/pipelines/includes/Writers_Xmi_Table.piper"
+      shard_writers="$outdir/_writers.piper"
+      cp -f "$base_writers" "$shard_writers"
+      # Apply artifact toggles
+      if [[ "$CSV_ONLY" -eq 1 || "$NO_XMI" -eq 1 ]]; then
+        sed -i -E "/^[[:space:]]*add[[:space:]]+FileTreeXmiWriter\b/d" "$shard_writers" || true
+      fi
+      if [[ "$CSV_ONLY" -eq 1 || "$NO_HTML" -eq 1 ]]; then
+        sed -i -E "/^[[:space:]]*add[[:space:]]+SemanticTableFileWriter[[:space:]].*TableType=HTML/d" "$shard_writers" || true
+      fi
+      if [[ "$CSV_ONLY" -eq 1 || "$NO_BSV" -eq 1 ]]; then
+        sed -i -E "/^[[:space:]]*add[[:space:]]+SemanticTableFileWriter[[:space:]].*SubDirectory=bsv_table\b/d" "$shard_writers" || true
+      fi
+      if [[ "$CSV_ONLY" -eq 1 || "$NO_TOKENS" -eq 1 ]]; then
+        sed -i -E "/^[[:space:]]*add[[:space:]]+TokenTableFileWriter\b/d" "$shard_writers" || true
+      fi
+      # Ensure CSV table and concept CSV remain
+      # Rewrite include path in tuned piper
+      sed -i -E "s#(^[[:space:]]*load[[:space:]]+).*/Writers_Xmi_Table\.piper#\\1$shard_writers#" "$tuned_piper"
+      echo "[${name}_$i][piper] Writers tailored: CSV_ONLY=$CSV_ONLY NO_XMI=$NO_XMI NO_HTML=$NO_HTML NO_BSV=$NO_BSV NO_TOKENS=$NO_TOKENS" | tee -a "$outdir/run.log" >&2
     fi
 
     # Ensure TimingEndAE writes a per-shard timing CSV to accelerate reporting
