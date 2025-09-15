@@ -15,6 +15,12 @@ set -euo pipefail
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0}"
 
+# Detect runner and feature-gate flags for compatibility
+RUNNER="$BASE_DIR/scripts/run_compare_cluster.sh"
+supports_flag() {
+  local f="$1"; [[ -f "$RUNNER" ]] && grep -q -- " $f)" "$RUNNER" 2>/dev/null
+}
+
 IN_DIR="$BASE_DIR/samples/mimic"
 COUNT=100
 OUT_BASE="$BASE_DIR/outputs/validation_mimic"
@@ -121,6 +127,25 @@ else
     if supports_flag "--relations-lite"; then TOGGLES+=( --relations-lite );
     elif supports_flag "--skip-relations"; then TOGGLES+=( --skip-relations ); fi
   fi
+fi
+# Performance defaults for validation (override via env)
+VALIDATION_TMPFS_WRITES=${VALIDATION_TMPFS_WRITES:-1}
+VALIDATION_WRITER_ASYNC=${VALIDATION_WRITER_ASYNC:-1}
+VALIDATION_WRITER_THREADS=${VALIDATION_WRITER_THREADS:-4}
+VALIDATION_WRITER_BUFFER_KB=${VALIDATION_WRITER_BUFFER_KB:-256}
+VALIDATION_PROGRESS=${VALIDATION_PROGRESS:-1}
+VALIDATION_PROGRESS_EVERY=${VALIDATION_PROGRESS_EVERY:-10}
+if [[ "$VALIDATION_TMPFS_WRITES" -eq 1 && $(supports_flag "--tmpfs-writes" && echo 1 || echo 0) -eq 1 ]]; then
+  TOGGLES+=( --tmpfs-writes )
+fi
+if [[ "$VALIDATION_WRITER_ASYNC" -eq 1 ]]; then
+  if [[ $(supports_flag "--writer-async" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --writer-async ); fi
+  if [[ -n "${VALIDATION_WRITER_THREADS}" && $(supports_flag "--writer-threads" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --writer-threads "${VALIDATION_WRITER_THREADS}" ); fi
+  if [[ -n "${VALIDATION_WRITER_BUFFER_KB}" && $(supports_flag "--writer-buffer-kb" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --writer-buffer-kb "${VALIDATION_WRITER_BUFFER_KB}" ); fi
+fi
+if [[ "$VALIDATION_PROGRESS" -eq 1 && $(supports_flag "--progress" && echo 1 || echo 0) -eq 1 ]]; then
+  TOGGLES+=( --progress )
+  if [[ -n "${VALIDATION_PROGRESS_EVERY}" && $(supports_flag "--progress-every" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --progress-every "${VALIDATION_PROGRESS_EVERY}" ); fi
 fi
 # Quieter XMI logs if enabled
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}

@@ -32,6 +32,13 @@ supports_flag() {
 # Default to minimal artifacts for speed unless explicitly overridden by env
 # MAIN_WITH_FULL=1 will keep default writers
 EXTRA_FLAGS=()
+# Performance defaults (override via env): enable tmpfs, async writer, and progress
+MAIN_TMPFS_WRITES=${MAIN_TMPFS_WRITES:-1}
+MAIN_WRITER_ASYNC=${MAIN_WRITER_ASYNC:-1}
+MAIN_WRITER_THREADS=${MAIN_WRITER_THREADS:-4}
+MAIN_WRITER_BUFFER_KB=${MAIN_WRITER_BUFFER_KB:-256}
+MAIN_PROGRESS=${MAIN_PROGRESS:-1}
+MAIN_PROGRESS_EVERY=${MAIN_PROGRESS_EVERY:-10}
 # Defaults: Minimal outputs (concepts + timing) and safer relations
 if [[ "${MAIN_WITH_FULL:-0}" -ne 1 ]]; then
   EXTRA_FLAGS+=( --csv-only )
@@ -59,6 +66,21 @@ else
     if supports_flag "--relations-lite"; then EXTRA_FLAGS+=( --relations-lite );
     elif supports_flag "--skip-relations"; then EXTRA_FLAGS+=( --skip-relations ); fi
   fi
+fi
+# Defaults: tmpfs staging if supported
+if [[ "$MAIN_TMPFS_WRITES" -eq 1 && $(supports_flag "--tmpfs-writes" && echo 1 || echo 0) -eq 1 ]]; then
+  EXTRA_FLAGS+=( --tmpfs-writes )
+fi
+# Defaults: async ClinicalConceptCsvWriter tuning if supported
+if [[ "$MAIN_WRITER_ASYNC" -eq 1 ]]; then
+  if [[ $(supports_flag "--writer-async" && echo 1 || echo 0) -eq 1 ]]; then EXTRA_FLAGS+=( --writer-async ); fi
+  if [[ -n "${MAIN_WRITER_THREADS}" && $(supports_flag "--writer-threads" && echo 1 || echo 0) -eq 1 ]]; then EXTRA_FLAGS+=( --writer-threads "${MAIN_WRITER_THREADS}" ); fi
+  if [[ -n "${MAIN_WRITER_BUFFER_KB}" && $(supports_flag "--writer-buffer-kb" && echo 1 || echo 0) -eq 1 ]]; then EXTRA_FLAGS+=( --writer-buffer-kb "${MAIN_WRITER_BUFFER_KB}" ); fi
+fi
+# Defaults: progress logging if supported
+if [[ "$MAIN_PROGRESS" -eq 1 && $(supports_flag "--progress" && echo 1 || echo 0) -eq 1 ]]; then
+  EXTRA_FLAGS+=( --progress )
+  if [[ -n "${MAIN_PROGRESS_EVERY}" && $(supports_flag "--progress-every" && echo 1 || echo 0) -eq 1 ]]; then EXTRA_FLAGS+=( --progress-every "${MAIN_PROGRESS_EVERY}" ); fi
 fi
 # Reduce noisy XMI serializer logs if XMI is enabled later
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
