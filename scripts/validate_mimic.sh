@@ -1,220 +1,71 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Validate cTAKES pipelines on a 100-note MIMIC sample.
-# - Creates a sample subset (100 .txt) from samples/mimic/ (flat dir)
-# - Runs compare pipelines with modest parallelism
-# - Builds a lightweight manifest (hashes + counts) for regression checks
-# - If samples/mimic_output/manifest.txt exists, compares against it; otherwise seeds it
-#
-# Usage:
-#   scripts/validate_mimic.sh [-i <mimic_dir>] [-n <count>] [-o <out_dir>]
-#                             [--runners N] [--threads N] [--xmx MB] [--seed VAL]
-#                             [--consolidate-async] [--autoscale]
-
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-CTAKES_HOME="${CTAKES_HOME:-$BASE_DIR/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0}"
+DEFAULT_INPUT="${BASE_DIR}/samples/mimic"
+DEFAULT_OUTPUT="${BASE_DIR}/outputs/validate_mimic"
+DEFAULT_MANIFEST="${BASE_DIR}/samples/mimic_manifest.txt"
 
-# Detect runner and feature-gate flags for compatibility
-RUNNER="$BASE_DIR/scripts/run_compare_cluster.sh"
-supports_flag() {
-  local f="$1"; [[ -f "$RUNNER" ]] && grep -q -- " $f)" "$RUNNER" 2>/dev/null
+usage() {
+  cat <<'USAGE'
+Usage: scripts/validate_mimic.sh [options]
+Options:
+  -i, --input <dir>    Source notes directory (default: samples/mimic)
+  -o, --output <dir>   Output directory (default: outputs/validate_mimic)
+  --limit <N>          Override sample size (default: 100)
+  --pipeline <key>     Pipeline key passed to validate.sh (default: smoke)
+  --with-temporal      Add temporal module
+  --with-coref         Add coref module
+  --manifest <file>    Override manifest path (default: samples/mimic_manifest.txt)
+  --dry-run            Print the commands without executing
+  -h, --help           Show this help text
+
+Runs scripts/validate.sh with defaults suited for the shipped MIMIC sample (100 notes).
+USAGE
 }
 
-IN_DIR="$BASE_DIR/samples/mimic"
-COUNT=100
-OUT_BASE="$BASE_DIR/outputs/validation_mimic"
-# Subset handling: link (default hardlink), copy, or reuse (use IN_DIR directly when it already has COUNT files)
-SUBSET_MODE="link"
-_EXPLICIT_SUBSET_MODE=""
-RUNNERS="${RUNNERS:-4}"
-THREADS="${THREADS:-4}"
-XMX_MB="${XMX_MB:-4096}"
-SEED="${SEED:-42}"
-CONSOLIDATE_ASYNC=0
-ONLY=""
-AUTOSCALE=0
+IN_DIR="${DEFAULT_INPUT}"
+OUT_DIR="${DEFAULT_OUTPUT}"
+LIMIT=100
+PIPELINE_KEY="smoke"
+WITH_TEMPORAL=0
+WITH_COREF=0
+DRY_RUN=0
+MANIFEST="${DEFAULT_MANIFEST}"
 
-UPDATE_BASELINE=0
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    -i|--in) IN_DIR="$2"; shift 2;;
-    -n|--count) COUNT="$2"; shift 2;;
-    -o|--out) OUT_BASE="$2"; shift 2;;
-    --runners) RUNNERS="$2"; shift 2;;
-    --threads) THREADS="$2"; shift 2;;
-    --xmx) XMX_MB="$2"; shift 2;;
-    --seed) SEED="$2"; shift 2;;
-    --only) ONLY="$2"; shift 2;;
-    --subset-mode) SUBSET_MODE="$2"; _EXPLICIT_SUBSET_MODE=1; shift 2;;
-    --consolidate-async) CONSOLIDATE_ASYNC=1; shift 1;;
-    --autoscale) AUTOSCALE=1; shift 1;;
-    --update-baseline) UPDATE_BASELINE=1; shift 1;;
-    *) echo "Unknown arg: $1" >&2; exit 2;;
+    -i|--input) IN_DIR="$2"; shift 2;;
+    -o|--output) OUT_DIR="$2"; shift 2;;
+    --limit) LIMIT="$2"; shift 2;;
+    --pipeline) PIPELINE_KEY="$2"; shift 2;;
+    --with-temporal) WITH_TEMPORAL=1; shift 1;;
+    --with-coref) WITH_COREF=1; shift 1;;
+    --manifest) MANIFEST="$2"; shift 2;;
+    --dry-run) DRY_RUN=1; shift 1;;
+    -h|--help) usage; exit 0;;
+    *) echo "Unknown option: $1" >&2; usage >&2; exit 1;;
   esac
+
 done
 
-## Ensure UMLS key default (hardcoded fallback if env not set)
-export UMLS_KEY="${UMLS_KEY:-6370dcdd-d438-47ab-8749-5a8fb9d013f2}"
-
-## Auto-switch dictionary sharing based on runners unless user explicitly set DICT_SHARED
-if [[ -z "${DICT_SHARED+x}" ]]; then
-  if (( RUNNERS > 1 )); then
-    export DICT_SHARED=0
-  fi
+if [[ ! -d "${IN_DIR}" ]]; then
+  echo "[validate_mimic] Input directory not found: ${IN_DIR}" >&2
+  echo "Copy sample notes into ${IN_DIR} or pass --input." >&2
+  exit 1
 fi
 
-[[ -d "$IN_DIR" ]] || mkdir -p "$IN_DIR"
-# Robust check for .txt files (case-insensitive), supports nested dirs
-if ! ( compgen -G "$IN_DIR/*.txt" >/dev/null 2>&1 || compgen -G "$IN_DIR/*.TXT" >/dev/null 2>&1 \
-       || find "$IN_DIR" -type f -iname '*.txt' -print -quit | grep -q . ); then
-  cat >&2 <<EOF
-No .txt notes found under: $IN_DIR
-- Place ~100 synthetic/de-identified validation notes there, or pass -i <path>
-Then re-run: scripts/validate_mimic.sh -i "$IN_DIR" [...]
-EOF
-  exit 2
+mkdir -p "${OUT_DIR}"
+
+CMD=("${BASE_DIR}/scripts/validate.sh" -i "${IN_DIR}" -o "${OUT_DIR}" --pipeline "${PIPELINE_KEY}" --limit "${LIMIT}" --manifest "${MANIFEST}")
+[[ ${WITH_TEMPORAL} -eq 1 ]] && CMD+=(--with-temporal)
+[[ ${WITH_COREF} -eq 1 ]] && CMD+=(--with-coref)
+[[ ${DRY_RUN} -eq 1 ]] && CMD+=(--dry-run)
+
+if [[ ${DRY_RUN} -eq 1 ]]; then
+  printf '[validate_mimic] %q ' "${CMD[@]}"
+  printf '\n'
+  exit 0
 fi
 
-SUBSET_DIR="$BASE_DIR/samples/mimic_100"
-# Auto-reuse when IN_DIR already contains exactly COUNT .txt files and --subset-mode not explicitly set
-if [[ "$SUBSET_MODE" == "copy" || "$SUBSET_MODE" == "link" ]]; then
-  TXT_COUNT=$(find "$IN_DIR" -maxdepth 1 -type f -name '*.txt' | wc -l | awk '{print $1}')
-  if [[ "$TXT_COUNT" -eq "$COUNT" && -z "${_EXPLICIT_SUBSET_MODE:-}" ]]; then
-    SUBSET_MODE="reuse"
-  fi
-fi
-
-case "$SUBSET_MODE" in
-  reuse)
-    echo "Reusing input dir directly (no subset build): $IN_DIR"
-    USE_DIR="$IN_DIR" ;;
-  link)
-    rm -rf "$SUBSET_DIR" && mkdir -p "$SUBSET_DIR"
-    echo "Linking $COUNT notes into subset (hardlinks) at: $SUBSET_DIR"
-    find "$IN_DIR" -type f -name '*.txt' | LC_ALL=C sort | head -n "$COUNT" | \
-      nl -w3 -s _ | while IFS=_ read -r idx path; do ln "$path" "$SUBSET_DIR/$(printf "%03d" "$idx")_$(basename "$path")"; done
-    USE_DIR="$SUBSET_DIR" ;;
-  copy|*)
-    rm -rf "$SUBSET_DIR" && mkdir -p "$SUBSET_DIR"
-    echo "Copying $COUNT notes into subset at: $SUBSET_DIR"
-    find "$IN_DIR" -type f -name '*.txt' | LC_ALL=C sort | head -n "$COUNT" | \
-      nl -w3 -s _ | while IFS=_ read -r idx path; do cp "$path" "$SUBSET_DIR/$(printf "%03d" "$idx")_$(basename "$path")"; done
-    USE_DIR="$SUBSET_DIR" ;;
-esac
-
-export RUNNERS THREADS XMX_MB SEED
-EXTRA=""; [[ "$CONSOLIDATE_ASYNC" -eq 1 ]] && EXTRA="--consolidate-async"; [[ "$AUTOSCALE" -eq 1 ]] && EXTRA+=" --autoscale"
-# Default to CSV-only outputs for faster validation unless VALIDATION_WITH_FULL=1
-TOGGLES=()
-if [[ "${VALIDATION_WITH_FULL:-0}" -ne 1 ]]; then
-  TOGGLES+=( --csv-only )
-  # Defaults: Minimal + safer relations for validation
-  if [[ "${VALIDATION_RELATIONS_LITE:-1}" -eq 1 ]]; then
-    if supports_flag "--relations-lite"; then TOGGLES+=( --relations-lite );
-    elif supports_flag "--skip-relations"; then TOGGLES+=( --skip-relations ); fi
-  fi
-  if [[ "${VALIDATION_CONCEPTS_ONLY:-1}" -eq 1 && $(supports_flag "--concepts-only" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --concepts-only ); fi
-  if [[ "${VALIDATION_NO_CUI_LIST:-1}" -eq 1 && $(supports_flag "--no-cui-list" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --no-cui-list ); fi
-  if [[ "${VALIDATION_NO_CUI_COUNT:-1}" -eq 1 && $(supports_flag "--no-cui-count" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --no-cui-count ); fi
-  if [[ "${VALIDATION_SINGLE_TABLE_ONLY:-1}" -eq 1 && $(supports_flag "--single-table-only" && echo 1 || echo 0) -eq 1 ]]; then
-    TOGGLES+=( --single-table-only )
-  elif [[ "${VALIDATION_SINGLE_TABLE:-0}" -eq 1 && $(supports_flag "--single-table" && echo 1 || echo 0) -eq 1 ]]; then
-    TOGGLES+=( --single-table )
-  fi
-else
-  if [[ "${VALIDATION_RELATIONS_LITE:-0}" -eq 1 ]]; then
-    if supports_flag "--relations-lite"; then TOGGLES+=( --relations-lite );
-    elif supports_flag "--skip-relations"; then TOGGLES+=( --skip-relations ); fi
-  fi
-fi
-# Performance defaults for validation (override via env)
-VALIDATION_TMPFS_WRITES=${VALIDATION_TMPFS_WRITES:-1}
-VALIDATION_WRITER_ASYNC=${VALIDATION_WRITER_ASYNC:-1}
-VALIDATION_WRITER_THREADS=${VALIDATION_WRITER_THREADS:-4}
-VALIDATION_WRITER_BUFFER_KB=${VALIDATION_WRITER_BUFFER_KB:-256}
-VALIDATION_PROGRESS=${VALIDATION_PROGRESS:-1}
-VALIDATION_PROGRESS_EVERY=${VALIDATION_PROGRESS_EVERY:-10}
-if [[ "$VALIDATION_TMPFS_WRITES" -eq 1 && $(supports_flag "--tmpfs-writes" && echo 1 || echo 0) -eq 1 ]]; then
-  TOGGLES+=( --tmpfs-writes )
-fi
-if [[ "$VALIDATION_WRITER_ASYNC" -eq 1 ]]; then
-  if [[ $(supports_flag "--writer-async" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --writer-async ); fi
-  if [[ -n "${VALIDATION_WRITER_THREADS}" && $(supports_flag "--writer-threads" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --writer-threads "${VALIDATION_WRITER_THREADS}" ); fi
-  if [[ -n "${VALIDATION_WRITER_BUFFER_KB}" && $(supports_flag "--writer-buffer-kb" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --writer-buffer-kb "${VALIDATION_WRITER_BUFFER_KB}" ); fi
-fi
-if [[ "$VALIDATION_PROGRESS" -eq 1 && $(supports_flag "--progress" && echo 1 || echo 0) -eq 1 ]]; then
-  TOGGLES+=( --progress )
-  if [[ -n "${VALIDATION_PROGRESS_EVERY}" && $(supports_flag "--progress-every" && echo 1 || echo 0) -eq 1 ]]; then TOGGLES+=( --progress-every "${VALIDATION_PROGRESS_EVERY}" ); fi
-fi
-# Quieter XMI logs if enabled
-export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
-echo "Running compare pipelines on subset (RUNNERS=$RUNNERS THREADS=$THREADS XMX=$XMX_MB)"
-# Pass dictionary XML if provided in env and exists
-DICT_FLAG=()
-if [[ -n "${DICT_XML:-}" && -f "$DICT_XML" ]]; then DICT_FLAG=( -l "$DICT_XML" ); fi
-# Optional reports: off by default; enable with VALIDATION_WITH_REPORTS=1
-REPORT_FLAGS=()
-if [[ "${VALIDATION_WITH_REPORTS:-0}" -eq 1 ]]; then REPORT_FLAGS+=( --reports ); fi
-# Suppress parent report by default to avoid empty workbook
-REPORT_FLAGS+=( --no-parent-report )
-if [[ -n "$ONLY" ]]; then
-  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --only "$ONLY" "${REPORT_FLAGS[@]}" "${DICT_FLAG[@]}" ${TOGGLES[*]} $EXTRA || true
-else
-  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" "${REPORT_FLAGS[@]}" "${DICT_FLAG[@]}" ${TOGGLES[*]} $EXTRA || true
-fi
-
-# Build manifest from outputs
-MAN_OUT_DIR="$OUT_BASE"
-STAMP=$(date +%Y%m%d-%H%M%S)
-CUR_MAN="$BASE_DIR/samples/mimic_manifest_${STAMP}.txt"
-echo "Building manifest: $CUR_MAN"
-{
-  echo "# cTAKES validation manifest"
-  echo "# Date: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-  echo "# CTAKES_HOME: $CTAKES_HOME"
-  for run in $(ls -1d "$MAN_OUT_DIR"/*/ 2>/dev/null | sort); do
-    name=$(basename "$run")
-    # Prefer csv_table doc count; fallback to XMI if absent
-    docs_csv=$(find "$run/csv_table" -type f -name '*.CSV' 2>/dev/null | wc -l | awk '{print $1}')
-    docs_xmi=$(find "$run/xmi" -type f -name '*.xmi' 2>/dev/null | wc -l | awk '{print $1}')
-    docs=$(( docs_csv > 0 ? docs_csv : docs_xmi ))
-    c_hash=$( (find "$run/cui_count" -type f -name '*.bsv' -print0 2>/dev/null | xargs -0 cat 2>/dev/null | LC_ALL=C sort | sha256sum 2>/dev/null | awk '{print $1}') || true )
-    csv_hash=$( (find "$run/csv_table" -type f -name '*.CSV' -print0 2>/dev/null | xargs -0 cat 2>/dev/null | LC_ALL=C sort | sha256sum 2>/dev/null | awk '{print $1}') || true )
-    t_hash=$( (find "$run/bsv_tokens" -type f -name '*.BSV' -print0 2>/dev/null | xargs -0 cat 2>/dev/null | LC_ALL=C sort | sha256sum 2>/dev/null | awk '{print $1}') || true )
-    echo "[$name] docs=$docs cui_count_hash=${c_hash:-NA} csv_table_hash=${csv_hash:-NA} tokens_hash=${t_hash:-NA}"
-  done
-} > "$CUR_MAN"
-
-BASELINE_DIR="$BASE_DIR/samples/mimic_output"
-BASELINE_MAN="$BASELINE_DIR/manifest.txt"
-mkdir -p "$BASELINE_DIR"
-if [[ -f "$BASELINE_MAN" ]]; then
-  echo "Comparing against baseline: $BASELINE_MAN"
-  # Normalize both sides: drop volatile Date header and strip trailing timestamp suffix from bracketed run names
-  normalize() {
-    sed -E '/^# Date:/d; s/\] /]/; s/^(\[[^]_]+)_[0-9]{8}-[0-9]{6}(\])/\1\2/' "$1"
-  }
-  if diff -u <(normalize "$BASELINE_MAN") <(normalize "$CUR_MAN") >/dev/null; then
-    echo "VALIDATION OK: current outputs match baseline manifest (ignoring Date)."
-  else
-    echo "VALIDATION MISMATCH: differences found vs baseline manifest (ignoring Date):" >&2
-    diff -u <(normalize "$BASELINE_MAN") <(normalize "$CUR_MAN") || true
-    if [[ "$UPDATE_BASELINE" -eq 1 ]]; then
-      echo "Updating baseline manifest (per --update-baseline): $BASELINE_MAN"
-      cp -f "$CUR_MAN" "$BASELINE_MAN"
-    else
-      exit 1
-    fi
-  fi
-else
-RUNNER="$BASE_DIR/scripts/run_compare_cluster.sh"
-supports_flag() {
-  local f="$1"; [[ -f "$RUNNER" ]] && grep -q -- " $f)" "$RUNNER" 2>/dev/null
-}
-  echo "Seeding baseline manifest at: $BASELINE_MAN"
-  cp -f "$CUR_MAN" "$BASELINE_MAN"
-  echo "Baseline created. Commit only if appropriate; do NOT add raw notes to git."
-fi
-
-echo "Done. Input used: $USE_DIR  Outputs: $OUT_BASE"
+exec "${CMD[0]}" "${CMD[@]:1}"

@@ -1,0 +1,30 @@
+// Sectioned pipeline: section-aware tokenizer + relations with WSD.
+// scripts/run_pipeline.sh injects temporal/coref modules at OPTIONAL_MODULES when requested.
+
+threads 3
+
+// Section-aware tokenizer, POS, chunking
+load TsFullTokenizerPipeline
+add ContextDependentTokenizerAnnotator
+addDescription POSTagger
+load TsChunkerSubPipe
+
+// Dictionary lookup and WSD
+load TsDictionarySubPipe
+add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
+
+// Assertion cleanup
+load TsAttributeCleartkSubPipe
+add tools.fixes.DefaultSubjectAnnotator
+
+// Relations (core clinical relations)
+load TsRelationSubPipe
+
+// OPTIONAL_MODULES
+
+// Minimal writers for lean outputs
+add FileTreeXmiWriter SubDirectory=xmi
+add tools.reporting.uima.SimpleConceptCsvWriter SubDirectory=concepts
+add CuiCountFileWriter SubDirectory=cui_count
+
+addLast util.log.FinishedLogger

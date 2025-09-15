@@ -1,461 +1,148 @@
+﻿# cTAKES USD Clean Toolkit
 
-Start Here
-- One-shot setup (release + deps): ash scripts/first_time_setup.sh
-- Set env: export CTAKES_HOME="C:\Users\Layth M Qassem\Desktop\CtakesBun/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0"
-- MIMIC quick test: ash scripts/validate_main.sh
-- Main run status: ash scripts/status_main.sh -i <input_dir>
-- Main run: ash scripts/run_main.sh -i <input_dir> -o <output_base> --reports --autoscale
+This repository trims the original Ctakes_USD project down to the essentials and keeps it aligned with the bundled apache cTAKES 6.x distribution:
 
-Drug NER Side Test (RxNorm)
-- Run Drug NER only: ash scripts/run_drug_ner.sh -i <input_dir> -o outputs/drug_ner_test
-- Extract RxNorm CSV: ash scripts/extract_rxnorm_from_concepts.sh -p outputs/drug_ner_test
-- Summarize timing: ash scripts/summarize_timing.sh -p outputs/drug_ner_test
+- **Dictionary builder** ? `tools/HeadlessDictionary{Creator,Builder}.java` plus `scripts/build_dictionary.sh` to compile and launch the headless UMLS dictionary builder.
+- **Focused pipelines** ? four Piper files (`core`, `sectioned`, `smoke`, `drug`) with a shared OPTIONAL_MODULES hook so we can toggle temporal/coref support without duplicating pipelines.
+- **Lean writers** ? pipelines now emit only CAS XMI, a per-document concepts CSV, and CUI counts. The drug pipeline also records RxNorm rows.
+- **Run tooling** ? `scripts/run_pipeline.sh` adds autoscale heuristics (threads + heap), optional temporal/coref modules, and honours extra Java options.
+- **Async runner** ? `scripts/run_async.sh` shards an input directory across multiple `run_pipeline.sh` workers, autoscaling shards/threads/heap and consolidating outputs plus summary CSVs.
+- **Validation helpers** ? `scripts/validate.sh` for ad-hoc sampling and `scripts/validate_mimic.sh` for the 100-note smoke set.
+- **Flight checks** ? `scripts/flight_check.sh` validates Java/CTAKES_HOME, pipeline presence, and performs a dry-run check.
 
-More: see docs/GET_STARTED.md for step-by-step from scratch.
+Everything else?compare clusters, giant report builders, archived outputs?has been removed so the repo stays clean. The distributable cTAKES bundle lives under `CtakesBun-bundle/` and is kept free of generated outputs.
 
-Focused Main Run (Sectioned Core, Relation, Smoking)
-- Validate on ~100 notes: ash scripts/validate_main.sh
-- Check plan: ash scripts/status.sh -i <input_dir>
-- Run at scale: ash scripts/run_main.sh -i <input_dir> -o <output_base> --reports --autoscale
+## Prerequisites
 
-Drug NER Side Test (RxNorm)
-- Run Drug NER only: ash scripts/run_drug_ner.sh -i <input_dir> -o outputs/drug_ner_test
-- Extract RxNorm CSV: ash scripts/extract_rxnorm_from_concepts.sh -p outputs/drug_ner_test
-- Summarize timing: ash scripts/summarize_timing.sh -p outputs/drug_ner_test
+- Java 11 or newer on PATH (`java -version`).
+- cTAKES 6.x installation. If `CTAKES_HOME` is unset, the scripts fall back to the bundled copy at `CtakesBun-bundle/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0`.
+- Bash shell (Git Bash on Windows is fine).
 
-Focused Main Run (Sectioned Core, Relation, Smoking)
-- Validate on ~100 notes: `bash scripts/validate_main.sh`
-- Check plan: `bash scripts/status.sh -i <input_dir>`
-- Run at scale: `bash scripts/run_main.sh -i <input_dir> -o <output_base> --reports --autoscale`
-
-Pipelines included by default
-- `S_core`: Sectioned core (fast) concepts.
-- `S_core_rel`: Sectioned relation extraction.
-- `S_core_smoke`: Sectioned smoking status.
-
-Advanced pipelines (temporal/coref/default variants) remain available and unchanged. See the Advanced section below for full compare workflows.
-
-This repo runs Apache cTAKES at scale, writes the right per‑note artifacts during the run, then builds a modern Excel workbook in one step.
-
-What you get
-- One `.xlsx` workbook per run with: Overview, Pipeline Map, Processing Metrics, Clinical Concepts, CUI Counts, and Tokens.
-- Per‑note “Clinical Concepts” CSVs (written during the run) for quick spot‑checks.
-- XMI for each note (full record) if you need to drill down.
-
-Clinician quick start (5 steps)
-1) Install once (Ubuntu/Debian): see “First‑time install” below (2 commands).
-2) Put ~100 sample notes under `samples/mimic/` and validate:
-   - `scripts/validate_mimic.sh` (or `scripts/validate_mimic.sh --only S_core`)
-   - You’ll see a small manifest to verify results. OK ⇒ proceed.
-3) Set inputs and run at scale (fast defaults):
-   - `export INPUT_ROOT=<path_to_notes>`
-   - `export OUT_BASE=outputs/compare`
-   - Either use autoscale (recommended):
-     - `export SEED=42`
-     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale --consolidate-async`
-   - Or set manual values:
-     - `export RUNNERS=32 THREADS=8 XMX_MB=8192 SEED=42`
-   - Optional shared dictionary cache (faster startup):
-     - `bash scripts/prepare_shared_dict.sh -t /var/tmp/ctakes_dict_cache`
-     - `export DICT_SHARED=1 DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache`
-   - Preview the plan:
-     - `bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"`
-   - Run (autoscale):
-     - `bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale --consolidate-async`
-4) Monitor progress (any time):
-   - `scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"`
-5) Open the workbook(s):
-   - Per‑pipeline `.xlsx` files live in each pipeline run folder under `OUT_BASE`.
-
-Prerequisites
-- Java 11+
-- cTAKES 6.0.0. Set `CTAKES_HOME` to `apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0` (or your install).
-- Input notes under one directory (`.txt` files).
-
-If you want a one‑shot install with your exact cTAKES build and dictionary, use the bundle workflow in `docs/BUNDLE.md`:
-
-```
-# Local file present (Ubuntu/Debian, also installs deps):
-scripts/install_bundle.sh --deps
-
-# Or download from your release URL:
-scripts/install_bundle.sh --deps -u https://…/CtakesBun-bundle.tgz -s <sha256>
-```
-
-First‑time install (Ubuntu/Debian)
-```
-git clone https://github.com/editnori/Ctakes_USD.git CtakesBun
-cd CtakesBun
-scripts/install_bundle.sh --deps \
-  -u https://github.com/editnori/Ctakes_USD/releases/download/bundle/CtakesBun-bundle.tgz \
-  -s 0aae08a684ee5332aac0136e057cac0ee4fc29b34f2d5e3c3e763dc12f59e825
-chmod +x scripts/*.sh
-```
-
-Updating to latest
-```
-cd <repo_root>
-git fetch origin
-git checkout main
-git pull --ff-only origin main
-```
-
-Quick start
-1) Start the run (detached optional):
-   - `scripts/run_detached.sh scripts/run_compare_cluster.sh -i <input_dir> -o <output_base> --reports`
-2) Consolidate and build the workbook:
-   - `scripts/consolidate_shards.sh -p <run_dir> -W`
-3) Open the workbook in Excel.
-
-Inputs (example)
-Your input folder can contain note‑type subfolders. Example with ~30,000 notes:
-
-```
-SD5000_1/
-  AdmissionNote/
-  DischargeSummary/
-  EmergencyDepartmentNote/
-  InpatientNote/
-  OutpatientNote/
-  RadiologyReport/
-```
-
-Progress and resume
-- Progress: `scripts/progress_compare_cluster.sh -i SD5000_1 -o outputs/compare`
-- Resume after stop: add `--resume` to the run command. It links only missing documents per shard (checks top‑level `xmi/`).
-- Stable sharding: use `--seed 42` (any number) with the same `--runners` to keep the shard assignment stable across retries.
-- Long runs: use `scripts/run_detached.sh …` to keep the job running if a terminal closes.
-
-Review multiple runs
-When you finish 10 runs and want one view:
-- `scripts/build_multi_run_summary.sh -o <combined_dir> <run_dir1> ... <run_dir10>`
-This links each run’s pipeline folders into `<combined_dir>` and builds `ctakes-runs-summary-<ts>.xlsx` in summary mode.
-
-What happens behind the scenes
-- Pipelines write per-note Clinical Concepts CSVs during the run (and CUI counts/tokens when configured).
-- Consolidation (async when requested) moves shard outputs to top level, restores the tuned `.piper`, writes `run.log`, `timing_csv/timing.csv`, and a lightweight `metrics.json`, then removes shards.
-- Parent compare workbook includes Pipelines Summary, Note Types Summary (aggregated by input group), and aggregate processing metrics.
-- Report builds run in CSV mode by default (no XMI parsing).
-
-Options you might change
-- `--autoscale --consolidate-async`: derive `RUNNERS/THREADS/XMX` from host cores and memory.
-- `-n/--runners`, `-t/--threads`, `-m/--xmx`: manual parallelism and heap (watch memory).
-- `--max-pipelines N`: run up to N pipelines concurrently (throttled at top-level).
-- `--resume`: continue only missing documents.
-- `--seed <val>`: keep shard assignment stable across runs (with the same `--runners`).
-
-Repository layout
-```
-scripts/           # runners, consolidation, status, prepare-shared-dict, detached helper, multi-run summary
-pipelines/         # compare pipelines and shared writer includes
-tools/reporting/   # Excel workbook builder, CSV aggregator
-tools/reporting/uima/ClinicalConceptCsvWriter.java  # in-pipeline per-note CSV writer
-samples/mimic/     # place ~100 de-identified MIMIC notes (.txt) for validation
-```
-
-I ignore the cTAKES distro and runtime outputs in git. Keep those local.
-
-## MIMIC Validation (cluster, lock-safe)
-
-HSQL file DBs (the fast dictionary) cannot be opened concurrently at the same on‑disk path. To avoid `.lck` errors in parallel runs, enable dictionary relocation via `CTAKES_SANITIZE_DICT=1` (this copies the DB and rewrites the JDBC URL for each runner or a shared copy). This does not change dictionary content.
-
-- `CTAKES_SANITIZE_DICT=1`: required to avoid HSQL `.lck` under parallelism (copies DB, rewrites URL).
-- `DICT_SHARED=0`: per‑shard copies (each runner gets its own copy; more disk, less contention).
-- `DICT_SHARED=1`: one shared read‑only copy for all runners (saves space; fastest startup). Set `DICT_SHARED_PATH` (e.g., `/dev/shm`).
-
-Recommended per‑shard MIMIC validation run:
+Run the flight check at any time:
 
 ```bash
-cd /workspace/CtakesBun
-
-# 1. Set CTAKES_HOME
-export CTAKES_HOME="$(pwd)/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0"
-
-# 2. Clean any existing locks
-find "$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast" -name '*.lck' -delete
-
-# 3. Env for per-shard copies + concurrency
-export CTAKES_SANITIZE_DICT=1
-export DICT_SHARED=0
-# UMLS key is auto-injected by runners; override explicitly if needed
-export UMLS_KEY="6370dcdd-d438-47ab-8749-5a8fb9d013f2"
-ulimit -n 65535 || true
-
-# 4. Run validation (reuse when you already have .txt files present)
-scripts/validate_mimic.sh \
-  -i "/workspace/CtakesBun/samples/mimic" \
-  -o "/workspace/CtakesBun/outputs/mimic_validation" \
-  --runners 32 \
-  --threads 8 \
-  --xmx 8192 \
-  --seed 42 \
-  --subset-mode reuse \
-  --consolidate-async
+bash scripts/flight_check.sh
 ```
 
-Tip: Prefer a single shared copy to save space:
+## Dictionary builder
 
 ```bash
-export CTAKES_SANITIZE_DICT=1
-export DICT_SHARED=1
-export DICT_SHARED_PATH=/dev/shm
-bash scripts/flight_check.sh --mode cluster --require-shared
-scripts/validate_mimic.sh -i "/workspace/CtakesBun/samples/mimic" -o "/workspace/CtakesBun/outputs/mimic_validation" --subset-mode reuse --consolidate-async
+# Compile classes only (drops .class files in build/dictionary/)
+bash scripts/build_dictionary.sh --compile-only
+
+# Compile + run (everything after "--" is passed straight to HeadlessDictionaryBuilder)
+bash scripts/build_dictionary.sh -- -u /path/to/UMLS -o /path/to/dictionary
 ```
 
-Reduce XMI warning verbosity (optional):
+`BUILD_DIR=/custom/path` overrides the default output directory. The script automatically wires `${CTAKES_HOME}/lib/*` onto the classpath.
+
+## Pipelines
+
+| Key | Piper file | Purpose |
+| --- | --- | --- |
+| `core` | `pipelines/core/core_wsd.piper` | Default fast pipeline + dictionary lookup + WSD. |
+| `sectioned` | `pipelines/sectioned/sectioned_core_wsd.piper` | Section-aware pipeline with relations. |
+| `smoke` | `pipelines/smoke/sectioned_smoke_status.piper` | Sectioned pipeline with smoking-status annotators. |
+| `drug` | `pipelines/drug/drug_ner_wsd.piper` | Sectioned pipeline with ctakes-drug-ner (adds RxNorm CSVs). |
+
+All four pipelines call `tools.fixes.DefaultSubjectAnnotator` to ensure assertion subjects never land as `null` (cTAKES writers can crash otherwise), then write:
+
+- `xmi/` ? CAS snapshots per note.
+- `concepts/` ? Per-document concept CSVs written by `SimpleConceptCsvWriter`.
+- `cui_count/` ? Frequency counts (cTAKES `CuiCountFileWriter`).
+- `rxnorm/` ? Only for the `drug` pipeline via `DrugRxNormCsvWriter`.
+
+### Run a pipeline
 
 ```bash
-# Prior to run_compare_cluster.sh invocations (propagates from validate_mimic)
-export XMI_LOG_LEVEL=error
+bash scripts/run_pipeline.sh \
+  --pipeline sectioned \
+  --with-temporal \
+  --with-coref \
+  --autoscale \
+  -i /data/notes \
+  -o /runs/sectioned_temporal
 ```
 
-About the XMI “multipleReferencesAllowed” warnings:
-- These are benign serializer warnings when a feature is referenced multiple times but the TypeSystem marks it as not allowing multiple references (e.g., `Predicate:relations`).
-- Suppress by setting `XMI_LOG_LEVEL=error`.
-- Advanced fix (optional) is to override the TypeSystem feature to set `<multipleReferencesAllowed>true</multipleReferencesAllowed>`, which requires a runtime TypeSystem override.
+Highlights:
 
-All commands (reference)
-- `scripts/run_compare_cluster.sh`
-  - `-i|--in <dir>` input root (supports note‑type subfolders like the example above).
-  - `-o|--out <dir>` output base.
-  - `-n|--runners <N>` parallel runners per pipeline (default 16).
-  - `-t|--threads <N>` threads per runner (default 6).
-  - `-m|--xmx <MB>` heap per runner (default 6144).
-  - `--seed <val>` stable sharding seed.
-  - `--resume` resume only missing docs (checks top‑level `xmi/`).
-  - `--reports` build per‑pipeline reports during run (CSV mode; async with `--reports-async`).
-  - `--no-consolidate` keep `shard_*` (normally removed during consolidation).
-  - `--consolidate-async` queue consolidation/report jobs and wait for them at the end.
-  - `--keep-shards` consolidate but retain `shard_*` and `shards/` directories.
-  - `--only "<keys>"` run only specific pipelines (e.g., `"S_core D_core_temp"`).
-  - `-l|--dict-xml <file>` override dictionary XML descriptor.
-  - `--autoscale --consolidate-async` derive `RUNNERS/THREADS/XMX` from host cores and memory (fast default).
-  - `--max-pipelines <N>` run up to N pipeline-group tasks concurrently at the top level.
-  - `--reports-sync` build per‑pipeline report synchronously; `--reports-async` to run in background.
-  - `--no-parent-report` skip building the parent compare workbook at the OUT base.
+- `--autoscale` inspects CPU + RAM and applies sensible defaults (threads = cores/2, heap ? 60% of RAM capped between 2?24 GB).
+- `--threads <N>` overrides the `threads` directive inside the Piper (the script rewrites a temporary copy).
+- `--xmx <MB>` / `--java-opts "..."` extend `CTAKES_JAVA_OPTS` before launching `PiperFileRunner`.
+- `--dry-run` prints the computed command.
 
-- `scripts/status.sh` — dry-run status of what would be executed.
-  - `-i|--in <dir>` input root.
-  - `-o|--out <dir>` output base (default `outputs/compare`).
-  - `--only` limit pipelines; shows which will run.
-  - Prints environment (RUNNERS/THREADS/XMX), dictionary + shared cache status, and report mode.
+If `CTAKES_HOME` is unset and the bundled cTAKES exists, the script uses it automatically.
 
-- `scripts/consolidate_shards.sh`
-  - `-p|--parent <run_dir>` required.
-  - `--keep-shards` keep shards; default removes `shard_*`, `shards/`, any `pending_*`.
-  - `-W|--workbook [path]` build workbook (defaults to `<run>/ctakes-report-<ts>.xlsx`).
-  - `--wb-mode <summary|csv|full>` report mode. `csv` is the fast default for `-W`.
-
-- `scripts/build_xlsx_report.sh`  — build a workbook from outputs.
-  - `-o|--out <run_dir>` required. `-w|--workbook <file>` optional. `-M|--mode <summary|csv|full>`.
-
-- `scripts/progress_compare_cluster.sh` — progress estimator.
-  - `-i|--in <input_root>` and `-o|--out <output_base>`.
-
-- `scripts/run_detached.sh` — run any script under `nohup`, write log + PID to `logs/`.
-
-- `scripts/build_multi_run_summary.sh` - one summary across multiple runs.
-
-## Copy-Paste Commands (Ubuntu/Debian)
-
-These are ready to run from the repository root.
-
-### 1. Update Repo to Latest Main
-
-Non-destructive (fast-forward only):
+### Run asynchronously
 
 ```bash
-cd <repo_root>
-git fetch origin
-git checkout main
-git pull --ff-only origin main
+bash scripts/run_async.sh \
+  --pipeline smoke \
+  --autoscale \
+  -i /data/notes \
+  -o /runs/smoke_async
 ```
 
-Discard local changes (force update):
+`run_async.sh` shards the input directory, launches `run_pipeline.sh` for each shard (in parallel), then consolidates shard outputs into:
+
+- `xmi/`, `concepts/`, `cui_count/`, and optionally `rxnorm/` under `<output>/<pipeline>/<timestamp>/`.
+- `concepts_summary.csv` (and `rxnorm_summary.csv` when applicable) built by concatenating per-document CSVs.
+
+Use `--dry-run` to view the planned per-shard commands without executing them. Manual overrides (`--shards`, `--threads`, `--xmx`, `--dict`, etc.) pass straight through to the child runs.
+
+## Validation workflows
+
+General sampler:
 
 ```bash
-cd <repo_root>
-git fetch origin main
-git reset --hard origin/main
+bash scripts/validate.sh \
+  --pipeline smoke \
+  --limit 20 \
+  -i /data/notes \
+  -o /runs/validate_smoke
 ```
 
-### 2. Fix Script Permissions (one-time)
+This copies the first 20 `.txt/.xmi/.xml` files into a temp folder (requires `python3` or `python`) before running.
+
+Bundled 100-note smoke test:
 
 ```bash
-chmod +x scripts/*.sh
+bash scripts/validate_mimic.sh
 ```
 
-### 3. Quick Validation (100-note sample)
+`--with-temporal`, `--with-coref`, and `--dry-run` pass straight through to `scripts/validate.sh`.
 
-```bash
-# Place ~100 .txt files in samples/mimic/ first, then:
-scripts/validate_mimic.sh
-# Results will be compared/seeded at samples/mimic_output/manifest.txt
-# To accept updated expected outputs, re-run with:
-#   scripts/validate_mimic.sh --update-baseline
-```
-
-### 4. Run Large Compare (CSV-mode reports, autoscale)
-
-```bash
-export INPUT_ROOT="<path_to_notes>"
-export OUT_BASE="outputs/compare"
-export RUNNERS=32
-export THREADS=8
-export XMX_MB=8192
-export SEED=42
-ulimit -n 65535 || true
-
-# Optional: shared dictionary cache for faster startup
-bash scripts/prepare_shared_dict.sh -t /var/tmp/ctakes_dict_cache
-export DICT_SHARED=1
-export DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache
-
-bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
-bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale --consolidate-async
-```
-
-### 5. Check Progress and Outputs
-
-Check overall progress:
-
-```bash
-scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
-```
-
-Monitor live logs (replace `*` with actual run directory once created):
-
-```bash
-tail -n 50 -F "$OUT_BASE"/*/shard_*/run.log
-```
-
-List generated Excel workbooks:
-
-```bash
-ls -1 "$OUT_BASE"/*/ctakes-*.xlsx
-```
-
-Sanity-check input distribution (per subfolder):
-
-```bash
-for dir in "$INPUT_ROOT"/*/; do
-  [ -d "$dir" ] || continue
-  count=$(find "$dir" -type f -name "*.txt" | wc -l)
-  [ "$count" -gt 0 ] && echo "$(basename "$dir"): $count files"
-done
-```
-
-Watch overall XMI progress and latest file (10s interval):
-
-```bash
-watch -n 10 '
-  total=$(find "$INPUT_ROOT" -type f -name "*.txt" | wc -l);
-  done=$(find "$OUT_BASE" -type f -name "*.xmi" | wc -l);
-  pct=$((done*100/ (total>0?total:1) ));
-  echo "Progress: $done/$total (${pct}%)";
-  echo "Files remaining: $((total-done))";
-  ls -lt "$OUT_BASE"/*/*.xmi 2>/dev/null | head -1
-'
-```
-
-Example progress output:
+## Repository layout
 
 ```
-Input notes:        30000
-Pipelines planned:   10 (S_core S_core_rel D_core_rel D_core_coref S_core_temp S_core_temp_coref D_core_temp D_core_temp_coref S_core_temp_coref_smoke D_core_temp_coref_smoke)
-Expected XMI total:  300000
-Current XMI count:   504
-Progress (XMI):      0.17%
-
-Expected all files:  2100000  (7 per doc per pipeline)
-Current all files:   3054
-Progress (all types): 0.15%
+.
+|-- CtakesBun-bundle/                      # Clean apache-cTAKES distribution
+|-- pipelines/
+|   |-- core/core_wsd.piper
+|   |-- sectioned/sectioned_core_wsd.piper
+|   |-- smoke/sectioned_smoke_status.piper
+|   `-- drug/drug_ner_wsd.piper
+|-- scripts/
+|   |-- build_dictionary.sh
+|   |-- flight_check.sh
+|   |-- run_pipeline.sh
+|   |-- run_async.sh
+|   |-- validate.sh
+|   `-- validate_mimic.sh
+|-- tools/
+|   |-- HeadlessDictionary*.java
+|   |-- fixes/DefaultSubjectAnnotator.java
+|   |-- reporting/uima/*.java
+|   |-- smoking/*.java
+|   `-- wsd/SimpleWsdDisambiguatorAnnotator.java
+`-- resources_override/org/apache/ctakes/drugner/ae/DrugMentionAnnotator_WithTypes.xml
 ```
 
-### 6. Install Bundle on New Machine
+## Troubleshooting
 
-```bash
-scripts/install_bundle.sh --deps \
-  -u https://github.com/editnori/Ctakes_USD/releases/download/bundle/CtakesBun-bundle.tgz \
-  -s 0aae08a684ee5332aac0136e057cac0ee4fc29b34f2d5e3c3e763dc12f59e825
-```
+- `CTAKES_HOME`: export it if you do not want to rely on the bundled distribution.
+- `java.lang.NoClassDefFoundError`: ensure Java 11+ is active and `${CTAKES_HOME}/lib` holds cTAKES jars.
+- `python not found` when using `validate.sh --limit`: install Python (`python3` or `python`) or drop `--limit`.
+- Run `bash scripts/flight_check.sh` after any environment change; it reports missing prerequisites, warns about absent sample notes, and verifies `run_pipeline.sh` with `--dry-run`.
 
-### All-in-One Main Workflow
-
-```bash
-# 1) Update repo
-cd <repo_root>
-git fetch origin
-git checkout main
-git pull --ff-only origin main
-
-# 2) Fix permissions if needed
-chmod +x scripts/*.sh
-
-# 3) Set environment variables
-export INPUT_ROOT="<path_to_notes>"
-export OUT_BASE="outputs/compare"
-export RUNNERS=32
-export THREADS=8
-export XMX_MB=8192
-export SEED=42
-ulimit -n 65535 || true
-
-# Optional: shared dictionary cache
-bash scripts/prepare_shared_dict.sh -t /var/tmp/ctakes_dict_cache
-export DICT_SHARED=1
-export DICT_SHARED_PATH=/var/tmp/ctakes_dict_cache
-
-# 4) Run the comparison (async consolidate + async reports; autoscale)
-bash scripts/status.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
-bash scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --reports --seed "$SEED" --autoscale --consolidate-async
-
-# 5) Check progress in another terminal
-scripts/progress_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE"
-```
-
-Validation (100‑note MIMIC sample)
-- Place ~100 `.txt` notes under `samples/mimic/`
-- Run: `scripts/validate_mimic.sh` (or `--only S_core`)
-- Subset handling: `--subset-mode reuse|link|copy` (default: link). Auto‑reuse when input folder already has exactly `COUNT` notes.
-- Compares against `samples/mimic_output/manifest.txt` if present, or seeds it on first run.
-
-## Pipelines: What Runs by Default
-
-By default the runner executes a set of pipelines; if Temporal models are found, you get 10 pipelines, otherwise 4 (non‑temporal).
-
-Key prefixes
-- `S_`: Section‑aware (TsFullTokenizerPipeline). Keeps section boundaries for downstream AEs.
-- `D_`: Default core (TsDefaultTokenizerPipeline). No explicit section handling.
-
-Suffixes
-- `_core`: Core NLP + Dictionary + WSD + Assertion + Writers.
-- `_rel`: Adds clinical relations (degree/location/modifier) via TsRelationSubPipe.
-- `_temp`: Adds temporal events/links via THYME classifiers (requires models).
-- `_coref`: Adds coreference resolution (Markable chains).
-- `_smoke`: Adds Smoking Status classification AEs (rule‑based + PCS).
-
-Pipelines (keys → file → summary)
-- `S_core` → `pipelines/compare/TsSectionedFast_WSD_Compare.piper` — Section‑aware tokenization, dictionary lookup, WSD, assertion, unified writers.
-- `S_core_rel` → `pipelines/compare/TsSectionedRelation_WSD_Compare.piper` — `S_core` + clinical relations (degree/location modifiers).
-- `S_core_temp` → `pipelines/compare/TsSectionedTemporal_WSD_Compare.piper` — `S_core` + temporal events/relations (THYME models).
-- `S_core_temp_coref` → `pipelines/compare/TsSectionedTemporalCoref_WSD_Compare.piper` — `S_core_temp` + coreference resolution.
-- `S_core_temp_coref_smoke` → `pipelines/compare/TsSectionedTemporalCoref_WSD_Smoking_Compare.piper` — `S_core_temp_coref` + Smoking Status annotators.
-- `D_core_rel` → `pipelines/compare/TsDefaultRelation_WSD_Compare.piper` — Default tokenizer `D_core` + relations.
-- `D_core_temp` → `pipelines/compare/TsDefaultTemporal_WSD_Compare.piper` — `D_core` + temporal events/relations.
-- `D_core_temp_coref` → `pipelines/compare/TsDefaultTemporalCoref_WSD_Compare.piper` — `D_core_temp` + coreference.
-- `D_core_temp_coref_smoke` → `pipelines/compare/TsDefaultTemporalCoref_WSD_Smoking_Compare.piper` — `D_core_temp_coref` + Smoking Status.
-- `D_core_coref` → `pipelines/compare/TsDefaultCoref_WSD_Compare.piper` — `D_core` + coreference (no temporal, no relations).
-
-What “Core” does
-- Tokenize, POS tag, chunk; dictionary lookup (fast HSQL rare‑word index); WSD (`tools.wsd.SimpleWsdDisambiguatorAnnotator` picks one best); assertion features (polarity/uncertainty/conditional/generic/subject) with a safety default subject (patient).
-- Writers produce: XMI, `bsv_table/`, `csv_table/`, `html_table/`, `cui_list/`, `cui_count/`, `bsv_tokens/`, and `csv_table_concepts/` (per‑doc Clinical Concepts with full columns).
-
-Select a single pipeline (or a subset)
-- One pipeline: `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only S_core --reports`
-- Multiple: `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only "S_core D_core_temp" --reports`
-- Temporal only (if models present): `scripts/run_compare_cluster.sh -i "$INPUT_ROOT" -o "$OUT_BASE" --only "S_core_temp D_core_temp" --reports`
-
-
-
+That's the cleaned setup?dictionary tooling, four lean pipelines, autoscale-aware single-run and async runners, flight checks, and a predictable validation story.

@@ -1,74 +1,47 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+# Build + compile artifacts
+/build/
+/.gradle/
+*.class
+*.jar
 
-# Test binary, built with `go test -c`
-*.test
+# Generated dictionaries + scratch DBs
+/dictionary/
+/dictionaries/
+*.mv.db
+*.trace.db
+*.script
+*.properties
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+# Pipeline run outputs
+/outputs/
+/runs/
+/reports/
+/logs/
+/tmp/
+/tmp_*/
+ctakes-run*/
+*.xmi
+*.bsv
+*.csv
+*.html
+*.xlsx
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# Go workspace file
-go.work
-
-# Binary names
-ctakes-tui
-ctakes-cli
-ctakes-*
-
-# IDE specific files
+# OS + IDE cruft
+.DS_Store
+Thumbs.db
 .idea/
 .vscode/
 *.swp
-*.swo
 *~
 
-# OS specific files
-.DS_Store
-Thumbs.db
+# Python + misc caches
+__pycache__/
 
-# cTAKES distribution and large outputs
-apache-ctakes-*/
-/.build_tools/
-/outputs/
-/logs/
-/*.tgz
-/*.zip
-*.xmi
-/cTAKES.error.log
-/SD*/
-/org/
-/build/
-/umls_loader/
-samples/mimic_*/
-samples/mimic_output/
+# Bundles/archives
+*.zip
+*.tgz
+*.tar.gz
 
-# Local temp & jar extracts
-/META-INF/
-/tmp_*/
-
-# Gradle cache
-.gradle/
-
-# Local AI artifacts
+# Local AI tooling
 .claude/
-
-# Logs
-*.log
-
-run (*.log
-
-# Gradle cache
-.gradle/
-# Local AI artifacts
-.claude/
-# Logs
-*.log
-# Local captured logs
-run (10).log
+CtakesBun-bundle/

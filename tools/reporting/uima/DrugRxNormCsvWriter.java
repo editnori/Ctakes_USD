@@ -155,7 +155,40 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
     private static String nvl(String s) { return s == null ? "" : s; }
 
     // --- TUI -> Semantic Type label ---
+    private static final Map<String,String> TUI_GROUP_MAP = buildGroupMap();
     private static final Map<String,String> TUI_LABEL_MAP = createTuiLabelMap();
+
+    static {
+        SemGroupLoader.applyOverrides(TUI_GROUP_MAP, TUI_LABEL_MAP);
+    }
+
+    private static Map<String,String> buildGroupMap() {
+        Map<String,String> m = new HashMap<>();
+        put(m, "T103", "CHEM");
+        put(m, "T104", "CHEM");
+        put(m, "T109", "CHEM");
+        put(m, "T114", "CHEM");
+        put(m, "T116", "CHEM");
+        put(m, "T120", "CHEM");
+        put(m, "T121", "CHEM");
+        put(m, "T122", "CHEM");
+        put(m, "T123", "CHEM");
+        put(m, "T125", "CHEM");
+        put(m, "T126", "CHEM");
+        put(m, "T127", "CHEM");
+        put(m, "T129", "CHEM");
+        put(m, "T130", "CHEM");
+        put(m, "T131", "CHEM");
+        put(m, "T167", "CHEM");
+        put(m, "T168", "CHEM");
+        put(m, "T195", "CHEM");
+        put(m, "T196", "CHEM");
+        put(m, "T197", "CHEM");
+        put(m, "T200", "CHEM");
+        put(m, "T203", "CHEM");
+        return m;
+    }
+
     private static Map<String,String> createTuiLabelMap() {
         Map<String,String> m = new HashMap<>();
         // Selected set (can be extended). Values from user-provided list.
@@ -299,16 +332,9 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
 
     private static String groupForTui(String tui) {
         if (tui == null) return "";
-        String t = tui.toUpperCase(Locale.ROOT);
-        // Mark common drug-related TUIs as CHEM; leave others blank to avoid mislabeling.
-        if (t.equals("T103") || t.equals("T104") || t.equals("T109") || t.equals("T114") || t.equals("T116") ||
-            t.equals("T120") || t.equals("T121") || t.equals("T122") || t.equals("T123") || t.equals("T125") ||
-            t.equals("T126") || t.equals("T127") || t.equals("T129") || t.equals("T130") || t.equals("T131") ||
-            t.equals("T167") || t.equals("T168") || t.equals("T195") || t.equals("T196") || t.equals("T197") ||
-            t.equals("T200") || t.equals("T203")) {
-            return "CHEM";
-        }
-        return "";
+        String key = tui.toUpperCase(Locale.ROOT);
+        String group = TUI_GROUP_MAP.get(key);
+        return group == null ? "" : group;
     }
 }
 

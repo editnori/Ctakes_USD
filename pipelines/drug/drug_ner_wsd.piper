@@ -1,0 +1,29 @@
+// Sectioned drug NER pipeline: section-aware pipeline with dictionary lookup and Drug NER annotator.
+// scripts/run_pipeline.sh injects temporal/coref modules at OPTIONAL_MODULES if required.
+
+threads 3
+
+load TsFullTokenizerPipeline
+add ContextDependentTokenizerAnnotator
+addDescription POSTagger
+load TsChunkerSubPipe
+
+// Dictionary lookup (kept for consistent dictionary state)
+load TsDictionarySubPipe
+add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
+
+load TsAttributeCleartkSubPipe
+add tools.fixes.DefaultSubjectAnnotator
+
+// Drug NER (ctakes-drug-ner) with bundled TypeSystem wrapper
+addDescription org/apache/ctakes/drugner/ae/DrugMentionAnnotator_WithTypes
+
+// OPTIONAL_MODULES
+
+// Minimal writers for lean outputs
+add FileTreeXmiWriter SubDirectory=xmi
+add tools.reporting.uima.SimpleConceptCsvWriter SubDirectory=concepts
+add tools.reporting.uima.DrugRxNormCsvWriter SubDirectory=rxnorm
+add CuiCountFileWriter SubDirectory=cui_count
+
+addLast util.log.FinishedLogger
