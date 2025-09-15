@@ -1,0 +1,28 @@
+// Sectioned core + Relations + Smoking with WSD and unified writers (single-pass)
+
+threads 3
+
+// Emit timing START markers near pipeline begin
+add tools.timing.TimingStartAE
+
+// Section-aware tokenizer, POS, chunking
+load TsFullTokenizerPipeline
+add ContextDependentTokenizerAnnotator
+addDescription POSTagger
+load TsChunkerSubPipe
+
+// Dictionary + WSD + Assertion
+load TsDictionarySubPipe
+add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
+load TsAttributeCleartkSubPipe
+add tools.fixes.DefaultSubjectAnnotator
+
+// Smoking Status (document-level)
+add org.apache.ctakes.smokingstatus.ae.SmokingStatusAnnotator
+
+// Relations
+load TsRelationSubPipe
+
+// Writers
+load ../../pipelines/includes/Writers_Xmi_Table.piper
+

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Focused validation on ~100 notes using the main pipelines only.
-# Wraps scripts/validate_mimic.sh with a constrained --only set.
+# Focused validation (~100 notes) using a single-pass main pipeline.
+# Wraps scripts/validate_mimic.sh with a constrained --only set (S_core_rel_smoke).
 #
 # Usage:
 #   scripts/validate_main.sh [options]
@@ -14,9 +14,7 @@ if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
   cat <<EOF
 Focused Validation (MIMIC ~100 notes)
 Validates only these pipelines:
-  - S_core        -> TsSectionedFast_WSD_Compare.piper
-  - S_core_rel    -> TsSectionedRelation_WSD_Compare.piper
-  - S_core_smoke  -> TsSectionedSmoking_WSD_Compare.piper
+  - S_core_rel_smoke -> TsSectionedCoreRelSmoke_WSD_Compare.piper
 
 Examples:
   bash scripts/validate_main.sh
@@ -25,6 +23,5 @@ EOF
   exit 0
 fi
 
-ONLY_SET="S_core S_core_rel S_core_smoke"
+ONLY_SET="S_core_rel_smoke"
 exec bash "$BASE_DIR/scripts/validate_mimic.sh" --only "$ONLY_SET" "$@"
-

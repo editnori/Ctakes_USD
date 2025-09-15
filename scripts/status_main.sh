@@ -6,5 +6,4 @@ set -euo pipefail
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-exec bash "$BASE_DIR/scripts/status.sh" --only "S_core S_core_rel S_core_smoke" "$@"
-
+exec bash "$BASE_DIR/scripts/status.sh" --only "S_core_rel_smoke" "$@"
