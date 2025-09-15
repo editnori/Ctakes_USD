@@ -153,10 +153,15 @@ echo "Running compare pipelines on subset (RUNNERS=$RUNNERS THREADS=$THREADS XMX
 # Pass dictionary XML if provided in env and exists
 DICT_FLAG=()
 if [[ -n "${DICT_XML:-}" && -f "$DICT_XML" ]]; then DICT_FLAG=( -l "$DICT_XML" ); fi
+# Optional reports: off by default; enable with VALIDATION_WITH_REPORTS=1
+REPORT_FLAGS=()
+if [[ "${VALIDATION_WITH_REPORTS:-0}" -eq 1 ]]; then REPORT_FLAGS+=( --reports ); fi
+# Suppress parent report by default to avoid empty workbook
+REPORT_FLAGS+=( --no-parent-report )
 if [[ -n "$ONLY" ]]; then
-  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --only "$ONLY" --reports "${DICT_FLAG[@]}" ${TOGGLES[*]} $EXTRA || true
+  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --only "$ONLY" "${REPORT_FLAGS[@]}" "${DICT_FLAG[@]}" ${TOGGLES[*]} $EXTRA || true
 else
-  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" --reports "${DICT_FLAG[@]}" ${TOGGLES[*]} $EXTRA || true
+  bash "$BASE_DIR/scripts/run_compare_cluster.sh" -i "$USE_DIR" -o "$OUT_BASE" "${REPORT_FLAGS[@]}" "${DICT_FLAG[@]}" ${TOGGLES[*]} $EXTRA || true
 fi
 
 # Build manifest from outputs

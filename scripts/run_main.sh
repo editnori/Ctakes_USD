@@ -84,4 +84,4 @@ if [[ "$MAIN_PROGRESS" -eq 1 && $(supports_flag "--progress" && echo 1 || echo 0
 fi
 # Reduce noisy XMI serializer logs if XMI is enabled later
 export XMI_LOG_LEVEL=${XMI_LOG_LEVEL:-error}
-exec bash "$BASE_DIR/scripts/run_compare_cluster.sh" --only "$ONLY_SET" "${EXTRA_FLAGS[@]}" "$@"
+exec bash "$BASE_DIR/scripts/run_compare_cluster.sh" --only "$ONLY_SET" --no-parent-report "${EXTRA_FLAGS[@]}" "$@"

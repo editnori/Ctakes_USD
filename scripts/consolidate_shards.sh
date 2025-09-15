@@ -41,8 +41,14 @@ types=(xmi bsv_table csv_table csv_table_concepts html_table cui_list cui_count 
 
 shopt -s nullglob
 for t in "${types[@]}"; do
-  mkdir -p "$PARENT/$t"
   moved=0
+  need_dir=0
+  for sh in "$PARENT"/shard_*; do
+    [[ -d "$sh/$t" ]] || continue
+    if compgen -G "$sh/$t/*" >/dev/null 2>&1; then need_dir=1; break; fi
+  done
+  [[ "$need_dir" -eq 1 ]] || continue
+  mkdir -p "$PARENT/$t"
   for sh in "$PARENT"/shard_*; do
     [[ -d "$sh/$t" ]] || continue
     # Move files, don't overwrite existing
@@ -146,6 +152,8 @@ if [[ "$SINGLE_TABLE" -eq 1 ]]; then
     if [[ "$SINGLE_TABLE_ONLY" -eq 1 ]]; then
       echo "[consolidate] SINGLE_TABLE_ONLY set: removing per-doc CSVs under $src_dir"
       rm -f "$src_dir"/*.CSV 2>/dev/null || true
+      # Remove now-empty directory if no files remain
+      rmdir "$src_dir" 2>/dev/null || true
     fi
   else
     echo "[consolidate] SINGLE_TABLE requested but no source CSVs found under csv_table_concepts/ or csv_table/"
