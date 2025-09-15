@@ -69,6 +69,8 @@ add org.apache.ctakes.drugner.ae.DrugMentionAnnotator
 
 // Writers (XMI + tables + concepts CSV)
 load ${BASE_DIR}/pipelines/includes/Writers_Xmi_Table.piper
+// Minimal RxNorm per-document CSVs
+add tools.reporting.uima.DrugRxNormCsvWriter SubDirectory=rxnorm_min
 
 // Append a timing file line to persist per-doc durations
 add tools.timing.TimingEndAE TimingFile="${OUT}/timing_csv/timing.csv"
