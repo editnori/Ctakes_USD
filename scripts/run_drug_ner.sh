@@ -114,7 +114,8 @@ echo "[drug-ner] Piper: $piper"
 # Run
 export JAVA_TOOL_OPTIONS="-Xmx${XMX_MB}m ${JAVA_TOOL_OPTIONS:-}"
 export CLASSPATH="$BASE_DIR/.build_tools:$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*"
-"$CTAKES_HOME/bin/runPiperFile.sh" -p "$piper" -i "$IN" -o "$OUT"
+# Prefer invoking the Piper runner directly to avoid HOME/setenv.sh issues
+java -cp "$CLASSPATH" -Xms${XMX_MB}m -Xmx${XMX_MB}m org.apache.ctakes.core.pipeline.PiperFileRunner -p "$piper" -i "$IN" -o "$OUT"
 
 echo "[drug-ner] Outputs under: $OUT"
 echo "[drug-ner] Timing CSV:     $OUT/timing_csv/timing.csv"
