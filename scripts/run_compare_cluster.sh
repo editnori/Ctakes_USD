@@ -269,7 +269,7 @@ if [[ -d "$IN" ]]; then
   shopt -s nullglob
   for d in "$IN"/*; do
     [[ -d "$d" ]] || continue
-    if find "$d" -type f -name '*.txt' | head -n 1 | grep -q .; then INPUT_GROUPS+=("$d"); fi
+    if find "$d" -type f -iname '*.txt' | head -n 1 | grep -q .; then INPUT_GROUPS+=("$d"); fi
   done
   shopt -u nullglob
   if [[ ${#INPUT_GROUPS[@]} -eq 0 ]]; then INPUT_GROUPS=("$IN"); fi
@@ -327,7 +327,7 @@ make_shards() {
     local gd; gd=$(printf "%03d" "$g")
     mkdir -p "$shards_dir/$gd"
     safe_link "$f" "$shards_dir/$gd/"
-  done < <(find "$src" -type f -name '*.txt' -print0 | sort -z)
+  done < <(find "$src" -type f -iname '*.txt' -print0 | sort -z)
 }
 
 run_pipeline_sharded() {
@@ -435,7 +435,7 @@ run_pipeline_sharded() {
         if [[ -z "${done[$bn]:-}" ]]; then
           ln "$txt" "$pending/"
         fi
-      done < <(find "$shard" -type f -name '*.txt' -print0)
+      done < <(find "$shard" -type f -iname '*.txt' -print0)
       # If nothing pending, skip this shard
       if ! find "$pending" -type f -name '*.txt' | head -n1 | grep -q .; then
         echo "[resume] shard $i already complete; skipping" >&2

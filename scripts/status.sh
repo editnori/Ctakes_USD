@@ -75,14 +75,14 @@ for k in "${keys[@]}"; do
 done
 
 # Count input notes
-count_txt() { find "$1" -type f -name '*.txt' 2>/dev/null | wc -l | awk '{print $1}'; }
+count_txt() { find "$1" -type f -iname '*.txt' 2>/dev/null | wc -l | awk '{print $1}'; }
 DOCS_TOTAL=0
 GROUPS=()
 if [[ -d "$IN" ]]; then
   shopt -s nullglob
   for d in "$IN"/*; do
     [[ -d "$d" ]] || continue
-    if find "$d" -type f -name '*.txt' | head -n 1 | grep -q .; then
+    if find "$d" -type f -iname '*.txt' | head -n 1 | grep -q .; then
       n=$(count_txt "$d"); DOCS_TOTAL=$((DOCS_TOTAL + n)); GROUPS+=("$(basename "$d"):$n")
     fi
   done
