@@ -353,7 +353,7 @@ run_pipeline_sharded() {
       stage_root="${base_tmpfs%/}/ctakes_stage/$(basename "$parent")"
       write_dir="$stage_root/shard_$i"
       mkdir -p "$write_dir" || true
-      echo "[${name}_$i][tmpfs] Writing shard outputs to $write_dir, will move to $outdir at end" | tee -a "$outdir/run.log" >&2
+      echo "[${name}_$i][tmpfs] Writing shard outputs to $write_dir, will move to $outdir at end" | tee -a "$write_dir/run.log" >&2
     fi
     # Build a pending set if resuming: include only notes that don't have XMI yet
     local in_dir="$shard"
@@ -363,10 +363,24 @@ run_pipeline_sharded() {
       declare -A done=()
       if [[ -d "$outdir/xmi" ]]; then
         while IFS= read -r -d '' xmi; do
-          bn=$(basename "$xmi")
-          bn="${bn%.txt.xmi}"
+          bn=$(basename "$xmi"); bn="${bn%.txt.xmi}"
           done["$bn"]=1
         done < <(find "$outdir/xmi" -type f -name '*.txt.xmi' -print0)
+      fi
+      # When XMI is disabled, use per-doc Clinical Concepts CSVs to mark completion
+      if [[ "${NO_XMI:-0}" -eq 1 || "${CSV_ONLY:-0}" -eq 1 ]]; then
+        if [[ -d "$outdir/csv_table_concepts" ]]; then
+          while IFS= read -r -d '' csv; do
+            cbn=$(basename "$csv"); cbn="${cbn%.CSV}"
+            done["$cbn"]=1
+          done < <(find "$outdir/csv_table_concepts" -type f -name '*.CSV' -print0)
+        fi
+        # Shard-level fast path
+        if [[ -f "$outdir/.done" ]]; then
+          echo "[resume] shard $i marked complete (.done); skipping" >&2
+          rmdir "$pending" 2>/dev/null || true
+          continue
+        fi
       fi
       # Link only missing docs
       while IFS= read -r -d '' txt; do
@@ -472,7 +486,7 @@ run_pipeline_sharded() {
         cp -f "$SRC_DB_DIR/$DICT_NAME.properties" "$workdb.properties"
         cp -f "$SRC_DB_DIR/$DICT_NAME.script" "$workdb.script"
         if [[ ! -s "$workdb.script" ]]; then
-          echo "[${name}_$i][fatal] Per-shard dictionary copy missing or empty: $workdb.script" | tee -a "$outdir/run.log" >&2
+          echo "[${name}_$i][fatal] Per-shard dictionary copy missing or empty: $workdb.script" | tee -a "$write_dir/run.log" >&2
           exit 1
         fi
       fi
@@ -523,7 +537,7 @@ run_pipeline_sharded() {
         # Auto-fallback 1: ClearTK Modifier NPE -> patch to LITE once (Degree+Location)
         if [[ "$SKIP_RELATIONS" -ne 1 && "$RELATIONS_LITE" -ne 1 && "$patched_rel_fallback" -eq 0 ]]; then
           if grep -qE "ModifierExtractorAnnotator|ThreadSafeModifierExtractor" "$write_dir/run.log" && \
-             grep -qE "FeatureNodeArrayEncoder|getValue\(\) is null|Cannot invoke \"Object.toString\(\)\"" "$outdir/run.log"; then
+             grep -qE "FeatureNodeArrayEncoder|getValue\(\) is null|Cannot invoke \"Object.toString\(\)\"" "$write_dir/run.log"; then
             awk 'BEGIN{replaced=0} {
                    if ($0 ~ /^[[:space:]]*load[[:space:]]+TsRelationSubPipe([[:space:]]|$)/ && !replaced) {
                      print "addDescription concurrent.ThreadSafeDegreeExtractor";
@@ -564,6 +578,10 @@ run_pipeline_sharded() {
         fi
         shopt -u dotglob nullglob
         rm -rf "$write_dir" 2>/dev/null || true
+      fi
+      # Mark shard complete if success
+      if (( last_ec == 0 )); then
+        : > "$outdir/.done" || true
       fi
       exit $last_ec
     ) &
