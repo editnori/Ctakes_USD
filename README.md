@@ -1,4 +1,17 @@
-# cTAKES Compare Runs
+
+Start Here
+- One-shot setup (release + deps): ash scripts/first_time_setup.sh
+- Set env: export CTAKES_HOME="C:\Users\Layth M Qassem\Desktop\CtakesBun/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0"
+- MIMIC quick test: ash scripts/validate_main.sh
+- Main run status: ash scripts/status_main.sh -i <input_dir>
+- Main run: ash scripts/run_main.sh -i <input_dir> -o <output_base> --reports --autoscale
+
+Drug NER Side Test (RxNorm)
+- Run Drug NER only: ash scripts/run_drug_ner.sh -i <input_dir> -o outputs/drug_ner_test
+- Extract RxNorm CSV: ash scripts/extract_rxnorm_from_concepts.sh -p outputs/drug_ner_test
+- Summarize timing: ash scripts/summarize_timing.sh -p outputs/drug_ner_test
+
+More: see docs/GET_STARTED.md for step-by-step from scratch.
 
 Focused Main Run (Sectioned Core, Relation, Smoking)
 - Validate on ~100 notes: ash scripts/validate_main.sh
