@@ -1,5 +1,10 @@
 # MIMIC Validation (100 Notes)
 
+Focused validation (main pipelines only)
+- Run: `bash scripts/validate_main.sh`
+- Pipelines: `S_core`, `S_core_rel`, `S_core_smoke`
+
+
 Goal: quickly validate your cTAKES instance and pipelines on a stable 100‑note sample before launching large runs.
 
 What it does
@@ -53,5 +58,4 @@ Notes
 - Do not commit raw notes under `samples/mimic/`. The repo’s `.gitignore` excludes `*.txt` in that folder.
 - The baseline manifest is small and may be committed if you want a shared reference. Keep in mind different JVMs/OSes can cause minor variations; in that case, re‑seed per environment.
 - The validator uses the same compare pipelines as large runs; it exercises dictionary, temporal models (if present), and writers.
-
 

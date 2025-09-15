@@ -1,5 +1,27 @@
 # cTAKES Compare Runs
 
+Focused Main Run (Sectioned Core, Relation, Smoking)
+- Validate on ~100 notes: ash scripts/validate_main.sh
+- Check plan: ash scripts/status.sh -i <input_dir>
+- Run at scale: ash scripts/run_main.sh -i <input_dir> -o <output_base> --reports --autoscale
+
+Drug NER Side Test (RxNorm)
+- Run Drug NER only: ash scripts/run_drug_ner.sh -i <input_dir> -o outputs/drug_ner_test
+- Extract RxNorm CSV: ash scripts/extract_rxnorm_from_concepts.sh -p outputs/drug_ner_test
+- Summarize timing: ash scripts/summarize_timing.sh -p outputs/drug_ner_test
+
+Focused Main Run (Sectioned Core, Relation, Smoking)
+- Validate on ~100 notes: `bash scripts/validate_main.sh`
+- Check plan: `bash scripts/status.sh -i <input_dir>`
+- Run at scale: `bash scripts/run_main.sh -i <input_dir> -o <output_base> --reports --autoscale`
+
+Pipelines included by default
+- `S_core`: Sectioned core (fast) concepts.
+- `S_core_rel`: Sectioned relation extraction.
+- `S_core_smoke`: Sectioned smoking status.
+
+Advanced pipelines (temporal/coref/default variants) remain available and unchanged. See the Advanced section below for full compare workflows.
+
 This repo runs Apache cTAKES at scale, writes the right per‑note artifacts during the run, then builds a modern Excel workbook in one step.
 
 What you get
