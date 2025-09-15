@@ -15,11 +15,13 @@ set -euo pipefail
 # Usage:
 #   scripts/consolidate_shards.sh -p <run_parent_dir> [--keep-shards]
 
-PARENT=""; KEEP=0; MAKE_WB=0; WB_PATH=""; WB_MODE="csv"
+PARENT=""; KEEP=0; MAKE_WB=0; WB_PATH=""; WB_MODE="csv"; SINGLE_TABLE=0; SINGLE_TABLE_ONLY=0
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -p|--parent) PARENT="$2"; shift 2;;
     --keep-shards) KEEP=1; shift 1;;
+    --single-table) SINGLE_TABLE=1; shift 1;;
+    --single-table-only) SINGLE_TABLE=1; SINGLE_TABLE_ONLY=1; shift 1;;
     -W|--workbook)
       MAKE_WB=1;
       # Optional path argument if provided and not another flag
@@ -122,6 +124,33 @@ if [[ "$KEEP" -eq 0 ]]; then
 fi
 
 echo "[consolidate] Done: $PARENT"
+
+# Build a single combined concepts CSV if requested
+if [[ "$SINGLE_TABLE" -eq 1 ]]; then
+  src_dir=""; out_file="$PARENT/concepts_all.csv"
+  if [[ -d "$PARENT/csv_table_concepts" ]] && ls -1 "$PARENT/csv_table_concepts"/*.CSV >/dev/null 2>&1; then
+    src_dir="$PARENT/csv_table_concepts"
+  elif [[ -d "$PARENT/csv_table" ]] && ls -1 "$PARENT/csv_table"/*.CSV >/dev/null 2>&1; then
+    src_dir="$PARENT/csv_table"
+  fi
+  if [[ -n "$src_dir" ]]; then
+    echo "[consolidate] Writing single concepts table: $out_file"
+    {
+      # Take header from the first CSV, write once
+      first="$(ls -1 "$src_dir"/*.CSV | head -n 1)"
+      head -n 1 "$first"
+      for f in $(ls -1 "$src_dir"/*.CSV); do
+        tail -n +2 "$f"
+      done
+    } > "$out_file" || true
+    if [[ "$SINGLE_TABLE_ONLY" -eq 1 ]]; then
+      echo "[consolidate] SINGLE_TABLE_ONLY set: removing per-doc CSVs under $src_dir"
+      rm -f "$src_dir"/*.CSV 2>/dev/null || true
+    fi
+  else
+    echo "[consolidate] SINGLE_TABLE requested but no source CSVs found under csv_table_concepts/ or csv_table/"
+  fi
+fi
 
 # Optionally build a consolidated workbook (XLSX or XML), default mode=csv (fast)
 if [[ "$MAKE_WB" -eq 1 ]]; then

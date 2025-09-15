@@ -51,6 +51,12 @@ NO_HTML=${NO_HTML:-0}
 NO_BSV=${NO_BSV:-0}
 NO_TOKENS=${NO_TOKENS:-0}
 CSV_ONLY=${CSV_ONLY:-0}
+NO_CUI_LIST=${NO_CUI_LIST:-0}
+NO_CUI_COUNT=${NO_CUI_COUNT:-0}
+# When set, build a single combined CSV (concepts_all.csv) from per-doc CSVs during consolidation
+SINGLE_TABLE=${SINGLE_TABLE:-0}
+# Stronger: also remove per-doc CSV files after writing the combined table
+SINGLE_TABLE_ONLY=${SINGLE_TABLE_ONLY:-0}
 # Graceful shutdown: on INT/TERM, signal children and wait
 _graceful_exit() {
   echo "[runner] Caught termination signal; attempting graceful shutdown..." >&2
@@ -98,6 +104,10 @@ while [[ $# -gt 0 ]]; do
     --no-html) NO_HTML=1; shift 1;;
     --no-bsv) NO_BSV=1; shift 1;;
     --no-tokens) NO_TOKENS=1; shift 1;;
+    --no-cui-list) NO_CUI_LIST=1; shift 1;;
+    --no-cui-count) NO_CUI_COUNT=1; shift 1;;
+    --single-table) SINGLE_TABLE=1; shift 1;;
+    --single-table-only) SINGLE_TABLE=1; SINGLE_TABLE_ONLY=1; shift 1;;
     --csv-only) CSV_ONLY=1; NO_XMI=1; NO_HTML=1; NO_BSV=1; NO_TOKENS=1; shift 1;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac
@@ -400,6 +410,16 @@ run_pipeline_sharded() {
       if [[ "$CSV_ONLY" -eq 1 || "$NO_TOKENS" -eq 1 ]]; then
         sed -i -E "/^[[:space:]]*add[[:space:]]+TokenTableFileWriter\b/d" "$shard_writers" || true
       fi
+      if [[ "$NO_CUI_LIST" -eq 1 ]]; then
+        sed -i -E "/^[[:space:]]*add[[:space:]]+CuiListFileWriter\b/d" "$shard_writers" || true
+      fi
+      if [[ "$NO_CUI_COUNT" -eq 1 ]]; then
+        sed -i -E "/^[[:space:]]*add[[:space:]]+CuiCountFileWriter\b/d" "$shard_writers" || true
+      fi
+      # If user wants a single concepts table only, drop the broader semantic CSV per-doc table
+      if [[ "${CONCEPTS_ONLY:-0}" -eq 1 ]]; then
+        sed -i -E "/^[[:space:]]*add[[:space:]]+SemanticTableFileWriter[[:space:]].*SubDirectory=csv_table\b/d" "$shard_writers" || true
+      fi
       # Ensure CSV table and concept CSV remain
       # Rewrite include path in tuned piper
       sed -i -E "s#(^[[:space:]]*load[[:space:]]+).*/Writers_Xmi_Table\.piper#\\1$shard_writers#" "$tuned_piper"
@@ -529,14 +549,14 @@ run_pipeline_sharded() {
         echo "[post] Queueing consolidation for $name/$gshort (async)"
         if [[ "$KEEP_SHARDS" -eq 1 ]]; then
           if [[ "$MAKE_REPORTS" -gt 0 ]]; then
-            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards && \
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards ${SINGLE_TABLE:+--single-table} ${SINGLE_TABLE_ONLY:+--single-table-only} && \
               bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true; \
               if [[ "$NOTE_SPLITS" -eq 1 ]]; then \
                 if [[ -n "$NOTE_TYPES_ARG" ]]; then bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv --types "$NOTE_TYPES_ARG" || true; \
                 else bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv || true; fi; \
               fi ) &
           else
-            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards; \
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" --keep-shards ${SINGLE_TABLE:+--single-table} ${SINGLE_TABLE_ONLY:+--single-table-only}; \
               if [[ "$NOTE_SPLITS" -eq 1 ]]; then \
                 if [[ -n "$NOTE_TYPES_ARG" ]]; then bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv --types "$NOTE_TYPES_ARG" || true; \
                 else bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv || true; fi; \
@@ -544,14 +564,14 @@ run_pipeline_sharded() {
           fi
         else
           if [[ "$MAKE_REPORTS" -gt 0 ]]; then
-            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" && \
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" ${SINGLE_TABLE:+--single-table} ${SINGLE_TABLE_ONLY:+--single-table-only} && \
               bash "$BASE_DIR/scripts/build_xlsx_report.sh" -o "$parent" -w "$rpt" -M csv || true; \
               if [[ "$NOTE_SPLITS" -eq 1 ]]; then \
                 if [[ -n "$NOTE_TYPES_ARG" ]]; then bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv --types "$NOTE_TYPES_ARG" || true; \
                 else bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv || true; fi; \
               fi ) &
           else
-            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent"; \
+            ( bash "$BASE_DIR/scripts/consolidate_shards.sh" -p "$parent" ${SINGLE_TABLE:+--single-table} ${SINGLE_TABLE_ONLY:+--single-table-only}; \
               if [[ "$NOTE_SPLITS" -eq 1 ]]; then \
                 if [[ -n "$NOTE_TYPES_ARG" ]]; then bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv --types "$NOTE_TYPES_ARG" || true; \
                 else bash "$BASE_DIR/scripts/build_split_reports.sh" -p "$parent" -M csv || true; fi; \
