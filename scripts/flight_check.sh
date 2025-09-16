@@ -70,11 +70,11 @@ else
 fi
 
 # Dry run --------------------------------------------------------------------
-if [[ ${ISSUES} -eq 0 ]]; then
-  if scripts/run_pipeline.sh --dry-run --pipeline sectioned --input "${BASE_DIR}" --output "${BASE_DIR}/outputs/flight_check" >/dev/null 2>&1; then
+if [[ ${ISSUES} -eq 0 && ${COUNT:-0} -gt 0 ]]; then
+  if scripts/run_pipeline.sh --dry-run --pipeline sectioned --input "${SAMPLES_DIR}" --output "${BASE_DIR}/outputs/flight_check" >/dev/null 2>&1; then
     note_ok "run_pipeline.sh dry run succeeded"
   else
-    note_warn "run_pipeline.sh dry run could not execute with current settings"
+    note_warn "run_pipeline.sh dry run could not execute (ensure the default dictionary exists)"
   fi
 fi
 

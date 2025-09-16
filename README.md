@@ -45,6 +45,17 @@ bash scripts/build_dictionary.sh -- -u /path/to/UMLS -o /path/to/dictionary
 | `smoke` | `pipelines/smoke/sectioned_smoke_status.piper` | Sectioned pipeline with smoking-status annotators. |
 | `drug` | `pipelines/drug/drug_ner_wsd.piper` | Sectioned pipeline with ctakes-drug-ner (adds RxNorm CSVs). |
 
+### What runs inside each pipeline
+
+All four pipelines load the same core building blocks from the cTAKES distribution and add a couple of local helpers:
+
+- **Tokenization / POS / Chunking**: `TsDefaultTokenizerPipeline` or `TsFullTokenizerPipeline`, `ContextDependentTokenizerAnnotator`, `POSTagger`, `TsChunkerSubPipe`.
+- **Dictionary lookup + WSD**: `TsDictionarySubPipe` followed by our `tools.wsd.SimpleWsdDisambiguatorAnnotator` (single-best concept without YTEX).
+- **Assertion cleanup**: `TsAttributeCleartkSubPipe` and `tools.fixes.DefaultSubjectAnnotator` (forces `IdentifiedAnnotation#subject` to "patient" when null).
+- **Writers**: `FileTreeXmiWriter`, `tools.reporting.uima.SimpleConceptCsvWriter`, `CuiCountFileWriter`, and for the drug pipeline `tools.reporting.uima.DrugRxNormCsvWriter` (honours overrides from `resources/SemGroups.txt`).
+- **Smoking pipeline extras**: the aggregate wrappers `tools.smoking.SmokingAggregateStep1` and `SmokingAggregateStep2Libsvm`, which delegate to the bundled `ctakes-smoking-status` descriptors.
+- **Drug pipeline extras**: the override descriptor `resources_override/.../DrugMentionAnnotator_WithTypes.xml` to ensure the drug TypeSystem is available.
+
 All four pipelines call `tools.fixes.DefaultSubjectAnnotator` to ensure assertion subjects never land as `null` (cTAKES writers can crash otherwise), then write:
 
 - `xmi/` ? CAS snapshots per note.
@@ -111,6 +122,19 @@ bash scripts/validate_mimic.sh
 ```
 
 `--with-temporal`, `--with-coref`, and `--dry-run` pass straight through to `scripts/validate.sh`.
+
+### Manifest notes
+
+Both `validate.sh` and `validate_mimic.sh` can compare their outputs against a saved manifest via `--manifest <file>`. The tools expect a standard `sha256sum`-style manifest (lines of `<hash>  <relative-path>`). On Windows either install the GNU coreutils `sha256sum`, or generate the file with PowerShell:
+
+```powershell
+Get-ChildItem outputs/validate_smoke -Recurse -File |
+  ForEach-Object {
+    $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower()
+    $rel  = Resolve-Path $_ -Relative
+    "$hash  $rel"
+  } | Set-Content -Encoding utf8 samples/mimic_manifest.txt
+```
 
 ## Repository layout
 
