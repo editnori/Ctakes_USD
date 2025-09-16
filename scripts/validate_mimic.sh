@@ -43,6 +43,7 @@ IN_DIR="${DEFAULT_INPUT}"
 OUT_DIR="${DEFAULT_OUTPUT}"
 LIMIT=100
 PIPELINE_KEY="smoke"
+PIPELINE_SET=0
 WITH_TEMPORAL=0
 WITH_COREF=0
 DRY_RUN=0
@@ -53,7 +54,7 @@ while [[ $# -gt 0 ]]; do
     -i|--input) IN_DIR="$2"; shift 2;;
     -o|--output) OUT_DIR="$2"; shift 2;;
     --limit) LIMIT="$2"; shift 2;;
-    --pipeline) PIPELINE_KEY="$2"; shift 2;;
+    --pipeline) PIPELINE_KEY="$2"; PIPELINE_SET=1; shift 2;;
     --with-temporal) WITH_TEMPORAL=1; shift 1;;
     --with-coref) WITH_COREF=1; shift 1;;
     --manifest) MANIFEST="$2"; shift 2;;
@@ -63,6 +64,22 @@ while [[ $# -gt 0 ]]; do
   esac
 
 done
+
+if [[ ${PIPELINE_SET} -eq 0 && -t 0 && -t 1 ]]; then
+  echo "Select pipeline to validate:"
+  echo "  1) smoke (default)"
+  echo "  2) sectioned"
+  echo "  3) core"
+  echo "  4) drug"
+  read -r -p "Pipeline [1-4]: " __choice
+  case "${__choice}" in
+    2) PIPELINE_KEY="sectioned";;
+    3) PIPELINE_KEY="core";;
+    4) PIPELINE_KEY="drug";;
+    ""|1) PIPELINE_KEY="smoke";;
+    *) echo "[validate_mimic] Unknown selection '${__choice}'; using ${PIPELINE_KEY}";;
+  esac
+fi
 
 if [[ ! -d "${IN_DIR}" ]]; then
   echo "[validate_mimic] Input directory not found: ${IN_DIR}" >&2

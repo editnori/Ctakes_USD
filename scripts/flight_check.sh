@@ -140,10 +140,25 @@ fi
 if [[ ${ISSUES} -eq 0 && ${COUNT:-0} -gt 0 ]]; then
   if [[ ! -f "${RUN_PIPELINE}" ]]; then
     note_warn "scripts/run_pipeline.sh missing; skipping dry run"
-  elif "${BASH_BIN}" "${RUN_PIPELINE}" --dry-run --pipeline sectioned --input "${SAMPLES_DIR}" --output "${BASE_DIR}/outputs/flight_check" >/dev/null 2>&1; then
-    note_ok "run_pipeline.sh dry run succeeded"
   else
-    note_warn "run_pipeline.sh dry run could not execute (ensure the default dictionary exists)"
+    DRY_RUN_OUTPUT=$("${BASH_BIN}" "${RUN_PIPELINE}" --dry-run --pipeline sectioned --input "${SAMPLES_DIR}" --output "${BASE_DIR}/outputs/flight_check" 2>&1)
+    if [[ $? -eq 0 ]]; then
+      note_ok "run_pipeline.sh dry run succeeded"
+      if [[ -n "${DRY_RUN_OUTPUT}" ]]; then
+        while IFS= read -r line; do
+          case "${line}" in
+            "[pipeline] Autoscale recommends "*|"[async] autoscale -> "*)
+              echo "    ${line}"
+              ;;
+          esac
+        done <<< "${DRY_RUN_OUTPUT}"
+      fi
+    else
+      note_warn "run_pipeline.sh dry run could not execute (ensure the default dictionary exists)"
+      if [[ -n "${DRY_RUN_OUTPUT}" ]]; then
+        echo "${DRY_RUN_OUTPUT}" >&2
+      fi
+    fi
   fi
 fi
 

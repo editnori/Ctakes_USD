@@ -30,7 +30,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
    ```bash
    bash scripts/validate_mimic.sh
    ```
-   Writes outputs under `outputs/validate_mimic/` and compares hashes against `samples/mimic_manifest.txt` when present.
+   Writes outputs under `outputs/validate_mimic/` and compares hashes against `samples/mimic_manifest.txt` when present. When run interactively, the script lets you choose which pipeline to validate (smoke by default).
 5. **Run your own notes**
    ```bash
    bash scripts/run_pipeline.sh      --pipeline sectioned      --autoscale      -i /path/to/notes      -o /path/to/run_outputs

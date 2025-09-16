@@ -141,8 +141,14 @@ mkdir -p "${OUT_DIR}"
 
 if [[ ${AUTOSCALE} -eq 1 ]]; then
   recommend_autoscale
-  [[ -z "${THREAD_OVERRIDE}" ]] && THREAD_OVERRIDE="${AUTOSCALE_THREADS}"
-  [[ -z "${XMX_MB}" ]] && XMX_MB="${AUTOSCALE_XMX}"
+  if [[ -z "${THREAD_OVERRIDE}" ]]; then
+    THREAD_OVERRIDE="${AUTOSCALE_THREADS}"
+    echo "[pipeline] Autoscale recommends ${THREAD_OVERRIDE} thread(s)." >&2
+  fi
+  if [[ -z "${XMX_MB}" ]]; then
+    XMX_MB="${AUTOSCALE_XMX}"
+    echo "[pipeline] Autoscale recommends ${XMX_MB} MB heap." >&2
+  fi
 fi
 
 [[ -z "${THREAD_OVERRIDE}" ]] && THREAD_OVERRIDE=3
