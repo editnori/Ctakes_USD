@@ -2,6 +2,7 @@
 set -euo pipefail
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+chmod +x ${BASE_DIR}/scripts/*.sh >/dev/null 2>&1 || true
 
 if [[ "${1:-}" == "--deps" ]]; then
   bash "${BASE_DIR}/scripts/install_deps.sh"
