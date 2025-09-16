@@ -24,11 +24,15 @@ fi
 
 # cTAKES home ----------------------------------------------------------------
 BUNDLED_CTAKES="${BASE_DIR}/CtakesBun-bundle/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0"
+BUNDLED_CTAKES_ALT="${BASE_DIR}/Ctakes_USD_clean/CtakesBun-bundle/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0"
 CTAKES_ROOT="${CTAKES_HOME:-}"
 if [[ -z "${CTAKES_ROOT}" ]]; then
   if [[ -d "${BUNDLED_CTAKES}" ]]; then
     note_warn "CTAKES_HOME not set; using bundled ${BUNDLED_CTAKES}. Export CTAKES_HOME for scripts."
     CTAKES_ROOT="${BUNDLED_CTAKES}"
+  elif [[ -d "${BUNDLED_CTAKES_ALT}" ]]; then
+    note_warn "CTAKES_HOME not set; using bundled ${BUNDLED_CTAKES_ALT}. Export CTAKES_HOME for scripts."
+    CTAKES_ROOT="${BUNDLED_CTAKES_ALT}"
   else
     note_fail "CTAKES_HOME not set and no bundled distribution found at ${BUNDLED_CTAKES} (run scripts/get_bundle.sh)."
   fi

@@ -105,11 +105,15 @@ BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
 if [[ -z "${CTAKES_HOME:-}" ]]; then
   bundle_home="${BASE_DIR}/CtakesBun-bundle/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0"
+  bundle_home_alt="${BASE_DIR}/Ctakes_USD_clean/CtakesBun-bundle/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0"
   if [[ -d "${bundle_home}" ]]; then
     export CTAKES_HOME="${bundle_home}"
     echo "[pipeline] CTAKES_HOME not set; defaulting to bundled ${CTAKES_HOME}" >&2
+  elif [[ -d "${bundle_home_alt}" ]]; then
+    export CTAKES_HOME="${bundle_home_alt}"
+    echo "[pipeline] CTAKES_HOME not set; found bundle under Ctakes_USD_clean/; using ${CTAKES_HOME}" >&2
   else
-    echo "[pipeline] Set CTAKES_HOME to your apache-ctakes install root or run scripts/get_bundle.sh" >&2
+    echo "[pipeline] Set CTAKES_HOME or run scripts/get_bundle.sh to download the bundled distribution" >&2
     exit 1
   fi
 fi
