@@ -13,35 +13,36 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
 ## Quick start
 
-1. **Bootstrap once**
-   - Debian/Ubuntu: `bash scripts/setup.sh --deps` (installs packages and downloads the bundle).
+1. **Clone the toolkit**
+   ```bash
+   git clone https://github.com/editnori/Ctakes_USD.git
+   cd Ctakes_USD
+   ```
+2. **Bootstrap dependencies and bundle**
+   - Debian/Ubuntu: `bash scripts/setup.sh --deps` (installs packages and downloads the cTAKES bundle).
    - Other environments: run `bash scripts/install_deps.sh` (or install Java 11+, curl, tar, unzip, python3 manually) and `bash scripts/get_bundle.sh`.
-   - Downloaded as ZIP? Run `chmod +x scripts/*.sh` once so helpers are executable.
-2. **Run a health check**
+3. **Run a health check**
    ```bash
    bash scripts/flight_check.sh
    ```
-   Confirms Java, cTAKES, pipeline files, and performs a dry-run (skipped if no sample notes).
-3. **Smoke test on the bundled 100 notes**
+   Confirms Java, the bundled cTAKES install, pipeline files, and performs a dry-run on the sample notes when available.
+4. **Smoke test on the bundled 100 notes**
    ```bash
    bash scripts/validate_mimic.sh
    ```
    Writes outputs under `outputs/validate_mimic/` and compares hashes against `samples/mimic_manifest.txt` when present.
-4. **Run your own notes**
+5. **Run your own notes**
    ```bash
-   bash scripts/run_pipeline.sh \
-     --pipeline sectioned \
-     --autoscale \
-     -i /path/to/notes \
-     -o /path/to/run_outputs
+   bash scripts/run_pipeline.sh      --pipeline sectioned      --autoscale      -i /path/to/notes      -o /path/to/run_outputs
    ```
    Add `--with-temporal` and/or `--with-coref` as needed, or override autoscale with `--threads` / `--xmx`.
-5. **Inspect results**
+6. **Inspect results**
    - `xmi/` contains CAS snapshots (one per note).
    - `concepts/` contains per-note CSVs written by `SimpleConceptCsvWriter`.
    - `cui_count/` summarises CUI frequencies.
    - `rxnorm/` appears for the drug pipeline only.
 
+> **Note**: The bundled FullClinical_AllTUIs dictionary ships inside the cTAKES archive. `scripts/run_pipeline.sh` automatically selects `resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs_local.xml` (or its non-local fallback) under `CTAKES_HOME`, so no manual dictionary configuration is required.
 ## Pipelines
 
 | Key | Piper file | Purpose |

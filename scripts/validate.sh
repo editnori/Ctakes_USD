@@ -62,10 +62,12 @@ fi
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 RUNNER="${BASE_DIR}/scripts/run_pipeline.sh"
-if [[ ! -x "${RUNNER}" ]]; then
+if [[ ! -f "${RUNNER}" ]]; then
   echo "[validate] Missing run_pipeline.sh helper" >&2
   exit 1
 fi
+
+RUNNER_CMD=("${BASH:-bash}" "${RUNNER}")
 
 PIPE_INPUT="${IN_DIR}"
 TMP_ROOT=""
@@ -109,7 +111,7 @@ PY
 fi
 
 mkdir -p "${OUT_DIR}"
-ARGS=("${RUNNER}" -i "${PIPE_INPUT}" -o "${OUT_DIR}" --pipeline "${PIPELINE_KEY}")
+ARGS=("${RUNNER_CMD[@]}" -i "${PIPE_INPUT}" -o "${OUT_DIR}" --pipeline "${PIPELINE_KEY}")
 [[ ${WITH_TEMPORAL} -eq 1 ]] && ARGS+=(--with-temporal)
 [[ ${WITH_COREF} -eq 1 ]] && ARGS+=(--with-coref)
 [[ ${DRY_RUN} -eq 1 ]] && ARGS+=(--dry-run)

@@ -3,6 +3,9 @@ set -euo pipefail
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
+RUN_PIPELINE_SCRIPT="${BASE_DIR}/scripts/run_pipeline.sh"
+RUN_PIPELINE_CMD=("${BASH:-bash}" "${RUN_PIPELINE_SCRIPT}")
+
 usage() {
   cat <<'USAGE'
 Usage: scripts/run_async.sh -i <input_dir> -o <output_dir> [options]
@@ -90,6 +93,11 @@ fi
 
 [[ -d "${IN_DIR}" ]] || { echo "[async] Input directory not found: ${IN_DIR}" >&2; exit 1; }
 
+if [[ ! -f "${RUN_PIPELINE_SCRIPT}" ]]; then
+  echo "[async] Missing run_pipeline.sh helper" >&2
+  exit 1
+fi
+
 mapfile -t FILES < <(find "$IN_DIR" -type f -name '*.txt' -print | sort)
 if [[ ${#FILES[@]} -eq 0 ]]; then
   echo "[async] No .txt files found under ${IN_DIR}" >&2
@@ -156,7 +164,7 @@ if [[ $DRY_RUN -eq 1 ]]; then
   for ((i=0;i<SHARDS;i++)); do
     in_dir=$(printf "%s/shard-%03d/input" "$SHARDS_DIR" "$i")
     out_dir=$(printf "%s/shard-%03d/output" "$SHARDS_DIR" "$i")
-    printf '${BASE_DIR}/scripts/run_pipeline.sh --input %q --output %q ' "$in_dir" "$out_dir"
+    printf '%q ' "${RUN_PIPELINE_CMD[@]}" --input "$in_dir" --output "$out_dir"
     printf '%q ' "${COMMON_ARGS[@]}"
     printf '\n'
   done
@@ -171,7 +179,7 @@ for ((i=0;i<SHARDS;i++)); do
   in_dir=$(printf "%s/shard-%03d/input" "$SHARDS_DIR" "$i")
   out_dir=$(printf "%s/shard-%03d/output" "$SHARDS_DIR" "$i")
   mkdir -p "$out_dir"
-  ( "${BASE_DIR}/scripts/run_pipeline.sh" --input "$in_dir" --output "$out_dir" "${COMMON_ARGS[@]}" ) &
+  ( "${RUN_PIPELINE_CMD[@]}" --input "$in_dir" --output "$out_dir" "${COMMON_ARGS[@]}" ) &
   PIDS+=($!)
 done
 

@@ -3,6 +3,9 @@ set -euo pipefail
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 ISSUES=0
+
+BASH_BIN="${BASH:-bash}"
+RUN_PIPELINE="${BASE_DIR}/scripts/run_pipeline.sh"
 WARNINGS=0
 
 note_ok()   { echo "[ok] $1"; }
@@ -75,7 +78,9 @@ fi
 
 # Dry run --------------------------------------------------------------------
 if [[ ${ISSUES} -eq 0 && ${COUNT:-0} -gt 0 ]]; then
-  if scripts/run_pipeline.sh --dry-run --pipeline sectioned --input "${SAMPLES_DIR}" --output "${BASE_DIR}/outputs/flight_check" >/dev/null 2>&1; then
+  if [[ ! -f "${RUN_PIPELINE}" ]]; then
+    note_warn "scripts/run_pipeline.sh missing; skipping dry run"
+  elif "${BASH_BIN}" "${RUN_PIPELINE}" --dry-run --pipeline sectioned --input "${SAMPLES_DIR}" --output "${BASE_DIR}/outputs/flight_check" >/dev/null 2>&1; then
     note_ok "run_pipeline.sh dry run succeeded"
   else
     note_warn "run_pipeline.sh dry run could not execute (ensure the default dictionary exists)"

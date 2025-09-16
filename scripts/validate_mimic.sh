@@ -6,6 +6,14 @@ DEFAULT_INPUT="${BASE_DIR}/samples/mimic"
 DEFAULT_OUTPUT="${BASE_DIR}/outputs/validate_mimic"
 DEFAULT_MANIFEST="${BASE_DIR}/samples/mimic_manifest.txt"
 
+VALIDATE_SCRIPT="${BASE_DIR}/scripts/validate.sh"
+if [[ ! -f "${VALIDATE_SCRIPT}" ]]; then
+  echo "[validate_mimic] Missing validate.sh helper" >&2
+  exit 1
+fi
+
+VALIDATE_CMD=("${BASH:-bash}" "${VALIDATE_SCRIPT}")
+
 usage() {
   cat <<'USAGE'
 Usage: scripts/validate_mimic.sh [options]
@@ -57,7 +65,7 @@ fi
 
 mkdir -p "${OUT_DIR}"
 
-CMD=("${BASE_DIR}/scripts/validate.sh" -i "${IN_DIR}" -o "${OUT_DIR}" --pipeline "${PIPELINE_KEY}" --limit "${LIMIT}" --manifest "${MANIFEST}")
+CMD=("${VALIDATE_CMD[@]}" -i "${IN_DIR}" -o "${OUT_DIR}" --pipeline "${PIPELINE_KEY}" --limit "${LIMIT}" --manifest "${MANIFEST}")
 [[ ${WITH_TEMPORAL} -eq 1 ]] && CMD+=(--with-temporal)
 [[ ${WITH_COREF} -eq 1 ]] && CMD+=(--with-coref)
 [[ ${DRY_RUN} -eq 1 ]] && CMD+=(--dry-run)
