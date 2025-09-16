@@ -2,6 +2,63 @@
 set -euo pipefail
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+ENV_FILE="${BASE_DIR}/.ctakes_env"
+if [[ -f "${ENV_FILE}" ]]; then
+  # shellcheck disable=SC1090
+  source "${ENV_FILE}"
+fi
+
+DEFAULT_FLIGHT_UMLS_KEY="6370dcdd-d438-47ab-8749-5a8fb9d013f2"
+
+write_env_var() {
+  local var="$1"
+  local value="$2"
+  local tmp="${ENV_FILE}.tmp"
+  if [[ -f "${ENV_FILE}" ]]; then
+    awk -v var="$var" '!( $0 ~ "^[[:space:]]*export[[:space:]]+"var"=" )' "${ENV_FILE}" > "${tmp}"
+  else
+    : > "${tmp}"
+  fi
+  printf 'export %s=%q\n' "$var" "$value" >> "${tmp}"
+  mv "${tmp}" "${ENV_FILE}"
+  echo "[flight_check] Persisted ${var} to ${ENV_FILE}"
+}
+
+maybe_prompt_env_var() {
+  local var="$1"
+  local value="$2"
+  local prompt="$3"
+  local desired existing
+  desired=$(printf %q "$value")
+  if [[ -f "${ENV_FILE}" ]]; then
+    existing=$(grep -E "^[[:space:]]*export[[:space:]]+${var}=" "${ENV_FILE}" | tail -n1 2>/dev/null || true)
+    if [[ "$existing" == "export ${var}=${desired}" ]]; then
+      return
+    fi
+  fi
+  if [[ ! -t 0 || ! -t 1 ]]; then
+    return
+  fi
+  read -r -p "${prompt}" reply
+  if [[ "$reply" =~ ^[Yy] ]]; then
+    write_env_var "$var" "$value"
+    export "$var"="$value"
+  fi
+}
+
+ensure_default_umls_key() {
+  if [[ -n "${UMLS_KEY:-}" ]]; then
+    return
+  fi
+  if [[ -f "${ENV_FILE}" ]]; then
+    if grep -qE "^[[:space:]]*export[[:space:]]+UMLS_KEY=" "${ENV_FILE}"; then
+      return
+    fi
+  fi
+  write_env_var UMLS_KEY "${DEFAULT_FLIGHT_UMLS_KEY}"
+  export UMLS_KEY="${DEFAULT_FLIGHT_UMLS_KEY}"
+}
+
 ISSUES=0
 
 BASH_BIN="${BASH:-bash}"
@@ -42,6 +99,7 @@ if [[ -z "${CTAKES_ROOT}" ]]; then
 fi
 
 if [[ -n "${CTAKES_ROOT}" ]]; then
+  maybe_prompt_env_var CTAKES_HOME "${CTAKES_ROOT}" "Persist CTAKES_HOME=${CTAKES_ROOT} to ${ENV_FILE} for future runs? [y/N] "
   if [[ -d "${CTAKES_ROOT}" ]]; then
     note_ok "Using CTAKES_HOME=${CTAKES_ROOT}"
     [[ -d "${CTAKES_ROOT}/lib" ]] || note_fail "${CTAKES_ROOT} does not contain a lib/ directory."
@@ -49,6 +107,8 @@ if [[ -n "${CTAKES_ROOT}" ]]; then
     note_fail "CTAKES_HOME=${CTAKES_ROOT} does not exist"
   fi
 fi
+
+ensure_default_umls_key
 
 # Pipeline sanity ------------------------------------------------------------
 for key in core sectioned smoke drug; do

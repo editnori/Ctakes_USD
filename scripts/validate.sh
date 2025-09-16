@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+ENV_FILE="${BASE_DIR}/.ctakes_env"
+if [[ -f "${ENV_FILE}" ]]; then
+  # shellcheck disable=SC1090
+  source "${ENV_FILE}"
+fi
+
+
 usage() {
   cat <<'USAGE'
 Usage: scripts/validate.sh -i <input_dir> -o <output_dir> [options]
@@ -60,7 +68,6 @@ if [[ ! -d "${IN_DIR}" ]]; then
   exit 1
 fi
 
-BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 RUNNER="${BASE_DIR}/scripts/run_pipeline.sh"
 if [[ ! -f "${RUNNER}" ]]; then
   echo "[validate] Missing run_pipeline.sh helper" >&2
@@ -127,6 +134,15 @@ if ! "${ARGS[0]}" "${ARGS[@]:1}"; then
   STATUS=1
 fi
 
+files_processed=0
+if [[ -d "${OUT_DIR}/concepts" ]]; then
+  files_processed=$(find "${OUT_DIR}/concepts" -type f -name '*.csv' | wc -l | awk '{print $1}')
+fi
+base_manifest_count=0
+if [[ -f "${MANIFEST}" ]]; then
+  base_manifest_count=$(wc -l < "${MANIFEST}" | awk '{print $1}')
+fi
+
 if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then
   TMP_MANIFEST=$(mktemp)
   find "${OUT_DIR}" -type f \( -path "${OUT_DIR}/concepts/*.csv" -o -path "${OUT_DIR}/cui_count/*.bsv" -o -path "${OUT_DIR}/rxnorm/*.csv" \) \
@@ -139,9 +155,19 @@ if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then
   if [[ -f "${MANIFEST}" ]]; then
     if cmp -s "${MANIFEST}" "${TMP_MANIFEST}"; then
       echo "[validate] Manifest matches ${MANIFEST}"
+      if [[ ${files_processed} -gt 0 ]]; then
+        if [[ ${base_manifest_count} -gt 0 ]]; then
+          echo "[validate] ${files_processed}/${base_manifest_count} files matched the baseline."
+        else
+          echo "[validate] Processed ${files_processed} files; no baseline manifest entries to compare."
+        fi
+      fi
     else
       echo "[validate] Manifest differs from ${MANIFEST}" >&2
       diff -u "${MANIFEST}" "${TMP_MANIFEST}" || true
+      ACTUAL_COUNT=$(wc -l < "${TMP_MANIFEST}" | awk '{print $1}')
+      BASELINE_COUNT=$(wc -l < "${MANIFEST}" | awk '{print $1}')
+      echo "[validate] Baseline entries: ${BASELINE_COUNT}; current entries: ${ACTUAL_COUNT}." >&2
       STATUS=1
     fi
     rm -f "${TMP_MANIFEST}"

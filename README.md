@@ -25,7 +25,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
    ```bash
    bash scripts/flight_check.sh
    ```
-   Confirms Java, the bundled cTAKES install, pipeline files, and performs a dry-run on the sample notes when available.
+   Confirms Java, the bundled cTAKES install, pipeline files, and performs a dry-run on the sample notes when available. When run interactively, the script offers to persist CTAKES_HOME and the default UMLS API key into `.ctakes_env` so subsequent scripts pick up those settings automatically.
 4. **Smoke test on the bundled 100 notes**
    ```bash
    bash scripts/validate_mimic.sh

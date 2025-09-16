@@ -2,6 +2,12 @@
 set -euo pipefail
 
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+ENV_FILE="${BASE_DIR}/.ctakes_env"
+if [[ -f "${ENV_FILE}" ]]; then
+  # shellcheck disable=SC1090
+  source "${ENV_FILE}"
+fi
+
 
 RUN_PIPELINE_SCRIPT="${BASE_DIR}/scripts/run_pipeline.sh"
 RUN_PIPELINE_CMD=("${BASH:-bash}" "${RUN_PIPELINE_SCRIPT}")

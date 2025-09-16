@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+ENV_FILE="${BASE_DIR}/.ctakes_env"
+if [[ -f "${ENV_FILE}" ]]; then
+  # shellcheck disable=SC1090
+  source "${ENV_FILE}"
+fi
+
+
 DEFAULT_UMLS_KEY="6370dcdd-d438-47ab-8749-5a8fb9d013f2"
 
 usage() {
@@ -101,7 +109,6 @@ if [[ -z "${IN_DIR}" || -z "${OUT_DIR}" ]]; then
   exit 1
 fi
 
-BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
 if [[ -z "${CTAKES_HOME:-}" ]]; then
   bundle_home="${BASE_DIR}/CtakesBun-bundle/apache-ctakes-6.0.0-bin/apache-ctakes-6.0.0"

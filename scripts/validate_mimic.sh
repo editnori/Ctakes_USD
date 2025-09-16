@@ -6,6 +6,13 @@ DEFAULT_INPUT="${BASE_DIR}/samples/mimic"
 DEFAULT_OUTPUT="${BASE_DIR}/outputs/validate_mimic"
 DEFAULT_MANIFEST="${BASE_DIR}/samples/mimic_manifest.txt"
 
+ENV_FILE="${BASE_DIR}/.ctakes_env"
+if [[ -f "${ENV_FILE}" ]]; then
+  # shellcheck disable=SC1090
+  source "${ENV_FILE}"
+fi
+
+
 VALIDATE_SCRIPT="${BASE_DIR}/scripts/validate.sh"
 if [[ ! -f "${VALIDATE_SCRIPT}" ]]; then
   echo "[validate_mimic] Missing validate.sh helper" >&2
