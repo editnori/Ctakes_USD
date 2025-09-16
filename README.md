@@ -16,6 +16,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 1. **Bootstrap once**
    - Debian/Ubuntu: `bash scripts/setup.sh --deps` (installs packages and downloads the bundle).
    - Other environments: run `bash scripts/install_deps.sh` (or install Java 11+, curl, tar, unzip, python3 manually) and `bash scripts/get_bundle.sh`.
+   - Downloaded as ZIP? Run `chmod +x scripts/*.sh` once so helpers are executable.
 2. **Run a health check**
    ```bash
    bash scripts/flight_check.sh
@@ -171,4 +172,4 @@ Set `BUILD_DIR=/custom/path` to override the output location. The script automat
 - The drug pipeline depends on `resources_override/.../DrugMentionAnnotator_WithTypes.xml` so the drug TypeSystem is on the classpath.
 - `scripts/run_pipeline.sh` recompiles everything under `tools/` each time it runs and writes classes to `build/tools/`.
 
-ThatÃ¢â‚¬â„¢s it: a small toolkit that runs cTAKES pipelines, produces clean CSVs, and stays easy to follow.
+ThatÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s it: a small toolkit that runs cTAKES pipelines, produces clean CSVs, and stays easy to follow.

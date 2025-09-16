@@ -4,10 +4,10 @@ set -euo pipefail
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
 if [[ "${1:-}" == "--deps" ]]; then
-  "${BASE_DIR}/scripts/install_deps.sh"
+  bash "${BASE_DIR}/scripts/install_deps.sh"
 fi
 
-"${BASE_DIR}/scripts/get_bundle.sh" "${2:-bundle}"
+bash "${BASE_DIR}/scripts/get_bundle.sh" "${2:-bundle}"
 
 cat <<'EOF'
 [setup] Bundle ready. Next steps:
