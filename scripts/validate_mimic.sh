@@ -4,7 +4,8 @@ set -euo pipefail
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 DEFAULT_INPUT="${BASE_DIR}/samples/mimic"
 DEFAULT_OUTPUT="${BASE_DIR}/outputs/validate_mimic"
-DEFAULT_MANIFEST="${BASE_DIR}/samples/mimic_manifest.txt"
+DEFAULT_MANIFEST_BASE="${BASE_DIR}/samples/mimic_manifest"
+DEFAULT_MANIFEST="${DEFAULT_MANIFEST_BASE}.txt"
 
 ENV_FILE="${BASE_DIR}/.ctakes_env"
 if [[ -f "${ENV_FILE}" ]]; then
@@ -44,20 +45,22 @@ OUT_DIR="${DEFAULT_OUTPUT}"
 LIMIT=100
 PIPELINE_KEY="smoke"
 PIPELINE_SET=0
+PIPELINE_RUNS=()
 WITH_TEMPORAL=0
 WITH_COREF=0
 DRY_RUN=0
 MANIFEST="${DEFAULT_MANIFEST}"
+MANIFEST_PROVIDED=0
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -i|--input) IN_DIR="$2"; shift 2;;
     -o|--output) OUT_DIR="$2"; shift 2;;
     --limit) LIMIT="$2"; shift 2;;
-    --pipeline) PIPELINE_KEY="$2"; PIPELINE_SET=1; shift 2;;
+    --pipeline) PIPELINE_KEY="$2"; PIPELINE_SET=1; PIPELINE_RUNS=("${PIPELINE_KEY}"); shift 2;;
     --with-temporal) WITH_TEMPORAL=1; shift 1;;
     --with-coref) WITH_COREF=1; shift 1;;
-    --manifest) MANIFEST="$2"; shift 2;;
+    --manifest) MANIFEST="$2"; MANIFEST_PROVIDED=1; shift 2;;
     --dry-run) DRY_RUN=1; shift 1;;
     -h|--help) usage; exit 0;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 1;;
@@ -66,19 +69,25 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ ${PIPELINE_SET} -eq 0 && -t 0 && -t 1 ]]; then
-  echo "Select pipeline to validate:"
-  echo "  1) smoke (default)"
-  echo "  2) sectioned"
-  echo "  3) core"
-  echo "  4) drug"
-  read -r -p "Pipeline [1-4]: " __choice
+  echo "Select validation option:"
+  echo "  1) Core + Sectioned"
+  echo "  2) Core only"
+  echo "  3) Sectioned + Smoke (default)"
+  echo "  4) Drug only"
+  read -r -p "Selection [1-4]: " __choice
   case "${__choice}" in
-    2) PIPELINE_KEY="sectioned";;
-    3) PIPELINE_KEY="core";;
-    4) PIPELINE_KEY="drug";;
-    ""|1) PIPELINE_KEY="smoke";;
-    *) echo "[validate_mimic] Unknown selection '${__choice}'; using ${PIPELINE_KEY}";;
+    1) PIPELINE_RUNS=(core sectioned);;
+    2) PIPELINE_RUNS=(core);;
+    4) PIPELINE_RUNS=(drug);;
+    ""|3) PIPELINE_RUNS=(sectioned smoke);;
+    *) echo "[validate_mimic] Unknown selection '${__choice}'; defaulting to Sectioned + Smoke."; PIPELINE_RUNS=(sectioned smoke);;
   esac
+fi
+
+if [[ ${PIPELINE_SET} -eq 1 ]]; then
+  PIPELINE_RUNS=("${PIPELINE_KEY}")
+elif [[ ${#PIPELINE_RUNS[@]} -eq 0 ]]; then
+  PIPELINE_RUNS=(sectioned smoke)
 fi
 
 if [[ ! -d "${IN_DIR}" ]]; then
@@ -89,15 +98,26 @@ fi
 
 mkdir -p "${OUT_DIR}"
 
-CMD=("${VALIDATE_CMD[@]}" -i "${IN_DIR}" -o "${OUT_DIR}" --pipeline "${PIPELINE_KEY}" --limit "${LIMIT}" --manifest "${MANIFEST}")
-[[ ${WITH_TEMPORAL} -eq 1 ]] && CMD+=(--with-temporal)
-[[ ${WITH_COREF} -eq 1 ]] && CMD+=(--with-coref)
-[[ ${DRY_RUN} -eq 1 ]] && CMD+=(--dry-run)
-
-if [[ ${DRY_RUN} -eq 1 ]]; then
-  printf '[validate_mimic] %q ' "${CMD[@]}"
-  printf '\n'
-  exit 0
+if [[ ${#PIPELINE_RUNS[@]} -eq 0 ]]; then
+  PIPELINE_RUNS=("${PIPELINE_KEY}")
 fi
 
-exec "${CMD[0]}" "${CMD[@]:1}"
+STATUS=0
+for pipeline in "${PIPELINE_RUNS[@]}"; do
+  OUT_DIR_PIPE="${OUT_DIR%/}/${pipeline}"
+  mkdir -p "${OUT_DIR_PIPE}"
+  MANIFEST_USE="${MANIFEST}"
+  if [[ ${MANIFEST_PROVIDED} -eq 0 ]]; then
+    MANIFEST_USE="${DEFAULT_MANIFEST_BASE}_${pipeline}.txt"
+  fi
+  CMD=("${VALIDATE_CMD[@]}" -i "${IN_DIR}" -o "${OUT_DIR_PIPE}" --pipeline "${pipeline}" --limit "${LIMIT}" --manifest "${MANIFEST_USE}")
+  [[ ${WITH_TEMPORAL} -eq 1 ]] && CMD+=(--with-temporal)
+  [[ ${WITH_COREF} -eq 1 ]] && CMD+=(--with-coref)
+  [[ ${DRY_RUN} -eq 1 ]] && CMD+=(--dry-run)
+  echo "[validate_mimic] Running ${pipeline} pipeline -> ${OUT_DIR_PIPE}"
+  if ! "${CMD[0]}" "${CMD[@]:1}"; then
+    STATUS=1
+  fi
+done
+
+exit ${STATUS}
