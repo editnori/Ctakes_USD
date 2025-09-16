@@ -23,7 +23,8 @@ Options:
   --java-opts "..."                       Extra JVM options to append
   --dict <file.xml>                        Dictionary Lookup XML (defaults to bundled FullClinical_AllTUIs[_local].xml)
   --umls-key <KEY>                         Override the UMLS API key for dictionary building
-  --autoscale                              Recommend threads/heap based on host resources
+  --autoscale                              Recommend threads/heap based on host resources (default)
+  --no-autoscale                           Disable autoscale heuristics
   --dry-run                                Print the Java command instead of executing
   --help                                   Show this message
 
@@ -78,7 +79,7 @@ XMX_MB=""
 JAVA_OPTS_EXTRA=""
 DICT_XML=""
 UMLS_KEY_OVERRIDE=""
-AUTOSCALE=0
+AUTOSCALE=1
 DRY_RUN=0
 IN_DIR=""
 OUT_DIR=""
@@ -96,6 +97,7 @@ while [[ $# -gt 0 ]]; do
     --dict) DICT_XML="$2"; shift 2;;
     --umls-key) UMLS_KEY_OVERRIDE="$2"; shift 2;;
     --autoscale) AUTOSCALE=1; shift 1;;
+    --no-autoscale) AUTOSCALE=0; shift 1;;
     --dry-run) DRY_RUN=1; shift 1;;
     --help|-h) usage; exit 0;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 1;;

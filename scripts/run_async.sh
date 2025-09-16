@@ -22,7 +22,8 @@ Options:
   --shards <N>                             Number of parallel runners (default: 1 or autoscale recommendation)
   --threads <N>                            Threads per runner (passed to run_pipeline.sh)
   --xmx <MB>                               Heap per runner in MB
-  --autoscale                              Estimate shards/threads/heap from host resources
+  --autoscale                              Estimate shards/threads/heap from host resources (default)
+  --no-autoscale                           Disable autoscale heuristics
   --dict <file.xml>                        Dictionary XML to pass through
   --umls-key <KEY>                         UMLS API key override
   --java-opts "..."                       Extra JVM options per runner
@@ -62,7 +63,7 @@ WITH_COREF=0
 SHARDS=""
 THREADS=""
 XMX=""
-AUTOSCALE=0
+AUTOSCALE=1
 DICT_XML=""
 UMLS_OVERRIDE=""
 JAVA_OPTS_EXTRA=""
@@ -81,6 +82,7 @@ while [[ $# -gt 0 ]]; do
     --threads) THREADS="$2"; shift 2;;
     --xmx) XMX="$2"; shift 2;;
     --autoscale) AUTOSCALE=1; shift 1;;
+    --no-autoscale) AUTOSCALE=0; shift 1;;
     --dict) DICT_XML="$2"; shift 2;;
     --umls-key) UMLS_OVERRIDE="$2"; shift 2;;
     --java-opts) JAVA_OPTS_EXTRA="$2"; shift 2;;

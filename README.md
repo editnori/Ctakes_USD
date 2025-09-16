@@ -35,7 +35,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
    ```bash
    bash scripts/run_pipeline.sh      --pipeline sectioned      --autoscale      -i /path/to/notes      -o /path/to/run_outputs
    ```
-   Add `--with-temporal` and/or `--with-coref` as needed, or override autoscale with `--threads` / `--xmx`.
+   Add `--with-temporal` and/or `--with-coref` as needed, or disable autoscale with `--no-autoscale` and supply explicit `--threads` / `--xmx` values.
 6. **Inspect results**
    - `xmi/` contains CAS snapshots (one per note).
    - `concepts/` contains per-note CSVs written by `SimpleConceptCsvWriter`.
@@ -78,7 +78,7 @@ Highlights:
 ### Run asynchronously
 
 ```bash
-bash scripts/run_async.sh   --pipeline smoke   --autoscale   -i /data/notes   -o /runs/smoke_async
+bash scripts/run_async.sh   --pipeline smoke   -i /data/notes   -o /runs/smoke_async
 ```
 
 `run_async.sh` partitions the input notes across multiple shards, launches `run_pipeline.sh` for each shard in parallel, then consolidates outputs into `<output>/<pipeline>/<timestamp>/`:
