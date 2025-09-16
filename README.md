@@ -14,25 +14,33 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 ## Quick start
 
 1. **Install prerequisites**
-   - Java 11 or newer on PATH (`java -version`).
-   - Bash shell (Git Bash on Windows works).
-   - Optional: Python 3 if you want to use `validate.sh --limit`.
-2. **Run a health check**
+   - On Debian/Ubuntu you can run `bash scripts/install_deps.sh`.
+   - Otherwise make sure Java 11+, `curl`, `tar`, `unzip`, and (optionally) Python 3 are installed.
+2. **Fetch the bundled cTAKES release**
+   ```bash
+   bash scripts/get_bundle.sh
+   ```
+   This downloads `CtakesBun-bundle.tgz` from the latest GitHub release (or reuses an existing `CtakesBun-bundle/` directory if one is present).
+3. **Run a health check**
    ```bash
    bash scripts/flight_check.sh
    ```
-   This checks Java, confirms cTAKES is available (uses the bundled copy if `CTAKES_HOME` is unset), verifies pipeline files, and performs a dry-run against `samples/mimic/` when notes are present.
-3. **Smoke test on the bundled 100 notes**
+   The script checks Java, confirms cTAKES is available (uses the bundled copy when `CTAKES_HOME` is unset), verifies pipeline files, and performs a dry-run against `samples/mimic/` when notes are present.
+4. **Smoke test on the bundled 100 notes**
    ```bash
    bash scripts/validate_mimic.sh
    ```
-   The command produces outputs under `outputs/validate_mimic/` and, if `samples/mimic_manifest.txt` exists, compares hashes against it.
-4. **Run your own notes**
+   This produces outputs under `outputs/validate_mimic/` and, if `samples/mimic_manifest.txt` exists, compares hashes against it.
+5. **Run your own notes**
    ```bash
-   bash scripts/run_pipeline.sh      --pipeline sectioned      --autoscale      -i /path/to/notes      -o /path/to/run_outputs
+   bash scripts/run_pipeline.sh \
+     --pipeline sectioned \
+     --autoscale \
+     -i /path/to/notes \
+     -o /path/to/run_outputs
    ```
    Add `--with-temporal` and/or `--with-coref` to include those modules, or override threads/heap with `--threads` / `--xmx`.
-5. **Inspect results**
+6. **Inspect results**
    - `xmi/` contains CAS snapshots (one per note).
    - `concepts/` contains per-note CSVs written by `SimpleConceptCsvWriter`.
    - `cui_count/` summarises CUI frequencies.
@@ -168,4 +176,4 @@ Set `BUILD_DIR=/custom/path` to override the output location. The script automat
 - The drug pipeline depends on `resources_override/.../DrugMentionAnnotator_WithTypes.xml` so the drug TypeSystem is on the classpath.
 - `scripts/run_pipeline.sh` recompiles everything under `tools/` each time it runs and writes classes to `build/tools/`.
 
-That’s it: a small toolkit that runs cTAKES pipelines, produces clean CSVs, and stays easy to follow.
+Thatâ€™s it: a small toolkit that runs cTAKES pipelines, produces clean CSVs, and stays easy to follow.

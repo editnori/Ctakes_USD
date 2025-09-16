@@ -30,7 +30,7 @@ if [[ -z "${CTAKES_ROOT}" ]]; then
     note_warn "CTAKES_HOME not set; using bundled ${BUNDLED_CTAKES}. Export CTAKES_HOME for scripts."
     CTAKES_ROOT="${BUNDLED_CTAKES}"
   else
-    note_fail "CTAKES_HOME not set and no bundled distribution found at ${BUNDLED_CTAKES}."
+    note_fail "CTAKES_HOME not set and no bundled distribution found at ${BUNDLED_CTAKES} (run scripts/get_bundle.sh)."
   fi
 fi
 

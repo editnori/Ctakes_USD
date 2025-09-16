@@ -109,7 +109,7 @@ if [[ -z "${CTAKES_HOME:-}" ]]; then
     export CTAKES_HOME="${bundle_home}"
     echo "[pipeline] CTAKES_HOME not set; defaulting to bundled ${CTAKES_HOME}" >&2
   else
-    echo "[pipeline] Set CTAKES_HOME to your apache-ctakes install root" >&2
+    echo "[pipeline] Set CTAKES_HOME to your apache-ctakes install root or run scripts/get_bundle.sh" >&2
     exit 1
   fi
 fi
