@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
  */
 final class SemGroupLoader {
 
-    private static final Pattern TUI_PATTERN = Pattern.compile("^T\\\d{3}$", Pattern.CASE_INSENSITIVE);
+    private static final Pattern TUI_PATTERN = Pattern.compile("^T\\d{3}$", Pattern.CASE_INSENSITIVE);
 
     private static Map<String, String> cachedGroups;
     private static Map<String, String> cachedLabels;

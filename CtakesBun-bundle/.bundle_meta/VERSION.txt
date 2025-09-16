@@ -1,0 +1,3 @@
+Bundle built: 2025-09-16T18:49:21Z
+cTAKES tree: /workspace/Ctakes_USD/CtakesBun-bundle/apache-ctakes-6.0.0-bin
+NOTICE present.
