@@ -112,11 +112,14 @@ ensure_default_umls_key
 
 # Pipeline sanity ------------------------------------------------------------
 for key in core sectioned smoke core_sectioned_smoke drug; do
-  p="${BASE_DIR}/pipelines/${key}/"*
+  case "$key" in
+    core_sectioned_smoke) p="${BASE_DIR}/pipelines/combined/"*; friendly="pipelines/combined";;
+    *) p="${BASE_DIR}/pipelines/${key}/"*; friendly="pipelines/${key}";;
+  esac
   if compgen -G "$p" >/dev/null 2>&1; then
     note_ok "Pipeline files present for ${key}"
   else
-    note_fail "Missing pipeline definitions under pipelines/${key}"
+    note_fail "Missing pipeline definitions under ${friendly}"
   fi
 done
 
