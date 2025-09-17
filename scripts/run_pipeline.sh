@@ -133,6 +133,16 @@ if [[ -z "${CTAKES_HOME:-}" ]]; then
   fi
 fi
 
+DATA_PATH_BASE="${BASE_DIR}/resources_override:${BASE_DIR}/resources"
+if [[ -n "${CTAKES_HOME:-}" ]]; then
+  DATA_PATH_BASE="${DATA_PATH_BASE}:${CTAKES_HOME}/resources:${CTAKES_HOME}/desc"
+fi
+if [[ -n "${UIMA_DATAPATH:-}" ]]; then
+  export UIMA_DATAPATH="${DATA_PATH_BASE}:${UIMA_DATAPATH}"
+else
+  export UIMA_DATAPATH="${DATA_PATH_BASE}"
+fi
+
 case "${PIPELINE_KEY}" in
   core) PIPER="${BASE_DIR}/pipelines/core/core_wsd.piper";;
   sectioned) PIPER="${BASE_DIR}/pipelines/sectioned/sectioned_core_wsd.piper";;
@@ -240,6 +250,10 @@ if [[ -n "${UMLS_KEY_OVERRIDE}" ]]; then
   JAVA_CMD+=(-Dctakes.umls_apikey="${UMLS_KEY_OVERRIDE}")
 elif [[ -n "${UMLS_KEY:-}" ]]; then
   JAVA_CMD+=(-Dctakes.umls_apikey="${UMLS_KEY}")
+fi
+
+if [[ -n "${UIMA_DATAPATH:-}" ]]; then
+  JAVA_CMD+=(-Duima.datapath="${UIMA_DATAPATH}")
 fi
 
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.defaultLogLevel=info)
