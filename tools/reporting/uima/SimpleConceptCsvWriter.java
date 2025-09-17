@@ -10,6 +10,7 @@ import org.apache.ctakes.typesystem.type.textsem.IdentifiedAnnotation;
 import org.apache.ctakes.typesystem.type.textsem.Markable;
 import org.apache.ctakes.typesystem.type.refsem.UmlsConcept;
 import org.apache.ctakes.typesystem.type.textspan.Segment;
+import org.apache.ctakes.typesystem.type.syntax.BaseToken;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -17,7 +18,6 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -26,6 +26,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.List;
@@ -45,33 +46,6 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
 
     private String outputBase;
 
-    private static final String[] HEADER = new String[] {
-            "core:Document",
-            "core:Begin",
-            "core:End",
-            "core:Text",
-            "core:Section",
-            "core:CUI",
-            "core:PreferredText",
-            "core:TUI",
-            "core:SemanticGroup",
-            "core:SemanticTypeLabel",
-            "assertion:Polarity",
-            "assertion:Uncertainty",
-            "assertion:Conditional",
-            "assertion:Generic",
-            "assertion:Subject",
-            "core:Confidence",
-            "temporal:DocTimeRel",
-            "relations:HasDegree",
-            "relations:DegreeIndicator",
-            "relations:LocationText",
-            "relations:LocationCUI",
-            "coref:ChainId",
-            "coref:RepresentativeText",
-            "wsd:Disambiguated",
-            "wsd:Score"
-    };
 
     @Override
     public void initialize(UimaContext context) {
@@ -95,11 +69,14 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
         Map<IdentifiedAnnotation, String> degreeMap = buildDegreeMap(jCas);
         Map<IdentifiedAnnotation, LocationInfo> locationMap = buildLocationInfo(jCas, sofa);
         CorefInfo coref = buildCoref(jCas, sofa);
+        ColumnLayout layout = ColumnLayout.from(docTimeRelMap, degreeMap, locationMap, coref);
 
         List<Row> rows = new ArrayList<>();
         for (IdentifiedAnnotation ia : JCasUtil.select(jCas, IdentifiedAnnotation.class)) {
             UmlsConcept best = firstConcept(ia);
-            rows.add(new Row(ia.getBegin(), ia.getEnd(), buildRow(docId, sofa, segments, ia, best, docTimeRelMap, degreeMap, locationMap, coref)));
+            String pos = collectPos(jCas, ia);
+            rows.add(new Row(ia.getBegin(), ia.getEnd(),
+                    buildRow(docId, sofa, segments, ia, best, docTimeRelMap, degreeMap, locationMap, coref, layout, pos)));
         }
 
         rows.sort((left, right) -> {
@@ -116,10 +93,10 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
             Path out = outDir.resolve(docId + ".csv");
             try (BufferedWriter bw = Files.newBufferedWriter(out, StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
-                bw.write(String.join(",", HEADER));
+                bw.write(String.join(",", layout.headers));
                 bw.newLine();
                 for (Row row : rows) {
-                    bw.write(row.csv);
+                    bw.write(String.join(",", row.cells));
                     bw.newLine();
                 }
             }
@@ -128,15 +105,17 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
         }
     }
 
-    private static String buildRow(String docId,
-                                   String sofa,
-                                   List<Segment> segments,
-                                   IdentifiedAnnotation ia,
-                                   UmlsConcept concept,
-                                   Map<IdentifiedAnnotation, String> docTimeRelMap,
-                                   Map<IdentifiedAnnotation, String> degreeMap,
-                                   Map<IdentifiedAnnotation, LocationInfo> locationMap,
-                                   CorefInfo coref) {
+    private static List<String> buildRow(String docId,
+                                         String sofa,
+                                         List<Segment> segments,
+                                         IdentifiedAnnotation ia,
+                                         UmlsConcept concept,
+                                         Map<IdentifiedAnnotation, String> docTimeRelMap,
+                                         Map<IdentifiedAnnotation, String> degreeMap,
+                                         Map<IdentifiedAnnotation, LocationInfo> locationMap,
+                                         CorefInfo coref,
+                                         ColumnLayout layout,
+                                         String posTags) {
         String section = findSection(segments, ia);
         String cui = concept != null ? nvl(concept.getCui()) : "";
         String pref = concept != null ? nvl(concept.getPreferredText()) : "";
@@ -148,47 +127,55 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
         String conditional = binary(ia.getConditional());
         String generic = binary(ia.getGeneric());
         String subject = nvl(ia.getSubject());
-        String confidence = formatConfidence(ia.getConfidence());
-        String docTimeRel = nvl(docTimeRelMap.getOrDefault(ia, ""));
-        String degreeIndicator = nvl(degreeMap.getOrDefault(ia, ""));
-        String hasDegree = binary(!degreeIndicator.isEmpty());
-        LocationInfo locInfo = locationMap.get(ia);
+        String docTimeRel = layout.includeTemporal ? nvl(docTimeRelMap.getOrDefault(ia, "")) : "";
+        String degreeIndicator = layout.includeRelations ? nvl(degreeMap.getOrDefault(ia, "")) : "";
+        String hasDegree = layout.includeRelations ? binary(!degreeIndicator.isEmpty()) : "";
+        LocationInfo locInfo = layout.includeRelations ? locationMap.get(ia) : null;
         String locText = locInfo != null ? locInfo.text : "";
         String locCui = locInfo != null ? locInfo.cui : "";
-        String corefId = nvl(coref.chainIdByMention.get(ia));
+        String corefId = layout.includeCoref ? nvl(coref.chainIdByMention.get(ia)) : "";
         String corefRep = "";
-        if (!corefId.isEmpty()) {
+        if (layout.includeCoref && !corefId.isEmpty()) {
             corefRep = nvl(coref.repTextByChain.getOrDefault(corefId, ""));
         }
         String wsdDisambig = concept != null && concept.getDisambiguated() ? "Y" : binary(concept != null && concept.getScore() > 0);
         String wsdScore = concept != null ? formatConfidence((float) concept.getScore()) : "";
 
-        return String.join(",",
-                csv(docId),
-                Integer.toString(ia.getBegin()),
-                Integer.toString(ia.getEnd()),
-                csv(safeText(sofa, ia.getBegin(), ia.getEnd())),
-                csv(normalizeSection(section)),
-                csv(cui),
-                csv(pref.isEmpty() ? safeText(sofa, ia.getBegin(), ia.getEnd()) : pref),
-                csv(tui),
-                csv(group),
-                csv(typeLabel),
-                csv(polarity),
-                csv(uncertainty),
-                csv(conditional),
-                csv(generic),
-                csv(subject.isEmpty() ? "patient" : subject),
-                csv(confidence),
-                csv(docTimeRel),
-                csv(hasDegree),
-                csv(degreeIndicator),
-                csv(locText),
-                csv(locCui),
-                csv(corefId),
-                csv(corefRep),
-                csv(wsdDisambig),
-                csv(wsdScore));
+        List<String> cells = new ArrayList<>();
+        cells.add(csv(docId));
+        cells.add(Integer.toString(ia.getBegin()));
+        cells.add(Integer.toString(ia.getEnd()));
+        cells.add(csv(safeText(sofa, ia.getBegin(), ia.getEnd())));
+        cells.add(csv(normalizeSection(section)));
+        cells.add(csv(cui));
+        cells.add(csv(pref.isEmpty() ? safeText(sofa, ia.getBegin(), ia.getEnd()) : pref));
+        cells.add(csv(tui));
+        cells.add(csv(group));
+        cells.add(csv(typeLabel));
+        cells.add(csv(polarity));
+        cells.add(csv(uncertainty));
+        cells.add(csv(conditional));
+        cells.add(csv(generic));
+        cells.add(csv(subject.isEmpty() ? "patient" : subject));
+        if (layout.includePos) {
+            cells.add(csv(posTags));
+        }
+        if (layout.includeTemporal) {
+            cells.add(csv(docTimeRel));
+        }
+        if (layout.includeRelations) {
+            cells.add(csv(hasDegree));
+            cells.add(csv(degreeIndicator));
+            cells.add(csv(locText));
+            cells.add(csv(locCui));
+        }
+        if (layout.includeCoref) {
+            cells.add(csv(corefId));
+            cells.add(csv(corefRep));
+        }
+        cells.add(csv(wsdDisambig));
+        cells.add(csv(wsdScore));
+        return cells;
     }
 
     private static UmlsConcept firstConcept(IdentifiedAnnotation ia) {
@@ -415,6 +402,87 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
         map.put(tui, label);
     }
 
+    private static String collectPos(JCas jCas, IdentifiedAnnotation ia) {
+        StringBuilder sb = new StringBuilder();
+        for (BaseToken token : JCasUtil.selectCovered(jCas, BaseToken.class, ia)) {
+            String pos = nvl(token.getPartOfSpeech());
+            if (!pos.isEmpty()) {
+                if (sb.length() > 0) {
+                    sb.append(' ');
+                }
+                sb.append(pos);
+            }
+        }
+        return sb.toString();
+    }
+
+    private static class ColumnLayout {
+        final boolean includeTemporal;
+        final boolean includeRelations;
+        final boolean includeCoref;
+        final boolean includePos;
+        final List<String> headers;
+
+        private ColumnLayout(boolean includeTemporal, boolean includeRelations, boolean includeCoref, boolean includePos) {
+            this.includeTemporal = includeTemporal;
+            this.includeRelations = includeRelations;
+            this.includeCoref = includeCoref;
+            this.includePos = includePos;
+            this.headers = buildHeaders();
+        }
+
+        static ColumnLayout from(Map<IdentifiedAnnotation, String> docTimeRelMap,
+                                 Map<IdentifiedAnnotation, String> degreeMap,
+                                 Map<IdentifiedAnnotation, LocationInfo> locationMap,
+                                 CorefInfo coref) {
+            boolean hasTemporal = docTimeRelMap.values().stream().anyMatch(v -> v != null && !v.trim().isEmpty());
+            boolean hasDegree = degreeMap.values().stream().anyMatch(v -> v != null && !v.trim().isEmpty());
+            boolean hasLocation = locationMap.values().stream().anyMatch(info -> info != null && (!info.text.isEmpty() || !info.cui.isEmpty()));
+            boolean hasRelations = hasDegree || hasLocation;
+            boolean hasCoref = !coref.chainIdByMention.isEmpty();
+            return new ColumnLayout(hasTemporal, hasRelations, hasCoref, true);
+        }
+
+        private List<String> buildHeaders() {
+            List<String> header = new ArrayList<>();
+            header.addAll(Arrays.asList(
+                    "core:Document",
+                    "core:Begin",
+                    "core:End",
+                    "core:Text",
+                    "core:Section",
+                    "core:CUI",
+                    "core:PreferredText",
+                    "core:TUI",
+                    "core:SemanticGroup",
+                    "core:SemanticTypeLabel",
+                    "assertion:Polarity",
+                    "assertion:Uncertainty",
+                    "assertion:Conditional",
+                    "assertion:Generic",
+                    "assertion:Subject"));
+            if (includePos) {
+                header.add("syntax:POS");
+            }
+            if (includeTemporal) {
+                header.add("temporal:DocTimeRel");
+            }
+            if (includeRelations) {
+                header.add("relations:HasDegree");
+                header.add("relations:DegreeIndicator");
+                header.add("relations:LocationText");
+                header.add("relations:LocationCUI");
+            }
+            if (includeCoref) {
+                header.add("coref:ChainId");
+                header.add("coref:RepresentativeText");
+            }
+            header.add("wsd:Disambiguated");
+            header.add("wsd:Score");
+            return header;
+        }
+    }
+
     private static String semanticGroupForTui(String tui) {
         if (tui == null || tui.isEmpty()) return "";
         return nvl(TUI_TO_GROUP.get(tui.toUpperCase(Locale.ROOT)));
@@ -437,15 +505,20 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
     private static final class Row {
         final int begin;
         final int end;
-        final String csv;
+        final List<String> cells;
 
-        Row(int begin, int end, String csv) {
+        Row(int begin, int end, List<String> cells) {
             this.begin = begin;
             this.end = end;
-            this.csv = csv;
+            this.cells = cells;
         }
     }
 
 }
+
+
+
+
+
 
 
