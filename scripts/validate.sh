@@ -18,6 +18,10 @@ Options:
   --with-temporal                          Run with TsTemporalSubPipe enabled
   --with-coref                             Run with TsCorefSubPipe enabled
   --manifest <file>                        Compare outputs against a saved manifest (creates baseline if missing)
+  --canonicalize                           Rewrite outputs into a stable order before manifesting (default)
+  --no-canonicalize                        Skip canonical rewriting before manifesting
+  --deterministic                          Force single-threaded pipeline for reproducibility (default)
+  --no-deterministic                       Allow autoscale / multi-threaded pipeline
   --dry-run                                Print the pipeline command instead of executing
   --help                                   Show this help text
 
@@ -34,6 +38,8 @@ WITH_TEMPORAL=0
 WITH_COREF=0
 DRY_RUN=0
 MANIFEST=""
+CANONICALIZE=1
+DETERMINISTIC=1
 STATUS=0
 
 while [[ $# -gt 0 ]]; do
@@ -45,6 +51,10 @@ while [[ $# -gt 0 ]]; do
     --with-temporal) WITH_TEMPORAL=1; shift 1;;
     --with-coref) WITH_COREF=1; shift 1;;
     --manifest) MANIFEST="$2"; shift 2;;
+    --canonicalize) CANONICALIZE=1; shift 1;;
+    --no-canonicalize) CANONICALIZE=0; shift 1;;
+    --deterministic) DETERMINISTIC=1; shift 1;;
+    --no-deterministic) DETERMINISTIC=0; shift 1;;
     --dry-run) DRY_RUN=1; shift 1;;
     --help|-h) usage; exit 0;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 1;;
@@ -122,6 +132,9 @@ ARGS=("${RUNNER_CMD[@]}" -i "${PIPE_INPUT}" -o "${OUT_DIR}" --pipeline "${PIPELI
 [[ ${WITH_TEMPORAL} -eq 1 ]] && ARGS+=(--with-temporal)
 [[ ${WITH_COREF} -eq 1 ]] && ARGS+=(--with-coref)
 [[ ${DRY_RUN} -eq 1 ]] && ARGS+=(--dry-run)
+if [[ ${DETERMINISTIC} -eq 1 ]]; then
+  ARGS+=(--no-autoscale --threads 1 --xmx 4096)
+fi
 
 if [[ ${DRY_RUN} -eq 1 ]]; then
   printf '[validate] '
@@ -141,6 +154,97 @@ fi
 base_manifest_count=0
 if [[ -f "${MANIFEST}" ]]; then
   base_manifest_count=$(wc -l < "${MANIFEST}" | awk '{print $1}')
+fi
+
+if [[ ${STATUS} -eq 0 && ${CANONICALIZE} -eq 1 ]]; then
+  CANON_PY=$(command -v python3 || command -v python || true)
+  if [[ -z "${CANON_PY}" ]]; then
+    echo "[validate] --canonicalize requires python (python3 or python)." >&2
+    STATUS=1
+  else
+    "${CANON_PY}" - <<'PY' "${OUT_DIR}"
+import csv
+import pathlib
+import sys
+
+base = pathlib.Path(sys.argv[1]).resolve()
+
+def int_or_zero(value):
+    try:
+        return int(value)
+    except Exception:
+        return 0
+
+def rewrite_csv(path, sort_key):
+    with path.open('r', newline='', encoding='utf-8') as src:
+        reader = csv.reader(src)
+        try:
+            header = next(reader)
+        except StopIteration:
+            return
+        rows = list(reader)
+    if not rows:
+        return
+    rows.sort(key=lambda row: sort_key(header, row))
+    with path.open('w', newline='', encoding='utf-8') as dst:
+        writer = csv.writer(dst)
+        writer.writerow(header)
+        writer.writerows(rows)
+
+def rewrite_bsv(path):
+    with path.open('r', encoding='utf-8') as src:
+        lines = src.readlines()
+    if not lines:
+        return
+    header, *data = lines
+    data = [line.rstrip('\n') for line in data if line.strip()]
+    if not data:
+        return
+    data.sort()
+    with path.open('w', encoding='utf-8') as dst:
+        dst.write(header)
+        for line in data:
+            dst.write(line)
+            dst.write('\n')
+
+def concept_key(header, row):
+    begin_idx = header.index('core:Begin') if 'core:Begin' in header else -1
+    end_idx = header.index('core:End') if 'core:End' in header else -1
+    cui_idx = header.index('core:CUI') if 'core:CUI' in header else -1
+    return (
+        int_or_zero(row[begin_idx]) if 0 <= begin_idx < len(row) else 0,
+        int_or_zero(row[end_idx]) if 0 <= end_idx < len(row) else 0,
+        row[cui_idx] if 0 <= cui_idx < len(row) else '',
+        row,
+    )
+
+def rxnorm_key(header, row):
+    begin_idx = header.index('Begin') if 'Begin' in header else -1
+    end_idx = header.index('End') if 'End' in header else -1
+    cui_idx = header.index('RxCUI') if 'RxCUI' in header else -1
+    return (
+        int_or_zero(row[begin_idx]) if 0 <= begin_idx < len(row) else 0,
+        int_or_zero(row[end_idx]) if 0 <= end_idx < len(row) else 0,
+        row[cui_idx] if 0 <= cui_idx < len(row) else '',
+        row,
+    )
+
+concept_dir = base / 'concepts'
+if concept_dir.is_dir():
+    for csv_path in sorted(concept_dir.glob('*.csv')):
+        rewrite_csv(csv_path, concept_key)
+
+cui_dir = base / 'cui_counts'
+if cui_dir.is_dir():
+    for bsv_path in sorted(cui_dir.glob('*.bsv')):
+        rewrite_bsv(bsv_path)
+
+rx_dir = base / 'rxnorm'
+if rx_dir.is_dir():
+    for csv_path in sorted(rx_dir.glob('*.csv')):
+        rewrite_csv(csv_path, rxnorm_key)
+PY
+  fi
 fi
 
 if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then

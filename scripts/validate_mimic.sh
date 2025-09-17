@@ -121,4 +121,3 @@ for pipeline in "${PIPELINE_RUNS[@]}"; do
 done
 
 exit ${STATUS}
-
