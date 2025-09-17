@@ -13,7 +13,7 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/validate.sh -i <input_dir> -o <output_dir> [options]
 Options:
-  --pipeline <core|sectioned|smoke|drug>   Pipeline to exercise (default: sectioned)
+  --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke>   Pipeline to exercise (default: sectioned)
   --limit <N>                              Copy the first N files into a temp dir before running (default: all)
   --with-temporal                          Run with TsTemporalSubPipe enabled
   --with-coref                             Run with TsCorefSubPipe enabled
@@ -145,7 +145,7 @@ fi
 
 if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then
   TMP_MANIFEST=$(mktemp)
-  find "${OUT_DIR}" -type f \( -path "${OUT_DIR}/concepts/*.csv" -o -path "${OUT_DIR}/cui_count/*.bsv" -o -path "${OUT_DIR}/rxnorm/*.csv" \) \
+  find "${OUT_DIR}" -type f \( -path "${OUT_DIR}/concepts/*.csv" -o -path "${OUT_DIR}/cui_counts/*.bsv" -o -path "${OUT_DIR}/rxnorm/*.csv" \) \
     | sort \
     | while read -r file; do
         rel="${file#${OUT_DIR}/}"

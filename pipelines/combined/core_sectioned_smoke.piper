@@ -1,9 +1,10 @@
-// Core pipeline: default fast pipeline with dictionary lookup + WSD.
+// Combined pipeline: sectioned core + smoking annotators in one pass.
 // scripts/run_pipeline.sh injects optional temporal/coref modules at the OPTIONAL_MODULES marker.
 
 threads 3
 
-load TsDefaultTokenizerPipeline
+// Section-aware tokenizer, POS, chunking
+load TsFullTokenizerPipeline
 add ContextDependentTokenizerAnnotator
 addDescription POSTagger
 load TsChunkerSubPipe
@@ -12,16 +13,22 @@ load TsChunkerSubPipe
 load TsDictionarySubPipe
 add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
 
-// Assertion cleanup (keeps polarity/uncertainty consistent and avoids null subject crashes)
+// Assertion cleanup
 load TsAttributeCleartkSubPipe
 add tools.fixes.DefaultSubjectAnnotator
 
+// Core clinical relations
+load TsRelationSubPipe
+
+// Smoking Status classifiers
+addDescription tools.smoking.SmokingAggregateStep1
+addDescription tools.smoking.SmokingAggregateStep2Libsvm
+
 // OPTIONAL_MODULES
 
-// Outputs
+// Writers
 add FileTreeXmiWriter SubDirectory=xmi
 add tools.reporting.uima.SimpleConceptCsvWriter SubDirectory=concepts
 add tools.reporting.uima.CuiCountSummaryWriter SubDirectory=cui_counts
 
 addLast util.log.FinishedLogger
-

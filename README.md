@@ -30,7 +30,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
    ```bash
    bash scripts/validate_mimic.sh
    ```
-   Writes outputs under `outputs/validate_mimic/` and compares hashes against `samples/mimic_manifest.txt` when present. When run interactively, the script lets you choose which pipeline to validate (Core + Sectioned + Smoke by default).
+   Writes outputs under `outputs/validate_mimic/` and compares hashes against `samples/mimic_manifest.txt` when present. When run interactively, the script lets you choose which pipeline to validate (Core + Sectioned + Smoke combined pipeline by default).
 5. **Run your own notes**
    ```bash
    bash scripts/run_pipeline.sh      --pipeline sectioned      -i /path/to/notes      -o /path/to/run_outputs
@@ -39,7 +39,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 6. **Inspect results**
    - `xmi/` contains CAS snapshots (one per note).
    - `concepts/` contains per-note CSVs written by `SimpleConceptCsvWriter`.
-   - `cui_count/` summarises CUI frequencies.
+   - `cui_counts/` summarises CUI frequencies (separate affirmed/negated columns).
    - `rxnorm/` appears for the drug pipeline only.
 
 > **Note**: The bundled FullClinical_AllTUIs dictionary ships inside the cTAKES archive. `scripts/run_pipeline.sh` automatically selects `resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs_local.xml` (or its non-local fallback) under `CTAKES_HOME`, so no manual dictionary configuration is required.
@@ -50,11 +50,12 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 | `core` | `pipelines/core/core_wsd.piper` | Default fast pipeline + dictionary lookup + WSD. |
 | `sectioned` | `pipelines/sectioned/sectioned_core_wsd.piper` | Section-aware pipeline with relations. |
 | `smoke` | `pipelines/smoke/sectioned_smoke_status.piper` | Sectioned pipeline with smoking-status annotators. |
+| `core_sectioned_smoke` | `pipelines/combined/core_sectioned_smoke.piper` | Sectioned core pipeline with relations plus smoking annotators in one pass. |
 | `drug` | `pipelines/drug/drug_ner_wsd.piper` | Sectioned pipeline with ctakes-drug-ner (adds RxNorm CSVs). |
 
 ### What runs inside each pipeline
 
-All four pipelines load the same core building blocks from the cTAKES distribution and add a couple of local helpers:
+All pipelines load the same core building blocks from the cTAKES distribution and add a couple of local helpers:
 
 - **Tokenization / POS / Chunking**: `TsDefaultTokenizerPipeline` or `TsFullTokenizerPipeline`, `ContextDependentTokenizerAnnotator`, `POSTagger`, `TsChunkerSubPipe`.
 - **Dictionary lookup + WSD**: `TsDictionarySubPipe` followed by our `tools.wsd.SimpleWsdDisambiguatorAnnotator` (single-best concept without YTEX).
@@ -83,7 +84,7 @@ bash scripts/run_async.sh   --pipeline smoke   -i /data/notes   -o /runs/smoke_a
 
 `run_async.sh` partitions the input notes across multiple shards, launches `run_pipeline.sh` for each shard in parallel, then consolidates outputs into `<output>/<pipeline>/<timestamp>/`:
 
-- `xmi/`, `concepts/`, `cui_count/`, and optionally `rxnorm/`.
+- `xmi/`, `concepts/`, `cui_counts/`, and optionally `rxnorm/`.
 - `concepts_summary.csv` (and `rxnorm_summary.csv` when applicable) built by concatenating the shard CSVs.
 
 Use `--dry-run` to inspect the planned per-shard commands. Manual overrides (`--shards`, `--threads`, `--xmx`, `--dict`, etc.) pass straight through to the child runs.
@@ -174,3 +175,4 @@ Set `BUILD_DIR=/custom/path` to override the output location. The script automat
 - `scripts/run_pipeline.sh` recompiles everything under `tools/` each time it runs and writes classes to `build/tools/`.
 
 ThatÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s it: a small toolkit that runs cTAKES pipelines, produces clean CSVs, and stays easy to follow.
+

@@ -15,7 +15,7 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/run_pipeline.sh -i <input_dir> -o <output_dir> [options]
 Options:
-  --pipeline <core|sectioned|smoke|drug>   Pipeline to execute (default: sectioned)
+  --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke>   Pipeline to execute (default: sectioned)
   --with-temporal                          Insert TsTemporalSubPipe before writers
   --with-coref                             Insert TsCorefSubPipe before writers
   --threads <N>                            Override the Piper "threads" clause
@@ -61,11 +61,17 @@ recommend_autoscale() {
   local cpus mem threads_rec xmx_rec
   cpus=$(detect_cpus); [[ -z "$cpus" || "$cpus" -lt 1 ]] && cpus=1
   mem=$(detect_mem_mb); [[ -z "$mem" || "$mem" -lt 1024 ]] && mem=4096
-  threads_rec=$(( cpus > 2 ? cpus / 2 : cpus ))
+  threads_rec=$cpus
+  if (( cpus >= 8 )); then
+    threads_rec=$(( cpus - 2 ))
+  elif (( cpus >= 4 )); then
+    threads_rec=$(( cpus - 1 ))
+  fi
   (( threads_rec < 1 )) && threads_rec=1
-  xmx_rec=$(( mem * 60 / 100 ))
-  (( xmx_rec < 2048 )) && xmx_rec=2048
-  (( xmx_rec > 24576 )) && xmx_rec=24576
+  (( threads_rec > 12 )) && threads_rec=12
+  xmx_rec=$(( mem * 70 / 100 ))
+  (( xmx_rec < 4096 )) && xmx_rec=4096
+  (( xmx_rec > 32768 )) && xmx_rec=32768
   AUTOSCALE_THREADS="$threads_rec"
   AUTOSCALE_XMX="$xmx_rec"
   echo "[autoscale] CPU cores=${cpus}, RAM=${mem}MB -> threads=${threads_rec}, Xmx=${xmx_rec}MB" >&2
@@ -131,6 +137,7 @@ case "${PIPELINE_KEY}" in
   core) PIPER="${BASE_DIR}/pipelines/core/core_wsd.piper";;
   sectioned) PIPER="${BASE_DIR}/pipelines/sectioned/sectioned_core_wsd.piper";;
   smoke) PIPER="${BASE_DIR}/pipelines/smoke/sectioned_smoke_status.piper";;
+  core_sectioned_smoke) PIPER="${BASE_DIR}/pipelines/combined/core_sectioned_smoke.piper";;
   drug) PIPER="${BASE_DIR}/pipelines/drug/drug_ner_wsd.piper";;
   *) echo "[pipeline] Unknown pipeline key: ${PIPELINE_KEY}" >&2; exit 1;;
 esac
@@ -151,7 +158,7 @@ if [[ ${AUTOSCALE} -eq 1 ]]; then
   fi
 fi
 
-[[ -z "${THREAD_OVERRIDE}" ]] && THREAD_OVERRIDE=3
+[[ -z "${THREAD_OVERRIDE}" ]] && THREAD_OVERRIDE=2
 [[ -z "${XMX_MB}" ]] && XMX_MB=4096
 
 if [[ -z "${DICT_XML}" ]]; then

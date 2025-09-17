@@ -43,7 +43,7 @@ USAGE
 IN_DIR="${DEFAULT_INPUT}"
 OUT_DIR="${DEFAULT_OUTPUT}"
 LIMIT=100
-PIPELINE_KEY="smoke"
+PIPELINE_KEY="core_sectioned_smoke"
 PIPELINE_SET=0
 PIPELINE_RUNS=()
 WITH_TEMPORAL=0
@@ -70,24 +70,24 @@ done
 
 if [[ ${PIPELINE_SET} -eq 0 && -t 0 && -t 1 ]]; then
   echo "Select validation option:"
-  echo "  1) Core + Sectioned + Smoke (default)"
+  echo "  1) Core + Sectioned + Smoke (combined default)"
   echo "  2) Core + Sectioned"
   echo "  3) Core only"
   echo "  4) Drug only"
   read -r -p "Selection [1-4]: " __choice
   case "${__choice}" in
-    ""|1) PIPELINE_RUNS=(core sectioned smoke);;
+    ""|1) PIPELINE_RUNS=(core_sectioned_smoke);;
     2) PIPELINE_RUNS=(core sectioned);;
     3) PIPELINE_RUNS=(core);;
     4) PIPELINE_RUNS=(drug);;
-    *) echo "[validate_mimic] Unknown selection '${__choice}'; defaulting to Core + Sectioned + Smoke."; PIPELINE_RUNS=(core sectioned smoke);;
+    *) echo "[validate_mimic] Unknown selection '${__choice}'; defaulting to Core + Sectioned + Smoke combo."; PIPELINE_RUNS=(core_sectioned_smoke);;
   esac
 fi
 
 if [[ ${PIPELINE_SET} -eq 1 ]]; then
   PIPELINE_RUNS=("${PIPELINE_KEY}")
 elif [[ ${#PIPELINE_RUNS[@]} -eq 0 ]]; then
-  PIPELINE_RUNS=(core sectioned smoke)
+  PIPELINE_RUNS=(core_sectioned_smoke)
 fi
 
 if [[ ! -d "${IN_DIR}" ]]; then
@@ -121,3 +121,4 @@ for pipeline in "${PIPELINE_RUNS[@]}"; do
 done
 
 exit ${STATUS}
+

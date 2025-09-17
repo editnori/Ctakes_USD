@@ -25,6 +25,7 @@ load TsRelationSubPipe
 // Minimal writers for lean outputs
 add FileTreeXmiWriter SubDirectory=xmi
 add tools.reporting.uima.SimpleConceptCsvWriter SubDirectory=concepts
-add CuiCountFileWriter SubDirectory=cui_count
+add tools.reporting.uima.CuiCountSummaryWriter SubDirectory=cui_counts
 
 addLast util.log.FinishedLogger
+

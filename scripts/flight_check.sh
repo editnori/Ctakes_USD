@@ -111,7 +111,7 @@ fi
 ensure_default_umls_key
 
 # Pipeline sanity ------------------------------------------------------------
-for key in core sectioned smoke drug; do
+for key in core sectioned smoke core_sectioned_smoke drug; do
   p="${BASE_DIR}/pipelines/${key}/"*
   if compgen -G "$p" >/dev/null 2>&1; then
     note_ok "Pipeline files present for ${key}"
@@ -173,3 +173,4 @@ else
   echo "[summary] Flight check failed with ${ISSUES} issue(s)." >&2
   exit 1
 fi
+
