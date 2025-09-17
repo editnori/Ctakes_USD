@@ -20,8 +20,8 @@ public class DrugMentionAnnotatorWithTypes extends DrugMentionAnnotator {
     private static final String DESCRIPTOR_PATH =
             "ctakes-drug-ner/desc/analysis_engine/DrugMentionAnnotator.xml";
 
-    private DrugMentionAnnotatorWithTypes() {
-        // no instances
+    public DrugMentionAnnotatorWithTypes() {
+        // default constructor required for UIMA reflection
     }
 
     public static AnalysisEngineDescription createEngineDescription() throws ResourceInitializationException {
