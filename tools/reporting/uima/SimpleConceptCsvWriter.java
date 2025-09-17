@@ -96,11 +96,19 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
         Map<IdentifiedAnnotation, LocationInfo> locationMap = buildLocationInfo(jCas, sofa);
         CorefInfo coref = buildCoref(jCas, sofa);
 
-        List<String> rows = new ArrayList<>();
+        List<Row> rows = new ArrayList<>();
         for (IdentifiedAnnotation ia : JCasUtil.select(jCas, IdentifiedAnnotation.class)) {
             UmlsConcept best = firstConcept(ia);
-            rows.add(buildRow(docId, sofa, segments, ia, best, docTimeRelMap, degreeMap, locationMap, coref));
+            rows.add(new Row(ia.getBegin(), ia.getEnd(), buildRow(docId, sofa, segments, ia, best, docTimeRelMap, degreeMap, locationMap, coref)));
         }
+
+        rows.sort((left, right) -> {
+            int cmp = Integer.compare(left.begin, right.begin);
+            if (cmp != 0) {
+                return cmp;
+            }
+            return Integer.compare(left.end, right.end);
+        });
 
         Path outDir = Paths.get(outputBase, subDir);
         try {
@@ -110,8 +118,8 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
                     StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
                 bw.write(String.join(",", HEADER));
                 bw.newLine();
-                for (String row : rows) {
-                    bw.write(row);
+                for (Row row : rows) {
+                    bw.write(row.csv);
                     bw.newLine();
                 }
             }
@@ -426,5 +434,18 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
         Map<IdentifiedAnnotation, String> chainIdByMention = new IdentityHashMap<>();
         Map<String, String> repTextByChain = new HashMap<>();
     }
+    private static final class Row {
+        final int begin;
+        final int end;
+        final String csv;
+
+        Row(int begin, int end, String csv) {
+            this.begin = begin;
+            this.end = end;
+            this.csv = csv;
+        }
+    }
+
 }
+
 
