@@ -15,8 +15,8 @@ add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambi
 load TsAttributeCleartkSubPipe
 add tools.fixes.DefaultSubjectAnnotator
 
-// Drug NER (ctakes-drug-ner) with bundled TypeSystem wrapper
-addDescription org/apache/ctakes/drugner/ae/DrugMentionAnnotator_WithTypes
+// Drug NER (ctakes-drug-ner) wrapper exposes createEngineDescription for Piper
+add tools.drug.DrugMentionAnnotatorWithTypes
 
 // OPTIONAL_MODULES
 
@@ -27,4 +27,3 @@ add tools.reporting.uima.DrugRxNormCsvWriter SubDirectory=rxnorm
 add tools.reporting.uima.CuiCountSummaryWriter SubDirectory=cui_counts
 
 addLast util.log.FinishedLogger
-

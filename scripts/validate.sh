@@ -145,15 +145,45 @@ fi
 
 if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then
   TMP_MANIFEST=$(mktemp)
-  find "${OUT_DIR}" -type f \( -path "${OUT_DIR}/concepts/*.csv" -o -path "${OUT_DIR}/cui_counts/*.bsv" -o -path "${OUT_DIR}/rxnorm/*.csv" \) \
-    | sort \
-    | while read -r file; do
-        rel="${file#${OUT_DIR}/}"
-        sha=$(sha256sum "${file}" | awk '{print $1}')
-        printf "%s  %s\n" "$sha" "$rel"
-      done > "${TMP_MANIFEST}"
+  PY_BIN=$(command -v python3 || command -v python || true)
+  if [[ -z "${PY_BIN}" ]]; then
+    echo "[validate] Manifest comparison requires python (python3 or python)." >&2
+    rm -f "${TMP_MANIFEST}"
+    exit 1
+  fi
+  "${PY_BIN}" - <<'PY' "${OUT_DIR}" "${TMP_MANIFEST}"
+import hashlib
+import os
+import sys
+from pathlib import Path
+
+base = Path(sys.argv[1]).resolve()
+manifest_path = Path(sys.argv[2])
+targets = {
+    'concepts': ('.csv', '.CSV'),
+    'cui_counts': ('.bsv', '.BSV'),
+    'rxnorm': ('.csv', '.CSV'),
+}
+entries = []
+for category, exts in targets.items():
+    cat_dir = base / category
+    if not cat_dir.is_dir():
+        continue
+    for path in sorted(cat_dir.rglob('*')):
+        if not path.is_file():
+            continue
+        lower = path.name.lower()
+        if not any(lower.endswith(ext.lower()) for ext in exts):
+            continue
+        rel = path.relative_to(base).as_posix()
+        sha = hashlib.sha256(path.read_bytes()).hexdigest()
+        entries.append((rel, sha))
+with manifest_path.open('w', encoding='utf-8') as handle:
+    for rel, sha in sorted(entries):
+        handle.write(f"{sha}  {rel}\n")
+PY
   timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-  COUNTS_OUTPUT=$(python - <<'PY' "${TMP_MANIFEST}" "${MANIFEST}"
+  COUNTS_OUTPUT=$("${PY_BIN}" - <<'PY' "${TMP_MANIFEST}" "${MANIFEST}"
 import os
 import sys
 cats = ("concepts", "cui_counts", "rxnorm")
@@ -240,5 +270,3 @@ PY
 fi
 
 exit ${STATUS}
-
-
