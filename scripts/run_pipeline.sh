@@ -133,12 +133,17 @@ if [[ -z "${CTAKES_HOME:-}" ]]; then
   fi
 fi
 
-DATA_PATH_BASE="${BASE_DIR}/resources_override:${BASE_DIR}/resources"
+# Compose a portable datapath so descriptor overrides resolve cross-platform
+DATA_PATH_SEP=':'
+case "$(uname -s 2>/dev/null)" in
+  MINGW*|MSYS*|CYGWIN*) DATA_PATH_SEP=';';;
+esac
+DATA_PATH_BASE="${BASE_DIR}/resources_override${DATA_PATH_SEP}${BASE_DIR}/resources"
 if [[ -n "${CTAKES_HOME:-}" ]]; then
-  DATA_PATH_BASE="${DATA_PATH_BASE}:${CTAKES_HOME}/resources:${CTAKES_HOME}/desc"
+  DATA_PATH_BASE="${DATA_PATH_BASE}${DATA_PATH_SEP}${CTAKES_HOME}/resources${DATA_PATH_SEP}${CTAKES_HOME}/desc"
 fi
 if [[ -n "${UIMA_DATAPATH:-}" ]]; then
-  export UIMA_DATAPATH="${DATA_PATH_BASE}:${UIMA_DATAPATH}"
+  export UIMA_DATAPATH="${DATA_PATH_BASE}${DATA_PATH_SEP}${UIMA_DATAPATH}"
 else
   export UIMA_DATAPATH="${DATA_PATH_BASE}"
 fi
