@@ -152,6 +152,34 @@ if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then
         sha=$(sha256sum "${file}" | awk '{print $1}')
         printf "%s  %s\n" "$sha" "$rel"
       done > "${TMP_MANIFEST}"
+  timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+  COUNTS_OUTPUT=$(python - <<'PY' "${TMP_MANIFEST}" "${MANIFEST}"
+import os
+import sys
+cats = ("concepts", "cui_counts", "rxnorm")
+def counts(path):
+    totals = [0, 0, 0]
+    if not path or not os.path.isfile(path):
+        return totals
+    with open(path, encoding="utf-8") as handle:
+        for line in handle:
+            parts = line.strip().split(None, 1)
+            if len(parts) != 2:
+                continue
+            rel = parts[1]
+            for idx, cat in enumerate(cats):
+                if rel.startswith(cat + "/"):
+                    totals[idx] += 1
+    return totals
+actual = counts(sys.argv[1])
+baseline = counts(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2] else [0, 0, 0]
+print(*(actual + baseline))
+PY
+)
+  read -r concepts_actual cui_actual rx_actual concepts_base cui_base rx_base <<< "${COUNTS_OUTPUT:-0 0 0 0 0 0}"
+  summary_actual_text="concepts:${concepts_actual}, cui_counts:${cui_actual}, rxnorm:${rx_actual}"
+  summary_compare="concepts: current ${concepts_actual} vs baseline ${concepts_base}; cui_counts: current ${cui_actual} vs baseline ${cui_base}; rxnorm: current ${rx_actual} vs baseline ${rx_base}"
+  REPORT_FILE="${OUT_DIR%/}/validation_report.log"
   if [[ -f "${MANIFEST}" ]]; then
     if cmp -s "${MANIFEST}" "${TMP_MANIFEST}"; then
       echo "[validate] Manifest matches ${MANIFEST}"
@@ -162,12 +190,35 @@ if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then
           echo "[validate] Processed ${files_processed} files; no baseline manifest entries to compare."
         fi
       fi
+      echo "[validate] All outputs validated at ${timestamp} (${summary_actual_text})."
+      {
+        echo "timestamp=${timestamp}"
+        echo "status=match"
+        echo "manifest=${MANIFEST}"
+        echo "concepts=${concepts_actual}"
+        echo "cui_counts=${cui_actual}"
+        echo "rxnorm=${rx_actual}"
+        echo
+      } >> "${REPORT_FILE}"
     else
       echo "[validate] Manifest differs from ${MANIFEST}" >&2
       diff -u "${MANIFEST}" "${TMP_MANIFEST}" || true
       ACTUAL_COUNT=$(wc -l < "${TMP_MANIFEST}" | awk '{print $1}')
       BASELINE_COUNT=$(wc -l < "${MANIFEST}" | awk '{print $1}')
       echo "[validate] Baseline entries: ${BASELINE_COUNT}; current entries: ${ACTUAL_COUNT}." >&2
+      echo "[validate] Validation mismatch at ${timestamp} (${summary_compare})." >&2
+      {
+        echo "timestamp=${timestamp}"
+        echo "status=diff"
+        echo "manifest=${MANIFEST}"
+        echo "concepts-current=${concepts_actual}"
+        echo "concepts-baseline=${concepts_base}"
+        echo "cui_counts-current=${cui_actual}"
+        echo "cui_counts-baseline=${cui_base}"
+        echo "rxnorm-current=${rx_actual}"
+        echo "rxnorm-baseline=${rx_base}"
+        echo
+      } >> "${REPORT_FILE}"
       STATUS=1
     fi
     rm -f "${TMP_MANIFEST}"
@@ -175,7 +226,19 @@ if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then
     mkdir -p "$(dirname "${MANIFEST}")"
     mv "${TMP_MANIFEST}" "${MANIFEST}"
     echo "[validate] Baseline manifest saved to ${MANIFEST}"
+    echo "[validate] Baseline captured at ${timestamp} (${summary_actual_text})."
+    {
+      echo "timestamp=${timestamp}"
+      echo "status=baseline-created"
+      echo "manifest=${MANIFEST}"
+      echo "concepts=${concepts_actual}"
+      echo "cui_counts=${cui_actual}"
+      echo "rxnorm=${rx_actual}"
+      echo
+    } >> "${REPORT_FILE}"
   fi
 fi
 
 exit ${STATUS}
+
+
