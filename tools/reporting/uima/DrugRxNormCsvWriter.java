@@ -1,4 +1,4 @@
-﻿package tools.reporting.uima;
+package tools.reporting.uima;
 
 import org.apache.ctakes.typesystem.type.refsem.UmlsConcept;
 import org.apache.ctakes.typesystem.type.structured.DocumentID;
