@@ -1,8 +1,9 @@
-package tools.reporting.uima;
+﻿package tools.reporting.uima;
 
 import org.apache.ctakes.typesystem.type.refsem.UmlsConcept;
 import org.apache.ctakes.typesystem.type.structured.DocumentID;
 import org.apache.ctakes.typesystem.type.textsem.IdentifiedAnnotation;
+import org.apache.ctakes.typesystem.type.textsem.MedicationMention;
 import org.apache.ctakes.typesystem.type.textspan.Segment;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
@@ -56,7 +57,7 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
 
         // Build rows
         List<String> rows = new ArrayList<>();
-        for (IdentifiedAnnotation ia : JCasUtil.select(jCas, IdentifiedAnnotation.class)) {
+        for (MedicationMention ia : JCasUtil.select(jCas, MedicationMention.class)) {
             UmlsConcept bestRx = pickBestRxNorm(ia);
             if (bestRx == null) continue; // skip mentions without any usable ontology concept
 
