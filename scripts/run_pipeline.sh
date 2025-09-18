@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+ORIGINAL_ARGS=("$@")
+
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 ENV_FILE="${BASE_DIR}/.ctakes_env"
 if [[ -f "${ENV_FILE}" ]]; then
@@ -21,6 +23,7 @@ Options:
   --xmx <MB>                               Heap size per run (overrides autoscale)
   --java-opts "..."                       Extra JVM options to append
   --dict <file.xml>                        Dictionary Lookup XML (defaults to bundled FullClinical_AllTUIs[_local].xml)
+  --background                           Rerun detached via nohup (logs to output directory)
   --umls-key <KEY>                         Override the UMLS API key for dictionary building
   --autoscale                              Recommend threads/heap based on host resources (default)
   --no-autoscale                           Disable autoscale heuristics
@@ -76,8 +79,12 @@ recommend_autoscale() {
   echo "[autoscale] CPU cores=${cpus}, RAM=${mem}MB -> threads=${threads_rec}, Xmx=${xmx_rec}MB" >&2
 }
 
+RUNNER_INDEX=${RUNNER_INDEX:-1}
+RUNNER_COUNT=${RUNNER_COUNT:-1}
+
 PIPELINE_KEY="sectioned"
 WITH_RELATIONS=0
+BACKGROUND=0
 THREAD_OVERRIDE=""
 XMX_MB=""
 JAVA_OPTS_EXTRA=""
@@ -101,6 +108,7 @@ while [[ $# -gt 0 ]]; do
     --umls-key) UMLS_KEY_OVERRIDE="$2"; shift 2;;
     --autoscale) AUTOSCALE=1; shift 1;;
     --no-autoscale) AUTOSCALE=0; shift 1;;
+    --background) BACKGROUND=1; shift 1;;
     --dry-run) DRY_RUN=1; shift 1;;
     --help|-h) usage; exit 0;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 1;;
@@ -156,6 +164,30 @@ esac
 
 [[ -f "${PIPER}" ]] || { echo "[pipeline] Missing pipeline file: ${PIPER}" >&2; exit 1; }
 [[ -d "${IN_DIR}" ]] || { echo "[pipeline] Input directory does not exist: ${IN_DIR}" >&2; exit 1; }
+if [[ ${BACKGROUND} -eq 1 && -z "${CTAKES_PIPELINE_REEXEC:-}" ]]; then
+  if [[ ${DRY_RUN} -eq 1 ]]; then
+    echo "[pipeline] --background cannot be combined with --dry-run" >&2
+    exit 1
+  fi
+  LOG_DIR="${OUT_DIR%/}"
+  mkdir -p "${LOG_DIR}"
+  LOG_FILE="${LOG_DIR}/run_pipeline.log"
+  if ! command -v nohup >/dev/null 2>&1; then
+    echo "[pipeline] --background requires nohup" >&2
+    exit 1
+  fi
+  REPLAY_ARGS=()
+  for arg in "${ORIGINAL_ARGS[@]}"; do
+    [[ "$arg" == "--background" ]] && continue
+    REPLAY_ARGS+=("$arg")
+  done
+  export CTAKES_PIPELINE_REEXEC=1
+  nohup "${BASH:-bash}" "$0" "${REPLAY_ARGS[@]}" >>"${LOG_FILE}" 2>&1 &
+  child_pid=$!
+  echo "[pipeline] background mode enabled; output -> ${LOG_FILE} (pid ${child_pid})"
+  exit 0
+fi
+
 mkdir -p "${OUT_DIR}"
 
 if [[ ${AUTOSCALE} -eq 1 ]]; then
@@ -172,6 +204,8 @@ fi
 
 [[ -z "${THREAD_OVERRIDE}" ]] && THREAD_OVERRIDE=2
 [[ -z "${XMX_MB}" ]] && XMX_MB=4096
+echo "[pipeline][runner=${RUNNER_INDEX}/${RUNNER_COUNT}] threads=${THREAD_OVERRIDE} heap=${XMX_MB} MB" >&2
+
 
 if [[ -z "${DICT_XML}" ]]; then
   default_dict="${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs_local.xml"
@@ -280,4 +314,17 @@ if [[ ${DRY_RUN} -eq 1 ]]; then
   exit 0
 fi
 
-"${JAVA_CMD[@]}"
+START_TS=$(date +%s)
+START_HUMAN=$(date "+%Y-%m-%d %H:%M:%S")
+echo "[pipeline][runner=${RUNNER_INDEX}/${RUNNER_COUNT}] start ${START_HUMAN}"
+if ! "${JAVA_CMD[@]}"; then
+  status=$?
+  END_TS=$(date +%s)
+  ELAPSED=$((END_TS - START_TS))
+  echo "[pipeline][runner=${RUNNER_INDEX}/${RUNNER_COUNT}] failed after ${ELAPSED}s (exit=${status})" >&2
+  exit $status
+fi
+END_TS=$(date +%s)
+ELAPSED=$((END_TS - START_TS))
+echo "[pipeline][runner=${RUNNER_INDEX}/${RUNNER_COUNT}] done in ${ELAPSED}s"
+

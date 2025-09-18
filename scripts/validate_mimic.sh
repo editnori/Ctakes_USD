@@ -5,7 +5,7 @@ BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 DEFAULT_INPUT="${BASE_DIR}/samples/mimic"
 DEFAULT_OUTPUT="${BASE_DIR}/outputs/validate_mimic"
 DEFAULT_MANIFEST_BASE="${BASE_DIR}/samples/mimic_manifest"
-DEFAULT_MANIFEST="${DEFAULT_MANIFEST_BASE}.txt"
+DEFAULT_MANIFEST="${DEFAULT_MANIFEST_BASE}.json"
 
 ENV_FILE="${BASE_DIR}/.ctakes_env"
 if [[ -f "${ENV_FILE}" ]]; then
@@ -31,7 +31,7 @@ Options:
   --limit <N>          Override sample size (default: 100)
   --pipeline <key>     Pipeline key passed to validate.sh (default: smoke)
   --with-relations    Add relations module (core/smoke/drug only)
-  --manifest <file>    Override manifest path (default: samples/mimic_manifest.txt)
+  --manifest <file>    Override manifest path (default: samples/mimic_manifest.json)
   --dry-run            Print the commands without executing
   -h, --help           Show this help text
 
@@ -105,7 +105,7 @@ for pipeline in "${PIPELINE_RUNS[@]}"; do
   mkdir -p "${OUT_DIR_PIPE}"
   MANIFEST_USE="${MANIFEST}"
   if [[ ${MANIFEST_PROVIDED} -eq 0 ]]; then
-    MANIFEST_USE="${DEFAULT_MANIFEST_BASE}_${pipeline}.txt"
+    MANIFEST_USE="${DEFAULT_MANIFEST_BASE}_${pipeline}.json"
   fi
   CMD=("${VALIDATE_CMD[@]}" -i "${IN_DIR}" -o "${OUT_DIR_PIPE}" --pipeline "${pipeline}" --limit "${LIMIT}" --manifest "${MANIFEST_USE}")
   if [[ ${WITH_RELATIONS} -eq 1 ]]; then

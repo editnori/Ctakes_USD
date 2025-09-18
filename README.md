@@ -62,7 +62,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
    ```
 
-   Writes outputs under `outputs/validate_mimic/` and compares hashes against `samples/mimic_manifest.txt` when present. When run interactively, the script lets you choose which pipeline to validate (Core + Sectioned + Smoke combined pipeline by default).
+   Writes outputs under `outputs/validate_mimic/` and compares a semantic manifest (concept CSVs, CUI counts, RxNorm rows, and XMI mentions) against the saved baseline when present. When run interactively, the script lets you choose which pipeline to validate (Core + Sectioned + Smoke combined pipeline by default).
 
 5. **Run your own notes**
 
@@ -73,6 +73,8 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
    ```
 
    Add `--with-relations` when you need relation extraction, or disable autoscale with `--no-autoscale` and supply explicit `--threads` / `--xmx` values.
+
+   Or launch the interactive helper (`python scripts/ctakes_cli.py`) to pick the pipeline, discover note folders, and optionally detach via `--background` while recording progress metadata.
 
 6. **Inspect results**
 
@@ -123,31 +125,34 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
 | Script | Typical command | Notes |
 | --- | --- | --- |
-| `scripts/run_pipeline.sh` | `bash scripts/run_pipeline.sh --pipeline sectioned -i <notes> -o <outputs>` | Autosizes threads/heap, recompiles helpers, accepts `--dict`, `--umls-key`, `--java-opts`, and `--with-relations` |
-| `scripts/run_async.sh` | `bash scripts/run_async.sh --pipeline smoke -i <notes> -o <outputs>` | Shards input, runs multiple workers, and merges summary CSV/BSV outputs |
-| `scripts/validate.sh` | `bash scripts/validate.sh --pipeline core_sectioned_smoke --limit 20 -i <notes> -o <run>` | Optional sampling (`--limit`), manifest comparison (`--manifest`), deterministic single-thread mode by default |
-| `scripts/validate_mimic.sh` | `bash scripts/validate_mimic.sh --pipeline drug` | Wrapper tuned for the bundled sample; creates per-pipeline subfolders and manifest checks |
+| `scripts/run_pipeline.sh` | `bash scripts/run_pipeline.sh --pipeline sectioned -i <notes> -o <outputs>` | Autosizes threads/heap, supports `--background` (nohup + log), recompiles helpers, accepts `--dict`, `--umls-key`, `--java-opts`, and `--with-relations` |
+| `scripts/run_async.sh` | `bash scripts/run_async.sh --pipeline smoke -i <notes> -o <outputs>` | Shards input, runs multiple workers, shows progress/elapsed time, supports `--background`, and merges summary CSV/BSV outputs |
+| `scripts/validate.sh` | `bash scripts/validate.sh --pipeline core_sectioned_smoke --limit 20 -i <notes> -o <run>` | Optional sampling (`--limit`), semantic manifest comparison (`--manifest`); add `--deterministic` to force single-thread mode |
+| `scripts/validate_mimic.sh` | `bash scripts/validate_mimic.sh --pipeline drug` | Wrapper tuned for the bundled sample; creates per-pipeline subfolders and semantic manifest checks |
+| `scripts/semantic_manifest.py` | `python scripts/semantic_manifest.py --outputs <run_dir> --manifest <manifest.json>` | Creates or compares the semantic manifest (concept CSVs, CUI counts, RxNorm rows, XMI mentions) |
 | `scripts/flight_check.sh` | `bash scripts/flight_check.sh` | Verifies Java, CTAKES_HOME, sample data, and performs a dry run |
 | `scripts/build_dictionary.sh` | `bash scripts/build_dictionary.sh --compile-only` | Compiles headless dictionary helpers; append `-- ...` to run `HeadlessDictionaryBuilder` |
+| `scripts/ctakes_cli.py` | `python scripts/ctakes_cli.py` | Interactive runner to select pipeline/input, optionally mirror directories, and launch foreground/background runs (records metadata for run_status.py) |
+| `scripts/run_status.py` | `python scripts/run_status.py --list` | Summarises recorded runs and reports progress using pipeline/async logs |
+
+> **Runner logs:** `run_pipeline.sh` now emits `[pipeline][runner=N/M]` lines (threads, heap, start/finish) and honours `--background` to detach via `nohup`. `run_async.sh` mirrors the flag, shows per-shard progress/elapsed time, and writes shard logs under `<output>/.../shards/`.
+
 
 ## Validation workflows
 
 | Scenario | Command | Outputs |
 | --- | --- | --- |
-| Full sample smoke test | `bash scripts/validate_mimic.sh` | Uses `samples/mimic`, writes to `outputs/validate_mimic/<pipeline>/` with manifest comparison logs |
-| Targeted validation | `bash scripts/validate.sh --pipeline smoke --limit 20 -i <notes> -o <run>` | Copies the first N notes to a temp workspace, runs the chosen pipeline, and optionally diffs against a manifest |
+| Full sample smoke test | `bash scripts/validate_mimic.sh` | Uses `samples/mimic`, writes to `outputs/validate_mimic/<pipeline>/`, and maintains per-pipeline semantic manifest JSONs (concept CSVs, CUI counts, RxNorm rows, XMI mentions) |
+| Targeted validation | `bash scripts/validate.sh --pipeline smoke --limit 20 -i <notes> -o <run>` | Copies the first N notes to a temp workspace, runs the chosen pipeline, and optionally diffs against a semantic manifest (JSON) |
 | Async batch run | `bash scripts/run_async.sh --pipeline sectioned -i <notes> -o <runs>` | Builds timestamped output folders and merged `concepts_summary.csv` / `rxnorm_summary.csv` (drug pipeline) |
 
-> **Manifest tip:** Generate or refresh a manifest with the PowerShell snippet below; the file follows the `sha256  relative/path` format used by `scripts/validate.sh` and `scripts/validate_mimic.sh`.
-
-```powershell
-Get-ChildItem outputs/validate_smoke -Recurse -File |
-  ForEach-Object {
-    $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower()
-    $rel  = Resolve-Path $_ -Relative
-    "$hash  $rel"
-  } | Set-Content -Encoding utf8 samples/mimic_manifest.txt
-```
+> **Manifest tip:** Run `python scripts/semantic_manifest.py --outputs <run_dir> --manifest <manifest.json>` to create or compare the semantic manifest. The helper captures concept CSV rows, CUI counts, RxNorm rows, and XMI mentions in a stable order.
+>
+> ```bash
+> python scripts/semantic_manifest.py --outputs outputs/validate_mimic/core --manifest samples/mimic_manifest_core.json
+> ```
+>
+> Re-run the command after a new pipeline run to diff against the baseline; it prints the first mismatches and returns a non-zero status when semantics drift.
 
 ## Dictionary builder
 

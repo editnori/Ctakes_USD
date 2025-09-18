@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+ORIGINAL_ARGS=("$@")
+
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 ENV_FILE="${BASE_DIR}/.ctakes_env"
 if [[ -f "${ENV_FILE}" ]]; then
@@ -25,6 +27,7 @@ Options:
   --no-autoscale                           Disable autoscale heuristics
   --dict <file.xml>                        Dictionary XML to pass through
   --umls-key <KEY>                         UMLS API key override
+  --background                             Re-run detached via nohup (logs to output dir)
   --java-opts "..."                       Extra JVM options per runner
   --dry-run                                Print the planned commands then exit
   --help                                   Show this help text
@@ -60,6 +63,7 @@ PIPELINE_KEY="sectioned"
 WITH_RELATIONS=0
 SHARDS=""
 SHARDS_SET=0
+BACKGROUND=0
 THREADS=""
 THREADS_SET=0
 XMX=""
@@ -86,6 +90,7 @@ while [[ $# -gt 0 ]]; do
     --dict) DICT_XML="$2"; shift 2;;
     --umls-key) UMLS_OVERRIDE="$2"; shift 2;;
     --java-opts) JAVA_OPTS_EXTRA="$2"; shift 2;;
+    --background) BACKGROUND=1; shift 1;;
     --dry-run) DRY_RUN=1; shift 1;;
     --help|-h) usage; exit 0;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 1;;
@@ -100,6 +105,30 @@ if [[ -z "${IN_DIR}" || -z "${OUT_DIR}" ]]; then
 fi
 
 [[ -d "${IN_DIR}" ]] || { echo "[async] Input directory not found: ${IN_DIR}" >&2; exit 1; }
+if [[ ${BACKGROUND} -eq 1 && -z "${CTAKES_ASYNC_REEXEC:-}" ]]; then
+  if [[ ${DRY_RUN} -eq 1 ]]; then
+    echo "[async] --background cannot be combined with --dry-run" >&2
+    exit 1
+  fi
+  if ! command -v nohup >/dev/null 2>&1; then
+    echo "[async] --background requires nohup" >&2
+    exit 1
+  fi
+  LOG_DIR="${OUT_DIR%/}"
+  mkdir -p "${LOG_DIR}"
+  LOG_FILE="${LOG_DIR}/run_async.log"
+  REPLAY_ARGS=()
+  for arg in "${ORIGINAL_ARGS[@]}"; do
+    [[ "$arg" == "--background" ]] && continue
+    REPLAY_ARGS+=("$arg")
+  done
+  export CTAKES_ASYNC_REEXEC=1
+  nohup "${BASH:-bash}" "$0" "${REPLAY_ARGS[@]}" >>"${LOG_FILE}" 2>&1 &
+  child_pid=$!
+  echo "[async] background mode enabled; output -> ${LOG_FILE} (pid ${child_pid})"
+  exit 0
+fi
+
 
 if [[ ! -f "${RUN_PIPELINE_SCRIPT}" ]]; then
   echo "[async] Missing run_pipeline.sh helper" >&2
@@ -159,6 +188,10 @@ TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 BASE_OUT="${OUT_DIR%/}/${PIPELINE_KEY}/${TIMESTAMP}"
 SHARDS_DIR="${BASE_OUT}/shards"
 mkdir -p "$SHARDS_DIR"
+declare -A PID_TO_INDEX=()
+declare -a SHARD_DOCS=()
+START_TS=$(date +%s)
+
 declare -a SHARD_COUNTS
 
 echo "[async] ===== Starting async run for pipeline '${PIPELINE_KEY}' ====="
@@ -193,6 +226,7 @@ if [[ $DRY_RUN -eq 1 ]]; then
   for ((i=0;i<SHARDS;i++)); do
     in_dir=$(printf "%s/shard-%03d/input" "$SHARDS_DIR" "$i")
     out_dir=$(printf "%s/shard-%03d/output" "$SHARDS_DIR" "$i")
+    printf 'RUNNER_INDEX=%s RUNNER_COUNT=%s ' "$((i+1))" "$SHARDS"
     printf '%q ' "${RUN_PIPELINE_CMD[@]}" --input "$in_dir" --output "$out_dir"
     printf '%q ' "${COMMON_ARGS[@]}"
     printf '\n'
@@ -213,19 +247,47 @@ for ((i=0;i<SHARDS;i++)); do
   printf '[async] shard-%03d | docs=%d | threads=%s | Xmx=%sMB -> %s\n' "$i" "$docs" "${THREADS:-"-"}" "${XMX:-"-"}" "$out_dir"
   (
     printf '[async] shard-%03d started at %s\n' "$i" "$(date '+%Y-%m-%d %H:%M:%S')"
-    "${RUN_PIPELINE_CMD[@]}" --input "$in_dir" --output "$out_dir" "${COMMON_ARGS[@]}"
+    runner_idx=$((i+1))
+    RUNNER_INDEX=$runner_idx RUNNER_COUNT=$SHARDS "${RUN_PIPELINE_CMD[@]}" --input "$in_dir" --output "$out_dir" "${COMMON_ARGS[@]}"
     status=$?
     printf '[async] shard-%03d finished at %s (exit=%d)\n' "$i" "$(date '+%Y-%m-%d %H:%M:%S')" "$status"
     exit $status
   ) >"$log_file" 2>&1 &
-  PIDS+=($!)
+  pid=$!
+  PIDS+=($pid)
+  PID_TO_INDEX[$pid]=$i
+  SHARD_DOCS[$i]=$docs
 done
+completed=0
+failed=0
+docs_done=0
 for pid in "${PIDS[@]}"; do
-  if ! wait "$pid"; then STATUS=1; fi
+  if wait "$pid"; then
+    exit_code=0
+  else
+    exit_code=$?
+  fi
+  shard_index=${PID_TO_INDEX[$pid]:-0}
+  shard_label=$(printf "shard-%03d" "$shard_index")
+  shard_docs=${SHARD_DOCS[$shard_index]:-0}
+  docs_done=$((docs_done + shard_docs))
+  completed=$((completed + 1))
+  percent=$((completed * 100 / SHARDS))
+  elapsed=$(( $(date +%s) - START_TS ))
+  if (( exit_code == 0 )); then
+    echo "[async] progress ${completed}/${SHARDS} (${percent}%) | docs ${docs_done}/${TOTAL_DOCS} | elapsed ${elapsed}s | ${shard_label} ok"
+  else
+    failed=$((failed + 1))
+    STATUS=1
+    echo "[async] progress ${completed}/${SHARDS} (${percent}%) | docs ${docs_done}/${TOTAL_DOCS} | elapsed ${elapsed}s | ${shard_label} exit=${exit_code}" >&2
+  fi
 done
 
-if (( STATUS != 0 )); then
-  echo "[async] One or more shards failed." >&2
+TOTAL_ELAPSED=$(( $(date +%s) - START_TS ))
+if (( STATUS == 0 )); then
+  echo "[async] all shards completed in ${TOTAL_ELAPSED}s"
+else
+  echo "[async] completed with ${failed} failure(s) in ${TOTAL_ELAPSED}s" >&2
 fi
 
 mkdir -p "$BASE_OUT/xmi" "$BASE_OUT/concepts" "$BASE_OUT/cui_counts"

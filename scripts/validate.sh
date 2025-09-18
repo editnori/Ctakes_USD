@@ -37,7 +37,7 @@ WITH_RELATIONS=0
 DRY_RUN=0
 MANIFEST=""
 CANONICALIZE=1
-DETERMINISTIC=1
+DETERMINISTIC=0
 STATUS=0
 
 while [[ $# -gt 0 ]]; do
@@ -149,11 +149,6 @@ files_processed=0
 if [[ -d "${OUT_DIR}/concepts" ]]; then
   files_processed=$(find "${OUT_DIR}/concepts" -type f -name '*.csv' | wc -l | awk '{print $1}')
 fi
-base_manifest_count=0
-if [[ -f "${MANIFEST}" ]]; then
-  base_manifest_count=$(wc -l < "${MANIFEST}" | awk '{print $1}')
-fi
-
 if [[ ${STATUS} -eq 0 && ${CANONICALIZE} -eq 1 ]]; then
   CANON_PY=$(command -v python3 || command -v python || true)
   if [[ -z "${CANON_PY}" ]]; then
@@ -246,128 +241,15 @@ PY
 fi
 
 if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then
-  TMP_MANIFEST=$(mktemp)
   PY_BIN=$(command -v python3 || command -v python || true)
   if [[ -z "${PY_BIN}" ]]; then
     echo "[validate] Manifest comparison requires python (python3 or python)." >&2
-    rm -f "${TMP_MANIFEST}"
-    exit 1
-  fi
-  "${PY_BIN}" - <<'PY' "${OUT_DIR}" "${TMP_MANIFEST}"
-import hashlib
-import os
-import sys
-from pathlib import Path
-
-base = Path(sys.argv[1]).resolve()
-manifest_path = Path(sys.argv[2])
-targets = {
-    'concepts': ('.csv', '.CSV'),
-    'cui_counts': ('.bsv', '.BSV'),
-    'rxnorm': ('.csv', '.CSV'),
-}
-entries = []
-for category, exts in targets.items():
-    cat_dir = base / category
-    if not cat_dir.is_dir():
-        continue
-    for path in sorted(cat_dir.rglob('*')):
-        if not path.is_file():
-            continue
-        lower = path.name.lower()
-        if not any(lower.endswith(ext.lower()) for ext in exts):
-            continue
-        rel = path.relative_to(base).as_posix()
-        sha = hashlib.sha256(path.read_bytes()).hexdigest()
-        entries.append((rel, sha))
-with manifest_path.open('w', encoding='utf-8') as handle:
-    for rel, sha in sorted(entries):
-        handle.write(f"{sha}  {rel}\n")
-PY
-  timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-  COUNTS_OUTPUT=$("${PY_BIN}" - <<'PY' "${TMP_MANIFEST}" "${MANIFEST}"
-import os
-import sys
-cats = ("concepts", "cui_counts", "rxnorm")
-def counts(path):
-    totals = [0, 0, 0]
-    if not path or not os.path.isfile(path):
-        return totals
-    with open(path, encoding="utf-8") as handle:
-        for line in handle:
-            parts = line.strip().split(None, 1)
-            if len(parts) != 2:
-                continue
-            rel = parts[1]
-            for idx, cat in enumerate(cats):
-                if rel.startswith(cat + "/"):
-                    totals[idx] += 1
-    return totals
-actual = counts(sys.argv[1])
-baseline = counts(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2] else [0, 0, 0]
-print(*(actual + baseline))
-PY
-)
-  read -r concepts_actual cui_actual rx_actual concepts_base cui_base rx_base <<< "${COUNTS_OUTPUT:-0 0 0 0 0 0}"
-  summary_actual_text="concepts:${concepts_actual}, cui_counts:${cui_actual}, rxnorm:${rx_actual}"
-  summary_compare="concepts: current ${concepts_actual} vs baseline ${concepts_base}; cui_counts: current ${cui_actual} vs baseline ${cui_base}; rxnorm: current ${rx_actual} vs baseline ${rx_base}"
-  REPORT_FILE="${OUT_DIR%/}/validation_report.log"
-  if [[ -f "${MANIFEST}" ]]; then
-    if cmp -s "${MANIFEST}" "${TMP_MANIFEST}"; then
-      echo "[validate] Manifest matches ${MANIFEST}"
-      if [[ ${files_processed} -gt 0 ]]; then
-        if [[ ${base_manifest_count} -gt 0 ]]; then
-          echo "[validate] ${files_processed}/${base_manifest_count} files matched the baseline."
-        else
-          echo "[validate] Processed ${files_processed} files; no baseline manifest entries to compare."
-        fi
-      fi
-      echo "[validate] All outputs validated at ${timestamp} (${summary_actual_text})."
-      {
-        echo "timestamp=${timestamp}"
-        echo "status=match"
-        echo "manifest=${MANIFEST}"
-        echo "concepts=${concepts_actual}"
-        echo "cui_counts=${cui_actual}"
-        echo "rxnorm=${rx_actual}"
-        echo
-      } >> "${REPORT_FILE}"
-    else
-      echo "[validate] Manifest differs from ${MANIFEST}" >&2
-      diff -u "${MANIFEST}" "${TMP_MANIFEST}" || true
-      ACTUAL_COUNT=$(wc -l < "${TMP_MANIFEST}" | awk '{print $1}')
-      BASELINE_COUNT=$(wc -l < "${MANIFEST}" | awk '{print $1}')
-      echo "[validate] Baseline entries: ${BASELINE_COUNT}; current entries: ${ACTUAL_COUNT}." >&2
-      echo "[validate] Validation mismatch at ${timestamp} (${summary_compare})." >&2
-      {
-        echo "timestamp=${timestamp}"
-        echo "status=diff"
-        echo "manifest=${MANIFEST}"
-        echo "concepts-current=${concepts_actual}"
-        echo "concepts-baseline=${concepts_base}"
-        echo "cui_counts-current=${cui_actual}"
-        echo "cui_counts-baseline=${cui_base}"
-        echo "rxnorm-current=${rx_actual}"
-        echo "rxnorm-baseline=${rx_base}"
-        echo
-      } >> "${REPORT_FILE}"
+    STATUS=1
+  else
+    REPORT_FILE="${OUT_DIR%/}/validation_report.log"
+    if ! "${PY_BIN}" "${BASE_DIR}/scripts/semantic_manifest.py" --outputs "${OUT_DIR}" --manifest "${MANIFEST}" --report "${REPORT_FILE}" --processed-count "${files_processed}"; then
       STATUS=1
     fi
-    rm -f "${TMP_MANIFEST}"
-  else
-    mkdir -p "$(dirname "${MANIFEST}")"
-    mv "${TMP_MANIFEST}" "${MANIFEST}"
-    echo "[validate] Baseline manifest saved to ${MANIFEST}"
-    echo "[validate] Baseline captured at ${timestamp} (${summary_actual_text})."
-    {
-      echo "timestamp=${timestamp}"
-      echo "status=baseline-created"
-      echo "manifest=${MANIFEST}"
-      echo "concepts=${concepts_actual}"
-      echo "cui_counts=${cui_actual}"
-      echo "rxnorm=${rx_actual}"
-      echo
-    } >> "${REPORT_FILE}"
   fi
 fi
 
