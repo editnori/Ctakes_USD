@@ -75,6 +75,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
    Add `--with-relations` when you need relation extraction, or disable autoscale with `--no-autoscale` and supply explicit `--threads` / `--xmx` values.
 
    Or launch the interactive helper (`python scripts/ctakes_cli.py`) to pick the pipeline, discover note folders, and optionally detach via `--background` while recording progress metadata.
+   When running in the background, check progress anytime with `python scripts/run_status.py --list` (or `--run <id>` for details).
 
 6. **Inspect results**
 
