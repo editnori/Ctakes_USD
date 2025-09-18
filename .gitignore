@@ -1,4 +1,4 @@
-# Build + compile artifacts
+﻿# Build + compile artifacts
 /build/
 /.gradle/
 *.class
@@ -22,6 +22,7 @@
 ctakes-run*/
 *.xmi
 *.bsv
+!resources_override/**/*.bsv
 *.csv
 *.html
 *.xlsx
