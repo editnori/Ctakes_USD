@@ -30,8 +30,7 @@ Options:
   -o, --output <dir>   Output directory (default: outputs/validate_mimic)
   --limit <N>          Override sample size (default: 100)
   --pipeline <key>     Pipeline key passed to validate.sh (default: smoke)
-  --with-temporal      Add temporal module
-  --with-coref         Add coref module
+  --with-relations    Add relations module (core/smoke/drug only)
   --manifest <file>    Override manifest path (default: samples/mimic_manifest.txt)
   --dry-run            Print the commands without executing
   -h, --help           Show this help text
@@ -46,8 +45,7 @@ LIMIT=100
 PIPELINE_KEY="core_sectioned_smoke"
 PIPELINE_SET=0
 PIPELINE_RUNS=()
-WITH_TEMPORAL=0
-WITH_COREF=0
+WITH_RELATIONS=0
 DRY_RUN=0
 MANIFEST="${DEFAULT_MANIFEST}"
 MANIFEST_PROVIDED=0
@@ -58,8 +56,7 @@ while [[ $# -gt 0 ]]; do
     -o|--output) OUT_DIR="$2"; shift 2;;
     --limit) LIMIT="$2"; shift 2;;
     --pipeline) PIPELINE_KEY="$2"; PIPELINE_SET=1; PIPELINE_RUNS=("${PIPELINE_KEY}"); shift 2;;
-    --with-temporal) WITH_TEMPORAL=1; shift 1;;
-    --with-coref) WITH_COREF=1; shift 1;;
+    --with-relations) WITH_RELATIONS=1; shift 1;;
     --manifest) MANIFEST="$2"; MANIFEST_PROVIDED=1; shift 2;;
     --dry-run) DRY_RUN=1; shift 1;;
     -h|--help) usage; exit 0;;
@@ -111,8 +108,9 @@ for pipeline in "${PIPELINE_RUNS[@]}"; do
     MANIFEST_USE="${DEFAULT_MANIFEST_BASE}_${pipeline}.txt"
   fi
   CMD=("${VALIDATE_CMD[@]}" -i "${IN_DIR}" -o "${OUT_DIR_PIPE}" --pipeline "${pipeline}" --limit "${LIMIT}" --manifest "${MANIFEST_USE}")
-  [[ ${WITH_TEMPORAL} -eq 1 ]] && CMD+=(--with-temporal)
-  [[ ${WITH_COREF} -eq 1 ]] && CMD+=(--with-coref)
+  if [[ ${WITH_RELATIONS} -eq 1 ]]; then
+    CMD+=(--with-relations)
+  fi
   [[ ${DRY_RUN} -eq 1 ]] && CMD+=(--dry-run)
   echo "[validate_mimic] Running ${pipeline} pipeline -> ${OUT_DIR_PIPE}"
   if ! "${CMD[0]}" "${CMD[@]:1}"; then

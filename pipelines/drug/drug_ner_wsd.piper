@@ -1,5 +1,5 @@
 // Sectioned drug NER pipeline: section-aware pipeline with dictionary lookup and Drug NER annotator.
-// scripts/run_pipeline.sh injects temporal/coref modules at OPTIONAL_MODULES if required.
+// scripts/run_pipeline.sh can inject TsRelationSubPipe at OPTIONAL_MODULES when requested.
 
 threads 3
 

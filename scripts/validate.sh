@@ -15,8 +15,7 @@ Usage: scripts/validate.sh -i <input_dir> -o <output_dir> [options]
 Options:
   --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke>   Pipeline to exercise (default: sectioned)
   --limit <N>                              Copy the first N files into a temp dir before running (default: all)
-  --with-temporal                          Run with TsTemporalSubPipe enabled
-  --with-coref                             Run with TsCorefSubPipe enabled
+  --with-relations                        Run with TsRelationSubPipe enabled (core/smoke/drug only)
   --manifest <file>                        Compare outputs against a saved manifest (creates baseline if missing)
   --canonicalize                           Rewrite outputs into a stable order before manifesting (default)
   --no-canonicalize                        Skip canonical rewriting before manifesting
@@ -34,8 +33,7 @@ PIPELINE_KEY="sectioned"
 IN_DIR=""
 OUT_DIR=""
 LIMIT=0
-WITH_TEMPORAL=0
-WITH_COREF=0
+WITH_RELATIONS=0
 DRY_RUN=0
 MANIFEST=""
 CANONICALIZE=1
@@ -48,8 +46,7 @@ while [[ $# -gt 0 ]]; do
     -o|--output) OUT_DIR="$2"; shift 2;;
     --pipeline) PIPELINE_KEY="$2"; shift 2;;
     --limit) LIMIT="$2"; shift 2;;
-    --with-temporal) WITH_TEMPORAL=1; shift 1;;
-    --with-coref) WITH_COREF=1; shift 1;;
+    --with-relations) WITH_RELATIONS=1; shift 1;;
     --manifest) MANIFEST="$2"; shift 2;;
     --canonicalize) CANONICALIZE=1; shift 1;;
     --no-canonicalize) CANONICALIZE=0; shift 1;;
@@ -129,8 +126,9 @@ fi
 
 mkdir -p "${OUT_DIR}"
 ARGS=("${RUNNER_CMD[@]}" -i "${PIPE_INPUT}" -o "${OUT_DIR}" --pipeline "${PIPELINE_KEY}")
-[[ ${WITH_TEMPORAL} -eq 1 ]] && ARGS+=(--with-temporal)
-[[ ${WITH_COREF} -eq 1 ]] && ARGS+=(--with-coref)
+if [[ ${WITH_RELATIONS} -eq 1 ]]; then
+  ARGS+=(--with-relations)
+fi
 [[ ${DRY_RUN} -eq 1 ]] && ARGS+=(--dry-run)
 if [[ ${DETERMINISTIC} -eq 1 ]]; then
   ARGS+=(--no-autoscale --threads 1 --xmx 4096)

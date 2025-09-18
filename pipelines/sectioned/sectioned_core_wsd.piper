@@ -1,5 +1,5 @@
 // Sectioned pipeline: section-aware tokenizer + relations with WSD.
-// scripts/run_pipeline.sh injects temporal/coref modules at OPTIONAL_MODULES when requested.
+// OPTIONAL_MODULES is reserved for script-injected extras (relations already enabled here).
 
 threads 3
 

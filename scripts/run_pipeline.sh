@@ -16,8 +16,7 @@ usage() {
 Usage: scripts/run_pipeline.sh -i <input_dir> -o <output_dir> [options]
 Options:
   --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke>   Pipeline to execute (default: sectioned)
-  --with-temporal                          Insert TsTemporalSubPipe before writers
-  --with-coref                             Insert TsCorefSubPipe before writers
+  --with-relations                        Insert TsRelationSubPipe before writers (core/smoke/drug only)
   --threads <N>                            Override the Piper "threads" clause
   --xmx <MB>                               Heap size per run (overrides autoscale)
   --java-opts "..."                       Extra JVM options to append
@@ -78,8 +77,7 @@ recommend_autoscale() {
 }
 
 PIPELINE_KEY="sectioned"
-WITH_TEMPORAL=0
-WITH_COREF=0
+WITH_RELATIONS=0
 THREAD_OVERRIDE=""
 XMX_MB=""
 JAVA_OPTS_EXTRA=""
@@ -95,8 +93,7 @@ while [[ $# -gt 0 ]]; do
     -i|--input) IN_DIR="$2"; shift 2;;
     -o|--output) OUT_DIR="$2"; shift 2;;
     --pipeline) PIPELINE_KEY="$2"; shift 2;;
-    --with-temporal) WITH_TEMPORAL=1; shift 1;;
-    --with-coref) WITH_COREF=1; shift 1;;
+    --with-relations) WITH_RELATIONS=1; shift 1;;
     --threads) THREAD_OVERRIDE="$2"; shift 2;;
     --xmx) XMX_MB="$2"; shift 2;;
     --java-opts) JAVA_OPTS_EXTRA="$2"; shift 2;;
@@ -221,8 +218,12 @@ cleanup() { rm -f "${TMP_PIPE}"; }
 trap cleanup EXIT
 
 OPTIONAL_LINES=()
-[[ ${WITH_TEMPORAL} -eq 1 ]] && OPTIONAL_LINES+=("load TsTemporalSubPipe")
-[[ ${WITH_COREF} -eq 1 ]] && OPTIONAL_LINES+=("load TsCorefSubPipe")
+if [[ ${WITH_RELATIONS} -eq 1 ]]; then
+  case "${PIPELINE_KEY}" in
+    core|smoke|drug) OPTIONAL_LINES+=("load TsRelationSubPipe");;
+    *) echo "[pipeline] --with-relations ignored for ${PIPELINE_KEY}; relations already enabled." >&2;;
+  esac
+fi
 
 >"${TMP_PIPE}"
 while IFS='' read -r line; do

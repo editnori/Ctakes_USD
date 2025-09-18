@@ -72,7 +72,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
    ```
 
-   Add `--with-temporal` and/or `--with-coref` as needed, or disable autoscale with `--no-autoscale` and supply explicit `--threads` / `--xmx` values.
+   Add `--with-relations` when you need relation extraction, or disable autoscale with `--no-autoscale` and supply explicit `--threads` / `--xmx` values.
 
 6. **Inspect results**
 
@@ -93,18 +93,12 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
 
 | Key | Piper file | Purpose |
-
 | --- | --- | --- |
-
-| `core` | `pipelines/core/core_wsd.piper` | Default fast pipeline + dictionary lookup + WSD. |
-
-| `sectioned` | `pipelines/sectioned/sectioned_core_wsd.piper` | Section-aware pipeline with relations. |
-
-| `smoke` | `pipelines/smoke/sectioned_smoke_status.piper` | Sectioned pipeline with smoking-status annotators. |
-
-| `core_sectioned_smoke` | `pipelines/combined/core_sectioned_smoke.piper` | Sectioned core pipeline with relations plus smoking annotators in one pass. |
-
-| `drug` | `pipelines/drug/drug_ner_wsd.piper` | Sectioned pipeline with ctakes-drug-ner (adds RxNorm CSVs). |
+| `core` | `pipelines/core/core_wsd.piper` | Default fast pipeline + dictionary lookup + WSD (add `--with-relations` for core relations). |
+| `sectioned` | `pipelines/sectioned/sectioned_core_wsd.piper` | Section-aware pipeline with relations enabled by default. |
+| `smoke` | `pipelines/smoke/sectioned_smoke_status.piper` | Sectioned pipeline with smoking-status annotators (relations optional via `--with-relations`). |
+| `core_sectioned_smoke` | `pipelines/combined/core_sectioned_smoke.piper` | Combined sectioned pipeline with relations plus smoking annotators in one pass. |
+| `drug` | `pipelines/drug/drug_ner_wsd.piper` | Sectioned pipeline with ctakes-drug-ner (adds RxNorm CSVs; add `--with-relations` for core relations). |
 
 
 
@@ -123,14 +117,13 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
 | Flag | Piper insertion | Effect |
 | --- | --- | --- |
-| `--with-temporal` | `load TsTemporalSubPipe` | Adds temporal relation models (DocTimeRel, event-time linking) before writers |
-| `--with-coref` | `load TsCorefSubPipe` | Enables coreference chains so writers emit `coref:` columns |
+| `--with-relations` | `load TsRelationSubPipe` | Adds core relation extraction to `core`, `smoke`, and `drug` before writers (ignored for pipelines that already include relations). |
 
 ## Script quick reference
 
 | Script | Typical command | Notes |
 | --- | --- | --- |
-| `scripts/run_pipeline.sh` | `bash scripts/run_pipeline.sh --pipeline sectioned -i <notes> -o <outputs>` | Autosizes threads/heap, recompiles helpers, accepts `--dict`, `--umls-key`, `--java-opts`, and optional modules |
+| `scripts/run_pipeline.sh` | `bash scripts/run_pipeline.sh --pipeline sectioned -i <notes> -o <outputs>` | Autosizes threads/heap, recompiles helpers, accepts `--dict`, `--umls-key`, `--java-opts`, and `--with-relations` |
 | `scripts/run_async.sh` | `bash scripts/run_async.sh --pipeline smoke -i <notes> -o <outputs>` | Shards input, runs multiple workers, and merges summary CSV/BSV outputs |
 | `scripts/validate.sh` | `bash scripts/validate.sh --pipeline core_sectioned_smoke --limit 20 -i <notes> -o <run>` | Optional sampling (`--limit`), manifest comparison (`--manifest`), deterministic single-thread mode by default |
 | `scripts/validate_mimic.sh` | `bash scripts/validate_mimic.sh --pipeline drug` | Wrapper tuned for the bundled sample; creates per-pipeline subfolders and manifest checks |

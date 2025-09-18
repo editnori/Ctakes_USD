@@ -1,5 +1,5 @@
 // Combined pipeline: sectioned core + smoking annotators in one pass.
-// scripts/run_pipeline.sh injects optional temporal/coref modules at the OPTIONAL_MODULES marker.
+// OPTIONAL_MODULES is reserved for script-injected extras (relations already enabled here).
 
 threads 3
 

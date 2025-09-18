@@ -17,8 +17,7 @@ usage() {
 Usage: scripts/run_async.sh -i <input_dir> -o <output_dir> [options]
 Options:
   --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke>   Pipeline key (default: sectioned)
-  --with-temporal                          Enable TsTemporalSubPipe
-  --with-coref                             Enable TsCorefSubPipe
+  --with-relations                        Enable TsRelationSubPipe (core/smoke/drug only)
   --shards <N>                             Number of parallel runners (default: 1 or autoscale recommendation)
   --threads <N>                            Threads per runner (passed to run_pipeline.sh)
   --xmx <MB>                               Heap per runner in MB
@@ -58,8 +57,7 @@ detect_mem_mb() {
 }
 
 PIPELINE_KEY="sectioned"
-WITH_TEMPORAL=0
-WITH_COREF=0
+WITH_RELATIONS=0
 SHARDS=""
 SHARDS_SET=0
 THREADS=""
@@ -79,8 +77,7 @@ while [[ $# -gt 0 ]]; do
     -i|--input) IN_DIR="$2"; shift 2;;
     -o|--output) OUT_DIR="$2"; shift 2;;
     --pipeline) PIPELINE_KEY="$2"; shift 2;;
-    --with-temporal) WITH_TEMPORAL=1; shift 1;;
-    --with-coref) WITH_COREF=1; shift 1;;
+    --with-relations) WITH_RELATIONS=1; shift 1;;
     --shards) SHARDS="$2"; SHARDS_SET=1; shift 2;;
     --threads) THREADS="$2"; THREADS_SET=1; shift 2;;
     --xmx) XMX="$2"; XMX_SET=1; shift 2;;
@@ -183,8 +180,9 @@ for ((idx=0; idx<TOTAL_DOCS; idx++)); do
 done
 
 COMMON_ARGS=(--pipeline "$PIPELINE_KEY")
-[[ $WITH_TEMPORAL -eq 1 ]] && COMMON_ARGS+=(--with-temporal)
-[[ $WITH_COREF -eq 1 ]] && COMMON_ARGS+=(--with-coref)
+if [[ $WITH_RELATIONS -eq 1 ]]; then
+  COMMON_ARGS+=(--with-relations)
+fi
 [[ -n $DICT_XML ]] && COMMON_ARGS+=(--dict "$DICT_XML")
 [[ -n $UMLS_OVERRIDE ]] && COMMON_ARGS+=(--umls-key "$UMLS_OVERRIDE")
 [[ -n $JAVA_OPTS_EXTRA ]] && COMMON_ARGS+=(--java-opts "$JAVA_OPTS_EXTRA")

@@ -1,5 +1,5 @@
 // Core pipeline: default fast pipeline with dictionary lookup + WSD.
-// scripts/run_pipeline.sh injects optional temporal/coref modules at the OPTIONAL_MODULES marker.
+// scripts/run_pipeline.sh can inject TsRelationSubPipe at the OPTIONAL_MODULES marker when requested.
 
 threads 3
 

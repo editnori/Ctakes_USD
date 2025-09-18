@@ -1,5 +1,5 @@
 // Sectioned smoking pipeline: section-aware core with WSD + smoking status annotators.
-// scripts/run_pipeline.sh injects temporal/coref modules at OPTIONAL_MODULES when needed.
+// scripts/run_pipeline.sh can inject TsRelationSubPipe at OPTIONAL_MODULES when requested.
 
 threads 3
 
