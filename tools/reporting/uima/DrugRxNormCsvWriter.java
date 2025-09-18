@@ -58,7 +58,7 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
         List<String> rows = new ArrayList<>();
         for (IdentifiedAnnotation ia : JCasUtil.select(jCas, IdentifiedAnnotation.class)) {
             UmlsConcept bestRx = pickBestRxNorm(ia);
-            if (bestRx == null) continue; // only RxNorm-coded
+            if (bestRx == null) continue; // skip mentions without any usable ontology concept
 
             String section = findSection(segments, ia);
             String tui = nvl(bestRx.getTui());
@@ -100,17 +100,32 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
 
     private static UmlsConcept pickBestRxNorm(IdentifiedAnnotation ia) {
         if (ia == null || ia.getOntologyConceptArr() == null) return null;
-        UmlsConcept best = null;
-        double bestScore = Double.NEGATIVE_INFINITY;
+        UmlsConcept bestRx = null;
+        double bestRxScore = Double.NEGATIVE_INFINITY;
+        UmlsConcept bestChemical = null;
+        double bestChemicalScore = Double.NEGATIVE_INFINITY;
+        UmlsConcept bestAny = null;
+        double bestAnyScore = Double.NEGATIVE_INFINITY;
         for (int i = 0; i < ia.getOntologyConceptArr().size(); i++) {
             if (!(ia.getOntologyConceptArr().get(i) instanceof UmlsConcept)) continue;
             UmlsConcept c = (UmlsConcept) ia.getOntologyConceptArr().get(i);
-            String scheme = nvl(c.getCodingScheme()).toUpperCase(Locale.ROOT);
-            if (!"RXNORM".equals(scheme)) continue;
             double sc = c.getScore();
-            if (best == null || sc > bestScore) { best = c; bestScore = sc; }
+            if (bestAny == null || sc > bestAnyScore) { bestAny = c; bestAnyScore = sc; }
+
+            String scheme = nvl(c.getCodingScheme()).toUpperCase(Locale.ROOT);
+            if ("RXNORM".equals(scheme)) {
+                if (bestRx == null || sc > bestRxScore) { bestRx = c; bestRxScore = sc; }
+                continue;
+            }
+
+            String tui = nvl(c.getTui());
+            if (!tui.isEmpty() && "CHEM".equals(groupForTui(tui))) {
+                if (bestChemical == null || sc > bestChemicalScore) { bestChemical = c; bestChemicalScore = sc; }
+            }
         }
-        return best;
+        if (bestRx != null) return bestRx;
+        if (bestChemical != null) return bestChemical;
+        return bestAny;
     }
 
     private static String getDocId(JCas jCas) {
