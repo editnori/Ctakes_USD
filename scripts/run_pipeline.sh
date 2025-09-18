@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
 ORIGINAL_ARGS=("$@")
@@ -301,8 +301,8 @@ JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary.lookup2=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.uima=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.cleartk=warn)
-JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.opennlp=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.ctakes.core.ae.RegexSpanFinder=warn)
+JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.opennlp=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=${XMI_LOG_LEVEL:-warn})
 
 JAVA_CMD+=(org.apache.ctakes.core.pipeline.PiperFileRunner -p "${TMP_PIPE}" -i "${IN_DIR}" -o "${OUT_DIR}" -l "${DICT_XML}")
