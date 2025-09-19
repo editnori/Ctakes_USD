@@ -301,7 +301,6 @@ JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.ctakes.dictionary.lookup2=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.uima=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.cleartk=warn)
-JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.ctakes.core.ae.RegexSpanFinder=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.opennlp=warn)
 JAVA_CMD+=(-Dorg.slf4j.simpleLogger.log.org.apache.uima.cas.impl.XmiCasSerializer=${XMI_LOG_LEVEL:-warn})
 
