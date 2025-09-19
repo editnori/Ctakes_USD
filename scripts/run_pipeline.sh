@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 ORIGINAL_ARGS=("$@")
@@ -17,12 +17,12 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/run_pipeline.sh -i <input_dir> -o <output_dir> [options]
 Options:
-  --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke>   Pipeline to execute (default: sectioned)
+  --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke|s_core_relations_smoke>   Pipeline to execute (default: sectioned)
   --with-relations                        Insert TsRelationSubPipe before writers (core/smoke/drug only)
   --threads <N>                            Override the Piper "threads" clause
   --xmx <MB>                               Heap size per run (overrides autoscale)
   --java-opts "..."                       Extra JVM options to append
-  --dict <file.xml>                        Dictionary Lookup XML (defaults to bundled FullClinical_AllTUIs[_local].xml)
+  --dict <file.xml>                        Dictionary Lookup XML (defaults to bundled KidneyStone_SDOH[_local].xml)
   --background                           Rerun detached via nohup (logs to output directory)
   --umls-key <KEY>                         Override the UMLS API key for dictionary building
   --autoscale                              Recommend threads/heap based on host resources (default)
@@ -157,6 +157,7 @@ case "${PIPELINE_KEY}" in
   core) PIPER="${BASE_DIR}/pipelines/core/core_wsd.piper";;
   sectioned) PIPER="${BASE_DIR}/pipelines/sectioned/sectioned_core_wsd.piper";;
   smoke) PIPER="${BASE_DIR}/pipelines/smoke/sectioned_smoke_status.piper";;
+  s_core_relations_smoke) PIPER="${BASE_DIR}/pipelines/combined/s_core_relations_smoke.piper";;
   core_sectioned_smoke) PIPER="${BASE_DIR}/pipelines/combined/core_sectioned_smoke.piper";;
   drug) PIPER="${BASE_DIR}/pipelines/drug/drug_ner_wsd.piper";;
   *) echo "[pipeline] Unknown pipeline key: ${PIPELINE_KEY}" >&2; exit 1;;
@@ -208,13 +209,21 @@ echo "[pipeline][runner=${RUNNER_INDEX}/${RUNNER_COUNT}] threads=${THREAD_OVERRI
 
 
 if [[ -z "${DICT_XML}" ]]; then
-  default_dict="${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs_local.xml"
+  default_dict="${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/KidneyStone_SDOH_local.xml"
   if [[ -f "$default_dict" ]]; then
     DICT_XML="$default_dict"
   else
-    default_dict="${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs.xml"
+    default_dict="${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/KidneyStone_SDOH.xml"
     if [[ -f "$default_dict" ]]; then
       DICT_XML="$default_dict"
+    else
+      legacy_local="${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs_local.xml"
+      legacy_default="${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs.xml"
+      if [[ -f "$legacy_local" ]]; then
+        DICT_XML="$legacy_local"
+      elif [[ -f "$legacy_default" ]]; then
+        DICT_XML="$legacy_default"
+      fi
     fi
   fi
 fi

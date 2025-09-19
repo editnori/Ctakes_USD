@@ -13,7 +13,7 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/validate.sh -i <input_dir> -o <output_dir> [options]
 Options:
-  --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke>   Pipeline to exercise (default: sectioned)
+  --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke|s_core_relations_smoke>   Pipeline to exercise (default: sectioned)
   --limit <N>                              Copy the first N files into a temp dir before running (default: all)
   --with-relations                        Run with TsRelationSubPipe enabled (core/smoke/drug only)
   --manifest <file>                        Compare outputs against a saved manifest (creates baseline if missing)

@@ -18,7 +18,7 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/run_async.sh -i <input_dir> -o <output_dir> [options]
 Options:
-  --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke>   Pipeline key (default: sectioned)
+  --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke|s_core_relations_smoke>   Pipeline key (default: sectioned)
   --with-relations                        Enable TsRelationSubPipe (core/smoke/drug only)
   --shards <N>                             Number of parallel runners (default: 1 or autoscale recommendation)
   --threads <N>                            Threads per runner (passed to run_pipeline.sh)

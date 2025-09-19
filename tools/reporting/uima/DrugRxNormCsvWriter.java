@@ -26,7 +26,7 @@ import java.util.*;
  * Writes one per-document CSV with only RxNorm-coded mentions and minimal columns.
  *
  * Columns:
- *   Document,Begin,End,Text,Section,RxCUI,RxNormName,TUI,SemanticGroup,SemanticTypeLabel
+ *   Document,Begin,End,Text,Section,CUI,RxCUI,RxNormName,TUI,SemanticGroup,SemanticTypeLabel
  *
  * Usage in Piper:
  *   add tools.reporting.uima.DrugRxNormCsvWriter SubDirectory=rxnorm_min
@@ -61,9 +61,19 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
             UmlsConcept bestRx = pickBestRxNorm(ia);
             if (bestRx == null) continue; // skip mentions without any usable ontology concept
 
+            List<String> rxCodes = collectRxnormCodes(ia);
+            if (rxCodes.isEmpty()) {
+                String fallbackCode = nvl(bestRx.getCode());
+                if (!fallbackCode.isEmpty()) {
+                    rxCodes = Collections.singletonList(fallbackCode);
+                }
+            }
+            if (rxCodes.isEmpty()) continue;
+
             String section = findSection(segments, ia);
             String tui = nvl(bestRx.getTui());
-            String rxCui = nvl(bestRx.getCui());
+            String umlsCui = nvl(bestRx.getCui());
+            String rxCuiJoined = csv(String.join(";", rxCodes));
             String rxName = nvl(bestRx.getPreferredText());
             if (rxName.isEmpty()) rxName = safeText(text, ia.getBegin(), ia.getEnd());
 
@@ -76,7 +86,8 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
               .append(ia.getEnd()).append(',')
               .append(csv(safeText(text, ia.getBegin(), ia.getEnd()))).append(',')
               .append(csv(normalizeSection(section))).append(',')
-              .append(csv(rxCui)).append(',')
+              .append(csv(umlsCui)).append(',')
+              .append(rxCuiJoined).append(',')
               .append(csv(rxName)).append(',')
               .append(csv(tui)).append(',')
               .append(csv(group)).append(',')
@@ -91,7 +102,7 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
             Path out = outDir.resolve(docId + ".CSV");
             try (BufferedWriter bw = Files.newBufferedWriter(out, StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
-                bw.write("Document,Begin,End,Text,Section,RxCUI,RxNormName,TUI,SemanticGroup,SemanticTypeLabel\n");
+                bw.write("Document,Begin,End,Text,Section,CUI,RxCUI,RxNormName,TUI,SemanticGroup,SemanticTypeLabel\n");
                 for (String line : rows) bw.write(line + "\n");
             }
         } catch (IOException e) {
@@ -127,6 +138,20 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
         if (bestRx != null) return bestRx;
         if (bestChemical != null) return bestChemical;
         return bestAny;
+    }
+
+    private static List<String> collectRxnormCodes(IdentifiedAnnotation ia) {
+        if (ia == null || ia.getOntologyConceptArr() == null) return Collections.emptyList();
+        LinkedHashSet<String> codes = new LinkedHashSet<>();
+        for (int i = 0; i < ia.getOntologyConceptArr().size(); i++) {
+            if (!(ia.getOntologyConceptArr().get(i) instanceof UmlsConcept)) continue;
+            UmlsConcept c = (UmlsConcept) ia.getOntologyConceptArr().get(i);
+            String scheme = nvl(c.getCodingScheme()).toUpperCase(Locale.ROOT);
+            if (!"RXNORM".equals(scheme)) continue;
+            String code = nvl(c.getCode());
+            if (!code.isEmpty()) codes.add(code);
+        }
+        return new ArrayList<>(codes);
     }
 
     private static String getDocId(JCas jCas) {

@@ -124,16 +124,18 @@ def build_rxnorm_sort_key(header: List[str]):
     begin_idx = index.get("Begin")
     end_idx = index.get("End")
     doc_idx = index.get("Document")
-    cui_idx = index.get("RxCUI")
+    umls_idx = index.get("CUI")
+    rx_idx = index.get("RxCUI")
     text_idx = index.get("Text")
 
     def key(row: List[str]):
         doc = row[doc_idx] if doc_idx is not None and doc_idx < len(row) else ""
         begin = safe_int(row[begin_idx]) if begin_idx is not None and begin_idx < len(row) else -1
         end = safe_int(row[end_idx]) if end_idx is not None and end_idx < len(row) else -1
-        cui = row[cui_idx] if cui_idx is not None and cui_idx < len(row) else ""
+        umls = row[umls_idx] if umls_idx is not None and umls_idx < len(row) else ""
+        rx = row[rx_idx] if rx_idx is not None and rx_idx < len(row) else ""
         text = row[text_idx] if text_idx is not None and text_idx < len(row) else ""
-        return (doc, begin, end, cui, text, row)
+        return (doc, begin, end, umls, rx, text, row)
 
     return key
 

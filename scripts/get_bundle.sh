@@ -43,10 +43,10 @@ if [[ ! -d "${EXPECTED_CTAKES}" ]]; then
 fi
 
 DICT_DIR="${EXPECTED_CTAKES}/resources/org/apache/ctakes/dictionary/lookup/fast"
-LOCAL_DICT="${DICT_DIR}/FullClinical_AllTUIs_local.xml"
-DEFAULT_DICT="${DICT_DIR}/FullClinical_AllTUIs.xml"
+LOCAL_DICT="${DICT_DIR}/KidneyStone_SDOH_local.xml"
+DEFAULT_DICT="${DICT_DIR}/KidneyStone_SDOH.xml"
 if [[ -f "${LOCAL_DICT}" && -f "${DEFAULT_DICT}" ]]; then
   echo "[get_bundle] Bundle ready at ${EXPECTED_CTAKES}"
 else
-  echo "[get_bundle] Warning: dictionary files not found under ${DICT_DIR}" >&2
+  echo "[get_bundle] Warning: KidneyStone_SDOH dictionary not found under ${DICT_DIR}" >&2
 fi

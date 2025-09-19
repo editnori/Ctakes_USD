@@ -85,11 +85,11 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
    - `cui_counts/` summarises CUI frequencies (separate affirmed/negated columns).
 
-   - `rxnorm/` appears for the drug pipeline only.
+  - `rxnorm/` appears for the drug pipeline only (Document,Begin,End,Text,Section,CUI,RxCUI,RxNormName,TUI,SemanticGroup,SemanticTypeLabel).
 
 
 
-> **Note**: The bundled FullClinical_AllTUIs dictionary ships inside the cTAKES archive. `scripts/run_pipeline.sh` automatically selects `resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs_local.xml` (or its non-local fallback) under `CTAKES_HOME`, so no manual dictionary configuration is required.
+> **Note**: The bundled KidneyStone_SDOH dictionary ships inside the cTAKES archive. `scripts/run_pipeline.sh` automatically selects `resources/org/apache/ctakes/dictionary/lookup/fast/KidneyStone_SDOH_local.xml` (or its non-local fallback) under `CTAKES_HOME`, so no manual dictionary configuration is required.
 
 ## Pipelines
 
@@ -101,7 +101,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 | `sectioned` | `pipelines/sectioned/sectioned_core_wsd.piper` | Section-aware pipeline with relations enabled by default. |
 | `smoke` | `pipelines/smoke/sectioned_smoke_status.piper` | Sectioned pipeline with smoking-status annotators (relations optional via `--with-relations`). |
 | `core_sectioned_smoke` | `pipelines/combined/core_sectioned_smoke.piper` | Combined sectioned pipeline with relations plus smoking annotators in one pass. |
-| `drug` | `pipelines/drug/drug_ner_wsd.piper` | Sectioned pipeline with ctakes-drug-ner (adds RxNorm CSVs; add `--with-relations` for core relations). |
+| `drug` | `pipelines/drug/drug_ner_wsd.piper` | Sectioned pipeline with ctakes-drug-ner (adds RxNorm CSVs with CUI+RxCUI; add `--with-relations` for core relations). |
 
 
 
@@ -164,6 +164,13 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
 Set `CTAKES_HOME` before running, as the script adds `${CTAKES_HOME}/lib/*` to both the compile and runtime classpaths.
 
+### KidneyStone_SDOH dictionary build
+
+- Configuration lives in `resources/dictionary_configs/kidney_sdoh.conf`. Update `umls.dir` if your UMLS snapshot is stored elsewhere (the default points to `../CtakesBun/umls_loader`).
+- Run `bash scripts/build_dictionary_full.sh` to rebuild the dictionary inside the bundled cTAKES install (`CtakesBun-bundle/.../lookup/fast/`). The helper compiles the wrapper classes, resolves absolute UMLS paths for discovery, and writes `dictionaries/KidneyStone_SDOH/logs/build_<ts>.log` plus the merged properties used for that run.
+- After the base dictionary is built, the script invokes `tools.DictionaryRxnormAugmenter` to create an `RXNORM` table in the HSQL store from `MRCONSO.RRF`. Lookups against `KidneyStone_SDOH.xml` (or `_local.xml`) now expose RxCUI values alongside CUIs.
+- Discovery still widens the SAB list to everything in MRCONSO; comment out the `vocabularies=` override inside `scripts/build_dictionary_full.sh` if you prefer to keep only the curated subset from the config file.
+
 ## Repository layout (high level)
 
 ```
@@ -201,7 +208,7 @@ Set `CTAKES_HOME` before running, as the script adds `${CTAKES_HOME}/lib/*` to b
 | RegexSpanFinder warnings | Bundled bundle includes slimmed dash regex; update to this release to silence the message. |
 | `java` missing or < 11 | Install Java 11+ (Debian/Ubuntu: `bash scripts/install_deps.sh` or `sudo apt-get install openjdk-17-jdk`) |
 | `CTAKES_HOME` warnings | Export `CTAKES_HOME` or let the bundled distro load; rerun `scripts/flight_check.sh` to persist the value into `.ctakes_env` |
-| Dictionary XML not found | Ensure `${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs_local.xml` exists or pass `--dict <file>` |
+| Dictionary XML not found | Ensure `${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/KidneyStone_SDOH_local.xml` exists or pass `--dict <file>` |
 | `validate.sh --limit` fails | Install `python3` / `python`, or run without `--limit` |
 | Semantic groups look off | Update `resources/SemGroups.txt`; writers apply overrides via `SemGroupLoader` |
 

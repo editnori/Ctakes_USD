@@ -1,0 +1,34 @@
+// Combined pipeline: sectioned core with optimized clinical relations plus smoking annotators.
+// OPTIONAL_MODULES is reserved for script-injected extras (relations already enabled here).
+
+threads 3
+
+// Section-aware tokenizer, POS, chunking
+load TsFullTokenizerPipeline
+add ContextDependentTokenizerAnnotator
+addDescription POSTagger
+load TsChunkerSubPipe
+
+// Dictionary lookup and WSD
+load TsDictionarySubPipe
+add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
+
+// Assertion cleanup
+load TsAttributeCleartkSubPipe
+add tools.fixes.DefaultSubjectAnnotator
+
+// Core clinical relations (filtered location candidates)
+load TsFastRelationSubPipe
+
+// Smoking Status classifiers
+addDescription tools.smoking.SmokingAggregateStep1
+addDescription tools.smoking.SmokingAggregateStep2Libsvm
+
+// OPTIONAL_MODULES
+
+// Writers
+add FileTreeXmiWriter SubDirectory=xmi
+add tools.reporting.uima.SimpleConceptCsvWriter SubDirectory=concepts
+add tools.reporting.uima.CuiCountSummaryWriter SubDirectory=cui_counts
+
+addLast util.log.FinishedLogger

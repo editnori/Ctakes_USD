@@ -42,7 +42,7 @@ USAGE
 IN_DIR="${DEFAULT_INPUT}"
 OUT_DIR="${DEFAULT_OUTPUT}"
 LIMIT=100
-PIPELINE_KEY="core_sectioned_smoke"
+PIPELINE_KEY="s_core_relations_smoke"
 PIPELINE_SET=0
 PIPELINE_RUNS=()
 WITH_RELATIONS=0
@@ -67,24 +67,26 @@ done
 
 if [[ ${PIPELINE_SET} -eq 0 && -t 0 && -t 1 ]]; then
   echo "Select validation option:"
-  echo "  1) Core + Sectioned + Smoke (combined default)"
-  echo "  2) Core + Sectioned"
-  echo "  3) Core only"
-  echo "  4) Drug only"
-  read -r -p "Selection [1-4]: " __choice
+  echo "  1) S Core Relations + Smoke (fast default)"
+  echo "  2) Core + Sectioned + Smoke"
+  echo "  3) Core + Sectioned"
+  echo "  4) Core only"
+  echo "  5) Drug only"
+  read -r -p "Selection [1-5]: " __choice
   case "${__choice}" in
-    ""|1) PIPELINE_RUNS=(core_sectioned_smoke);;
-    2) PIPELINE_RUNS=(core sectioned);;
-    3) PIPELINE_RUNS=(core);;
-    4) PIPELINE_RUNS=(drug);;
-    *) echo "[validate_mimic] Unknown selection '${__choice}'; defaulting to Core + Sectioned + Smoke combo."; PIPELINE_RUNS=(core_sectioned_smoke);;
+    ""|1) PIPELINE_RUNS=(s_core_relations_smoke);;
+    2) PIPELINE_RUNS=(core_sectioned_smoke);;
+    3) PIPELINE_RUNS=(core sectioned);;
+    4) PIPELINE_RUNS=(core);;
+    5) PIPELINE_RUNS=(drug);;
+    *) echo "[validate_mimic] Unknown selection '${__choice}'; defaulting to S Core Relations + Smoke combo."; PIPELINE_RUNS=(s_core_relations_smoke);;
   esac
 fi
 
 if [[ ${PIPELINE_SET} -eq 1 ]]; then
   PIPELINE_RUNS=("${PIPELINE_KEY}")
 elif [[ ${#PIPELINE_RUNS[@]} -eq 0 ]]; then
-  PIPELINE_RUNS=(core_sectioned_smoke)
+  PIPELINE_RUNS=(s_core_relations_smoke)
 fi
 
 if [[ ! -d "${IN_DIR}" ]]; then
