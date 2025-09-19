@@ -22,7 +22,6 @@
 ctakes-run*/
 *.xmi
 *.bsv
-!resources_override/**/*.bsv
 *.csv
 *.html
 *.xlsx

@@ -198,7 +198,7 @@ Set `CTAKES_HOME` before running, as the script adds `${CTAKES_HOME}/lib/*` to b
 
 | Symptom | Quick fix |
 | --- | --- |
-| RegexSpanFinder warnings | Bundled list detector uses a lighter dash pattern. Update to this release or copy `resources_override/org/apache/ctakes/core/list/DefaultListRegex.bsv` before running. |
+| RegexSpanFinder warnings | Bundled bundle includes slimmed dash regex; update to this release to silence the message. |
 | `java` missing or < 11 | Install Java 11+ (Debian/Ubuntu: `bash scripts/install_deps.sh` or `sudo apt-get install openjdk-17-jdk`) |
 | `CTAKES_HOME` warnings | Export `CTAKES_HOME` or let the bundled distro load; rerun `scripts/flight_check.sh` to persist the value into `.ctakes_env` |
 | Dictionary XML not found | Ensure `${CTAKES_HOME}/resources/org/apache/ctakes/dictionary/lookup/fast/FullClinical_AllTUIs_local.xml` exists or pass `--dict <file>` |
