@@ -1,14 +1,8 @@
-﻿# cTAKES USD Clean Toolkit
-
-
+# cTAKES USD Clean Toolkit
 
 This repository packages a small, predictable toolkit on top of Apache cTAKES 6.x. It keeps only the pieces we need in day-to-day runs: a core set of pipelines, lean CSV writers, and a few helper scripts. Everything else (old compare workflows, report generators, archived outputs) has been removed so the layout stays easy to follow.
 
-
-
 ## What you get
-
-
 
 - **Four ready-to-run pipelines** (`core`, `sectioned`, `smoke`, `drug`) with a shared OPTIONAL_MODULES hook so temporal/coref components can be toggled on demand.
 
@@ -18,15 +12,11 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
 - **Validation helpers** (`validate.sh`, `validate_mimic.sh`) plus a quick flight check to make sure prerequisites are in place.
 
-- **Headless dictionary tooling** for building or refreshing the UMLS dictionary bundle.
+- **Clinical concept upgrades** covering automated dictionary rebuilds (discovery-driven SAB/TUI merges, RxNorm augmentation, timestamped logs), zero-dependency WSD, and thread-safe relation extraction tuned for multi-threaded runs.
 
 - **Bundled cTAKES distribution** under `CtakesBun-bundle/` so you can get started without installing cTAKES separately.
 
-
-
 ## Quick start
-
-
 
 1. **Clone the toolkit**
 
@@ -87,23 +77,20 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
   - `rxnorm/` appears for the drug pipeline only (Document,Begin,End,Text,Section,CUI,RxCUI,RxNormName,TUI,SemanticGroup,SemanticTypeLabel).
 
-
-
 > **Note**: The bundled KidneyStone_SDOH dictionary ships inside the cTAKES archive. `scripts/run_pipeline.sh` automatically selects `resources/org/apache/ctakes/dictionary/lookup/fast/KidneyStone_SDOH_local.xml` (or its non-local fallback) under `CTAKES_HOME`, so no manual dictionary configuration is required.
 
 ## Pipelines
 
-
-
 | Key | Piper file | Purpose |
 | --- | --- | --- |
 | `core` | `pipelines/core/core_wsd.piper` | Default fast pipeline + dictionary lookup + WSD (add `--with-relations` for core relations). |
+| `s_core_relations_smoke` | `pipelines/combined/s_core_relations_smoke.piper` | Sectioned combined pipeline with filtered core relations (fast default in helper scripts). |
 | `sectioned` | `pipelines/sectioned/sectioned_core_wsd.piper` | Section-aware pipeline with relations enabled by default. |
 | `smoke` | `pipelines/smoke/sectioned_smoke_status.piper` | Sectioned pipeline with smoking-status annotators (relations optional via `--with-relations`). |
 | `core_sectioned_smoke` | `pipelines/combined/core_sectioned_smoke.piper` | Combined sectioned pipeline with relations plus smoking annotators in one pass. |
 | `drug` | `pipelines/drug/drug_ner_wsd.piper` | Sectioned pipeline with ctakes-drug-ner (adds RxNorm CSVs with CUI+RxCUI; add `--with-relations` for core relations). |
 
-
+The helper scripts default to `s_core_relations_smoke`; choose `core_sectioned_smoke` when you need full relation coverage without filtering.
 
 ### Shared building blocks
 
@@ -120,7 +107,21 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
 | Flag | Piper insertion | Effect |
 | --- | --- | --- |
-| `--with-relations` | `load TsRelationSubPipe` | Adds core relation extraction to `core`, `smoke`, and `drug` before writers (ignored for pipelines that already include relations). |
+| `--with-relations` | `load TsRelationSubPipe` | Adds the fast relation sub-pipeline (modifier/degree models plus `tools.relations.ThreadSafeFastLocationExtractor`) to `core`, `smoke`, and `drug`; ignored when relations already present. |
+
+### Simple WSD disambiguator
+
+- `tools.wsd.SimpleWsdDisambiguatorAnnotator` picks a single best UMLS concept per mention using sentence-level token overlap (see `tools/wsd/SimpleWsdDisambiguatorAnnotator.java`).
+- Default parameters keep the original candidate array, move the winner to the front, and stamp confidence/flags; adjust via Piper keys `KeepAllCandidates`, `MoveBestFirst`, `MarkDisambiguated`, `MinTokenLen`, and `FilterSingleCharStops`.
+- Runs immediately after `TsDictionarySubPipe` in every pipeline; remove the `add tools.wsd.SimpleWsdDisambiguatorAnnotator ...` line if you prefer raw dictionary candidates.
+- Emits normalized context scores so downstream writers can audit disambiguation quality without external services.
+
+### Relation extraction upgrades
+
+- `resources_override/org/apache/ctakes/relation/extractor/pipeline/TsFastRelationSubPipe.piper` swaps in `tools.relations.ThreadSafeFastLocationExtractor` alongside the modifier and degree extractors.
+- `tools.relations.FastLocationOfRelationExtractor` filters location-of candidates more than 30 tokens apart; tune with `-Dctakes.relations.max_token_distance=<n>` when launching pipelines.
+- The thread-safe wrapper reuses a shared delegate so multi-thread runs avoid repeated ClearTK model loads.
+- `--with-relations` in `scripts/run_pipeline.sh` injects this sub-pipeline for `core`, `smoke`, and `drug`; combined pipelines already include it.
 
 ## Script quick reference
 
@@ -133,11 +134,11 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 | `scripts/semantic_manifest.py` | `python scripts/semantic_manifest.py --outputs <run_dir> --manifest <manifest.json>` | Creates or compares the semantic manifest (concept CSVs, CUI counts, RxNorm rows, XMI mentions) |
 | `scripts/flight_check.sh` | `bash scripts/flight_check.sh` | Verifies Java, CTAKES_HOME, sample data, and performs a dry run |
 | `scripts/build_dictionary.sh` | `bash scripts/build_dictionary.sh --compile-only` | Compiles headless dictionary helpers; append `-- ...` to run `HeadlessDictionaryBuilder` |
+| `scripts/build_dictionary_full.sh` | `bash scripts/build_dictionary_full.sh` | Discovers SAB/TUI values, normalises the UMLS snapshot, writes merged properties/logs, and rebuilds KidneyStone_SDOH (including RxNorm augmentation). |
 | `scripts/ctakes_cli.py` | `python scripts/ctakes_cli.py` | Interactive runner to select pipeline/input, optionally mirror directories, and launch foreground/background runs (records metadata for run_status.py) |
 | `scripts/run_status.py` | `python scripts/run_status.py --list` | Summarises recorded runs and reports progress using pipeline/async logs |
 
 > **Runner logs:** `run_pipeline.sh` now emits `[pipeline][runner=N/M]` lines (threads, heap, start/finish) and honours `--background` to detach via `nohup`. `run_async.sh` mirrors the flag, shows per-shard progress/elapsed time, and writes shard logs under `<output>/.../shards/`.
-
 
 ## Validation workflows
 
@@ -167,8 +168,9 @@ Set `CTAKES_HOME` before running, as the script adds `${CTAKES_HOME}/lib/*` to b
 ### KidneyStone_SDOH dictionary build
 
 - Configuration lives in `resources/dictionary_configs/kidney_sdoh.conf`. Update `umls.dir` if your UMLS snapshot is stored elsewhere (the default points to `../CtakesBun/umls_loader`).
-- Run `bash scripts/build_dictionary_full.sh` to rebuild the dictionary inside the bundled cTAKES install (`CtakesBun-bundle/.../lookup/fast/`). The helper compiles the wrapper classes, resolves absolute UMLS paths for discovery, and writes `dictionaries/KidneyStone_SDOH/logs/build_<ts>.log` plus the merged properties used for that run.
-- After the base dictionary is built, the script invokes `tools.DictionaryRxnormAugmenter` to create an `RXNORM` table in the HSQL store from `MRCONSO.RRF`. Lookups against `KidneyStone_SDOH.xml` (or `_local.xml`) now expose RxCUI values alongside CUIs.
+- `bash scripts/build_dictionary_full.sh` normalises the UMLS snapshot layout, compiles the wrapper classes, runs discovery, and logs to `dictionaries/KidneyStone_SDOH/logs/build_<ts>.log`.
+- Each run writes `dictionaries/KidneyStone_SDOH/merged_builder.properties` so the discovered SAB/TUI lists are pinned and the rebuilt XML/HSQL pair (and `_local` variant) land back inside the bundled cTAKES install.
+- After the base dictionary is built, `tools.DictionaryRxnormAugmenter` creates the `RXNORM` table in the HSQL store and patches the XML with the table reference.
 - Discovery still widens the SAB list to everything in MRCONSO; comment out the `vocabularies=` override inside `scripts/build_dictionary_full.sh` if you prefer to keep only the curated subset from the config file.
 
 ## Repository layout (high level)
