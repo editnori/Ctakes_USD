@@ -44,7 +44,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
    Confirms Java, the bundled cTAKES install, pipeline files, and performs a dry-run on the sample notes when available. When run interactively, the script offers to persist CTAKES_HOME and the default UMLS API key into `.ctakes_env` so subsequent scripts pick up those settings automatically.
 
-4. **Smoke test on the bundled 100 notes**
+4. **Smoke test with a local 100-note pack (optional)**
 
    ```bash
 
@@ -52,7 +52,7 @@ This repository packages a small, predictable toolkit on top of Apache cTAKES 6.
 
    ```
 
-   Writes outputs under `outputs/validate_mimic/` and compares a semantic manifest (concept CSVs, CUI counts, RxNorm rows, and XMI mentions) against the saved baseline when present. When run interactively, the script lets you choose which pipeline to validate (Core + Sectioned + Smoke combined pipeline by default).
+   Drop a de-identified sample pack under `samples/mimic/` (the repo ignores the `.txt` files). The helper skips the run when the directory is empty so you can keep the toolkit clean between releases. When notes are present it writes outputs under `outputs/validate_mimic/` and compares a semantic manifest (concept CSVs, CUI counts, RxNorm rows, and XMI mentions) against the saved baseline. When run interactively, the script lets you choose which pipeline to validate (Core + Sectioned + Smoke combined pipeline by default).
 
 5. **Run your own notes**
 
@@ -130,7 +130,7 @@ The helper scripts default to `s_core_relations_smoke`; choose `core_sectioned_s
 | `scripts/run_pipeline.sh` | `bash scripts/run_pipeline.sh --pipeline sectioned -i <notes> -o <outputs>` | Autosizes threads/heap, supports `--background` (nohup + log), recompiles helpers, accepts `--dict`, `--umls-key`, `--java-opts`, and `--with-relations` |
 | `scripts/run_async.sh` | `bash scripts/run_async.sh --pipeline smoke -i <notes> -o <outputs>` | Shards input, runs multiple workers, shows progress/elapsed time, supports `--background`, and merges summary CSV/BSV outputs |
 | `scripts/validate.sh` | `bash scripts/validate.sh --pipeline core_sectioned_smoke --limit 20 -i <notes> -o <run>` | Optional sampling (`--limit`), semantic manifest comparison (`--manifest`); add `--deterministic` to force single-thread mode |
-| `scripts/validate_mimic.sh` | `bash scripts/validate_mimic.sh --pipeline drug` | Wrapper tuned for the bundled sample; creates per-pipeline subfolders and semantic manifest checks |
+| `scripts/validate_mimic.sh` | `bash scripts/validate_mimic.sh --pipeline drug` | Wrapper tuned for the optional sample pack; creates per-pipeline subfolders when notes are present and replays semantic manifest checks |
 | `scripts/semantic_manifest.py` | `python scripts/semantic_manifest.py --outputs <run_dir> --manifest <manifest.json>` | Creates or compares the semantic manifest (concept CSVs, CUI counts, RxNorm rows, XMI mentions) |
 | `scripts/flight_check.sh` | `bash scripts/flight_check.sh` | Verifies Java, CTAKES_HOME, sample data, and performs a dry run |
 | `scripts/build_dictionary.sh` | `bash scripts/build_dictionary.sh --compile-only` | Compiles headless dictionary helpers; append `-- ...` to run `HeadlessDictionaryBuilder` |
@@ -144,7 +144,7 @@ The helper scripts default to `s_core_relations_smoke`; choose `core_sectioned_s
 
 | Scenario | Command | Outputs |
 | --- | --- | --- |
-| Full sample smoke test | `bash scripts/validate_mimic.sh` | Uses `samples/mimic`, writes to `outputs/validate_mimic/<pipeline>/`, and maintains per-pipeline semantic manifest JSONs (concept CSVs, CUI counts, RxNorm rows, XMI mentions) |
+| Optional sample smoke test | `bash scripts/validate_mimic.sh` | Requires local notes under `samples/mimic`; when present it writes to `outputs/validate_mimic/<pipeline>/` and maintains per-pipeline semantic manifest JSONs (concept CSVs, CUI counts, RxNorm rows, XMI mentions) |
 | Targeted validation | `bash scripts/validate.sh --pipeline smoke --limit 20 -i <notes> -o <run>` | Copies the first N notes to a temp workspace, runs the chosen pipeline, and optionally diffs against a semantic manifest (JSON) |
 | Async batch run | `bash scripts/run_async.sh --pipeline sectioned -i <notes> -o <runs>` | Builds timestamped output folders and merged `concepts_summary.csv` / `rxnorm_summary.csv` (drug pipeline) |
 

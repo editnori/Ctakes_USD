@@ -1,6 +1,5 @@
 Place ~100 de-identified MIMIC notes here as plain `.txt` files for quick validation.
 
 Notes:
-- Do not commit real clinical text. This folder is ignored by git for `*.txt`.
-- Use `scripts/validate_mimic.sh` to run pipelines on a 100-note subset and build/compare a baseline manifest.
-
+- `.txt` files are ignored by git so you can keep local packs without polluting commits.
+- `scripts/validate_mimic.sh` skips runs when this directory is empty and otherwise builds/compares the baseline manifest.
