@@ -1,0 +1,244 @@
+ 
+Name:  ___             Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Atypical chest pain
+ 
+Major Surgical or Invasive Procedure:
+Stess Echo
+
+ 
+History of Present Illness:
+___ y/o woman with intermittent chest pain past several months. 
+Pain is located on left posterior shoulder and radiates down arm 
+to fingers where it turns into "pins-n-needles" symptom. No 
+SOB/N/V. Patient does endorse some minimal diaphoresis and gerd 
+like symptoms accompanying it. Pain has been controlled with 
+tylenol #3. 
+ 
+Past Medical History:
+HTN  
+Asthma  
+Diverticulitis several years ago  
+R hip replacement in ___  
+
+ 
+Social History:
+___
+Family History:
+Mother: ___, HTN  
+Father: ___ CA  
+Brother: CA?  
+Brother: ___  
+
+ 
+Physical ___:
+Vtals: T: 97.6 BP: 167/88 P: 83 R: 20 O2: 99% 2L  
+General: Alert, oriented, no acute distress  
+HEENT: Sclera anicteric, MMM, oropharynx clear  
+Neck: supple, JVP not elevated, no LAD  
+Lungs: Clear to auscultation bilaterally, no wheezes, rales, 
+ronchi  
+CV: Regular rate and rhythm, normal S1 + S2, no murmurs, rubs, 
+gallops  
+Abdomen: soft, non-tender, non-distended, bowel sounds present, 
+no rebound tenderness or guarding, no organomegaly  
+Ext: Warm, well perfused, 2+ pulses, no clubbing, cyanosis or 
+edema  
+
+ 
+Pertinent Results:
+___ 03:20PM BLOOD WBC-6.2 RBC-4.51 Hgb-13.1 Hct-38.6 MCV-86 
+MCH-29.1 MCHC-33.9 RDW-15.4 Plt ___
+___ 07:15AM BLOOD WBC-6.0 RBC-4.91 Hgb-13.8 Hct-41.7 MCV-85 
+MCH-28.1 MCHC-33.0 RDW-15.1 Plt ___
+___ 07:50AM BLOOD WBC-5.2 RBC-4.67 Hgb-13.4 Hct-39.4 MCV-84 
+MCH-28.7 MCHC-34.1 RDW-15.2 Plt ___
+___ 03:20PM BLOOD Glucose-95 UreaN-21* Creat-0.8 Na-139 
+K-3.5 Cl-100 HCO3-30 AnGap-13
+___ 09:10PM BLOOD Glucose-120* UreaN-17 Creat-0.9 Na-137 
+K-3.3 Cl-99 HCO3-31 AnGap-10
+___ 07:15AM BLOOD Glucose-100 UreaN-15 Creat-0.8 Na-138 
+K-4.4 Cl-98 HCO3-35* AnGap-9
+___ 03:20PM BLOOD cTropnT-<0.01
+___ 09:10PM BLOOD CK-MB-3 cTropnT-<0.01
+___ 07:15AM BLOOD CK-MB-4 cTropnT-<0.01
+.
+___ ___ F  ___  ___ 
+ 
+Cardiology Report Stress Study Date of ___   
+ 
+  
+EXERCISE RESULTS 
+
+ 
+  
+RESTING DATA 
+EKG:  SINUS WITH AEA, LBBB   
+HEART RATE:  68 BLOOD PRESSURE:  146/86 
+  
+PROTOCOL MODIFIED ___ - TREAD___ 
+STAGE TIME SPEED ELEVATION HEART BLOOD RPP 
+  (MIN) (MPH) (%) RATE PRESSURE   
+0 ___ 1.0 8 100 176/88 ___ 
+1 ___ 1.7 10 114 178/92 ___ 2.5 12 126 184/98 ___ 
+  
+TOTAL EXERCISE TIME:  9 % MAX HRT RATE ACHIEVED:  83 
+ 
+SYMPTOMS: ATYPICAL PEAK INTENSITY: ___ 
+ 
+  
+INTERPRETATION: ___ yo woman was referred to evaluate an atypical 
+
+chest discomfort. The patient completed 9 minutes of a Gervino 
+protocol 
+representing a fair exercise tolerance for her age; ~ ___ METS. 
+The 
+exercise test was stopped at the patient's request secondary to 
+fatigue. 
+During exercise, the patient reported a non-progressive, 
+isolated upper 
+left-sided chest discomfort; ___. The area of discomfort was 
+reportedly 
+tender to palpation. This discomfort resolved with rest and was 
+absent 
+2.5 minutes post-exercise. In the presence of the LBBB, the ST 
+segments 
+are uninterpretable for ischemia. The rhythm was sinus with 
+frequent 
+isolated APDs and occasional atrial couplets and atrial 
+triplets. 
+Resting mild systolic hypertension with normal blood pressure 
+response 
+to exercise. The heart rate response to exercise was mildly 
+blunted. 
+  
+IMPRESSION: Fair exercise tolerance. No anginal symptoms with 
+uninterpretable ECG to achieved workload. Resting mild systolic 
+hypertension with appropriate blood pressure response to 
+exercise. 
+Suboptimal study - target heart rate not achieved. 
+ 
+SIGNED:  ___ 
+ 
+
+ 
+Brief Hospital Course:
+___ ___ with several month history of left sided arm and chest 
+wall pain in the setting of LBBB presenting for ___.  
+.  
+.  
+# Chest Pain:The patient's symptoms were not typically anginal 
+in nature to suggest ACS. However she does have several cardiac 
+risk factors and a LBBB, so  physicians could  not r/oMI with 
+EKG alone. Trop. results were negative x3. Stress Echo revealed 
+new regional dysfunction with hypokinesis of the inferior and 
+inferolateral walls consistent with single vessel disease in the 
+PDA distribution. A cardiology consult was obtained and they 
+felt she could be managed medically. Patient was already on an 
+aspirin, and a statin. Given history to suggest asthma B-blocker 
+was contraindicated. She was discharged on 120 mg extended 
+release diltiazem with instructions to follow up in cardiology 
+and with her PCP. 
+.
+# Supraventricular tachycardia: The patient had multiple runs of 
+SVT that was likley MAT in the setting of severe obstructive 
+lung disease and chronic theophylline use. Cardiology 
+reccomended that we discontinue her theophylline. We spoke with 
+her pulmonologist who agreed this would be the best course of 
+action for her. She was discharged with instructions to 
+discontinue use of theophylline and follow up with her 
+pulmonologist and cardiology.
+
+ 
+Medications on Admission:
+Tylenol ___ Q4h PRN pain  
+Albuterol Sulfate 2 puffs q4-6h PRN SOB  
+Fluticasone 50 mcg spray/suspension 2 whiffs PRN allergies  
+Adviar 500/50 1 INH BID  
+HCTZ 50mg One PO daily  
+Singulari 10mg tablet One PO QD  
+omeprazole 20mg 1 PO QD  
+simvastatin 20mg 1 PO QD  
+theophylline 200mg sustained release one PO TID  
+spiriva 18 mcg w/ inhalation  
+ASA 81mg  
+Calcium sig unknown  
+Cod liver oil Sig unk  
+Multivitamin  
+
+ 
+Discharge Medications:
+1. acetaminophen 325 mg Tablet Sig: One (1) Tablet PO Q4H (every 
+4 hours) as needed for pain.  
+2. albuterol sulfate 90 mcg/Actuation HFA Aerosol Inhaler Sig: 
+Two (2) Puff Inhalation Q6H (every 6 hours) as needed for SOB 
+wheeze.  
+3. fluticasone-salmeterol 500-50 mcg/dose Disk with Device Sig: 
+One (1) Disk with Device Inhalation BID (2 times a day).  
+4. fluticasone 50 mcg/Actuation Spray, Suspension Sig: ___  
+Nasal once a day as needed for allergy symptoms.  
+5. hydrochlorothiazide 50 mg Tablet Sig: One (1) Tablet PO once 
+a day.  
+6. omeprazole 20 mg Capsule, Delayed Release(E.C.) Sig: One (1) 
+Capsule, Delayed Release(E.C.) PO DAILY (Daily).  
+7. simvastatin 20 mg Tablet Sig: One (1) Tablet PO once a day.  
+8. tiotropium bromide 18 mcg Capsule, w/Inhalation Device Sig: 
+One (1) Cap Inhalation DAILY (Daily).  
+9. aspirin 81 mg Tablet Sig: One (1) Tablet PO once a day.  
+10. multivitamin     Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+11. diltiazem HCl 120 mg Tablet Sustained Release 24 hr Sig: One 
+(1) Tablet Sustained Release 24 hr PO once a day.
+Disp:*30 Tablet Sustained Release 24 hr(s)* Refills:*2*
+12. nitroglycerin 0.3 mg Tablet, Sublingual Sig: One (1)  
+Sublingual every 5 min as needed for chest pain: take one at 
+onset of chest pain. ___ repeat every 5 min x3 with continued 
+chest pain. Call PCP if chest pain persists.
+Disp:*30 tabs* Refills:*0*
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Coronary Artery Disease
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+You were admitted to ___ because you had back and arm pain 
+that was worrisome for heart disease. A strees test found that 
+you have coronary artery disease. You were started on a new 
+blood pressure medication and tolerated this well. You should 
+keep all of you follow up appointments as listed below. 
+.
+While you were here we made the following changes to your 
+medications:
+.
+We STARTED you on Diltiazem 120mg once a day
+.
+We STOPPED ___ theophylline
+.
+We STARTED nitroglycerine to take when you have chest pain
+.
+YOU NEED TO STOP SMOKING. IT WILL KILL YOU.
+ 
+Followup Instructions:
+___

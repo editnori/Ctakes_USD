@@ -1,0 +1,232 @@
+ 
+Name:  ___.          Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Patient recorded as having No Known Allergies to Drugs
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Abdominal distention/pain and fever
+ 
+Major Surgical or Invasive Procedure:
+Paracentesis ___ (diagnostic) and ___ (therapeutic)
+
+ 
+History of Present Illness:
+___ with recently diagnosed alcoholic hepatitis, persistent 
+ascites, and persistent fevers and leukocytosis which have been 
+atributed to her hepatitis who presented to ___ today with 
+worsening abdominal distention, pain, and persistent fever. She 
+denies chills but did have sweats the night prior to admission. 
+She has tried to be strictly compliant with her low socium diet 
+and fluid restriction, and denies any increased fluid or sodium 
+intake. She reports sobriety from alcohol since ___. At ___ 
+she was febrile and tender to palpation, so she was referred to 
+the ED.  
+.  
+In the ED initial vital signs were 99.0 113/72 132 16 99% on RA. 
+Her temp increased to 100.4 and her pulse came down to the 100s 
+with Ativan. She received morphine 4mg IV x 4 for pain, tylenol 
+___ PO x1 for fever, ondansetron 4mg IV x2 for nausea, and 
+lorazeman 0.5mg IV x1 for anxiety. She underwent a diagnostic 
+paracentesis but the samples were initially lost. She was 
+treated with ceftriaxone 2g IV x1 for possible SBP. She was 
+admitted to Medicine for further management. Fortunately, her 
+samples were found after she arrived on the floor.  
+.  
+On the floor her mood is labile. She is at times tearful and at 
+times pleasant. She does seem uncomfortable. She is not confused 
+or obviously encephalopathic. She denies cough, dysuria, 
+diarrhea, or rash. She does endorse decreased UOP for the past 
+few days.  
+.
+Review of Systems:  
+(+) Per HPI  
+(-) Denies chills. Denies headache, sinus tenderness, rhinorrhea 
+or congestion. Denies chest pain or tightness, palpitations. 
+Denies cough, shortness of breath, or wheezes. Denied nausea, 
+vomiting, diarrhea, constipation. No recent change in bowel or 
+bladder habits. No dysuria. Denies arthralgias or myalgias. 
+Denies rashes or skin breakdown. No numbness/tingling in 
+extremities. No feelings of depression or anxiety. All other 
+review of systems negative.  
+
+ 
+Past Medical History:
+- Alcohol abuse  
+- Alcoholic hepatitis, with persistent fever and leukocytosis
+- Ascites 
+- Chronic back pain 
+ 
+Social History:
+___
+Family History:
+- Mother: ___ cancer, age ___  
+- No family history of liver disease  
+- Multiple relatives with alcoholism  
+ 
+Physical Exam:
+Physical Exam on Admission:  
+GEN: NAD, labile affect between pleasant and tearful  
+VS: 101.0 104/69 125 18 95% on RA  
+HEENT: Dry MM, no OP lesions, mild scleral icterus  
+CV: RR, tachy, no MRG  
+PULM: Bibasilar crackles R > L  
+ABD: BS+, soft, distended, diffusely tender with mild rebound, 
+obvious collateral veins, some mild angiomata  
+LIMBS: Trace ___ edema, no tremors or asterixis  
+SKIN: No rashes or skin breakdown, scattered ecchymoses at 
+puncture sites  
+NEURO: A and O x 3, no pronator drift, reflexes are 1+ of the 
+upper and lower extremities  
+ 
+Pertinent Results:
+LABS:
+
+Blood ___:
+WBC-17.9* RBC-3.25* HGB-11.0* HCT-34.1* MCV-105* MCH-33.9* 
+MCHC-32.3 RDW-14.0 PLT COUNT-198 ___ PTT-39.3* ___
+ALBUMIN-2.7* ALT(SGPT)-33 AST(SGOT)-124* ALK PHOS-186* TOT 
+BILI-2.4
+
+Ascitic Fluid ___:  
+WBC-52* RBC-98* POLYS-13* LYMPHS-20* MONOS-0 EOS-1* 
+MESOTHELI-16* MACROPHAG-50*
+TOT PROT-1.1 LD(LDH)-42 ALBUMIN-<1.0
+
+Ascitic Fluid ___:
+WBC-104* RBB-290* POLYS-14* LYMPHS-17* MONOS-3* EOS-21* 
+MESOTHELI-45* 
+
+Blood ___:
+WBC-11.1 HCT 30.7
+ 
+RADIOLOGY:
+Lumbo-sacral XR: Normal, no evidence of osteomyelitis/vertebral 
+compression fracture.
+
+ 
+Brief Hospital Course:
+#Abdominal distention/pain:
+She was treated empirically due to concern for spontaneous 
+bacterial peritonitis with ceftriaxone 2g x 1.  A diagnostic 
+paracentesis was performed in the ED.  Ascitic fluid analysis 
+was performed.  Spontaneous bacterial peritonitis was ruled out 
+given that the fluid cell count showed only 52 WBC; antibiotics 
+were discontinued in this setting.  Subsequently, a large volume 
+paracentesis was performed on ___ with 4.5L of fluids 
+removed. After the procedure, her abdomen was less distended and 
+less painful.  Fluid analysis again did not reveal SBP.  
+.
+#Alcoholic hepatitis:
+Patient's liver synthetic function was monitored while 
+hospitalized. She was maintained on her home regimen of 
+lactulose. She also had 24-hr urine collection for copper to 
+evaluate for ___ disease. 
+.
+#Leukocytosis and mild fever:
+She had a temparature of 101 upon presentation in the ED.  She 
+had no signs or symptoms of any infection.  Urine culture showed 
+only GU flora, consistent with contamination. After arrival to 
+the floor her temperature was stable, ranging from 99 to 101.  
+Her WBC trended down throughout the hospitalization and was 11 
+at the time of discharge.    
+.
+#Tachycardia:
+Her heart rate was elevated in the 100-120s throughout the 
+hospitalization. She had good oxygenation and had no complaints 
+of SOB, dyspnea, chest pain, palpitations. The most likely 
+etiology of this is pain, anxiety, and her low intravascular 
+volume.  She was tachycardic in the 100s upon discharge.  
+.
+#Back pain:
+Lumbosacral spine film revealed no skeletal abnormalities 
+(vertebral compression fracture and osteomyelitis).  Her pain 
+was present but well-controlled throughout the hospitalization 
+with oxycodone ___ Q6H PRN pain.  Recommended follow up with 
+her primary care provider to address management of her chronic 
+pain. 
+.
+#Diet:
+Low sodium (2g/day), fluid restriction (1500mL/day)
+.
+#Code: Full
+
+ 
+Medications on Admission:
+- AMITRIPTYLINE - 10 mg PO HS  
+- OXYCODONE - 5 mg PO Q8H PRN pain  
+- Thiamine 100mg PO daily  
+- Folic acid 1mg PO daily  
+- MVI PO daily  
+ 
+Discharge Medications:
+1. Thiamine HCl 100 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).
+2. Folic Acid 1 mg Tablet Sig: One (1) Tablet PO DAILY (Daily).  
+
+3. Amitriptyline 10 mg Tablet Sig: One (1) Tablet PO HS (at 
+bedtime).  
+4. Multivitamin     Tablet Sig: One (1) Tablet PO DAILY (Daily). 
+ 
+5. Lactulose 10 gram/15 mL Syrup Sig: Thirty (30) ML PO DAILY 
+(Daily).  
+6. Oxycodone 5 mg Tablet Sig: One (1) Tablet PO every eight (8) 
+hours as needed for pain.  
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Primary:
+Ascites
+Portal hypertension
+Alcoholic hepatitis
+.
+Secondary:
+Chronic back pain
+
+ 
+Discharge Condition:
+Alert and Oriented.  Ambulating without help.  Hemodynamically 
+stable, afebrile, tachycardic.  
+
+ 
+Discharge Instructions:
+You were seen in the ___ Associates with 
+complaints of increasing abdominal distention and pain. In the 
+clinic, you also had a mild fever, fast heart rate, and 
+increased white blood count.  You were sent to the emergency 
+department and admitted to the hospital for further workup.  
+During the hospitalization your ascitic fluid was tapped and 
+analyzed.  The result showed that you did not have an infection 
+of the ascitic fluid.  Subsequently, fluid was removed from your 
+abdomen via paracentesis. We also started a 24-hr urine 
+collection for copper to work up for other potential causes of 
+your liver disease.  The liver clinic will follow up with you 
+regarding the results of these tests.  
+.
+Your back pain persisted during your hospitalization.  You 
+underwent x-rays which showed no evidence of fracture or bone 
+infection.  Please continue your home pain regimen and readdress 
+with your primary care provider.
+.
+No changes were made to your home medications.  You should 
+continue to use lactulose for constipation while using pain 
+medications.  
+.
+Please stop using all herbal or tonic remedies until your liver 
+function has recovered. Some of these therapies may interact 
+with your current medications or make it difficult to interpret 
+your laboratory results.
+ 
+Followup Instructions:
+___

@@ -1,0 +1,327 @@
+ 
+Name:  ___                    Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: SURGERY
+ 
+Allergies: 
+Patient recorded as having No Known Allergies to Drugs
+ 
+Attending: ___.
+ 
+Chief Complaint:
+diverticulitis
+ 
+Major Surgical or Invasive Procedure:
+s/p laparoscopic sigmoid colectomy 
+
+ 
+History of Present Illness:
+Mrs. ___ is a ___ F with history of recurrent diverticulitis, 
+originally
+diagnosed ___ ___. Pt reports a one month history of 
+LLQ
+pain varying ___ intensity. Pt was prescribed a 10 day course of
+Cipro/Flagyl PO which she completed on ___. Pt was doing 
+well
+until abdominal pain returned ___, one week after finishing
+antibiotic course. Pt reports no nausea or vomiting, pt has been
+able to maintain hydration with regular PO intake although
+appetite has been somewhat decreased. Pt has been having 
+regular,
+non-bloody bowel movements, pt reports several small, soft-brown
+bowel movements today. No diarrhea. Pt presents to ___ today 
+as
+a direct admission for refractory LLQ pain.
+
+ 
+Past Medical History:
+diverticulitis
+Migraines
+Left finger cellulitis
+ 
+Social History:
+___
+Family History:
+father with h/o colitis
+ 
+Physical Exam:
+Crimson Admission
+Temp 98.6, HR 70, BP 110/70, RR 18, 96% RA
+Gen: well, NAD, A&O
+CV: RRR, No R/G/M
+RESP: CTAB
+ABD: Focal tenderness LLQ inferolateral to umbilicus, otherwise
+NT, ND, no guarding or rebound
+EXT: No edema
+
+ 
+Pertinent Results:
+RADIOLOGY  Final Report
+CT PELVIS W/CONTRAST  ___ 2:58 AM
+UNDERLYING MEDICAL CONDITION:
+___ year old woman with diverticulitis, increasing RLQ pain 
+IMPRESSION: Moderate uncomplicated diverticulitis at the 
+junction of the descending colon and sigmoid colon. Stable 
+mildly enlarged retroperitoneal lymph nodes may be reactive ___ 
+nature. If surgery has not been contemplated, a followup is 
+recommended ___ six weeks, to assess for complete resolution of 
+these findings.
+.
+___ 06:05AM BLOOD WBC-9.9 RBC-2.85* Hgb-8.9* Hct-25.9* 
+MCV-91 MCH-31.3 MCHC-34.4 RDW-13.0 Plt ___
+___ 09:10AM BLOOD WBC-23.2*# RBC-3.73* Hgb-11.6* Hct-33.5* 
+MCV-90 MCH-31.0 MCHC-34.5 RDW-13.0 Plt ___
+___ 05:25AM BLOOD WBC-10.5 RBC-3.98* Hgb-12.7 Hct-34.4* 
+MCV-87 MCH-32.0 MCHC-37.0* RDW-12.8 Plt ___
+___ 06:05AM BLOOD Plt ___
+___ 05:15AM BLOOD ___ PTT-28.3 ___
+___ 05:25AM BLOOD ___ PTT-28.4 ___
+___ 06:05AM BLOOD Glucose-109* UreaN-9 Creat-1.9* Na-138 
+K-3.2* Cl-100 HCO3-30 AnGap-11
+___ 05:25AM BLOOD Glucose-127* UreaN-5* Creat-0.6 Na-138 
+K-4.0 Cl-102 HCO3-27 AnGap-13
+___ 06:05AM BLOOD ALT-85* AST-49* LD(LDH)-204 AlkPhos-208* 
+TotBili-0.7
+___ 05:25AM BLOOD ALT-15 AST-14 LD(LDH)-149 AlkPhos-47 
+Amylase-42 TotBili-1.7*
+___ 06:05AM BLOOD Albumin-2.8* Calcium-8.2* Phos-2.8 Mg-2.4
+___ 05:25AM BLOOD Albumin-4.0 Calcium-8.9 Phos-3.5 Mg-2.0
+___ 05:15AM BLOOD Vanco-25.0*
+.
+___ 12:23 pm SWAB     Site: ABDOMEN
+      Fluid should not be sent ___ swab transport media.  Submit 
+fluids ___ a
+      capped syringe (no needle), red top tube, or sterile cup. 
+   GRAM STAIN (Final ___: 
+      1+    (<1 per 1000X FIELD):   POLYMORPHONUCLEAR 
+LEUKOCYTES. 
+      4+   (>10 per 1000X FIELD):   GRAM POSITIVE COCCI. 
+                                  ___ PAIRS, CHAINS, AND CLUSTERS
+   FLUID CULTURE (Final ___: 
+      STAPH AUREUS COAG +.    MODERATE GROWTH.  CLINDAMYCIN PER 
+ID.. 
+         This isolate is presumed to be resistant to clindamycin 
+based on
+         the detection of inducible resistance .
+   ANAEROBIC CULTURE (Preliminary):    NO ANAEROBES ISOLATED. 
+   ACID FAST SMEAR (Final ___: 
+      NO ACID FAST BACILLI SEEN ON DIRECT SMEAR. 
+   ACID FAST CULTURE (Preliminary): 
+      A swab is not the optimal specimen for recovery of 
+mycobacteria or
+      filamentous fungi.  A negative result should be 
+interpreted with
+      caution.  Whenever possible tissue biopsy or aspirated 
+fluid should
+      be submitted. 
+   FUNGAL CULTURE (Preliminary): 
+      NO FUNGUS ISOLATED. 
+      A swab is not the optimal specimen for recovery of 
+mycobacteria or
+      filamentous fungi.  A negative result should be 
+interpreted with
+      caution.  Whenever possible tissue biopsy or aspirated 
+fluid should
+      be submitted. 
+.
+Pathology Examination 
+SPECIMEN SUBMITTED: sigmoid colon.
+Procedure date     ___ 
+DIAGNOSIS:  
+Sigmoid colon, segmental resection: 
+Colonic segment with organizing pericolic abscess, consistent 
+with ruptured diverticulum. 
+Unremarkable regional lymph nodes. 
+No intrinsic mucosal abnormalities seen.
+Clinical: Diverticulitis.
+.
+RADIOLOGY  Final Report
+CT ABDOMEN W/CONTRAST  ___ 10:22 AM
+Reason: Rule out subcutaneous air or fluid. IV contrast ONLY. 
+HISTORY: ___ female with recurrent diverticulitis, 
+status post laparoscopic sigmoid colectomy, now with incisional 
+erythema. Rule out subcutaneous air or fluid.
+IMPRESSION:
+1. Status post sigmoid colectomy with a small amount of 
+post-operative free intraperitoneal air and fluid within the 
+pelvis.
+2. Small amount of scattered subcutaneous air ___ the mid and 
+lower anterior abdominal wall consistent with postsurgical 
+change, without evidence of discrete fluid collection.
+
+ 
+Brief Hospital Course:
+Mrs. ___ was directly admitted to ___ from Dr. ___ 
+office with persistent abdominal pain likely related to 
+diverticulitis flare. Her vitals signs and labwork remained 
+stable excluding a slightly decreased hematocrit. She was 
+started on IV Cipro & Flagyl, made NPO with IVF hydration, pain 
+managment, and serial abdominal exams. 
+.
+HD2-HD7-She underwent a abd CT scan which revealed uncomplicated 
+diverticulitis. She continued with the above mentioned treatment 
+regimen. Her abdominal pain responded well to IV Dilaudid. She 
+had multiple non-bloody stools. She continued to ambulate 
+without difficulty, and refused SC Heparing injections. Surgical 
+options were discussed b/w patient and Dr. ___. Surgery 
+planned for ___. TPN & PICC was not indicated. She was 
+started on Ensure supplements. Operative consent, labwork, CXR, 
+& EKG were collected.
+.
+HD8-She was made NPO overnight for surgery. Continue with IVF. 
+Surgery was performed on ___. Her operative course was 
+uncomplicated. Routinely observed ___ PACU, and transferred to 
+___. 
+.
+POD1-Continued with IVF, NPO, and foley. PCA for pain management 
+with adequate relief. 
+.
+POD2-3-Reported flatus and had a small BM. Abdomen appropriately 
+TTP/ND with active bowel sounds. Ffanesstial incision with 
+increased erythema extending to right. IV Vancomycin started. No 
+improvement ___ wound x 24 hrs. Zosyn added to regimen. Pain 
+medication switched to PO medication. ___ pump removed.
+.
+POD4-5-Temp spike to 102.5, IV antibiotics started. WBC spike to 
+23 from 8 with 10% bands. Reports of persistent nausea-zofran 
+mildly effective. Compazine added to regimen with improved 
+effects. IVF continued. ID team consulted regarding antibiotic 
+regimen. Underwent CT scan of abd with no significatn intra-abd 
+findings. Wound opened at bedside on ___. Cultures of serous 
+fluid sent to ___. Site packed with w-d dressing. Infectious 
+reaction likely r/t GAS or staphylococcus aureus. Nasal swab for 
+staphy collected & sent to Micro. Clindamycin IV added to 
+regimen. Cultures were followed, and wound checked serially. 
+T-max 100.7. Bump ___ creatinine noted 0.6 to 1.7.
+.
+POD6-wound culture positive for MSSA. IV Nafcillin added with 
+continued Clinda. IV Vanco & Zosyn discontinued. CDIFF cultures 
+negative x 3. Nasal swab for Staph cultured collected. Patient 
+reports nausea still present, but better. Has been eating small 
+amount of regular food with continued flatus and liquid stool 
+production. Continues with IVF due to elevated Creatinine to 
+1.9. Adequate urine output. Ambulating independently. LFT's 
+slightly elevated as well.
+.
+POD7-IV Clindamycin discontinued due to culture resistance. 
+Nafcillin continued. Patient's status contiues to improve. 
+Remains afebrile, decreased WBC, and improved appearance of 
+wound including erythema. IVF switched to maintenance.
+.
+POD8-Nasal swab-no growth. Continues IVF & Nafcillin. Improved 
+PO intake. Continues with complaints of intermittent nausea, 
+improving slowly, & responsive to Compazine. Ambulating 
+independently. Remains afebrile.
+
+POD9-Discharge day: Creatinine continued to decrease. Currently 
+1.4. Creatinine level will be collected per Home ___ on ___ 
+___, and called into PCP/Dr. ___. Continued to 
+tolerate food with intermittent nausea, improved with eating. 
+All PO narcotics discontinued, and Keflex switched to suspension 
+which patient was better able to tolerate. ___ was set up for 
+wound care. 
+ 
+Medications on Admission:
+Lexapro 10, nasonex 
+ 
+Discharge Medications:
+1. Escitalopram 10 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+2. Fluticasone 50 mcg/Actuation Spray, Suspension Sig: One (1) 
+Spray Nasal DAILY (Daily).  
+3. Colace 100 mg Capsule Sig: One (1) Capsule PO twice a day as 
+needed for constipation for 1 months.
+Disp:*60 Capsule(s)* Refills:*0*
+4. Lorazepam 0.5 mg Tablet Sig: One (1) Tablet PO Q8H (every 8 
+hours) as needed for anxiety.  
+5. Hydrocortisone 2.5 % Cream Sig: One (1) Appl Rectal TID (3 
+times a day) as needed for hemorrhoids.  
+6. Cephalexin 250 mg/5 mL Suspension for Reconstitution Sig: Two 
+(2)  PO q12hrs () for 5 days.
+Disp:*qs * Refills:*0*
+7. Tylenol ___ mg Tablet Sig: Two (2) Tablet PO every ___ hours 
+as needed for fever or pain.  
+8. Outpatient Lab Work
+Please check serum Creatinine on ___.
+
+**Call result to PCP and Dr. ___
+
+ 
+___ Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Primary:
+Recurrent Diverticulitis
+Post-op wound cellulitis
+Post-op hypovolemia
+Post-op fever
+.
+Secondary:
+Anxiety
+diverticulosis
+
+ 
+Discharge Condition:
+Stable
+Tolerating a regular, low-residue diet
+Adequate pain control with oral medication
+
+ 
+Discharge Instructions:
+Please call your doctor or return to the ER for any of the 
+following:
+* You experience new chest pain, pressure, squeezing or 
+tightness.
+* New or worsening cough or wheezing.
+* If you are vomiting and cannot keep ___ fluids or your 
+medications.
+* You are getting dehydrated due to continued vomiting, 
+diarrhea or other reasons. Signs of dehydration include dry 
+mouth, rapid heartbeat or feeling dizzy or faint when standing.
+* You see blood or dark/black material when you vomit or have a 
+bowel movement.
+* Your pain is not improving within ___ hours or not gone 
+within 24 hours. Call or return immediately if your pain is 
+getting worse or is changing location or moving to your chest or 
+
+back.
+*Avoid driving or operating heavy machinery while taking pain 
+medications.
+* You have shaking chills, or a fever greater than 101.5 (F) 
+degrees or 38(C) degrees.
+* Any serious change ___ your symptoms, or any new symptoms that 
+concern you. 
+* Please resume all regular home medications and take any new 
+meds 
+as ordered. 
+* Continue to ambulate several times per day.
+.
+WOUND CARE:
+*Assess surgical wound site daily.
+*Change packing at least once per day, and as needed.
+*Pack with moistened gauze (Normal Saline) into incisional 
+cavity. Apply dry gauze on top, and adhere with paper tape.
+**Changed top (dry gauze) if saturated to prevent irritation to 
+surrounding skin.
+**If wound continues to weep, pack with  Aquacel or DSD.
+-You may shower briefly, and wash around surgical incisions.
+-Avoid swimming and tub baths until wound completely healed
+-Please call the doctor if you have increased pain, swelling, 
+redness, or drainage from the incision sites.
+.
+CREATININE:
+*Please have the ___ check your creatinine on ___. Please 
+call Dr. ___ and/or your PCP's office with the 
+result.
+
+ 
+Followup Instructions:
+___

@@ -1,0 +1,368 @@
+ 
+Name:  ___                 Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Codeine
+ 
+Attending: ___
+ 
+Chief Complaint:
+Difficulty in breathing
+ 
+Major Surgical or Invasive Procedure:
+none
+
+ 
+History of Present Illness:
+The patient is a ___ year-old female with a history of NSCLC 
+(stage IV) who presents with shortness of breath.
+.
+The patient was in her usual state of health until the evening 
+before admission when she began to feel somewhat short of 
+breath.  The next morning, this sensation persisted, so she 
+became concerned.  She also reports a few day history of a 
+non-productive cough.  Denies sick contacts, recent travel or 
+sedentary lifestyle.  She denied chest pain, fever, chills, 
+dizziness, lightheadedness or syncope.  She presented to the ED 
+where she was found to be hypoxic to the ___ on room air.
+.  
+In the ED, she was placed on a non-rebreather with sats up to 
+the high 90's.  Attempts were made to wean her to NC but they 
+were unsuccessful, as she was satting 88% on 4L NC.  She 
+remained afebrile in the ED but was found to have WBC of 17.  
+Given that, she received levofloxacin and vancomycin.  Blood 
+cultures were drawn prior to antibiotic administration.  CXR did 
+not show PNA, but demonstrated progression of known lung cancer. 
+ She underwent a CT head to rule out metastases, which was 
+negative.  On transfer, patient was afebrile with HR- 77, BP- 
+112/49, RR- 16, SaO2- 98% on 15L NRB  
+.
+On transfer to the ICU, the patient was stable and comfortable.  
+Sats were 97% on 5L NC and 95% high-flow with a face-tent.  
+.  
+ROS: The patient denies any fevers, chills, weight change, 
+nausea, vomiting, abdominal pain, diarrhea, constipation, 
+melena, hematochezia, chest pain, orthopnea, PND, lower 
+extremity edema, cough, urinary frequency, urgency, dysuria, 
+lightheadedness, gait unsteadiness, focal weakness, vision 
+changes, headache, rash or skin changes.  
+.  
+
+ 
+Past Medical History:
+CAD s/p MI ___ s/p CABG ___
+Hypertension
+Dyslipidemia
+CVA: small left posterior frontal infarct in ___
+Macular Degeneration
+NSCLC- stage IV (oncology history below)
+.
+-- ___ presented in with unresolving right-sided pulmonary 
+infiltrate and an unrelated myocardial infarction.
+-- ___ Sputumcytology confirmed adenocarcinoma with a 
+pattern of stainpositivity consistent with lung origin (CK7 and 
+TTF-1 positive). She had stage IV nonsmall cell lung cancer, 
+based on the multiple intrapulmonary lesions. She has no 
+evidence of extrathoracic or central nervous system involvement 
+with metastasis.
+-- ___: Status post 6 cycles of pemetrexed 
+500->400>200 mg/m2 on ___, 
+___, and ___.  Her course was complicated by 
+cytopenias and development of increased creatinine levels. 
+-- ___ Chest CT showed partial response with interval 
+improvement in the consolidation of the superior segment of the 
+right lower lobe and nodular densities of the left lower lobe.  
+Still widely disseminated BAC. 
+-- ___ CT Chest shows increased density of right lower lobe
+consolidation and worsened peribronchiolar ground-glass 
+opacities
+in the lingula are most consistent with worsening of widely
+disseminated non-small cell lung cancer, much less likely due to
+infection. 
+-- ___ Chest CT: slight interval progression of known 
+disease, no new sites.
+
+ 
+Social History:
+___
+Family History:
+Her father died due to CAD at age ___. Her mother had stomach 
+cancer and osteosarcoma. No history of lung cancer, colon cancer 
+or breast cancer.
+ 
+Physical Exam:
+On Admission:
+Vitals: T: 96.9 BP: 118/51 HR: 94 RR: 18 O2Sat: 94% on 5L with 
+face tent  
+GEN: Well-appearing female in no acute distress  
+HEENT: EOMI, PERRL, sclera anicteric, MMM, OP Clear  
+NECK: No JVD, no cervical lymphadenopathy, trachea midline  
+COR: Regular rate and rhythm, no M/G/R, normal S1 S2
+PULM: Decreased breath sounds throughout.  minimally faint 
+bibasilar crackles.  Good effort.    
+ABD: Soft, NT, ND, +BS, no HSM,
+EXT: No C/C/E  
+NEURO: alert, oriented to person, place, and time. CN II  XII 
+grossly intact. Moves all 4 extremities.  
+SKIN: No jaundice, cyanosis, or gross dermatitis. No ecchymoses. 
+ 
+.  
+
+ 
+Pertinent Results:
+___ 08:30PM   WBC-17.9*# RBC-3.36*# HGB-8.1* HCT-25.5* 
+MCV-76* MCH-24.2* MCHC-31.8 RDW-15.8*
+___ 08:30PM   PLT COUNT-341
+___ 08:30PM   NEUTS-84* BANDS-7* LYMPHS-2* MONOS-7 EOS-0 
+BASOS-0 ___ MYELOS-0
+___ 08:30PM   HYPOCHROM-3+ ANISOCYT-1+ POIKILOCY-NORMAL 
+MACROCYT-1+ MICROCYT-2+ POLYCHROM-1+ OVALOCYT-1+ TEARDROP-1+ 
+ENVELOP-1+
+___ 08:30PM   ___ PTT-26.5 ___
+___ 08:30PM   GLUCOSE-117* UREA N-71* CREAT-2.8* SODIUM-135 
+POTASSIUM-4.9 CHLORIDE-98 TOTAL CO2-23 ANION GAP-19
+___ 08:43PM   LACTATE-2.6*
+___ 08:30PM   cTropnT-<0.01
+___ 10:46PM URINE  COLOR-Straw APPEAR-Clear SP ___
+___ 10:46PM URINE  BLOOD-NEG NITRITE-NEG PROTEIN-NEG 
+GLUCOSE-NEG KETONE-NEG BILIRUBIN-NEG UROBILNGN-NEG PH-5.0 
+LEUK-NEG
+.
+Micro:
+Legionella Urinary Antigen  (Final ___: 
+      NEGATIVE FOR LEGIONELLA SEROGROUP 1 ANTIGEN
+.
+Urine cx:   URINE CULTURE (Final ___:    NO GROWTH.
+
+Blood cx: NGTD
+.
+Studies/Imaging:
+.
+EKG: ___
+Sinus rhythm at 68 bpm, normal axis, normal intervals, poor 
+R-wave progresion, ST-depressions in V4-V6.
+.
+CXR: ___
+SINGLE AP VIEW OF THE CHEST: Patient is status post median 
+sternotomy. The 
+cardiac, mediastinal and hilar contours are unchanged. There 
+continues to be progression of disease with increased extent of 
+consolidative opacity within the right lung base. Ill-defined 
+opacities within the lingula and left lower lobe are similar to 
+prior. Small right pleural effusion is present. There is no 
+pneumothorax. There is hyperinflation of the lungs. 
+IMPRESSION: Evidence of disease progression. 
+.
+CT Head: ___
+FINDINGS: There is no evidence of acute hemorrhage, edema, mass 
+effect or 
+recent infarction. An area of encephalomalacia in the left 
+frontal lobe, 
+compatible with chronic infarct is unchanged. Prominence of the 
+ventricles 
+and sulci reflects generalized atrophy, notably in the bifrontal 
+extraaxial spaces. Areas of periventricular and subcortical 
+white matter hypodensity likely reflect sequela of chronic small 
+vessel ischemic disease. No concerning osseous lesion is seen. 
+There are calcifications of the bilateral carotid siphons. The 
+visualized paranasal sinuses are grossly unremarkable. 
+IMPRESSION: No evidence of acute intracranial process or mass 
+effect 
+.
+LENIs: ___
+IMPRESSION: No evidence of DVT. 
+.
+CT chest ___
+IMPRESSION:  
+1. Interval worsening of diffuse bilateral ground-glass 
+opacities, 
+bronchiolar nodules and dense consolidation within the lingula 
+and right 
+middle lobe. After review of multiple recent prior chest x-rays 
+and CTs, these findings can all be explained by worsening 
+bronchioalveolar carcinoma, given the absence of any change 
+rapid enough to suggest pneumonia. Of course pneumonia might be 
+present and unrecognized, and treatment should be made on the 
+basis of clinical findings. 
+2. Stable mild cardiomegaly. 
+3. Moderate emphysema. 
+4. Cholelithiasis without evidence of cholecystitis. 
+
+ 
+Brief Hospital Course:
+___ female with NSCLC stage IV presents with hypoxia.
+.
+#. Hypoxia. On admission patient with chief complaints of 
+progressive shortness of breath and non-productive cough. No 
+home oxygen requirement at baseline. On admission she was placed 
+on NRB for treatment of O2 saturations in ___ saturations in the 
+___.  Admission CXR with no definite infiltrate, though concern 
+for progression of her known lung disease. In setting of 
+elevated WBC. concern for infectious process and empirically 
+treated with levofloxacin and vancomycin in the ED. Transitioned 
+to monotherapy with levofloxacin on ___ and ceftriaxone was 
+later added on ___. CXR on ___ demonstrates new left lower 
+lobe consolidation. Additional hypoxia work-up notable for 
+negative biomarkers, negative LENIs; unable to perform CTA due 
+to chronic kidney disease and creatinine 2.8. Patient was able 
+to be weaned back to room air by the end of her FICU stay. She 
+was transferred to the medical floor on ___, where she 
+demonstrated exertional hypoxia, usually asymptomatic. Home O2 
+was arranged.
+.
+# Post-obstructive pneumonia. Consolidation of left lower lobe 
+evident on ___ likely secondary to infection rather than 
+progression of disease due to short time course of infiltrate 
+development (although on CT scan of ___, the radiologist 
+concluded the opposite: that changes seen were likely caused by 
+her NSCLC, though pneumonia could not be absolutely ruled out). 
+Continued course of ceftriaxone, levofloxacin, which was 
+eventually narrowed to levofloxacin alone. Blood cultures no 
+growth to date. Multiple sputum cultures obtained; however, all 
+contaminated with oral flora. Urine legionella negative. Patient 
+did improve clinically with antibiotics, so she should complete 
+a ___ day course of levofloxacin.
+.
+#  NSCLC- stage IV. Not currently receiving chemotherapy.  
+Outpatient oncologist Dr. ___ is planning on continued 
+surveillance with plan for possible further palliative systemic 
+chemotherapy if symptomatic progression of her disease is noted. 
+CT scan for evaluation of disease progression was obtained and 
+did show further progression. Dr. ___ plans to weigh the risks 
+and benefits of additional chemotherapy, as it will be 
+complicated by her kidney dysfunction and other comorbidities. 
+He plans to repeat her CT scan once she completes her 
+antibiotics to further evaluate the rate of disease progression.
+.    
+#  CAD s/p MI. Patient without chest pain; however, EKG with new 
+ST-depressions. Biomarkers cycled and negative x2. Patient 
+continued on home beta-blocker at a decreased dose due to 
+relative hypotension. She was maintained on aspirin, plavix, and 
+statin.
+.
+# chronic systolic CHF (LVEF ___ by TTE ___: 
+Well-compensated. As described below, lasix was held but 
+B-blocker was given at a lower dose given relative hypotension 
+and exertional tachycardia.
+.
+#  CKD stage III: Creatinine on admission 2.8, down to 2.4 by 
+the time of discharge. She was given minimal IV fluids in the 
+ICU and her lasix was held. Throughout stay, patient had 
+adequate urine output. 
+.
+#  Microcytic anemia. On presentation, patient's Hct likely 
+hemoconcentrated. Follow-up Hct found to be 20. No signs of 
+bleeding on exam. Patient transfused 2units of pRBC due to 
+history of CAD with appropriate elevation in hematocrit. The 
+hematocrit did remain steady during FICU course following 
+tranfusion. Just before transfer from ___, the patient's stool 
+guaiac was positive, which may call for further work-up. The 
+patient's anemia is most likely secondary to acute inflammation 
+in the setting of underlying chronic disease. 
+.
+ 
+Medications on Admission:
+amlodipine 5 mg Tablet- one Tablet(s) by mouth one daily  
+atorvastatin [Lipitor] 80 mg Tablet- one Tablet(s) by mouth one 
+daily 
+calcitriol 0.25 mcg Capsule- 1 Capsule(s) by mouth once a day
+clopidogrel [Plavix] 75 mg Tablet 1 Tablet(s) by mouth once a 
+day 
+folic acid- 1 mg Tablet one Tablet(s) by mouth one daily 
+furosemide 40 mg Tablet- 1 Tablet(s) by mouth daily
+loperamide 2 mg Capsule- one Capsule(s) by mouth one twice daily 
+as needed 
+lorazepam 0.5 mg Tablet ___ Tablet(s) by mouth q6 hours as 
+needed for Nausea 
+metoprolol tartrate [Lopressor] 50 mg Tablet- one Tablet(s) by 
+mouth ___ AM and one in ___ 
+tramadol 50 mg Tablet- 0.5 (One half) Tablet(s) by mouth three 
+times a day as needed for Pain  
+trazodone 50 mg Tablet- one Tablet(s) by mouth one daily as 
+needed 
+aspirin 81 mg Tablet, Chewable- 2 Tablet(s) by mouth one daily 
+ranitidine HCl [Acid Control] 150 mg Tablet- one Tablet(s) by 
+mouth one daily 
+ 
+Discharge Medications:
+1. oxygen
+___ continuous, pulse dose for portability
+Dx: lung cancer
+2. levofloxacin 500 mg Tablet Sig: One (1) Tablet PO Q48H (every 
+48 hours) for 2 weeks: last day ___.
+Disp:*4 Tablet(s)* Refills:*0*
+3. atorvastatin 40 mg Tablet Sig: Two (2) Tablet PO DAILY 
+(Daily).  
+4. metoprolol tartrate 25 mg Tablet Sig: One (1) Tablet PO twice 
+a day: PLEASE NOTE THIS IS A CHANGE FROM YOUR PREVIOUS EVENING 
+DOSING.  
+5. docusate sodium 100 mg Capsule Sig: One (1) Capsule PO BID (2 
+times a day): hold if loose stools.  
+6. trazodone 50 mg Tablet Sig: One (1) Tablet PO HS (at bedtime) 
+as needed for insomnia.  
+7. clopidogrel 75 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+8. ranitidine HCl 150 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+9. calcitriol 0.25 mcg Capsule Sig: One (1) Capsule PO DAILY 
+(Daily).  
+10. folic acid 1 mg Tablet Sig: One (1) Tablet PO DAILY (Daily). 
+ 
+11. aspirin 81 mg Tablet, Chewable Sig: One (1) Tablet, Chewable 
+PO DAILY (Daily).  
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+# post-obstructive pneumonia
+# non small cell lung cancer stage IV, progressing
+.
+SECONDARY DIAGNOSES:
+# anemia of acute inflammation
+# CAD s/p MI
+# chronic systolic CHF
+# HTN
+# CKD stage III
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - requires assistance or aid (walker 
+or cane).
+
+ 
+Discharge Instructions:
+You were admitted with cough and found to have low oxygen levels 
+which required the Intensive Care Unit. Your CT shows 
+progression of your lung cancer with a probable superimposed 
+pneumonia. You were treated with antibiotics and oxygen and 
+improved, and you were tranferred to the medical floor. You were 
+continued on antibiotics, and your oxygen levels were monitored 
+closely. We communicated with your primary oncologist, Dr. 
+___, who will weigh the risks and benefits of 
+additional chemotherapy, as it will be complicated by your 
+kidney dysfunction and other medical problems. He plans to 
+repeat your CT scan once you finish your antibiotics to further 
+evaluate the rate of your disease progression.
+
+Your congestive heart failure has been stable. Please note we 
+stopped your lasix and amlodipine for now, and you will need to 
+be re-evaluated by your PCP to see when you should restart them. 
+We also decreased your evening dose of metoprolol. As usual, 
+please weigh yourself every morning, and call MD if weight goes 
+up more than 3 lbs.
+ 
+Followup Instructions:
+___

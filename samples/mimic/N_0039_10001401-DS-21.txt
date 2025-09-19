@@ -1,0 +1,289 @@
+ 
+Name:  ___              Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Hematuria, weakness
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+___ y/o female with h/o PE (on lovenox), bladder cancer s/p  
+Robotic TAH-BSO, lap radical cystectomy with ileal loop 
+diversion and anterior vaginectomy in ___ c/b abdominal 
+fluid requiring placement of drainage catheters. Recent 
+abdominal imaging noted worsening of her bilateral severe 
+hydronephrosis and her Cr was noted to have risen from 0.8 to 
+1.3(outside lab value). Patient recently underwent bilateral 
+nephrostomy tube placement by ___ on ___.
+
+She first started feeling weak during ___ yesterday doing the 
+exercises. Had palpitations with ambulation. Has tightness in 
+chest with ambulating since yesterday. Felt light headed with 
+ambulation. SNF noticed increased hematuria with R bag darker 
+than L bag since yesterday. Her Urostomy (placed in ___ 
+also positive for hematuria. She was transferred to ___ ED for 
+further management.
+
+In the ED, initial vitals were:  
+
+Temp. 98.1, HR 72, BP 139/56, RR 16, 99% RA
+  
+- Labs notable for:  
+WBC 5.9, Hg 8.1, platelets 374. Na 140, K 4.3, Cl 103, biacrb 
+22, BUN 29, Cr 1.0
+
+UA from bilateral nephrostomy tubes with > 100 WBC, moderate 
+leukocytes, and large blood.
+
+- Imaging was notable for: 
+CT abd/pelvis w/o contrast:
+Interval placement of bilateral percutaneous nephroureterostomy 
+tubes with resolved hydroureteronephrosis. No RP hematoma.
+ 
+- Patient was given:  
+LR
+
+Upon arrival to the floor, patient reports that she noticed 
+shortness of breath today with walking in conjunction with 
+bloody output from her ostomy tubes. She notes that the output 
+from her nephrostomy tubes was pink tinged when she left the 
+hospital 2 days ago. She also endorses associated chest 
+tightness but no pain or pressure. She denies cough, fever, 
+chills, abdominal pain, or diarrhea. She notes that she has an 
+ostomy and nephroureterostomy without sensation of dysuria. 
+Patient notes feeling dizzy and lightheaded previously though is 
+currently asymptomatic. 
+
+ 
+Past Medical History:
+- Hypertension  
+ - s/p lap chole  
+ - s/p left knee replacement  
+ - s/p laminectomy of L5-S1 at age ___  
+ - Bladder Cancer high grade TCC, T1 diagnosed in ___, then 
+___ pelvic MRI w/invasion into bladder wall, perivesical 
+soft tissue and anterior vaginal wall c/w T4 staging  
+ - s/p hysterectomy and bilateral oophorectomy for large uterus 
+w/fibroid, s/p laparascopic b/l pelvic lymph node resection, s/p 
+radical cystectomy and anterior vaginectomy with vaginal 
+reconstruction with ileal conduit creation ___, course 
+complicated by bacteremia and development of intra-abdominal 
+fluid collection, no s/p drain placement by ___ ___  
+ - h/o LLE DVT and PE on lovenox  
+
+ 
+Social History:
+___
+Family History:
+Negative for bladder CA.
+
+ 
+Physical Exam:
+=========================
+ADMISSION PHYSICAL EXAM: 
+========================= 
+VITAL SIGNS: Temp. 98.1 PO BP 158 / 66 HR 72 RR 18 Spo2 95 RA 
+GENERAL: well-appearing elderly woman in no acute distress 
+CARDIAC: RRR, no murmurs
+LUNGS: clear to auscultation bilaterally 
+ABDOMEN: soft, non-tender to palpation, normal bowel sounds. 
+Ostomy draining brown stool. Nephroureterostomy draining dark 
+red bloody urine. Bilateral nephrostomy tubes draining blood 
+urine. 
+EXTREMITIES: No edema, warm and well-perfused.
+
+=========================
+DISCHARGE PHYSICAL EXAM: 
+========================= 
+VS -  98.3 PO 139/67 71 18 94 RA 
+GENERAL: well-appearing elderly woman in no acute distress 
+CARDIAC: RRR, no murmurs
+LUNGS: clear to auscultation bilaterally 
+ABDOMEN: soft, non-tender to palpation, normal bowel sounds.  
+Nephroureterostomy draining dark red bloody urine. Bilateral 
+nephrostomy tubes capped. 
+EXTREMITIES: No edema, warm and well-perfused
+
+ 
+Pertinent Results:
+================
+ADMISSION LABS
+================
+___ 05:20PM BLOOD WBC-5.9 RBC-2.90* Hgb-8.1* Hct-26.6* 
+MCV-92 MCH-27.9 MCHC-30.5* RDW-15.4 RDWSD-51.2* Plt ___
+___ 05:48AM BLOOD WBC-4.6 RBC-2.46* Hgb-7.0* Hct-22.6* 
+MCV-92 MCH-28.5 MCHC-31.0* RDW-15.3 RDWSD-51.7* Plt ___
+___ 05:20PM BLOOD Neuts-56.3 ___ Monos-12.6 Eos-1.5 
+Baso-0.3 Im ___ AbsNeut-3.29# AbsLymp-1.69 AbsMono-0.74 
+AbsEos-0.09 AbsBaso-0.02
+___ 05:20PM BLOOD Glucose-101* UreaN-29* Creat-1.0 Na-140 
+K-4.3 Cl-103 HCO3-22 AnGap-19
+
+=================
+IMAGING/STUDIES
+=================
+
+___ CT Abd/Pel w/o Contrast: 
+IMPRESSION:   
+1. Interval placement of bilateral percutaneous 
+nephroureterostomy tubes with resolved hydroureteronephrosis.  
+No RP hematoma. 
+2. Partially imaged nodular opacity in the right middle lobe 
+which can be 
+further assessed on a nonemergent dedicated CT chest. 
+
+___ CXR
+AP portable upright view of the chest.   Right upper extremity 
+access PICC 
+line is seen with its tip in the upper SVC.  Overlying EKG leads 
+are present.  Lungs are clear.  Cardiomediastinal silhouette is 
+stable.  Bony structures are intact. 
+
+==============
+MICROBIOLOGY
+==============
+___ 6:35 pm URINE      LEFT NEPHROSTOMY TUBE. 
+                            **FINAL REPORT ___
+   URINE CULTURE (Final ___:    NO GROWTH. 
+
+================
+DISCHARGE LABS
+================
+___ 05:08AM BLOOD WBC-5.4 RBC-2.86* Hgb-8.2* Hct-26.5* 
+MCV-93 MCH-28.7 MCHC-30.9* RDW-15.3 RDWSD-51.8* Plt ___
+___ 05:08AM BLOOD Glucose-94 UreaN-29* Creat-0.9 Na-143 
+K-4.0 Cl-106 HCO3-26 AnGap-15
+___ 05:08AM BLOOD Calcium-8.8 Phos-5.2* Mg-2.1
+ 
+Brief Hospital Course:
+Ms. ___ is an ___ year old woman with history of provoked 
+DVT/PE (on lovenox), bladder cancer s/p Robotic TAH-BSO, lap 
+radical cystectomy with ileal loop diversion and anterior 
+vaginectomy in ___ c/b abdominal fluid requiring 
+placement of drainage catheters, and recent hydronephrosis 
+requiring placement of bilateral PCN tubes on ___, presenting 
+from rehab with hematuria and weakness.
+
+On arrival, pt had evidence of frank hematuria in her urostomy 
+bag and PCN tubes. Her hemoglobin was initially 8.1, which 
+subsequently dropped to 7.0 Her lovenox was held, and she was 
+transfused with 1 U PRBC with an appropriate hemoglobin bump to 
+8.2. Hematuria was likely caused by recent instrumentation in 
+the setting of anticoagulation. Her hematuria improved, as did 
+her dizziness/weakness. ___ was consulted and recommending 
+capping her PCN tubes. After discussion with the patient's 
+hematologist, it was decided to stop her lovenox treatment given 
+that her DVT/PE were provoked in the setting of her recovery 
+from surgery, and that she had received almost 6 months of 
+treatment.
+
+Secondary Issues:
+
+# Asymptomatic bacteruria: Patient with asymptomatic bacteruria 
+in setting of recent procedural manipulation. She was afebrile 
+and without leukocytosis, so treatment with antibiotics was 
+deferred.
+
+# Hyperlipidemia: continued atorvastatin 10 mg daily
+
+# Hypothyroidism: continue levothyroxine 175 mcg daily
+
+===================
+TRANSITIONAL ISSUES
+===================
+Medication Changes: Lovenox stopped 
+[ ] CT Abdomen/Pelvis showed partially imaged nodular opacity in 
+the right middle lobe which can be further assessed on a 
+nonemergent dedicated CT chest. 
+[ ] Pt's PCN tubes were capped per ___ recommendation during her 
+hospitalization; she was discharged with scheduled followup to 
+decide on long term management
+[ ] If pt develops hematuria and/or lightheadedness or other 
+symptoms of anemia, a CBC should be rechecked to assess for 
+bleeding
+[ ] Hemoglobin/Hematocrit on discharge: 8.2/26.5
+
+# CODE: presumed full
+# CONTACT: ___ (MD) ___ (cell) 
+___ (home) 
+
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Atorvastatin 10 mg PO QPM 
+2. Enoxaparin Sodium 70 mg SC Q12H 
+Start: ___, First Dose: Next Routine Administration Time 
+3. Levothyroxine Sodium 175 mcg PO DAILY 
+4. Multivitamins 1 TAB PO DAILY 
+5. Probiotic-Digestive Enzymes (L. acidophilus-dig ___ 5) 
+___ mg oral daily 
+
+ 
+Discharge Medications:
+1.  Atorvastatin 10 mg PO QPM  
+2.  Levothyroxine Sodium 175 mcg PO DAILY  
+3.  Multivitamins 1 TAB PO DAILY  
+4.  Probiotic-Digestive Enzymes (L. acidophilus-dig ___ 5) 
+___ mg oral daily  
+
+ 
+Discharge Disposition:
+Extended Care
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Primary Diagnoses: Hematuria, anemia
+
+Secondary Diagnoses: Bladder cancer, hydronephrosis, 
+hypothyroidism, DVT/PE
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Dear Ms. ___, 
+
+It was a pleasure taking care of you at ___. 
+
+WHY DID YOU COME TO THE HOSPITAL?
+You noticed blood in your urine, and you were feeling 
+weak/lightheaded.
+
+WHAT HAPPENED WHILE YOU WERE HERE?
+We did not give you your blood thinner medication (Lovenox), and 
+we gave you a unit of blood. The blood in your urine cleared up. 
+
+
+WHAT SHOULD YOU DO WHEN YOU LEAVE THE HOSPITAL?
+Along with your oncologist Dr. ___ have decided that you 
+no longer need to take any Lovenox. You should continue to 
+follow up with your doctors, and take all of your medications as 
+prescribed. Your followup appointments are listed below.
+
+Again, it was a pleasure taking care of you!
+
+Sincerely, 
+
+Your ___ Team
+ 
+Followup Instructions:
+___

@@ -1,0 +1,291 @@
+ 
+Name:  ___             Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Fever, non-productive cough
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+___ yo F w/ HTN, CAD, COPD p/w fevers, non-productive cough, 
+since ___. Pt said she was in her usual state of health until 
+___ evening when she developed a cough producing ___ 
+sputum.  She took some robitussin and went to bed.  She woke up 
+the next morning and had general malaise, nasal congestion, 
+intermittently productive cough.  She did not want to eat and 
+had 4 episodes of water diarrhea and one episode of vomiting 
+without nausea.  She denied fevers, chills or sweats at that 
+time.  She called her PCP who prescribed ___ Z-pack.  Her symptoms 
+persisted and she developed pain with coughing around her upper 
+abdomen and lower chest.  Denies other joint or muscle pain.  
+She went to see her PCP on the day of admission.  In her PCP's 
+office was hypoxic on RA, here is 89% on RA. Has had flu vaccine 
+this year and pneumovax last year. wheezy on exam, on 2L with o2 
+sat mid-90s.  
+.
+In ED VS were afebrile 70 113/66 94%2L, On exam had wheezes with 
+peak flow of 150 (no baseline), speaking in full sentences and 
+no accessory muscle use, euvolemic and no ___ edema.  Flu screen 
+not performed, CXR unremarkable compared to prior.  Given 
+levoflox, nebs, pred 50 mg.
+
+ 
+Past Medical History:
+ASTHMA   
+HYPERTENSION   
+HYPERLIPIDEMIA   
+HEADACHE   
+OSTEOARTHRITIS   
+ATYPICAL CHEST PAIN   
+TOBACCO ABUSE   
+ABNORMAL CHEST XRAY   
+COPD  
+ 
+Social History:
+___
+Family History:
+Mother: ___, HTN  
+Father: ___ CA  
+Brother: CA?  
+Brother: ___  
+
+ 
+Physical ___:
+On Admission:
+VS: T:  , BP: 142/70, HR: 70, RR 20, O2 93% on RA (96% 2L)
+GA: AOx3, pt with nasal cannula on in no respiratory distress
+HEENT:  MMM. no LAD. no JVD. neck supple. 
+Cards: RRR S1/S2 heard. no murmurs/gallops/rubs.
+Pulm: CTAB no crackles or wheezes, good inspiratory effort, but 
+not great air movement, slightly prolonged expiratory phase.
+Abd: soft, NT, +BS. no g/rt. neg HSM.
+Extremities: wwp, no edema. DPs, PTs 2+.
+Skin: no noticeable rashes
+Neuro/Psych: CNs II-XII intact
+.
+ON DISCHARGE:
+VS: T:  , BP: 142/70, HR: 70, RR 20, O2 93% on RA (96% 2L)
+GA: AOx3, pt with nasal cannula on in no respiratory distress
+HEENT:  MMM. no LAD. no JVD. neck supple. 
+Cards: RRR S1/S2 heard. no murmurs/gallops/rubs.
+Pulm: CTAB no crackles or wheezes, good inspiratory effort, but 
+not great air movement, slightly prolonged expiratory phase.
+Abd: soft, NT, +BS. no g/rt. neg HSM.
+Extremities: wwp, no edema. DPs, PTs 2+.
+Skin: no noticeable rashes
+Neuro/Psych: CNs II-XII intact
+ 
+Pertinent Results:
+LABS:
+___ 03:26PM BLOOD WBC-4.9 RBC-4.25 Hgb-12.7 Hct-36.5 MCV-86 
+MCH-30.0 MCHC-34.9 RDW-15.3 Plt ___
+___ 06:50AM BLOOD WBC-8.2# RBC-4.03* Hgb-12.2 Hct-34.8* 
+MCV-87 MCH-30.4 MCHC-35.1* RDW-15.3 Plt ___
+___ 03:26PM BLOOD Glucose-123* UreaN-14 Creat-0.9 Na-136 
+K-3.3 Cl-97 HCO3-31 AnGap-___ 06:50AM BLOOD Glucose-95 UreaN-17 Creat-0.8 Na-139 
+K-3.5 Cl-98 HCO3-30 AnGap-15
+.
+MICRO:
+    **FINAL REPORT ___
+
+   DIRECT INFLUENZA A ANTIGEN TEST (Final ___: 
+      POSITIVE FOR INFLUENZA A VIRAL ANTIGEN. 
+         REPORTED BY PHONE TO ___ AT 1153  ___.
+.
+IMAGING:
+CXR ___:
+IMPRESSION: 
+1. No acute chest pathology with stable pleural parenchymal 
+scar. 
+2. Flattening of the hemidiaphragms consistent with COPD. 
+
+ 
+Brief Hospital Course:
+A/P: ___ year old woman with recent onset of fevers, productive 
+cough and costochondral vs. pleuritic pain who tested positive 
+for influenza A.
+.
+# Fevers, malaise, cough: Pt seemed to have onset of symptoms 
+consistent with viral infection.  She was admitted to the 
+hospital and placed on droplet precautions because there was 
+concern that she had the flu.  She was empirically started on 
+Oseltamivir 75mg PO BID.  nasopharyngeal swab was positive for 
+influenza A.  She was continued on a five day regiment of 
+oseltamivir for her flu and will follow up with Dr. ___ in the 
+outpatient setting.
+.
+# COPD exacerbation:  Pt tested positive for the flu, but seemed 
+to also be having a COPD exacerbation with worsening dyspnea and 
+sputum production.  She was started on prednisone 50mg PO Daily, 
+Azithromycin and O2 via nasal cannula.  Her resting O2 sat was 
+initially 85%, but at the time of discharge she was satting 96% 
+on RA, but would desaturate to 84% after walking 75-100feet.  
+She Was given a 5 day course of azithromycin, 5 days of 
+prednisone at 50mg PO Daily and then a week long taper and 
+discharged on home O2 while her symptoms improved.  The patient 
+was breathing more comfortably and ambulating well at the time 
+of discharge.  She will follow up with Dr. ___ as well as Dr. 
+___ in the outpatient setting.
+.
+# ASTHMA: pt with wheezing in the ED and at PCP office, but not 
+present on my exams, however, she had received duonebs prior to 
+my exam.  Likely having asthma symptoms in setting of COPD 
+exacerbations.  She was continued on her home regiment and also 
+on standing nebulizers.  She was discharged with nebulizer 
+treamtents as well as her home medications.  Respiratory status 
+was described above.
+.
+HYPERTENSION: Pt slightly hypertensive in the ED, but will 
+continue meds at current regiment and reassess in the morning.  
+Her BP meds are actively being uptitrated in the outpatient 
+setting.  She remained normotensive during her hospital stay on 
+the floor.  We continued Diltiazem ER 360mg PO Q24H, HCTZ 12.5mg 
+PO DAILY, IMDUR ER 60 mg PO DAILY.
+.  
+GERD: Currently asymptomatic.  We continued omeprazole 20mg PO 
+Daily
+. 
+CAD: Pt was recently diagnosed with single vessel disease.  She 
+is asymptomatic at this time, but we will continue to monitor 
+her for symptoms during this admission. 
+We continued aspirin 81mg PO DAILY
+.
+TOBACCO ABUSE: Pt had been smoking for many years, but said that 
+she quit yesterday and has no need for a nicotine patch or gum 
+at this time.  
+.
+
+ 
+Medications on Admission:
+1. Lisinopril 5mg PO Daily
+2. B complex-vitamin C-folic acid 1 mg Capsule Sig: One (1) Cap  
+
+PO DAILY (Daily).  
+3. cinacalcet 30 mg Tablet Sig: Two (2) Tablet PO DAILY (Daily). 
+ 
+4. simvastatin 10 mg Tablet Sig: Two (2) Tablet PO DAILY  
+(Daily).  
+5. metoprolol succinate 100 mg Tablet Sustained Release 24 hr  
+Sig: One (1) Tablet Sustained Release 24 hr PO once a day.  
+6. doxazosin 4 mg Tablet Sig: Two (2) Tablet PO HS (at bedtime). 
+ 
+7. aspirin 81 mg Tablet, Chewable Sig: One (1) Tablet, Chewable  
+
+PO DAILY (Daily).  
+8. venlafaxine 75 mg Capsule, Sust. Release 24 hr Sig: Two (2)  
+Capsule, Sust. Release 24 hr PO DAILY (Daily).  
+9. venlafaxine 37.5 mg Capsule, Sust. Release 24 hr Sig: One (1) 
+ 
+Capsule, Sust. Release 24 hr PO DAILY (Daily).  
+10. sevelamer HCl 400 mg Tablet Sig: Six (6) Tablet PO TID  
+W/MEALS (3 TIMES A DAY WITH MEALS).  
+Disp:*540 Tablet(s)* Refills:*2*  
+11. clonazepam 1 mg Tablet Sig: One (1) Tablet PO at bedtime.  
+
+ 
+Discharge Medications:
+1. acetaminophen 325 mg Tablet Sig: One (1) Tablet PO every four 
+(4) hours as needed for pain.  
+2. albuterol sulfate 90 mcg/Actuation HFA Aerosol Inhaler Sig: 
+Two (2)  Inhalation every ___ hours.  
+3. azithromycin 250 mg Tablet Sig: One (1) Tablet PO Q24H (every 
+24 hours) for 2 days.
+Disp:*2 Tablet(s)* Refills:*0*
+4. oseltamivir 75 mg Capsule Sig: One (1) Capsule PO BID (2 
+times a day) for 3 days.
+Disp:*5 Capsule(s)* Refills:*0*
+5. prednisone 10 mg Tablet Sig: Five (5) Tablet PO once a day 
+for 7 days: Take 5 tabs for 2 days, then 4 tabs for 2 days, then 
+2 tabs for 2 days, then 1 tab for 2 days.
+Disp:*19 Tablet(s)* Refills:*0*
+6. diltiazem HCl 180 mg Capsule, Extended Release Sig: Two (2) 
+Capsule, Extended Release PO DAILY (Daily).  
+7. fluticasone 50 mcg/Actuation Spray, Suspension Sig: One (1) 
+Spray Nasal DAILY (Daily).  
+8. fluticasone-salmeterol 500-50 mcg/dose Disk with Device Sig: 
+One (1) Disk with Device Inhalation BID (2 times a day).  
+9. hydrochlorothiazide 12.5 mg Capsule Sig: One (1) Capsule PO 
+DAILY (Daily).  
+10. isosorbide mononitrate 60 mg Tablet Extended Release 24 hr 
+Sig: One (1) Tablet Extended Release 24 hr PO DAILY (Daily).  
+11. montelukast 10 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+12. omeprazole 20 mg Capsule, Delayed Release(E.C.) Sig: One (1) 
+Capsule, Delayed Release(E.C.) PO DAILY (Daily).  
+13. tiotropium bromide 18 mcg Capsule, w/Inhalation Device Sig: 
+One (1) Cap Inhalation DAILY (Daily).  
+14. calcium carbonate 200 mg (500 mg) Tablet, Chewable Sig: One 
+(1) Tablet, Chewable PO DAILY (Daily).  
+15. multivitamin     Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+16. aspirin 81 mg Tablet Sig: One (1) Tablet PO once a day.  
+17. Oxygen
+Home Oxygen @ 2LPM Continuous via nasal cannula, conserving 
+device for portability.  Pulse dose for portability.
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Primary Diagnosis:
+Influenza
+COPD exacerbation
+.
+Secondary Diagnosis:
+ASTHMA   
+HYPERTENSION   
+HYPERLIPIDEMIA   
+HEADACHE   
+OSTEOARTHRITIS   
+ATYPICAL CHEST PAIN   
+TOBACCO ABUSE   
+ABNORMAL CHEST XRAY   
+COPD 
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+You are being discharged from ___.  It 
+was a pleasure taking care of you.  You were admitted to the 
+hospital for symptoms that were similar to a common cold as well 
+as worsening respiratory status.  You tested positive for the 
+flu and we also believe that you are having a COPD exacerbation. 
+ You were started on high dose steroids, azithromycin, tamiflu 
+and nebulizers.  You were also placed on oxygen.  You are now 
+doing better, but may require O2 at home for some time as your 
+infection resolves and your inflammation improves.
+.
+The Following medications were STARTED:
+Prednisone 50mg 1 day, on ___ decrease to 40mg Daily for 2 
+days, on ___ decrease to 20mg Daily for 2 days, on ___ 
+take 10mg Daily for 2 days then stop  
+Azithromycin 250mg by mouth Daily 1 day (last dose on ___
+Tamiflu 75mg two times a day for 2.5 days (last dose on ___
+You will also be sent on home O2
+.
+Please take your other medications as prescribed.
+ 
+Followup Instructions:
+___

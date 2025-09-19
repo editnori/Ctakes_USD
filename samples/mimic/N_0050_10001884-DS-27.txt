@@ -1,0 +1,274 @@
+ 
+Name:  ___             Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+No Known Allergies / Adverse Drug Reactions
+ 
+Attending: ___.
+ 
+Chief Complaint:
+s/p tachyarrhythmia
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+___ yo F smoker with PMH of asthma/COPD on theophylline, CAD, 
+HTN, hyperlipidemia, and atypical chest pain presenting with 
+malaise and SOB during an episode of tachyarrythmia at home 
+which has since resolved.  Pt recalls that she took her VS on 
+the telehealth monitor, then nurse called and asked her to 
+recheck them.  ___ services came and measured HR at 110s, but pt 
+was without CP, SOB, visual sx, HA, palps.  Also denies F/C, 
+N/V, abd pain, change in bowel or bladder.  Per her PCP, ___ 
+___, the patient does have a history of tachyarrythmias even 
+though the patient denies this history.  She also took 
+theophylline for some time, although it is not on her med list 
+and she states she hasn't taken it since ___.  However, PCP 
+concern is that the theophylline may be contributing.  Recent 
+stress test with reversible lesion being treated conservatively. 
+   
+.
+In ED VS were 98.8 78 154/82 20 95%.  Has CXR in ED which was 
+unremarkable.  Transfer VS were HR=60, BP=126/75, RR=18, POx=94% 
+RA
+.
+On the floor, pt asymptomatic and feels well.  Only upset 
+because she's been in the hospital every month so far this year.
+
+ 
+Past Medical History:
+-ASTHMA   
+-HYPERTENSION   
+-HYPERLIPIDEMIA   
+-HEADACHE   
+-OSTEOARTHRITIS   
+-ATYPICAL CHEST PAIN   
+-TOBACCO ABUSE   
+-ABNORMAL CHEST XRAY   
+-COPD  
+
+ 
+Social History:
+___
+Family History:
+Mother: ___, HTN  
+Father: ___ CA  
+Brother: CA?  
+Brother: ___ 
+
+ 
+Physical ___:
+ADMISSION PEx:
+VS: 97.9, 155/90, 64, 16@94%(RA)
+GA: AOx3, NAD
+HEENT:  PERRLA. MMM. no LAD. no JVD. neck supple. 
+Cards: PMI palpable at ___ IC space. No RVH. RRR S1/S2 heard. 
+no murmurs/gallops/rubs.
+Pulm: scattered exp wheezing with minimal air movment
+Abd: soft, NT, +BS. no g/rt.
+Extremities: wwp, no edema. DPs, PTs 2+.
+Skin: no rashes, eccymoses, lesions 
+Neuro/Psych: CNs II-XII intact. ___ strength in muscle groups 
+tested, sensation symmetric. 
+
+DISCHARGE PEx:
+
+ 
+Pertinent Results:
+Relevant and representative labs:
+CBC and coags:
+-___ 03:30PM BLOOD WBC-6.7 RBC-4.40 Hgb-13.2 Hct-38.9 
+MCV-88 MCH-29.9 MCHC-33.9 RDW-15.7* Plt ___
+-___ 05:55AM BLOOD WBC-5.9 RBC-4.32 Hgb-12.8 Hct-38.4 
+MCV-89 MCH-29.6 MCHC-33.2 RDW-15.6* Plt ___
+-___ 03:30PM BLOOD ___ PTT-26.2 ___
+
+Chem:
+-___ 03:30PM BLOOD Glucose-105* UreaN-18 Creat-0.9 Na-139 
+K-3.5 Cl-101 HCO3-31 
+-___ 05:55AM BLOOD Glucose-101* UreaN-20 Creat-0.9 Na-139 
+K-4.2 Cl-99 HCO3-32
+
+CEs:
+-___ 03:30PM BLOOD cTropnT-<0.01
+-___ 09:10PM BLOOD CK-MB-4 cTropnT-<0.01
+-___ 05:55AM BLOOD CK-MB-3 cTropnT-<0.01
+
+Misc:
+-___ 05:55AM BLOOD Triglyc-96 HDL-50 CHOL/HD-3.2 LDLcalc-90 
+Cholest-159
+ 
+Brief Hospital Course:
+To Do:
+1) follow-up theophylline level
+___ yo F smoker with PMH of asthma/COPD managed with theophylline 
+until ___ when theophylline was discontinued because of 
+tachycardia, CAD, HTN, and hyperlipidemia who presented from 
+home with asymptomatic tachyarrythmia.
+.  
+ACTIVE ISSUES:
+.
+# Tachycarrhymia in context of recent inducible ischemia seen on 
+ECHO stress test (___):  At the time of admission, her 
+symptoms had resolved, no abnormalities were seen on imaging or 
+labs, and her VS and PEx were remarkable only for non-acute lung 
+findings.  MI was ruled out by trop negative x3, no EKG changes. 
+ Cardiology was consulted to evaluate need for catheterization 
+vs other intervention, but did not feel that any urgent 
+inpatient work-up was necessary, especially in the context of 
+asymptomatic tachycardia.  She had already had Holter and ECHO 
+prior to this admission.  Cardiology recommended restarting 
+theophylline if, in fact, she received such benefit from 
+pulmonary point of view.  She was restarted on theophylline 
+200mg TID, which was her dose prior to discontinuation.  She 
+received tobacco cessation education, was continued on home 
+diltiazem and aspirin (dose was temporarily increased to 325mg 
+prior to ruling out MI).  Admission theopylline level was 
+pending at the time of discharge.
+.  
+# Asthma and COPD: patient was given Albuterol and ipratropium 
+nebs, and she was continued on her home doses of fluticasone, 
+montelukast, fluticasone-salmetrol.  She was given O2 PRN.  
+After cardiology consult, she was restarted on her theophylline 
+at 200mg TID, with pulm and cardiology follow-up.
+.  
+# Tobacco abuse: she declined nicotine patch, and education was 
+given regarding the health hazards of smoking.
+.  
+# HL: patient was continued oh her simvastatin, but because her 
+LDL was not at goal (<70), her dose was increased to 40mg daily.
+.
+INACTIVE ISSUES:
+.
+# HTN: continued isosorbide and hydrochlorothiazide at home 
+doses.
+.
+# Code: Full
+ 
+Medications on Admission:
+-acetaminophen 325 mg Tablet Sig: One (1) Tablet PO every four 
+(4) hours as needed for pain.  
+-albuterol sulfate 90 mcg/Actuation HFA Aerosol Inhaler Sig: 
+Two (2)  Inhalation every ___ hours.  
+-diltiazem HCl 180 mg Capsule, Extended Release Sig: Two (2) 
+Capsule, Extended Release PO DAILY (Daily).  
+-fluticasone 50 mcg/Actuation Spray, Suspension Sig: One (1) 
+Spray Nasal DAILY (Daily).  
+-fluticasone-salmeterol 500-50 mcg/dose Disk with Device Sig: 
+One (1) Disk with Device Inhalation BID (2 times a day).  
+-hydrochlorothiazide 12.5 mg Capsule Sig: One (1) Capsule PO 
+DAILY (Daily).  
+-isosorbide mononitrate 60 mg Tablet Extended Release 24 hr 
+Sig: One (1) Tablet Extended Release 24 hr PO DAILY (Daily).  
+-montelukast 10 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+-omeprazole 20 mg Capsule, Delayed Release(E.C.) Sig: One (1) 
+Capsule, Delayed Release(E.C.) PO DAILY (Daily).  
+-tiotropium bromide 18 mcg Capsule, w/Inhalation Device Sig: 
+One (1) Cap Inhalation DAILY (Daily).  
+-calcium carbonate 200 mg (500 mg) Tablet, Chewable Sig: One 
+(1) Tablet, Chewable PO DAILY (Daily).  
+-multivitamin     Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+-aspirin 81 mg Tablet Sig: One (1) Tablet PO once a day.  
+-simvastatin 20mg qday
+ 
+Discharge Medications:
+1. simvastatin 40 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).
+Disp:*30 Tablet(s)* Refills:*0*
+2. hydrochlorothiazide 12.5 mg Capsule Sig: One (1) Capsule PO 
+DAILY (Daily).  
+3. fluticasone 50 mcg/Actuation Spray, Suspension Sig: ___ 
+Sprays Nasal DAILY (Daily) as needed for congestion.  
+4. isosorbide mononitrate 60 mg Tablet Extended Release 24 hr 
+Sig: One (1) Tablet Extended Release 24 hr PO DAILY (Daily).  
+5. montelukast 10 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+6. fluticasone-salmeterol 500-50 mcg/dose Disk with Device Sig: 
+One (1) Disk with Device Inhalation BID (2 times a day).  
+7. acetaminophen-codeine 300-30 mg Tablet Sig: One (1) Tablet PO 
+every four (4) hours as needed for pain.  
+8. albuterol sulfate 90 mcg/Actuation HFA Aerosol Inhaler Sig: 
+Two (2) puffs Inhalation every ___ hours as needed for shortness 
+of breath or wheezing.  
+9. omeprazole 20 mg Capsule, Delayed Release(E.C.) Sig: One (1) 
+Capsule, Delayed Release(E.C.) PO DAILY (Daily).  
+10. Spiriva with HandiHaler 18 mcg Capsule, w/Inhalation Device 
+Sig: One (1) capsule Inhalation once a day.  
+11. aspirin 81 mg Tablet Sig: One (1) Tablet PO once a day.  
+12. calcium carbonate 200 mg (500 mg) Tablet, Chewable Sig: One 
+(1) Tablet, Chewable PO DAILY (Daily).  
+13. diltiazem HCl 180 mg Capsule, Extended Release Sig: Two (2) 
+Capsule, Extended Release PO DAILY (Daily).  
+14. multivitamin     Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+15. theophylline 200 mg Capsule, Ext Release 24 hr Sig: One (1) 
+Capsule, Ext Release 24 hr PO three times a day.
+Disp:*90 Capsule, Ext Release 24 hr(s)* Refills:*0*
+16. albuterol sulfate 0.63 mg/3 mL Solution for Nebulization 
+Sig: One (1) treatment Inhalation every ___ hours as needed for 
+shortness of breath or wheezing for 15 doses.
+Disp:*15 ampules* Refills:*0*
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Primary:
+-Tachyarrhythmia
+-Hyperlipidemia
+-Asthma, COPD
+
+Secondary:
+-Hypertension 
+-Tobacco Use  
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Mrs. ___,
+
+___ were hospitalized because the visiting nurses were concerned 
+about an elevated heart rate, but by the time ___ came to the 
+hospital, your elevated heart rate had resolved.  Nevertheless, 
+___ were admitted to ensure that your heart hadn't suffered any 
+damage, and to see the inpatient cardiologist.  Your labs were 
+unremarkable from a cardiac standpoint, and ___ saw the 
+cardiologist (who recommend no intervention at this time).  ___ 
+should follow-up with your pulmonologist as an outpatient for 
+your breathing issues.  The best thing ___ can do for your lung 
+health is to quit smoking, and we encourage ___ to do so.
+
+The following changes were made to your medications:
+-INCREASE your simvastatin to 40mg daily in order to lower your 
+cholesterol to goal (as recommended by the cardiologist)
+-RESTART theophylline 200mg three times a day
+-We will also be giving ___ a prescription for albuterol 
+nebulizers to use instead of your inhaler (when needed), but 
+refills will have to be through your primary physician or 
+pulmonologist
+
+___ discuss your theophylline dose and breathing status with 
+your primary provider (Dr. ___ and your pulmonologist (Dr. 
+___.  
+ 
+Followup Instructions:
+___

@@ -1,0 +1,441 @@
+ 
+Name:  ___                   Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Sulfa (Sulfonamide Antibiotics) / Codeine / Bactrim
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Shortness of breath
+ 
+Major Surgical or Invasive Procedure:
+Percutaneous liver biopsy
+ 
+History of Present Illness:
+Ms. ___ is a ___ with metastatic cancer of unknown primary 
+(known lesions in lungs and liver) presenting with shortness of 
+breath. She initially presented to ___ in ___ with abdominal 
+pain and failure to thrive. Evaluation at that time included an 
+abdominal CT scan that showed multiple lung and liver 
+metastases. She has yet to undergo definite diagnosis with 
+biopsy, and per recent oncology documentation seems disengaged 
+with care.  
+She was reportedly in her usual state of health until the 
+evening prior to admission, when she developed acute on chronic 
+shortness of breath while at rest. She reported midsternal chest 
+ache associated with this shortness of breath. Pain is 
+exacerbated by direct pressure; nothing seems to alleviate pain. 
+She denied any pleuritic or exertional component to the chest 
+pain or shortness of breath. She feels that symptoms are 
+secondary to her "cancer" and "feels as if the cancer has 
+spread". She reports stable, chronic nonproductive cough, which 
+has been present over the preceding months.  
+She was seen recently in the ED for evaluation of left greater 
+than right lower extremity edema with lower extremity venous 
+ultrasounds negative, without change in edema since since that 
+visit. She denies associated fever, chills, sweats, PND, 
+orthopnea, or positional component to pain. 
+In the ED, initial vital signs were: 98.0 116 100/49 24 99% RA. 
+Labs notable for leukocytosis to 17.9, hematocrit of 32, and 
+lactate of 2.8. Urinalysis was positive, but with 19 epithelial 
+cells. CTA was negative for central pulmonary embolus, focal 
+consolidation, or pleural effusion, though did reveal 
+innumerable pulmonary nodules, as well as enlarged liver with 
+stable metastases. EKG was interpreted as sinus tachycardia and 
+was overall consistent with prior. Ceftriaxone/azithromycin were 
+initiated for possible pneumonia. Vital signs on  transfer were 
+as follows: 97.9 107 100/60 22 100% RA. On arrival to the floor, 
+she reports that shortness of breath has improved and that she 
+is chest pain free.
+ 
+Past Medical History:
+Per OMR:
+# metastatic cancer of unknown primary
+# high grade SBO ___ s/p exploratory laparotomy, lysis of 
+adhesions, and small bowel resection with enteroenterostomy 
+# carcinoid
+# hyperlipidemia
+# vitamin B12 deficiency
+# cervical DJD
+# osteoarthritis 
+
+s/p R lung resection in ___ at ___
+s/p hysterectomy in ___
+s/p R arm surgery
+
+ 
+Social History:
+___
+Family History:
+Per OMR:
+Mother - Died of pancreatic cancer at age ___.  
+Father - Died of ___ disease at age ___. 
+ 
+Physical Exam:
+On admission:
+VS: 97.9 114/71 105 sinus 18 95%2L  
+GENERAL: non-toxic appearing, speaking in full sentences  
+HEENT: NC/AT, PERRLA, EOMI, sclerae anicteric, MMM  
+NECK: supple, no LAD, no JVD  
+CHEST: mild reproducible pain on palp of midsternum; no palpable 
+mass  
+LUNGS: poor aeration but relatively CTA bilat, no r/rh/wh, resp 
+unlabored, no accessory muscle use  
+HEART: clear and audible heart sounds, tachycardiac but regular 
+rhythm, sofy SEM, nl S1-S2  
+ABDOMEN: normal bowel sounds, soft, mild tenderness to palp 
+throughout and more pronounced in the RUQ, non-distended, no 
+rebound or guarding, palpable liver edge  
+EXTREMITIES: left > right 1+ pitting edema to mid shin, 2+ 
+pulses radial and dp  
+NEURO: awake, A&Ox3, CNs II-XII grossly intact, muscle strength 
+___ throughout, sensation grossly intact
+
+At discharge:
+VS - Tc 99.7, 116/59, 131, 18, 99% RA
+GENERAL: obese, NAD, lying in bed comfortably, flat affect and 
+poor eye contact
+HEENT: NCAT, EOMI, mild scleral icterus, pink conjunctiva, MMM, 
+poor dentition, mild palor of conjunctiva 
+NECK: supple, no LAD  
+CARDIAC: tachycardic but regular, S1/S2, no m/r/g
+LUNG: CTAB in anterior fields, decreased breath sounds at right 
+base, exam limited secondary to body habitus and mobility, no 
+w/r/r, no accessory muscle use
+ABDOMEN: obese, ND, +BS, no rebound/guarding, localized area of 
+firmness in mid-upper abdomen and tender to palpation over this 
+area 
+EXTREMITIES: WWP, 2+ DP pulses bilaterally, 1+ pitting edema to 
+torso bilateraly 
+NEURO: no asterixis, moving all four extremities, minimal 
+movement ___ to gravity but distal muscles 4+/5, good hand 
+grip strength today
+ 
+Pertinent Results:
+On admission:
+___ 12:50PM BLOOD WBC-17.9* RBC-3.69* Hgb-9.5* Hct-32.1* 
+MCV-87 MCH-25.8* MCHC-29.7* RDW-19.1* Plt ___
+___ 12:50PM BLOOD Neuts-82.8* Lymphs-11.7* Monos-4.4 
+Eos-0.7 Baso-0.3
+___ 12:50PM BLOOD ___ PTT-31.2 ___
+___ 12:50PM BLOOD Glucose-97 UreaN-12 Creat-0.6 Na-140 
+K-2.7* Cl-92* HCO3-31 AnGap-20
+___ 12:50PM BLOOD ALT-17 AST-73* LD(___)-586* CK(CPK)-218* 
+AlkPhos-340* TotBili-2.6* DirBili-1.8* IndBili-0.8
+___ 12:50PM BLOOD CK-MB-1 cTropnT-<0.01
+___ 12:50PM BLOOD Albumin-2.5* Mg-2.2
+___ 12:50PM BLOOD Hapto-307*
+___ 05:12PM BLOOD Lactate-2.8*
+
+___ 06:00PM URINE Color-YELLOW Appear-Cloudy Sp ___
+___ 06:00PM URINE Blood-NEG Nitrite-NEG Protein-30 
+Glucose-NEG Ketone-10 Bilirub-SM  Urobiln-8* pH-6.0 Leuks-MOD
+___ 06:00PM URINE RBC-0 WBC-66* Bacteri-FEW Yeast-NONE 
+Epi-14
+___ 06:00PM URINE CastHy-6*
+
+At discharge:
+___ 08:30AM BLOOD WBC-16.1* RBC-3.06* Hgb-8.3* Hct-29.2* 
+MCV-95 MCH-27.1 MCHC-28.5* RDW-22.5* Plt ___
+___ 08:30AM BLOOD Glucose-95 UreaN-7 Creat-0.3* Na-143 
+K-3.5 Cl-110* HCO3-20* AnGap-17
+___ 08:30AM BLOOD Calcium-8.3* Phos-2.4* Mg-1.9
+
+Microbiology:
+Blood x2 (___): No growth
+Urine (___): No growth
+Blood x2 (___): No growth
+
+Pathology:
+Liver biopsy (___):
+Liver, core needle biopsy (A):
+Adenocarcinoma, involving the liver (see note).
+Note: Immunohistochemical stains are performed.  The tumor cells 
+are positive for CK20 and CDX-2, and negative for CK7 and TTF-1. 
+ These results are consistent with metastasis from a colorectal 
+primary.
+
+Imaging:
+EKG (___):
+Sinus tachycardia. Low voltage. Diffuse non-specific 
+repolarization
+abnormalities. Compared to the previous tracing of ___ 
+repolarization
+abnormalities are slightly more prominent.
+___
+___
+
+Portable CXR (___):
+Innumerable pulmonary metastases.  Possible mild pulmonary 
+vascular
+congestion.  Low lung volumes.
+
+CTA (___):
+1.  No central or segmental filling defect in the pulmonary 
+arteries.
+Evaluation is slightly limited due to suboptimal IV bolus. 
+2.  Innumerable bilateral pulmonary nodules, simas seen on the 
+prior CT study on ___, slightly increased.  No focal 
+consolidation or pleural effusion.  
+3.  Enlarged liver with multiple hypodense lesions, with 
+suggestion of
+increased burden of disease.
+
+Right upper quadrant ultrasound (___):
+Extensive diffuse hepatic metastatic disease.  No evidence of 
+biliary duct
+obstruction.
+
+Portable CXR (___):
+1. Low lung volumes and mild pulmonary vascular congestion is 
+unchanged. 
+2. New small right fissural pleural effusion.
+3. No new focal opacities to suggest pneumonia.  
+
+Noncontrast head CT (___):
+No acute intracranial process.  No mass is identified.  MRI is 
+more sensitive for evaluation of metastases.
+
+Left hip XR (___):
+No definite lytic lesion; however, an MRI can be performed to 
+evaluate for an osseous lesion if indicated.
+
+Portable abdomen (___):
+Radiographs of the abdomen and pelvis demonstrate a 
+nonobstructed
+bowel gas pattern.  A relative paucity of bowel gas is present 
+in the upper and mid abdomen, likely due to marked enlargement 
+of the liver, displacing bowel loops.  Note that the upright 
+view is technically suboptimal, and limits evaluation for free 
+intraperitoneal air.  If free intraperitoneal air is suspected 
+clinically, a left lateral decubitus view of the abdomen would 
+be recommended.
+ 
+Brief Hospital Course:
+Ms. ___ is a ___ with metastatic cancer of unknown primary, 
+including lesions in the liver and lungs, who initially 
+presented with shortness of breath, likely due to worsening 
+intrapulmonary tumor burden, and later underwent percutaneous 
+liver biopsy with pathology consistent with metastatic colon 
+cancer, prompting transfer to the oncology service and 
+eventually discharged home with hospice.
+
+Active Issues:
+(1) Metastatic colon adenocarcinoma: CTA to exclude pulmonary 
+embolus and right upper quadrant ultrasound on admission 
+demonstrated progression of previously recognized metastatic 
+cancer of unknown primary involving the liver and lungs, which 
+had evaded diagnosis in the outpatient setting due to patient 
+reluctance to engage with care. Percutaneous liver biopsy 
+ultimately revealed primary colonic adenocarcinoma. Following 
+discussion with her outpatient oncology providers, she was 
+transferred to the inpatient oncology service for potential 
+trial of FLOX. However, given the patient's very poor functional 
+and nutritional status a goals of care discussion was held with 
+the patient's HCP, ___ and it was decided to focus 
+goals of care of comfort and symptom management and the patient 
+was discharged home with home hospice. 
+
+(2) Left thigh weakness/spinous tenderness: She was found to 
+have focal left thigh weakness in association with diffuse 
+spinous tenderness of unclear chronicity in the setting of 
+preserved rectal tone without saddle anesthesia. She was noted 
+to be incontinent of urine, but not feces. Given underlying 
+malignancy, there was concern for bony metastases or cord 
+involvement, with alternative consideration given to epidural 
+abscess, prompting transient initiation of empiric antibiotic 
+coverage with vancomycin/cefepim ___ to ___. Despite 
+frequent persuasive efforts, she declined multiple attempts at 
+lumbosacral MRI, including with lorazepam premedication, citing 
+claustrophobia. Neuro exam was monitored and remained stable.
+
+(3) Abdominal pain: She experienced intermittent abdominal pain 
+and tenderness without peritoneal signs, concerning for 
+obstruction in the setting of intraabdominal malignancy, 
+particularly given episodes of emesis/hematemesis as below. 
+While multiple KUBs were negative for obstruction, CT abdomen 
+was planned to evaluate for alternative sources of 
+intraabdominal pathology, but she declined on multiple 
+occasions. Pain was controlled with acetaminophen and tramadol 
+as needed.
+
+(4) ? Hematemesis: She experienced a single episode of small 
+volume emesis, reportedly approximately 100cc, streaked with 
+blood and found to be guiac positive. Vital signs and hematocrit 
+remained stable. IV pantoprazole was initiated for 
+gastrointestinal prophylaxis, with subsequent discontinuation of 
+PPI given no recurrence and questionable if first episode was 
+true blood vs. red popsicle was eating at time. 
+Esophagogastroduodenoscopy was deferred in the absence of 
+recurrent hematemesis; no prior EGDs were available in OMR. 
+
+(5) Altered mental status: She was intermittently altered 
+throughout admission, never oriented to more than person and 
+place, with occasional difficulty following simple commands as 
+compared to an uncertain baseline. Infectious work up, including 
+blood and urine cultures and CTA on admission with subsequent 
+CXRs, was unrevealing. Noncontrast head CT was negative for 
+acute intracranial process. Brain MRI for definitive exclusion 
+of metastases could not be obtained due to claustrophobia/MRI 
+aversion as above.  ABG on ___ without signs of CO2 retention. 
+History of opiates making patient sleepy per HCP as possible 
+contributing factor and therefore these were discontinued. 
+Hepatic encephalopathy also on differential given metastatic 
+lesions to liver and asterixis on exam.  AMS could also be ___ 
+to severe depression. Mental status monitored and remained 
+stable and patient at baseline per HCP on discharge.
+
+(6) Shortness of breath: She presented with acute onset 
+shortness of breath without frank hypoxia. CTA on admission was 
+negative for pulmonary embolus, though (subsegmental clot could 
+not be excluded definitively), pleural effusion, or focal 
+infiltrate. EKG and cardiac enzymes were reassuring against 
+acute coronary syndrome.  Low voltages on EKG were consistent 
+with prior, hence limited suspicion for pericardial effusion. 
+Shortness of breath resolved over the course of admission 
+without dedicated treatment, with the exception of nebulizers 
+and expectorants as needed.
+
+(7) Leukocytosis: White blood cell count was elevated and peaked 
+at 20.6, consistent with recent baseline, likely reflecting 
+underlying malignancy. As noted above, infectious work up 
+including CTA, urine and blood cultures, and CXRs, was 
+unrevealing. She remained afebrile, with the exception of 
+isolated transient fever to 100, with stable vital signs. 
+
+(8 )Liver function test abnormalities: AST remained elevated ___ 
+to ___, alkaline phosphatase 260s to 380s, and total bilirubin 
+2.1 to 2.6, likely due to hepatic infiltration of malignancy. 
+Right upper quadrant ultrasound was negative for cholecystitis 
+or obstructive process. The possibility of superimposed 
+intraabdominal process, such as infection, could not be excluded 
+in the setting of abdominal pain with emesis as above, but she 
+declined CT for further evaluation.
+
+(9) Elevated lactate: Lactate was found to be 2.7-3.8 throughout 
+admission despite copious IV fluids, likely reflecting 
+compromised hepatic clearance in the setting of malignant 
+infiltration. 
+
+(10) Sinus tachycardia: She remained persistently tachycardic 
+100s to 115s throughout admission in the setting of poor PO 
+intake, but incompletely responsive to copious IV fluids. 
+Tachycardia has been present since at least ___. Despite 
+concurrent leukocytosis and elevated lactate, there was no clear 
+infectious source, hence low suspicion for sepsis. Subsegmental 
+pulmonary embolus could not be excluded on the basis of 
+admission CTA, but shortness of breath was short lived, and she 
+was never hypoxic. Hematocrit remained stable without signs of 
+active bleeding, with the exception of transient hematemesis as 
+above.
+
+(11) Depression: She appeared depressed with flat affect and 
+seeming anhedonia throughout admission, with underlying 
+depression likely affecting motivation to seek diagnosis and 
+treatment of known malignancy. She denied active suicidal 
+ideation and frequently declined home sertraline, particularly 
+prior to liver biopsy, believing that it was supposed to be held 
+preprocedurally despite explanation to the contrary. She was 
+seen by social work throughout admission.
+
+(12) Normocytic anemia: Hematocrit remained stable and 
+consistent with recent baseline at 27 to 33 throughout 
+admission, seemingly due to anemia of chronic disease on the 
+basis of preadmission labs. Vital signs remained stable, with 
+the exception of persistent tachycardia, without signs of active 
+bleeding apart from isolated blood streaked emesis as above.
+
+(13) Coagulopathy: INR of 1.2 to 1.8 was felt to reflect 
+synthetic dysfunction in the setting of hepatic infiltration of 
+malignancy, as well as poor oral intake. There were no signs of 
+active bleeding, with the exception of transient hematemesis as 
+above.
+
+Transitional Issues:
+-Patient discharge home with home hospice
+ 
+Medications on Admission:
+The Preadmission Medication list may be inaccurate and requires 
+futher investigation.
+1. Albuterol Inhaler ___ PUFF IH Q6H:PRN SOB 
+2. BuPROPion 150 mg PO DAILY 
+3. Gabapentin 300 mg PO HS 
+4. Sertraline 200 mg PO DAILY 
+5. traZODONE 100 mg PO HS:PRN sleep 
+6. Ondansetron 4 mg PO Q8H:PRN nausea 
+7. Bisacodyl 10 mg PO/PR DAILY:PRN constipation 
+8. OxycoDONE (Immediate Release)  5 mg PO Q6H:PRN pain 
+please hold for sedation, RR<10 
+9. Enoxaparin Sodium 40 mg SC DAILY 
+
+ 
+Discharge Medications:
+1. BuPROPion 150 mg PO DAILY 
+2. Ondansetron 4 mg PO Q8H:PRN nausea 
+3. TraMADOL (Ultram) 50 mg PO Q4H:PRN pain 
+RX *tramadol 50 mg 1 tablet(s) by mouth every four (4) hours 
+Disp #*60 Tablet Refills:*0
+4. Senna 1 TAB PO BID:PRN constipation 
+RX *sennosides [___] 8.6 mg 1 tablet by mouth twice a 
+day Disp #*60 Tablet Refills:*0
+5. Omeprazole 20 mg PO DAILY 
+RX *omeprazole 20 mg 1 capsule,delayed ___ by 
+mouth Daily Disp #*30 Capsule Refills:*0
+6. Hospital Bed
+Bariatric Hospital Bed and
+Therapeutic Mattress: BariMaxxII
+
+7. Hospice Order
+Please Screen and Admit to Hospice.
+8. Bisacodyl 10 mg PO/PR DAILY:PRN constipation 
+9. Docusate Sodium 100 mg PO BID 
+10. Sertraline 200 mg PO DAILY 
+11. traZODONE 100 mg PO HS:PRN sleep 
+12. Polyethylene Glycol 17 g PO DAILY:PRN constipation 
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Primary:
+Metastatic colon adenocarcinoma
+
+ 
+Discharge Condition:
+Mental Status: Confused - sometimes.
+Level of Consciousness: Alert and interactive.
+Activity Status: Bedbound.
+
+ 
+Discharge Instructions:
+Dear Ms. ___,
+It was a pleasure taking part in your care during your admission 
+to ___. As you know, you were 
+admitted for shortness of breath, likely due to your underlying 
+cancer, and there was no evidence of pneumonia or blood clot in 
+the blood vessels of your lungs. Your shortness of breath 
+resolved, but you were found to have weakness in your left thigh 
+and abdominal pain. You declined imaging studies for further 
+investigation of these findings. You underwent biopsy of your 
+liver that revealed that the cancer known to affect your liver 
+and lungs originated in your colon (large bowel). You were 
+transferred to the oncology service, but unfortunately 
+chemotherapy would do more harm for you than good.  After a long 
+discussion with you and your health care proxy, it was decided 
+that you will go home to be with your family and loved ones.  We 
+will also set up hospice services for you so that they can help 
+with any issues that arise while you are at home.  
+ 
+Followup Instructions:
+___

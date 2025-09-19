@@ -1,0 +1,260 @@
+ 
+Name:  ___               ___ No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+meropenem / Penicillins
+ 
+Attending: ___.
+ 
+Chief Complaint:
+BRBPR
+ 
+Major Surgical or Invasive Procedure:
+aborted flexible sigmoidoscopy attempt (due to stool in vault) 
+___
+Flexible sigmoidoscopy ___
+
+ 
+History of Present Illness:
+This is an ___ year old female with past medical history of
+sjogrens, hypothyroidism, recent diagnosis of L1 compression
+fracture, prior cdiff infection, presenting with bright red 
+blood
+per rectum.  Patient reports that on morning of presentation, 
+she
+awoke in her normal state of health.  Her home health aid helped
+her to the commode and she suddenly had a large volume over 
+blood
+per rectum.  Over the next ___ minutes she then had 2 subsequent
+episodes.  Home health aid consulted with family and then called
+___.  
+
+In the ED VS were 97.2 98 158/89 14 98%RA ___ 99.  Labs were
+notable for WBC 10.1, Hgb 9.8, Plt 245; K 4.4, Cr 0.6; lactate
+1.0; UA neg leuk, nitr.  Exam reported as tachycardia, grossly
+blood rectum without large hemorrhoids. PEG lavage reported as
+negative for blood.
+
+GI note on the ED dashboard stated ___ with C.diff on flagyl,
+presenting with maroon colored GIB. HDS. HCT 30.7 with normal
+Coag. Please continue with supportive care with fluids and
+transfusion as needed. If on-going bleeding or hemodynamic
+changes, please get CTA. If concern of upper GI bleeding, can
+lavage via PEG. Please give PPI if positive."
+
+Patient was given 1L normal saline and was admitted to medicine.
+On arrival to the floor patient reported above.  Reported recent
+diagnosis of L1 compression fracture and intermittent difficulty
+with flushing her PEG tube at home.  Full 10 point review of
+systems positive where noted, otherwise negative. 
+
+ 
+Past Medical History:
+Sjogrens
+Hypothyroidism
+h/o severe Cdiff
+Protein calorie malnutrition s/p PEG
+Osteoporosis s/p L1 compression fracture
+Depression
+Hemorrhoids
+Normocytic anemia 
+Bronchiectasis 
+h/o Shingles 
+Dementia (___ ___ 
+Mitral regurgitation  
+ 
+Social History:
+___
+Family History:
+Has 2 children.  Father had hemorrhoids.  No history of cancer,
+GI bleeding.  
+ 
+Physical Exam:
+ADMISSION
+VS: 187-106 (128/78 on recheck) 112 16 96%RA
+Gen - supine in bed, comfortable, pale
+Eyes - EOMI
+ENT - OP clear, MMM
+Heart - regularly tachycardic; II/VI systolic murmur loudest at
+axilla; 
+Lungs - CTA bilaterally
+Abd - soft nontender, normoactive bowel sounds; PEG in place
+Rectum - dark maroon blood in vault, no large hemorrhoids
+palpated
+Ext - trace edema to mid-shin
+Skin - +pale; no rashes
+Vasc - 2+ DP/radial pulses
+Neuro - AOx2-3 (full name, ___", ___,
+moving all extremities
+Psych - appropriate
+
+DISCHARGE
+VS: 98.1 135/64 103 20 95%RA
+Gen - supine in bed, comfortable appearing
+Eyes - EOMI
+ENT - OP clear, MMM
+Heart - RRR, II/VI systolic murmur loudest at axilla; 
+Lungs - CTA bilaterally, unchanged from day prior
+Abd - soft nontender, normoactive bowel sounds; PEG in place; 
+unchanged from yesterday 
+Ext - no edema 
+Skin - no rashes
+Vasc - 2+ DP/radial pulses
+Neuro - AOx3 (full name, ___, ___, 
+moving all extremities
+Psych - appropriate
+ 
+Pertinent Results:
+ADMISSION
+___ 10:37AM BLOOD WBC-10.1* RBC-3.15* Hgb-9.8* Hct-30.7* 
+MCV-98 MCH-31.1 MCHC-31.9* RDW-13.6 RDWSD-48.4* Plt ___
+___ 10:37AM BLOOD Glucose-96 UreaN-27* Creat-0.6 Na-136 
+K-4.4 Cl-97 HCO3-30 AnGap-13
+___ 06:00AM BLOOD ALT-12 AST-19 AlkPhos-81 TotBili-0.3
+
+DISCHARGE
+___ 06:20AM BLOOD WBC-8.9 RBC-3.35* Hgb-10.5* Hct-32.7* 
+MCV-98 MCH-31.3 MCHC-32.1 RDW-13.4 RDWSD-47.7* Plt ___
+___ 06:20AM BLOOD Glucose-106* UreaN-18 Creat-0.7 Na-137 
+K-3.8 Cl-100 HCO3-28 AnGap-13
+
+Flexible Sigmoidoscopy - ___
+Mucosa: Normal mucosa was noted in the rectum and sigmoid colon. 
+ 
+Other No bleeding sources or blood identified, though extent of 
+sigmoid colon evaluated was limited by poor prep.  
+Impression: Normal mucosa in the rectum and sigmoid colon
+No bleeding sources or blood identified, though extent of 
+sigmoid colon evaluated was limited by poor prep.
+Otherwise normal sigmoidoscopy to sigmoid colon at 25 cm 
+Recommendations: If bleeding recurs, would recommend full 
+colonoscopy with prep. 
+
+ 
+Brief Hospital Course:
+This is an ___ year old female with past medical history of 
+sjogrens, hemorrhoids, prior cdiff infection, admitted ___ 
+with bright red blood per rectum thought to be acute lower GI 
+bleed, subsequently stabilizing without intervention, status 
+post flexible sigmoidoscopy without identifiable source, 
+remaining stable x greater than 4 days, able to be discharged to 
+rehab facility.
+
+# Acute GI Bleed NOS - Patient presented with acute episode of 
+BRBPR concerning for lower GI source.  Patient subsequently 
+monitored without new or worsening anemia.  After discussion 
+with family and patient regarding whether or not to further 
+workup, they opted for flexible sigmoidoscopy (felt colonoscopy 
+might be too invasive).  Patient underwent aborted flexible 
+sigmoidoscopy on ___ due to pressence of copious stool in 
+rectal vault, and then underwent successful flexible 
+sigmoidoscopy on ___ without identifiable source for her 
+bleeding.  From admission Hgb 9.8, discharge hemoglobin was 
+10.5.  Per GI, could consider outpatient colonoscopy if 
+consistent with patient's wishes.  
+
+# Osteoporosis / chronic L1 compression fracture / 
+deconditioning - patient with recent L1 compression fracture as 
+outpatient prior to admission; patient noted to be significantly 
+deconditioned this admission, requiring assistance with ADLs; 
+patient seen by ___ and recommended for rehab.  Continued home 
+Calcium 500 + vitamin D, calcitonin.  Placed on Tylenol and 
+tramadol for pain control with good effect 
+
+# Chronic Severe Protein Calorie Malnutrition - per discussion 
+with family and review of chart, patient has lost weight despite 
+PEG placement and bolus tube feeds (has had difficulty 
+maintaining PO intake due to her Sjogrens).  At home patient has 
+not be using full recommended 2 cans of Nutren 2.0, 500 
+Cal/250ml BID.  Here patient seen by nutrition, continued on 
+above 2 cans, and was given oral supplementation with her PO 
+meals as well.   
+
+# Depression - continued home BuPROPion and mirtazapine 
+
+# Hypothryoidism - continued levothyroxine 
+
+Transitional Issues
+- Code status - DNR/DNI
+- Discharged to rehab
+- No source for bleeding identified this admission; can consider 
+future colonoscopy to look for source of bleeding, but would 
+first discuss if consistent with patient's goals of care
+- Would consider encouragement of PO intake and PEG-tube 
+supplementation given her malnutrition 
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. BuPROPion XL (Once Daily) 150 mg PO DAILY 
+2. Calcium 500 + D (calcium carbonate-vitamin D3) 500 
+mg(1,250mg) -400 unit oral DAILY 
+3. Levothyroxine Sodium 75 mcg PO DAILY 
+4. Mirtazapine 30 mg PO QHS 
+5. TraMADol 50 mg PO BID:PRN back pain 
+6. Acetaminophen 500 mg PO Q6H:PRN back pain 
+7. Alendronate Sodium 70 mg PO QSUN 
+8. Calcitonin Salmon 200 UNIT NAS DAILY 
+9. Multivitamins 1 TAB PO DAILY 
+10. TraMADol 100 mg PO QHS:PRN back pain 
+11. Artificial Tears ___ DROP BOTH EYES QID 
+
+ 
+Discharge Medications:
+1. Acetaminophen 1000 mg PO Q8H:PRN pain 
+2. BuPROPion XL (Once Daily) 150 mg PO DAILY 
+3. Calcitonin Salmon 200 UNIT NAS DAILY 
+4. Levothyroxine Sodium 75 mcg PO DAILY 
+5. Mirtazapine 30 mg PO QHS 
+6. Multivitamins 1 TAB PO DAILY 
+7. TraMADol 50 mg PO BID:PRN back pain 
+8. Alendronate Sodium 70 mg PO QSUN 
+9. Calcium 500 + D (calcium carbonate-vitamin D3) 500 
+mg(1,250mg) -400 unit oral DAILY 
+10. TraMADol 100 mg PO QHS:PRN back pain 
+11. Artificial Tears ___ DROP BOTH EYES QID 
+
+ 
+Discharge Disposition:
+Extended Care
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+# Acute GI Bleed NOS 
+# Depression
+# Osteoporosis / chronic L1 compression fracture
+# Hypothryoidism
+# Chronic Severe Protein Calorie Malnutrition
+# Dementia
+
+ 
+Discharge Condition:
+Mental Status: Confused - sometimes.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - requires assistance or aid (walker 
+or cane).
+
+ 
+Discharge Instructions:
+Ms. ___: 
+
+It was a pleasure caring for you at ___.  You were admitted 
+with gastrointestinal bleeding.  You were seen by GI specialists 
+and underwent a flexible sigmoidiscopy without signs of a source 
+of your bleeding.  You were monitored and your blood levels were 
+stable.  You are now ready for discharge home.
+
+In the future you may wish to consider a colonoscopy to look for 
+the source of your bleeding, especially if it occurs again.  You 
+should discuss with your family and primary care doctor 
+regarding if this is within your goals of care.
+ 
+Followup Instructions:
+___

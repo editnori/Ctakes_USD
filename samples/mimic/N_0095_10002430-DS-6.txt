@@ -1,0 +1,420 @@
+ 
+Name:  ___              Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   M
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Corgard / Vasotec
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Dyspnea on Exertion
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+ =======================================================  
+ ___ FAILURE ADMISSION NOTE  
+ =======================================================  
+OUTPATIENT CARDIOLOGIST:  ___., MD ___
+cardiology), ___  ___., MD(CHF)
+PCP: ___., MD 
+
+CHIEF COMPLAINT:  Dyspnea on Exertion
+HISTORY OF PRESENTING ILLNESS:  
+Mr. ___ is a ___ gentleman with a past medical
+history pertinent for HFrEF (35% ___ CAD s/p CABG and
+subsequent PCI, moderate tricuspid regurgitation, right
+ventricular dysfunction, moderate pulmonary hypertension, and
+paroxysmal atrial fibrillation on apixaban, stage III chronic
+kidney disease (Baseline Cr 2.0-2.1), cerebrovascular disease,
+and metastatic melanoma of unknown primary on checkpoint
+inhibitor pembrolizumab who was found volume overloaded with
+increased DOE, admitted to ___ for IV diuresis. 
+
+Per most recent outpatient CHF notes:
+
+He was seen by his primary car primary Cardiologist, Dr. ___ increased fatigue and exertional dyspnea. Dr. ___ 
+a
+___ and felt his LVEF was ~30% and reduced from prior. He was
+started on low-dose Entresto, but couldn't tolerate it from a BP
+prospective. He was previously on losartan which was stopped
+due to this lightheadedness, dizziness and worsening renal
+function. Dr. ___ concern about the possibility of
+myocarditis secondary to the checkpoint inhibitor. When he
+followed up with the Oncology team on ___, his symptoms were
+somewhat improved. Cardiac biomarkers were notable for a rising
+NTproBNP to >10K but normal CK-MB and minimally elevated 
+troponin
+T of 0.03, which is not unexpected in the setting
+of decompensated ___ failure and chronic kidney disease. He 
+was
+planned to receive immunotherapy on ___, but treatment was
+held due to elevated Cr. Recheck showed improvement. The patient
+restarted pembrolizumab on ___. Pembrolizumab was again 
+held
+in ___ for diarrhea and elevated LFTs 
+
+In addition, he also received intravenous hydration.
+Subsequently, he was noted to be more volume overloaded, at 
+which
+time Torsemide from 20 mg daily to 30 mg daily then 40 mg daily.
+Troponin testing showed Trop-T of 0.04, attributed to renal
+insufficiency. The patient was also noted to have mild
+hyperkalemia (K 5.7) for which potassium supplementation was
+stopped and torsemide dose increased. He was also seen in the
+Emergency room in the ___ ___ due to a
+fall with resultant scalp laceration. CT head and neck was
+unremarkable. 
+
+He presented this morning ___ for his scheduled visit at
+___ clinic where he noted that his weight had been 126 lbs most
+recently on his home scale. He also reported decreased appetite
+that he attributes to eating a different diet. He currently has 
+a
+___ care taker that makes ___ food for him, adhering
+to a low sodium diet, that he does not like as much as his
+regular diet. He drinks ___ glasses of water or juice daily. He
+was taking torsemide 40 mg daily, that he decreased to 30 mg
+daily several days ago as he felt he was urinating too
+frequently. He also ran out of tamsulosin several days ago so
+stopped taking this around the same time. He noted becoming 
+short
+of breath after taking 20 steps or less. Due to his volume
+overloaded noted on exam he was recommended for admission to ___
+for IV diuresis
+
+On the floor, he endorses the above history. He noted that his
+SOB has progressive gotten worse. Mostly occurs with activity.
+None at rest. He noted that his weight has been slowly 
+decreasing
+due lack of appetite and him being to lazy. He has a home health
+aid everyday from 11am-7pm, who helps him with ADL.  He endorses
+abdominal bloading. 
+
+Cardiac review of systems is notable for absence of chest pain,
+paroxysmal nocturnal dyspnea, orthopnea, palpitations, syncope,
+or presyncope.
+
+ROS otherwise negative, unless otherwise noted above 
+
+ 
+Past Medical History:
+Past Medical History:
+BILATERAL MODERATE CAROTID DISEASE 
+CONGESTIVE ___ FAILURE 
+CORONARY ARTERY DISEASE 
+GASTROESOPHAGEAL REFLUX 
+HYPERTENSION 
+SEVERE EMPHYSEMA 
+PULMONARY HYPERTENSION 
+RIGHT BUNDLE BRANCH BLOCK 
+BENIGN PROSTATIC HYPERTROPHY 
+HYPERLIPIDEMIA 
+PAROXYSMAL ATRIAL FIBRILLATION 
+H/O HISTIOPLASMOSIS 
+
+Past Surgical History:
+CARDIOVERSION ___ 
+RIGHT LOWER LOBE LOBECTOMY ___ 
+CORONARY BYPASS SURGERY ___ 
+
+ 
+Social History:
+___
+Family History:
+Non-contributory
+ 
+Physical Exam:
+ADMISSION PHYSICAL EXAMINATION:
+===============================
+24 HR Data (last updated ___ @ 1335)
+    Temp: 97.4 (Tm 97.4), BP: 115/66, HR: 61, RR: 18, O2 sat:
+99%, O2 delivery: ra, Wt: 130.73 lb/59.3 kg  
+
+GENERAL: Well developed, well nourished male in NAD. Oriented 
+x3.
+Mood, affect appropriate.  
+HEENT: Scalp laceration noted. Sclera slightly icteric. PERRL.
+EOMI. Conjunctiva were pink. No pallor or cyanosis of the oral
+mucosa. No xanthelasma.  
+NECK: Supple. JVP ~ 20 cm with positive hepatojugular reflex. 
+CARDIAC: Regular rate and rhythm. Normal S1, S2. ___ 
+holosystolic
+murmur at the LLSB and the apex, no rubs, or gallops. No thrills
+or lifts.  
+LUNGS: No chest wall deformities or tenderness. Respiration is
+unlabored with no accessory muscle use. Bibasilar crackles 
+ABDOMEN: mildly distended; normoactive bowel sounds; soft and
+non-tender to palpation; there is no appreciable organomegaly or
+mass
+EXTREMITIES: Cool, 1+ pitting edema to knee caps. bilateral
+status dermatitis. 
+SKIN: Eccymosis noted on left hand, Multiple open biopsy 
+excision
+sites on left shin and right calf
+PULSES: Distal pulses palpable and symmetric. 
+
+Discharge Physical exam
+=======================
+24 HR Data (last updated ___ @ 751)
+    Temp: 98.2 (Tm 98.6), BP: 110/61 (100-121/54-63), HR: 72
+(60-99), RR: 16 (___), O2 sat: 91% (91-95), O2 delivery: Ra  
+
+General: elderly gentleman in NAD
+HEENT: dressing in place on scalp from recent fall/scalp
+laceration/c/d/i. Sclera mildly icteric, pupils equally round,
+MMM 
+NECK: JVP~10cm, with positive hepatojugular reflex
+CV:  irregularly irregular ; the precordium is quiet without RV
+heave; normal S1 with fixed split S2; there is a soft ___
+holosystolic
+murmur at the LLSB and the apex;
+LUNGS: Normal effort. Fine Bibasilar crackles
+Abd: soft, mildy distended, no guarding / rebound. 
+EXT:  1+ pitting edema to the mid-calf L leg > R leg
+SKIN:  Multiple excision biopsy wounds on legs, covered with
+dressing c/d/i
+NEURO:  Speech fluent, strength grossly intact 
+
+ 
+Pertinent Results:
+___ 01:00PM   ___ PTT-34.4 ___
+___ 01:00PM   PLT COUNT-169
+___ 01:00PM   NEUTS-81.6* LYMPHS-6.6* MONOS-10.4 EOS-0.1* 
+BASOS-0.1 IM ___ AbsNeut-6.00 AbsLymp-0.49* AbsMono-0.77 
+AbsEos-0.01* AbsBaso-0.01
+___ 01:00PM   WBC-7.4 RBC-3.02* HGB-9.1* HCT-30.2* MCV-100* 
+MCH-30.1 MCHC-30.1* RDW-16.4* RDWSD-59.2*
+___ 01:00PM   calTIBC-352 FERRITIN-111 TRF-271
+___ 01:00PM   CALCIUM-9.2 PHOSPHATE-3.7 MAGNESIUM-2.8* 
+IRON-88
+___ 01:00PM   CK-MB-4 cTropnT-0.01 ___
+___ 01:00PM   ALT(SGPT)-56* AST(SGOT)-52* LD(LDH)-277* ALK 
+PHOS-135* TOT BILI-0.7
+___ 01:00PM   estGFR-Using this
+___ 01:00PM   GLUCOSE-100 UREA N-52* CREAT-2.1* SODIUM-135 
+POTASSIUM-5.4 CHLORIDE-100 TOTAL CO2-24 ANION GAP-11
+___ 04:54PM URINE  HYALINE-1*
+___ 04:54PM URINE  RBC-0 WBC-<1 BACTERIA-NONE YEAST-NONE 
+EPI-<1
+___ 04:54PM URINE  BLOOD-NEG NITRITE-NEG PROTEIN-TR* 
+GLUCOSE-NEG KETONE-NEG BILIRUBIN-NEG UROBILNGN-NEG PH-7.0 
+LEUK-NEG
+___ 04:54PM URINE  COLOR-Straw APPEAR-Clear SP ___
+___ 07:53AM BLOOD WBC-6.5 RBC-2.70* Hgb-8.2* Hct-26.5* 
+MCV-98 MCH-30.4 MCHC-30.9* RDW-16.0* RDWSD-56.3* Plt ___
+___ 07:53AM BLOOD Plt ___
+___ 07:53AM BLOOD Glucose-105* UreaN-43* Creat-2.2* Na-140 
+K-4.2 Cl-102 HCO3-27 AnGap-11
+___:04AM BLOOD ALT-45* AST-42* AlkPhos-113 TotBili-0.6
+___ 07:53AM BLOOD Calcium-8.6 Phos-3.5 Mg-2.4
+___ 01:00PM BLOOD calTIBC-352 Ferritn-111 TRF-271
+ 
+Brief Hospital Course:
+TRANSITIONAL ISSUES 
+==================== 
+DISCHARGE WEIGHT: 55.6 kg (122.57 lb) 
+DISCHARGE Cr/BUN: Cr 2.2, BUN 43
+DISCHARGE DIURETIC: 40 Torsemide daily
+MEDICATION CHANGES: Decreased daily potassium to 40 mEq daily 
+(from 30 mEq twice dailye)
+
+[] Please obtain repeat Chem10 within 2 weeks and after 4 weeks. 
+Adjust electrolyte repletion accordingly.
+[] Please follow up weight and volume status and adjust 
+torsemide accordingly. 
+
+#CODE STATUS: Presumed full
+Health care proxy chosen: Yes 
+Name of health care proxy: ___ 
+___: son 
+Phone number: ___ 
+
+==================== 
+PATIENT SUMMARY: 
+==================== 
+Mr. ___ is a ___ gentleman with PMHx of CAD s/p 
+CABG
+and subsequent PCI, HFrEF (35% ___, moderate tricuspid
+regurgitation, right ventricular dysfunction, moderate pulmonary
+hypertension, and paroxysmal atrial fibrillation on apixaban,
+stage III chronic kidney disease (Baseline Cr 2.0-2.1),
+cerebrovascular disease, and metastatic melanoma of unknown
+primary on checkpoint inhibitor pembrolizumab who was found
+volume overloaded with increased DOE, admitted to acute ___ 
+failure for IV diuresis, now transitioned to oral duiretics. 
+
+# CORONARIES: Left Main and two vessel coronary disease (___).
+# PUMP: 35% ___ 
+# RHYTHM: Ectopic rhythm, PR prolongation, left axis deviation, 
+RBBB
+
+ACTIVE ISSUES: 
+============== 
+# ___ Failure with reduced ejection fraction
+# Right ventricular dysfunction, TR, pulm HTN
+# Volume overload
+His ___ failure exacerbation is likely secondary to his recent
+administration of IV fluids in addition to his self down
+titration of his torsemide over the last week. In addition, he
+does not follow a restricted fluid intake and drinks ___ glasses
+of water or juice daily. Furthermore, he has not tolerated
+guideline directed medical therapy due to recurrent issues with
+acute kidney injury and elevated transaminitis while on
+pembrolizumab therapy. He was clinically volume overloaded with
+elevated BNP 16020. We initiated IV lasix 160 bolus and put him 
+on a lasix gtt with good response, however he his Cr increased 
+from 2.1-->2.7. His Cr. improved with transition to PO Torsemide 
+40 mg daily. We monitored and aggressively repleted his 
+potassium. No afterload reduction or neural hormonal blockade 
+was added.
+
+# Chronic Kidney Disease: Baseline 2.1-2.3 . 
+Cr 2.1 on admission(Stable )- Cr on discharge:2.2
+Cr initially uptrended above baseline from 2.1---> 2.7. Felt 
+likely due to increased diuretic usage as it improved with 
+stopping diuretics. Less likely cardiorenal syndrome. In 
+addition,patient was recently seen in follow-up by nephrology. 
+They felt his CKD was less likely to be related to pembrolizumab 
+and more likely related to age-related decline in renal 
+function. Creatinine 2.2 on discharge (stable).
+
+# Metastatic Melanoma 
+He is followed by Dr. ___. He was previously on
+Pembrolizumab which was held due diarrhea, elevated LFTs and
+worsening kidney function. Negative troponin and CK MB, no 
+concern
+for drug-induced myocarditis at this point. Followup in 
+___ clinic in 2weeks after discharge
+
+# Elevated transaminiatis
+Stable. Statin and ___ had previously been held. No changes made 
+during admission. 
+
+# Urinary frequency
+Likely due to diuretic use. Afebrile and asx otherwise
+-Continued home tamsulosin
+
+# Coronary artery disease, s/p CABG and LAD PCI.
+-Continued aspirin 81 mg daily
+-Statin stopped prior to admission due to elevated LFTs. 
+Continued holding. 
+
+CHRONIC ISSUES: 
+============== 
+
+# Paroxysmal Atrial fibrillation
+Rythym: Continue amiodarone 200mg for rhythm control strategy
+(monitoring safety labs)
+-Continued anticoagulation with apixaban 2.5mg twice daily
+
+# Hypertension: Stable. 
+ 
+Medications on Admission:
+The Preadmission Medication list may be inaccurate and requires 
+further investigation.
+1. Amiodarone 200 mg PO DAILY 
+2. Aspirin 81 mg PO DAILY 
+3. Docusate Sodium 100 mg PO BID 
+4. Senna 17.2 mg PO HS 
+5. Vitamin D 1000 UNIT PO DAILY 
+6. Align (bifidobacterium infantis) 4 mg oral DAILY 
+7. coenzyme Q10 100 mg oral DAILY 
+8. Tamsulosin 0.4 mg PO QHS 
+9. Torsemide 40 mg PO DAILY 
+10. Ferrous Sulfate 325 mg PO DAILY 
+11. Sertraline 50 mg PO DAILY 
+12. Potassium Chloride 30 mEq PO BID 
+13. Apixaban 2.5 mg PO BID 
+14. Cephalexin 500 mg PO Q6H 
+
+ 
+Discharge Medications:
+1.  Potassium Chloride 40 mEq PO DAILY 
+RX *potassium chloride 20 mEq 2 packet(s) by mouth once a day 
+Disp #*60 Tablet Refills:*0 
+2.  Align (bifidobacterium infantis) 4 mg oral DAILY  
+3.  Amiodarone 200 mg PO DAILY  
+4.  Apixaban 2.5 mg PO BID  
+5.  Aspirin 81 mg PO DAILY  
+6.  coenzyme Q10 100 mg oral DAILY  
+7.  Docusate Sodium 100 mg PO BID  
+8.  Ferrous Sulfate 325 mg PO DAILY  
+9.  Senna 17.2 mg PO HS  
+10.  Sertraline 50 mg PO DAILY  
+11.  Tamsulosin 0.4 mg PO QHS 
+RX *tamsulosin 0.4 mg 1 capsule(s) by mouth nightly Disp #*30 
+Capsule Refills:*0 
+12.  Torsemide 40 mg PO DAILY  
+13.  Vitamin D 1000 UNIT PO DAILY  
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Primary Diagnosis
+=================
+HFrEF excerterbation
+
+Secondary diagnosis
+===================
+Transaminitis
+Metastatic melanoma
+CKD
+Coronary artery disease, s/p CABG and LAD PCI
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - requires assistance or aid (walker 
+or cane).
+
+ 
+Discharge Instructions:
+=========================  
+DISCHARGE INSTRUCTIONS  
+==========================  
+
+Dear Mr. ___ ,  
+
+It was a pleasure taking care of you at ___ 
+___. 
+ 
+WHY WAS I ADMITTED TO THE HOSPITAL?  
+You were feeling short of breath because you had fluid in your 
+lungs. This was caused by a condition called ___ failure, 
+where your ___ does not pump hard enough and fluid backs up 
+into your lungs.  
+
+WHAT HAPPENED WHILE I WAS IN THE HOSPITAL?  
+You were given medications to help get the fluid out. Your 
+breathing got better and were ready to leave the hospital.  
+
+WHAT DO YOU NEED TO DO WHEN YOU LEAVE THE HOSPITAL?  
+- Take all of your medications as prescribed (listed below)  
+- Follow up with your doctors as listed below  
+- Weigh yourself every morning. Your weight on discharge is 
+122.57 lbs. Call your doctor if your weight goes up more than 3 
+pounds.
+- Call you doctor if you notice any of the "danger signs" below. 
+ 
+ 
+We wish you the best!  
+Your ___ Care Team  
+
+ 
+Followup Instructions:
+___

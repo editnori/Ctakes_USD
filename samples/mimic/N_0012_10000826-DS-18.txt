@@ -1,0 +1,224 @@
+ 
+Name:  ___.          Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Tramadol
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Abdominal distention, back pain, fever; leukocytosis.
+ 
+Major Surgical or Invasive Procedure:
+Paracentesis x 3.
+
+ 
+History of Present Illness:
+This is a ___ woman with a history of ETOH abuse who 
+presents with abdominal distention, back pain, fever, and 
+elevated white count from Liver Clinic.  Ms. ___ was 
+recently admitted to this hospital about 1 week ago for 
+treatment of ascites and work-up of alcoholic hepatitis.  At 
+that time she had a diagnostic and therapeutic paracentesis and 
+was treated for a UTI.  She was discharged home and instructed 
+to follow-up in Liver Clinic in 1 week.  On day of presentation 
+to liver clinic, patient complained of worsening abdominal pain 
+and low-grade fevers at home.  Her labwork was also significant 
+for an elevated white count.  As such, Ms. ___ was 
+admitted for work-up of fever and white count, and for treatment 
+of recurrent ascites.
+ 
+Past Medical History:
+--Alcohol abuse
+--Chronic back pain
+ 
+Social History:
+___
+Family History:
+Breast cancer in mother age ___, No IBD, liver failure.  Multiple 
+relatives with alcoholism.
+ 
+Physical Exam:
+VS: 97.9, 103/73, 86, 18, 96% RA  
+GEN: A/Ox3, pleasant, appropriate, well appearing  
+HEENT: No temporal wasting, JVD not elevated, neck veins fill 
+from above.  
+CV: RRR, No MRG  
+PULM: CTAB but decreased BS in R base.  
+ABD: Distended and tight, diffusely tender to palpation, BS+, + 
+passing flatulence.  
+LIMBS: 2+ edema of the LEs to knee bilaterally ___ pulses 2+ 
+bilaterally  
+NEURO: No asterixis, very mild general tremor.
+ 
+Pertinent Results:
+Labs at Admission:
+
+___ 09:47AM BLOOD WBC-26.2*# RBC-3.86* Hgb-13.0 Hct-43.3 
+MCV-112* MCH-33.7* MCHC-30.0* RDW-12.7 Plt ___
+___ 09:47AM BLOOD Neuts-88* Bands-1 Lymphs-2* Monos-7 Eos-1 
+Baso-1 ___ Myelos-0
+___ 09:20PM BLOOD ___
+___ 09:47AM BLOOD UreaN-8 Creat-0.5 Na-133 K-5.1 Cl-92* 
+HCO3-26 AnGap-20
+___ 09:47AM BLOOD ALT-45* AST-165* LD(LDH)-345* 
+AlkPhos-200* TotBili-2.0*
+___ 09:47AM BLOOD Albumin-2.9* Calcium-8.1* Phos-4.0 Mg-2.2
+___ 09:20PM BLOOD Ethanol-NEG Bnzodzp-NEG
+
+Labs at Discharge:
+
+___ 07:20AM BLOOD WBC-20.7* RBC-3.03* Hgb-10.3* Hct-32.0* 
+MCV-106* MCH-33.9* MCHC-32.1 RDW-13.7 Plt ___
+___ 07:20AM BLOOD ___ PTT-42.0* ___
+___ 07:20AM BLOOD Glucose-96 UreaN-7 Creat-0.4 Na-125* 
+K-4.4 Cl-90* HCO3-30 AnGap-9
+___ 07:20AM BLOOD ALT-35 AST-131* LD(___)-265* AlkPhos-184* 
+TotBili-1.9*
+___ 07:20AM BLOOD Albumin-2.5* Calcium-7.2* Phos-2.6* 
+Mg-2.0
+
+Micro Data:
+
+___ PERITONEAL FLUID GRAM STAIN- negative; FLUID 
+CULTURE-PENDING; ANAEROBIC CULTURE- negative
+___ STOOL CLOSTRIDIUM DIFFICILE TOXIN A & B 
+TEST- negative
+___ URINE URINE CULTURE- negative
+___ SWAB R/O VANCOMYCIN RESISTANT ENTEROCOCCUS- 
+negative
+___ STOOL CLOSTRIDIUM DIFFICILE TOXIN A & B 
+TEST- negative
+___ FLUID RECEIVED IN BLOOD CULTURE BOTTLES 
+Fluid Culture in Bottles- negative
+___ PERITONEAL FLUID GRAM STAIN-FINAL; FLUID 
+CULTURE-FINAL; ANAEROBIC CULTURE- negative
+___ BLOOD CULTURE Blood Culture, Routine- 
+negative 
+___ BLOOD CULTURE Blood Culture, 
+Routine-negative 
+___ URINE URINE CULTURE-FINAL {GRAM POSITIVE 
+BACTERIA} INPATIENT 
+___ FLUID RECEIVED IN BLOOD CULTURE BOTTLES 
+negative
+
+Imaging Results:
+
+CTA (___):
+1. No evidence of pulmonary embolism. 
+2. Stable atelectasis at the right lung base. 
+3. Moderate right and small left pleural effusions, unchanged. 
+
+CTAP (___):
+1. Hepatomegaly and large ascites consistent with stated history 
+of liver 
+disease. No evidence of portal venous thrombosis suggesting that 
+the findings on the prior ultrasound may have resulted from 
+extremely slow / undetectable flow.  
+2. Moderate right and small left pleural effusions, increased on 
+the right 
+with right basilar atelectasis. 
+3. Replaced right hepatic artery arising from the SMA, otherwise 
+conventional arterial and venous anatomy.
+ 
+Brief Hospital Course:
+This is a ___ woman with likely alcoholic hepatitis and 
+recurrent ascites who is admitted with low-grade fevers, high 
+white count, and abdominal pain.
+ 
+# ASCITES/ALC HEPATITIS/LEUKOCYTOSIS: Patient with fatty liver 
+and ascites in setting of extensive drinking history and AST/ALT 
+elevation >2. Discriminant function on admission was ~30.  
+Patient had a paracentesis on ___ and 4L was removed; 
+peritoneal fluid was negative for SBP. Diuretics were initially 
+held in the setting of hyponatremia. She was treated 
+supportively with nutrition, brief antibiotics for urinary tract 
+infection (3-days of ceftriaxone), and therapeutic paracenteses 
+x3. Her symptoms, white cell count, and total bilirubin were 
+improving at time of discharge. She will follow-up with Dr. 
+___ in liver clinic and with her primary care provider, Dr. 
+___, in two weeks. 
+
+# HYPONATREMIA: Likely hypovolemic hyponatremia with some 
+component of euvolemic hyponatremia from liver disease. Her 
+spironlactone was held and can be restarted at the discretion of 
+her outpatient liver team, if necessary. Sodium at time of 
+discharge was 125. She has been advised to continue a low sodium 
+diet and free water restriction to ___ liters daily.
+ 
+# ALCOHOLISM: Patient has been trying to cut back recently, but 
+reports daily heavy alcohol intake for the past ___ years; she has 
+had withdrawal symptoms before but no seizures. Shakes and 
+hallucinations.  Reports sobriety since prior admission. She 
+will continue outpatient rehab.
+  
+# URINARY TRACT INFECTION: she was treated with a three-day 
+course of empiric ceftriaxone for concern of UTI.
+
+# BACK PAIN/ABDOMINAL PAIN: this was treated in house with 
+lidocaine patches as needed and oxycodone as needed. She has 
+been provided with a short course of Tramadol to take as needed 
+until follow-up with her primary care provider. She understands 
+that this is only a temporary medication and will be 
+discontinued when her acute hepatitis resolves.
+
+# Prophylaxis:  
+-DVT ppx with SC heparin  
+-Bowel regimen with lactulose, no PPI  
+-Pain management with oxycodone and lidocaine patch  
+# Communication: Patient  
+# Code: presumed full
+ 
+Medications on Admission:
+Multivitamin, thiamine, folate, spironolactone 25mg daily, 
+lidocaine patch prn, nicotine patch.
+ 
+Discharge Medications:
+1. Multivitamin     Tablet Sig: One (1) Tablet PO DAILY (Daily). 
+ 
+2. Thiamine HCl 100 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+3. Folic Acid 1 mg Tablet Sig: One (1) Tablet PO DAILY (Daily).  
+
+4. Nicotine 14 mg/24 hr Patch 24 hr Sig: One (1) Patch 24 hr 
+Transdermal DAILY (Daily).  
+5. Lidocaine 5 %(700 mg/patch) Adhesive Patch, Medicated Sig: 
+One (1) Adhesive Patch, Medicated Topical DAILY (Daily).  
+6. Tramadol 50 mg Tablet Sig: One (1) Tablet PO every eight (8) 
+hours as needed for pain.
+Disp:*30 Tablet(s)* Refills:*0*
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Primary diagnosis: Alcoholic hepatitis.
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+ 
+Discharge Instructions:
+You were admitted to the hospital for alcoholic hepatitis. This 
+is a condition in which your liver becomes inflamed due to 
+excessive alcohol intake. You were also noted to have an 
+elevated white cell count which can sometimes indicate 
+infection. You were treated with a brief course of antibiotics 
+for a urinary tract infection. Otherwise your blood and 
+peritoneal fluid cultures remain negative.
+
+We made the following changes to your medications: 
+We stopped your spironolactone because your blood sodium levels 
+were too low.
+We added Tramadol to take as needed for back pain. 
+ 
+Followup Instructions:
+___

@@ -1,0 +1,413 @@
+ 
+Name:  ___                 Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+lisinopril
+ 
+Attending: ___
+ 
+Chief Complaint:
+Chest pain
+ 
+Major Surgical or Invasive Procedure:
+Cardiac cath (___)
+
+ 
+Past Medical History:
+-COPD
+-CAD s/p BMS proximal-LAD ___, DES to mid LAD ___, DES to edge 
+ISR of mid LAD DES and stenosis distal to stent ___, DES to OM1 
+___, s/p 3 v CABG LIMA-LAD, SVG-OM1, 
+___ 
+-HFpEF
+-Depression  
+-DM  
+-GERD  
+-Hypertension
+-Migraines
+-Chronic shoulder pain on narcotics
+-OSA
+-Peripheral neuropathy
+-Restless leg
+ 
+Social History:
+___
+Family History:
+Patient was ward of the state, doesn't know full details of 
+family history. Mother with possible alcohol abuse. Father 
+deceased at ___ from Hodgkin's Disease per old records.
+ 
+Physical Exam:
+ADMISSION EXAM
+==============
+GENERAL:NAD AOx3 Pleasant woman. 
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva pink, no 
+pallor or cyanosis of the oral mucosa
+NECK: Supple with no JVD
+CARDIAC: RRR normal S1/S2. No thrills, lifts.  
+LUNGS: CTAB. No crackles, wheezes or rhonchi.  
+ABDOMEN: Soft, NTND. No HSM or tenderness.  
+EXTREMITIES: No ___ edema
+PULSES: ___ and DP palpable on the right side. Did not take 
+bandage down for exam as podiatry had just dressed. 
+ 
+
+DISCHARGE EXAM
+==============
+VITALS:  ___ 0412 Temp: 97.8 PO BP: 105/67 R Lying HR: 71
+RR: 18 O2 sat: 97% O2 delivery: Ra 
+GENERAL:NAD AOx3 Pleasant woman. 
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva pink, no
+pallor or cyanosis of the oral mucosa
+NECK: Supple with no JVD
+CARDIAC: RRR normal S1/S2. No thrills, lifts.  
+LUNGS: CTAB. No crackles, wheezes or rhonchi.  
+ABDOMEN: Soft, NTND. 
+EXTREMITIES: No ___ edema
+PULSES: ___ and DP palpable on the right side. Did not take
+bandage down for exam as podiatry had just dressed.
+
+Per podiatry exam (___) [See attached picture on OMR]
+___ pulses palpable b/l. CFT <3 sec to digits
+bilaterally. There is a L hallux wound present at the medial
+aspect of the toe at the level of the IPJ. Wound has eschar over
+top of the base w/ surrounding hyperkeratotic skin and
+surrounding erythema. There is no malodor or proximal streaking
+present. Once the wound was debrided and the eschar was 
+deroofed,
+there is fibrotic skin at the base of the wound. It does not
+probe deep to bone. 2cc of purulent drainage was expressed from
+wound. Wound is extremely TTP. Gross sensation is intact to b/l
+lower extremities. MMT ___ to all ___ muscle groups crossing the
+ankle jt. No gross deformities noted. 
+ 
+Pertinent Results:
+ADMISSION LABS
+==============
+___ 12:50AM BLOOD WBC-12.7* RBC-4.34 Hgb-14.4 Hct-41.7 
+MCV-96 MCH-33.2* MCHC-34.5 RDW-11.8 RDWSD-41.3 Plt ___
+___ 12:50AM BLOOD Glucose-318* UreaN-21* Creat-1.1 Na-134* 
+K-4.2 Cl-92* HCO3-19* AnGap-23*
+___ 12:50AM BLOOD cTropnT-<0.01
+___ 06:00AM BLOOD cTropnT-<0.01
+___ 11:40AM BLOOD cTropnT-<0.01
+___ 05:20PM BLOOD CK-MB-1 cTropnT-<0.01
+___ 05:20PM BLOOD Albumin-3.5 Calcium-8.6 Phos-3.6 Mg-1.8
+___ 05:20PM BLOOD %HbA1c-12.0* eAG-298*
+___ 12:50AM BLOOD CRP-36.4*
+___ 12:50AM BLOOD ASA-NEG Acetmnp-NEG Tricycl-NEG
+
+STUDIES
+=======
+___ Coronary Angiogram
+Coronary Anatomy
+Dominance: Right
+* Left Main Coronary Artery
+The LMCA is.
+* Left Anterior Descending
+The LAD has diffuse 60% in-stent restenosis with patent LIMA to 
+distal vessel.
+The ___ Diagonal is small and diffusely diseased.
+* Circumflex
+The Circumflex is occluded after a small OM1. There is a patent 
+SVG to OM2.
+* Right Coronary Artery
+The RCA has focal mid 50% stenosis.
+SVG to OM patent.
+LIMA to LAD patent.
+Intra-procedural Complications: None
+Impressions:
+1. three vessel CAD.
+2. Patent SVG to OM and LIMA to LAD.
+Recommendations
+1. Medical therapy.
+
+Pharmacological MIBI ___
+IMPRESSION: 
+  
+1. Reversible, medium sized, moderate severity perfusion defect 
+involving the 
+LAD territory. 
+  
+2. Normal left ventricular cavity size and systolic function.   
+  
+Compared to the prior study of ___, the perfusion defect 
+is new. 
+  
+
+ECHO ___
+LEFT ATRIUM: Normal LA volume index. 
+
+LEFT VENTRICLE: Normal LV wall thickness, cavity size, and 
+regional/global systolic function (biplane LVEF>55%). Doppler 
+parameters are most consistent with normal LV diastolic 
+function. 
+
+RIGHT VENTRICLE: Normal RV chamber size and free wall motion. 
+Paradoxic septal motion consistent with prior cardiac surgery. 
+
+AORTA: Normal diameter of aorta at the sinus, ascending and arch 
+levels. 
+
+AORTIC VALVE: Normal aortic valve leaflets (3). No AS. No AR. 
+
+MITRAL VALVE: Normal mitral valve leaflets with trivial MR. 
+___ mitral valve supporting structures. No MS. 
+
+___ VALVE: Normal tricuspid valve leaflets with trivial 
+TR. Normal PA systolic pressure. 
+
+PULMONIC VALVE/PULMONARY ARTERY: Pulmonic valve not visualized. 
+No PS. Physiologic PR. 
+
+PERICARDIUM: No pericardial effusion.   
+Conclusions   
+ The left atrial volume index is normal. Normal left ventricular 
+wall thickness, cavity size, and regional/global systolic 
+function (biplane LVEF = 63 %). Doppler parameters are most 
+consistent with normal left ventricular diastolic function. 
+Right ventricular chamber size and free wall motion are normal. 
+The diameters of aorta at the sinus, ascending and arch levels 
+are normal. The aortic valve leaflets (3) appear structurally 
+normal with good leaflet excursion and no aortic stenosis or 
+aortic regurgitation. The mitral valve appears structurally 
+normal with trivial mitral regurgitation. The estimated 
+pulmonary artery systolic pressure is normal. There is no 
+pericardial effusion. 
+
+ IMPRESSION: 
+ 1) Normal biventricular regional/global systolic function. 
+
+ Compared with the prior study (images reviewed) of ___, 
+no clinically significant change noted 
+
+DISCHARGE LABS
+==============
+___ 06:10AM BLOOD WBC-7.7 RBC-3.53* Hgb-11.6 Hct-33.8* 
+MCV-96 MCH-32.9* MCHC-34.3 RDW-11.7 RDWSD-40.6 Plt ___
+___ 06:10AM BLOOD Glucose-245* UreaN-12 Creat-1.0 Na-140 
+K-4.3 Cl-101 HCO3-25 AnGap-14
+___ 02:45AM BLOOD ALT-14 AST-17 AlkPhos-50 TotBili-0.4
+___ 06:10AM BLOOD Calcium-8.0* Phos-2.6* Mg-1.___ year old female with CAD(s/p BMS proximal-LAD ___, DES to 
+mid LAD ___, DES to edge ISR of mid LAD DES and stenosis distal 
+to stent ___, DES to ___, s/p 3 v CABG LIMA-LAD, 
+SVG-OM1, SVG-D1(occluded) ___, HFpEF, IDDM, HTN who 
+presented with several days atypical chest pain both with 
+exertion and at rest, with mild T wave deepening but no other 
+EKG changes or troponin. She also presented with mild DKA and 
+diabetic foot ulcer. She had a stress test with reversible 
+ischemia in the LAD territory (___) and went to cardiac 
+catheterization ___ which showed stable disease and no new 
+obstructive lesions. Overall her chest pain was felt to have 
+been either musculoskeletal or demand in the setting of DKA and 
+diabetic foot ulcer. She was discharged on ASA 81, atorvastatin 
+80, Metoprolol XL 100mg daily. 
+
+#DKA/IDDM: Patient presented with anion gap metabolic acidosis 
+and felt to be in mild DKA. She had insulin gtt in the ED but 
+was rapidly switched to subcutaneous insulin. Her A1c returned 
+at 12%, which is the highest it has been recorded for her in our 
+records. She had followed with ___ previously and was 
+on canagliflozin and glipizide as well as SC insulin prior to 
+admission. However, she reported intermittent adherence to her 
+medications and this was the likely reason for her DKA. While 
+she was in house the ___ followed along and she met 
+with a diabetes educator. Her canagliflozin was stopped at 
+discharge due to increased risk of amputation. 
+
+#Diabetic foot ulcer: Present for at least 3 weeks prior to 
+admission. She underwent bedside debridement by Podiatry in ED. 
+XR suggested presence of osteomyelitis . She was maintained on 
+vanc/cefepime/flagyl in house, and was switched to cipro/clinda 
+at discharge per podiatry recs with plans for close follow up. 
+Her wound swab at time of discharge was polymicrobial but was 
+growing Group B strep (sensitivities pending) and klebsiella 
+(pan sensitive). 
+
+#Med noncompliance: She reported intermittent medication 
+compliance related to difficulty remembering to take her 
+medications as well as periods of depression and stress where 
+taking her medication was not a priority. She has recently 
+obtained a pillbox and her granddaughter is helping her with 
+remembering to take her medications. 
+
+#HFpEF: Metoprolol as above, continued torsemide 20mg and she 
+appeared euvolemic throughout admission. 
+#HL: Continued atorvastatin
+#HTN: Metoprolol lowered to XL 100mg daily, losartan kept at 
+25mg daily. Imdur stopped.
+#COPD: Duonebs q6h in house, continued home inhalers on 
+discharge. 
+#Restless legs: continued ropinerole 
+
+Transitional issues: 
+- Please follow up her diabetic foot ulcer in ___ clinic. 
+Plan at time of discharge was to take to OR for further surgical 
+debridement, patient was discharged with cipro/clinda until 
+Podiatry follow up 
+- Please review her blood sugars at home and continue to 
+reinforce compliance with diabetes medications. Her 
+Canagliflozin was stopped due to increased risk of amputation. 
+Consider reintroducing metformin as this was stopped ___ years ago 
+for diarrhea but may be a better option for her. 
+- Follow up blood pressures and heart rate on the current 
+regimen. Suspect that due to noncompliance her medications were 
+uptitrated to higher doses than she actually needs. We cut back 
+her Metoprolol and stoped her imdur
+- Can restart imdur if requiring for chest pain on outpatient 
+basis
+- Please continue to work with patient on med compliance and 
+possible barriers. She denied depression with our social worker 
+but does endorse that stress makes it hard to take her 
+medications. 
+- f/u final wound swab cultures 
+
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Losartan Potassium 25 mg PO DAILY 
+2. MetronidAZOLE Topical 1 % Gel 1 Appl TP BID:PRN Rosacea 
+3. Gabapentin 300 mg PO QHS:PRN Headache 
+4. Metoprolol Succinate XL 250 mg PO DAILY 
+5. linaGLIPtin 5 mg oral DAILY 
+6. Atorvastatin 80 mg PO QPM 
+7. Furosemide 20 mg PO DAILY 
+8. Isosorbide Mononitrate 120 mg PO DAILY 
+9. Nitroglycerin SL 0.4 mg SL Q5MIN:PRN angina 
+10. rOPINIRole 0.5 mg PO QHS restless leg syndrome 
+11. OxyCODONE--Acetaminophen (5mg-325mg) 1 TAB PO Q6H:PRN Pain - 
+Severe 
+12. Fluticasone Propionate 110mcg 2 PUFF IH BID 
+13. Pantoprazole 40 mg PO BID 
+14. Aspirin 325 mg PO DAILY 
+15. TraZODone 50 mg PO QHS:PRN insomnia 
+16. canagliflozin 100 mg oral DAILY 
+17. albuterol sulfate 90 mcg/actuation inhalation Q8H:PRN 
+18. Lidocaine 5% Patch 1 PTCH TD QPM 
+
+ 
+Discharge Medications:
+1.  Ciprofloxacin HCl 500 mg PO Q12H 
+RX *ciprofloxacin HCl 500 mg 1 tablet(s) by mouth twice a day 
+Disp #*14 Tablet Refills:*0 
+2.  Clindamycin 300 mg PO Q6H 
+RX *clindamycin HCl 300 mg 1 capsule(s) by mouth four times per 
+day Disp #*28 Capsule Refills:*0 
+3.  Glargine 50 Units Bedtime
+Humalog 18 Units Breakfast
+Humalog 18 Units Lunch
+Humalog 18 Units Dinner
+Insulin SC Sliding Scale using HUM Insulin 
+4.  Metoprolol Succinate XL 100 mg PO DAILY 
+RX *metoprolol succinate 100 mg 1 tablet(s) by mouth daily Disp 
+#*30 Tablet Refills:*0 
+5.  albuterol sulfate 90 mcg/actuation inhalation Q8H:PRN  
+6.  Aspirin 325 mg PO DAILY  
+7.  Atorvastatin 80 mg PO QPM  
+8.  Fluticasone Propionate 110mcg 2 PUFF IH BID  
+9.  Furosemide 20 mg PO DAILY  
+10.  Gabapentin 300 mg PO QHS:PRN Headache  
+11.  linaGLIPtin 5 mg oral DAILY  
+12.  Losartan Potassium 25 mg PO DAILY  
+13.  MetronidAZOLE Topical 1 % Gel 1 Appl TP BID:PRN Rosacea  
+14.  Nitroglycerin SL 0.4 mg SL Q5MIN:PRN angina  
+15.  OxyCODONE--Acetaminophen (5mg-325mg) 1 TAB PO Q6H:PRN Pain 
+- Severe 
+RX *oxycodone-acetaminophen 5 mg-325 mg 1 tablet(s) by mouth 
+three times daily Disp #*15 Tablet Refills:*0 
+16.  Pantoprazole 40 mg PO BID  
+17.  rOPINIRole 0.5 mg PO QHS restless leg syndrome  
+18.  TraZODone 50 mg PO QHS:PRN insomnia  
+19. HELD- canagliflozin 100 mg oral DAILY  This medication was 
+held. Do not restart canagliflozin until you speak with your 
+endocrinologist
+20. HELD- Lidocaine 5% Patch 1 PTCH TD QPM  This medication was 
+held. Do not restart Lidocaine 5% Patch until you speak with 
+your PCP
+
+ 
+___:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+PRIMARY
+=======
+Diabetic foot ulcer
+Diabetic ketoacidosis 
+Chest pain 
+
+SECONDARY
+=========
+DIABETES MELLITUS (INSULIN DEPENDENT)
+COPD
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Dear Ms. ___, 
+
+It was a pleasure taking care of you at the ___ 
+___!  
+
+WHY WAS I IN THE HOSPITAL?  
+==========================  
+ - You were admitted because you had chest pain. 
+ - You also had a process called DKA from not taking enough 
+insulin 
+ - You also had a bad infection in your foot. 
+
+WHAT HAPPENED IN THE HOSPITAL?  
+==============================  
+ -  We did several tests to figure our if your chest pain was 
+caused by a heart attack. The first was a stress test, which had 
+a positive results. We then did a procedure called a cardiac 
+cath, which showed that you did NOT have a heart attack. 
+ - Our podiatrists did a debridement of your foot. 
+ - We gave you antibiotics for your foot. 
+ - We adjusted your insulin levels. 
+
+WHAT SHOULD I DO WHEN I GO HOME?  
+================================  
+- Take all of your medications: 
+  - Ciproflocaxin and Clindamycin are antibiotics you need to 
+take until the podiatrists tell you to stop.  You are scheduled 
+to see them ___
+  - Your insulin regimen will be slightly different from your 
+old regimen. 
+  - You need to take aspirin and Atorvastatin every day to 
+prevent blockages in your heart from forming. 
+ - You will have many appointments in the next week. It is very 
+important that you go to all of these, to help get your health 
+on track! 
+ - Your weight at discharge is 79.1 kg   (174.38 lb) . Please 
+weigh yourself today at home and use this as your new baseline  
+ -Please weigh yourself every day in the morning. Call your 
+doctor if your weight goes up by more than 3 lbs.  
+ - Seek medical attention if you have new or concerning symptoms 
+or you develop swelling in your legs, abdominal distention, or 
+shortness of breath. If you have worsening pain or redness in 
+your foot, urinating frequently or very thirsty, or if your 
+blood sugar is consistently above 300 or below 70 please cal 
+your doctor. 
+ 
+It was a pleasure participating in your care. We wish you the 
+___!  
+ -Your ___ Care Team  
+ 
+ 
+Followup Instructions:
+___

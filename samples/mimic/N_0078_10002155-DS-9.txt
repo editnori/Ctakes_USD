@@ -1,0 +1,245 @@
+ 
+Name:  ___                 Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Codeine
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Fever
+ 
+Major Surgical or Invasive Procedure:
+None
+ 
+History of Present Illness:
+___ woman with stage IV lung adenocarcinoma on 
+pemetrexed, CAD, CVA presented with fever from home. Patient was 
+found to have temp of 101.9 by husband on ___, down to 100.4 
+with cool compresses and acetaminophen. Patient reports having 
+had intermittent nonproductive coughs, mild sore throat, and 
+nasal congestion for the past 3 weeks. She states that she might 
+be now more tired than usual. Patient was referred to the ED.
+
+In ED, T 99.2, HR 96, BP 132/64, RR 16, 95%RA. Exam 
+unremarkable. Labs notable for ANC 1200, Na 129, Cr 2.5 (recent 
+baseline 1.5-2.0). CXR showed old LLL consolidation and no new 
+process. Admitted to OMED for further management. 
+ 
+Past Medical History:
+ONCOLOGIC HISTORY: 
+Stage IV lung adenocarcinoma:
+- In ___: diagnosed with stage IV lung adenoca after 
+admission for STEMI. Received the first cycle of pemetrexed on 
+___. Most recent chemo was C6 of pemetrexed on ___
+- She had been treated over the course of the last year with 
+multiple courses of antibiotics for RLL pneumonia, which failed 
+to resolve on serial chest imaging. 
+
+NON-ONCOLOGIC HISTORY:
+# Dyslipidemia
+# Hypertension  
+# CAD: MI in ___ and subsequent 1 vessel CABG SVG ->LAD, s/p 
+BMS in LAD in ___ after anterior STEMI
+# CVA - small left posterior frontal infarct in ___
+small PFO
+# Macular Degereration
+ 
+Social History:
+___
+Family History:
+Her father died due to CAD at age ___. Her mother had stomach 
+cancer and osteosarcoma. No history of lung cancer, colon cancer 
+or breast cancer.
+ 
+Physical Exam:
+Gen: elderly woman in NAD
+HEENT: EOMI, OP moist without lesion
+Neck: supple, no LAD
+CV: RRR, normal S1/S2, no m/r/g
+Lungs: Poor aeration at L base
+Abd: soft, NT, ND, BS present
+Ext: no c/c/e
+ 
+Pertinent Results:
+WBC-2.0*# RBC-2.39* HGB-7.4* HCT-22.7* MCV-95
+NEUTS-62 BANDS-2 LYMPHS-14* MONOS-13* EOS-4 BASOS-1 ATYPS-4* 
+___ MYELOS-0
+PLT COUNT-111*#
+GLUCOSE-124* UREA N-57* CREAT-2.5* SODIUM-129* POTASSIUM-4.9 
+CHLORIDE-96 TOTAL CO2-25
+LACTATE-0.6
+
+URINE  COLOR-Yellow APPEAR-Clear SP ___
+URINE  BLOOD-TR NITRITE-NEG PROTEIN-25 GLUCOSE-NEG KETONE-NEG 
+BILIRUBIN-NEG UROBILNGN-NEG PH-5.0 LEUK-NEG
+URINE  ___ BACTERIA-FEW YEAST-NONE ___ TRANS 
+___
+
+STUDIES:
+
+Chest Xray ___: 
+1. In setting of extensive bronchoalveolar carcinoma, and the 
+absence of 
+recent comparable studies, new pneumonia would be difficult to 
+recognize in the right lower and middle lobes. 
+
+CT Chest ___: 
+1. Increased bronchial and peribronchial nodules with 
+ground-glass halos 
+since ___, predominating upper and middle lobes, most 
+consistent with infection. 
+2. Stable right lower lobe reticular opacities with areas of 
+consolidation 
+and widespread nodules predominantly involving the right upper 
+and middle 
+lobes, consistent with known bronchioalveolar cell carcinoma. 
+3. Stable large left thyroid mass. 
+4. Stable abdominal aortic intimal calcification displacement. 
+5. Stable renal cysts. Miniscule nonobstructive right renal 
+calculus. 
+6. Moderate emphysema.
+ 
+Brief Hospital Course:
+___ year old woman with stage IV lung adenoca, CAD who presented 
+with fever at home.
+
+#. Fever: She presented with ___ weeks of fatigue, nonproductive 
+cough that is chronic, and 1 day of fevers.  Chest xray was 
+unremarkable but could not rule out infection given the location 
+of her lung cancer.  She had negative blood and urine cultures.  
+She underwent CT chest on admission, as she was due for a repeat 
+CT scan the following week routinely.  The CT chest was 
+concerning for a new infectious process in the right upper and 
+middle lobes, as well as stable areas of consolidation and 
+nodules consistent with bronchioalveolar carcinoma.  She was 
+started on ceftriaxone and azithromycin and was discharged on 
+cefuroxime and azithromycin.  She was also discharged on home 
+oxygen (she already used oxygen sometimes at home and was 
+instructed to use it full-time after discharge).
+
+#. Acute renal failure: She had an elevated creatinine on 
+admission to 2.5 from a recent baseline of 1.3-1.8.  This was 
+felt to be prerenal azotemia and it improved with IV hydration.  
+However, she still has new renal insufficiency and would likely 
+benefit from follow-up with nephrology after discharge.  She was 
+also instructed to follow a low potassium diet.
+
+#. Hyponatremia: She had low serum sodium on admission, felt to 
+be related to hypovolemia in the setting of her illness.  Her 
+sodium improved to normal levels with IV fluids.
+
+#. Stage IV Lung Adenocarcinoma: She is s/p 6 cycles of 
+pemetrexed.  She should follow-up with her primary oncologist 
+for further treatment.
+
+#. Anemia: She was given 1 unit of PRBCs for anemia on 
+admission.  Her anemia was felt to be related to her recent 
+chemotherapy.
+
+#. CAD: She was continued on a statin, aspirin, and clopidogrel.
+
+#. HTN: She was continued on amlodipine.
+ 
+Medications on Admission:
+amlodipine 5 mg daily
+atorvastatin 80 mg daily
+clopidogrel 75 mg daily
+aspirin 81 mg daily
+ranitidine 150 mg daily
+folate
+loperamide prn
+lorazepam prn
+metoclopramide prn
+ondansetron prn
+trazodone 50 mg daily prn
+
+ 
+Discharge Medications:
+1. Amlodipine 5 mg Tablet Sig: One (1) Tablet PO DAILY (Daily).  
+
+2. Atorvastatin 80 mg Tablet Sig: One (1) Tablet PO once a day.  
+
+3. Clopidogrel 75 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+4. Aspirin 81 mg Tablet, Chewable Sig: One (1) Tablet, Chewable 
+PO DAILY (Daily).  
+5. Ranitidine HCl 150 mg Tablet Sig: One (1) Tablet PO DAILY 
+(Daily).  
+6. Folic Acid 1 mg Tablet Sig: One (1) Tablet PO DAILY (Daily).  
+
+7. Loperamide 2 mg Tablet Sig: One (1) Tablet PO four times a 
+day as needed for diarrhea.  
+8. Lorazepam  Oral
+9. Metoclopramide  Oral
+10. Zofran  Oral
+11. Trazodone 50 mg Tablet Sig: One (1) Tablet PO at bedtime as 
+needed for insomnia.  
+12. Azithromycin 250 mg Tablet Sig: One (1) Tablet PO Q24H 
+(every 24 hours) for 3 days: First dose on ___.
+Disp:*3 Tablet(s)* Refills:*0*
+13. Cefuroxime Axetil 500 mg Tablet Sig: One (1) Tablet PO twice 
+a day for 8 days: First dose on night of ___. Please take 
+antibiotic to its completion.
+Disp:*17 Tablet(s)* Refills:*0*
+14. Senna 8.6 mg Tablet Sig: One (1) Tablet PO twice a day as 
+needed for constipation.  
+15. Metoprolol Tartrate 50 mg Tablet Sig: One (1) Tablet PO BID 
+(2 times a day).  
+16. Polyethylene Glycol 3350 17 gram/dose Powder Sig: One (1)  
+PO DAILY (Daily) as needed for constipation.  
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___ 
+ 
+Discharge Diagnosis:
+Primary Diagnosis:
+Community-Acquired Pneumonia
+
+Secondary Diagnosis:
+Non-small cell lung cancer
+Coronary Artery Disease
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+You were admitted to the hospital after a fever.  You underwent 
+a CT scan of your chest that showed that you likely have 
+pneumonia in your right lung.  You were started on antibiotics 
+to treat this pneumonia.
+
+You now have an increased oxygen requirement and should ALWAYS 
+wear supplemental oxygen at rate of 2 liters per minute.
+
+You also had a low blood count and were given a blood 
+transfusion.  It was felt that your blood count was low due to 
+chemotherapy.
+
+You should weigh yourself every morning and call your doctor if 
+you gain more than 3 pounds or notice increasing shortness of 
+breath, or leg swelling.
+
+Changes to your medications:
+ADDED continuous supplemental oxygen at 2 liters per minute
+ADDED cefuroxime 500 mg BID for 8 more days
+ADDED azithromycin 250mg by mouth for 3 more days
+ADDED Senna 1 tab twice daily as needed for constipation
+ADDED Polyethylene Glycol (Miralax) 1 packet daily as needed for 
+constipation
+ 
+Followup Instructions:
+___
