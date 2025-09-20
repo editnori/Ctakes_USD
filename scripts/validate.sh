@@ -36,6 +36,7 @@ DRY_RUN=0
 MANIFEST=""
 CANONICALIZE=1
 DETERMINISTIC=0
+WITH_RELATIONS=0
 STATUS=0
 
 while [[ $# -gt 0 ]]; do
@@ -266,4 +267,3 @@ if [[ ${STATUS} -eq 0 && -n "${MANIFEST}" ]]; then
 fi
 
 exit ${STATUS}
-
