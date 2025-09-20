@@ -15,7 +15,6 @@ import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
-import org.apache.uima.fit.factory.ConfigurationParameterInitializer;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
@@ -56,7 +55,6 @@ public class BestConceptDisambiguatorAnnotator extends JCasAnnotator_ImplBase {
     @Override
     public void initialize(UimaContext context) throws ResourceInitializationException {
         super.initialize(context);
-        ConfigurationParameterInitializer.initialize(this, context);
         keepAll = coerceBoolean(context.getConfigParameterValue(PARAM_KEEP_ALL), keepAll);
         moveBestFirst = coerceBoolean(context.getConfigParameterValue(PARAM_MOVE_BEST_FIRST), moveBestFirst);
         markDisambiguated = coerceBoolean(context.getConfigParameterValue(PARAM_MARK_DISAMBIGUATED), markDisambiguated);

@@ -1,5 +1,6 @@
 package tools.reporting.uima;
 
+import org.apache.ctakes.typesystem.type.relation.BinaryTextRelation;
 import org.apache.ctakes.typesystem.type.relation.CoreferenceRelation;
 import org.apache.ctakes.typesystem.type.relation.DegreeOfTextRelation;
 import org.apache.ctakes.typesystem.type.relation.LocationOfTextRelation;
@@ -123,7 +124,7 @@ public class HtmlAnnotationOverviewWriter extends JCasAnnotator_ImplBase {
         return layerData;
     }
 
-    private static void addRelationParticipant(org.apache.ctakes.typesystem.type.relation.Relation relation,
+    private static void addRelationParticipant(BinaryTextRelation relation,
                                                Set<IdentifiedAnnotation> sink) {
         if (relation == null) {
             return;
