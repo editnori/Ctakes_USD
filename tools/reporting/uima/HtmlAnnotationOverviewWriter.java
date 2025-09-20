@@ -185,7 +185,7 @@ public class HtmlAnnotationOverviewWriter extends JCasAnnotator_ImplBase {
             throws AnalysisEngineProcessException {
         StringBuilder sb = new StringBuilder();
         sb.append("<!DOCTYPE html><html><head><meta charset=\"utf-8\"/>");
-        sb.append("<title>").append(escapeHtml(docId)).append(" – cTAKES Annotations</title>");
+        sb.append("<title>").append(escapeHtml(docId)).append(" - cTAKES Annotations</title>");
         sb.append("<style>");
         sb.append(BASE_CSS);
         sb.append("</style><script>");
@@ -452,7 +452,7 @@ public class HtmlAnnotationOverviewWriter extends JCasAnnotator_ImplBase {
             "@media (prefers-color-scheme:dark){body{background:#0f172a;color:#e2e8f0;}header{background:#0f172a;}" +
             ".controls label{background:#1e293b;} .note{background:#1e293b;border-color:#334155;color:#e2e8f0;}" +
             ".summary table{background:#1e293b;color:#e2e8f0;border-color:#334155;}" +
-            ".summary td{border-top:1px solid #334155;} .summary tr:nth-child(even){background:#273449;}}");
+            ".summary td{border-top:1px solid #334155;} .summary tr:nth-child(even){background:#273449;}}";
 
     private static final String BASE_JS = "function updateLayers(){const active=[];document.querySelectorAll('input[data-layer]').forEach(cb=>{" +
             "document.body.classList.toggle('hide-'+cb.dataset.layer,!cb.checked);});}" +
