@@ -89,10 +89,10 @@ BUNDLED_CTAKES_ALT="${BASE_DIR}/Ctakes_USD_clean/CtakesBun-bundle/apache-ctakes-
 CTAKES_ROOT="${CTAKES_HOME:-}"
 if [[ -z "${CTAKES_ROOT}" ]]; then
   if [[ -d "${BUNDLED_CTAKES}" ]]; then
-    note_warn "CTAKES_HOME not set; using bundled ${BUNDLED_CTAKES}. Export CTAKES_HOME for scripts."
+    note_ok "CTAKES_HOME not set; defaulting to bundled ${BUNDLED_CTAKES} (persist CTAKES_HOME to silence this message)."
     CTAKES_ROOT="${BUNDLED_CTAKES}"
   elif [[ -d "${BUNDLED_CTAKES_ALT}" ]]; then
-    note_warn "CTAKES_HOME not set; using bundled ${BUNDLED_CTAKES_ALT}. Export CTAKES_HOME for scripts."
+    note_ok "CTAKES_HOME not set; defaulting to bundled ${BUNDLED_CTAKES_ALT} (persist CTAKES_HOME to silence this message)."
     CTAKES_ROOT="${BUNDLED_CTAKES_ALT}"
   else
     note_fail "CTAKES_HOME not set and no bundled distribution found at ${BUNDLED_CTAKES} (run scripts/get_bundle.sh)."
@@ -125,7 +125,7 @@ for key in core sectioned smoke core_sectioned_smoke drug; do
 done
 
 # Tools check ----------------------------------------------------------------
-if ls "${BASE_DIR}/tools"/*.java >/dev/null 2>&1; then
+if [[ -d "${BASE_DIR}/tools" ]] && find "${BASE_DIR}/tools" -type f -name "*.java" -print -quit >/dev/null 2>&1; then
   note_ok "Java tools present (dictionary + helpers)"
 else
   note_warn "No Java tools found under tools/."
