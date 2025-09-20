@@ -29,13 +29,13 @@ Options:
   -i, --input <dir>    Source notes directory (default: samples/mimic)
   -o, --output <dir>   Output directory (default: outputs/validate_mimic)
   --limit <N>          Override sample size (default: 100)
-  --pipeline <key>     Pipeline key passed to validate.sh (default: smoke)
-  --with-relations    Add relations module (core/smoke/drug only)
+  --pipeline <core_sectioned_smoke|s_core_relations_smoke>     Combined pipeline variant (default: s_core_relations_smoke)
+  --with-relations    (ignored) Combined pipeline already includes relations
   --manifest <file>    Override manifest path (default: samples/mimic_manifest.json)
   --dry-run            Print the commands without executing
   -h, --help           Show this help text
 
-Runs scripts/validate.sh with defaults suited for the shipped MIMIC sample (100 notes).
+Runs scripts/validate.sh with defaults suited for an optional 100-note sample pack (drop your notes under samples/mimic).
 USAGE
 }
 
@@ -56,7 +56,9 @@ while [[ $# -gt 0 ]]; do
     -o|--output) OUT_DIR="$2"; shift 2;;
     --limit) LIMIT="$2"; shift 2;;
     --pipeline) PIPELINE_KEY="$2"; PIPELINE_SET=1; PIPELINE_RUNS=("${PIPELINE_KEY}"); shift 2;;
-    --with-relations) WITH_RELATIONS=1; shift 1;;
+    --with-relations)
+      echo "[validate_mimic] --with-relations is implied for combined pipelines; ignoring." >&2
+      shift 1;;
     --manifest) MANIFEST="$2"; MANIFEST_PROVIDED=1; shift 2;;
     --dry-run) DRY_RUN=1; shift 1;;
     -h|--help) usage; exit 0;;
@@ -65,41 +67,28 @@ while [[ $# -gt 0 ]]; do
 
 done
 
-if [[ ${PIPELINE_SET} -eq 0 && -t 0 && -t 1 ]]; then
-  echo "Select validation option:"
-  echo "  1) S Core Relations + Smoke (fast default)"
-  echo "  2) Core + Sectioned + Smoke"
-  echo "  3) Core + Sectioned"
-  echo "  4) Core only"
-  echo "  5) Drug only"
-  read -r -p "Selection [1-5]: " __choice
-  case "${__choice}" in
-    ""|1) PIPELINE_RUNS=(s_core_relations_smoke);;
-    2) PIPELINE_RUNS=(core_sectioned_smoke);;
-    3) PIPELINE_RUNS=(core sectioned);;
-    4) PIPELINE_RUNS=(core);;
-    5) PIPELINE_RUNS=(drug);;
-    *) echo "[validate_mimic] Unknown selection '${__choice}'; defaulting to S Core Relations + Smoke combo."; PIPELINE_RUNS=(s_core_relations_smoke);;
-  esac
-fi
+case "${PIPELINE_KEY}" in
+  core_sectioned_smoke|s_core_relations_smoke)
+    ;;
+  *)
+    echo "[validate_mimic] Pipeline '${PIPELINE_KEY}' is no longer supported; using s_core_relations_smoke." >&2
+    PIPELINE_KEY="s_core_relations_smoke"
+    ;;
+esac
 
-if [[ ${PIPELINE_SET} -eq 1 ]]; then
-  PIPELINE_RUNS=("${PIPELINE_KEY}")
-elif [[ ${#PIPELINE_RUNS[@]} -eq 0 ]]; then
-  PIPELINE_RUNS=(s_core_relations_smoke)
-fi
+PIPELINE_RUNS=("${PIPELINE_KEY}")
+
+
+
+
 
 if [[ ! -d "${IN_DIR}" ]]; then
   echo "[validate_mimic] Input directory not found: ${IN_DIR}" >&2
-  echo "Copy sample notes into ${IN_DIR} or pass --input." >&2
+  echo "Copy sample notes into ${IN_DIR} (or provide an --input pack) before running." >&2
   exit 1
 fi
 
 mkdir -p "${OUT_DIR}"
-
-if [[ ${#PIPELINE_RUNS[@]} -eq 0 ]]; then
-  PIPELINE_RUNS=("${PIPELINE_KEY}")
-fi
 
 STATUS=0
 for pipeline in "${PIPELINE_RUNS[@]}"; do
@@ -110,9 +99,6 @@ for pipeline in "${PIPELINE_RUNS[@]}"; do
     MANIFEST_USE="${DEFAULT_MANIFEST_BASE}_${pipeline}.json"
   fi
   CMD=("${VALIDATE_CMD[@]}" -i "${IN_DIR}" -o "${OUT_DIR_PIPE}" --pipeline "${pipeline}" --limit "${LIMIT}" --manifest "${MANIFEST_USE}")
-  if [[ ${WITH_RELATIONS} -eq 1 ]]; then
-    CMD+=(--with-relations)
-  fi
   [[ ${DRY_RUN} -eq 1 ]] && CMD+=(--dry-run)
   echo "[validate_mimic] Running ${pipeline} pipeline -> ${OUT_DIR_PIPE}"
   if ! "${CMD[0]}" "${CMD[@]:1}"; then

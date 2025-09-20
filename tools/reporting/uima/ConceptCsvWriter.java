@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -37,7 +38,7 @@ import java.util.Map;
  * Writes a per-document CSV describing each disambiguated clinical concept.
  * Columns are grouped by subsystem using prefixes (core:, assertion:, temporal:, relations:, coref:, wsd:).
  */
-public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
+public class ConceptCsvWriter extends JCasAnnotator_ImplBase {
 
     public static final String PARAM_SUBDIR = "SubDirectory";
 
@@ -119,6 +120,7 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
         String section = findSection(segments, ia);
         String cui = concept != null ? nvl(concept.getCui()) : "";
         String pref = concept != null ? nvl(concept.getPreferredText()) : "";
+        String rxCui = collectRxnormCodes(ia);
         String tui = concept != null ? nvl(concept.getTui()) : "";
         String group = semanticGroupForTui(tui);
         String typeLabel = semanticTypeLabelForTui(tui);
@@ -148,6 +150,7 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
         cells.add(csv(safeText(sofa, ia.getBegin(), ia.getEnd())));
         cells.add(csv(normalizeSection(section)));
         cells.add(csv(cui));
+        cells.add(csv(rxCui));
         cells.add(csv(pref.isEmpty() ? safeText(sofa, ia.getBegin(), ia.getEnd()) : pref));
         cells.add(csv(tui));
         cells.add(csv(group));
@@ -188,6 +191,27 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
             }
         }
         return null;
+    }
+
+    private static String collectRxnormCodes(IdentifiedAnnotation ia) {
+        if (ia == null || ia.getOntologyConceptArr() == null) {
+            return "";
+        }
+        LinkedHashSet<String> codes = new LinkedHashSet<>();
+        for (int i = 0; i < ia.getOntologyConceptArr().size(); i++) {
+            if (ia.getOntologyConceptArr().get(i) instanceof UmlsConcept) {
+                UmlsConcept c = (UmlsConcept) ia.getOntologyConceptArr().get(i);
+                String scheme = nvl(c.getCodingScheme()).toUpperCase(Locale.ROOT);
+                if (!"RXNORM".equals(scheme)) {
+                    continue;
+                }
+                String code = nvl(c.getCode());
+                if (!code.isEmpty()) {
+                    codes.add(code);
+                }
+            }
+        }
+        return String.join("|", codes);
     }
 
     private static Map<IdentifiedAnnotation, String> buildDocTimeRelMap(JCas jCas) {
@@ -452,6 +476,7 @@ public class SimpleConceptCsvWriter extends JCasAnnotator_ImplBase {
                     "core:Text",
                     "core:Section",
                     "core:CUI",
+                    "core:RxCUI",
                     "core:PreferredText",
                     "core:TUI",
                     "core:SemanticGroup",

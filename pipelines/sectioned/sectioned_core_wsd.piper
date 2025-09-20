@@ -15,7 +15,7 @@ add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambi
 
 // Assertion cleanup
 load TsAttributeCleartkSubPipe
-add tools.fixes.DefaultSubjectAnnotator
+add tools.assertion.DefaultSubjectAnnotator
 
 // Relations (core clinical relations)
 load TsRelationSubPipe
@@ -24,7 +24,7 @@ load TsRelationSubPipe
 
 // Minimal writers for lean outputs
 add FileTreeXmiWriter SubDirectory=xmi
-add tools.reporting.uima.SimpleConceptCsvWriter SubDirectory=concepts
+add tools.reporting.uima.ConceptCsvWriter SubDirectory=concepts
 add tools.reporting.uima.CuiCountSummaryWriter SubDirectory=cui_counts
 
 addLast util.log.FinishedLogger

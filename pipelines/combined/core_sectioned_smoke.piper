@@ -15,7 +15,10 @@ add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambi
 
 // Assertion cleanup
 load TsAttributeCleartkSubPipe
-add tools.fixes.DefaultSubjectAnnotator
+add tools.assertion.DefaultSubjectAnnotator
+
+// Drug NER for medication-specific annotations
+add tools.drug.DrugMentionAnnotatorWithTypes
 
 // Core clinical relations
 load TsRelationSubPipe
@@ -28,7 +31,9 @@ addDescription tools.smoking.SmokingAggregateStep2Libsvm
 
 // Writers
 add FileTreeXmiWriter SubDirectory=xmi
-add tools.reporting.uima.SimpleConceptCsvWriter SubDirectory=concepts
+add tools.reporting.uima.ConceptCsvWriter SubDirectory=concepts
+add tools.reporting.uima.DrugRxNormCsvWriter SubDirectory=rxnorm
 add tools.reporting.uima.CuiCountSummaryWriter SubDirectory=cui_counts
 
 addLast util.log.FinishedLogger
+

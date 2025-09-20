@@ -12,7 +12,7 @@ load TsDictionarySubPipe
 add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
 
 load TsAttributeCleartkSubPipe
-add tools.fixes.DefaultSubjectAnnotator
+add tools.assertion.DefaultSubjectAnnotator
 
 // Smoking Status classifiers (document-level)
 addDescription tools.smoking.SmokingAggregateStep1
@@ -22,7 +22,7 @@ addDescription tools.smoking.SmokingAggregateStep2Libsvm
 
 // Minimal writers for lean outputs
 add FileTreeXmiWriter SubDirectory=xmi
-add tools.reporting.uima.SimpleConceptCsvWriter SubDirectory=concepts
+add tools.reporting.uima.ConceptCsvWriter SubDirectory=concepts
 add tools.reporting.uima.CuiCountSummaryWriter SubDirectory=cui_counts
 
 addLast util.log.FinishedLogger

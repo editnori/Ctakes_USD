@@ -68,9 +68,9 @@ echo "Compiling headless builder helpers..." | tee -a "$LOG"
 set -x
 javac -cp "$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*" \
   -d "$WRAP_OUT" \
-  "$BASE_DIR/tools/HeadlessDictionaryCreator.java" \
-  "$BASE_DIR/tools/HeadlessDictionaryBuilder.java" \
-  "$BASE_DIR/tools/DictionaryRxnormAugmenter.java" |& tee -a "$LOG"
+  "$BASE_DIR/tools/dictionary/HeadlessDictionaryCreator.java" \
+  "$BASE_DIR/tools/dictionary/HeadlessDictionaryBuilder.java" \
+  "$BASE_DIR/tools/dictionary/DictionaryRxnormAugmenter.java" |& tee -a "$LOG"
 
 mkdir -p "$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast"
 
@@ -84,7 +84,7 @@ else
 fi
 DISCOVER=$(java -Xms1g -Xmx2g \
   -cp "$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$WRAP_OUT" \
-  tools.HeadlessDictionaryCreator -p "$DISCOVER_PROPS" 2>&1 | tee -a "$LOG")
+  tools.dictionary.HeadlessDictionaryCreator -p "$DISCOVER_PROPS" 2>&1 | tee -a "$LOG")
 rm -f "$DISCOVER_PROPS"
 
 SABS=$(echo "$DISCOVER" | sed -n 's/^DISCOVERED_SABS=//p' | tail -n1)
@@ -119,7 +119,7 @@ DB_DIR="$DICT_XML_DIR/$DICT_NAME"
 rm -rf "$DB_DIR"
 mkdir -p "$DICT_XML_DIR"
 CP="$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$WRAP_OUT"
-java -Xms2g -Xmx6g -Drepo.base="$BASE_DIR" -cp "$CP" tools.HeadlessDictionaryBuilder -p "$PROPS" | tee -a "$LOG"
+java -Xms2g -Xmx6g -Drepo.base="$BASE_DIR" -cp "$CP" tools.dictionary.HeadlessDictionaryBuilder -p "$PROPS" | tee -a "$LOG"
 
 if [[ -f "$OUT_DIR/terms.bsv" ]]; then
   echo "BSV rows: $(wc -l < "$OUT_DIR/terms.bsv")" | tee -a "$LOG"
@@ -134,7 +134,7 @@ DICT_XML="$DICT_XML_DIR/${DICT_NAME}.xml"
 if [[ -f "$DICT_XML" ]]; then
   echo "dictionary xml: $DICT_XML" | tee -a "$LOG"
   echo "Augmenting RxNorm codes..." | tee -a "$LOG"
-  java -Xms1g -Xmx2g -cp "$CP" tools.DictionaryRxnormAugmenter -l "$DICT_XML" -u "$UMLS_DIR" | tee -a "$LOG"
+  java -Xms1g -Xmx2g -cp "$CP" tools.dictionary.DictionaryRxnormAugmenter -l "$DICT_XML" -u "$UMLS_DIR" | tee -a "$LOG"
   if ! grep -q 'rxnormTable' "$DICT_XML"; then
     perl -0pi -e 's/(<property key="prefTermTable" value="prefTerm"\s*\/>\n)/$1         <property key="rxnormTable" value="TEXT"\/>\n/' "$DICT_XML"
   fi

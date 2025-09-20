@@ -14,13 +14,13 @@ add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambi
 
 // Assertion cleanup (keeps polarity/uncertainty consistent and avoids null subject crashes)
 load TsAttributeCleartkSubPipe
-add tools.fixes.DefaultSubjectAnnotator
+add tools.assertion.DefaultSubjectAnnotator
 
 // OPTIONAL_MODULES
 
 // Outputs
 add FileTreeXmiWriter SubDirectory=xmi
-add tools.reporting.uima.SimpleConceptCsvWriter SubDirectory=concepts
+add tools.reporting.uima.ConceptCsvWriter SubDirectory=concepts
 add tools.reporting.uima.CuiCountSummaryWriter SubDirectory=cui_counts
 
 addLast util.log.FinishedLogger

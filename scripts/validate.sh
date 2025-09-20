@@ -13,9 +13,8 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/validate.sh -i <input_dir> -o <output_dir> [options]
 Options:
-  --pipeline <core|sectioned|smoke|drug|core_sectioned_smoke|s_core_relations_smoke>   Pipeline to exercise (default: sectioned)
+  --pipeline <core_sectioned_smoke|s_core_relations_smoke>   Combined pipeline variant (default: s_core_relations_smoke)
   --limit <N>                              Copy the first N files into a temp dir before running (default: all)
-  --with-relations                        Run with TsRelationSubPipe enabled (core/smoke/drug only)
   --manifest <file>                        Compare outputs against a saved manifest (creates baseline if missing)
   --canonicalize                           Rewrite outputs into a stable order before manifesting (default)
   --no-canonicalize                        Skip canonical rewriting before manifesting
@@ -29,11 +28,10 @@ validation pass on a small sample of notes.
 USAGE
 }
 
-PIPELINE_KEY="sectioned"
+PIPELINE_KEY="s_core_relations_smoke"
 IN_DIR=""
 OUT_DIR=""
 LIMIT=0
-WITH_RELATIONS=0
 DRY_RUN=0
 MANIFEST=""
 CANONICALIZE=1
@@ -46,7 +44,9 @@ while [[ $# -gt 0 ]]; do
     -o|--output) OUT_DIR="$2"; shift 2;;
     --pipeline) PIPELINE_KEY="$2"; shift 2;;
     --limit) LIMIT="$2"; shift 2;;
-    --with-relations) WITH_RELATIONS=1; shift 1;;
+    --with-relations)
+      echo "[validate] --with-relations is implied for combined pipelines; ignoring." >&2
+      shift 1;;
     --manifest) MANIFEST="$2"; shift 2;;
     --canonicalize) CANONICALIZE=1; shift 1;;
     --no-canonicalize) CANONICALIZE=0; shift 1;;
@@ -58,6 +58,15 @@ while [[ $# -gt 0 ]]; do
   esac
 
 done
+
+case "${PIPELINE_KEY}" in
+  core_sectioned_smoke|s_core_relations_smoke)
+    ;;
+  *)
+    echo "[validate] Pipeline '${PIPELINE_KEY}' is no longer supported; using s_core_relations_smoke." >&2
+    PIPELINE_KEY="s_core_relations_smoke"
+    ;;
+esac
 
 if [[ -z "${IN_DIR}" || -z "${OUT_DIR}" ]]; then
   echo "[validate] --input and --output are required" >&2

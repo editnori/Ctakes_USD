@@ -17,7 +17,7 @@ import java.util.Objects;
 
 /**
  * Thin wrapper around ctakes-drug-ner's DrugMentionAnnotator that reuses the upstream descriptor
- * (patched via resources_override) so the pipeline can load it through Piper. The stock
+ * (kept in the cTAKES bundle so the pipeline can load it through Piper). The stock
  * DrugMentionAnnotator class does not expose a static createEngineDescription method, which causes
  * Piper to fail when resolving the component. Providing one here keeps all original behaviour while
  * ensuring the descriptor's TypeSystem imports remain intact.

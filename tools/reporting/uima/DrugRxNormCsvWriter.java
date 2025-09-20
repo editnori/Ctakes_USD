@@ -22,7 +22,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 /**
- * Minimal RxNorm writer for Drug NER runs.
+ * RxNorm writer for Drug NER runs.
  * Writes one per-document CSV with only RxNorm-coded mentions and minimal columns.
  *
  * Columns:
@@ -378,4 +378,5 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
         return group == null ? "" : group;
     }
 }
+
 

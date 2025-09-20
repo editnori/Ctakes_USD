@@ -79,6 +79,53 @@ def safe_int(value: Any) -> int:
             return -1
 
 
+def canonical_int_cell(value: Any) -> str:
+    if value is None:
+        return ""
+    text = str(value).strip()
+    if not text:
+        return ""
+    try:
+        return str(int(float(text)))
+    except ValueError:
+        return text
+
+
+def canonical_float_cell(value: Any, digits: int = 6) -> str:
+    if value is None:
+        return ""
+    text = str(value).strip()
+    if not text:
+        return ""
+    try:
+        rounded = round(float(text), digits)
+    except ValueError:
+        return text
+    formatted = f"{rounded:.{digits}f}"
+    if '.' in formatted:
+        formatted = formatted.rstrip('0').rstrip('.')
+    return formatted
+
+
+def canonical_pipe_list(value: Any) -> str:
+    if value is None:
+        return ""
+    text = str(value)
+    parts = [part.strip().upper() for part in text.split('|') if part.strip()]
+    if not parts:
+        return ""
+    unique = sorted(set(parts))
+    return '|'.join(unique)
+
+
+def normalize_text_field(value: Any) -> str:
+    if value is None:
+        return ""
+    text = str(value).replace('\r\n', '\n').replace('\r', '\n')
+    text = ' '.join(text.split())
+    return text
+
+
 def read_csv(path: Path) -> Tuple[List[str], List[List[str]]]:
     with path.open("r", newline="", encoding="utf-8") as handle:
         reader = csv.reader(handle)
@@ -140,6 +187,142 @@ def build_rxnorm_sort_key(header: List[str]):
     return key
 
 
+def ensure_concept_columns(header: List[str], rows: List[List[str]]) -> Tuple[List[str], List[List[str]]:
+    header = list(header)
+    rows = [list(row) for row in rows]
+    if "core:RxCUI" not in header:
+        insert_idx = header.index("core:CUI") + 1 if "core:CUI" in header else len(header)
+        header.insert(insert_idx, "core:RxCUI")
+        for row in rows:
+            while len(row) < insert_idx:
+                row.append("")
+            row.insert(insert_idx, "")
+    return header, rows
+
+
+def normalise_concept_rows(header: List[str], rows: List[List[str]]) -> None:
+    index = {name: idx for idx, name in enumerate(header)}
+    doc_idx = index.get("core:Document")
+    begin_idx = index.get("core:Begin")
+    end_idx = index.get("core:End")
+    cui_idx = index.get("core:CUI")
+    rx_idx = index.get("core:RxCUI")
+    text_idx = index.get("core:Text")
+    score_idx = index.get("wsd:Score")
+    for row in rows:
+        while len(row) < len(header):
+            row.append("")
+        for i, cell in enumerate(row):
+            if cell is None:
+                row[i] = ""
+            else:
+                row[i] = str(cell).strip()
+        if doc_idx is not None:
+            row[doc_idx] = row[doc_idx].replace('\\', '/')
+        if begin_idx is not None:
+            row[begin_idx] = canonical_int_cell(row[begin_idx])
+        if end_idx is not None:
+            row[end_idx] = canonical_int_cell(row[end_idx])
+        if cui_idx is not None:
+            row[cui_idx] = row[cui_idx].upper()
+        if rx_idx is not None:
+            row[rx_idx] = canonical_pipe_list(row[rx_idx])
+        if text_idx is not None:
+            row[text_idx] = normalize_text_field(row[text_idx])
+        if score_idx is not None:
+            row[score_idx] = canonical_float_cell(row[score_idx])
+
+
+def normalise_rxnorm_table(header: List[str], rows: List[List[str]]) -> Tuple[List[str], List[List[str]]:
+    header = list(header)
+    rows = [list(row) for row in rows]
+    index = {name: idx for idx, name in enumerate(header)}
+    doc_idx = index.get("Document")
+    begin_idx = index.get("Begin")
+    end_idx = index.get("End")
+    cui_idx = index.get("CUI")
+    rx_idx = index.get("RxCUI")
+    text_idx = index.get("Text")
+    section_idx = index.get("Section")
+    for row in rows:
+        while len(row) < len(header):
+            row.append("")
+        for i, cell in enumerate(row):
+            if cell is None:
+                row[i] = ""
+            else:
+                row[i] = str(cell).strip()
+        if doc_idx is not None:
+            row[doc_idx] = row[doc_idx].replace('\\', '/')
+        if begin_idx is not None:
+            row[begin_idx] = canonical_int_cell(row[begin_idx])
+        if end_idx is not None:
+            row[end_idx] = canonical_int_cell(row[end_idx])
+        if cui_idx is not None:
+            row[cui_idx] = row[cui_idx].upper()
+        if rx_idx is not None:
+            row[rx_idx] = canonical_pipe_list(row[rx_idx])
+        if text_idx is not None:
+            row[text_idx] = normalize_text_field(row[text_idx])
+        if section_idx is not None:
+            row[section_idx] = normalize_text_field(row[section_idx])
+    rows.sort(key=build_rxnorm_sort_key(header))
+    return header, rows
+
+
+def normalise_cui_counts_table(header: List[str], rows: List[List[str]]) -> Tuple[List[str], List[List[str]]:
+    header = list(header)
+    rows = [list(row) for row in rows]
+    for row in rows:
+        while len(row) < len(header):
+            row.append("")
+        for i, cell in enumerate(row):
+            if cell is None:
+                row[i] = ""
+            else:
+                row[i] = str(cell).strip()
+        if row:
+            row[0] = row[0].upper()
+        if len(row) > 1:
+            row[1] = canonical_int_cell(row[1])
+        if len(row) > 2:
+            row[2] = canonical_int_cell(row[2])
+    rows.sort(key=lambda row: (
+        row[0] if row else "",
+        row[1] if len(row) > 1 else "",
+        row[2] if len(row) > 2 else "",
+    ))
+    return header, rows
+
+
+def normalise_sections(sections: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    normalised: Dict[str, Dict[str, Any]] = {}
+    for name in SECTION_KEYS:
+        table = sections.get(name, {})
+        new_table: Dict[str, Dict[str, Any]] = {}
+        for key, payload in table.items():
+            payload_copy = dict(payload)
+            header = list(payload_copy.get('header', []))
+            rows = [list(row) for row in payload_copy.get('rows', [])]
+            if name == 'concepts':
+                header, rows = ensure_concept_columns(header, rows)
+                normalise_concept_rows(header, rows)
+                rows.sort(key=build_concept_sort_key(header))
+                payload_copy['header'] = header
+                payload_copy['rows'] = rows
+            elif name == 'rxnorm':
+                header, rows = normalise_rxnorm_table(header, rows)
+                payload_copy['header'] = header
+                payload_copy['rows'] = rows
+            elif name == 'cui_counts':
+                header, rows = normalise_cui_counts_table(header, rows)
+                payload_copy['header'] = header
+                payload_copy['rows'] = rows
+            new_table[key] = payload_copy
+        normalised[name] = new_table
+    return normalised
+
+
 def load_concepts(base_dir: Path) -> Dict[str, Dict[str, Any]]:
     result: Dict[str, Dict[str, Any]] = {}
     target = base_dir / "concepts"
@@ -147,6 +330,8 @@ def load_concepts(base_dir: Path) -> Dict[str, Dict[str, Any]]:
         return result
     for path in sorted(p for p in target.rglob("*") if p.is_file() and p.suffix.lower() == ".csv"):
         header, rows = read_csv(path)
+        header, rows = ensure_concept_columns(header, rows)
+        normalise_concept_rows(header, rows)
         sort_key = build_concept_sort_key(header)
         rows.sort(key=sort_key)
         result[path.relative_to(base_dir).as_posix()] = {"header": header, "rows": rows}
@@ -160,8 +345,7 @@ def load_rxnorm(base_dir: Path) -> Dict[str, Dict[str, Any]]:
         return result
     for path in sorted(p for p in target.rglob("*") if p.is_file() and p.suffix.lower() == ".csv"):
         header, rows = read_csv(path)
-        sort_key = build_rxnorm_sort_key(header)
-        rows.sort(key=sort_key)
+        header, rows = normalise_rxnorm_table(header, rows)
         result[path.relative_to(base_dir).as_posix()] = {"header": header, "rows": rows}
     return result
 
@@ -173,11 +357,7 @@ def load_cui_counts(base_dir: Path) -> Dict[str, Dict[str, Any]]:
         return result
     for path in sorted(p for p in target.rglob("*") if p.is_file() and p.suffix and p.suffix.lower() == ".bsv"):
         header, rows = read_bsv(path)
-        rows.sort(key=lambda row: (
-            row[0] if row else "",
-            safe_int(row[1]) if len(row) > 1 else 0,
-            safe_int(row[2]) if len(row) > 2 else 0,
-        ))
+        header, rows = normalise_cui_counts_table(header, rows)
         result[path.relative_to(base_dir).as_posix()] = {"header": header, "rows": rows}
     return result
 
@@ -391,8 +571,8 @@ def summarise_difference(section: str, key: str, baseline_entry: Dict[str, Any],
 
 
 def compare_data(baseline: Dict[str, Any], current: Dict[str, Any]) -> Tuple[str, Dict[str, Any]]:
-    baseline_sections = extract_sections(baseline)
-    current_sections = extract_sections(current)
+    baseline_sections = normalise_sections(extract_sections(baseline))
+    current_sections = normalise_sections(extract_sections(current))
     diffs: Dict[str, Any] = {"missing": {}, "extra": {}, "modified": {}}
     mismatch = False
     for section in SECTION_KEYS:

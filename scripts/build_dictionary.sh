@@ -4,7 +4,7 @@ set -euo pipefail
 # Build (and optionally run) the headless dictionary builder.
 # Usage:
 #   scripts/build_dictionary.sh --compile-only
-#   scripts/build_dictionary.sh -- <HeadlessDictionaryBuilder args>
+#   scripts/build_dictionary.sh -- <tools.dictionary.HeadlessDictionaryBuilder args>
 # Environment:
 #   CTAKES_HOME - required path to the apache-ctakes installation.
 #   BUILD_DIR   - optional custom output directory for compiled classes (defaults to build/dictionary).
@@ -32,7 +32,7 @@ case "$(uname -s 2>/dev/null)" in
   *) if [[ "${OS:-}" == "Windows_NT" ]]; then CLASSPATH_SEP=';'; fi;;
 esac
 
-SRC=("${BASE_DIR}/tools/HeadlessDictionaryCreator.java" "${BASE_DIR}/tools/HeadlessDictionaryBuilder.java")
+SRC=("${BASE_DIR}/tools/dictionary/HeadlessDictionaryCreator.java" "${BASE_DIR}/tools/dictionary/HeadlessDictionaryBuilder.java")
 JAVAC_CP="${CTAKES_HOME}/lib/*"
 
 # Compile when build dir is empty or sources newer than classes
@@ -44,4 +44,4 @@ if [[ "${1:-}" == "--compile-only" ]]; then
 fi
 
 JAVA_CP="${BUILD_DIR}${CLASSPATH_SEP}${CTAKES_HOME}/lib/*"
-java -cp "${JAVA_CP}" HeadlessDictionaryBuilder "$@"
+java -cp "${JAVA_CP}" tools.dictionary.HeadlessDictionaryBuilder "$@"

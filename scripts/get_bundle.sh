@@ -13,14 +13,48 @@ if [[ -d "${EXPECTED_CTAKES}" ]]; then
 fi
 
 DOWNLOAD_URL="https://github.com/editnori/Ctakes_USD/releases/download/${RELEASE_TAG}/${ASSET_NAME}"
+CHECKSUM_URL="${DOWNLOAD_URL}.sha256"
 TMP_FILE="${TMPDIR:-/tmp}/${ASSET_NAME}.download"
+TMP_SUM="${TMP_FILE}.sha256"
 TMP_DIR="${TMPDIR:-/tmp}/ctakes_bundle.$$"
 
 mkdir -p "${TMP_DIR}"
-trap 'rm -rf "${TMP_DIR}" "${TMP_FILE}"' EXIT
+trap 'rm -rf "${TMP_DIR}" "${TMP_FILE}" "${TMP_SUM}"' EXIT
 
 echo "[get_bundle] Downloading ${ASSET_NAME} from ${DOWNLOAD_URL}"
 curl -L --fail --progress-bar -o "${TMP_FILE}" "${DOWNLOAD_URL}"
+
+if curl -L --fail --silent --show-error -o "${TMP_SUM}" "${CHECKSUM_URL}"; then
+  PYTHON_BIN=$(command -v python3 || command -v python || true)
+  if [[ -z "${PYTHON_BIN}" ]]; then
+    echo "[get_bundle] Warning: python not available; skipping checksum verification" >&2
+  else
+    EXPECTED_SUM=$(head -n 1 "${TMP_SUM}" | awk '{print $1}')
+    if [[ -z "${EXPECTED_SUM}" ]]; then
+      echo "[get_bundle] Warning: checksum file ${CHECKSUM_URL} is empty; skipping verification" >&2
+    else
+      echo "[get_bundle] Verifying SHA-256 checksum"
+      ACTUAL_SUM=$("${PYTHON_BIN}" - <<'PY' "${TMP_FILE}"
+import hashlib
+import sys
+path = sys.argv[1]
+h = hashlib.sha256()
+with open(path, 'rb') as stream:
+    for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+        h.update(chunk)
+print(h.hexdigest())
+PY
+)
+      if [[ "${ACTUAL_SUM,,}" != "${EXPECTED_SUM,,}" ]]; then
+        echo "[get_bundle] Checksum mismatch for ${ASSET_NAME}" >&2
+        exit 1
+      fi
+      echo "[get_bundle] Checksum verified"
+    fi
+  fi
+else
+  echo "[get_bundle] Warning: checksum file not found at ${CHECKSUM_URL}; skipping verification" >&2
+fi
 
 echo "[get_bundle] Extracting into temporary directory"
 tar -xzf "${TMP_FILE}" -C "${TMP_DIR}"

@@ -13,7 +13,7 @@ load TsDictionarySubPipe
 add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
 
 load TsAttributeCleartkSubPipe
-add tools.fixes.DefaultSubjectAnnotator
+add tools.assertion.DefaultSubjectAnnotator
 
 // Drug NER (ctakes-drug-ner) wrapper exposes createEngineDescription for Piper
 add tools.drug.DrugMentionAnnotatorWithTypes
