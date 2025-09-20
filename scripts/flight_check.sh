@@ -15,7 +15,10 @@ write_env_var() {
   local value="$2"
   local tmp="${ENV_FILE}.tmp"
   if [[ -f "${ENV_FILE}" ]]; then
-    awk -v var="$var" '!( $0 ~ "^[[:space:]]*export[[:space:]]+"var"=" )' "${ENV_FILE}" > "${tmp}"
+    awk -v var="$var" '
+      /bin/bash ~ "^[[:space:]]*export[[:space:]]+" var "=" { next }
+      { print }
+    ' "${ENV_FILE}" > "${tmp}"
   else
     : > "${tmp}"
   fi

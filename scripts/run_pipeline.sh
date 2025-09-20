@@ -79,6 +79,22 @@ recommend_autoscale() {
   echo "[autoscale] CPU cores=${cpus}, RAM=${mem}MB -> threads=${threads_rec}, Xmx=${xmx_rec}MB" >&2
 }
 
+append_java_opts() {
+  local raw="$1"
+  [[ -z "${raw}" ]] && return
+  local parsed=()
+  if command -v python3 >/dev/null 2>&1; then
+    mapfile -t parsed < <(python3 -c "import shlex, sys; [print(tok) for tok in shlex.split(sys.argv[1])]" "${raw}")
+  elif command -v python >/dev/null 2>&1; then
+    mapfile -t parsed < <(python -c "import shlex, sys; [print(tok) for tok in shlex.split(sys.argv[1])]" "${raw}")
+  else
+    read -r -a parsed <<< "${raw}"
+  fi
+  if (( ${#parsed[@]} > 0 )); then
+    JAVA_CMD+=("${parsed[@]}")
+  fi
+}
+
 RUNNER_INDEX=${RUNNER_INDEX:-1}
 RUNNER_COUNT=${RUNNER_COUNT:-1}
 
@@ -290,12 +306,10 @@ JAVA_CP_RUN="${BUILD_DIR}${CLASSPATH_SEP}${BASE_DIR}/resources_override${CLASSPA
 JAVA_CMD=(java -cp "$JAVA_CP_RUN" -Xms${XMX_MB}m -Xmx${XMX_MB}m -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+UseStringDeduplication -XX:MaxGCPauseMillis=200)
 
 if [[ -n "${CTAKES_JAVA_OPTS:-}" ]]; then
-  EXTRA_OPTS=( ${CTAKES_JAVA_OPTS} )
-  JAVA_CMD+=("${EXTRA_OPTS[@]}")
+  append_java_opts "${CTAKES_JAVA_OPTS}"
 fi
 if [[ -n "${JAVA_OPTS_EXTRA}" ]]; then
-  EXTRA_OPTS=( ${JAVA_OPTS_EXTRA} )
-  JAVA_CMD+=("${EXTRA_OPTS[@]}")
+  append_java_opts "${JAVA_OPTS_EXTRA}"
 fi
 
 if [[ -n "${UMLS_KEY_OVERRIDE}" ]]; then
