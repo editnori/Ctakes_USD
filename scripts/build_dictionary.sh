@@ -45,3 +45,4 @@ fi
 
 JAVA_CP="${BUILD_DIR}${CLASSPATH_SEP}${CTAKES_HOME}/lib/*"
 java -cp "${JAVA_CP}" tools.dictionary.HeadlessDictionaryBuilder "$@"
+
