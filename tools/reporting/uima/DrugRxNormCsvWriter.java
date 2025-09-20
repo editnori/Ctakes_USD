@@ -1,7 +1,6 @@
 package tools.reporting.uima;
 
 import org.apache.ctakes.typesystem.type.refsem.UmlsConcept;
-import org.apache.ctakes.typesystem.type.structured.DocumentID;
 import org.apache.ctakes.typesystem.type.textsem.IdentifiedAnnotation;
 import org.apache.ctakes.typesystem.type.textsem.MedicationMention;
 import org.apache.ctakes.typesystem.type.textspan.Segment;
@@ -11,6 +10,7 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
+import tools.reporting.uima.DocIdUtil;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
 
     @Override
     public void process(JCas jCas) throws AnalysisEngineProcessException {
-        final String docId = getDocId(jCas);
+        final String docId = DocIdUtil.resolveDocId(jCas);
         final String text = jCas.getDocumentText() == null ? "" : jCas.getDocumentText();
         final List<Segment> segments = new ArrayList<>(JCasUtil.select(jCas, Segment.class));
 
@@ -154,12 +154,6 @@ public class DrugRxNormCsvWriter extends JCasAnnotator_ImplBase {
         return new ArrayList<>(codes);
     }
 
-    private static String getDocId(JCas jCas) {
-        for (DocumentID did : JCasUtil.select(jCas, DocumentID.class)) {
-            String id = did.getDocumentID(); if (id != null && !id.isEmpty()) return id;
-        }
-        return "note";
-    }
 
     private static String findSection(List<Segment> segs, IdentifiedAnnotation ia) {
         for (Segment s : segs) {

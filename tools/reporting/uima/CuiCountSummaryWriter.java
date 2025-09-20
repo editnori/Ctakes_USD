@@ -1,7 +1,7 @@
 package tools.reporting.uima;
+import tools.reporting.uima.DocIdUtil;
 
 import org.apache.ctakes.typesystem.type.refsem.UmlsConcept;
-import org.apache.ctakes.typesystem.type.structured.DocumentID;
 import org.apache.ctakes.typesystem.type.textsem.IdentifiedAnnotation;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -82,7 +82,7 @@ public class CuiCountSummaryWriter extends org.apache.uima.analysis_component.JC
         } catch (IOException e) {
             throw new AnalysisEngineProcessException(e);
         }
-        Path outFile = outDir.resolve(getDocId(jCas) + ".bsv");
+        Path outFile = outDir.resolve(DocIdUtil.resolveDocId(jCas) + ".bsv");
         try (BufferedWriter writer = Files.newBufferedWriter(outFile, StandardCharsets.UTF_8,
                 StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
             writer.write("CUI|Affirmed|Negated");
@@ -125,18 +125,6 @@ public class CuiCountSummaryWriter extends org.apache.uima.analysis_component.JC
         return trimmed.toUpperCase(Locale.ROOT);
     }
 
-    private static String getDocId(JCas jCas) {
-        for (DocumentID id : JCasUtil.select(jCas, DocumentID.class)) {
-            String value = id.getDocumentID();
-            if (value != null) {
-                String trimmed = value.trim();
-                if (!trimmed.isEmpty()) {
-                    return trimmed;
-                }
-            }
-        }
-        return "UNKNOWN";
-    }
 
     private static final class Counts {
         int affirmed;

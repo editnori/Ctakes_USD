@@ -4,7 +4,6 @@ import org.apache.ctakes.typesystem.type.relation.CoreferenceRelation;
 import org.apache.ctakes.typesystem.type.relation.DegreeOfTextRelation;
 import org.apache.ctakes.typesystem.type.relation.LocationOfTextRelation;
 import org.apache.ctakes.typesystem.type.relation.RelationArgument;
-import org.apache.ctakes.typesystem.type.structured.DocumentID;
 import org.apache.ctakes.typesystem.type.textsem.IdentifiedAnnotation;
 import org.apache.ctakes.typesystem.type.textsem.Markable;
 import org.apache.ctakes.typesystem.type.textsem.MedicationMention;
@@ -15,6 +14,7 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
+import tools.reporting.uima.DocIdUtil;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -66,7 +66,7 @@ public class HtmlAnnotationOverviewWriter extends JCasAnnotator_ImplBase {
 
     @Override
     public void process(JCas jCas) throws AnalysisEngineProcessException {
-        final String docId = resolveDocId(jCas);
+        final String docId = DocIdUtil.resolveDocId(jCas);
         final String text = jCas.getDocumentText() == null ? "" : jCas.getDocumentText();
 
         Map<IdentifiedAnnotation, AnnotationLayers> layerMap = buildLayerMetadata(jCas);
@@ -173,7 +173,8 @@ public class HtmlAnnotationOverviewWriter extends JCasAnnotator_ImplBase {
             view.rxCui = rxCodes;
             view.section = section;
             view.preferredText = layers.concept == null ? "" : nvl(layers.concept.getPreferredText());
-            view.polarity = ia.getPolarity();
+            view.polarity = ia.getPolarity();
+
             view.discoveryTechnique = ia.getDiscoveryTechnique();
             views.add(view);
         }
@@ -332,18 +333,6 @@ public class HtmlAnnotationOverviewWriter extends JCasAnnotator_ImplBase {
         }
     }
 
-    private static String resolveDocId(JCas jCas) {
-        for (DocumentID id : JCasUtil.select(jCas, DocumentID.class)) {
-            String value = id.getDocumentID();
-            if (value != null) {
-                String trimmed = value.trim();
-                if (!trimmed.isEmpty()) {
-                    return trimmed;
-                }
-            }
-        }
-        return "UNKNOWN";
-    }
 
     private static String findSection(JCas jCas, IdentifiedAnnotation ia) {
         List<org.apache.ctakes.typesystem.type.textspan.Segment> segments = new ArrayList<>(JCasUtil.select(jCas, org.apache.ctakes.typesystem.type.textspan.Segment.class));
@@ -486,7 +475,8 @@ public class HtmlAnnotationOverviewWriter extends JCasAnnotator_ImplBase {
         String preferredText;
         String section;
         int polarity;
-        int discoveryTechnique;
+        int discoveryTechnique;
+
     }
 
     private static final class Event {

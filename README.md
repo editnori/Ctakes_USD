@@ -100,7 +100,7 @@ The helper scripts default to `s_core_relations_smoke`; choose `core_sectioned_s
 | Area | Modules |
 | --- | --- |
 | Tokenization / POS / Chunking | `TsDefaultTokenizerPipeline` or `TsFullTokenizerPipeline`; `ContextDependentTokenizerAnnotator`; `POSTagger`; `TsChunkerSubPipe` |
-| Dictionary lookup + WSD | `TsDictionarySubPipe`; `tools.wsd.SimpleWsdDisambiguatorAnnotator` (single-best concept without YTEX) |
+| Dictionary lookup + WSD | `TsDictionarySubPipe`; `tools.wsd.BestConceptDisambiguatorAnnotator` (single-best concept without YTEX) |
 | Assertion cleanup | `TsAttributeCleartkSubPipe`; `tools.assertion.DefaultSubjectAnnotator` (forces null subjects to `patient`) |
 | Output writers | `FileTreeXmiWriter`; `tools.reporting.uima.ConceptCsvWriter`; `tools.reporting.uima.CuiCountSummaryWriter`; `tools.reporting.uima.DrugRxNormCsvWriter` (drug pipeline only); `tools.reporting.uima.HtmlAnnotationOverviewWriter` |
 | Smoking extras | `tools.smoking.SmokingAggregateStep1`; `tools.smoking.SmokingAggregateStep2Libsvm` |
@@ -112,11 +112,11 @@ The helper scripts default to `s_core_relations_smoke`; choose `core_sectioned_s
 | --- | --- | --- |
 | `--with-relations` | `load TsRelationSubPipe` | Adds the fast relation sub-pipeline (modifier/degree models plus `tools.relations.ThreadSafeFastLocationExtractor`) to `core`, `smoke`, and `drug`; ignored when relations already present. |
 
-### Simple WSD disambiguator
+### Best concept WSD annotator
 
-- `tools.wsd.SimpleWsdDisambiguatorAnnotator` picks a single best UMLS concept per mention using sentence-level token overlap (see `tools/wsd/SimpleWsdDisambiguatorAnnotator.java`).
+- `tools.wsd.BestConceptDisambiguatorAnnotator` picks a single best UMLS concept per mention using sentence-level token overlap (see `tools/wsd/BestConceptDisambiguatorAnnotator.java`).
 - Default parameters keep the original candidate array, move the winner to the front, and stamp confidence/flags; adjust via Piper keys `KeepAllCandidates`, `MoveBestFirst`, `MarkDisambiguated`, `MinTokenLen`, and `FilterSingleCharStops`.
-- Runs immediately after `TsDictionarySubPipe` in every pipeline; remove the `add tools.wsd.SimpleWsdDisambiguatorAnnotator ...` line if you prefer raw dictionary candidates.
+- Runs immediately after `TsDictionarySubPipe` in every pipeline; remove the `add tools.wsd.BestConceptDisambiguatorAnnotator ...` line if you prefer raw dictionary candidates.
 - Emits normalized context scores so downstream writers can audit disambiguation quality without external services.
 
 ### Relation extraction upgrades
@@ -196,7 +196,7 @@ The helper scripts default to `s_core_relations_smoke`; choose `core_sectioned_s
 |   |-- assertion/DefaultSubjectAnnotator.java
 |   |-- reporting/uima/*.java
 |   |-- smoking/SmokingAggregateStep{1,2}Libsvm.java
-|   `-- wsd/SimpleWsdDisambiguatorAnnotator.java
+|   `-- wsd/BestConceptDisambiguatorAnnotator.java
 ```
 
 `build/` and `outputs/` are transient. If a run misbehaves, remove them (`rm -rf build outputs`) and rerun; the scripts will rebuild the Java helpers automatically.

@@ -9,7 +9,7 @@ addDescription POSTagger
 load TsChunkerSubPipe
 
 load TsDictionarySubPipe
-add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
+add tools.wsd.BestConceptDisambiguatorAnnotator KeepAllCandidates=false MarkDisambiguated=true MoveBestFirst=true
 
 load TsAttributeCleartkSubPipe
 add tools.assertion.DefaultSubjectAnnotator

@@ -4,7 +4,6 @@ import org.apache.ctakes.typesystem.type.relation.CoreferenceRelation;
 import org.apache.ctakes.typesystem.type.relation.DegreeOfTextRelation;
 import org.apache.ctakes.typesystem.type.relation.LocationOfTextRelation;
 import org.apache.ctakes.typesystem.type.relation.RelationArgument;
-import org.apache.ctakes.typesystem.type.structured.DocumentID;
 import org.apache.ctakes.typesystem.type.textsem.EventMention;
 import org.apache.ctakes.typesystem.type.textsem.IdentifiedAnnotation;
 import org.apache.ctakes.typesystem.type.textsem.Markable;
@@ -17,6 +16,7 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
+import tools.reporting.uima.DocIdUtil;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -62,7 +62,7 @@ public class ConceptCsvWriter extends JCasAnnotator_ImplBase {
 
     @Override
     public void process(JCas jCas) throws AnalysisEngineProcessException {
-        final String docId = getDocId(jCas);
+        final String docId = DocIdUtil.resolveDocId(jCas);
         final String sofa = jCas.getDocumentText() == null ? "" : jCas.getDocumentText();
         final List<Segment> segments = new ArrayList<>(JCasUtil.select(jCas, Segment.class));
 
@@ -304,16 +304,6 @@ public class ConceptCsvWriter extends JCasAnnotator_ImplBase {
         if (ra == null || ra.getArgument() == null) return null;
         if (ra.getArgument() instanceof IdentifiedAnnotation) return (IdentifiedAnnotation) ra.getArgument();
         return null;
-    }
-
-    private static String getDocId(JCas jCas) {
-        for (DocumentID id : JCasUtil.select(jCas, DocumentID.class)) {
-            String docId = id.getDocumentID();
-            if (docId != null && !docId.trim().isEmpty()) {
-                return docId.trim();
-            }
-        }
-        return "UNKNOWN";
     }
 
     private static String safeText(String sofa, int begin, int end) {

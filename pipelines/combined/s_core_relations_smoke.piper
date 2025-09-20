@@ -11,7 +11,7 @@ load TsChunkerSubPipe
 
 // Dictionary lookup and WSD
 load TsDictionarySubPipe
-add tools.wsd.SimpleWsdDisambiguatorAnnotator KeepAllCandidates=true MarkDisambiguated=true MoveBestFirst=true
+add tools.wsd.BestConceptDisambiguatorAnnotator KeepAllCandidates=false MarkDisambiguated=true MoveBestFirst=true
 
 // Assertion cleanup
 load TsAttributeCleartkSubPipe
