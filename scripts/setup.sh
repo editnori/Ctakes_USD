@@ -1,1 +1,19 @@
-#!/usr/bin/env bash\nset -euo pipefail\n\nBASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"\nchmod +x ${BASE_DIR}/scripts/*.sh >/dev/null 2>&1 || true\n\nif [[ "${1:-}" == "--deps" ]]; then\n  bash "${BASE_DIR}/scripts/install_deps.sh"\nfi\n\nbash "${BASE_DIR}/scripts/get_bundle.sh" "${2:-bundle}"\n\ncat <<'EOF'\n[setup] Bundle ready. Next steps:\n  1. bash scripts/flight_check.sh\n  2. bash scripts/validate_mimic.sh (optional smoke test)\n  3. bash scripts/run_pipeline.sh --pipeline sectioned -i /path/to/notes -o outputs/run1\nEOF\n
+#!/usr/bin/env bash
+set -euo pipefail
+
+BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+chmod +x "${BASE_DIR}"/scripts/*.sh >/dev/null 2>&1 || true
+
+if [[ "${1:-}" == "--deps" ]]; then
+  bash "${BASE_DIR}/scripts/install_deps.sh"
+fi
+
+bash "${BASE_DIR}/scripts/get_bundle.sh" "${2:-bundle}"
+
+cat <<'EOF'
+[setup] Bundle ready. Next steps:
+  1. bash scripts/flight_check.sh
+  2. bash scripts/validate_mimic.sh (optional smoke test)
+  3. bash scripts/run_pipeline.sh --pipeline sectioned -i /path/to/notes -o outputs/run1
+EOF
+

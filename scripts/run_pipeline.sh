@@ -45,7 +45,7 @@ detect_cpus() {
   fi
   case "$(uname -s 2>/dev/null)" in
     Darwin) sysctl -n hw.ncpu ;;
-    MINGW*|MSYS*|CYGWIN*) powershell.exe -NoProfile -Command "(Get-CimInstance -ClassName Win32_ComputerSystem).NumberOfLogicalProcessors" | tr -d '\r' ;;
+    MINGW*|MSYS*|CYGWIN*) powershell.exe -NoProfile -Command "(Get-CimInstance -ClassName Win32_ComputerSystem).NumberOfLogicalProcessors" | tr -d '' ;;
     *) getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1 ;;
   esac
 }
@@ -54,7 +54,7 @@ detect_mem_mb() {
   case "$(uname -s 2>/dev/null)" in
     Linux) awk '/MemTotal/ { printf "%d", $2/1024 }' /proc/meminfo ;;
     Darwin) sysctl -n hw.memsize | awk '{ printf "%d", $1/1024/1024 }' ;;
-    MINGW*|MSYS*|CYGWIN*) powershell.exe -NoProfile -Command "[math]::Round((Get-CimInstance -ClassName Win32_OperatingSystem).TotalVisibleMemorySize / 1024)" | tr -d '\r' ;;
+    MINGW*|MSYS*|CYGWIN*) powershell.exe -NoProfile -Command "[math]::Round((Get-CimInstance -ClassName Win32_OperatingSystem).TotalVisibleMemorySize / 1024)" | tr -d '' ;;
     *) echo 4096 ;;
   esac
 }
@@ -273,13 +273,16 @@ while IFS='' read -r line; do
   if [[ "${line}" == "// OPTIONAL_MODULES" ]]; then
     if [[ ${#OPTIONAL_LINES[@]} -gt 0 ]]; then
       for opt in "${OPTIONAL_LINES[@]}"; do
-        printf '%s\n' "$opt" >> "${TMP_PIPE}"
+        printf '%s
+' "$opt" >> "${TMP_PIPE}"
       done
     fi
   elif [[ ${line} =~ ^[[:space:]]*threads[[:space:]]+ ]]; then
-    printf 'threads %s\n' "${THREAD_OVERRIDE}" >> "${TMP_PIPE}"
+    printf 'threads %s
+' "${THREAD_OVERRIDE}" >> "${TMP_PIPE}"
   else
-    printf '%s\n' "${line}" >> "${TMP_PIPE}"
+    printf '%s
+' "${line}" >> "${TMP_PIPE}"
   fi
 done < "${PIPER}"
 
@@ -318,7 +321,8 @@ JAVA_CMD+=(org.apache.ctakes.core.pipeline.PiperFileRunner -p "${TMP_PIPE}" -i "
 if [[ ${DRY_RUN} -eq 1 ]]; then
   printf '[pipeline] '
   printf '%q ' "${JAVA_CMD[@]}"
-  printf '\n'
+  printf '
+'
   exit 0
 fi
 

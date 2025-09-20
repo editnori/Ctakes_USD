@@ -15,8 +15,8 @@ if [[ ! -f "$PROPS" ]]; then
 fi
 
 # Extract umls.dir and output.dir from the properties
-UMLS_DIR=$(awk -F= '/^\s*umls.dir\s*=/{print $2}' "$PROPS" | tr -d '\r' | xargs)
-OUT_DIR=$(awk -F= '/^\s*output.dir\s*=/{print $2}' "$PROPS" | tr -d '\r' | xargs)
+UMLS_DIR=$(awk -F= '/^\s*umls.dir\s*=/{print $2}' "$PROPS" | tr -d '' | xargs)
+OUT_DIR=$(awk -F= '/^\s*output.dir\s*=/{print $2}' "$PROPS" | tr -d '' | xargs)
 
 [[ "${UMLS_DIR:0:1}" != "/" ]] && UMLS_DIR="$BASE_DIR/$UMLS_DIR"
 [[ "${OUT_DIR:0:1}" != "/" ]] && OUT_DIR="$BASE_DIR/$OUT_DIR"
@@ -66,11 +66,7 @@ mkdir -p "$WRAP_OUT"
 
 echo "Compiling headless builder helpers..." | tee -a "$LOG"
 set -x
-javac -cp "$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*" \
-  -d "$WRAP_OUT" \
-  "$BASE_DIR/tools/dictionary/HeadlessDictionaryCreator.java" \
-  "$BASE_DIR/tools/dictionary/HeadlessDictionaryBuilder.java" \
-  "$BASE_DIR/tools/dictionary/DictionaryRxnormAugmenter.java" |& tee -a "$LOG"
+javac -cp "$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*"   -d "$WRAP_OUT"   "$BASE_DIR/tools/dictionary/HeadlessDictionaryCreator.java"   "$BASE_DIR/tools/dictionary/HeadlessDictionaryBuilder.java"   "$BASE_DIR/tools/dictionary/DictionaryRxnormAugmenter.java" |& tee -a "$LOG"
 
 mkdir -p "$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast"
 
@@ -80,11 +76,11 @@ cp -f "$PROPS" "$DISCOVER_PROPS"
 if grep -q '^\s*umls.dir\s*=' "$DISCOVER_PROPS"; then
   sed -i "s#^\s*umls.dir\s*=.*#umls.dir=$UMLS_DIR#" "$DISCOVER_PROPS"
 else
-  printf "\numls.dir=%s\n" "$UMLS_DIR" >> "$DISCOVER_PROPS"
+  printf "
+umls.dir=%s
+" "$UMLS_DIR" >> "$DISCOVER_PROPS"
 fi
-DISCOVER=$(java -Xms1g -Xmx2g \
-  -cp "$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$WRAP_OUT" \
-  tools.dictionary.HeadlessDictionaryCreator -p "$DISCOVER_PROPS" 2>&1 | tee -a "$LOG")
+DISCOVER=$(java -Xms1g -Xmx2g   -cp "$CTAKES_HOME/desc:$CTAKES_HOME/resources:$CTAKES_HOME/config:$CTAKES_HOME/config/*:$CTAKES_HOME/lib/*:$WRAP_OUT"   tools.dictionary.HeadlessDictionaryCreator -p "$DISCOVER_PROPS" 2>&1 | tee -a "$LOG")
 rm -f "$DISCOVER_PROPS"
 
 SABS=$(echo "$DISCOVER" | sed -n 's/^DISCOVERED_SABS=//p' | tail -n1)
@@ -98,14 +94,18 @@ if [[ -n "${SABS:-}" ]]; then
   if grep -q '^\s*vocabularies\s*=' "$MERGED"; then
     sed -i "s#^\s*vocabularies\s*=.*#vocabularies=$SABS#" "$MERGED"
   else
-    printf "\nvocabularies=%s\n" "$SABS" >> "$MERGED"
+    printf "
+vocabularies=%s
+" "$SABS" >> "$MERGED"
   fi
 fi
 if [[ -n "${TUIS:-}" ]]; then
   if grep -q '^\s*semantic\.types\s*=' "$MERGED"; then
     sed -i "s#^\s*semantic\.types\s*=.*#semantic.types=$TUIS#" "$MERGED"
   else
-    printf "\nsemantic.types=%s\n" "$TUIS" >> "$MERGED"
+    printf "
+semantic.types=%s
+" "$TUIS" >> "$MERGED"
   fi
 fi
 PROPS="$MERGED"
@@ -113,7 +113,7 @@ PROPS="$MERGED"
 set +x
 
 echo "Running dictionary build..." | tee -a "$LOG"
-DICT_NAME=$(awk -F= '/^\s*dictionary.name\s*=/{print $2}' "$PROPS" | tr -d '\r' | xargs)
+DICT_NAME=$(awk -F= '/^\s*dictionary.name\s*=/{print $2}' "$PROPS" | tr -d '' | xargs)
 DICT_XML_DIR="$CTAKES_HOME/resources/org/apache/ctakes/dictionary/lookup/fast"
 DB_DIR="$DICT_XML_DIR/$DICT_NAME"
 rm -rf "$DB_DIR"
@@ -136,17 +136,13 @@ if [[ -f "$DICT_XML" ]]; then
   echo "Augmenting RxNorm codes..." | tee -a "$LOG"
   java -Xms1g -Xmx2g -cp "$CP" tools.dictionary.DictionaryRxnormAugmenter -l "$DICT_XML" -u "$UMLS_DIR" | tee -a "$LOG"
   if ! grep -q 'rxnormTable' "$DICT_XML"; then
-    perl -0pi -e 's/(<property key="prefTermTable" value="prefTerm"\s*\/>\n)/$1         <property key="rxnormTable" value="TEXT"\/>\n/' "$DICT_XML"
+    perl -0pi -e 's/(<property key="prefTermTable" value="prefTerm"\s*\/>
+)/$1         <property key="rxnormTable" value="TEXT"\/>
+/' "$DICT_XML"
   fi
   DICT_XML_LOCAL="$DICT_XML_DIR/${DICT_NAME}_local.xml"
   echo "writing local variant: $DICT_XML_LOCAL" | tee -a "$LOG"
-  sed -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.UmlsJdbcRareWordDictionary</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary</implementationName>#' \
-      -e 's#<property key="jdbcDriver" value="[^"]*"#<property key="jdbcDriver" value="org.hsqldb.jdbcDriver"#' \
-      -e '/<property key="umlsUrl"/d' \
-      -e '/<property key="umlsVendor"/d' \
-      -e '/<property key="umlsUser"/d' \
-      -e '/<property key="umlsPass"/d' \
-      "$DICT_XML" > "$DICT_XML_LOCAL"
+  sed -e 's#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.UmlsJdbcRareWordDictionary</implementationName>#<implementationName>org.apache.ctakes.dictionary.lookup2.dictionary.JdbcRareWordDictionary</implementationName>#'       -e 's#<property key="jdbcDriver" value="[^"]*"#<property key="jdbcDriver" value="org.hsqldb.jdbcDriver"#'       -e '/<property key="umlsUrl"/d'       -e '/<property key="umlsVendor"/d'       -e '/<property key="umlsUser"/d'       -e '/<property key="umlsPass"/d'       "$DICT_XML" > "$DICT_XML_LOCAL"
   echo "dictionary local xml: $DICT_XML_LOCAL" | tee -a "$LOG"
 else
   echo "dictionary xml not found at expected path: $DICT_XML" | tee -a "$LOG"

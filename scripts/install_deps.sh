@@ -1,1 +1,18 @@
-#!/usr/bin/env bash\nset -euo pipefail\n\nif command -v apt-get >/dev/null 2>&1; then\n  echo "[install_deps] Installing packages via apt-get"\n  sudo apt-get update\n  sudo apt-get install -y openjdk-17-jdk curl unzip git python3\n  echo "[install_deps] Done."\nelse\n  cat <<'EOF'\n[install_deps] This helper only supports apt-based systems.\nPlease install the following manually if they are missing:\n  - Java 11 or newer (java command on PATH)\n  - curl, unzip, tar, git\n  - Python 3 (for validate.sh --limit)\nEOF\nfi\n
+#!/usr/bin/env bash
+set -euo pipefail
+
+if command -v apt-get >/dev/null 2>&1; then
+  echo "[install_deps] Installing packages via apt-get"
+  sudo apt-get update
+  sudo apt-get install -y openjdk-17-jdk curl unzip git python3
+  echo "[install_deps] Done."
+else
+  cat <<'EOF'
+[install_deps] This helper only supports apt-based systems.
+Please install the following manually if they are missing:
+  - Java 11 or newer (java command on PATH)
+  - curl, unzip, tar, git
+  - Python 3 (for validate.sh --limit)
+EOF
+fi
+
